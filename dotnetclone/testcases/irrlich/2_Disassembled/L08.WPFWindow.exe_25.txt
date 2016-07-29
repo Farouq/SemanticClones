@@ -1,0 +1,1707 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern PresentationFramework
+{
+  .publickeytoken = (31 BF 38 56 AD 36 4E 35 )                         // 1.8V.6N5
+  .ver 4:0:0:0
+}
+.assembly extern System.Xaml
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System.Windows.Forms
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern PresentationCore
+{
+  .publickeytoken = (31 BF 38 56 AD 36 4E 35 )                         // 1.8V.6N5
+  .ver 4:0:0:0
+}
+.assembly extern WindowsFormsIntegration
+{
+  .publickeytoken = (31 BF 38 56 AD 36 4E 35 )                         // 1.8V.6N5
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly L08.WPFWindow
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0D 4C 30 38 2E 57 50 46 57 69 6E 64 6F 77   // ...L08.WPFWindow
+                                                                                              00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0D 4C 30 38 2E 57 50 46 57 69 6E 64 6F 77   // ...L08.WPFWindow
+                                                                                                00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 31 00 00 )                            //  2011..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [PresentationFramework]System.Windows.ThemeInfoAttribute::.ctor(valuetype [PresentationFramework]System.Windows.ResourceDictionaryLocation,
+                                                                                        valuetype [PresentationFramework]System.Windows.ResourceDictionaryLocation) = ( 01 00 00 00 00 00 01 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public L08.WPFWindow.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.mresource public L08.WPFWindow.g.resources
+{
+  // Offset: 0x00000098 Length: 0x0000095D
+}
+.mresource public L08.WPFWindow.Properties.Resources.resources
+{
+  // Offset: 0x00000A00 Length: 0x000000B4
+}
+.module L08.WPFWindow.exe
+// MVID: {8BBFB1D7-044E-406D-9781-E1C457D42839}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0002       // WINDOWS_GUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x003C0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit L08.WPFWindow.Properties.Resources
+       extends [mscorlib]System.Object
+{
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 33 53 79 73 74 65 6D 2E 52 65 73 6F 75 72   // ..3System.Resour
+                                                                                                  63 65 73 2E 54 6F 6F 6C 73 2E 53 74 72 6F 6E 67   // ces.Tools.Strong
+                                                                                                  6C 79 54 79 70 65 64 52 65 73 6F 75 72 63 65 42   // lyTypedResourceB
+                                                                                                  75 69 6C 64 65 72 07 34 2E 30 2E 30 2E 30 00 00 ) // uilder.4.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class [mscorlib]System.Resources.ResourceManager resourceMan
+  .field private static class [mscorlib]System.Globalization.CultureInfo resourceCulture
+  .method assembly hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\Properties\Resources.Designer.cs' 
+//000031:         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+//000032:         internal Resources() {
+    IL_0007:  nop
+//000033:         }
+    IL_0008:  nop
+    IL_0009:  ret
+  } // end of method Resources::.ctor
+
+  .method assembly hidebysig specialname static 
+          class [mscorlib]System.Resources.ResourceManager 
+          get_ResourceManager() cil managed
+  {
+    // Code size       63 (0x3f)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager temp,
+             [1] class [mscorlib]System.Resources.ResourceManager CS$1$0000,
+             [2] bool CS$4$0001)
+//000034:         
+//000035:         /// <summary>
+//000036:         ///   Returns the cached ResourceManager instance used by this class.
+//000037:         /// </summary>
+//000038:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000039:         internal static global::System.Resources.ResourceManager ResourceManager {
+//000040:             get {
+    IL_0000:  nop
+//000041:                 if (object.ReferenceEquals(resourceMan, null)) {
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager L08.WPFWindow.Properties.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  call       bool [mscorlib]System.Object::ReferenceEquals(object,
+                                                                       object)
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.2
+    IL_0010:  ldloc.2
+    IL_0011:  brtrue.s   IL_0035
+
+    IL_0013:  nop
+//000042:                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("L08.WPFWindow.Properties.Resources", typeof(Resources).Assembly);
+    IL_0014:  ldstr      "L08.WPFWindow.Properties.Resources"
+    IL_0019:  ldtoken    L08.WPFWindow.Properties.Resources
+    IL_001e:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_0023:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0028:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_002d:  stloc.0
+//000043:                     resourceMan = temp;
+    IL_002e:  ldloc.0
+    IL_002f:  stsfld     class [mscorlib]System.Resources.ResourceManager L08.WPFWindow.Properties.Resources::resourceMan
+//000044:                 }
+    IL_0034:  nop
+//000045:                 return resourceMan;
+    IL_0035:  ldsfld     class [mscorlib]System.Resources.ResourceManager L08.WPFWindow.Properties.Resources::resourceMan
+    IL_003a:  stloc.1
+    IL_003b:  br.s       IL_003d
+
+//000046:             }
+    IL_003d:  ldloc.1
+    IL_003e:  ret
+  } // end of method Resources::get_ResourceManager
+
+  .method assembly hidebysig specialname static 
+          class [mscorlib]System.Globalization.CultureInfo 
+          get_Culture() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo CS$1$0000)
+//000047:         }
+//000048:         
+//000049:         /// <summary>
+//000050:         ///   Overrides the current thread's CurrentUICulture property for all
+//000051:         ///   resource lookups using this strongly typed resource class.
+//000052:         /// </summary>
+//000053:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000054:         internal static global::System.Globalization.CultureInfo Culture {
+//000055:             get {
+    IL_0000:  nop
+//000056:                 return resourceCulture;
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo L08.WPFWindow.Properties.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000057:             }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Resources::get_Culture
+
+  .method assembly hidebysig specialname static 
+          void  set_Culture(class [mscorlib]System.Globalization.CultureInfo 'value') cil managed
+  {
+    // Code size       8 (0x8)
+    .maxstack  8
+//000058:             set {
+    IL_0000:  nop
+//000059:                 resourceCulture = value;
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo L08.WPFWindow.Properties.Resources::resourceCulture
+//000060:             }
+    IL_0007:  ret
+  } // end of method Resources::set_Culture
+
+  .property class [mscorlib]System.Resources.ResourceManager
+          ResourceManager()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Resources.ResourceManager L08.WPFWindow.Properties.Resources::get_ResourceManager()
+  } // end of property Resources::ResourceManager
+  .property class [mscorlib]System.Globalization.CultureInfo
+          Culture()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Globalization.CultureInfo L08.WPFWindow.Properties.Resources::get_Culture()
+    .set void L08.WPFWindow.Properties.Resources::set_Culture(class [mscorlib]System.Globalization.CultureInfo)
+  } // end of property Resources::Culture
+} // end of class L08.WPFWindow.Properties.Resources
+
+.class private auto ansi sealed beforefieldinit L08.WPFWindow.Properties.Settings
+       extends [System]System.Configuration.ApplicationSettingsBase
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 4B 4D 69 63 72 6F 73 6F 66 74 2E 56 69 73   // ..KMicrosoft.Vis
+                                                                                                  75 61 6C 53 74 75 64 69 6F 2E 45 64 69 74 6F 72   // ualStudio.Editor
+                                                                                                  73 2E 53 65 74 74 69 6E 67 73 44 65 73 69 67 6E   // s.SettingsDesign
+                                                                                                  65 72 2E 53 65 74 74 69 6E 67 73 53 69 6E 67 6C   // er.SettingsSingl
+                                                                                                  65 46 69 6C 65 47 65 6E 65 72 61 74 6F 72 08 31   // eFileGenerator.1
+                                                                                                  30 2E 30 2E 30 2E 30 00 00 )                      // 0.0.0.0..
+  .field private static class L08.WPFWindow.Properties.Settings defaultInstance
+  .method public hidebysig specialname static 
+          class L08.WPFWindow.Properties.Settings 
+          get_Default() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class L08.WPFWindow.Properties.Settings CS$1$0000)
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\Properties\Settings.Designer.cs' 
+//000021:             get {
+    IL_0000:  nop
+//000022:                 return defaultInstance;
+    IL_0001:  ldsfld     class L08.WPFWindow.Properties.Settings L08.WPFWindow.Properties.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000023:             }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Settings::get_Default
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  ret
+  } // end of method Settings::.ctor
+
+  .method private hidebysig specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       21 (0x15)
+    .maxstack  8
+//000018:         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+    IL_0000:  newobj     instance void L08.WPFWindow.Properties.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  L08.WPFWindow.Properties.Settings
+    IL_000f:  stsfld     class L08.WPFWindow.Properties.Settings L08.WPFWindow.Properties.Settings::defaultInstance
+    IL_0014:  ret
+  } // end of method Settings::.cctor
+
+  .property class L08.WPFWindow.Properties.Settings
+          Default()
+  {
+    .get class L08.WPFWindow.Properties.Settings L08.WPFWindow.Properties.Settings::get_Default()
+  } // end of property Settings::Default
+} // end of class L08.WPFWindow.Properties.Settings
+
+.class public auto ansi beforefieldinit L08.WPFWindow.MainWindow
+       extends [PresentationFramework]System.Windows.Window
+       implements [System.Xaml]System.Windows.Markup.IComponentConnector
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 16 50 72 65 73 65 6E 74 61 74 69 6F 6E 42   // ...PresentationB
+                                                                                                  75 69 6C 64 54 61 73 6B 73 07 34 2E 30 2E 30 2E   // uildTasks.4.0.0.
+                                                                                                  30 00 00 )                                        // 0..
+  .field private class L08.WPFWindow.WinFormsUserControl userControl
+  .field assembly class [PresentationFramework]System.Windows.Controls.CheckBox checkboxDockViewport
+  .field assembly class [PresentationFramework]System.Windows.Controls.CheckBox checkboxNotifyResizes
+  .field assembly class [WindowsFormsIntegration]System.Windows.Forms.Integration.WindowsFormsHost wfHost
+  .field assembly class [PresentationFramework]System.Windows.Controls.Button buttonClose
+  .field private bool _contentLoaded
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       17 (0x11)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\MainWindow.xaml.cs' 
+//000021: 		public MainWindow()
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationFramework]System.Windows.Window::.ctor()
+    IL_0006:  nop
+//000022: 		{
+    IL_0007:  nop
+//000023: 			InitializeComponent();
+    IL_0008:  ldarg.0
+    IL_0009:  call       instance void L08.WPFWindow.MainWindow::InitializeComponent()
+    IL_000e:  nop
+//000024: 		}
+    IL_000f:  nop
+    IL_0010:  ret
+  } // end of method MainWindow::.ctor
+
+  .method private hidebysig instance void 
+          Window_Loaded(object sender,
+                        class [PresentationCore]System.Windows.RoutedEventArgs e) cil managed
+  {
+    // Code size       31 (0x1f)
+    .maxstack  8
+//000025: 
+//000026: 		private void Window_Loaded(object sender, RoutedEventArgs e)
+//000027: 		{
+    IL_0000:  nop
+//000028: 			userControl = new WinFormsUserControl();
+    IL_0001:  ldarg.0
+    IL_0002:  newobj     instance void L08.WPFWindow.WinFormsUserControl::.ctor()
+    IL_0007:  stfld      class L08.WPFWindow.WinFormsUserControl L08.WPFWindow.MainWindow::userControl
+//000029: 			wfHost.Child = userControl;
+    IL_000c:  ldarg.0
+    IL_000d:  ldfld      class [WindowsFormsIntegration]System.Windows.Forms.Integration.WindowsFormsHost L08.WPFWindow.MainWindow::wfHost
+    IL_0012:  ldarg.0
+    IL_0013:  ldfld      class L08.WPFWindow.WinFormsUserControl L08.WPFWindow.MainWindow::userControl
+    IL_0018:  callvirt   instance void [WindowsFormsIntegration]System.Windows.Forms.Integration.WindowsFormsHost::set_Child(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_001d:  nop
+//000030: 		}
+    IL_001e:  ret
+  } // end of method MainWindow::Window_Loaded
+
+  .method private hidebysig instance void 
+          Window_Closing(object sender,
+                         class [System]System.ComponentModel.CancelEventArgs e) cil managed
+  {
+    // Code size       32 (0x20)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+//000031: 
+//000032: 		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+//000033: 		{
+    IL_0000:  nop
+//000034: 			if (userControl.IsRendering)
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class L08.WPFWindow.WinFormsUserControl L08.WPFWindow.MainWindow::userControl
+    IL_0007:  callvirt   instance bool L08.WPFWindow.WinFormsUserControl::get_IsRendering()
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.0
+    IL_0010:  ldloc.0
+    IL_0011:  brtrue.s   IL_001f
+
+//000035: 				userControl.Shutdown();
+    IL_0013:  ldarg.0
+    IL_0014:  ldfld      class L08.WPFWindow.WinFormsUserControl L08.WPFWindow.MainWindow::userControl
+    IL_0019:  callvirt   instance void L08.WPFWindow.WinFormsUserControl::Shutdown()
+    IL_001e:  nop
+//000036: 		}
+    IL_001f:  ret
+  } // end of method MainWindow::Window_Closing
+
+  .method private hidebysig instance void 
+          buttonClose_Click(object sender,
+                            class [PresentationCore]System.Windows.RoutedEventArgs e) cil managed
+  {
+    // Code size       9 (0x9)
+    .maxstack  8
+//000037: 
+//000038: 		private void buttonClose_Click(object sender, RoutedEventArgs e)
+//000039: 		{
+    IL_0000:  nop
+//000040: 			Close();
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance void [PresentationFramework]System.Windows.Window::Close()
+    IL_0007:  nop
+//000041: 		}
+    IL_0008:  ret
+  } // end of method MainWindow::buttonClose_Click
+
+  .method private hidebysig instance void 
+          checkboxNotifyResizes_Checked(object sender,
+                                        class [PresentationCore]System.Windows.RoutedEventArgs e) cil managed
+  {
+    // Code size       58 (0x3a)
+    .maxstack  3
+    .locals init ([0] bool CS$4$0000,
+             [1] valuetype [mscorlib]System.Nullable`1<bool> CS$0$0001)
+//000042: 
+//000043: 		private void checkboxNotifyResizes_Checked(object sender, RoutedEventArgs e)
+//000044: 		{
+    IL_0000:  nop
+//000045: 			if (userControl != null)
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class L08.WPFWindow.WinFormsUserControl L08.WPFWindow.MainWindow::userControl
+    IL_0007:  ldnull
+    IL_0008:  ceq
+    IL_000a:  stloc.0
+    IL_000b:  ldloc.0
+    IL_000c:  brtrue.s   IL_0039
+
+//000046: 				userControl.IsNotifyResizes = checkboxNotifyResizes.IsChecked ?? false;
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class L08.WPFWindow.WinFormsUserControl L08.WPFWindow.MainWindow::userControl
+    IL_0014:  ldarg.0
+    IL_0015:  ldfld      class [PresentationFramework]System.Windows.Controls.CheckBox L08.WPFWindow.MainWindow::checkboxNotifyResizes
+    IL_001a:  callvirt   instance valuetype [mscorlib]System.Nullable`1<bool> [PresentationFramework]System.Windows.Controls.Primitives.ToggleButton::get_IsChecked()
+    IL_001f:  stloc.1
+    IL_0020:  ldloca.s   CS$0$0001
+    IL_0022:  call       instance bool valuetype [mscorlib]System.Nullable`1<bool>::get_HasValue()
+    IL_0027:  brtrue.s   IL_002c
+
+    IL_0029:  ldc.i4.0
+    IL_002a:  br.s       IL_0033
+
+    IL_002c:  ldloca.s   CS$0$0001
+    IL_002e:  call       instance !0 valuetype [mscorlib]System.Nullable`1<bool>::GetValueOrDefault()
+    IL_0033:  callvirt   instance void L08.WPFWindow.WinFormsUserControl::set_IsNotifyResizes(bool)
+    IL_0038:  nop
+//000047: 		}
+    IL_0039:  ret
+  } // end of method MainWindow::checkboxNotifyResizes_Checked
+
+  .method private hidebysig instance void 
+          checkboxDockViewport_Checked(object sender,
+                                       class [PresentationCore]System.Windows.RoutedEventArgs e) cil managed
+  {
+    // Code size       127 (0x7f)
+    .maxstack  3
+    .locals init ([0] bool CS$4$0000,
+             [1] valuetype [mscorlib]System.Nullable`1<bool> CS$0$0001)
+//000048: 
+//000049: 		private void checkboxDockViewport_Checked(object sender, RoutedEventArgs e)
+//000050: 		{
+    IL_0000:  nop
+//000051: 			if (wfHost != null)
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [WindowsFormsIntegration]System.Windows.Forms.Integration.WindowsFormsHost L08.WPFWindow.MainWindow::wfHost
+    IL_0007:  ldnull
+    IL_0008:  ceq
+    IL_000a:  stloc.0
+    IL_000b:  ldloc.0
+    IL_000c:  brtrue.s   IL_007e
+
+//000052: 			{
+    IL_000e:  nop
+//000053: 				wfHost.Width = (bool)checkboxDockViewport.IsChecked ? double.NaN : wfHost.ActualWidth;
+    IL_000f:  ldarg.0
+    IL_0010:  ldfld      class [WindowsFormsIntegration]System.Windows.Forms.Integration.WindowsFormsHost L08.WPFWindow.MainWindow::wfHost
+    IL_0015:  ldarg.0
+    IL_0016:  ldfld      class [PresentationFramework]System.Windows.Controls.CheckBox L08.WPFWindow.MainWindow::checkboxDockViewport
+    IL_001b:  callvirt   instance valuetype [mscorlib]System.Nullable`1<bool> [PresentationFramework]System.Windows.Controls.Primitives.ToggleButton::get_IsChecked()
+    IL_0020:  stloc.1
+    IL_0021:  ldloca.s   CS$0$0001
+    IL_0023:  call       instance !0 valuetype [mscorlib]System.Nullable`1<bool>::get_Value()
+    IL_0028:  brtrue.s   IL_0037
+
+    IL_002a:  ldarg.0
+    IL_002b:  ldfld      class [WindowsFormsIntegration]System.Windows.Forms.Integration.WindowsFormsHost L08.WPFWindow.MainWindow::wfHost
+    IL_0030:  callvirt   instance float64 [PresentationFramework]System.Windows.FrameworkElement::get_ActualWidth()
+    IL_0035:  br.s       IL_0040
+
+    IL_0037:  ldc.r8     (00 00 00 00 00 00 F8 FF)
+    IL_0040:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Width(float64)
+    IL_0045:  nop
+//000054: 				wfHost.Height = (bool)checkboxDockViewport.IsChecked ? double.NaN : wfHost.ActualHeight;
+    IL_0046:  ldarg.0
+    IL_0047:  ldfld      class [WindowsFormsIntegration]System.Windows.Forms.Integration.WindowsFormsHost L08.WPFWindow.MainWindow::wfHost
+    IL_004c:  ldarg.0
+    IL_004d:  ldfld      class [PresentationFramework]System.Windows.Controls.CheckBox L08.WPFWindow.MainWindow::checkboxDockViewport
+    IL_0052:  callvirt   instance valuetype [mscorlib]System.Nullable`1<bool> [PresentationFramework]System.Windows.Controls.Primitives.ToggleButton::get_IsChecked()
+    IL_0057:  stloc.1
+    IL_0058:  ldloca.s   CS$0$0001
+    IL_005a:  call       instance !0 valuetype [mscorlib]System.Nullable`1<bool>::get_Value()
+    IL_005f:  brtrue.s   IL_006e
+
+    IL_0061:  ldarg.0
+    IL_0062:  ldfld      class [WindowsFormsIntegration]System.Windows.Forms.Integration.WindowsFormsHost L08.WPFWindow.MainWindow::wfHost
+    IL_0067:  callvirt   instance float64 [PresentationFramework]System.Windows.FrameworkElement::get_ActualHeight()
+    IL_006c:  br.s       IL_0077
+
+    IL_006e:  ldc.r8     (00 00 00 00 00 00 F8 FF)
+    IL_0077:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::set_Height(float64)
+    IL_007c:  nop
+//000055: 			}
+    IL_007d:  nop
+//000056: 		}
+    IL_007e:  ret
+  } // end of method MainWindow::checkboxDockViewport_Checked
+
+  .method public hidebysig newslot virtual final 
+          instance void  InitializeComponent() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       45 (0x2d)
+    .maxstack  3
+    .locals init ([0] class [System]System.Uri resourceLocater,
+             [1] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool L08.WPFWindow.MainWindow::_contentLoaded
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+    IL_000b:  ldloc.1
+    IL_000c:  brtrue.s   IL_0011
+
+    IL_000e:  nop
+    IL_000f:  br.s       IL_002c
+
+    IL_0011:  ldarg.0
+    IL_0012:  ldc.i4.1
+    IL_0013:  stfld      bool L08.WPFWindow.MainWindow::_contentLoaded
+    IL_0018:  ldstr      "/L08.WPFWindow;component/mainwindow.xaml"
+    IL_001d:  ldc.i4.2
+    IL_001e:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_0023:  stloc.0
+// Source File 'c:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\MainWindow.xaml' 
+//000001: ?<Window x:Class="L08.WPFWindow.MainWindow"
+    IL_0024:  ldarg.0
+    IL_0025:  ldloc.0
+    IL_0026:  call       void [PresentationFramework]System.Windows.Application::LoadComponent(object,
+                                                                                               class [System]System.Uri)
+    IL_002b:  nop
+    IL_002c:  ret
+  } // end of method MainWindow::InitializeComponent
+
+  .method private hidebysig newslot virtual final 
+          instance void  System.Windows.Markup.IComponentConnector.Connect(int32 connectionId,
+                                                                           object target) cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 01 00 00 00 00 00 ) 
+    .override [System.Xaml]System.Windows.Markup.IComponentConnector::Connect
+    // Code size       273 (0x111)
+    .maxstack  4
+    .locals init ([0] int32 CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  stloc.0
+    IL_0003:  ldloc.0
+    IL_0004:  ldc.i4.1
+    IL_0005:  sub
+    IL_0006:  switch     ( 
+                          IL_0024,
+                          IL_0059,
+                          IL_0097,
+                          IL_00d5,
+                          IL_00e3)
+    IL_001f:  br         IL_0109
+
+//000002:     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+//000003:     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+//000004: 	xmlns:f="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+//000005:     Title="WPF window example - Irrlicht Engine"
+//000006: 	Width="440"
+//000007: 	Height="400"
+//000008: 	Loaded="Window_Loaded"
+    IL_0024:  ldarg.2
+    IL_0025:  castclass  L08.WPFWindow.MainWindow
+    IL_002a:  ldarg.0
+    IL_002b:  ldftn      instance void L08.WPFWindow.MainWindow::Window_Loaded(object,
+                                                                               class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_0031:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_0036:  callvirt   instance void [PresentationFramework]System.Windows.FrameworkElement::add_Loaded(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_003b:  nop
+//000009: 	Closing="Window_Closing">
+    IL_003c:  ldarg.2
+    IL_003d:  castclass  L08.WPFWindow.MainWindow
+    IL_0042:  ldarg.0
+    IL_0043:  ldftn      instance void L08.WPFWindow.MainWindow::Window_Closing(object,
+                                                                                class [System]System.ComponentModel.CancelEventArgs)
+    IL_0049:  newobj     instance void [System]System.ComponentModel.CancelEventHandler::.ctor(object,
+                                                                                               native int)
+    IL_004e:  callvirt   instance void [PresentationFramework]System.Windows.Window::add_Closing(class [System]System.ComponentModel.CancelEventHandler)
+    IL_0053:  nop
+    IL_0054:  br         IL_0110
+
+    IL_0059:  ldarg.0
+    IL_005a:  ldarg.2
+    IL_005b:  castclass  [PresentationFramework]System.Windows.Controls.CheckBox
+    IL_0060:  stfld      class [PresentationFramework]System.Windows.Controls.CheckBox L08.WPFWindow.MainWindow::checkboxDockViewport
+//000010: 	
+//000011: 	<Window.Background>
+//000012: 		<RadialGradientBrush GradientOrigin="0,0">
+//000013: 			<GradientStop Color="Lime" Offset="0" />
+//000014: 			<GradientStop Color="White" Offset="1" />
+//000015: 		</RadialGradientBrush>
+//000016: 	</Window.Background>
+//000017: 	
+//000018:     <Grid Margin="12,8">
+//000019: 		
+//000020: 		<Grid.RowDefinitions>
+//000021: 			<RowDefinition Height="Auto" />
+//000022: 			<RowDefinition />
+//000023: 			<RowDefinition Height="Auto" />
+//000024: 		</Grid.RowDefinitions>
+//000025: 		
+//000026: 		<StackPanel Grid.Row="0">
+//000027: 			
+//000028: 			<Label
+//000029: 				Content="This is simple WPF application"
+//000030: 				FontFamily="Times New Roman"
+//000031: 				FontSize="18" />
+//000032: 			
+//000033: 			<CheckBox
+//000034: 				x:Name="checkboxDockViewport"
+//000035: 				Checked="checkboxDockViewport_Checked"
+    IL_0065:  ldarg.0
+    IL_0066:  ldfld      class [PresentationFramework]System.Windows.Controls.CheckBox L08.WPFWindow.MainWindow::checkboxDockViewport
+    IL_006b:  ldarg.0
+    IL_006c:  ldftn      instance void L08.WPFWindow.MainWindow::checkboxDockViewport_Checked(object,
+                                                                                              class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_0072:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_0077:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.ToggleButton::add_Checked(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_007c:  nop
+//000036: 				Unchecked="checkboxDockViewport_Checked"
+    IL_007d:  ldarg.0
+    IL_007e:  ldfld      class [PresentationFramework]System.Windows.Controls.CheckBox L08.WPFWindow.MainWindow::checkboxDockViewport
+    IL_0083:  ldarg.0
+    IL_0084:  ldftn      instance void L08.WPFWindow.MainWindow::checkboxDockViewport_Checked(object,
+                                                                                              class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_008a:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_008f:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.ToggleButton::add_Unchecked(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_0094:  nop
+    IL_0095:  br.s       IL_0110
+
+    IL_0097:  ldarg.0
+    IL_0098:  ldarg.2
+    IL_0099:  castclass  [PresentationFramework]System.Windows.Controls.CheckBox
+    IL_009e:  stfld      class [PresentationFramework]System.Windows.Controls.CheckBox L08.WPFWindow.MainWindow::checkboxNotifyResizes
+//000037: 				Content="Dock viewport"
+//000038: 				IsChecked="True"
+//000039: 				Margin="4,0,4,4" />
+//000040: 			
+//000041: 			<CheckBox
+//000042: 				x:Name="checkboxNotifyResizes"
+//000043: 				Checked="checkboxNotifyResizes_Checked"
+    IL_00a3:  ldarg.0
+    IL_00a4:  ldfld      class [PresentationFramework]System.Windows.Controls.CheckBox L08.WPFWindow.MainWindow::checkboxNotifyResizes
+    IL_00a9:  ldarg.0
+    IL_00aa:  ldftn      instance void L08.WPFWindow.MainWindow::checkboxNotifyResizes_Checked(object,
+                                                                                               class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_00b0:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_00b5:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.ToggleButton::add_Checked(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_00ba:  nop
+//000044: 				Unchecked="checkboxNotifyResizes_Checked"
+    IL_00bb:  ldarg.0
+    IL_00bc:  ldfld      class [PresentationFramework]System.Windows.Controls.CheckBox L08.WPFWindow.MainWindow::checkboxNotifyResizes
+    IL_00c1:  ldarg.0
+    IL_00c2:  ldftn      instance void L08.WPFWindow.MainWindow::checkboxNotifyResizes_Checked(object,
+                                                                                               class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_00c8:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_00cd:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.ToggleButton::add_Unchecked(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_00d2:  nop
+    IL_00d3:  br.s       IL_0110
+
+    IL_00d5:  ldarg.0
+    IL_00d6:  ldarg.2
+    IL_00d7:  castclass  [WindowsFormsIntegration]System.Windows.Forms.Integration.WindowsFormsHost
+    IL_00dc:  stfld      class [WindowsFormsIntegration]System.Windows.Forms.Integration.WindowsFormsHost L08.WPFWindow.MainWindow::wfHost
+    IL_00e1:  br.s       IL_0110
+
+    IL_00e3:  ldarg.0
+    IL_00e4:  ldarg.2
+    IL_00e5:  castclass  [PresentationFramework]System.Windows.Controls.Button
+    IL_00ea:  stfld      class [PresentationFramework]System.Windows.Controls.Button L08.WPFWindow.MainWindow::buttonClose
+//000045: 				Content="Notify resizes"
+//000046: 				IsChecked="True"
+//000047: 				Margin="4,0,4,4" />
+//000048: 			
+//000049: 		</StackPanel>
+//000050: 		
+//000051: 		<WindowsFormsHost
+//000052: 			Grid.Row="1"
+//000053: 			x:Name="wfHost" />
+//000054: 
+//000055: 		<Button
+//000056: 			Grid.Row="2"
+//000057: 			x:Name="buttonClose"
+//000058: 			Click="buttonClose_Click"
+    IL_00ef:  ldarg.0
+    IL_00f0:  ldfld      class [PresentationFramework]System.Windows.Controls.Button L08.WPFWindow.MainWindow::buttonClose
+    IL_00f5:  ldarg.0
+    IL_00f6:  ldftn      instance void L08.WPFWindow.MainWindow::buttonClose_Click(object,
+                                                                                   class [PresentationCore]System.Windows.RoutedEventArgs)
+    IL_00fc:  newobj     instance void [PresentationCore]System.Windows.RoutedEventHandler::.ctor(object,
+                                                                                                  native int)
+    IL_0101:  callvirt   instance void [PresentationFramework]System.Windows.Controls.Primitives.ButtonBase::add_Click(class [PresentationCore]System.Windows.RoutedEventHandler)
+    IL_0106:  nop
+    IL_0107:  br.s       IL_0110
+
+    IL_0109:  ldarg.0
+    IL_010a:  ldc.i4.1
+    IL_010b:  stfld      bool L08.WPFWindow.MainWindow::_contentLoaded
+    IL_0110:  ret
+  } // end of method MainWindow::System.Windows.Markup.IComponentConnector.Connect
+
+} // end of class L08.WPFWindow.MainWindow
+
+.class public auto ansi beforefieldinit L08.WPFWindow.WinFormsUserControl
+       extends [System.Windows.Forms]System.Windows.Forms.UserControl
+{
+  .class auto ansi nested private beforefieldinit Command
+         extends [mscorlib]System.Object
+  {
+    .class auto ansi sealed nested public Kind
+           extends [mscorlib]System.Enum
+    {
+      .field public specialname rtspecialname int32 value__
+      .field public static literal valuetype L08.WPFWindow.WinFormsUserControl/Command/Kind None = int32(0x00000000)
+      .field public static literal valuetype L08.WPFWindow.WinFormsUserControl/Command/Kind Resized = int32(0x00000001)
+    } // end of class Kind
+
+    .field public valuetype L08.WPFWindow.WinFormsUserControl/Command/Kind Type
+    .field public object Value
+    .method public hidebysig instance void 
+            SetCommand(valuetype L08.WPFWindow.WinFormsUserControl/Command/Kind 'type',
+                       object 'value') cil managed
+    {
+      // Code size       16 (0x10)
+      .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.cs' 
+//000035: 			public void SetCommand(Kind type, object value) { Type = type; Value = value; }
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldarg.1
+      IL_0003:  stfld      valuetype L08.WPFWindow.WinFormsUserControl/Command/Kind L08.WPFWindow.WinFormsUserControl/Command::Type
+      IL_0008:  ldarg.0
+      IL_0009:  ldarg.2
+      IL_000a:  stfld      object L08.WPFWindow.WinFormsUserControl/Command::Value
+      IL_000f:  ret
+    } // end of method Command::SetCommand
+
+    .method public hidebysig instance void 
+            Clear() cil managed
+    {
+      // Code size       16 (0x10)
+      .maxstack  8
+//000036: 			public void Clear() { Type = Kind.None; Value = null; }
+      IL_0000:  nop
+      IL_0001:  ldarg.0
+      IL_0002:  ldc.i4.0
+      IL_0003:  stfld      valuetype L08.WPFWindow.WinFormsUserControl/Command/Kind L08.WPFWindow.WinFormsUserControl/Command::Type
+      IL_0008:  ldarg.0
+      IL_0009:  ldnull
+      IL_000a:  stfld      object L08.WPFWindow.WinFormsUserControl/Command::Value
+      IL_000f:  ret
+    } // end of method Command::Clear
+
+    .method public hidebysig specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      // Code size       22 (0x16)
+      .maxstack  8
+//000032: 			public Kind Type = Kind.None;
+      IL_0000:  ldarg.0
+      IL_0001:  ldc.i4.0
+      IL_0002:  stfld      valuetype L08.WPFWindow.WinFormsUserControl/Command/Kind L08.WPFWindow.WinFormsUserControl/Command::Type
+//000033: 			public object Value = null;
+      IL_0007:  ldarg.0
+      IL_0008:  ldnull
+      IL_0009:  stfld      object L08.WPFWindow.WinFormsUserControl/Command::Value
+      IL_000e:  ldarg.0
+      IL_000f:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0014:  nop
+      IL_0015:  ret
+    } // end of method Command::.ctor
+
+  } // end of class Command
+
+  .field private class [System]System.ComponentModel.IContainer components
+  .field private class L08.WPFWindow.WinFormsUserControl/Command backgroundCommand
+  .field private class [System]System.ComponentModel.BackgroundWorker backgroundWorker
+  .field private bool '<IsNotifyResizes>k__BackingField'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method family hidebysig virtual instance void 
+          Dispose(bool disposing) cil managed
+  {
+    // Code size       43 (0x2b)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.designer.cs' 
+//000015: 		{
+    IL_0000:  nop
+//000016: 			if (disposing && (components != null))
+    IL_0001:  ldarg.1
+    IL_0002:  brfalse.s  IL_000f
+
+    IL_0004:  ldarg.0
+    IL_0005:  ldfld      class [System]System.ComponentModel.IContainer L08.WPFWindow.WinFormsUserControl::components
+    IL_000a:  ldnull
+    IL_000b:  ceq
+    IL_000d:  br.s       IL_0010
+
+    IL_000f:  ldc.i4.1
+    IL_0010:  stloc.0
+    IL_0011:  ldloc.0
+    IL_0012:  brtrue.s   IL_0022
+
+//000017: 			{
+    IL_0014:  nop
+//000018: 				components.Dispose();
+    IL_0015:  ldarg.0
+    IL_0016:  ldfld      class [System]System.ComponentModel.IContainer L08.WPFWindow.WinFormsUserControl::components
+    IL_001b:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+    IL_0020:  nop
+//000019: 			}
+    IL_0021:  nop
+//000020: 			base.Dispose(disposing);
+    IL_0022:  ldarg.0
+    IL_0023:  ldarg.1
+    IL_0024:  call       instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::Dispose(bool)
+    IL_0029:  nop
+//000021: 		}
+    IL_002a:  ret
+  } // end of method WinFormsUserControl::Dispose
+
+  .method private hidebysig instance void 
+          InitializeComponent() cil managed
+  {
+    // Code size       21 (0x15)
+    .maxstack  8
+//000022: 
+//000023: 		#region Component Designer generated code
+//000024: 
+//000025: 		/// <summary> 
+//000026: 		/// Required method for Designer support - do not modify 
+//000027: 		/// the contents of this method with the code editor.
+//000028: 		/// </summary>
+//000029: 		private void InitializeComponent()
+//000030: 		{
+    IL_0000:  nop
+//000031: 			components = new System.ComponentModel.Container();
+    IL_0001:  ldarg.0
+    IL_0002:  newobj     instance void [System]System.ComponentModel.Container::.ctor()
+    IL_0007:  stfld      class [System]System.ComponentModel.IContainer L08.WPFWindow.WinFormsUserControl::components
+//000032: 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+    IL_000c:  ldarg.0
+    IL_000d:  ldc.i4.1
+    IL_000e:  call       instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoScaleMode)
+    IL_0013:  nop
+//000033: 		}
+    IL_0014:  ret
+  } // end of method WinFormsUserControl::InitializeComponent
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       132 (0x84)
+    .maxstack  4
+//000008: 		private System.ComponentModel.IContainer components = null;
+    IL_0000:  ldarg.0
+    IL_0001:  ldnull
+    IL_0002:  stfld      class [System]System.ComponentModel.IContainer L08.WPFWindow.WinFormsUserControl::components
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.cs' 
+//000042: 		public WinFormsUserControl()
+    IL_0007:  ldarg.0
+    IL_0008:  call       instance void [System.Windows.Forms]System.Windows.Forms.UserControl::.ctor()
+    IL_000d:  nop
+//000043: 		{
+    IL_000e:  nop
+//000044: 			InitializeComponent();
+    IL_000f:  ldarg.0
+    IL_0010:  call       instance void L08.WPFWindow.WinFormsUserControl::InitializeComponent()
+    IL_0015:  nop
+//000045: 
+//000046: 			backgroundCommand = new Command();
+    IL_0016:  ldarg.0
+    IL_0017:  newobj     instance void L08.WPFWindow.WinFormsUserControl/Command::.ctor()
+    IL_001c:  stfld      class L08.WPFWindow.WinFormsUserControl/Command L08.WPFWindow.WinFormsUserControl::backgroundCommand
+//000047: 
+//000048: 			backgroundWorker = new BackgroundWorker();
+    IL_0021:  ldarg.0
+    IL_0022:  newobj     instance void [System]System.ComponentModel.BackgroundWorker::.ctor()
+    IL_0027:  stfld      class [System]System.ComponentModel.BackgroundWorker L08.WPFWindow.WinFormsUserControl::backgroundWorker
+//000049: 			backgroundWorker.WorkerSupportsCancellation = true;
+    IL_002c:  ldarg.0
+    IL_002d:  ldfld      class [System]System.ComponentModel.BackgroundWorker L08.WPFWindow.WinFormsUserControl::backgroundWorker
+    IL_0032:  ldc.i4.1
+    IL_0033:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::set_WorkerSupportsCancellation(bool)
+    IL_0038:  nop
+//000050: 			backgroundWorker.DoWork += new DoWorkEventHandler(backgroundWorker_DoWork);
+    IL_0039:  ldarg.0
+    IL_003a:  ldfld      class [System]System.ComponentModel.BackgroundWorker L08.WPFWindow.WinFormsUserControl::backgroundWorker
+    IL_003f:  ldarg.0
+    IL_0040:  ldftn      instance void L08.WPFWindow.WinFormsUserControl::backgroundWorker_DoWork(object,
+                                                                                                  class [System]System.ComponentModel.DoWorkEventArgs)
+    IL_0046:  newobj     instance void [System]System.ComponentModel.DoWorkEventHandler::.ctor(object,
+                                                                                               native int)
+    IL_004b:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::add_DoWork(class [System]System.ComponentModel.DoWorkEventHandler)
+    IL_0050:  nop
+//000051: 			backgroundWorker.RunWorkerAsync(Handle);
+    IL_0051:  ldarg.0
+    IL_0052:  ldfld      class [System]System.ComponentModel.BackgroundWorker L08.WPFWindow.WinFormsUserControl::backgroundWorker
+    IL_0057:  ldarg.0
+    IL_0058:  call       instance native int [System.Windows.Forms]System.Windows.Forms.Control::get_Handle()
+    IL_005d:  box        [mscorlib]System.IntPtr
+    IL_0062:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::RunWorkerAsync(object)
+    IL_0067:  nop
+//000052: 			components.Add(backgroundWorker);
+    IL_0068:  ldarg.0
+    IL_0069:  ldfld      class [System]System.ComponentModel.IContainer L08.WPFWindow.WinFormsUserControl::components
+    IL_006e:  ldarg.0
+    IL_006f:  ldfld      class [System]System.ComponentModel.BackgroundWorker L08.WPFWindow.WinFormsUserControl::backgroundWorker
+    IL_0074:  callvirt   instance void [System]System.ComponentModel.IContainer::Add(class [System]System.ComponentModel.IComponent)
+    IL_0079:  nop
+//000053: 
+//000054: 			IsNotifyResizes = true;
+    IL_007a:  ldarg.0
+    IL_007b:  ldc.i4.1
+    IL_007c:  call       instance void L08.WPFWindow.WinFormsUserControl::set_IsNotifyResizes(bool)
+    IL_0081:  nop
+//000055: 		}
+    IL_0082:  nop
+    IL_0083:  ret
+  } // end of method WinFormsUserControl::.ctor
+
+  .method public hidebysig specialname instance bool 
+          get_IsRendering() cil managed
+  {
+    // Code size       17 (0x11)
+    .maxstack  1
+    .locals init ([0] bool CS$1$0000)
+//000056: 
+//000057: 		/// <summary>
+//000058: 		/// Indicates that rendering thread is working.
+//000059: 		/// </summary>
+//000060: 		public bool IsRendering { get { return backgroundWorker.IsBusy; } }
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [System]System.ComponentModel.BackgroundWorker L08.WPFWindow.WinFormsUserControl::backgroundWorker
+    IL_0007:  callvirt   instance bool [System]System.ComponentModel.BackgroundWorker::get_IsBusy()
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+  } // end of method WinFormsUserControl::get_IsRendering
+
+  .method public hidebysig specialname instance bool 
+          get_IsNotifyResizes() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (bool V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      bool L08.WPFWindow.WinFormsUserControl::'<IsNotifyResizes>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method WinFormsUserControl::get_IsNotifyResizes
+
+  .method public hidebysig specialname instance void 
+          set_IsNotifyResizes(bool 'value') cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      bool L08.WPFWindow.WinFormsUserControl::'<IsNotifyResizes>k__BackingField'
+    IL_0007:  ret
+  } // end of method WinFormsUserControl::set_IsNotifyResizes
+
+  .method public hidebysig instance void 
+          Shutdown() cil managed
+  {
+    // Code size       57 (0x39)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+//000061: 
+//000062: 		/// <summary>
+//000063: 		/// Indicates that Irrlicht will be notifyed (or not) about resize of client area of this control.
+//000064: 		/// </summary>
+//000065: 		public bool IsNotifyResizes { get; set; }
+//000066: 
+//000067: 		/// <summary>
+//000068: 		/// Shuts down rendering thread.
+//000069: 		/// This method must be called before this controls is going to be released.
+//000070: 		/// </summary>
+//000071: 		public void Shutdown()
+//000072: 		{
+    IL_0000:  nop
+//000073: 			if (backgroundWorker.IsBusy)
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [System]System.ComponentModel.BackgroundWorker L08.WPFWindow.WinFormsUserControl::backgroundWorker
+    IL_0007:  callvirt   instance bool [System]System.ComponentModel.BackgroundWorker::get_IsBusy()
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.0
+    IL_0010:  ldloc.0
+    IL_0011:  brtrue.s   IL_0038
+
+//000074: 			{
+    IL_0013:  nop
+//000075: 				backgroundWorker.CancelAsync();
+    IL_0014:  ldarg.0
+    IL_0015:  ldfld      class [System]System.ComponentModel.BackgroundWorker L08.WPFWindow.WinFormsUserControl::backgroundWorker
+    IL_001a:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::CancelAsync()
+    IL_001f:  nop
+    IL_0020:  br.s       IL_0028
+
+//000076: 
+//000077: 				while (backgroundWorker.IsBusy)
+//000078: 					Application.DoEvents();
+    IL_0022:  call       void [System.Windows.Forms]System.Windows.Forms.Application::DoEvents()
+    IL_0027:  nop
+//000077: 				while (backgroundWorker.IsBusy)
+    IL_0028:  ldarg.0
+    IL_0029:  ldfld      class [System]System.ComponentModel.BackgroundWorker L08.WPFWindow.WinFormsUserControl::backgroundWorker
+    IL_002e:  callvirt   instance bool [System]System.ComponentModel.BackgroundWorker::get_IsBusy()
+    IL_0033:  stloc.0
+    IL_0034:  ldloc.0
+    IL_0035:  brtrue.s   IL_0022
+
+//000078: 					Application.DoEvents();
+//000079: 			}
+    IL_0037:  nop
+//000080: 		}
+    IL_0038:  ret
+  } // end of method WinFormsUserControl::Shutdown
+
+  .method family hidebysig virtual instance void 
+          OnResize(class [mscorlib]System.EventArgs e) cil managed
+  {
+    // Code size       109 (0x6d)
+    .maxstack  3
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di newSize,
+             [1] bool '<>s__LockTaken0',
+             [2] bool CS$4$0000,
+             [3] class L08.WPFWindow.WinFormsUserControl/Command CS$2$0001)
+//000081: 
+//000082: 		protected override void OnResize(EventArgs e)
+//000083: 		{
+    IL_0000:  nop
+//000084: 			base.OnResize(e);
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  call       instance void [System.Windows.Forms]System.Windows.Forms.UserControl::OnResize(class [mscorlib]System.EventArgs)
+    IL_0008:  nop
+//000085: 
+//000086: 			if (!IsNotifyResizes)
+    IL_0009:  ldarg.0
+    IL_000a:  call       instance bool L08.WPFWindow.WinFormsUserControl::get_IsNotifyResizes()
+    IL_000f:  stloc.2
+    IL_0010:  ldloc.2
+    IL_0011:  brtrue.s   IL_0015
+
+//000087: 				return;
+    IL_0013:  br.s       IL_006c
+
+    IL_0015:  ldc.i4.0
+    IL_0016:  stloc.1
+//000088: 
+//000089: 			lock (backgroundCommand)
+    .try
+    {
+      IL_0017:  ldarg.0
+      IL_0018:  ldfld      class L08.WPFWindow.WinFormsUserControl/Command L08.WPFWindow.WinFormsUserControl::backgroundCommand
+      IL_001d:  dup
+      IL_001e:  stloc.3
+      IL_001f:  ldloca.s   '<>s__LockTaken0'
+      IL_0021:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_0026:  nop
+//000090: 			{
+      IL_0027:  nop
+//000091: 				Dimension2Di newSize = new Dimension2Di(this.Width, this.Height);
+      IL_0028:  ldarg.0
+      IL_0029:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+      IL_002e:  ldarg.0
+      IL_002f:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+      IL_0034:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                             int32)
+      IL_0039:  stloc.0
+//000092: 				if (newSize.Area > 0)
+      IL_003a:  ldloc.0
+      IL_003b:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::get_Area()
+      IL_0040:  ldc.i4.0
+      IL_0041:  cgt
+      IL_0043:  ldc.i4.0
+      IL_0044:  ceq
+      IL_0046:  stloc.2
+      IL_0047:  ldloc.2
+      IL_0048:  brtrue.s   IL_0058
+
+//000093: 					backgroundCommand.SetCommand(Command.Kind.Resized, newSize);
+      IL_004a:  ldarg.0
+      IL_004b:  ldfld      class L08.WPFWindow.WinFormsUserControl/Command L08.WPFWindow.WinFormsUserControl::backgroundCommand
+      IL_0050:  ldc.i4.1
+      IL_0051:  ldloc.0
+      IL_0052:  callvirt   instance void L08.WPFWindow.WinFormsUserControl/Command::SetCommand(valuetype L08.WPFWindow.WinFormsUserControl/Command/Kind,
+                                                                                               object)
+      IL_0057:  nop
+//000094: 			}
+      IL_0058:  nop
+      IL_0059:  leave.s    IL_006b
+
+    }  // end .try
+    finally
+    {
+      IL_005b:  ldloc.1
+      IL_005c:  ldc.i4.0
+      IL_005d:  ceq
+      IL_005f:  stloc.2
+      IL_0060:  ldloc.2
+      IL_0061:  brtrue.s   IL_006a
+
+      IL_0063:  ldloc.3
+      IL_0064:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_0069:  nop
+      IL_006a:  endfinally
+    }  // end handler
+    IL_006b:  nop
+//000095: 		}
+    IL_006c:  ret
+  } // end of method WinFormsUserControl::OnResize
+
+  .method private hidebysig instance void 
+          backgroundWorker_DoWork(object sender,
+                                  class [System]System.ComponentModel.DoWorkEventArgs e) cil managed
+  {
+    // Code size       709 (0x2c5)
+    .maxstack  7
+    .locals init ([0] class [System]System.ComponentModel.BackgroundWorker worker,
+             [1] class [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters p,
+             [2] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [3] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [4] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+             [5] class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment gui,
+             [6] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode cam,
+             [7] class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator anim,
+             [8] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode cube,
+             [9] int32 x,
+             [10] int32 y,
+             [11] bool '<>s__LockTaken1',
+             [12] bool CS$4$0000,
+             [13] int32 CS$0$0001,
+             [14] class L08.WPFWindow.WinFormsUserControl/Command CS$2$0002,
+             [15] valuetype L08.WPFWindow.WinFormsUserControl/Command/Kind CS$4$0003)
+//000096: 
+//000097: 		void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+//000098: 		{
+    IL_0000:  nop
+//000099: 			BackgroundWorker worker = sender as BackgroundWorker;
+    IL_0001:  ldarg.1
+    IL_0002:  isinst     [System]System.ComponentModel.BackgroundWorker
+    IL_0007:  stloc.0
+//000100: 			IrrlichtCreationParameters p = new IrrlichtCreationParameters();
+    IL_0008:  newobj     instance void [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters::.ctor()
+    IL_000d:  stloc.1
+//000101: 			p.DriverType = DriverType.Direct3D9;
+    IL_000e:  ldloc.1
+    IL_000f:  ldc.i4.4
+    IL_0010:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters::set_DriverType(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType)
+    IL_0015:  nop
+//000102: 			p.WindowID = (IntPtr)e.Argument;
+    IL_0016:  ldloc.1
+    IL_0017:  ldarg.2
+    IL_0018:  callvirt   instance object [System]System.ComponentModel.DoWorkEventArgs::get_Argument()
+    IL_001d:  unbox.any  [mscorlib]System.IntPtr
+    IL_0022:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters::set_WindowID(native int)
+    IL_0027:  nop
+//000103: 
+//000104: 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(p);
+    IL_0028:  ldloc.1
+    IL_0029:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(class [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters)
+    IL_002e:  stloc.2
+//000105: 			if (device == null)
+    IL_002f:  ldloc.2
+    IL_0030:  ldnull
+    IL_0031:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0036:  ldc.i4.0
+    IL_0037:  ceq
+    IL_0039:  stloc.s    CS$4$0000
+    IL_003b:  ldloc.s    CS$4$0000
+    IL_003d:  brtrue.s   IL_0044
+
+//000106: 				// if device cannot be created by any reason - we just leave this thread,
+//000107: 				// after all IsRedering will report false, so it is all OK.
+//000108: 				return;
+    IL_003f:  br         IL_02c4
+
+//000109: 
+//000110: 			VideoDriver driver = device.VideoDriver;
+    IL_0044:  ldloc.2
+    IL_0045:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_004a:  stloc.3
+//000111: 			SceneManager smgr = device.SceneManager;
+    IL_004b:  ldloc.2
+    IL_004c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0051:  stloc.s    smgr
+//000112: 			GUIEnvironment gui = device.GUIEnvironment;
+    IL_0053:  ldloc.2
+    IL_0054:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0059:  stloc.s    gui
+//000113: 
+//000114: 			// setup a simple 3d scene
+//000115: 
+//000116: 			CameraSceneNode cam = smgr.AddCameraSceneNode();
+    IL_005b:  ldloc.s    smgr
+    IL_005d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNode()
+    IL_0062:  stloc.s    cam
+//000117: 			cam.Target = new Vector3Df(0);
+    IL_0064:  ldloc.s    cam
+    IL_0066:  ldc.r4     0.0
+    IL_006b:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32)
+    IL_0070:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_Target(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0075:  nop
+//000118: 
+//000119: 			SceneNodeAnimator anim = smgr.CreateFlyCircleAnimator(new Vector3Df(0, 15, 0), 30.0f);
+    IL_0076:  ldloc.s    smgr
+    IL_0078:  ldc.r4     0.0
+    IL_007d:  ldc.r4     15.
+    IL_0082:  ldc.r4     0.0
+    IL_0087:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_008c:  ldc.r4     30.
+    IL_0091:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateFlyCircleAnimator(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                                  float32)
+    IL_0096:  stloc.s    anim
+//000120: 			cam.AddAnimator(anim);
+    IL_0098:  ldloc.s    cam
+    IL_009a:  ldloc.s    anim
+    IL_009c:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::AddAnimator(class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator)
+    IL_00a1:  nop
+//000121: 			anim.Drop();
+    IL_00a2:  ldloc.s    anim
+    IL_00a4:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_00a9:  pop
+//000122: 
+//000123: 			SceneNode cube = smgr.AddCubeSceneNode(20);
+    IL_00aa:  ldloc.s    smgr
+    IL_00ac:  ldc.r4     20.
+    IL_00b1:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCubeSceneNode(float32)
+    IL_00b6:  stloc.s    cube
+//000124: 			cube.SetMaterialTexture(0, driver.GetTexture("../../media/wall.bmp"));
+    IL_00b8:  ldloc.s    cube
+    IL_00ba:  ldc.i4.0
+    IL_00bb:  ldloc.3
+    IL_00bc:  ldstr      "../../media/wall.bmp"
+    IL_00c1:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_00c6:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_00cb:  nop
+//000125: 			cube.SetMaterialTexture(1, driver.GetTexture("../../media/water.jpg"));
+    IL_00cc:  ldloc.s    cube
+    IL_00ce:  ldc.i4.1
+    IL_00cf:  ldloc.3
+    IL_00d0:  ldstr      "../../media/water.jpg"
+    IL_00d5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_00da:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_00df:  nop
+//000126: 			cube.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_00e0:  ldloc.s    cube
+    IL_00e2:  ldc.i4.8
+    IL_00e3:  ldc.i4.0
+    IL_00e4:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00e9:  nop
+//000127: 			cube.SetMaterialType(MaterialType.Reflection2Layer);
+    IL_00ea:  ldloc.s    cube
+    IL_00ec:  ldc.i4.s   11
+    IL_00ee:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialType(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_00f3:  nop
+//000128: 
+//000129: 			smgr.AddSkyBoxSceneNode(
+    IL_00f4:  ldloc.s    smgr
+    IL_00f6:  ldstr      "../../media/irrlicht2_up.jpg"
+    IL_00fb:  ldstr      "../../media/irrlicht2_dn.jpg"
+    IL_0100:  ldstr      "../../media/irrlicht2_lf.jpg"
+    IL_0105:  ldstr      "../../media/irrlicht2_rt.jpg"
+    IL_010a:  ldstr      "../../media/irrlicht2_ft.jpg"
+    IL_010f:  ldstr      "../../media/irrlicht2_bk.jpg"
+    IL_0114:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddSkyBoxSceneNode(string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string)
+    IL_0119:  pop
+//000130: 				"../../media/irrlicht2_up.jpg",
+//000131: 				"../../media/irrlicht2_dn.jpg",
+//000132: 				"../../media/irrlicht2_lf.jpg",
+//000133: 				"../../media/irrlicht2_rt.jpg",
+//000134: 				"../../media/irrlicht2_ft.jpg",
+//000135: 				"../../media/irrlicht2_bk.jpg");
+//000136: 
+//000137: 			gui.AddImage(
+    IL_011a:  ldloc.s    gui
+    IL_011c:  ldloc.3
+    IL_011d:  ldstr      "../../media/lime_logo_alpha.png"
+    IL_0122:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_0127:  ldc.i4.s   30
+    IL_0129:  ldc.i4.0
+    IL_012a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_012f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIImage [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddImage(class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                        class [IrrlichtLime]IrrlichtLime.Core.Vector2Di)
+    IL_0134:  pop
+    IL_0135:  br         IL_02ae
+
+//000138: 				driver.GetTexture("../../media/lime_logo_alpha.png"),
+//000139: 				new Vector2Di(30, 0));
+//000140: 
+//000141: 			// draw all
+//000142: 
+//000143: 			while (device.Run())
+//000144: 			{
+    IL_013a:  nop
+//000145: 				driver.BeginScene(false);
+    IL_013b:  ldloc.3
+    IL_013c:  ldc.i4.0
+    IL_013d:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool)
+    IL_0142:  pop
+//000146: 				
+//000147: 				smgr.DrawAll();
+    IL_0143:  ldloc.s    smgr
+    IL_0145:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_014a:  nop
+//000148: 				gui.DrawAll();
+    IL_014b:  ldloc.s    gui
+    IL_014d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::DrawAll()
+    IL_0152:  nop
+//000149: 
+//000150: 				// draw stats
+//000151: 
+//000152: 				int x = 20;
+    IL_0153:  ldc.i4.s   20
+    IL_0155:  stloc.s    x
+//000153: 				int y = driver.ScreenSize.Height - 50;
+    IL_0157:  ldloc.3
+    IL_0158:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_ScreenSize()
+    IL_015d:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::get_Height()
+    IL_0162:  ldc.i4.s   50
+    IL_0164:  sub
+    IL_0165:  stloc.s    y
+//000154: 
+//000155: 				driver.Draw2DRectangle(
+    IL_0167:  ldloc.3
+    IL_0168:  ldloc.s    x
+    IL_016a:  ldloc.s    y
+    IL_016c:  ldloc.s    x
+    IL_016e:  ldloc.3
+    IL_016f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_ScreenSize()
+    IL_0174:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::get_Width()
+    IL_0179:  add
+    IL_017a:  ldc.i4.2
+    IL_017b:  ldloc.s    x
+    IL_017d:  mul
+    IL_017e:  sub
+    IL_017f:  ldloc.s    y
+    IL_0181:  ldc.i4.s   30
+    IL_0183:  add
+    IL_0184:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_0189:  ldc.i4.0
+    IL_018a:  ldc.i4.0
+    IL_018b:  ldc.i4.0
+    IL_018c:  ldc.i4     0x80
+    IL_0191:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0196:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::Draw2DRectangle(class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                     class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_019b:  nop
+//000156: 					new Recti(x, y, x + driver.ScreenSize.Width - 2 * x, y + 30),
+//000157: 					new IrrlichtLime.Video.Color(0, 0, 0, 128));
+//000158: 
+//000159: 				device.GUIEnvironment.BuiltInFont.Draw(
+    IL_019c:  ldloc.2
+    IL_019d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_01a2:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_BuiltInFont()
+    IL_01a7:  ldstr      "Driver: "
+    IL_01ac:  ldloc.3
+    IL_01ad:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_01b2:  call       string [mscorlib]System.String::Concat(string,
+                                                                string)
+    IL_01b7:  ldloc.s    x
+    IL_01b9:  ldc.i4.5
+    IL_01ba:  add
+    IL_01bb:  ldloc.s    y
+    IL_01bd:  ldc.i4.5
+    IL_01be:  add
+    IL_01bf:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_01c4:  ldc.i4     0xff
+    IL_01c9:  ldc.i4     0xff
+    IL_01ce:  ldc.i4     0xff
+    IL_01d3:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_01d8:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIFont::Draw(string,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_01dd:  nop
+//000160: 					"Driver: " + driver.Name,
+//000161: 					new Vector2Di(x + 5, y + 5),
+//000162: 					new IrrlichtLime.Video.Color(255, 255, 255));
+//000163: 
+//000164: 				device.GUIEnvironment.BuiltInFont.Draw(
+    IL_01de:  ldloc.2
+    IL_01df:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_01e4:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_BuiltInFont()
+    IL_01e9:  ldstr      "FPS: "
+    IL_01ee:  ldloc.3
+    IL_01ef:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_01f4:  stloc.s    CS$0$0001
+    IL_01f6:  ldloca.s   CS$0$0001
+    IL_01f8:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_01fd:  call       string [mscorlib]System.String::Concat(string,
+                                                                string)
+    IL_0202:  ldloc.s    x
+    IL_0204:  ldc.i4.5
+    IL_0205:  add
+    IL_0206:  ldloc.s    y
+    IL_0208:  ldc.i4.s   15
+    IL_020a:  add
+    IL_020b:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_0210:  ldc.i4     0xff
+    IL_0215:  ldc.i4     0xff
+    IL_021a:  ldc.i4     0xff
+    IL_021f:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0224:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIFont::Draw(string,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0229:  nop
+//000165: 					"FPS: " + driver.FPS.ToString(),
+//000166: 					new Vector2Di(x + 5, y + 15),
+//000167: 					new IrrlichtLime.Video.Color(255, 255, 255));
+//000168: 
+//000169: 				driver.EndScene();
+    IL_022a:  ldloc.3
+    IL_022b:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_0230:  pop
+//000170: 
+//000171: 				// check for cancellation
+//000172: 
+//000173: 				if (worker.CancellationPending)
+    IL_0231:  ldloc.0
+    IL_0232:  callvirt   instance bool [System]System.ComponentModel.BackgroundWorker::get_CancellationPending()
+    IL_0237:  ldc.i4.0
+    IL_0238:  ceq
+    IL_023a:  stloc.s    CS$4$0000
+    IL_023c:  ldloc.s    CS$4$0000
+    IL_023e:  brtrue.s   IL_0247
+
+//000174: 					device.Close();
+    IL_0240:  ldloc.2
+    IL_0241:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Close()
+    IL_0246:  nop
+    IL_0247:  ldc.i4.0
+    IL_0248:  stloc.s    '<>s__LockTaken1'
+//000175: 
+//000176: 				// check for new command
+//000177: 
+//000178: 				lock (backgroundCommand)
+    .try
+    {
+      IL_024a:  ldarg.0
+      IL_024b:  ldfld      class L08.WPFWindow.WinFormsUserControl/Command L08.WPFWindow.WinFormsUserControl::backgroundCommand
+      IL_0250:  dup
+      IL_0251:  stloc.s    CS$2$0002
+      IL_0253:  ldloca.s   '<>s__LockTaken1'
+      IL_0255:  call       void [mscorlib]System.Threading.Monitor::Enter(object,
+                                                                          bool&)
+      IL_025a:  nop
+//000179: 				{
+      IL_025b:  nop
+//000180: 					switch (backgroundCommand.Type)
+      IL_025c:  ldarg.0
+      IL_025d:  ldfld      class L08.WPFWindow.WinFormsUserControl/Command L08.WPFWindow.WinFormsUserControl::backgroundCommand
+      IL_0262:  ldfld      valuetype L08.WPFWindow.WinFormsUserControl/Command/Kind L08.WPFWindow.WinFormsUserControl/Command::Type
+      IL_0267:  stloc.s    CS$4$0003
+      IL_0269:  ldloc.s    CS$4$0003
+      IL_026b:  ldc.i4.1
+      IL_026c:  beq.s      IL_0270
+
+      IL_026e:  br.s       IL_0295
+
+//000181: 					{
+//000182: 						case Command.Kind.Resized:
+//000183: 							driver.ResizeNotify(backgroundCommand.Value as Dimension2Di);
+      IL_0270:  ldloc.3
+      IL_0271:  ldarg.0
+      IL_0272:  ldfld      class L08.WPFWindow.WinFormsUserControl/Command L08.WPFWindow.WinFormsUserControl::backgroundCommand
+      IL_0277:  ldfld      object L08.WPFWindow.WinFormsUserControl/Command::Value
+      IL_027c:  isinst     [IrrlichtLime]IrrlichtLime.Core.Dimension2Di
+      IL_0281:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::ResizeNotify(class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+      IL_0286:  nop
+//000184: 							backgroundCommand.Clear();
+      IL_0287:  ldarg.0
+      IL_0288:  ldfld      class L08.WPFWindow.WinFormsUserControl/Command L08.WPFWindow.WinFormsUserControl::backgroundCommand
+      IL_028d:  callvirt   instance void L08.WPFWindow.WinFormsUserControl/Command::Clear()
+      IL_0292:  nop
+//000185: 							break;
+      IL_0293:  br.s       IL_0295
+
+//000186: 					}
+//000187: 				}
+      IL_0295:  nop
+      IL_0296:  leave.s    IL_02ac
+
+    }  // end .try
+    finally
+    {
+      IL_0298:  ldloc.s    '<>s__LockTaken1'
+      IL_029a:  ldc.i4.0
+      IL_029b:  ceq
+      IL_029d:  stloc.s    CS$4$0000
+      IL_029f:  ldloc.s    CS$4$0000
+      IL_02a1:  brtrue.s   IL_02ab
+
+      IL_02a3:  ldloc.s    CS$2$0002
+      IL_02a5:  call       void [mscorlib]System.Threading.Monitor::Exit(object)
+      IL_02aa:  nop
+      IL_02ab:  endfinally
+    }  // end handler
+    IL_02ac:  nop
+//000188: 			}
+    IL_02ad:  nop
+//000143: 			while (device.Run())
+    IL_02ae:  ldloc.2
+    IL_02af:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_02b4:  stloc.s    CS$4$0000
+    IL_02b6:  ldloc.s    CS$4$0000
+    IL_02b8:  brtrue     IL_013a
+
+//000144: 			{
+//000145: 				driver.BeginScene(false);
+//000146: 				
+//000147: 				smgr.DrawAll();
+//000148: 				gui.DrawAll();
+//000149: 
+//000150: 				// draw stats
+//000151: 
+//000152: 				int x = 20;
+//000153: 				int y = driver.ScreenSize.Height - 50;
+//000154: 
+//000155: 				driver.Draw2DRectangle(
+//000156: 					new Recti(x, y, x + driver.ScreenSize.Width - 2 * x, y + 30),
+//000157: 					new IrrlichtLime.Video.Color(0, 0, 0, 128));
+//000158: 
+//000159: 				device.GUIEnvironment.BuiltInFont.Draw(
+//000160: 					"Driver: " + driver.Name,
+//000161: 					new Vector2Di(x + 5, y + 5),
+//000162: 					new IrrlichtLime.Video.Color(255, 255, 255));
+//000163: 
+//000164: 				device.GUIEnvironment.BuiltInFont.Draw(
+//000165: 					"FPS: " + driver.FPS.ToString(),
+//000166: 					new Vector2Di(x + 5, y + 15),
+//000167: 					new IrrlichtLime.Video.Color(255, 255, 255));
+//000168: 
+//000169: 				driver.EndScene();
+//000170: 
+//000171: 				// check for cancellation
+//000172: 
+//000173: 				if (worker.CancellationPending)
+//000174: 					device.Close();
+//000175: 
+//000176: 				// check for new command
+//000177: 
+//000178: 				lock (backgroundCommand)
+//000179: 				{
+//000180: 					switch (backgroundCommand.Type)
+//000181: 					{
+//000182: 						case Command.Kind.Resized:
+//000183: 							driver.ResizeNotify(backgroundCommand.Value as Dimension2Di);
+//000184: 							backgroundCommand.Clear();
+//000185: 							break;
+//000186: 					}
+//000187: 				}
+//000188: 			}
+//000189: 
+//000190: 			// drop the device
+//000191: 
+//000192: 			device.Drop();
+    IL_02bd:  ldloc.2
+    IL_02be:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_02c3:  pop
+//000193: 		}
+    IL_02c4:  ret
+  } // end of method WinFormsUserControl::backgroundWorker_DoWork
+
+  .property instance bool IsRendering()
+  {
+    .get instance bool L08.WPFWindow.WinFormsUserControl::get_IsRendering()
+  } // end of property WinFormsUserControl::IsRendering
+  .property instance bool IsNotifyResizes()
+  {
+    .get instance bool L08.WPFWindow.WinFormsUserControl::get_IsNotifyResizes()
+    .set instance void L08.WPFWindow.WinFormsUserControl::set_IsNotifyResizes(bool)
+  } // end of property WinFormsUserControl::IsNotifyResizes
+} // end of class L08.WPFWindow.WinFormsUserControl
+
+.class public auto ansi beforefieldinit L08.WPFWindow.App
+       extends [PresentationFramework]System.Windows.Application
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 16 50 72 65 73 65 6E 74 61 74 69 6F 6E 42   // ...PresentationB
+                                                                                                  75 69 6C 64 54 61 73 6B 73 07 34 2E 30 2E 30 2E   // uildTasks.4.0.0.
+                                                                                                  30 00 00 )                                        // 0..
+  .method public hidebysig instance void 
+          InitializeComponent() cil managed
+  {
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       20 (0x14)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\obj\x86\Debug\App.g.cs' 
+//000048:         public void InitializeComponent() {
+    IL_0000:  nop
+// Source File 'c:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\App.xaml' 
+//000004:     StartupUri="MainWindow.xaml">
+    IL_0001:  ldarg.0
+    IL_0002:  ldstr      "MainWindow.xaml"
+    IL_0007:  ldc.i4.2
+    IL_0008:  newobj     instance void [System]System.Uri::.ctor(string,
+                                                                 valuetype [System]System.UriKind)
+    IL_000d:  call       instance void [PresentationFramework]System.Windows.Application::set_StartupUri(class [System]System.Uri)
+    IL_0012:  nop
+    IL_0013:  ret
+  } // end of method App::InitializeComponent
+
+  .method public hidebysig static void  Main() cil managed
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       22 (0x16)
+    .maxstack  1
+    .locals init ([0] class L08.WPFWindow.App app)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void L08.WPFWindow.App::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  callvirt   instance void L08.WPFWindow.App::InitializeComponent()
+    IL_000d:  nop
+    IL_000e:  ldloc.0
+    IL_000f:  callvirt   instance int32 [PresentationFramework]System.Windows.Application::Run()
+    IL_0014:  pop
+    IL_0015:  ret
+  } // end of method App::Main
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [PresentationFramework]System.Windows.Application::.ctor()
+    IL_0006:  ret
+  } // end of method App::.ctor
+
+} // end of class L08.WPFWindow.App
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

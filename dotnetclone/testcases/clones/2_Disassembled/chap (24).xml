@@ -1,0 +1,324 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldarg.0
+  IL_0002:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_bitmap
+  IL_0007:  brfalse.s  IL_0021
+  IL_0009:  ldarg.0
+  IL_000a:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_bitmap
+  IL_000f:  callvirt   instance int32 [System.Drawing]System.Drawing.Image::get_Width()
+  IL_0014:  ldarg.0
+  IL_0015:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::get_pbRenderedImage()
+  IL_001a:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+  IL_001f:  beq.s      IL_0023
+  IL_0021:  br.s       IL_003e
+  IL_0023:  ldarg.0
+  IL_0024:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_bitmap
+  IL_0029:  callvirt   instance int32 [System.Drawing]System.Drawing.Image::get_Height()
+  IL_002e:  ldarg.0
+  IL_002f:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::get_pbRenderedImage()
+  IL_0034:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+  IL_0039:  bne.un.s   IL_003e
+  IL_003b:  ldc.i4.0
+  IL_003c:  br.s       IL_003f
+  IL_003e:  ldc.i4.1
+  IL_003f:  stloc.1
+  IL_0040:  ldloc.1
+  IL_0041:  brfalse    IL_00fa
+  IL_0046:  ldarg.0
+  IL_0047:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_bitmap
+  IL_004c:  ldnull
+  IL_004d:  ceq
+  IL_004f:  ldc.i4.0
+  IL_0050:  ceq
+  IL_0052:  stloc.2
+  IL_0053:  ldloc.2
+  IL_0054:  brfalse.s  IL_006f
+  IL_0056:  ldarg.0
+  IL_0057:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::get_pbRenderedImage()
+  IL_005c:  ldnull
+  IL_005d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_Image(class [System.Drawing]System.Drawing.Image)
+  IL_0062:  nop
+  IL_0063:  ldarg.0
+  IL_0064:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_bitmap
+  IL_0069:  callvirt   instance void [System.Drawing]System.Drawing.Image::Dispose()
+  IL_006e:  nop
+  IL_006f:  nop
+  IL_0070:  ldarg.0
+  IL_0071:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::get_pbRenderedImage()
+  IL_0076:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+  IL_007b:  ldarg.0
+  IL_007c:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::get_pbRenderedImage()
+  IL_0081:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+  IL_0086:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                        int32)
+  IL_008b:  stloc.0
+  IL_008c:  ldarg.0
+  IL_008d:  ldloc.0
+  IL_008e:  stfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_width
+  IL_0093:  ldarg.0
+  IL_0094:  ldloc.0
+  IL_0095:  stfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_height
+  IL_009a:  ldarg.0
+  IL_009b:  ldarg.0
+  IL_009c:  dup
+  IL_009d:  ldvirtftn  instance int32[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_Lambda$__2()
+  IL_00a3:  newobj     instance void class [mscorlib]System.Func`1<int32[]>::.ctor(object,
+                                                                                   native int)
+  IL_00a8:  newobj     instance void class [ParallelExtensionsExtras]System.Collections.Concurrent.ObjectPool`1<int32[]>::.ctor(class [mscorlib]System.Func`1<!0>)
+  IL_00ad:  stfld      class [ParallelExtensionsExtras]System.Collections.Concurrent.ObjectPool`1<int32[]> Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_freeBuffers
+  IL_00b2:  ldarg.0
+  IL_00b3:  ldarg.0
+  IL_00b4:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_width
+  IL_00b9:  ldarg.0
+  IL_00ba:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_height
+  IL_00bf:  ldc.i4     0x22009
+  IL_00c4:  newobj     instance void [System.Drawing]System.Drawing.Bitmap::.ctor(int32,
+                                                                                  int32,
+                                                                                  valuetype [System.Drawing]System.Drawing.Imaging.PixelFormat)
+  IL_00c9:  stfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_bitmap
+  IL_00ce:  ldarg.0
+  IL_00cf:  ldflda     valuetype [System.Drawing]System.Drawing.Rectangle Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_rect
+  IL_00d4:  ldc.i4.0
+  IL_00d5:  ldc.i4.0
+  IL_00d6:  ldarg.0
+  IL_00d7:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_width
+  IL_00dc:  ldarg.0
+  IL_00dd:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_height
+  IL_00e2:  call       instance void [System.Drawing]System.Drawing.Rectangle::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32,
+                                                                                     int32)
+  IL_00e7:  nop
+  IL_00e8:  ldarg.0
+  IL_00e9:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::get_pbRenderedImage()
+  IL_00ee:  ldarg.0
+  IL_00ef:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Main::_bitmap
+  IL_00f4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_Image(class [System.Drawing]System.Drawing.Image)
+  IL_00f9:  nop
+  IL_00fa:  nop
+  IL_00fb:  nop
+  IL_00fc:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+ IL_0000:  ldnull
+  IL_0001:  stloc.0
+  IL_0002:  nop
+  IL_0003:  ldarg.0
+  IL_0004:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_bitmap
+  IL_0009:  brfalse.s  IL_003d
+  IL_000b:  ldarg.0
+  IL_000c:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_bitmap
+  IL_0011:  callvirt   instance int32 [System.Drawing]System.Drawing.Image::get_Width()
+  IL_0016:  ldarg.0
+  IL_0017:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::pbRenderedImage
+  IL_001c:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+  IL_0021:  bne.un.s   IL_003d
+  IL_0023:  ldarg.0
+  IL_0024:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_bitmap
+  IL_0029:  callvirt   instance int32 [System.Drawing]System.Drawing.Image::get_Height()
+  IL_002e:  ldarg.0
+  IL_002f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::pbRenderedImage
+  IL_0034:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+  IL_0039:  ceq
+  IL_003b:  br.s       IL_003e
+  IL_003d:  ldc.i4.0
+  IL_003e:  stloc.1
+  IL_003f:  ldloc.1
+  IL_0040:  brtrue     IL_00fe
+  IL_0045:  nop
+  IL_0046:  ldarg.0
+  IL_0047:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_bitmap
+  IL_004c:  ldnull
+  IL_004d:  ceq
+  IL_004f:  stloc.1
+  IL_0050:  ldloc.1
+  IL_0051:  brtrue.s   IL_006e
+  IL_0053:  nop
+  IL_0054:  ldarg.0
+  IL_0055:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::pbRenderedImage
+  IL_005a:  ldnull
+  IL_005b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_Image(class [System.Drawing]System.Drawing.Image)
+  IL_0060:  nop
+  IL_0061:  ldarg.0
+  IL_0062:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_bitmap
+  IL_0067:  callvirt   instance void [System.Drawing]System.Drawing.Image::Dispose()
+  IL_006c:  nop
+  IL_006d:  nop
+  IL_006e:  ldarg.0
+  IL_006f:  ldarg.0
+  IL_0070:  ldarg.0
+  IL_0071:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::pbRenderedImage
+  IL_0076:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+  IL_007b:  ldarg.0
+  IL_007c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::pbRenderedImage
+  IL_0081:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+  IL_0086:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                        int32)
+  IL_008b:  dup
+  IL_008c:  stloc.2
+  IL_008d:  stfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_height
+  IL_0092:  ldloc.2
+  IL_0093:  stfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_width
+  IL_0098:  ldarg.0
+  IL_0099:  ldloc.0
+  IL_009a:  brtrue.s   IL_00ab
+  IL_009c:  ldarg.0
+  IL_009d:  ldftn      instance int32[] Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::'<ConfigureImage>b__2'()
+  IL_00a3:  newobj     instance void class [mscorlib]System.Func`1<int32[]>::.ctor(object,
+                                                                                   native int)
+  IL_00a8:  stloc.0
+  IL_00a9:  br.s       IL_00ab
+  IL_00ab:  ldloc.0
+  IL_00ac:  newobj     instance void class [ParallelExtensionsExtras]System.Collections.Concurrent.ObjectPool`1<int32[]>::.ctor(class [mscorlib]System.Func`1<!0>)
+  IL_00b1:  stfld      class [ParallelExtensionsExtras]System.Collections.Concurrent.ObjectPool`1<int32[]> Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_freeBuffers
+  IL_00b6:  ldarg.0
+  IL_00b7:  ldarg.0
+  IL_00b8:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_width
+  IL_00bd:  ldarg.0
+  IL_00be:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_height
+  IL_00c3:  ldc.i4     0x22009
+  IL_00c8:  newobj     instance void [System.Drawing]System.Drawing.Bitmap::.ctor(int32,
+                                                                                  int32,
+                                                                                  valuetype [System.Drawing]System.Drawing.Imaging.PixelFormat)
+  IL_00cd:  stfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_bitmap
+  IL_00d2:  ldarg.0
+  IL_00d3:  ldc.i4.0
+  IL_00d4:  ldc.i4.0
+  IL_00d5:  ldarg.0
+  IL_00d6:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_width
+  IL_00db:  ldarg.0
+  IL_00dc:  ldfld      int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_height
+  IL_00e1:  newobj     instance void [System.Drawing]System.Drawing.Rectangle::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32,
+                                                                                     int32)
+  IL_00e6:  stfld      valuetype [System.Drawing]System.Drawing.Rectangle Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_rect
+  IL_00eb:  ldarg.0
+  IL_00ec:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::pbRenderedImage
+  IL_00f1:  ldarg.0
+  IL_00f2:  ldfld      class [System.Drawing]System.Drawing.Bitmap Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.MainForm::_bitmap
+  IL_00f7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_Image(class [System.Drawing]System.Drawing.Image)
+  IL_00fc:  nop
+  IL_00fd:  nop
+  IL_00fe:  nop
+  IL_00ff:  ret
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldarg.0
+  IL_0002:  ldfld      class [System.Drawing]System.Drawing.Bitmap Harness/RayTracerForm::bitmap
+  IL_0007:  ldnull
+  IL_0008:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericEqualityIntrinsic<class [System.Drawing]System.Drawing.Bitmap>(!!0,
+                                                                                                                                                                     !!0)
+  IL_000d:  brfalse.s  IL_0011
+  IL_000f:  br.s       IL_0013
+  IL_0011:  br.s       IL_0017
+  IL_0013:  ldc.i4.1
+  IL_0014:  nop
+  IL_0015:  br.s       IL_0037
+  IL_0017:  ldarg.0
+  IL_0018:  ldfld      class [System.Drawing]System.Drawing.Bitmap Harness/RayTracerForm::bitmap
+  IL_001d:  call       instance int32 [System.Drawing]System.Drawing.Image::get_Width()
+  IL_0022:  stloc.0
+  IL_0023:  ldarg.0
+  IL_0024:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Harness/RayTracerForm::pictureBox
+  IL_0029:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+  IL_002e:  stloc.1
+  IL_002f:  ldloc.0
+  IL_0030:  ldloc.1
+  IL_0031:  ceq
+  IL_0033:  ldc.i4.0
+  IL_0034:  ceq
+  IL_0036:  nop
+  IL_0037:  brfalse.s  IL_003b
+  IL_0039:  br.s       IL_003d
+  IL_003b:  br.s       IL_0041
+  IL_003d:  ldc.i4.1
+  IL_003e:  nop
+  IL_003f:  br.s       IL_0061
+  IL_0041:  ldarg.0
+  IL_0042:  ldfld      class [System.Drawing]System.Drawing.Bitmap Harness/RayTracerForm::bitmap
+  IL_0047:  call       instance int32 [System.Drawing]System.Drawing.Image::get_Height()
+  IL_004c:  stloc.2
+  IL_004d:  ldarg.0
+  IL_004e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Harness/RayTracerForm::pictureBox
+  IL_0053:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+  IL_0058:  stloc.3
+  IL_0059:  ldloc.2
+  IL_005a:  ldloc.3
+  IL_005b:  ceq
+  IL_005d:  ldc.i4.0
+  IL_005e:  ceq
+  IL_0060:  nop
+  IL_0061:  brfalse.s  IL_0065
+  IL_0063:  br.s       IL_006a
+  IL_0065:  br         IL_011f
+  IL_006a:  ldarg.0
+  IL_006b:  ldfld      class [System.Drawing]System.Drawing.Bitmap Harness/RayTracerForm::bitmap
+  IL_0070:  stloc.s    V_4
+  IL_0072:  ldnull
+  IL_0073:  stloc.s    V_5
+  IL_0075:  ldloc.s    V_4
+  IL_0077:  ldloc.s    V_5
+  IL_0079:  call       bool [FSharp.Core]Microsoft.FSharp.Core.LanguagePrimitives/HashCompare::GenericEqualityIntrinsic<class [System.Drawing]System.Drawing.Bitmap>(!!0,
+                                                                                                                                                                     !!0)
+  IL_007e:  ldc.i4.0
+  IL_007f:  ceq
+  IL_0081:  brfalse.s  IL_0085
+  IL_0083:  br.s       IL_0087
+  IL_0085:  br.s       IL_00a1
+  IL_0087:  ldarg.0
+  IL_0088:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Harness/RayTracerForm::pictureBox
+  IL_008d:  ldnull
+  IL_008e:  call       instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_Image(class [System.Drawing]System.Drawing.Image)
+  IL_0093:  ldarg.0
+  IL_0094:  ldfld      class [System.Drawing]System.Drawing.Bitmap Harness/RayTracerForm::bitmap
+  IL_0099:  callvirt   instance void [System.Drawing]System.Drawing.Image::Dispose()
+  IL_009e:  nop
+  IL_009f:  br.s       IL_00a2
+  IL_00a1:  nop
+  IL_00a2:  ldarg.0
+  IL_00a3:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Harness/RayTracerForm::pictureBox
+  IL_00a8:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Width()
+  IL_00ad:  ldarg.0
+  IL_00ae:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Harness/RayTracerForm::pictureBox
+  IL_00b3:  call       instance int32 [System.Windows.Forms]System.Windows.Forms.Control::get_Height()
+  IL_00b8:  call       int32 [mscorlib]System.Math::Min(int32,
+                                                        int32)
+  IL_00bd:  call       void Harness::set_width(int32)
+  IL_00c2:  call       int32 Harness::get_width()
+  IL_00c7:  call       void Harness::set_height(int32)
+  IL_00cc:  ldarg.0
+  IL_00cd:  newobj     instance void Harness/'clo@128-2'::.ctor()
+  IL_00d2:  newobj     instance void class Harness/ObjectPool`1<int32[]>::.ctor(class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<class [FSharp.Core]Microsoft.FSharp.Core.Unit,!0>)
+  IL_00d7:  stfld      class Harness/ObjectPool`1<int32[]> Harness/RayTracerForm::buffers
+  IL_00dc:  ldarg.0
+  IL_00dd:  call       int32 Harness::get_width()
+  IL_00e2:  call       int32 Harness::get_height()
+  IL_00e7:  ldc.i4     0x22009
+  IL_00ec:  newobj     instance void [System.Drawing]System.Drawing.Bitmap::.ctor(int32,
+                                                                                  int32,
+                                                                                  valuetype [System.Drawing]System.Drawing.Imaging.PixelFormat)
+  IL_00f1:  stfld      class [System.Drawing]System.Drawing.Bitmap Harness/RayTracerForm::bitmap
+  IL_00f6:  ldarg.0
+  IL_00f7:  ldc.i4.0
+  IL_00f8:  ldc.i4.0
+  IL_00f9:  call       int32 Harness::get_width()
+  IL_00fe:  call       int32 Harness::get_height()
+  IL_0103:  newobj     instance void [System.Drawing]System.Drawing.Rectangle::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32,
+                                                                                     int32)
+  IL_0108:  stfld      valuetype [System.Drawing]System.Drawing.Rectangle Harness/RayTracerForm::rect
+  IL_010d:  ldarg.0
+  IL_010e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.PictureBox Harness/RayTracerForm::pictureBox
+  IL_0113:  ldarg.0
+  IL_0114:  ldfld      class [System.Drawing]System.Drawing.Bitmap Harness/RayTracerForm::bitmap
+  IL_0119:  call       instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_Image(class [System.Drawing]System.Drawing.Image)
+  IL_011e:  ret
+  IL_011f:  ret
+
+]]></source>
+</source_elements></project>

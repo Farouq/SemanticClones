@@ -1,0 +1,584 @@
+<clones  >
+<clone_pair groupid="164" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\FormFlattening.cs" startline="9" endline="16">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Flatten fields.");
+ 
+ 		PdfReader reader = new PdfReader("AcroForm.pdf");
+ 		PdfStamper stamper = new PdfStamper(reader, new FileStream("Flattened.pdf", FileMode.Create));
+ 		stamper.setFormFlattening(true);
+ 		stamper.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 7 example 3
+ 
+         ' step 1
+         Dim Document As New Document(PageSize.A4, 80, 50, 30, 65)
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a XML-stream to a file
+         PdfWriter.getInstance(Document, New FileOutputStream("Chap0703.pdf"))
+ 
+         ' step 3
+         Dim parser As SAXParser = SAXParserFactory.newInstance().newSAXParser()
+ 
+         ' step 4
+         parser.parse("Chap0703.xml", New SAXmyHandler(Document, New TagMap("tagmap0703.xml")))
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="178" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 1
+ 
+         ' step 1
+         Dim document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileStream("Chap0101.pdf", FileMode.Create))
+ 
+         ' step 3
+         document.open()
+ 
+         ' step 4
+         document.add(New Paragraph("Hello World"))
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 1 example 1
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0101.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+ 
+ 		// step 4
+ 		document.add(new Paragraph("Hello World"));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="179" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 1
+ 
+         ' step 1
+         Dim document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileStream("Chap0101.pdf", FileMode.Create))
+ 
+         ' step 3
+         document.open()
+ 
+         ' step 4
+         document.add(New Paragraph("Hello World"))
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 8 example 1
+ 
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 
+ 		RtfWriter.getInstance(document, new FileStream("Chap0801.rtf", FileMode.Create));
+         
+ 		// step 3
+ 		document.open();
+         
+ 		// step 4
+ 		document.add(new Paragraph("Hello World"));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="202" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\MainModule.cs" startline="112" endline="121">
+<![CDATA[
+ 	
+ 	private static void copyFiles(string[] filenames, String destDir) 
+ 	{
+ 		foreach (string filename in filenames)
+ 		{
+ 			System.IO.File.Copy(filename, 
+ 				Path.Combine(destDir, 
+ 				Path.GetFileName(filename)), true);
+ 		}
+ 		foreach (string filename in filenames)
+ 		{
+ 			System.IO.File.Copy(filename, 
+ 				Path.Combine(destDir, 
+ 				Path.GetFileName(filename)), true);
+ 		}
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="82" endline="92">
+<![CDATA[
+ 
+     Public Const InputFilesDirectory As String = "Inputs"
+     Private Shared exeExts As ArrayList
+ 
+     Private Shared Sub deleteNonExecutables(ByVal dir As String)
+         For Each f As String In Directory.GetFiles(dir)
+             If Not exeExts.Contains(Path.GetExtension(f)) Then
+                 File.Delete(f)
+             End If
+         Next
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="336" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="32" endline="43">
+<![CDATA[
+ 
+     Private Shared Sub ExecuteExample(ByVal Typ As Type, ByVal Name As String, ByVal Arguments As Object())
+         Try
+             Call Typ.InvokeMember(Name, BindingFlags.InvokeMethod, Nothing, Nothing, Arguments)
+         Catch ee As Exception
+             If StopOnError Then
+                 Throw ee
+             Else
+                 Console.WriteLine(ee.Message)
+             End If
+ 		end try
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\MainModule.cs" startline="26" endline="39">
+<![CDATA[
+ 	private static void ExecuteExample(Type type, string name, object[] arguments)
+ 	{
+ 		try
+ 		{
+ 			type.InvokeMember(name, BindingFlags.InvokeMethod, null, null, arguments);
+ 		}
+ 		catch (TargetInvocationException ee)
+ 		{
+ 			Exception e = ee.GetBaseException();
+ 			Console.WriteLine(e.Message + "\n" + e.StackTrace);
+ 			if (StopOnError)
+ 				throw e;
+ 		}
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="339" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 3
+ 
+         ' step 1
+         Dim document As New Document(PageSize.A4.rotate())
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileOutputStream("Chap0103.pdf"))
+ 
+         ' step 3
+         document.open()
+ 
+         ' step 4
+         Dim i As Integer
+         For i = 0 To 20
+             document.add(New Phrase("Hello World, Hello Sun, Hello Moon, Hello Stars, Hello Sea, Hello Land, Hello People. "))
+         Next
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0610.cs" startline="24" endline="51">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 6 example 10
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap0610.pdf", FileMode.Create));
+         
+ 		// step 3
+ 		document.open();
+         
+ 		// step 4
+ 		for (int i = 0; i < 300; i++) 
+ 		{
+ 			document.add(new Phrase("Who is this? "));
+ 		}
+ 		for (int i = 0; i < 300; i++) 
+ 		{
+ 			document.add(new Phrase("Who is this? "));
+ 		}
+ 		PdfContentByte cb = writer.getDirectContent();
+ 			
+ 		Image image = Image.getInstance(new System.Drawing.Bitmap("H.gif"));
+ 		image.setAbsolutePosition(100, 200);
+ 		cb.addImage(image);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="340" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 3
+ 
+         ' step 1
+         Dim document As New Document(PageSize.A4.rotate())
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileOutputStream("Chap0103.pdf"))
+ 
+         ' step 3
+         document.open()
+ 
+         ' step 4
+         Dim i As Integer
+         For i = 0 To 20
+             document.add(New Phrase("Hello World, Hello Sun, Hello Moon, Hello Stars, Hello Sea, Hello Land, Hello People. "))
+         Next
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1110.cs" startline="24" endline="48">
+<![CDATA[
+ 	{
+     	Console.WriteLine("Chapter 11 example 10
+     
+ 		// step 1
+ 		Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1110.pdf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		// we add some content
+ 		for (int k = 1; k <= 10; ++k) 
+ 		{
+ 			document.add(new Paragraph("This document has the logical page numbers
+ 			document.newPage();
+ 		}
+ 		for (int k = 1; k <= 10; ++k) 
+ 		{
+ 			document.add(new Paragraph("This document has the logical page numbers
+ 			document.newPage();
+ 		}
+ 		PdfPageLabels pageLabels = new PdfPageLabels();
+ 		pageLabels.addPageLabel(1, PdfPageLabels.LOWERCASE_ROMAN_NUMERALS);
+ 		pageLabels.addPageLabel(5, PdfPageLabels.DECIMAL_ARABIC_NUMERALS);
+ 		pageLabels.addPageLabel(8, PdfPageLabels.DECIMAL_ARABIC_NUMERALS, "A-", 8);
+ 		writer.setPageLabels(pageLabels);
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="358" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0905.cs" startline="24" endline="52">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 9 example 5
+         
+ 		// step 1
+ 		Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+ 	        
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+             
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap0905.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+ 		BaseFont bf = BaseFont.createFont("Helvetica", "winansi", false, false, (byte[])null, (byte[])null);
+ 		int[] widths = bf.getWidths();
+ 		for (int k = 0; k < widths.Length; ++k) 
+ 		{
+ 			if (widths[k] != 0)
+ 				widths[k] = 1000;
+ 		}
+ 		for (int k = 0; k < widths.Length; ++k) 
+ 		{
+ 			if (widths[k] != 0)
+ 				widths[k] = 1000;
+ 		}
+ 		bf.setForceWidthsOutput(true);
+ 		document.add(new Paragraph("A big text to show Helvetica with fixed width.", new Font(bf)));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="44" endline="81">
+<![CDATA[
+ 
+     Private Shared StopOnError As Boolean = False
+ 
+     Public Shared Sub Main(ByVal args As String())
+         Dim ClassName As String = Nothing
+         Dim aargs(args.Length) As String
+ 
+         Dim i As Integer
+ 
+         For i = 0 To args.Length - 1
+             aargs(i) = args(i)
+         Next
+         aargs(args.Length) = String.Empty
+         args = aargs
+ 
+         For i = 0 To args.Length - 1
+             Dim opt As String = args(i)
+             If opt = String.Empty Then GoTo 100
+             If Left$(opt, 1) = "/" Then
+                 Dim uopt As String = opt.ToUpper()
+                 If uopt = "/STOP-ON-ERROR" Then
+                     StopOnError = True
+                 Else
+                     Throw New ArgumentException("ArgumentException", opt)
+                 End If
+             Else
+                 ClassName = opt
+             End If
+ 100
+         Next
+         If ClassName = Nothing Then ClassName = "All"
+ 
+         If ClassName = "All" Then
+             Call ExecuteAllExamples()
+         Else
+             Call ExecuteExample(ClassName)
+         End If
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="365" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0609.cs" startline="24" endline="67">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 6 example 9
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+         
+ 		PdfWriter.getInstance(document, new FileStream("Chap0609.pdf", FileMode.Create));
+         
+ 		// step 3
+ 		document.open();
+         
+ 		// step 4
+ 		// creation a jpeg passed as an array of bytes to the Image
+ 		FileStream fs = File.OpenRead("myKids.jpg");
+ 		int size = (int)fs.Length;
+ 		byte[] imext = new byte[size];
+ 		fs.Read(imext, 0, size);
+ 		fs.Close();
+ 		Image img1 = Image.getInstance(imext);
+ 		img1.setAbsolutePosition(50, 500);
+ 		document.add(img1);
+         
+ 		// creation of an image of 100 x 100 pixels (x 3 bytes for the Red, Green and Blue value)
+ 		byte[] data = new byte[100*100*3];
+ 		for (int k = 0; k < 100; ++k) 
+ 		{
+ 			for (int j = 0; j < 300; j += 3) 
+ 			{
+ 				data[k * 300 + j] = (byte)(255 * Math.Sin(j * .5 * Math.PI / 300));
+ 				data[k * 300 + j + 1] = (byte)(256 - j * 256 / 300);
+ 				data[k * 300 + j + 2] = (byte)(255 * Math.Cos(k * .5 * Math.PI / 100));
+ 			}
+ 			for (int j = 0; j < 300; j += 3) 
+ 			{
+ 				data[k * 300 + j] = (byte)(255 * Math.Sin(j * .5 * Math.PI / 300));
+ 				data[k * 300 + j + 1] = (byte)(256 - j * 256 / 300);
+ 				data[k * 300 + j + 2] = (byte)(255 * Math.Cos(k * .5 * Math.PI / 100));
+ 			}
+ 		}
+ 		for (int k = 0; k < 100; ++k) 
+ 		{
+ 			for (int j = 0; j < 300; j += 3) 
+ 			{
+ 				data[k * 300 + j] = (byte)(255 * Math.Sin(j * .5 * Math.PI / 300));
+ 				data[k * 300 + j + 1] = (byte)(256 - j * 256 / 300);
+ 				data[k * 300 + j + 2] = (byte)(255 * Math.Cos(k * .5 * Math.PI / 100));
+ 			}
+ 		}
+ 		Image img2 = Image.getInstance(100, 100, 3, 8, data);
+ 		img2.setAbsolutePosition(200, 200);
+ 		document.add(img2);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0209.vb" startline="74" endline="155">
+<![CDATA[
+ End Class
+ 
+ Public Class Chap0209
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 9
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0209.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         ' we create an Event and add it to the writer
+         Dim pageEvent As New Glossary()
+         Writer.setPageEvent(pageEvent)
+ 
+         ' we add some content
+         Dim f(13) As String
+         f(0) = "Courier"
+         f(1) = "Courier Bold"
+         f(2) = "Courier Italic"
+         f(3) = "Courier Bold Italic"
+         f(4) = "Helvetica"
+         f(5) = "Helvetica bold"
+         f(6) = "Helvetica italic"
+         f(7) = "Helvetica bold italic"
+         f(8) = "Times New Roman"
+         f(9) = "Times New Roman bold"
+         f(10) = "Times New Roman italic"
+         f(11) = "Times New Roman bold italic"
+         f(12) = "Symbol"
+         f(13) = "Zapfdingbats"
+ 
+         Dim fonts(13) As Font
+         fonts(0) = FontFactory.getFont(FontFactory.COURIER, 12, Font.NORMAL)
+         fonts(1) = FontFactory.getFont(FontFactory.COURIER, 12, Font.BOLD)
+         fonts(2) = FontFactory.getFont(FontFactory.COURIER, 12, Font.ITALIC)
+         fonts(3) = FontFactory.getFont(FontFactory.COURIER, 12, Font.BOLD Or Font.ITALIC)
+         fonts(4) = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL)
+         fonts(5) = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.BOLD)
+         fonts(6) = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.ITALIC)
+         fonts(7) = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.BOLD Or Font.ITALIC)
+         fonts(8) = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL)
+         fonts(9) = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD)
+         fonts(10) = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.ITALIC)
+         fonts(11) = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD Or Font.ITALIC)
+         fonts(12) = FontFactory.getFont(FontFactory.SYMBOL, 12, Font.NORMAL)
+         fonts(13) = FontFactory.getFont(FontFactory.ZAPFDINGBATS, 12, Font.NORMAL)
+ 
+         Dim i As Integer
+         For i = 0 To 13
+             Dim chunk As New Chunk("This is font ", fonts(i))
+             Dim p As New Paragraph(chunk)
+             p.add(New Phrase(New Chunk(f(i), fonts(i)).setGenericTag(f(i))))
+             Document.add(p)
+             If i Mod 4 = 3 Then
+                 Document.newPage()
+             End If
+         Next
+ 
+         ' we add the glossary
+         Document.newPage()
+         Dim Glossary As TreeMap = pageEvent.getGlossary()
+         Dim it As Iterator = Glossary.keySet().iterator()
+         While it.hasNext()
+             Dim key As String = DirectCast(it.next(), String)
+             Dim page As Integer = DirectCast(Glossary.get(key), Integer)
+             Dim g As New Paragraph(key)
+             g.add(" 
+             g.add(CStr(page))
+             Document.add(g)
+         End While
+         While it.hasNext()
+             Dim key As String = DirectCast(it.next(), String)
+             Dim page As Integer = DirectCast(Glossary.get(key), Integer)
+             Dim g As New Paragraph(key)
+             g.add(" 
+             g.add(CStr(page))
+             Document.add(g)
+         End While
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

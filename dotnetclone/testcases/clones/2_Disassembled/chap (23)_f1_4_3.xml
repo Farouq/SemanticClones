@@ -1,0 +1,683 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  ldc.r8     0.90000000000000002
+  stloc
+  ldarg.0
+  call       instance int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::ToInt32()
+  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32)
+  stloc
+  ldloca.s   VB$t_struct$S0
+  call       instance float32 [System.Drawing]System.Drawing.Color::GetBrightness()
+  conv.r8
+  ldc.r8     0.5
+  sub
+  ldc.r8     0.5
+  mul
+  ldc.r8     0.5
+  add
+  stloc
+  ldarg.1
+  stloc
+  ldloc
+  ldc.r8     0.0
+  ceq
+  stloc
+  ldloc
+brfalse.s
+  ldarg.0
+  ldc.r8     0.0
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  ldarg.0
+  ldc.r8     0.0
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  ldarg.0
+  ldc.r8     0.0
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+br
+  ldloc
+  ldc.r8     0.0
+  ceq
+  stloc
+  ldloc
+brfalse.s
+  ldarg.0
+  ldloc
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  ldarg.0
+  ldloc
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  ldarg.0
+  ldloc
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+br
+  nop
+  ldloc
+  ldc.r8     0.5
+ble.s
+  ldloc
+  ldloc
+  add
+  ldloc
+  ldloc
+  mul
+  sub
+br.s
+  ldloc
+  ldc.r8     1.
+  ldloc
+  add
+  mul
+  stloc
+  ldc.r8     2.
+  ldloc
+  mul
+  ldloc
+  sub
+  stloc
+  ldc.i4
+  newarr     [mscorlib]System.Double
+  stloc
+  ldloc
+  ldc.i4
+  ldloc
+  ldc.r8     0.33333333333333331
+  add
+  stelem.r8
+  ldloc
+  ldc.i4
+  ldloc
+  stelem.r8
+  ldloc
+  ldc.i4
+  ldloc
+  ldc.r8     0.33333333333333331
+  sub
+  stelem.r8
+  ldloc
+  stloc
+  ldc.i4
+  newarr     [mscorlib]System.Double
+  stloc
+  ldloc
+  ldc.i4
+  ldc.r8     0.0
+  stelem.r8
+  ldloc
+  ldc.i4
+  ldc.r8     0.0
+  stelem.r8
+  ldloc
+  ldc.i4
+  ldc.r8     0.0
+  stelem.r8
+  ldloc
+  stloc
+  ldc.i4
+  stloc
+  ldloc
+  ldloc
+  ldelem.r8
+  ldc.r8     0.0
+  clt
+  stloc
+  ldloc
+brfalse.s
+  ldloc
+  stloc
+  ldloc
+  ldloc
+  stloc
+  ldloc
+  ldloc
+  ldloc
+  ldelem.r8
+  ldc.r8     1.
+  add
+  stelem.r8
+  ldloc
+  ldloc
+  ldelem.r8
+  ldc.r8     1.
+  cgt
+  stloc
+  ldloc
+brfalse.s
+  ldloc
+  stloc
+  ldloc
+  ldloc
+  stloc
+  ldloc
+  ldloc
+  ldloc
+  ldelem.r8
+  ldc.r8     1.
+  sub
+  stelem.r8
+  ldc.r8     6.
+  ldloc
+  ldloc
+  ldelem.r8
+  mul
+  ldc.r8     1.
+  clt
+  stloc
+  ldloc
+brfalse.s
+  ldloc
+  ldloc
+  ldloc
+  ldloc
+  ldloc
+  sub
+  ldloc
+  ldloc
+  ldelem.r8
+  mul
+  ldc.r8     6.
+  mul
+  add
+  stelem.r8
+br.s
+  ldc.r8     2.
+  ldloc
+  ldloc
+  ldelem.r8
+  mul
+  ldc.r8     1.
+  clt
+  stloc
+  ldloc
+brfalse.s
+  ldloc
+  ldloc
+  ldloc
+  stelem.r8
+br.s
+  ldc.r8     3.
+  ldloc
+  ldloc
+  ldelem.r8
+  mul
+  ldc.r8     2.
+  clt
+  stloc
+  ldloc
+brfalse.s
+  ldloc
+  ldloc
+  ldloc
+  ldloc
+  ldloc
+  sub
+  ldc.r8     0.66666666666666663
+  ldloc
+  ldloc
+  ldelem.r8
+  sub
+  mul
+  ldc.r8     6.
+  mul
+  add
+  stelem.r8
+br.s
+  nop
+  ldloc
+  ldloc
+  ldloc
+  stelem.r8
+  nop
+  nop
+  ldloc
+  ldc.i4
+  add.ovf
+  stloc
+  ldloc
+  ldc.i4
+  stloc
+  ldloc
+ble
+  ldarg.0
+  ldloc
+  ldc.i4
+  ldelem.r8
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  ldarg.0
+  ldloc
+  ldc.i4
+  ldelem.r8
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  ldarg.0
+  ldloc
+  ldc.i4
+  ldelem.r8
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+  nop
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldarg.0
+  call       instance int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::ToInt32()
+  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32)
+  stloc
+  ldloca.s   c
+  call       instance float32 [System.Drawing]System.Drawing.Color::GetSaturation()
+  conv.r8
+  stloc
+  ldloca.s   c
+  call       instance float32 [System.Drawing]System.Drawing.Color::GetBrightness()
+  conv.r8
+  stloc
+  ldloca.s   c
+  call       instance float32 [System.Drawing]System.Drawing.Color::GetHue()
+  conv.r8
+  stloc
+  ldarg.1
+  stloc
+  ldc.r8     0.90000000000000002
+  stloc
+  ldloc
+  ldc.r8     0.5
+  sub
+  ldc.r8     0.5
+  mul
+  ldc.r8     0.5
+  add
+  stloc
+  ldloc
+  ldc.r8     0.0
+  ceq
+  ldc.i4
+  ceq
+  stloc
+  ldloc
+brtrue.s
+  nop
+  ldarg.0
+  ldarg.0
+  ldarg.0
+  ldc.r8     0.0
+  dup
+  stloc
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+  ldloc
+  dup
+  stloc
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  ldloc
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  nop
+br
+  nop
+  ldloc
+  ldc.r8     0.0
+  ceq
+  ldc.i4
+  ceq
+  stloc
+  ldloc
+brtrue.s
+  nop
+  ldarg.0
+  ldarg.0
+  ldarg.0
+  ldloc
+  dup
+  stloc
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+  ldloc
+  dup
+  stloc
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  ldloc
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  nop
+br
+  nop
+  ldloc
+  ldc.r8     0.5
+ble.s
+  ldloc
+  ldloc
+  add
+  ldloc
+  ldloc
+  mul
+  sub
+br.s
+  ldloc
+  ldc.r8     1.
+  ldloc
+  add
+  mul
+  stloc
+  ldc.r8     2.
+  ldloc
+  mul
+  ldloc
+  sub
+  stloc
+  ldc.i4
+  newarr     [mscorlib]System.Double
+  stloc
+  ldloc
+  ldc.i4
+  ldloc
+  ldc.r8     0.33333333333333331
+  add
+  stelem.r8
+  ldloc
+  ldc.i4
+  ldloc
+  stelem.r8
+  ldloc
+  ldc.i4
+  ldloc
+  ldc.r8     0.33333333333333331
+  sub
+  stelem.r8
+  ldloc
+  stloc
+  ldc.i4
+  newarr     [mscorlib]System.Double
+  stloc
+  ldloc
+  stloc
+  ldc.i4
+  stloc
+br
+  nop
+  ldloc
+  ldloc
+  ldelem.r8
+  ldc.r8     0.0
+  clt
+  ldc.i4
+  ceq
+  stloc
+  ldloc
+brtrue.s
+  ldloc
+  ldloc
+  ldelema    [mscorlib]System.Double
+  dup
+  ldobj      [mscorlib]System.Double
+  ldc.r8     1.
+  add
+  stobj      [mscorlib]System.Double
+  ldloc
+  ldloc
+  ldelem.r8
+  ldc.r8     1.
+  cgt
+  ldc.i4
+  ceq
+  stloc
+  ldloc
+brtrue.s
+  ldloc
+  ldloc
+  ldelema    [mscorlib]System.Double
+  dup
+  ldobj      [mscorlib]System.Double
+  ldc.r8     1.
+  sub
+  stobj      [mscorlib]System.Double
+  ldc.r8     6.
+  ldloc
+  ldloc
+  ldelem.r8
+  mul
+  ldc.r8     1.
+  clt
+  ldc.i4
+  ceq
+  stloc
+  ldloc
+brtrue.s
+  ldloc
+  ldloc
+  ldloc
+  ldloc
+  ldloc
+  sub
+  ldloc
+  ldloc
+  ldelem.r8
+  mul
+  ldc.r8     6.
+  mul
+  add
+  stelem.r8
+br.s
+  ldc.r8     2.
+  ldloc
+  ldloc
+  ldelem.r8
+  mul
+  ldc.r8     1.
+  clt
+  ldc.i4
+  ceq
+  stloc
+  ldloc
+brtrue.s
+  ldloc
+  ldloc
+  ldloc
+  stelem.r8
+br.s
+  ldc.r8     3.
+  ldloc
+  ldloc
+  ldelem.r8
+  mul
+  ldc.r8     2.
+  clt
+  ldc.i4
+  ceq
+  stloc
+  ldloc
+brtrue.s
+  ldloc
+  ldloc
+  ldloc
+  ldloc
+  ldloc
+  sub
+  ldc.r8     0.66666666666666663
+  ldloc
+  ldloc
+  ldelem.r8
+  sub
+  mul
+  ldc.r8     6.
+  mul
+  add
+  stelem.r8
+br.s
+  ldloc
+  ldloc
+  ldloc
+  stelem.r8
+  nop
+  ldloc
+  ldc.i4
+  add
+  stloc
+  ldloc
+  ldc.i4
+  clt
+  stloc
+  ldloc
+brtrue
+  ldarg.0
+  ldloc
+  ldc.i4
+  ldelem.r8
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  ldarg.0
+  ldloc
+  ldc.i4
+  ldelem.r8
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  ldarg.0
+  ldloc
+  ldc.i4
+  ldelem.r8
+  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+  nop
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldarg.0
+  call       instance valuetype [System.Drawing]System.Drawing.Color Raytracer_FSharp/Color::ToDrawingColor()
+  stloc
+  ldarg.1
+  ldc.r8     0.90000000000000002
+  ldloca.s   c
+  call       instance float32 [System.Drawing]System.Drawing.Color::GetBrightness()
+  conv.r8
+  ldc.r8     0.5
+  sub
+  ldc.r8     0.5
+  mul
+  ldc.r8     0.5
+  add
+  newobj     instance void class [mscorlib]System.Tuple`3<float64,float64,float64>::.ctor(!0,
+                                                                                                    !1,
+                                                                                                    !2)
+  stloc
+  ldloc
+  call       instance !1 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item2()
+  stloc
+  ldloc
+  call       instance !2 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item3()
+  stloc
+  ldloc
+  call       instance !0 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item1()
+  stloc
+  ldloc
+  ldloc
+  newobj     instance void class [mscorlib]System.Tuple`2<float64,float64>::.ctor(!0,
+                                                                                            !1)
+  stloc
+  ldloc
+  call       instance !1 class [mscorlib]System.Tuple`2<float64,float64>::get_Item2()
+  ldc.r8     0.0
+  ceq
+brfalse.s
+br.s
+  ldloc
+  call       instance !0 class [mscorlib]System.Tuple`2<float64,float64>::get_Item1()
+  ldc.r8     0.0
+  ceq
+brfalse.s
+br.s
+br.s
+  ldc.r8     0.0
+  ldc.r8     0.0
+  ldc.r8     0.0
+  newobj     instance void Raytracer_FSharp/Color::.ctor(float64,
+                                                                   float64,
+                                                                   float64)
+  ret
+  ldloc
+  ldloc
+  ldloc
+  newobj     instance void Raytracer_FSharp/Color::.ctor(float64,
+                                                                   float64,
+                                                                   float64)
+  ret
+  ldloc
+  call       instance !0 class [mscorlib]System.Tuple`2<float64,float64>::get_Item1()
+  stloc
+  ldloc
+  call       instance !1 class [mscorlib]System.Tuple`2<float64,float64>::get_Item2()
+  stloc
+  nop
+  ldloc
+  stloc
+  ldc.r8     0.5
+  stloc
+  ldloc
+  ldloc
+  cgt.un
+  ldc.i4
+  ceq
+brfalse.s
+br.s
+br.s
+  ldloc
+  ldc.r8     1.
+  ldloc
+  add
+  mul
+  nop
+br.s
+  ldloc
+  ldloc
+  add
+  ldloc
+  ldloc
+  mul
+  sub
+  nop
+  stloc
+  ldc.r8     2.
+  ldloc
+  mul
+  ldloc
+  sub
+  stloc
+  ldloc
+  ldloc
+  newobj     instance void Raytracer_FSharp/convert@55::.ctor(float64,
+                                                                        float64)
+  stloc
+  ldloc
+  ldloc
+  ldc.r8     1.
+  ldc.r8     3.
+  div
+  add
+  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<float64,float64>::Invoke(!0)
+  ldloc
+  ldloc
+  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<float64,float64>::Invoke(!0)
+  ldloc
+  ldloc
+  ldc.r8     1.
+  ldc.r8     3.
+  div
+  sub
+  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<float64,float64>::Invoke(!0)
+  newobj     instance void class [mscorlib]System.Tuple`3<float64,float64,float64>::.ctor(!0,
+                                                                                                    !1,
+                                                                                                    !2)
+  stloc
+  ldloc
+  call       instance !2 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item3()
+  stloc
+  ldloc
+  call       instance !1 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item2()
+  stloc
+  ldloc
+  call       instance !0 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item1()
+  stloc
+  ldloc
+  ldloc
+  ldloc
+  newobj     instance void Raytracer_FSharp/Color::.ctor(float64,
+                                                                   float64,
+                                                                   float64)
+
+]]></source>
+</source_elements></project>

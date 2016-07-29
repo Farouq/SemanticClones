@@ -1,0 +1,273 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  newobj     instance void EditDistance.Program/_Closure$__1::.ctor()
+  stloc.0
+  ldloc.0
+  ldarg.1
+  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  ldloc.0
+  ldarg.0
+  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  ldloc.0
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+ldc.i4.1
+  add.ovf
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+ldc.i4.1
+  add.ovf
+  newobj     instance void int32[0...,0...]::.ctor(int32,
+                                                             int32)
+  stfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+ldc.i4.0
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  stloc.s    VB$t_i4$L0
+  stloc.3
+br.s
+  ldloc.0
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldloc.3
+ldc.i4.0
+  ldloc.3
+  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  nop
+  ldloc.3
+ldc.i4.1
+  add.ovf
+  stloc.3
+  ldloc.3
+  ldloc.s    VB$t_i4$L0
+  stloc.s    VB$CG$t_i4$S0
+  ldloc.s    VB$CG$t_i4$S0
+ble.s
+ldc.i4.0
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  stloc.s    VB$t_i4$L1
+  stloc.s    j
+br.s
+  ldloc.0
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+ldc.i4.0
+  ldloc.s    j
+  ldloc.s    j
+  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  nop
+  ldloc.s    j
+ldc.i4.1
+  add.ovf
+  stloc.s    j
+  ldloc.s    j
+  ldloc.s    VB$t_i4$L1
+  stloc.s    VB$CG$t_i4$S0
+  ldloc.s    VB$CG$t_i4$S0
+ble.s
+  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+ldc.i4.4
+  mul.ovf
+  stloc.1
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc.1
+  ldloc.1
+  ldloc.0
+  dup
+  ldvirtftn  instance void EditDistance.Program/_Closure$__1::_Lambda$__1(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+  newobj     instance void class [mscorlib]System.Action`4<int32,int32,int32,int32>::.ctor(object,
+                                                                                                     native int)
+  call       void [ParallelExtensionsExtras]System.Threading.Algorithms.ParallelAlgorithms::Wavefront(int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                class [mscorlib]System.Action`4<int32,int32,int32,int32>)
+  nop
+  ldloc.0
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                            int32)
+  stloc.2
+br.s
+  ldloc.2
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldstr      "Chapter 12 example 1: page events"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+ldc.r4
+ldc.r4
+ldc.r4
+ldc.r4
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  stloc.0
+  ldloc.0
+  ldstr      "Chap1201.pdf"
+ldc.i4.2
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  stloc.1
+  newobj     instance void MyPageEvents::.ctor()
+  stloc.2
+  ldloc.1
+  ldloc.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setPageEvent(class [iTextdotNET]com.lowagie.text.pdf.PdfPageEvent)
+  nop
+  call       class [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory::newInstance()
+  callvirt   instance class [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParser [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory::newSAXParser()
+  stloc.3
+  ldloc.3
+  ldstr      "Chap0703.xml"
+  ldloc.0
+  ldstr      "tagmap0703.xml"
+  newobj     instance void MyMap::.ctor(string)
+  newobj     instance void MyHandler::.ctor(class [iTextdotNET]com.lowagie.text.Document,
+                                                      class [Gnu.Classpath.Core]jp.ujihara.java.util.HashMap)
+  callvirt   instance void [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParser::parse(string,
+                                                                                                       class [Gnu.Classpath.JAXP]org.xml.sax.helpers.DefaultHandler)
+  nop
+  ldloc.0
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.2
+  callvirt   instance class [Gnu.Classpath.Core]jp.ujihara.java.util.TreeSet MyPageEvents::getSpeakers()
+  callvirt   instance class [Gnu.Classpath.Core]jp.ujihara.java.util.Iterator [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::iterator()
+  stloc.s    i
+br.s
+  nop
+  ldloc.s    i
+  callvirt   instance object [vjslib]java.util.Iterator::next()
+  castclass  Speaker
+  stloc.s    speaker
+  ldloc.0
+ldc.i4.4
+  newarr     [mscorlib]System.Object
+  stloc.s    CS$0$0000
+  ldloc.s    CS$0$0000
+ldc.i4.0
+  ldloc.s    speaker
+  callvirt   instance string Speaker::name()
+  stelem.ref
+  ldloc.s    CS$0$0000
+ldc.i4.1
+  ldstr      ": "
+  stelem.ref
+  ldloc.s    CS$0$0000
+ldc.i4.2
+  ldloc.s    speaker
+  callvirt   instance int32 Speaker::occurrance()
+  box        [mscorlib]System.Int32
+  stelem.ref
+  ldloc.s    CS$0$0000
+ldc.i4.3
+  ldstr      " speech blocks"
+  stelem.ref
+  ldloc.s    CS$0$0000
+  call       string [mscorlib]System.String::Concat(object[])
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  nop
+  ldloc.s    i
+  callvirt   instance bool [vjslib]java.util.Iterator::hasNext()
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 7 example 3: parsing an XML document with "
+  + "custom tags"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+ldc.r4
+ldc.r4
+ldc.r4
+ldc.r4
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  stloc.0
+  ldloc.0
+  ldstr      "Chap0703.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [vjslib_7]java.io.OutputStream)
+  pop
+  call       class [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory::newInstance()
+  callvirt   instance class [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParser [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory::newSAXParser()
+  stloc.1
+  ldloc.1
+  ldstr      "Chap0703.xml"
+  ldloc.0
+  ldstr      "tagmap0703.xml"
+  newobj     instance void [iTextdotNET]com.lowagie.text.xml.TagMap::.ctor(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.xml.SAXmyHandler::.ctor(class [iTextdotNET]com.lowagie.text.DocListener,
+                                                                                           class [Gnu.Classpath.Core]jp.ujihara.java.util.HashMap)
+  callvirt   instance void [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParser::parse(string,
+                                                                                                       class [Gnu.Classpath.JAXP]org.xml.sax.helpers.DefaultHandler)
+leave.s
+  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  stloc.3
+  ldloc.3
+brfalse.s
+ldc.i4.1
+br.s
+ldc.i4.0
+  endfilter
+  pop
+  ldloc.3
+  castclass  [vjslib]java.lang.Exception
+  stloc.2
+  ldloc.2
+  callvirt   instance void [vjslib]java.lang.Throwable::printStackTrace()
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.2
+  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+br.s
+  .try IL_002e to IL_0067 filter IL_0067 handler IL_0076 to IL_0096
+  ret
+
+]]></source>
+</source_elements></project>

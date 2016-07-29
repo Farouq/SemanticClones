@@ -1,0 +1,428 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  newobj     instance void EditDistance.Program/_Closure$__1::.ctor()
+  stloc.0
+  ldloc.0
+  ldarg.1
+  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  ldloc.0
+  ldarg.0
+  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  ldloc.0
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldc.i4.1
+  add.ovf
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldc.i4.1
+  add.ovf
+  newobj     instance void int32[0...,0...]::.ctor(int32,
+                                                             int32)
+  stfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldc.i4.0
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  stloc.s    VB$t_i4$L0
+  stloc.3
+br.s
+  ldloc.0
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldloc.3
+  ldc.i4.0
+  ldloc.3
+  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  nop
+  ldloc.3
+  ldc.i4.1
+  add.ovf
+  stloc.3
+  ldloc.3
+  ldloc.s    VB$t_i4$L0
+  stloc.s    VB$CG$t_i4$S0
+  ldloc.s    VB$CG$t_i4$S0
+ble.s
+  ldc.i4.0
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  stloc.s    VB$t_i4$L1
+  stloc.s    j
+br.s
+  ldloc.0
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldc.i4.0
+  ldloc.s    j
+  ldloc.s    j
+  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  nop
+  ldloc.s    j
+  ldc.i4.1
+  add.ovf
+  stloc.s    j
+  ldloc.s    j
+  ldloc.s    VB$t_i4$L1
+  stloc.s    VB$CG$t_i4$S0
+  ldloc.s    VB$CG$t_i4$S0
+ble.s
+  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+  ldc.i4.4
+  mul.ovf
+  stloc.1
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc.1
+  ldloc.1
+  ldloc.0
+  dup
+  ldvirtftn  instance void EditDistance.Program/_Closure$__1::_Lambda$__1(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+  newobj     instance void class [mscorlib]System.Action`4<int32,int32,int32,int32>::.ctor(object,
+                                                                                                     native int)
+  call       void [ParallelExtensionsExtras]System.Threading.Algorithms.ParallelAlgorithms::Wavefront(int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                class [mscorlib]System.Action`4<int32,int32,int32,int32>)
+  nop
+  ldloc.0
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                            int32)
+  stloc.2
+br.s
+  ldloc.2
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldstr      "Chapter 11 example 1: local goto"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  ldloc.0
+  ldstr      "Chap1101.pdf"
+  ldc.i4.2
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  stloc.1
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  nop
+  ldstr      "We will do something special with this paragraph. "
+  + "If you click on "
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  stloc.2
+  ldloc.2
+  ldstr      "this word"
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.0
+  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_Blue()
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32,
+                                                                                                                   valuetype [System.Drawing_5]System.Drawing.Color)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                class [iTextdotNET]com.lowagie.text.Font)
+  ldstr      "test"
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setLocalGoto(string)
+  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  pop
+  ldloc.2
+  ldstr      " you will automatically jump to another location i"
+  + "n this document."
+  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  pop
+  ldstr      "blah, blah, blah"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  stloc.3
+  ldstr      "This paragraph contains a local "
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  stloc.s    p3
+  ldloc.s    p3
+  ldstr      "local destination"
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.0
+  ldc.i4.0
+  ldc.i4     0xff
+  ldc.i4.0
+  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32,
+                                                                                                                     int32,
+                                                                                                                     int32)
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32,
+                                                                                                                   valuetype [System.Drawing_5]System.Drawing.Color)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                class [iTextdotNET]com.lowagie.text.Font)
+  ldstr      "test"
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setLocalDestination(string)
+  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  pop
+  ldloc.0
+  ldloc.2
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldloc.3
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldloc.3
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldloc.3
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldloc.3
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldloc.3
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldloc.3
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldloc.3
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldloc.s    p3
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 6 example 9: bytes() / Raw Image"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  .try
+  {
+  ldloc.0
+  ldstr      "Chap0609.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  ldstr      "myKids.jpg"
+  ldstr      "r"
+  newobj     instance void [vjslib]java.io.RandomAccessFile::.ctor(string,
+                                                                               string)
+  stloc.1
+  ldloc.1
+  callvirt   instance int64 [vjslib]java.io.RandomAccessFile::length()
+  conv.i4
+  stloc.2
+  ldloc.2
+  stloc.s    V_11
+  ldloc.s    V_11
+  ldc.i4.0
+blt.s
+br.s
+  newobj     instance void [vjslib]java.lang.NegativeArraySizeException::.ctor()
+  throw
+  ldloc.s    V_11
+  newarr     [mscorlib]System.SByte
+  stloc.3
+  ldloc.1
+  ldloc.3
+  callvirt   instance void [vjslib]java.io.RandomAccessFile::readFully(int8[])
+  ldloc.1
+  callvirt   instance void [vjslib]java.io.RandomAccessFile::close()
+  ldloc.3
+  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(int8[])
+  stloc.s    img1
+  ldloc.s    img1
+  ldc.r4     50.
+  ldc.r4     500.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAbsolutePosition(float32,
+                                                                                                float32)
+  ldloc.0
+  ldloc.s    img1
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldc.i4     0x7530
+  stloc.s    V_11
+  ldloc.s    V_11
+  ldc.i4.0
+blt.s
+br.s
+  newobj     instance void [vjslib]java.lang.NegativeArraySizeException::.ctor()
+  throw
+  ldloc.s    V_11
+  newarr     [mscorlib]System.SByte
+  stloc.s    data
+  ldc.i4.0
+  stloc.s    k
+br
+  ldc.i4.0
+  stloc.s    j
+br
+  ldloc.s    data
+  ldloc.s    k
+  ldc.i4     0x12c
+  mul
+  ldloc.s    j
+  add
+  ldc.r8     255.
+  ldloc.s    j
+  conv.r8
+  ldc.r8     0.5
+  mul
+  ldc.r8     3.1415926535897931
+  mul
+  ldc.r8     300.
+  div
+  call       float64 [vjslib]java.lang.Math::sin(float64)
+  mul
+  call       int32 [vjslib]com.ms.vjsharp.util.Utilities::doubleToInt(float64)
+  conv.i1
+  stelem.i1
+  ldloc.s    data
+  ldloc.s    k
+  ldc.i4     0x12c
+  mul
+  ldloc.s    j
+  add
+  ldc.i4.1
+  add
+  ldc.i4     0x100
+  ldloc.s    j
+  ldc.i4     0x100
+  mul
+  ldc.i4     0x12c
+  div
+  sub
+  conv.i1
+  stelem.i1
+  ldloc.s    data
+  ldloc.s    k
+  ldc.i4     0x12c
+  mul
+  ldloc.s    j
+  add
+  ldc.i4.2
+  add
+  ldc.r8     255.
+  ldloc.s    k
+  conv.r8
+  ldc.r8     0.5
+  mul
+  ldc.r8     3.1415926535897931
+  mul
+  ldc.r8     100.
+  div
+  call       float64 [vjslib]java.lang.Math::cos(float64)
+  mul
+  call       int32 [vjslib]com.ms.vjsharp.util.Utilities::doubleToInt(float64)
+  conv.i1
+  stelem.i1
+  ldloc.s    j
+  ldc.i4.3
+  add
+  stloc.s    j
+  ldloc.s    j
+  ldc.i4     0x12c
+blt
+  ldloc.s    k
+  ldc.i4.1
+  add
+  stloc.s    k
+  ldloc.s    k
+  ldc.i4.s   100
+blt
+  ldc.i4.s   100
+  ldc.i4.s   100
+  ldc.i4.3
+  ldc.i4.s   8
+  ldloc.s    data
+  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(int32,
+                                                                                                                    int32,
+                                                                                                                    int32,
+                                                                                                                    int32,
+                                                                                                                    int8[])
+  stloc.s    img2
+  ldloc.s    img2
+  ldc.r4     200.
+  ldc.r4     200.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAbsolutePosition(float32,
+                                                                                                float32)
+  ldloc.0
+  ldloc.s    img2
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+leave.s
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+  dup
+  stloc.s    V_12
+  stloc.s    de
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.s    de
+  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+  dup
+  stloc.s    V_13
+  stloc.s    ioe
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.s    ioe
+  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+br.s
+  ret
+
+]]></source>
+</source_elements></project>

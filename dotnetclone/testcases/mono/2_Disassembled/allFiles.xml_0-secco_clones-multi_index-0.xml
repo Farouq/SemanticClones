@@ -1,0 +1,3472 @@
+<clones>
+<clone_group groupid="0" nfragments="2">
+<clone_fragment endline="610" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" hamdist="0" pcid="1365" startline="602"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldc.i4.2
+    IL_0003:  callvirt   instance class IKVM.Reflection.Metadata.Table/RowSizeCalc IKVM.Reflection.Metadata.Table/RowSizeCalc::AddFixed(int32)
+    IL_0008:  callvirt   instance class IKVM.Reflection.Metadata.Table/RowSizeCalc IKVM.Reflection.Metadata.Table/RowSizeCalc::WriteStringIndex()
+    IL_000d:  callvirt   instance class IKVM.Reflection.Metadata.Table/RowSizeCalc IKVM.Reflection.Metadata.Table/RowSizeCalc::WriteBlobIndex()
+    IL_0012:  callvirt   instance int32 IKVM.Reflection.Metadata.Table/RowSizeCalc::get_Value()
+    IL_0017:  stloc.0
+    IL_0018:  br.s       IL_001a
+    IL_001a:  ldloc.0
+    IL_001b:  ret
+]]></clone_fragment>
+<clone_fragment endline="1547" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" hamdist="0" pcid="1457" startline="1539"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldc.i4.2
+    IL_0003:  callvirt   instance class IKVM.Reflection.Metadata.Table/RowSizeCalc IKVM.Reflection.Metadata.Table/RowSizeCalc::AddFixed(int32)
+    IL_0008:  callvirt   instance class IKVM.Reflection.Metadata.Table/RowSizeCalc IKVM.Reflection.Metadata.Table/RowSizeCalc::WriteStringIndex()
+    IL_000d:  callvirt   instance class IKVM.Reflection.Metadata.Table/RowSizeCalc IKVM.Reflection.Metadata.Table/RowSizeCalc::WriteBlobIndex()
+    IL_0012:  callvirt   instance int32 IKVM.Reflection.Metadata.Table/RowSizeCalc::get_Value()
+    IL_0017:  stloc.0
+    IL_0018:  br.s       IL_001a
+    IL_001a:  ldloc.0
+    IL_001b:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="1" nfragments="2">
+<clone_fragment endline="555" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" hamdist="0" pcid="241" startline="547"><![CDATA[
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.2
+    IL_0003:  ldarg.3
+    IL_0004:  ldarg.s    block
+    IL_0006:  ldarg.s    loc
+    IL_0008:  call       instance void Mono.CSharp.FlowBranchingBlock::.ctor(class Mono.CSharp.FlowBranching,
+    IL_000d:  nop
+    IL_000e:  nop
+    IL_000f:  nop
+    IL_0010:  ret
+]]></clone_fragment>
+<clone_fragment endline="579" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" hamdist="0" pcid="247" startline="571"><![CDATA[
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.2
+    IL_0003:  ldarg.3
+    IL_0004:  ldarg.s    block
+    IL_0006:  ldarg.s    loc
+    IL_0008:  call       instance void Mono.CSharp.FlowBranchingBlock::.ctor(class Mono.CSharp.FlowBranching,
+    IL_000d:  nop
+    IL_000e:  nop
+    IL_000f:  nop
+    IL_0010:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="2" nfragments="2">
+<clone_fragment endline="95" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" hamdist="0" pcid="4717" startline="87"><![CDATA[
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  call       instance void Mono.CSharp.ShimExpression::.ctor(class Mono.CSharp.Expression)
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ldarg.0
+    IL_000a:  ldarg.1
+    IL_000b:  callvirt   instance valuetype Mono.CSharp.Location Mono.CSharp.Expression::get_Location()
+    IL_0010:  stfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_0015:  nop
+    IL_0016:  ret
+]]></clone_fragment>
+<clone_fragment endline="4332" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" hamdist="0" pcid="4815" startline="4320"><![CDATA[
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  call       instance void Mono.CSharp.ShimExpression::.ctor(class Mono.CSharp.Expression)
+    IL_0007:  nop
+    IL_0008:  nop
+    IL_0009:  ldarg.0
+    IL_000a:  ldarg.1
+    IL_000b:  callvirt   instance valuetype Mono.CSharp.Location Mono.CSharp.Expression::get_Location()
+    IL_0010:  stfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_0015:  nop
+    IL_0016:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="3" nfragments="2">
+<clone_fragment endline="1454" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" hamdist="0" pcid="2295" startline="1440"><![CDATA[
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.2
+    IL_0003:  call       instance void Mono.CSharp.TypeCast::.ctor(class Mono.CSharp.Expression,
+    IL_0008:  nop
+    IL_0009:  nop
+    IL_000a:  ldarg.0
+    IL_000b:  ldc.i4.1
+    IL_000c:  stfld      valuetype Mono.CSharp.ExprClass Mono.CSharp.Expression::eclass
+    IL_0011:  nop
+    IL_0012:  ret
+]]></clone_fragment>
+<clone_fragment endline="299" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\nullable.cs" hamdist="0" pcid="3637" startline="291"><![CDATA[
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.2
+    IL_0003:  call       instance void Mono.CSharp.TypeCast::.ctor(class Mono.CSharp.Expression,
+    IL_0008:  nop
+    IL_0009:  nop
+    IL_000a:  ldarg.0
+    IL_000b:  ldc.i4.1
+    IL_000c:  stfld      valuetype Mono.CSharp.ExprClass Mono.CSharp.Expression::eclass
+    IL_0011:  nop
+    IL_0012:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="4" nfragments="2">
+<clone_fragment endline="43" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\MyBaseExpression.vb" hamdist="0" pcid="7173" startline="36"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.1
+    IL_0004:  ldarg.0
+    IL_0005:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.InstanceExpression::get_ExpressionType()
+    IL_000a:  call       void vbnc.Emitter::EmitLoadMe(class vbnc.EmitInfo,
+    IL_000f:  nop
+    IL_0010:  ldloc.1
+    IL_0011:  stloc.0
+    IL_0012:  br.s       IL_0014
+    IL_0014:  ldloc.0
+    IL_0015:  ret
+]]></clone_fragment>
+<clone_fragment endline="39" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\MyClassExpression.vb" hamdist="0" pcid="7177" startline="31"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.1
+    IL_0004:  ldarg.0
+    IL_0005:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.InstanceExpression::get_ExpressionType()
+    IL_000a:  call       void vbnc.Emitter::EmitLoadMe(class vbnc.EmitInfo,
+    IL_000f:  nop
+    IL_0010:  ldloc.1
+    IL_0011:  stloc.0
+    IL_0012:  br.s       IL_0014
+    IL_0014:  ldloc.0
+    IL_0015:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="5" nfragments="2">
+<clone_fragment endline="260" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Report.vb" hamdist="0" pcid="8009" startline="253"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.Report::get_Compiler()
+    IL_0009:  ldarg.1
+    IL_000a:  ldarg.3
+    IL_000b:  ldarg.2
+    IL_000c:  newobj     instance void vbnc.Message::.ctor(class vbnc.Compiler,
+    IL_0011:  callvirt   instance bool vbnc.Report::ShowMessage(bool,
+    IL_0016:  stloc.0
+    IL_0017:  br.s       IL_0019
+    IL_0019:  ldloc.0
+    IL_001a:  ret
+]]></clone_fragment>
+<clone_fragment endline="277" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Report.vb" hamdist="0" pcid="8013" startline="270"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.Report::get_Compiler()
+    IL_0009:  ldarg.1
+    IL_000a:  ldarg.3
+    IL_000b:  ldarg.2
+    IL_000c:  newobj     instance void vbnc.Message::.ctor(class vbnc.Compiler,
+    IL_0011:  callvirt   instance bool vbnc.Report::ShowMessage(bool,
+    IL_0016:  stloc.0
+    IL_0017:  br.s       IL_0019
+    IL_0019:  ldloc.0
+    IL_001a:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="6" nfragments="2">
+<clone_fragment endline="175" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\enum.cs" hamdist="0" pcid="2225" startline="169"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance valuetype Mono.CSharp.Modifiers Mono.CSharp.MemberCore::get_ModFlags()
+    IL_0007:  ldarg.0
+    IL_0008:  call       instance bool Mono.CSharp.DeclSpace::get_IsTopLevel()
+    IL_000d:  call       valuetype IKVM.Reflection.TypeAttributes Mono.CSharp.ModifiersExtensions::TypeAttr(valuetype Mono.CSharp.Modifiers,
+    IL_0012:  ldc.i4     0x100
+    IL_0017:  or
+    IL_0018:  ldarg.0
+    IL_0019:  call       instance valuetype IKVM.Reflection.TypeAttributes Mono.CSharp.TypeContainer::get_TypeAttr()
+    IL_001e:  or
+    IL_001f:  stloc.0
+    IL_0020:  br.s       IL_0022
+    IL_0022:  ldloc.0
+    IL_0023:  ret
+]]></clone_fragment>
+<clone_fragment endline="334" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\delegate.cs" hamdist="0" pcid="2517" startline="328"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance valuetype Mono.CSharp.Modifiers Mono.CSharp.MemberCore::get_ModFlags()
+    IL_0007:  ldarg.0
+    IL_0008:  call       instance bool Mono.CSharp.DeclSpace::get_IsTopLevel()
+    IL_000d:  call       valuetype IKVM.Reflection.TypeAttributes Mono.CSharp.ModifiersExtensions::TypeAttr(valuetype Mono.CSharp.Modifiers,
+    IL_0012:  ldc.i4     0x100
+    IL_0017:  or
+    IL_0018:  ldarg.0
+    IL_0019:  call       instance valuetype IKVM.Reflection.TypeAttributes Mono.CSharp.TypeContainer::get_TypeAttr()
+    IL_001e:  or
+    IL_001f:  stloc.0
+    IL_0020:  br.s       IL_0022
+    IL_0022:  ldloc.0
+    IL_0023:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="7" nfragments="2">
+<clone_fragment endline="180" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\Mono.CompilerServices.SymbolWriter\MonoSymbolWriter.cs" hamdist="0" pcid="6033" startline="173"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class Mono.CompilerServices.SymbolWriter.SourceMethodBuilder Mono.CompilerServices.SymbolWriter.MonoSymbolWriter::current_method
+    IL_0007:  ldnull
+    IL_0008:  ceq
+    IL_000a:  ldc.i4.0
+    IL_000b:  ceq
+    IL_000d:  stloc.0
+    IL_000e:  ldloc.0
+    IL_000f:  brtrue.s   IL_0013
+    IL_0011:  br.s       IL_0020
+    IL_0013:  ldarg.0
+    IL_0014:  ldfld      class Mono.CompilerServices.SymbolWriter.SourceMethodBuilder Mono.CompilerServices.SymbolWriter.MonoSymbolWriter::current_method
+    IL_0019:  ldarg.1
+    IL_001a:  callvirt   instance void Mono.CompilerServices.SymbolWriter.SourceMethodBuilder::EndBlock(int32)
+    IL_001f:  nop
+    IL_0020:  ret
+]]></clone_fragment>
+<clone_fragment endline="197" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\Mono.CompilerServices.SymbolWriter\MonoSymbolWriter.cs" hamdist="0" pcid="6037" startline="190"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class Mono.CompilerServices.SymbolWriter.SourceMethodBuilder Mono.CompilerServices.SymbolWriter.MonoSymbolWriter::current_method
+    IL_0007:  ldnull
+    IL_0008:  ceq
+    IL_000a:  ldc.i4.0
+    IL_000b:  ceq
+    IL_000d:  stloc.0
+    IL_000e:  ldloc.0
+    IL_000f:  brtrue.s   IL_0013
+    IL_0011:  br.s       IL_0020
+    IL_0013:  ldarg.0
+    IL_0014:  ldfld      class Mono.CompilerServices.SymbolWriter.SourceMethodBuilder Mono.CompilerServices.SymbolWriter.MonoSymbolWriter::current_method
+    IL_0019:  ldarg.1
+    IL_001a:  callvirt   instance void Mono.CompilerServices.SymbolWriter.SourceMethodBuilder::EndBlock(int32)
+    IL_001f:  nop
+    IL_0020:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="8" nfragments="2">
+<clone_fragment endline="5480" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" hamdist="0" pcid="1653" startline="5470"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  callvirt   instance void Mono.CSharp.Expression::Emit(class Mono.CSharp.EmitContext)
+    IL_0008:  nop
+    IL_0009:  ldarg.0
+    IL_000a:  ldfld      class Mono.CSharp.TypeSpec Mono.CSharp.Expression::'type'
+    IL_000f:  ldsfld     class Mono.CSharp.BuildinTypeSpec Mono.CSharp.TypeManager::void_type
+    IL_0014:  ceq
+    IL_0016:  stloc.0
+    IL_0017:  ldloc.0
+    IL_0018:  brtrue.s   IL_0026
+    IL_001a:  ldarg.1
+    IL_001b:  ldsfld     valuetype IKVM.Reflection.Emit.OpCode IKVM.Reflection.Emit.OpCodes::Pop
+    IL_0020:  callvirt   instance void Mono.CSharp.EmitContext::Emit(valuetype IKVM.Reflection.Emit.OpCode)
+    IL_0025:  nop
+    IL_0026:  ret
+]]></clone_fragment>
+<clone_fragment endline="756" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\delegate.cs" hamdist="0" pcid="2555" startline="747"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  callvirt   instance void Mono.CSharp.Expression::Emit(class Mono.CSharp.EmitContext)
+    IL_0008:  nop
+    IL_0009:  ldarg.0
+    IL_000a:  ldfld      class Mono.CSharp.TypeSpec Mono.CSharp.Expression::'type'
+    IL_000f:  ldsfld     class Mono.CSharp.BuildinTypeSpec Mono.CSharp.TypeManager::void_type
+    IL_0014:  ceq
+    IL_0016:  stloc.0
+    IL_0017:  ldloc.0
+    IL_0018:  brtrue.s   IL_0026
+    IL_001a:  ldarg.1
+    IL_001b:  ldsfld     valuetype IKVM.Reflection.Emit.OpCode IKVM.Reflection.Emit.OpCodes::Pop
+    IL_0020:  callvirt   instance void Mono.CSharp.EmitContext::Emit(valuetype IKVM.Reflection.Emit.OpCode)
+    IL_0025:  nop
+    IL_0026:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="9" nfragments="2">
+<clone_fragment endline="44" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\OperatorExpression.vb" hamdist="0" pcid="7187" startline="37"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.Helper::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.tm::get_CurrentLocation()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+<clone_fragment endline="52" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\OperatorExpression.vb" hamdist="0" pcid="7189" startline="45"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.Helper::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.tm::get_CurrentLocation()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="10" nfragments="2">
+<clone_fragment endline="44" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\OperatorExpression.vb" hamdist="0" pcid="7187" startline="37"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.Helper::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.tm::get_CurrentLocation()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+<clone_fragment endline="71" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Tokens\IdentifierOrKeywordWithTypeArguments.vb" hamdist="0" pcid="9557" startline="64"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.Helper::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.tm::get_CurrentLocation()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="11" nfragments="2">
+<clone_fragment endline="48" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\CastExpression.vb" hamdist="0" pcid="6701" startline="41"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.BaseObject::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+<clone_fragment endline="54" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\LateBoundAccessToExpression.vb" hamdist="0" pcid="7119" startline="47"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.BaseObject::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="12" nfragments="2">
+<clone_fragment endline="48" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\CastExpression.vb" hamdist="0" pcid="6701" startline="41"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.BaseObject::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+<clone_fragment endline="60" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\OperatorExpression.vb" hamdist="0" pcid="7191" startline="53"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.BaseObject::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="13" nfragments="2">
+<clone_fragment endline="48" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\CastExpression.vb" hamdist="0" pcid="6701" startline="41"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.BaseObject::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+<clone_fragment endline="50" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\SimpleExpression.vb" hamdist="0" pcid="7215" startline="43"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.BaseObject::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="14" nfragments="2">
+<clone_fragment endline="48" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\CastExpression.vb" hamdist="0" pcid="6701" startline="41"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.BaseObject::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+<clone_fragment endline="79" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Tokens\IdentifierOrKeywordWithTypeArguments.vb" hamdist="0" pcid="9559" startline="72"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  callvirt   instance class vbnc.Compiler vbnc.BaseObject::get_Compiler()
+    IL_0009:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_000e:  ldc.i4     0x1869d
+    IL_0013:  ldarg.0
+    IL_0014:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0019:  ldc.i4.0
+    IL_001a:  newarr     [mscorlib]System.String
+    IL_001f:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_0024:  stloc.0
+    IL_0025:  br.s       IL_002b
+    IL_0027:  ldloc.1
+    IL_0028:  stloc.0
+    IL_0029:  br.s       IL_002b
+    IL_002b:  ldloc.0
+    IL_002c:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="15" nfragments="2">
+<clone_fragment endline="66" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\BinaryExpressions\LShiftExpression.vb" hamdist="0" pcid="6645" startline="58"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance valuetype [mscorlib]System.TypeCode vbnc.BinaryExpression::get_OperandTypeCode()
+    IL_0007:  ldc.i4.1
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+    IL_000b:  ldloc.1
+    IL_000c:  brfalse.s  IL_0014
+    IL_000e:  ldc.i4.1
+    IL_000f:  stloc.0
+    IL_0010:  br.s       IL_001b
+    IL_0012:  br.s       IL_001a
+    IL_0014:  nop
+    IL_0015:  ldc.i4.s   9
+    IL_0017:  stloc.0
+    IL_0018:  br.s       IL_001b
+    IL_001a:  nop
+    IL_001b:  ldloc.0
+    IL_001c:  ret
+]]></clone_fragment>
+<clone_fragment endline="67" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\BinaryExpressions\RShiftExpression.vb" hamdist="0" pcid="6681" startline="59"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance valuetype [mscorlib]System.TypeCode vbnc.BinaryExpression::get_OperandTypeCode()
+    IL_0007:  ldc.i4.1
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+    IL_000b:  ldloc.1
+    IL_000c:  brfalse.s  IL_0014
+    IL_000e:  ldc.i4.1
+    IL_000f:  stloc.0
+    IL_0010:  br.s       IL_001b
+    IL_0012:  br.s       IL_001a
+    IL_0014:  nop
+    IL_0015:  ldc.i4.s   9
+    IL_0017:  stloc.0
+    IL_0018:  br.s       IL_001b
+    IL_001a:  nop
+    IL_001b:  ldloc.0
+    IL_001c:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="16" nfragments="2">
+<clone_fragment endline="209" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\assign.cs" hamdist="0" pcid="407" startline="203"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  newobj     instance void Mono.CSharp.Arguments::.ctor(int32)
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_000f:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_0014:  nop
+    IL_0015:  ldarg.0
+    IL_0016:  ldarg.1
+    IL_0017:  ldstr      "Constant"
+    IL_001c:  ldloc.0
+    IL_001d:  call       instance class Mono.CSharp.Expression Mono.CSharp.Expression::CreateExpressionFactoryCall(class Mono.CSharp.ResolveContext,
+    IL_0022:  stloc.1
+    IL_0023:  br.s       IL_0025
+    IL_0025:  ldloc.1
+    IL_0026:  ret
+]]></clone_fragment>
+<clone_fragment endline="6924" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" hamdist="0" pcid="4921" startline="6915"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  newobj     instance void Mono.CSharp.Arguments::.ctor(int32)
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_000f:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_0014:  nop
+    IL_0015:  ldarg.0
+    IL_0016:  ldarg.1
+    IL_0017:  ldstr      "Constant"
+    IL_001c:  ldloc.0
+    IL_001d:  call       instance class Mono.CSharp.Expression Mono.CSharp.Expression::CreateExpressionFactoryCall(class Mono.CSharp.ResolveContext,
+    IL_0022:  stloc.1
+    IL_0023:  br.s       IL_0025
+    IL_0025:  ldloc.1
+    IL_0026:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="17" nfragments="2">
+<clone_fragment endline="288" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Members\ConstantDeclaration.vb" hamdist="0" pcid="8413" startline="281"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  ldarg.1
+    IL_0005:  call       instance bool vbnc.MemberDeclaration::ResolveCode(class vbnc.ResolveInfo)
+    IL_000a:  brfalse.s  IL_000f
+    IL_000c:  ldloc.1
+    IL_000d:  brtrue.s   IL_0012
+    IL_000f:  ldc.i4.0
+    IL_0010:  br.s       IL_0013
+    IL_0012:  ldc.i4.1
+    IL_0013:  stloc.1
+    IL_0014:  ldloc.1
+    IL_0015:  stloc.0
+    IL_0016:  br.s       IL_0018
+    IL_0018:  ldloc.0
+    IL_0019:  ret
+]]></clone_fragment>
+<clone_fragment endline="195" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Members\EventDeclaration.vb" hamdist="0" pcid="8493" startline="188"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.1
+    IL_0003:  ldarg.0
+    IL_0004:  ldarg.1
+    IL_0005:  call       instance bool vbnc.MemberDeclaration::ResolveCode(class vbnc.ResolveInfo)
+    IL_000a:  brfalse.s  IL_000f
+    IL_000c:  ldloc.1
+    IL_000d:  brtrue.s   IL_0012
+    IL_000f:  ldc.i4.0
+    IL_0010:  br.s       IL_0013
+    IL_0012:  ldc.i4.1
+    IL_0013:  stloc.1
+    IL_0014:  ldloc.1
+    IL_0015:  stloc.0
+    IL_0016:  br.s       IL_0018
+    IL_0018:  ldloc.0
+    IL_0019:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="18" nfragments="2">
+<clone_fragment endline="78" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\TypeDeclarations\ClassDeclaration.vb" hamdist="0" pcid="9695" startline="66"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.TypeDeclaration::get_BaseType()
+    IL_0007:  call       bool vbnc.CecilHelper::IsGenericType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference)
+    IL_000c:  stloc.1
+    IL_000d:  ldloc.1
+    IL_000e:  brfalse.s  IL_0020
+    IL_0010:  ldarg.0
+    IL_0011:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.TypeDeclaration::get_BaseType()
+    IL_0016:  call       class [Mono.Cecil.VB]Mono.Cecil.MethodReference vbnc.Helper::GetDefaultGenericConstructor(class [Mono.Cecil.VB]Mono.Cecil.TypeReference)
+    IL_001b:  stloc.0
+    IL_001c:  br.s       IL_0030
+    IL_001e:  br.s       IL_002f
+    IL_0020:  nop
+    IL_0021:  ldarg.0
+    IL_0022:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.TypeDeclaration::get_BaseType()
+    IL_0027:  call       class [Mono.Cecil.VB]Mono.Cecil.MethodDefinition vbnc.Helper::GetDefaultConstructor(class [Mono.Cecil.VB]Mono.Cecil.TypeReference)
+    IL_002c:  stloc.0
+    IL_002d:  br.s       IL_0030
+    IL_002f:  nop
+    IL_0030:  ldloc.0
+    IL_0031:  ret
+]]></clone_fragment>
+<clone_fragment endline="91" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\TypeDeclarations\ClassDeclaration.vb" hamdist="0" pcid="9697" startline="79"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.TypeDeclaration::get_BaseType()
+    IL_0007:  call       bool vbnc.CecilHelper::IsGenericType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference)
+    IL_000c:  stloc.1
+    IL_000d:  ldloc.1
+    IL_000e:  brfalse.s  IL_0020
+    IL_0010:  ldarg.0
+    IL_0011:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.TypeDeclaration::get_BaseType()
+    IL_0016:  call       class [Mono.Cecil.VB]Mono.Cecil.MethodReference vbnc.Helper::GetDefaultGenericConstructor(class [Mono.Cecil.VB]Mono.Cecil.TypeReference)
+    IL_001b:  stloc.0
+    IL_001c:  br.s       IL_0030
+    IL_001e:  br.s       IL_002f
+    IL_0020:  nop
+    IL_0021:  ldarg.0
+    IL_0022:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.TypeDeclaration::get_BaseType()
+    IL_0027:  call       class [Mono.Cecil.VB]Mono.Cecil.MethodDefinition vbnc.Helper::GetDefaultConstructor(class [Mono.Cecil.VB]Mono.Cecil.TypeReference)
+    IL_002c:  stloc.0
+    IL_002d:  br.s       IL_0030
+    IL_002f:  nop
+    IL_0030:  ldloc.0
+    IL_0031:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="19" nfragments="2">
+<clone_fragment endline="1374" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" hamdist="0" pcid="1435" startline="1367"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+    IL_0003:  br.s       IL_001a
+    IL_0005:  nop
+    IL_0006:  ldarg.1
+    IL_0007:  ldarg.0
+    IL_0008:  ldfld      !0[] class IKVM.Reflection.Metadata.Table`1<int32>::records
+    IL_000d:  ldloc.0
+    IL_000e:  ldelem.i4
+    IL_000f:  callvirt   instance void IKVM.Reflection.Writer.MetadataWriter::WriteBlobIndex(int32)
+    IL_0014:  nop
+    IL_0015:  nop
+    IL_0016:  ldloc.0
+    IL_0017:  ldc.i4.1
+    IL_0018:  add
+    IL_0019:  stloc.0
+    IL_001a:  ldloc.0
+    IL_001b:  ldarg.0
+    IL_001c:  ldfld      int32 class IKVM.Reflection.Metadata.Table`1<int32>::rowCount
+    IL_0021:  clt
+    IL_0023:  stloc.1
+    IL_0024:  ldloc.1
+    IL_0025:  brtrue.s   IL_0005
+    IL_0027:  ret
+]]></clone_fragment>
+<clone_fragment endline="1806" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" hamdist="0" pcid="1487" startline="1799"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+    IL_0003:  br.s       IL_001a
+    IL_0005:  nop
+    IL_0006:  ldarg.1
+    IL_0007:  ldarg.0
+    IL_0008:  ldfld      !0[] class IKVM.Reflection.Metadata.Table`1<int32>::records
+    IL_000d:  ldloc.0
+    IL_000e:  ldelem.i4
+    IL_000f:  callvirt   instance void IKVM.Reflection.Writer.MetadataWriter::WriteBlobIndex(int32)
+    IL_0014:  nop
+    IL_0015:  nop
+    IL_0016:  ldloc.0
+    IL_0017:  ldc.i4.1
+    IL_0018:  add
+    IL_0019:  stloc.0
+    IL_001a:  ldloc.0
+    IL_001b:  ldarg.0
+    IL_001c:  ldfld      int32 class IKVM.Reflection.Metadata.Table`1<int32>::rowCount
+    IL_0021:  clt
+    IL_0023:  stloc.1
+    IL_0024:  ldloc.1
+    IL_0025:  brtrue.s   IL_0005
+    IL_0027:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="20" nfragments="2">
+<clone_fragment endline="112" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\method.cs" hamdist="0" pcid="1233" startline="97"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  call       instance bool Mono.CSharp.InterfaceMemberBase::CheckOverrideAgainstBase(class Mono.CSharp.MemberSpec)
+    IL_0008:  stloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  ldarg.1
+    IL_000b:  call       bool Mono.CSharp.InterfaceMemberBase::CheckAccessModifiers(class Mono.CSharp.MemberCore,
+    IL_0010:  stloc.2
+    IL_0011:  ldloc.2
+    IL_0012:  brtrue.s   IL_0021
+    IL_0014:  nop
+    IL_0015:  ldarg.0
+    IL_0016:  ldarg.0
+    IL_0017:  ldarg.1
+    IL_0018:  call       instance void Mono.CSharp.InterfaceMemberBase::Error_CannotChangeAccessModifiers(class Mono.CSharp.MemberCore,
+    IL_001d:  nop
+    IL_001e:  ldc.i4.0
+    IL_001f:  stloc.0
+    IL_0020:  nop
+    IL_0021:  ldloc.0
+    IL_0022:  stloc.1
+    IL_0023:  br.s       IL_0025
+    IL_0025:  ldloc.1
+    IL_0026:  ret
+]]></clone_fragment>
+<clone_fragment endline="1266" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\property.cs" hamdist="0" pcid="1967" startline="1255"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  call       instance bool Mono.CSharp.InterfaceMemberBase::CheckOverrideAgainstBase(class Mono.CSharp.MemberSpec)
+    IL_0008:  stloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  ldarg.1
+    IL_000b:  call       bool Mono.CSharp.InterfaceMemberBase::CheckAccessModifiers(class Mono.CSharp.MemberCore,
+    IL_0010:  stloc.2
+    IL_0011:  ldloc.2
+    IL_0012:  brtrue.s   IL_0021
+    IL_0014:  nop
+    IL_0015:  ldarg.0
+    IL_0016:  ldarg.0
+    IL_0017:  ldarg.1
+    IL_0018:  call       instance void Mono.CSharp.InterfaceMemberBase::Error_CannotChangeAccessModifiers(class Mono.CSharp.MemberCore,
+    IL_001d:  nop
+    IL_001e:  ldc.i4.0
+    IL_001f:  stloc.0
+    IL_0020:  nop
+    IL_0021:  ldloc.0
+    IL_0022:  stloc.1
+    IL_0023:  br.s       IL_0025
+    IL_0025:  ldloc.1
+    IL_0026:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="21" nfragments="2">
+<clone_fragment endline="2002" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\method.cs" hamdist="0" pcid="5515" startline="1993"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  callvirt   instance class Mono.CSharp.TypeSpec Mono.CSharp.Expression::get_Type()
+    IL_0007:  ldarg.s    pa
+    IL_0009:  ldfld      class Mono.CSharp.PredefinedAttribute Mono.CSharp.PredefinedAttributes::Conditional
+    IL_000e:  call       bool Mono.CSharp.PredefinedAttribute::op_Equality(class Mono.CSharp.TypeSpec,
+    IL_0013:  ldc.i4.0
+    IL_0014:  ceq
+    IL_0016:  stloc.0
+    IL_0017:  ldloc.0
+    IL_0018:  brtrue.s   IL_0024
+    IL_001a:  nop
+    IL_001b:  ldarg.0
+    IL_001c:  call       instance void Mono.CSharp.MethodOrOperator::Error_ConditionalAttributeIsNotValid()
+    IL_0021:  nop
+    IL_0022:  br.s       IL_0030
+    IL_0024:  ldarg.0
+    IL_0025:  ldarg.1
+    IL_0026:  ldarg.2
+    IL_0027:  ldarg.3
+    IL_0028:  ldarg.s    pa
+    IL_002a:  call       instance void Mono.CSharp.MethodOrOperator::ApplyAttributeBuilder(class Mono.CSharp.Attribute,
+    IL_002f:  nop
+    IL_0030:  ret
+]]></clone_fragment>
+<clone_fragment endline="2345" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\method.cs" hamdist="0" pcid="5523" startline="2336"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  callvirt   instance class Mono.CSharp.TypeSpec Mono.CSharp.Expression::get_Type()
+    IL_0007:  ldarg.s    pa
+    IL_0009:  ldfld      class Mono.CSharp.PredefinedAttribute Mono.CSharp.PredefinedAttributes::Conditional
+    IL_000e:  call       bool Mono.CSharp.PredefinedAttribute::op_Equality(class Mono.CSharp.TypeSpec,
+    IL_0013:  ldc.i4.0
+    IL_0014:  ceq
+    IL_0016:  stloc.0
+    IL_0017:  ldloc.0
+    IL_0018:  brtrue.s   IL_0024
+    IL_001a:  nop
+    IL_001b:  ldarg.0
+    IL_001c:  call       instance void Mono.CSharp.MethodOrOperator::Error_ConditionalAttributeIsNotValid()
+    IL_0021:  nop
+    IL_0022:  br.s       IL_0030
+    IL_0024:  ldarg.0
+    IL_0025:  ldarg.1
+    IL_0026:  ldarg.2
+    IL_0027:  ldarg.3
+    IL_0028:  ldarg.s    pa
+    IL_002a:  call       instance void Mono.CSharp.MethodOrOperator::ApplyAttributeBuilder(class Mono.CSharp.Attribute,
+    IL_002f:  nop
+    IL_0030:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="22" nfragments="2">
+<clone_fragment endline="583" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\MyGenerator.vb" hamdist="0" pcid="7949" startline="559"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.2
+    IL_0003:  ldarg.0
+    IL_0004:  ldfld      valuetype vbnc.MyGenerator/MyTypes vbnc.MyGenerator::m_MyType
+    IL_0009:  ldc.i4.3
+    IL_000a:  ceq
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.3
+    IL_0010:  ldloc.3
+    IL_0011:  brfalse.s  IL_0017
+    IL_0013:  ldc.i4.1
+    IL_0014:  stloc.1
+    IL_0015:  br.s       IL_002e
+    IL_0017:  ldstr      "        <Global.System.ComponentModel.Design.HelpK"
+    IL_001c:  stloc.0
+    IL_001d:  ldarg.0
+    IL_001e:  callvirt   instance class [mscorlib]System.Text.StringBuilder vbnc.MyGenerator::get_ProjectCode()
+    IL_0023:  ldloc.0
+    IL_0024:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendLine(string)
+    IL_0029:  pop
+    IL_002a:  ldloc.2
+    IL_002b:  stloc.1
+    IL_002c:  br.s       IL_002e
+    IL_002e:  ldloc.1
+    IL_002f:  ret
+]]></clone_fragment>
+<clone_fragment endline="614" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\MyGenerator.vb" hamdist="0" pcid="7951" startline="590"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.2
+    IL_0003:  ldarg.0
+    IL_0004:  ldfld      valuetype vbnc.MyGenerator/MyTypes vbnc.MyGenerator::m_MyType
+    IL_0009:  ldc.i4.3
+    IL_000a:  ceq
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.3
+    IL_0010:  ldloc.3
+    IL_0011:  brfalse.s  IL_0017
+    IL_0013:  ldc.i4.1
+    IL_0014:  stloc.1
+    IL_0015:  br.s       IL_002e
+    IL_0017:  ldstr      "        <Global.System.ComponentModel.Design.HelpK"
+    IL_001c:  stloc.0
+    IL_001d:  ldarg.0
+    IL_001e:  callvirt   instance class [mscorlib]System.Text.StringBuilder vbnc.MyGenerator::get_ProjectCode()
+    IL_0023:  ldloc.0
+    IL_0024:  callvirt   instance class [mscorlib]System.Text.StringBuilder [mscorlib]System.Text.StringBuilder::AppendLine(string)
+    IL_0029:  pop
+    IL_002a:  ldloc.2
+    IL_002b:  stloc.1
+    IL_002c:  br.s       IL_002e
+    IL_002e:  ldloc.1
+    IL_002f:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="23" nfragments="2">
+<clone_fragment endline="1366" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" hamdist="0" pcid="1433" startline="1354"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+    IL_0003:  br.s       IL_0019
+    IL_0005:  nop
+    IL_0006:  ldarg.0
+    IL_0007:  ldfld      !0[] class IKVM.Reflection.Metadata.Table`1<int32>::records
+    IL_000c:  ldloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance int32 IKVM.Reflection.Reader.MetadataReader::ReadBlobIndex()
+    IL_0013:  stelem.i4
+    IL_0014:  nop
+    IL_0015:  ldloc.0
+    IL_0016:  ldc.i4.1
+    IL_0017:  add
+    IL_0018:  stloc.0
+    IL_0019:  ldloc.0
+    IL_001a:  ldarg.0
+    IL_001b:  ldfld      !0[] class IKVM.Reflection.Metadata.Table`1<int32>::records
+    IL_0020:  ldlen
+    IL_0021:  conv.i4
+    IL_0022:  clt
+    IL_0024:  stloc.1
+    IL_0025:  ldloc.1
+    IL_0026:  brtrue.s   IL_0005
+    IL_0028:  ret
+]]></clone_fragment>
+<clone_fragment endline="1798" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" hamdist="0" pcid="1485" startline="1786"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+    IL_0003:  br.s       IL_0019
+    IL_0005:  nop
+    IL_0006:  ldarg.0
+    IL_0007:  ldfld      !0[] class IKVM.Reflection.Metadata.Table`1<int32>::records
+    IL_000c:  ldloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance int32 IKVM.Reflection.Reader.MetadataReader::ReadBlobIndex()
+    IL_0013:  stelem.i4
+    IL_0014:  nop
+    IL_0015:  ldloc.0
+    IL_0016:  ldc.i4.1
+    IL_0017:  add
+    IL_0018:  stloc.0
+    IL_0019:  ldloc.0
+    IL_001a:  ldarg.0
+    IL_001b:  ldfld      !0[] class IKVM.Reflection.Metadata.Table`1<int32>::records
+    IL_0020:  ldlen
+    IL_0021:  conv.i4
+    IL_0022:  clt
+    IL_0024:  stloc.1
+    IL_0025:  ldloc.1
+    IL_0026:  brtrue.s   IL_0005
+    IL_0028:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="24" nfragments="2">
+<clone_fragment endline="632" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\attribute.cs" hamdist="0" pcid="4289" startline="617"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool Mono.CSharp.Attribute::arg_resolved
+    IL_0007:  stloc.1
+    IL_0008:  ldloc.1
+    IL_0009:  brtrue.s   IL_0012
+    IL_000b:  ldarg.0
+    IL_000c:  call       instance class Mono.CSharp.MethodSpec Mono.CSharp.Attribute::Resolve()
+    IL_0011:  pop
+    IL_0012:  ldarg.0
+    IL_0013:  ldfld      bool Mono.CSharp.Attribute::resolve_error
+    IL_0018:  ldc.i4.0
+    IL_0019:  ceq
+    IL_001b:  stloc.1
+    IL_001c:  ldloc.1
+    IL_001d:  brtrue.s   IL_0023
+    IL_001f:  ldnull
+    IL_0020:  stloc.0
+    IL_0021:  br.s       IL_0046
+    IL_0023:  ldarg.0
+    IL_0024:  ldfld      class Mono.CSharp.Arguments Mono.CSharp.Attribute::PosArguments
+    IL_0029:  ldc.i4.0
+    IL_002a:  callvirt   instance class Mono.CSharp.Argument Mono.CSharp.Arguments::get_Item(int32)
+    IL_002f:  ldfld      class Mono.CSharp.Expression Mono.CSharp.Argument::Expr
+    IL_0034:  castclass  Mono.CSharp.Constant
+    IL_0039:  callvirt   instance object Mono.CSharp.Constant::GetValue()
+    IL_003e:  isinst     [mscorlib]System.String
+    IL_0043:  stloc.0
+    IL_0044:  br.s       IL_0046
+    IL_0046:  ldloc.0
+    IL_0047:  ret
+]]></clone_fragment>
+<clone_fragment endline="648" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\attribute.cs" hamdist="0" pcid="4291" startline="633"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      bool Mono.CSharp.Attribute::arg_resolved
+    IL_0007:  stloc.1
+    IL_0008:  ldloc.1
+    IL_0009:  brtrue.s   IL_0012
+    IL_000b:  ldarg.0
+    IL_000c:  call       instance class Mono.CSharp.MethodSpec Mono.CSharp.Attribute::Resolve()
+    IL_0011:  pop
+    IL_0012:  ldarg.0
+    IL_0013:  ldfld      bool Mono.CSharp.Attribute::resolve_error
+    IL_0018:  ldc.i4.0
+    IL_0019:  ceq
+    IL_001b:  stloc.1
+    IL_001c:  ldloc.1
+    IL_001d:  brtrue.s   IL_0023
+    IL_001f:  ldnull
+    IL_0020:  stloc.0
+    IL_0021:  br.s       IL_0046
+    IL_0023:  ldarg.0
+    IL_0024:  ldfld      class Mono.CSharp.Arguments Mono.CSharp.Attribute::PosArguments
+    IL_0029:  ldc.i4.0
+    IL_002a:  callvirt   instance class Mono.CSharp.Argument Mono.CSharp.Arguments::get_Item(int32)
+    IL_002f:  ldfld      class Mono.CSharp.Expression Mono.CSharp.Argument::Expr
+    IL_0034:  castclass  Mono.CSharp.Constant
+    IL_0039:  callvirt   instance object Mono.CSharp.Constant::GetValue()
+    IL_003e:  isinst     [mscorlib]System.String
+    IL_0043:  stloc.0
+    IL_0044:  br.s       IL_0046
+    IL_0046:  ldloc.0
+    IL_0047:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="25" nfragments="2">
+<clone_fragment endline="107" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Types\NonArrayTypeName.vb" hamdist="0" pcid="9841" startline="96"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance bool vbnc.NonArrayTypeName::get_IsConstructedTypeName()
+    IL_0007:  stloc.1
+    IL_0008:  ldloc.1
+    IL_0009:  brfalse.s  IL_001b
+    IL_000b:  ldarg.0
+    IL_000c:  callvirt   instance class vbnc.ConstructedTypeName vbnc.NonArrayTypeName::get_AsConstructedTypeName()
+    IL_0011:  callvirt   instance string vbnc.ConstructedTypeName::get_Name()
+    IL_0016:  stloc.0
+    IL_0017:  br.s       IL_003e
+    IL_0019:  br.s       IL_003d
+    IL_001b:  ldarg.0
+    IL_001c:  callvirt   instance bool vbnc.NonArrayTypeName::get_IsSimpleTypeName()
+    IL_0021:  stloc.1
+    IL_0022:  ldloc.1
+    IL_0023:  brfalse.s  IL_0035
+    IL_0025:  ldarg.0
+    IL_0026:  callvirt   instance class vbnc.SimpleTypeName vbnc.NonArrayTypeName::get_AsSimpleTypeName()
+    IL_002b:  callvirt   instance string vbnc.SimpleTypeName::get_Name()
+    IL_0030:  stloc.0
+    IL_0031:  br.s       IL_003e
+    IL_0033:  br.s       IL_003d
+    IL_0035:  nop
+    IL_0036:  ldarg.0
+    IL_0037:  newobj     instance void vbnc.InternalException::.ctor(class vbnc.IBaseObject)
+    IL_003c:  throw
+    IL_003d:  nop
+    IL_003e:  ldloc.0
+    IL_003f:  ret
+]]></clone_fragment>
+<clone_fragment endline="200" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Types\NonArrayTypeName.vb" hamdist="0" pcid="9847" startline="191"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance bool vbnc.NonArrayTypeName::get_IsConstructedTypeName()
+    IL_0007:  stloc.1
+    IL_0008:  ldloc.1
+    IL_0009:  brfalse.s  IL_001b
+    IL_000b:  ldarg.0
+    IL_000c:  callvirt   instance class vbnc.ConstructedTypeName vbnc.NonArrayTypeName::get_AsConstructedTypeName()
+    IL_0011:  callvirt   instance string vbnc.ConstructedTypeName::get_Name()
+    IL_0016:  stloc.0
+    IL_0017:  br.s       IL_003e
+    IL_0019:  br.s       IL_003d
+    IL_001b:  ldarg.0
+    IL_001c:  callvirt   instance bool vbnc.NonArrayTypeName::get_IsSimpleTypeName()
+    IL_0021:  stloc.1
+    IL_0022:  ldloc.1
+    IL_0023:  brfalse.s  IL_0035
+    IL_0025:  ldarg.0
+    IL_0026:  callvirt   instance class vbnc.SimpleTypeName vbnc.NonArrayTypeName::get_AsSimpleTypeName()
+    IL_002b:  callvirt   instance string vbnc.SimpleTypeName::get_Name()
+    IL_0030:  stloc.0
+    IL_0031:  br.s       IL_003e
+    IL_0033:  br.s       IL_003d
+    IL_0035:  nop
+    IL_0036:  ldarg.0
+    IL_0037:  newobj     instance void vbnc.InternalException::.ctor(class vbnc.IBaseObject)
+    IL_003c:  throw
+    IL_003d:  nop
+    IL_003e:  ldloc.0
+    IL_003f:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="26" nfragments="2">
+<clone_fragment endline="167" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\constant.cs" hamdist="0" pcid="2267" startline="159"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.2
+    IL_0002:  newobj     instance void Mono.CSharp.Arguments::.ctor(int32)
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_000f:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_0014:  nop
+    IL_0015:  ldloc.0
+    IL_0016:  ldarg.0
+    IL_0017:  ldfld      class Mono.CSharp.TypeSpec Mono.CSharp.Expression::'type'
+    IL_001c:  ldarg.0
+    IL_001d:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_0022:  newobj     instance void Mono.CSharp.TypeExpression::.ctor(class Mono.CSharp.TypeSpec,
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_002d:  newobj     instance void Mono.CSharp.TypeOf::.ctor(class Mono.CSharp.FullNamedExpression,
+    IL_0032:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_0037:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_003c:  nop
+    IL_003d:  ldarg.0
+    IL_003e:  ldarg.1
+    IL_003f:  ldstr      "Constant"
+    IL_0044:  ldloc.0
+    IL_0045:  call       instance class Mono.CSharp.Expression Mono.CSharp.Expression::CreateExpressionFactoryCall(class Mono.CSharp.ResolveContext,
+    IL_004a:  stloc.1
+    IL_004b:  br.s       IL_004d
+    IL_004d:  ldloc.1
+    IL_004e:  ret
+]]></clone_fragment>
+<clone_fragment endline="1662" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" hamdist="0" pcid="4781" startline="1655"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.2
+    IL_0002:  newobj     instance void Mono.CSharp.Arguments::.ctor(int32)
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_000f:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_0014:  nop
+    IL_0015:  ldloc.0
+    IL_0016:  ldarg.0
+    IL_0017:  ldfld      class Mono.CSharp.TypeSpec Mono.CSharp.Expression::'type'
+    IL_001c:  ldarg.0
+    IL_001d:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_0022:  newobj     instance void Mono.CSharp.TypeExpression::.ctor(class Mono.CSharp.TypeSpec,
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_002d:  newobj     instance void Mono.CSharp.TypeOf::.ctor(class Mono.CSharp.FullNamedExpression,
+    IL_0032:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_0037:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_003c:  nop
+    IL_003d:  ldarg.0
+    IL_003e:  ldarg.1
+    IL_003f:  ldstr      "Constant"
+    IL_0044:  ldloc.0
+    IL_0045:  call       instance class Mono.CSharp.Expression Mono.CSharp.Expression::CreateExpressionFactoryCall(class Mono.CSharp.ResolveContext,
+    IL_004a:  stloc.1
+    IL_004b:  br.s       IL_004d
+    IL_004d:  ldloc.1
+    IL_004e:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="27" nfragments="2">
+<clone_fragment endline="167" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\constant.cs" hamdist="0" pcid="2267" startline="159"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.2
+    IL_0002:  newobj     instance void Mono.CSharp.Arguments::.ctor(int32)
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_000f:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_0014:  nop
+    IL_0015:  ldloc.0
+    IL_0016:  ldarg.0
+    IL_0017:  ldfld      class Mono.CSharp.TypeSpec Mono.CSharp.Expression::'type'
+    IL_001c:  ldarg.0
+    IL_001d:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_0022:  newobj     instance void Mono.CSharp.TypeExpression::.ctor(class Mono.CSharp.TypeSpec,
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_002d:  newobj     instance void Mono.CSharp.TypeOf::.ctor(class Mono.CSharp.FullNamedExpression,
+    IL_0032:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_0037:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_003c:  nop
+    IL_003d:  ldarg.0
+    IL_003e:  ldarg.1
+    IL_003f:  ldstr      "Constant"
+    IL_0044:  ldloc.0
+    IL_0045:  call       instance class Mono.CSharp.Expression Mono.CSharp.Expression::CreateExpressionFactoryCall(class Mono.CSharp.ResolveContext,
+    IL_004a:  stloc.1
+    IL_004b:  br.s       IL_004d
+    IL_004d:  ldloc.1
+    IL_004e:  ret
+]]></clone_fragment>
+<clone_fragment endline="7118" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" hamdist="0" pcid="4943" startline="7108"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.2
+    IL_0002:  newobj     instance void Mono.CSharp.Arguments::.ctor(int32)
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_000f:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_0014:  nop
+    IL_0015:  ldloc.0
+    IL_0016:  ldarg.0
+    IL_0017:  ldfld      class Mono.CSharp.TypeSpec Mono.CSharp.Expression::'type'
+    IL_001c:  ldarg.0
+    IL_001d:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_0022:  newobj     instance void Mono.CSharp.TypeExpression::.ctor(class Mono.CSharp.TypeSpec,
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_002d:  newobj     instance void Mono.CSharp.TypeOf::.ctor(class Mono.CSharp.FullNamedExpression,
+    IL_0032:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_0037:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_003c:  nop
+    IL_003d:  ldarg.0
+    IL_003e:  ldarg.1
+    IL_003f:  ldstr      "Constant"
+    IL_0044:  ldloc.0
+    IL_0045:  call       instance class Mono.CSharp.Expression Mono.CSharp.Expression::CreateExpressionFactoryCall(class Mono.CSharp.ResolveContext,
+    IL_004a:  stloc.1
+    IL_004b:  br.s       IL_004d
+    IL_004d:  ldloc.1
+    IL_004e:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="28" nfragments="2">
+<clone_fragment endline="167" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\constant.cs" hamdist="0" pcid="2267" startline="159"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.2
+    IL_0002:  newobj     instance void Mono.CSharp.Arguments::.ctor(int32)
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_000f:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_0014:  nop
+    IL_0015:  ldloc.0
+    IL_0016:  ldarg.0
+    IL_0017:  ldfld      class Mono.CSharp.TypeSpec Mono.CSharp.Expression::'type'
+    IL_001c:  ldarg.0
+    IL_001d:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_0022:  newobj     instance void Mono.CSharp.TypeExpression::.ctor(class Mono.CSharp.TypeSpec,
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_002d:  newobj     instance void Mono.CSharp.TypeOf::.ctor(class Mono.CSharp.FullNamedExpression,
+    IL_0032:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_0037:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_003c:  nop
+    IL_003d:  ldarg.0
+    IL_003e:  ldarg.1
+    IL_003f:  ldstr      "Constant"
+    IL_0044:  ldloc.0
+    IL_0045:  call       instance class Mono.CSharp.Expression Mono.CSharp.Expression::CreateExpressionFactoryCall(class Mono.CSharp.ResolveContext,
+    IL_004a:  stloc.1
+    IL_004b:  br.s       IL_004d
+    IL_004d:  ldloc.1
+    IL_004e:  ret
+]]></clone_fragment>
+<clone_fragment endline="7300" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" hamdist="0" pcid="4957" startline="7293"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.2
+    IL_0002:  newobj     instance void Mono.CSharp.Arguments::.ctor(int32)
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldarg.0
+    IL_000a:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_000f:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_0014:  nop
+    IL_0015:  ldloc.0
+    IL_0016:  ldarg.0
+    IL_0017:  ldfld      class Mono.CSharp.TypeSpec Mono.CSharp.Expression::'type'
+    IL_001c:  ldarg.0
+    IL_001d:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_0022:  newobj     instance void Mono.CSharp.TypeExpression::.ctor(class Mono.CSharp.TypeSpec,
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      valuetype Mono.CSharp.Location Mono.CSharp.Expression::loc
+    IL_002d:  newobj     instance void Mono.CSharp.TypeOf::.ctor(class Mono.CSharp.FullNamedExpression,
+    IL_0032:  newobj     instance void Mono.CSharp.Argument::.ctor(class Mono.CSharp.Expression)
+    IL_0037:  callvirt   instance void Mono.CSharp.Arguments::Add(class Mono.CSharp.Argument)
+    IL_003c:  nop
+    IL_003d:  ldarg.0
+    IL_003e:  ldarg.1
+    IL_003f:  ldstr      "Constant"
+    IL_0044:  ldloc.0
+    IL_0045:  call       instance class Mono.CSharp.Expression Mono.CSharp.Expression::CreateExpressionFactoryCall(class Mono.CSharp.ResolveContext,
+    IL_004a:  stloc.1
+    IL_004b:  br.s       IL_004d
+    IL_004d:  ldloc.1
+    IL_004e:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="29" nfragments="2">
+<clone_fragment endline="38" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\BinaryExpressions\AndExpression.vb" hamdist="0" pcid="6571" startline="24"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.BinaryExpression::get_LeftType()
+    IL_0007:  stloc.1
+    IL_0008:  ldarg.0
+    IL_0009:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.BinaryExpression::get_RightType()
+    IL_000e:  stloc.3
+    IL_000f:  ldloc.1
+    IL_0010:  ldloc.3
+    IL_0011:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0016:  brfalse.s  IL_0026
+    IL_0018:  ldarg.0
+    IL_0019:  callvirt   instance class vbnc.Compiler vbnc.BaseObject::get_Compiler()
+    IL_001e:  ldloc.1
+    IL_001f:  call       bool vbnc.Helper::IsEnum(class vbnc.Compiler,
+    IL_0024:  brtrue.s   IL_0029
+    IL_0026:  ldc.i4.0
+    IL_0027:  br.s       IL_002a
+    IL_0029:  ldc.i4.1
+    IL_002a:  stloc.s    VB$CG$t_bool$S0
+    IL_002c:  ldloc.s    VB$CG$t_bool$S0
+    IL_002e:  brfalse.s  IL_0034
+    IL_0030:  ldloc.1
+    IL_0031:  stloc.2
+    IL_0032:  br.s       IL_003c
+    IL_0034:  nop
+    IL_0035:  ldarg.0
+    IL_0036:  call       instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.BinaryExpression::get_ExpressionType()
+    IL_003b:  stloc.2
+    IL_003c:  nop
+    IL_003d:  ldloc.2
+    IL_003e:  stloc.0
+    IL_003f:  br.s       IL_0041
+    IL_0041:  ldloc.0
+    IL_0042:  ret
+]]></clone_fragment>
+<clone_fragment endline="38" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\BinaryExpressions\OrExpression.vb" hamdist="0" pcid="6669" startline="24"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.BinaryExpression::get_LeftType()
+    IL_0007:  stloc.1
+    IL_0008:  ldarg.0
+    IL_0009:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.BinaryExpression::get_RightType()
+    IL_000e:  stloc.3
+    IL_000f:  ldloc.1
+    IL_0010:  ldloc.3
+    IL_0011:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0016:  brfalse.s  IL_0026
+    IL_0018:  ldarg.0
+    IL_0019:  callvirt   instance class vbnc.Compiler vbnc.BaseObject::get_Compiler()
+    IL_001e:  ldloc.1
+    IL_001f:  call       bool vbnc.Helper::IsEnum(class vbnc.Compiler,
+    IL_0024:  brtrue.s   IL_0029
+    IL_0026:  ldc.i4.0
+    IL_0027:  br.s       IL_002a
+    IL_0029:  ldc.i4.1
+    IL_002a:  stloc.s    VB$CG$t_bool$S0
+    IL_002c:  ldloc.s    VB$CG$t_bool$S0
+    IL_002e:  brfalse.s  IL_0034
+    IL_0030:  ldloc.1
+    IL_0031:  stloc.2
+    IL_0032:  br.s       IL_003c
+    IL_0034:  nop
+    IL_0035:  ldarg.0
+    IL_0036:  call       instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.BinaryExpression::get_ExpressionType()
+    IL_003b:  stloc.2
+    IL_003c:  nop
+    IL_003d:  ldloc.2
+    IL_003e:  stloc.0
+    IL_003f:  br.s       IL_0041
+    IL_0041:  ldloc.0
+    IL_0042:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="30" nfragments="2">
+<clone_fragment endline="207" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Classifications\MethodGroupClassification.vb" hamdist="0" pcid="6725" startline="192"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance bool vbnc.MethodGroupClassification::get_SuccessfullyResolved()
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+    IL_000b:  ldloc.1
+    IL_000c:  brfalse.s  IL_0015
+    IL_000e:  ldarg.0
+    IL_000f:  newobj     instance void vbnc.InternalException::.ctor(class vbnc.ExpressionClassification)
+    IL_0014:  throw
+    IL_0015:  ldarg.0
+    IL_0016:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [Mono.Cecil.VB]Mono.Cecil.MemberReference> vbnc.MethodGroupClassification::m_Group
+    IL_001b:  ldc.i4.0
+    IL_001c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [Mono.Cecil.VB]Mono.Cecil.MemberReference>::get_Item(int32)
+    IL_0021:  isinst     [Mono.Cecil.VB]Mono.Cecil.MethodReference
+    IL_0026:  ldnull
+    IL_0027:  cgt.un
+    IL_0029:  stloc.1
+    IL_002a:  ldloc.1
+    IL_002b:  brfalse.s  IL_0043
+    IL_002d:  ldarg.0
+    IL_002e:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [Mono.Cecil.VB]Mono.Cecil.MemberReference> vbnc.MethodGroupClassification::m_Group
+    IL_0033:  ldc.i4.0
+    IL_0034:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [Mono.Cecil.VB]Mono.Cecil.MemberReference>::get_Item(int32)
+    IL_0039:  castclass  [Mono.Cecil.VB]Mono.Cecil.MethodReference
+    IL_003e:  stloc.0
+    IL_003f:  br.s       IL_0049
+    IL_0041:  br.s       IL_0048
+    IL_0043:  nop
+    IL_0044:  ldnull
+    IL_0045:  stloc.0
+    IL_0046:  br.s       IL_0049
+    IL_0048:  nop
+    IL_0049:  ldloc.0
+    IL_004a:  ret
+]]></clone_fragment>
+<clone_fragment endline="224" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Classifications\MethodGroupClassification.vb" hamdist="0" pcid="6727" startline="208"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance bool vbnc.MethodGroupClassification::get_SuccessfullyResolved()
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.1
+    IL_000b:  ldloc.1
+    IL_000c:  brfalse.s  IL_0015
+    IL_000e:  ldarg.0
+    IL_000f:  newobj     instance void vbnc.InternalException::.ctor(class vbnc.ExpressionClassification)
+    IL_0014:  throw
+    IL_0015:  ldarg.0
+    IL_0016:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [Mono.Cecil.VB]Mono.Cecil.MemberReference> vbnc.MethodGroupClassification::m_Group
+    IL_001b:  ldc.i4.0
+    IL_001c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [Mono.Cecil.VB]Mono.Cecil.MemberReference>::get_Item(int32)
+    IL_0021:  isinst     [Mono.Cecil.VB]Mono.Cecil.MethodReference
+    IL_0026:  ldnull
+    IL_0027:  cgt.un
+    IL_0029:  stloc.1
+    IL_002a:  ldloc.1
+    IL_002b:  brfalse.s  IL_0043
+    IL_002d:  ldarg.0
+    IL_002e:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [Mono.Cecil.VB]Mono.Cecil.MemberReference> vbnc.MethodGroupClassification::m_Group
+    IL_0033:  ldc.i4.0
+    IL_0034:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [Mono.Cecil.VB]Mono.Cecil.MemberReference>::get_Item(int32)
+    IL_0039:  castclass  [Mono.Cecil.VB]Mono.Cecil.MethodReference
+    IL_003e:  stloc.0
+    IL_003f:  br.s       IL_0049
+    IL_0041:  br.s       IL_0048
+    IL_0043:  nop
+    IL_0044:  ldnull
+    IL_0045:  stloc.0
+    IL_0046:  br.s       IL_0049
+    IL_0048:  nop
+    IL_0049:  ldloc.0
+    IL_004a:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="31" nfragments="2">
+<clone_fragment endline="1391" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" hamdist="0" pcid="1437" startline="1380"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+    IL_0003:  br.s       IL_0024
+    IL_0005:  nop
+    IL_0006:  ldarg.0
+    IL_0007:  ldfld      !0[] class IKVM.Reflection.Metadata.Table`1<int32>::records
+    IL_000c:  ldloc.0
+    IL_000d:  ldelem.i4
+    IL_000e:  ldarg.1
+    IL_000f:  ceq
+    IL_0011:  ldc.i4.0
+    IL_0012:  ceq
+    IL_0014:  stloc.2
+    IL_0015:  ldloc.2
+    IL_0016:  brtrue.s   IL_001f
+    IL_0018:  nop
+    IL_0019:  ldloc.0
+    IL_001a:  ldc.i4.1
+    IL_001b:  add
+    IL_001c:  stloc.1
+    IL_001d:  br.s       IL_003b
+    IL_001f:  nop
+    IL_0020:  ldloc.0
+    IL_0021:  ldc.i4.1
+    IL_0022:  add
+    IL_0023:  stloc.0
+    IL_0024:  ldloc.0
+    IL_0025:  ldarg.0
+    IL_0026:  ldfld      int32 class IKVM.Reflection.Metadata.Table`1<int32>::rowCount
+    IL_002b:  clt
+    IL_002d:  stloc.2
+    IL_002e:  ldloc.2
+    IL_002f:  brtrue.s   IL_0005
+    IL_0031:  ldarg.0
+    IL_0032:  ldarg.1
+    IL_0033:  call       instance int32 class IKVM.Reflection.Metadata.Table`1<int32>::AddRecord(!0)
+    IL_0038:  stloc.1
+    IL_0039:  br.s       IL_003b
+    IL_003b:  ldloc.1
+    IL_003c:  ret
+]]></clone_fragment>
+<clone_fragment endline="1785" file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" hamdist="0" pcid="1483" startline="1774"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+    IL_0003:  br.s       IL_0024
+    IL_0005:  nop
+    IL_0006:  ldarg.0
+    IL_0007:  ldfld      !0[] class IKVM.Reflection.Metadata.Table`1<int32>::records
+    IL_000c:  ldloc.0
+    IL_000d:  ldelem.i4
+    IL_000e:  ldarg.1
+    IL_000f:  ceq
+    IL_0011:  ldc.i4.0
+    IL_0012:  ceq
+    IL_0014:  stloc.2
+    IL_0015:  ldloc.2
+    IL_0016:  brtrue.s   IL_001f
+    IL_0018:  nop
+    IL_0019:  ldloc.0
+    IL_001a:  ldc.i4.1
+    IL_001b:  add
+    IL_001c:  stloc.1
+    IL_001d:  br.s       IL_003b
+    IL_001f:  nop
+    IL_0020:  ldloc.0
+    IL_0021:  ldc.i4.1
+    IL_0022:  add
+    IL_0023:  stloc.0
+    IL_0024:  ldloc.0
+    IL_0025:  ldarg.0
+    IL_0026:  ldfld      int32 class IKVM.Reflection.Metadata.Table`1<int32>::rowCount
+    IL_002b:  clt
+    IL_002d:  stloc.2
+    IL_002e:  ldloc.2
+    IL_002f:  brtrue.s   IL_0005
+    IL_0031:  ldarg.0
+    IL_0032:  ldarg.1
+    IL_0033:  call       instance int32 class IKVM.Reflection.Metadata.Table`1<int32>::AddRecord(!0)
+    IL_0038:  stloc.1
+    IL_0039:  br.s       IL_003b
+    IL_003b:  ldloc.1
+    IL_003c:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="32" nfragments="2">
+<clone_fragment endline="560" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" hamdist="0" pcid="8161" startline="548"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  nop
+    IL_0002:  ldarg.0
+    IL_0003:  stloc.1
+    IL_0004:  nop
+    IL_0005:  ldloc.1
+    IL_0006:  ldc.i4     0xa3
+    IL_000b:  ceq
+    IL_000d:  stloc.2
+    IL_000e:  ldloc.2
+    IL_000f:  brfalse.s  IL_001c
+    IL_0011:  ldarg.1
+    IL_0012:  call       valuetype [mscorlib]System.TypeCode vbnc.TypeConverter::GetUnaryPlusResultType(valuetype [mscorlib]System.TypeCode)
+    IL_0017:  stloc.0
+    IL_0018:  br.s       IL_0051
+    IL_001a:  br.s       IL_0050
+    IL_001c:  nop
+    IL_001d:  ldloc.1
+    IL_001e:  ldc.i4     0xa4
+    IL_0023:  ceq
+    IL_0025:  stloc.2
+    IL_0026:  ldloc.2
+    IL_0027:  brfalse.s  IL_0034
+    IL_0029:  ldarg.1
+    IL_002a:  call       valuetype [mscorlib]System.TypeCode vbnc.TypeConverter::GetUnaryMinusResultType(valuetype [mscorlib]System.TypeCode)
+    IL_002f:  stloc.0
+    IL_0030:  br.s       IL_0051
+    IL_0032:  br.s       IL_0050
+    IL_0034:  nop
+    IL_0035:  ldloc.1
+    IL_0036:  ldc.i4.s   109
+    IL_0038:  ceq
+    IL_003a:  stloc.2
+    IL_003b:  ldloc.2
+    IL_003c:  brfalse.s  IL_0049
+    IL_003e:  ldarg.1
+    IL_003f:  call       valuetype [mscorlib]System.TypeCode vbnc.TypeConverter::GetUnaryNotResultType(valuetype [mscorlib]System.TypeCode)
+    IL_0044:  stloc.0
+    IL_0045:  br.s       IL_0051
+    IL_0047:  br.s       IL_0050
+    IL_0049:  nop
+    IL_004a:  newobj     instance void [mscorlib]System.NotImplementedException::.ctor()
+    IL_004f:  throw
+    IL_0050:  nop
+    IL_0051:  ldloc.0
+    IL_0052:  ret
+]]></clone_fragment>
+<clone_fragment endline="624" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" hamdist="0" pcid="8165" startline="612"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  nop
+    IL_0002:  ldarg.0
+    IL_0003:  stloc.1
+    IL_0004:  nop
+    IL_0005:  ldloc.1
+    IL_0006:  ldc.i4     0xa3
+    IL_000b:  ceq
+    IL_000d:  stloc.2
+    IL_000e:  ldloc.2
+    IL_000f:  brfalse.s  IL_001c
+    IL_0011:  ldarg.1
+    IL_0012:  call       valuetype [mscorlib]System.TypeCode vbnc.TypeConverter::GetUnaryPlusResultType(valuetype [mscorlib]System.TypeCode)
+    IL_0017:  stloc.0
+    IL_0018:  br.s       IL_0051
+    IL_001a:  br.s       IL_0050
+    IL_001c:  nop
+    IL_001d:  ldloc.1
+    IL_001e:  ldc.i4     0xa4
+    IL_0023:  ceq
+    IL_0025:  stloc.2
+    IL_0026:  ldloc.2
+    IL_0027:  brfalse.s  IL_0034
+    IL_0029:  ldarg.1
+    IL_002a:  call       valuetype [mscorlib]System.TypeCode vbnc.TypeConverter::GetUnaryMinusResultType(valuetype [mscorlib]System.TypeCode)
+    IL_002f:  stloc.0
+    IL_0030:  br.s       IL_0051
+    IL_0032:  br.s       IL_0050
+    IL_0034:  nop
+    IL_0035:  ldloc.1
+    IL_0036:  ldc.i4.s   109
+    IL_0038:  ceq
+    IL_003a:  stloc.2
+    IL_003b:  ldloc.2
+    IL_003c:  brfalse.s  IL_0049
+    IL_003e:  ldarg.1
+    IL_003f:  call       valuetype [mscorlib]System.TypeCode vbnc.TypeConverter::GetUnaryNotResultType(valuetype [mscorlib]System.TypeCode)
+    IL_0044:  stloc.0
+    IL_0045:  br.s       IL_0051
+    IL_0047:  br.s       IL_0050
+    IL_0049:  nop
+    IL_004a:  newobj     instance void [mscorlib]System.NotImplementedException::.ctor()
+    IL_004f:  throw
+    IL_0050:  nop
+    IL_0051:  ldloc.0
+    IL_0052:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="33" nfragments="2">
+<clone_fragment endline="3158" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" hamdist="0" pcid="7765" startline="3139"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  nop
+    IL_0002:  ldarg.0
+    IL_0003:  ldc.i4.1
+    IL_0004:  sub
+    IL_0005:  stloc.2
+    IL_0006:  ldloc.2
+    IL_0007:  switch     ( 
+                          IL_005d,
+                          IL_0026,
+                          IL_0047,
+                          IL_003c,
+                          IL_0031,
+                          IL_0052)
+    IL_0024:  br.s       IL_0068
+    IL_0026:  nop
+    IL_0027:  ldstr      "Protected Friend"
+    IL_002c:  stloc.0
+    IL_002d:  br.s       IL_0072
+    IL_002f:  br.s       IL_0071
+    IL_0031:  nop
+    IL_0032:  ldstr      "Protected Friend"
+    IL_0037:  stloc.0
+    IL_0038:  br.s       IL_0072
+    IL_003a:  br.s       IL_0071
+    IL_003c:  nop
+    IL_003d:  ldstr      "Protected"
+    IL_0042:  stloc.0
+    IL_0043:  br.s       IL_0072
+    IL_0045:  br.s       IL_0071
+    IL_0047:  nop
+    IL_0048:  ldstr      "Friend"
+    IL_004d:  stloc.0
+    IL_004e:  br.s       IL_0072
+    IL_0050:  br.s       IL_0071
+    IL_0052:  nop
+    IL_0053:  ldstr      "Public"
+    IL_0058:  stloc.0
+    IL_0059:  br.s       IL_0072
+    IL_005b:  br.s       IL_0071
+    IL_005d:  nop
+    IL_005e:  ldstr      "Private"
+    IL_0063:  stloc.0
+    IL_0064:  br.s       IL_0072
+    IL_0066:  br.s       IL_0071
+    IL_0068:  nop
+    IL_0069:  ldstr      "<unknown>"
+    IL_006e:  stloc.0
+    IL_006f:  br.s       IL_0072
+    IL_0071:  nop
+    IL_0072:  ldloc.0
+    IL_0073:  ret
+]]></clone_fragment>
+<clone_fragment endline="3177" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" hamdist="0" pcid="7767" startline="3159"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  nop
+    IL_0002:  ldarg.0
+    IL_0003:  ldc.i4.1
+    IL_0004:  sub
+    IL_0005:  stloc.2
+    IL_0006:  ldloc.2
+    IL_0007:  switch     ( 
+                          IL_005d,
+                          IL_0026,
+                          IL_0047,
+                          IL_003c,
+                          IL_0031,
+                          IL_0052)
+    IL_0024:  br.s       IL_0068
+    IL_0026:  nop
+    IL_0027:  ldstr      "Protected Friend"
+    IL_002c:  stloc.0
+    IL_002d:  br.s       IL_0072
+    IL_002f:  br.s       IL_0071
+    IL_0031:  nop
+    IL_0032:  ldstr      "Protected Friend"
+    IL_0037:  stloc.0
+    IL_0038:  br.s       IL_0072
+    IL_003a:  br.s       IL_0071
+    IL_003c:  nop
+    IL_003d:  ldstr      "Protected"
+    IL_0042:  stloc.0
+    IL_0043:  br.s       IL_0072
+    IL_0045:  br.s       IL_0071
+    IL_0047:  nop
+    IL_0048:  ldstr      "Friend"
+    IL_004d:  stloc.0
+    IL_004e:  br.s       IL_0072
+    IL_0050:  br.s       IL_0071
+    IL_0052:  nop
+    IL_0053:  ldstr      "Public"
+    IL_0058:  stloc.0
+    IL_0059:  br.s       IL_0072
+    IL_005b:  br.s       IL_0071
+    IL_005d:  nop
+    IL_005e:  ldstr      "Private"
+    IL_0063:  stloc.0
+    IL_0064:  br.s       IL_0072
+    IL_0066:  br.s       IL_0071
+    IL_0068:  nop
+    IL_0069:  ldstr      "<unknown>"
+    IL_006e:  stloc.0
+    IL_006f:  br.s       IL_0072
+    IL_0071:  nop
+    IL_0072:  ldloc.0
+    IL_0073:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="34" nfragments="2">
+<clone_fragment endline="72" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" hamdist="0" pcid="6873" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+<clone_fragment endline="73" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CLngExpression.vb" hamdist="0" pcid="6921" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="35" nfragments="2">
+<clone_fragment endline="72" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" hamdist="0" pcid="6873" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+<clone_fragment endline="73" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CSByteExpression.vb" hamdist="0" pcid="6947" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="36" nfragments="2">
+<clone_fragment endline="72" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" hamdist="0" pcid="6873" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+<clone_fragment endline="73" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CShortExpression.vb" hamdist="0" pcid="6955" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="37" nfragments="2">
+<clone_fragment endline="72" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" hamdist="0" pcid="6873" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+<clone_fragment endline="74" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CUIntExpression.vb" hamdist="0" pcid="6993" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="38" nfragments="2">
+<clone_fragment endline="72" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" hamdist="0" pcid="6873" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+<clone_fragment endline="73" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CULngExpression.vb" hamdist="0" pcid="7001" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+</clone_group>
+<clone_group groupid="39" nfragments="2">
+<clone_fragment endline="72" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" hamdist="0" pcid="6873" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+<clone_fragment endline="73" file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CUShortExpression.vb" hamdist="0" pcid="7009" startline="44"><![CDATA[
+    IL_0000:  nop
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.s    result
+    IL_0004:  ldnull
+    IL_0005:  stloc.2
+    IL_0006:  ldarg.1
+    IL_0007:  callvirt   instance class vbnc.Expression vbnc.ConversionExpression::get_Expression()
+    IL_000c:  stloc.0
+    IL_000d:  ldarg.1
+    IL_000e:  callvirt   instance class [Mono.Cecil.VB]Mono.Cecil.TypeReference vbnc.Expression::get_ExpressionType()
+    IL_0013:  stloc.1
+    IL_0014:  ldarg.0
+    IL_0015:  ldarg.1
+    IL_0016:  ldloca.s   expTypeCode
+    IL_0018:  ldloca.s   expType
+    IL_001a:  call       bool vbnc.ConversionExpression::ValidateForNullable(class vbnc.ResolveInfo,
+    IL_001f:  brfalse.s  IL_0025
+    IL_0021:  ldloc.s    result
+    IL_0023:  brtrue.s   IL_0028
+    IL_0025:  ldc.i4.0
+    IL_0026:  br.s       IL_0029
+    IL_0028:  ldc.i4.1
+    IL_0029:  stloc.s    result
+    IL_002b:  nop
+    IL_002c:  ldloc.3
+    IL_002d:  stloc.s    VB$t_i4$L0
+    IL_002f:  nop
+    IL_0030:  ldloc.s    VB$t_i4$L0
+    IL_0032:  ldc.i4.4
+    IL_0033:  ceq
+    IL_0035:  stloc.s    VB$CG$t_bool$S0
+    IL_0037:  ldloc.s    VB$CG$t_bool$S0
+    IL_0039:  brfalse.s  IL_0075
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0041:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_0046:  ldc.i4     0x7d06
+    IL_004b:  ldloc.0
+    IL_004c:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0051:  ldc.i4.1
+    IL_0052:  newarr     [mscorlib]System.String
+    IL_0057:  stloc.s    VB$t_array$S0
+    IL_0059:  ldloc.s    VB$t_array$S0
+    IL_005b:  ldc.i4.0
+    IL_005c:  ldloc.0
+    IL_005d:  ldloc.2
+    IL_005e:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_0063:  stelem.ref
+    IL_0064:  nop
+    IL_0065:  ldloc.s    VB$t_array$S0
+    IL_0067:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_006c:  pop
+    IL_006d:  ldc.i4.0
+    IL_006e:  stloc.s    result
+    IL_0070:  br         IL_0122
+    IL_0075:  nop
+    IL_0076:  ldloc.s    VB$t_i4$L0
+    IL_0078:  ldc.i4.s   16
+    IL_007a:  ceq
+    IL_007c:  stloc.s    VB$CG$t_bool$S0
+    IL_007e:  ldloc.s    VB$CG$t_bool$S0
+    IL_0080:  brfalse.s  IL_00c5
+    IL_0082:  ldarg.0
+    IL_0083:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_0088:  callvirt   instance class vbnc.Report vbnc.Compiler::get_Report()
+    IL_008d:  ldc.i4     0x7667
+    IL_0092:  ldloc.0
+    IL_0093:  callvirt   instance valuetype vbnc.Span vbnc.BaseObject::get_Location()
+    IL_0098:  ldc.i4.2
+    IL_0099:  newarr     [mscorlib]System.String
+    IL_009e:  stloc.s    VB$t_array$S0
+    IL_00a0:  ldloc.s    VB$t_array$S0
+    IL_00a2:  ldc.i4.0
+    IL_00a3:  ldloc.0
+    IL_00a4:  ldloc.2
+    IL_00a5:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00aa:  stelem.ref
+    IL_00ab:  nop
+    IL_00ac:  ldloc.s    VB$t_array$S0
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldloc.0
+    IL_00b0:  ldloc.1
+    IL_00b1:  call       string vbnc.Helper::ToString(class vbnc.BaseObject,
+    IL_00b6:  stelem.ref
+    IL_00b7:  nop
+    IL_00b8:  ldloc.s    VB$t_array$S0
+    IL_00ba:  callvirt   instance bool vbnc.Report::ShowMessage(valuetype vbnc.Messages,
+    IL_00bf:  pop
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  stloc.s    result
+    IL_00c3:  br.s       IL_0122
+    IL_00c5:  nop
+    IL_00c6:  ldloc.s    VB$t_i4$L0
+    IL_00c8:  ldc.i4.1
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    VB$CG$t_bool$S0
+    IL_00cd:  ldloc.s    VB$CG$t_bool$S0
+    IL_00cf:  brfalse.s  IL_0122
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00d8:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00dd:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::System_Object
+    IL_00e2:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_00e7:  stloc.s    VB$CG$t_bool$S1
+    IL_00e9:  ldloc.s    VB$CG$t_bool$S1
+    IL_00eb:  brfalse.s  IL_00ef
+    IL_00ed:  br.s       IL_0121
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldarg.0
+    IL_00f1:  ldfld      class vbnc.Compiler vbnc.ResolveInfo::Compiler
+    IL_00f6:  callvirt   instance class vbnc.CecilTypeCache vbnc.Compiler::get_TypeCache()
+    IL_00fb:  ldfld      class [Mono.Cecil.VB]Mono.Cecil.TypeDefinition vbnc.CecilTypeCache::Nothing
+    IL_0100:  call       bool vbnc.Helper::CompareType(class [Mono.Cecil.VB]Mono.Cecil.TypeReference,
+    IL_0105:  stloc.s    VB$CG$t_bool$S1
+    IL_0107:  ldloc.s    VB$CG$t_bool$S1
+    IL_0109:  brfalse.s  IL_010d
+    IL_010b:  br.s       IL_0121
+    IL_010d:  nop
+    IL_010e:  ldarg.1
+    IL_010f:  ldc.i4.1
+    IL_0110:  callvirt   instance bool vbnc.ConversionExpression::FindUserDefinedConversionOperator(bool)
+    IL_0115:  brfalse.s  IL_011b
+    IL_0117:  ldloc.s    result
+    IL_0119:  brtrue.s   IL_011e
+    IL_011b:  ldc.i4.0
+    IL_011c:  br.s       IL_011f
+    IL_011e:  ldc.i4.1
+    IL_011f:  stloc.s    result
+    IL_0121:  nop
+    IL_0122:  nop
+    IL_0123:  ldloc.s    result
+    IL_0125:  stloc.s    Validate
+    IL_0127:  br.s       IL_0129
+    IL_0129:  ldloc.s    Validate
+    IL_012b:  ret
+]]></clone_fragment>
+</clone_group>
+</clones>

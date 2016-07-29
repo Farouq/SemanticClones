@@ -1,0 +1,395 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly '02.Quake3Map'
+{
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0C 30 32 2E 51 75 61 6B 65 33 4D 61 70 00   // ...02.Quake3Map.
+                                                                                              00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0C 30 32 2E 51 75 61 6B 65 33 4D 61 70 00   // ...02.Quake3Map.
+                                                                                                00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 30 00 00 )                            //  2010..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 34 61 32 34 61 30 32 38 2D 62 36 34 66   // ..$4a24a028-b64f
+                                                                                                  2D 34 34 63 35 2D 62 30 39 38 2D 38 39 31 31 66   // -44c5-b098-8911f
+                                                                                                  32 38 34 33 37 64 64 00 00 )                      // 28437dd..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public _02.Quake3Map.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.module '02.Quake3Map.exe'
+// MVID: {1D856AEB-FB1D-4468-B1A6-94909B405508}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x00800000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit _02.Quake3Map.Program
+       extends [mscorlib]System.Object
+{
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       438 (0x1b6)
+    .maxstack  7
+    .locals init ([0] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType,
+             [1] valuetype [mscorlib]System.ConsoleKeyInfo i,
+             [2] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [3] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [4] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+             [5] class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh mesh,
+             [6] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode node,
+             [7] int32 lastFPS,
+             [8] int32 fps,
+             [9] valuetype [mscorlib]System.ConsoleKey CS$4$0000,
+             [10] bool CS$4$0001)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\02.Quake3Map\Program.cs' 
+//000017: 		{
+    IL_0000:  nop
+//000018: 			DriverType driverType;
+//000019: 
+//000020: 			Console.Write("Please select the driver you want for this example:\n" +
+    IL_0001:  ldstr      "Please select the driver you want for this example"
+    + ":\n (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n (d) Burning's Softw"
+    + "are Renderer\n (e) Software Renderer\n (f) NullDevice\n (otherKey) exit\n\n"
+    IL_0006:  call       void [mscorlib]System.Console::Write(string)
+    IL_000b:  nop
+//000021: 						" (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n" +
+//000022: 						" (d) Burning's Software Renderer\n (e) Software Renderer\n" +
+//000023: 						" (f) NullDevice\n (otherKey) exit\n\n");
+//000024: 
+//000025: 			ConsoleKeyInfo i = Console.ReadKey();
+    IL_000c:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0011:  stloc.1
+//000026: 
+//000027: 			switch (i.Key)
+    IL_0012:  ldloca.s   i
+    IL_0014:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_0019:  stloc.s    CS$4$0000
+    IL_001b:  ldloc.s    CS$4$0000
+    IL_001d:  ldc.i4.s   65
+    IL_001f:  sub
+    IL_0020:  switch     ( 
+                          IL_003f,
+                          IL_0043,
+                          IL_0047,
+                          IL_004b,
+                          IL_004f,
+                          IL_0053)
+    IL_003d:  br.s       IL_0057
+
+//000028: 			{
+//000029: 				case ConsoleKey.A: driverType = DriverType.OpenGL; break;
+    IL_003f:  ldc.i4.5
+    IL_0040:  stloc.0
+    IL_0041:  br.s       IL_005c
+
+//000030: 				case ConsoleKey.B: driverType = DriverType.Direct3D9; break;
+    IL_0043:  ldc.i4.4
+    IL_0044:  stloc.0
+    IL_0045:  br.s       IL_005c
+
+//000031: 				case ConsoleKey.C: driverType = DriverType.Direct3D8; break;
+    IL_0047:  ldc.i4.3
+    IL_0048:  stloc.0
+    IL_0049:  br.s       IL_005c
+
+//000032: 				case ConsoleKey.D: driverType = DriverType.BurningsVideo; break;
+    IL_004b:  ldc.i4.2
+    IL_004c:  stloc.0
+    IL_004d:  br.s       IL_005c
+
+//000033: 				case ConsoleKey.E: driverType = DriverType.Software; break;
+    IL_004f:  ldc.i4.1
+    IL_0050:  stloc.0
+    IL_0051:  br.s       IL_005c
+
+//000034: 				case ConsoleKey.F: driverType = DriverType.Null; break;
+    IL_0053:  ldc.i4.0
+    IL_0054:  stloc.0
+    IL_0055:  br.s       IL_005c
+
+//000035: 				default:
+//000036: 					return;
+    IL_0057:  br         IL_01b5
+
+//000037: 			}
+//000038: 
+//000039: 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(driverType, new Dimension2Di(640, 480));
+    IL_005c:  ldloc.0
+    IL_005d:  ldc.i4     0x280
+    IL_0062:  ldc.i4     0x1e0
+    IL_0067:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_006c:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+    IL_0071:  stloc.2
+//000040: 			if (device == null)
+    IL_0072:  ldloc.2
+    IL_0073:  ldnull
+    IL_0074:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0079:  ldc.i4.0
+    IL_007a:  ceq
+    IL_007c:  stloc.s    CS$4$0001
+    IL_007e:  ldloc.s    CS$4$0001
+    IL_0080:  brtrue.s   IL_0087
+
+//000041: 				return;
+    IL_0082:  br         IL_01b5
+
+//000042: 
+//000043: 			VideoDriver driver = device.VideoDriver;
+    IL_0087:  ldloc.2
+    IL_0088:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_008d:  stloc.3
+//000044: 			SceneManager smgr = device.SceneManager;
+    IL_008e:  ldloc.2
+    IL_008f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0094:  stloc.s    smgr
+//000045: 
+//000046: 			device.FileSystem.AddFileArchive("../../media/map-20kdm2.pk3");
+    IL_0096:  ldloc.2
+    IL_0097:  callvirt   instance class [IrrlichtLime]IrrlichtLime.IO.FileSystem [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_FileSystem()
+    IL_009c:  ldstr      "../../media/map-20kdm2.pk3"
+    IL_00a1:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IO.FileSystem::AddFileArchive(string)
+    IL_00a6:  pop
+//000047: 
+//000048: 			AnimatedMesh mesh = smgr.GetMesh("20kdm2.bsp");
+    IL_00a7:  ldloc.s    smgr
+    IL_00a9:  ldstr      "20kdm2.bsp"
+    IL_00ae:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh [IrrlichtLime]IrrlichtLime.Scene.SceneManager::GetMesh(string)
+    IL_00b3:  stloc.s    mesh
+//000049: 			SceneNode node = null;
+    IL_00b5:  ldnull
+    IL_00b6:  stloc.s    node
+//000050: 
+//000051: 			if (mesh != null)
+    IL_00b8:  ldloc.s    mesh
+    IL_00ba:  ldnull
+    IL_00bb:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_00c0:  ldc.i4.0
+    IL_00c1:  ceq
+    IL_00c3:  stloc.s    CS$4$0001
+    IL_00c5:  ldloc.s    CS$4$0001
+    IL_00c7:  brtrue.s   IL_00e1
+
+//000052: 				node = smgr.AddOctreeSceneNode(mesh.GetMesh(0), null, -1, 1024);
+    IL_00c9:  ldloc.s    smgr
+    IL_00cb:  ldloc.s    mesh
+    IL_00cd:  ldc.i4.0
+    IL_00ce:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh::GetMesh(int32)
+    IL_00d3:  ldnull
+    IL_00d4:  ldc.i4.m1
+    IL_00d5:  ldc.i4     0x400
+    IL_00da:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddOctreeSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.Mesh,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                         int32,
+                                                                                                                                                         int32)
+    IL_00df:  stloc.s    node
+//000053: 
+//000054: 			if (node != null)
+    IL_00e1:  ldloc.s    node
+    IL_00e3:  ldnull
+    IL_00e4:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_00e9:  ldc.i4.0
+    IL_00ea:  ceq
+    IL_00ec:  stloc.s    CS$4$0001
+    IL_00ee:  ldloc.s    CS$4$0001
+    IL_00f0:  brtrue.s   IL_010e
+
+//000055: 				node.Position = new Vector3Df(-1300, -144, -1249);
+    IL_00f2:  ldloc.s    node
+    IL_00f4:  ldc.r4     -1300.
+    IL_00f9:  ldc.r4     -144.
+    IL_00fe:  ldc.r4     -1249.
+    IL_0103:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0108:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_010d:  nop
+//000056: 
+//000057: 			smgr.AddCameraSceneNodeFPS();
+    IL_010e:  ldloc.s    smgr
+    IL_0110:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNodeFPS()
+    IL_0115:  pop
+//000058: 
+//000059: 			device.CursorControl.Visible = false;
+    IL_0116:  ldloc.2
+    IL_0117:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.CursorControl [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_CursorControl()
+    IL_011c:  ldc.i4.0
+    IL_011d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.CursorControl::set_Visible(bool)
+    IL_0122:  nop
+//000060: 
+//000061: 			int lastFPS = -1;
+    IL_0123:  ldc.i4.m1
+    IL_0124:  stloc.s    lastFPS
+    IL_0126:  br.s       IL_019f
+
+//000062: 
+//000063: 			while (device.Run())
+//000064: 			{
+    IL_0128:  nop
+//000065: 				if (device.WindowActive)
+    IL_0129:  ldloc.2
+    IL_012a:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_WindowActive()
+    IL_012f:  ldc.i4.0
+    IL_0130:  ceq
+    IL_0132:  stloc.s    CS$4$0001
+    IL_0134:  ldloc.s    CS$4$0001
+    IL_0136:  brtrue.s   IL_019e
+
+//000066: 				{
+    IL_0138:  nop
+//000067: 					driver.BeginScene(true, true, new Color(200, 200, 200));
+    IL_0139:  ldloc.3
+    IL_013a:  ldc.i4.1
+    IL_013b:  ldc.i4.1
+    IL_013c:  ldc.i4     0xc8
+    IL_0141:  ldc.i4     0xc8
+    IL_0146:  ldc.i4     0xc8
+    IL_014b:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0150:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool,
+                                                                                                bool,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0155:  pop
+//000068: 					smgr.DrawAll();
+    IL_0156:  ldloc.s    smgr
+    IL_0158:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_015d:  nop
+//000069: 					driver.EndScene();
+    IL_015e:  ldloc.3
+    IL_015f:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_0164:  pop
+//000070: 
+//000071: 					int fps = driver.FPS;
+    IL_0165:  ldloc.3
+    IL_0166:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_016b:  stloc.s    fps
+//000072: 					if (lastFPS != fps)
+    IL_016d:  ldloc.s    lastFPS
+    IL_016f:  ldloc.s    fps
+    IL_0171:  ceq
+    IL_0173:  stloc.s    CS$4$0001
+    IL_0175:  ldloc.s    CS$4$0001
+    IL_0177:  brtrue.s   IL_019d
+
+//000073: 					{
+    IL_0179:  nop
+//000074: 						device.SetWindowCaption(String.Format(
+    IL_017a:  ldloc.2
+    IL_017b:  ldstr      "Quake 3 Map Example - Irrlicht Engine [{0}] fps: {1}"
+    IL_0180:  ldloc.3
+    IL_0181:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_0186:  ldloc.s    fps
+    IL_0188:  box        [mscorlib]System.Int32
+    IL_018d:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_0192:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_0197:  nop
+//000075: 							"Quake 3 Map Example - Irrlicht Engine [{0}] fps: {1}",
+//000076: 							driver.Name, fps));
+//000077: 
+//000078: 						lastFPS = fps;
+    IL_0198:  ldloc.s    fps
+    IL_019a:  stloc.s    lastFPS
+//000079: 					}
+    IL_019c:  nop
+//000080: 				}
+    IL_019d:  nop
+//000081: 			}
+    IL_019e:  nop
+//000063: 			while (device.Run())
+    IL_019f:  ldloc.2
+    IL_01a0:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_01a5:  stloc.s    CS$4$0001
+    IL_01a7:  ldloc.s    CS$4$0001
+    IL_01a9:  brtrue     IL_0128
+
+//000064: 			{
+//000065: 				if (device.WindowActive)
+//000066: 				{
+//000067: 					driver.BeginScene(true, true, new Color(200, 200, 200));
+//000068: 					smgr.DrawAll();
+//000069: 					driver.EndScene();
+//000070: 
+//000071: 					int fps = driver.FPS;
+//000072: 					if (lastFPS != fps)
+//000073: 					{
+//000074: 						device.SetWindowCaption(String.Format(
+//000075: 							"Quake 3 Map Example - Irrlicht Engine [{0}] fps: {1}",
+//000076: 							driver.Name, fps));
+//000077: 
+//000078: 						lastFPS = fps;
+//000079: 					}
+//000080: 				}
+//000081: 			}
+//000082: 
+//000083: 			device.Drop();
+    IL_01ae:  ldloc.2
+    IL_01af:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_01b4:  pop
+//000084: 		}
+    IL_01b5:  ret
+  } // end of method Program::Main
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+} // end of class _02.Quake3Map.Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

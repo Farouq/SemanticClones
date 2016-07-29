@@ -1,0 +1,61 @@
+<clones>
+<systeminfo processor="nicad3" system="testcase" granularity="functions" threshold="20%" minlines="6" maxlines="1000"/>
+<cloneinfo npcs="105" npairs="11"/>
+<runinfo ncompares="287" cputime="50000"/>
+
+<clone nlines="52" similarity="88">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/d8/a51884b3/Chap0111.cs.ifdefed" startline="19" endline="75" pcid="86"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/c6/23dce7ae/Chap0111.cs.ifdefed" startline="12" endline="67" pcid="67"></source>
+</clone>
+
+<clone nlines="43" similarity="83">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/74/504481cf/Chap0108.cs.ifdefed" startline="19" endline="66" pcid="94"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/af/7808421f/Chap0108.cs.ifdefed" startline="12" endline="58" pcid="80"></source>
+</clone>
+
+<clone nlines="43" similarity="81">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/74/504481cf/Chap0108.cs.ifdefed" startline="19" endline="66" pcid="94"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/75/192b0e3b/Chap0107.cs.ifdefed" startline="12" endline="53" pcid="77"></source>
+</clone>
+
+<clone nlines="42" similarity="83">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/af/7808421f/Chap0108.cs.ifdefed" startline="12" endline="58" pcid="80"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/75/192b0e3b/Chap0107.cs.ifdefed" startline="12" endline="53" pcid="77"></source>
+</clone>
+
+<clone nlines="17" similarity="94">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/f9/ceb09d52/Chap0208.cs.ifdefed" startline="19" endline="36" pcid="92"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/5c/b20dc795/Chap0208.cs.ifdefed" startline="12" endline="29" pcid="71"></source>
+</clone>
+
+<clone nlines="16" similarity="87">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/JS/92/1299dc7e/Chap0101.cs.ifdefed" startline="14" endline="34" pcid="23"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/JS/3a/7a137169/Chap0801.cs.ifdefed" startline="14" endline="34" pcid="44"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/7e/9c81c2f6/Chap0106.cs.ifdefed" startline="19" endline="34" pcid="89"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/ce/4c3a1998/Chap0106.cs.ifdefed" startline="13" endline="28" pcid="74"></source>
+</clone>
+
+<clone nlines="8" similarity="87">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/47/23aed05e/Chap0110.cs.ifdefed" startline="18" endline="26" pcid="104"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/ac/955cbec0/Chap0110.cs.ifdefed" startline="12" endline="20" pcid="63"></source>
+</clone>
+
+<clone nlines="8" similarity="100">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/34/f01d39bd/Chap0101.cs.ifdefed" startline="18" endline="26" pcid="91"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/8a/fe1dab6a/Chap0101.cs.ifdefed" startline="12" endline="20" pcid="78"></source>
+</clone>
+
+<clone nlines="8" similarity="87">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/cb/674bd5ca/Chap0109.cs.ifdefed" startline="18" endline="26" pcid="90"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/1f/5846a230/Chap0109.cs.ifdefed" startline="12" endline="20" pcid="75"></source>
+</clone>
+
+<clone nlines="6" similarity="83">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/a1/3875aafc/Chap0703.cs.ifdefed" startline="22" endline="28" pcid="99"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/77/93d50d20/Chap0703.cs.ifdefed" startline="16" endline="22" pcid="81"></source>
+</clone>
+
+</clones>

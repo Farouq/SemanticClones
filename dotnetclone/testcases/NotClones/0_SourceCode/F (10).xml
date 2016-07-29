@@ -1,0 +1,153 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+ Console.WriteLine("Chapter 1 example 12: reading an existing PDF file")
+
+        ' we create a reader for a certain document
+        Dim Reader As New PdfReader("Chap0703.pdf")
+        ' we retrieve the total number of pages
+        Dim n As Integer = Reader.getNumberOfPages()
+        ' we retrieve the size of the first page
+        Dim psize As Rectangle = Reader.getPageSize(1)
+        Dim width As Single = psize.width()
+        Dim height As Single = psize.height()
+
+        ' step 1: creation of a document-object
+        Dim Document As New Document(psize, 50, 50, 50, 50)
+        ' step 2: we create a writer that listens to the document
+        Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0112.pdf"))
+        ' step 3: we open the document
+        Try
+            Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 200, 320)
+            Document.add(Watermark)
+        Catch e As Exception
+            Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+        End Try
+        Document.open()
+        ' step 4: we add content
+        Dim cb As PdfContentByte = Writer.getDirectContent()
+        Dim i As Integer = 0
+        Dim p As Integer = 0
+        Console.WriteLine("There are " & n & " pages in the document.")
+        While (i < n)
+            Document.newPage()
+            p = p + 1
+            i = i + 1
+            Dim page1 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+            cb.addTemplate(page1, 0.5F, 0, 0, 0.5F, 0, height / 2)
+            Console.WriteLine("processed page " & i)
+            If (i < n) Then
+                i = i + 1
+                Dim page2 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                cb.addTemplate(page2, 0.5F, 0, 0, 0.5F, width / 2, height / 2)
+                Console.WriteLine("processed page " & i)
+            End If
+            If (i < n) Then
+                i = i + 1
+                Dim page3 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                cb.addTemplate(page3, 0.5F, 0, 0, 0.5F, 0, 0)
+                Console.WriteLine("processed page " & i)
+            End If
+            If (i < n) Then
+                i = i + 1
+                Dim page4 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                cb.addTemplate(page4, 0.5F, 0, 0, 0.5F, width / 2, 0)
+                Console.WriteLine("processed page " & i)
+            End If
+            cb.setRGBColorStroke(255, 0, 0)
+            cb.moveTo(0, height / 2)
+            cb.lineTo(width, height / 2)
+            cb.stroke()
+            cb.moveTo(width / 2, height)
+            cb.lineTo(width / 2, 0)
+            cb.stroke()
+            Dim bf As BaseFont = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED)
+            cb.beginText()
+            cb.setFontAndSize(bf, 14)
+            cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "page " & p & " of " & ((n / 4) + CInt(IIf(n Mod 4 > 0, 1, 0))), width / 2, 40, 0)
+            cb.endText()
+        End While
+        ' step 5: we close the document
+        Document.close()
+
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+
+		Console.WriteLine("Chapter 10 example 10: nested PdfPTables");
+    
+		// step 1: creation of a document-object
+		Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+		// step 2: we create a writer that listens to the document
+		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1010.pdf", FileMode.Create));
+		// step 3: we open the document
+		document.open();
+		// step 4: we add some content
+		PdfPTable table = new PdfPTable(4);
+		PdfPTable nested1 = new PdfPTable(2);
+		nested1.addCell("1.1");
+		nested1.addCell("1.2");
+		PdfPTable nested2 = new PdfPTable(1);
+		nested2.addCell("2.1");
+		nested2.addCell("2.2");
+		for (int k = 0; k < 24; ++k) 
+		{
+			if (k == 1) 
+			{
+				table.addCell(nested1);
+			}
+			else if (k == 20) 
+			{
+				table.addCell(nested2);
+			}
+			else 
+			{
+				table.addCell("cell " + k);
+			}
+		}
+		table.setTotalWidth(300);
+		table.writeSelectedRows(0, -1, 100, 600, writer.getDirectContent());
+		// step 5: we close the document
+		document.close();
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+  System.out.println("Chapter 6 example 1: Adding a Wmf, Gif, Jpeg and Png-file using urls");
+        
+        // step 1: creation of a document-object
+        Document document = new Document();
+        
+        try {
+            // step 2:
+            // we create a writer that listens to the document
+            // and directs a PDF-stream to a file
+            PdfWriter.getInstance(document, new FileOutputStream("Chap0601.pdf"));
+            HtmlWriter.getInstance(document, new FileOutputStream("Chap0601.html"));
+            
+            // step 3: we open the document
+            document.open();
+            
+            Image wmf = Image.getInstance(new URL("http://www.ujihara.jp/iTextdotNET/examples/harbour.wmf"));
+            Image gif = Image.getInstance(new URL("http://www.ujihara.jp/iTextdotNET/examples/vonnegut.gif"));
+            Image jpeg = Image.getInstance(new URL("http://www.ujihara.jp/iTextdotNET/examples/myKids.jpg"));
+            Image png = Image.getInstance(new URL("http://www.ujihara.jp/iTextdotNET/examples/hitchcock.png"));
+            
+            document.add(wmf);
+            document.add(gif);
+            document.add(jpeg);
+            document.add(png);
+        }
+        
+        catch(MalformedURLException mue) {
+            System.out.println(mue.getMessage());
+        }
+        catch(DocumentException de) {
+            System.out.println(de.getMessage());
+        }
+        catch(IOException ioe) {
+            System.out.println(ioe.getMessage());
+        }
+        
+        // step 5: we close the document
+        document.close();
+]]></source>
+</source_elements></project>

@@ -1,0 +1,444 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Properties\Settings.Designer.cs" startline="21" endline="23"><![CDATA[
+             get {
+                 return defaultInstance;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Properties\Settings.Designer.cs" startline="18" endline="18"><![CDATA[
+         private static Settings defaultInstance = ((Settings)(global
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.cs" startline="33" endline="40"><![CDATA[
+ 		}
+ 
+ 		private bool userWantExit = false; // if "true", we shut down rendering thread and then exit app
+ 		private System.ComponentModel.IContainer components = null;
+ 		public Form1()
+ 		{
+ 			InitializeComponent();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.cs" startline="41" endline="54"><![CDATA[
+ 
+ 		private void Form1_Load(object sender, EventArgs e)
+ 		{
+ 			// select "No AntiAliasing"
+ 			comboBoxAntiAliasing.SelectedIndex = 0;
+ 
+ 			// select "Skybox"
+ 			comboBoxBackground.SelectedIndex = 0;
+ 
+ 			// fill combobox with all available video drivers, except Null
+ 			foreach (DriverType v in Enum.GetValues(typeof(DriverType)))
+ 				if (v != DriverType.Null)
+ 					comboBoxVideoDriver.Items.Add(v);
+ 			foreach (DriverType v in Enum.GetValues(typeof(DriverType)))
+ 				if (v != DriverType.Null)
+ 					comboBoxVideoDriver.Items.Add(v);
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.cs" startline="55" endline="85"><![CDATA[
+ 
+ 		private void initializeIrrlichtDevice(object sender, EventArgs e)
+ 		{
+ 			if (comboBoxVideoDriver.SelectedItem == null)
+ 				return;
+ 
+ 			// if rendering in progress, we are sending cancel request and waiting for its finishing
+ 			if (backgroundRendering.IsBusy)
+ 			{
+ 				backgroundRendering.CancelAsync();
+ 				while (backgroundRendering.IsBusy)
+ 					Application.DoEvents(); // this is not very correct way, but its very short, so we use it
+ 				while (backgroundRendering.IsBusy)
+ 					Application.DoEvents(); // this is not very correct way, but its very short, so we use it
+ 
+ 				// redraw the panel, otherwise last rendered frame will stay as garbage
+ 				panelRenderingWindow.Invalidate();
+ 			}
+ 
+ 			// collect settings and start background worker with these settings
+ 
+ 			DeviceSettings s = new DeviceSettings(
+ 				checkBoxUseSeparateWindow.Checked ? IntPtr.Zero 
+ 				(DriverType)comboBoxVideoDriver.SelectedItem,
+ 				(byte)(comboBoxAntiAliasing.SelectedIndex == 0 ? 0 
+ 				comboBoxBackground.SelectedIndex == 0 ? null 
+ 				checkBoxUseVSync.Checked
+ 			);
+ 
+ 			backgroundRendering.RunWorkerAsync(s);
+ 
+ 			labelRenderingStatus.Text = "Starting rendering...";
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.cs" startline="86" endline="164"><![CDATA[
+ 
+ 		private void backgroundRendering_DoWork(object sender, DoWorkEventArgs e)
+ 		{
+ 			BackgroundWorker worker = sender as BackgroundWorker;
+ 			DeviceSettings settings = e.Argument as DeviceSettings;
+ 
+ 			// create irrlicht device using provided settings
+ 
+ 			IrrlichtDevice dev = IrrlichtDevice.CreateDevice(settings);
+ 
+ 			if (dev == null)
+ 				throw new Exception("Failed to create Irrlicht device.");
+ 
+ 			VideoDriver drv = dev.VideoDriver;
+ 			SceneManager smgr = dev.SceneManager;
+ 
+ 			// setup a simple 3d scene
+ 
+ 			CameraSceneNode cam = smgr.AddCameraSceneNode();
+ 			cam.Target = new Vector3Df(0);
+ 
+ 			SceneNodeAnimator anim = smgr.CreateFlyCircleAnimator(new Vector3Df(0, 15, 0), 30.0f);
+ 			cam.AddAnimator(anim);
+ 			anim.Drop();
+ 
+ 			SceneNode cube = smgr.AddCubeSceneNode(20);
+ 			cube.SetMaterialTexture(0, drv.GetTexture("../../media/wall.bmp"));
+ 			cube.SetMaterialTexture(1, drv.GetTexture("../../media/water.jpg"));
+ 			cube.SetMaterialFlag(MaterialFlag.Lighting, false);
+ 			cube.SetMaterialType(MaterialType.Reflection2Layer);
+ 
+ 			if (settings.BackColor == null)
+ 			{
+ 				smgr.AddSkyBoxSceneNode(
+ 					"../../media/irrlicht2_up.jpg",
+ 					"../../media/irrlicht2_dn.jpg",
+ 					"../../media/irrlicht2_lf.jpg",
+ 					"../../media/irrlicht2_rt.jpg",
+ 					"../../media/irrlicht2_ft.jpg",
+ 					"../../media/irrlicht2_bk.jpg");
+ 			}
+ 
+ 			dev.GUIEnvironment.AddImage(
+ 				drv.GetTexture("../../media/lime_logo_alpha.png"),
+ 				new Vector2Di(30, 0));
+ 
+ 			// draw all
+ 
+ 			int lastFPS = -1;
+ 			while (dev.Run())
+ 			{
+ 				if (settings.BackColor == null)
+ 					// indeed, we do not need to spend time on cleaning color buffer if we use skybox
+ 					drv.BeginScene(false);
+ 				else
+ 					drv.BeginScene(true, true, settings.BackColor);
+ 
+ 				smgr.DrawAll();
+ 				dev.GUIEnvironment.DrawAll();
+ 				drv.EndScene();
+ 
+ 				int fps = drv.FPS;
+ 				if (lastFPS != fps)
+ 				{
+ 					// report progress using common BackgroundWorker' method
+ 					// note
+ 					// because we are running another thread
+ 					worker.ReportProgress(fps, drv.Name);
+ 					lastFPS = fps;
+ 				}
+ 
+ 				// if we requested to stop, we close the device
+ 				if (worker.CancellationPending)
+ 					dev.Close();
+ 			}
+ 			while (dev.Run())
+ 			{
+ 				if (settings.BackColor == null)
+ 					// indeed, we do not need to spend time on cleaning color buffer if we use skybox
+ 					drv.BeginScene(false);
+ 				else
+ 					drv.BeginScene(true, true, settings.BackColor);
+ 
+ 				smgr.DrawAll();
+ 				dev.GUIEnvironment.DrawAll();
+ 				drv.EndScene();
+ 
+ 				int fps = drv.FPS;
+ 				if (lastFPS != fps)
+ 				{
+ 					// report progress using common BackgroundWorker' method
+ 					// note
+ 					// because we are running another thread
+ 					worker.ReportProgress(fps, drv.Name);
+ 					lastFPS = fps;
+ 				}
+ 
+ 				// if we requested to stop, we close the device
+ 				if (worker.CancellationPending)
+ 					dev.Close();
+ 			}
+ 
+ 			// drop device
+ 			dev.Drop();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.cs" startline="165" endline="175"><![CDATA[
+ 
+ 		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+ 		{
+ 			// if background worker still running, we send request to stop
+ 			if (backgroundRendering.IsBusy)
+ 			{
+ 				backgroundRendering.CancelAsync();
+ 				e.Cancel = true;
+ 				userWantExit = true;
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.cs" startline="176" endline="187"><![CDATA[
+ 
+ 		private void backgroundRendering_ProgressChanged(object sender, ProgressChangedEventArgs e)
+ 		{
+ 			// process reported progress
+ 
+ 			int f = e.ProgressPercentage;
+ 			string d = e.UserState as string;
+ 
+ 			labelRenderingStatus.Text = string.Format(
+ 				"Rendering {1} fps using {0} driver",
+ 				d, f);
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.cs" startline="188" endline="202"><![CDATA[
+ 
+ 		private void backgroundRendering_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+ 		{
+ 			// if exception occured in rendering thread -- we display the message
+ 			if (e.Error != null)
+ 				MessageBox.Show(e.Error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+ 
+ 			// if user want exit - we close main form
+ 			// note
+ 			// so background worker not running
+ 			if (userWantExit)
+ 				Close();
+ 
+ 			labelRenderingStatus.Text = "No rendering";
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.Designer.cs" startline="15" endline="21"><![CDATA[
+ 		{
+ 			if (disposing && (components != null))
+ 			{
+ 				components.Dispose();
+ 			}
+ 			base.Dispose(disposing);
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.Designer.cs" startline="22" endline="182"><![CDATA[
+ 
+ 		#region Windows Form Designer generated code
+ 
+ 		/// <summary>
+ 		/// Required method for Designer support - do not modify
+ 		/// the contents of this method with the code editor.
+ 		/// </summary>
+ 		private void InitializeComponent()
+ 		{
+ 			this.panelRenderingWindow = new System.Windows.Forms.Panel();
+ 			this.labelRenderingStatus = new System.Windows.Forms.Label();
+ 			this.backgroundRendering = new System.ComponentModel.BackgroundWorker();
+ 			this.comboBoxVideoDriver = new System.Windows.Forms.ComboBox();
+ 			this.checkBoxUseSeparateWindow = new System.Windows.Forms.CheckBox();
+ 			this.comboBoxAntiAliasing = new System.Windows.Forms.ComboBox();
+ 			this.label2 = new System.Windows.Forms.Label();
+ 			this.label3 = new System.Windows.Forms.Label();
+ 			this.comboBoxBackground = new System.Windows.Forms.ComboBox();
+ 			this.label4 = new System.Windows.Forms.Label();
+ 			this.checkBoxUseVSync = new System.Windows.Forms.CheckBox();
+ 			this.SuspendLayout();
+ 			// 
+ 			// panelRenderingWindow
+ 			// 
+ 			this.panelRenderingWindow.Location = new System.Drawing.Point(12, 85);
+ 			this.panelRenderingWindow.Name = "panelRenderingWindow";
+ 			this.panelRenderingWindow.Size = new System.Drawing.Size(540, 400);
+ 			this.panelRenderingWindow.TabIndex = 0;
+ 			// 
+ 			// labelRenderingStatus
+ 			// 
+ 			this.labelRenderingStatus.AutoSize = true;
+ 			this.labelRenderingStatus.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+ 			this.labelRenderingStatus.Location = new System.Drawing.Point(12, 64);
+ 			this.labelRenderingStatus.Name = "labelRenderingStatus";
+ 			this.labelRenderingStatus.Size = new System.Drawing.Size(187, 18);
+ 			this.labelRenderingStatus.TabIndex = 1;
+ 			this.labelRenderingStatus.Text = "Select video driver to use...";
+ 			// 
+ 			// backgroundRendering
+ 			// 
+ 			this.backgroundRendering.WorkerReportsProgress = true;
+ 			this.backgroundRendering.WorkerSupportsCancellation = true;
+ 			this.backgroundRendering.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundRendering_DoWork);
+ 			this.backgroundRendering.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundRendering_RunWorkerCompleted);
+ 			this.backgroundRendering.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundRendering_ProgressChanged);
+ 			// 
+ 			// comboBoxVideoDriver
+ 			// 
+ 			this.comboBoxVideoDriver.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+ 			this.comboBoxVideoDriver.FormattingEnabled = true;
+ 			this.comboBoxVideoDriver.Location = new System.Drawing.Point(12, 32);
+ 			this.comboBoxVideoDriver.Name = "comboBoxVideoDriver";
+ 			this.comboBoxVideoDriver.Size = new System.Drawing.Size(130, 21);
+ 			this.comboBoxVideoDriver.TabIndex = 2;
+ 			this.comboBoxVideoDriver.SelectedIndexChanged += new System.EventHandler(this.initializeIrrlichtDevice);
+ 			// 
+ 			// checkBoxUseSeparateWindow
+ 			// 
+ 			this.checkBoxUseSeparateWindow.AutoSize = true;
+ 			this.checkBoxUseSeparateWindow.Location = new System.Drawing.Point(349, 38);
+ 			this.checkBoxUseSeparateWindow.Name = "checkBoxUseSeparateWindow";
+ 			this.checkBoxUseSeparateWindow.Size = new System.Drawing.Size(128, 17);
+ 			this.checkBoxUseSeparateWindow.TabIndex = 3;
+ 			this.checkBoxUseSeparateWindow.Text = "Use separate window";
+ 			this.checkBoxUseSeparateWindow.UseVisualStyleBackColor = true;
+ 			this.checkBoxUseSeparateWindow.CheckedChanged += new System.EventHandler(this.initializeIrrlichtDevice);
+ 			// 
+ 			// comboBoxAntiAliasing
+ 			// 
+ 			this.comboBoxAntiAliasing.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+ 			this.comboBoxAntiAliasing.FormattingEnabled = true;
+ 			this.comboBoxAntiAliasing.Items.AddRange(new object[] {
+             "No",
+             "2x",
+             "4x",
+             "8x",
+             "16x"});
+ 			this.comboBoxAntiAliasing.Location = new System.Drawing.Point(158, 32);
+ 			this.comboBoxAntiAliasing.Name = "comboBoxAntiAliasing";
+ 			this.comboBoxAntiAliasing.Size = new System.Drawing.Size(80, 21);
+ 			this.comboBoxAntiAliasing.TabIndex = 4;
+ 			this.comboBoxAntiAliasing.SelectedIndexChanged += new System.EventHandler(this.initializeIrrlichtDevice);
+ 			// 
+ 			// label2
+ 			// 
+ 			this.label2.AutoSize = true;
+ 			this.label2.Location = new System.Drawing.Point(12, 16);
+ 			this.label2.Name = "label2";
+ 			this.label2.Size = new System.Drawing.Size(63, 13);
+ 			this.label2.TabIndex = 5;
+ 			this.label2.Text = "Video driver";
+ 			// 
+ 			// label3
+ 			// 
+ 			this.label3.AutoSize = true;
+ 			this.label3.Location = new System.Drawing.Point(155, 16);
+ 			this.label3.Name = "label3";
+ 			this.label3.Size = new System.Drawing.Size(61, 13);
+ 			this.label3.TabIndex = 6;
+ 			this.label3.Text = "AntiAliasing";
+ 			// 
+ 			// comboBoxBackground
+ 			// 
+ 			this.comboBoxBackground.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+ 			this.comboBoxBackground.FormattingEnabled = true;
+ 			this.comboBoxBackground.Items.AddRange(new object[] {
+             "Skybox",
+             "Black",
+             "White"});
+ 			this.comboBoxBackground.Location = new System.Drawing.Point(253, 32);
+ 			this.comboBoxBackground.Name = "comboBoxBackground";
+ 			this.comboBoxBackground.Size = new System.Drawing.Size(80, 21);
+ 			this.comboBoxBackground.TabIndex = 7;
+ 			this.comboBoxBackground.SelectedIndexChanged += new System.EventHandler(this.initializeIrrlichtDevice);
+ 			// 
+ 			// label4
+ 			// 
+ 			this.label4.AutoSize = true;
+ 			this.label4.Location = new System.Drawing.Point(250, 16);
+ 			this.label4.Name = "label4";
+ 			this.label4.Size = new System.Drawing.Size(65, 13);
+ 			this.label4.TabIndex = 6;
+ 			this.label4.Text = "Background";
+ 			// 
+ 			// checkBoxUseVSync
+ 			// 
+ 			this.checkBoxUseVSync.AutoSize = true;
+ 			this.checkBoxUseVSync.Location = new System.Drawing.Point(349, 15);
+ 			this.checkBoxUseVSync.Name = "checkBoxUseVSync";
+ 			this.checkBoxUseVSync.Size = new System.Drawing.Size(79, 17);
+ 			this.checkBoxUseVSync.TabIndex = 8;
+ 			this.checkBoxUseVSync.Text = "Use VSync";
+ 			this.checkBoxUseVSync.UseVisualStyleBackColor = true;
+ 			this.checkBoxUseVSync.CheckedChanged += new System.EventHandler(this.initializeIrrlichtDevice);
+ 			// 
+ 			// Form1
+ 			// 
+ 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+ 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+ 			this.ClientSize = new System.Drawing.Size(564, 497);
+ 			this.Controls.Add(this.checkBoxUseVSync);
+ 			this.Controls.Add(this.comboBoxBackground);
+ 			this.Controls.Add(this.label4);
+ 			this.Controls.Add(this.label3);
+ 			this.Controls.Add(this.label2);
+ 			this.Controls.Add(this.comboBoxAntiAliasing);
+ 			this.Controls.Add(this.checkBoxUseSeparateWindow);
+ 			this.Controls.Add(this.comboBoxVideoDriver);
+ 			this.Controls.Add(this.labelRenderingStatus);
+ 			this.Controls.Add(this.panelRenderingWindow);
+ 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+ 			this.MaximizeBox = false;
+ 			this.Name = "Form1";
+ 			this.Text = "WinForms window example - Irrlicht Engine";
+ 			this.Load += new System.EventHandler(this.Form1_Load);
+ 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+ 			this.ResumeLayout(false);
+ 			this.PerformLayout();
+ 
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Program.cs" startline="15" endline="19"><![CDATA[
+ 		{
+ 			Application.EnableVisualStyles();
+ 			Application.SetCompatibleTextRenderingDefault(false);
+ 			Application.Run(new Form1());
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Properties\Resources.Designer.cs" startline="31" endline="33"><![CDATA[
+         [global
+         internal Resources() {
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Properties\Resources.Designer.cs" startline="34" endline="46"><![CDATA[
+         
+         /// <summary>
+         ///   Returns the cached ResourceManager instance used by this class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Properties\Resources.Designer.cs" startline="47" endline="57"><![CDATA[
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Properties\Resources.Designer.cs" startline="58" endline="60"><![CDATA[
+             set {
+                 resourceCulture = value;
+             }
+]]></source>
+</source_elements></project>

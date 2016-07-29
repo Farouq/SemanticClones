@@ -1,0 +1,1182 @@
+<clones  >
+<clone_pair groupid="894" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Expression.vb" startline="481" endline="487">
+<![CDATA[
+ 
+ #End Region
+ 
+     Overridable ReadOnly Property AsString() As String
+         Get
+             Return "<String representation of " & Me.GetType.FullName & " not implemented>"
+         End Get
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\constant.cs" startline="31" endline="45">
+<![CDATA[
+ 
+ 		/// <remarks>
+ 		///   This is different from ToString in that ToString
+ 		///   is supposed to be there for debugging purposes,
+ 		///   and is not guaranteed to be useful for anything else,
+ 		///   AsString() will provide something that can be used
+ 		///   for round-tripping C# code.  Maybe it can be used
+ 		///   for IL assembly as well.
+ 		/// </remarks>
+ 		public abstract string AsString ();
+ 
+ 		override public string ToString ()
+ 		{
+ 			return this.GetType ().Name + " (" + AsString () + ")";
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1438" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\BinaryExpressions\LShiftExpression.vb" startline="58" endline="66">
+<![CDATA[
+ 
+     Public Overrides ReadOnly Property RightOperandTypeCode() As System.TypeCode
+         Get
+             If MyBase.OperandTypeCode = TypeCode.Object Then
+                 Return TypeCode.Object
+             Else
+                 Return TypeCode.Int32
+             End If
+         End Get
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Writer\MetadataWriter.cs" startline="134" endline="149">
+<![CDATA[
+ 
+ 		internal static int GetCompressedIntLength(int value)
+ 		{
+ 			if (value <= 0x7F)
+ 			{
+ 				return 1;
+ 			}
+ 			else if (value <= 0x3FFF)
+ 			{
+ 				return 2;
+ 			}
+ 			else
+ 			{
+ 				return 4;
+ 			}
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1600" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="6959" endline="6968">
+<![CDATA[
+ 		}
+ 
+ 		public override bool Equals (object obj)
+ 		{
+ 			This t = obj as This;
+ 			if (t == null)
+ 				return false;
+ 
+ 			return true;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" startline="779" endline="788">
+<![CDATA[
+ 
+     Private Shared Function GetResultType(ByVal op1 As TypeCode, ByVal array As String) As TypeCode
+         Dim chr As Char
+         chr = array.Chars(op1)
+         If chr = "X"c Then
+             Return Nothing
+         Else
+             Return GetTypeCodeOfChar(chr)
+         End If
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1602" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="6959" endline="6968">
+<![CDATA[
+ 		}
+ 
+ 		public override bool Equals (object obj)
+ 		{
+ 			This t = obj as This;
+ 			if (t == null)
+ 				return false;
+ 
+ 			return true;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Tokens\Token.vb" startline="391" endline="401">
+<![CDATA[
+ 
+     Shared Function IsKeyword(ByVal str As Char(), ByVal length As Integer, ByRef Keyword As KS) As Boolean
+         Dim special As KS
+         special = Enums.GetKS(str, length)
+         If special <> KS.None Then
+             Keyword = special
+             Return True
+         Else
+             Return False
+         End If
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1603" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="6959" endline="6968">
+<![CDATA[
+ 		}
+ 
+ 		public override bool Equals (object obj)
+ 		{
+ 			This t = obj as This;
+ 			if (t == null)
+ 				return false;
+ 
+ 			return true;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" startline="797" endline="806">
+<![CDATA[
+ 
+     Private Shared Function GetResultType(ByVal op1 As TypeCode, ByVal op2 As TypeCode, ByVal array As String) As TypeCode
+         Dim chr As Char
+         chr = array.Chars(op1 + op2 * 19)
+         If chr = "X"c Then
+             Return Nothing
+         Else
+             Return CType(Microsoft.VisualBasic.Asc(chr) - Microsoft.VisualBasic.Asc("A"), TypeCode)
+         End If
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1604" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="6959" endline="6968">
+<![CDATA[
+ 		}
+ 
+ 		public override bool Equals (object obj)
+ 		{
+ 			This t = obj as This;
+ 			if (t == null)
+ 				return false;
+ 
+ 			return true;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Expression.vb" startline="311" endline="323">
+<![CDATA[
+ 
+     Function ResolveAddressOfExpression(ByVal DelegateType As Mono.Cecil.TypeReference) As Boolean
+         Dim result As Boolean = True
+         Dim aoe As AddressOfExpression = TryCast(Me, AddressOfExpression)
+ 
+         If aoe Is Nothing Then
+             result = False
+         Else
+             result = aoe.Resolve(DelegateType) AndAlso result
+         End If
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1605" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="6959" endline="6968">
+<![CDATA[
+ 		}
+ 
+ 		public override bool Equals (object obj)
+ 		{
+ 			This t = obj as This;
+ 			if (t == null)
+ 				return false;
+ 
+ 			return true;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\TypeDeclarations\AssemblyDeclaration.vb" startline="296" endline="310">
+<![CDATA[
+ 
+     Function ResolveMembers() As Boolean
+         Dim result As Boolean = True
+ 
+         For Each type As TypeDeclaration In m_TypeDeclarations
+ #If EXTENDEDDEBUG Then
+             Dim iCount As Integer
+             iCount += 1
+             Compiler.Report.WriteLine(vbnc.Report.ReportLevels.Debug, "ResolveMembers " & type.FullName & " (" & iCount & " of " & m_TypeDeclarations.Length & " types)")
+ #End If
+             result = ResolveMembers(type) AndAlso result
+         Next
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1691" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\decl.cs" startline="228" endline="236">
+<![CDATA[
+ 		}
+ 
+ 		public static string MakeName (string name, TypeArguments args)
+ 		{
+ 			if (args == null)
+ 				return name;
+ 
+ 			return name + "`" + args.Count;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Parser\Parser.vb" startline="4854" endline="4862">
+<![CDATA[
+ 
+     Private Function ParseLocalVariableDeclarator(ByVal Parent As ParsedObject, ByVal Modifiers As Modifiers, ByVal Info As ParseAttributableInfo) As Generic.List(Of LocalVariableDeclaration)
+         Dim result As New Generic.List(Of LocalVariableDeclaration)
+         If ParseVariableDeclarator(Parent, Modifiers, Info, result, True) = False Then
+             Console.WriteLine("Returned false")
+             Return Nothing
+         End If
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1807" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Writer\ByteBuffer.cs" startline="94" endline="100">
+<![CDATA[
+ 
+ 		internal void Write(byte value)
+ 		{
+ 			if (pos == buffer.Length)
+ 				Grow(1);
+ 			buffer[pos++] = value;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Namespace.vb" startline="105" endline="111">
+<![CDATA[
+ 
+     Overloads Function Equals(ByVal A As String, ByVal B As String) As Boolean
+         If A.Length + B.Length + 1 <> m_Name.Length Then Return False
+         If m_Name.StartsWith(A, Helper.StringComparison) = False Then Return False
+         If m_Name.EndsWith(B, Helper.StringComparison) = False Then Return False
+         Return m_Name(A.Length) = "."c
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2002" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="372" endline="379">
+<![CDATA[
+ 
+     Shared Function GetNames(ByVal List As IEnumerable) As String()
+         Dim result As New Generic.List(Of String)
+         For Each item As INameable In List
+             result.Add(item.Name)
+         Next
+         Return result.ToArray
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\tools\monop\outline.cs" startline="866" endline="887">
+<![CDATA[
+ 
+ 	static Type [] TypeGetInterfaces (Type t, bool declonly)
+ 	{
+ 		if (t.IsGenericParameter)
+ 			return new Type [0];
+ 
+ 		Type [] ifaces = t.GetInterfaces ();
+ 		if (! declonly)
+ 			return ifaces;
+ 
+ 		// Handle Object. Also, optimize for no interfaces
+ 		if (t.BaseType == null || ifaces.Length == 0)
+ 			return ifaces;
+ 
+ 		ArrayList ar = new ArrayList ();
+ 
+ 		foreach (Type i in ifaces)
+ 			if (! i.IsAssignableFrom (t.BaseType))
+ 				ar.Add (i);
+ 		foreach (Type i in ifaces)
+ 			if (! i.IsAssignableFrom (t.BaseType))
+ 				ar.Add (i);
+ 
+ 		return (Type []) ar.ToArray (typeof (Type));
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2034" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\MemberCache.vb" startline="240" endline="251">
+<![CDATA[
+ 
+     Private Sub Flatten(ByVal Name As String, ByVal Visibility As MemberVisibility)
+         Dim bases As List(Of MemberCache) = GetBaseCache()
+ 
+         If bases.Count = 0 Then
+             Flatten(Name, Nothing, Visibility)
+         Else
+             For i As Integer = 0 To bases.Count - 1
+                 Flatten(Name, bases(i), Visibility)
+             Next
+         End If
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Reader\ModuleReader.cs" startline="519" endline="537">
+<![CDATA[
+ 
+ 		private string PublicKeyOrTokenToString(int publicKeyOrToken)
+ 		{
+ 			if (publicKeyOrToken == 0)
+ 			{
+ 				return "null";
+ 			}
+ 			ByteReader br = GetBlob(publicKeyOrToken);
+ 			if (br.Length == 0)
+ 			{
+ 				return "null";
+ 			}
+ 			StringBuilder sb = new StringBuilder(br.Length * 2);
+ 			while (br.Length > 0)
+ 			{
+ 				sb.AppendFormat("{0
+ 			}
+ 			while (br.Length > 0)
+ 			{
+ 				sb.AppendFormat("{0
+ 			}
+ 			return sb.ToString();
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2052" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\tools\monop\outline.cs" startline="517" endline="533">
+<![CDATA[
+ 
+ 	static string GetTypeKind (Type t)
+ 	{
+ 		if (t.IsEnum)
+ 			return "enum";
+ 		if (t.IsClass) {
+ 			if (t.IsSubclassOf (typeof (System.MulticastDelegate)))
+ 				return "delegate";
+ 			else
+ 				return "class";
+ 		}
+ 		if (t.IsInterface)
+ 			return "interface";
+ 		if (t.IsValueType)
+ 			return "struct";
+ 		return "class";
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="2427" endline="2439">
+<![CDATA[
+ 
+     Shared Function IntToBin(ByVal Int As ULong) As String
+         If Int = 0 Then Return "0"
+         IntToBin = ""
+         Do Until Int = 0
+             If CBool(Int And 1UL) Then
+                 IntToBin = "1" & IntToBin
+             Else
+                 IntToBin = "0" & IntToBin
+             End If
+             Int >>= 1
+         Loop
+         Do Until Int = 0
+             If CBool(Int And 1UL) Then
+                 IntToBin = "1" & IntToBin
+             Else
+                 IntToBin = "0" & IntToBin
+             End If
+             Int >>= 1
+         Loop
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2063" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="2111" endline="2119">
+<![CDATA[
+ 
+     Shared Function GenerateCodeCollection(ByVal Collection As IList, ByVal Info As EmitInfo, ByVal Types As Mono.Cecil.TypeReference()) As Boolean
+         Dim result As Boolean = True
+         Helper.Assert(Collection.Count = Types.Length)
+         For i As Integer = 0 To Collection.Count - 1
+             result = DirectCast(Collection(i), IBaseObject).GenerateCode(Info.Clone(Info.Context, Info.IsRHS, Info.IsExplicitConversion, Types(i))) AndAlso result
+         Next
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\complete.cs" startline="28" endline="44">
+<![CDATA[
+ 		{
+ 			foreach (string name in names) {
+ 				if (name == null)
+ 					continue;
+ 
+ 				if (prefix != null && !name.StartsWith (prefix))
+ 					continue;
+ 
+ 				if (results.Contains (name))
+ 					continue;
+ 
+ 				if (prefix != null)
+ 					results.Add (name.Substring (prefix.Length));
+ 				else
+ 					results.Add (name);
+ 			}
+ 			foreach (string name in names) {
+ 				if (name == null)
+ 					continue;
+ 
+ 				if (prefix != null && !name.StartsWith (prefix))
+ 					continue;
+ 
+ 				if (results.Contains (name))
+ 					continue;
+ 
+ 				if (prefix != null)
+ 					results.Add (name.Substring (prefix.Length));
+ 				else
+ 					results.Add (name);
+ 			}
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2066" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\corlib\Mono.Security.Cryptography\CryptoConvert.cs" startline="713" endline="724">
+<![CDATA[
+ 
+ 		static public string ToHex (byte[] input) 
+ 		{
+ 			if (input == null)
+ 				return null;
+ 
+ 			StringBuilder sb = new StringBuilder (input.Length * 2);
+ 			foreach (byte b in input) {
+ 				sb.Append (b.ToString ("X2", CultureInfo.InvariantCulture));
+ 			}
+ 			foreach (byte b in input) {
+ 				sb.Append (b.ToString ("X2", CultureInfo.InvariantCulture));
+ 			}
+ 			return sb.ToString ();
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="1720" endline="1747">
+<![CDATA[
+ 
+     ''' <summary>
+     ''' Finds the parent namespace of the specified namespace.
+     ''' "NS1.NS2" => "NS1"
+     ''' "NS1" => ""
+     ''' "" => Nothing
+     ''' Nothing =>InternalException()
+     ''' </summary>
+     ''' <param name="Namespace"></param>
+     ''' <returns></returns>
+     ''' <remarks></remarks>
+     Shared Function GetNamespaceParent(ByVal [Namespace] As String) As String
+         If [Namespace] Is Nothing Then
+             Throw New InternalException("")
+         ElseIf [Namespace] = String.Empty Then
+             Return Nothing
+         Else
+             Dim dotIdx As Integer
+             dotIdx = [Namespace].LastIndexOf("."c)
+             If dotIdx > 0 Then
+                 Return [Namespace].Substring(0, dotIdx)
+             ElseIf dotIdx = 0 Then
+                 Throw New InternalException("A namespace starting with a dot??")
+             Else
+                 Return String.Empty
+             End If
+         End If
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2406" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\TypeDeclarations\TypeDeclaration.vb" startline="176" endline="202">
+<![CDATA[
+     End Property
+ 
+     Protected Sub FindDefaultConstructors()
+         For i As Integer = 0 To Me.Members.Count - 1
+             Dim member As IMember = Me.Members(i)
+             Dim ctor As ConstructorDeclaration = TryCast(member, ConstructorDeclaration)
+ 
+             If ctor Is Nothing Then Continue For
+ 
+             Dim isdefault As Boolean
+             isdefault = False
+             If ctor.GetParameters.Length = 0 Then
+                 isdefault = True
+             Else
+                 isdefault = ctor.GetParameters()(0).IsOptional
+             End If
+             If isdefault Then
+                 If ctor.IsShared Then
+                     Helper.Assert(m_DefaultSharedConstructor Is Nothing OrElse m_DefaultSharedConstructor Is ctor)
+                     m_DefaultSharedConstructor = ctor
+                 Else
+                     Helper.Assert(m_DefaultInstanceConstructor Is Nothing OrElse m_DefaultInstanceConstructor Is ctor)
+                     m_DefaultInstanceConstructor = ctor
+                 End If
+             End If
+         Next
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\cs-tokenizer.cs" startline="3269" endline="3315">
+<![CDATA[
+ 
+ 		int TokenizeLessThan ()
+ 		{
+ 			int d;
+ 			if (handle_typeof) {
+ 				PushPosition ();
+ 				if (parse_generic_dimension (out d)) {
+ 					val = d;
+ 					DiscardPosition ();
+ 					return Token.GENERIC_DIMENSION;
+ 				}
+ 				PopPosition ();
+ 			}
+ 
+ 			// Save current position and parse next token.
+ 			PushPosition ();
+ 			if (parse_less_than ()) {
+ 				if (parsing_generic_declaration && token () != Token.DOT) {
+ 					d = Token.OP_GENERICS_LT_DECL;
+ 				} else {
+ 					d = Token.OP_GENERICS_LT;
+ 				}
+ 				PopPosition ();
+ 				return d;
+ 			}
+ 
+ 			PopPosition ();
+ 			parsing_generic_less_than = 0;
+ 
+ 			d = peek_char ();
+ 			if (d == '<') {
+ 				get_char ();
+ 				d = peek_char ();
+ 
+ 				if (d == '=') {
+ 					get_char ();
+ 					return Token.OP_SHIFT_LEFT_ASSIGN;
+ 				}
+ 				return Token.OP_SHIFT_LEFT;
+ 			}
+ 
+ 			if (d == '=') {
+ 				get_char ();
+ 				return Token.OP_LE;
+ 			}
+ 			return Token.OP_LT;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2484" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\import.cs" startline="1944" endline="1973">
+<![CDATA[
+ 
+ 		public override List<MissingType> ResolveMissingDependencies ()
+ 		{
+ #if STATIC
+ 			List<MissingType> missing = null;
+ 
+ 			MetaType mt = (MetaType) provider;
+ 			do {
+ 				if (mt is MissingType) {
+ 					missing = new List<MissingType> ();
+ 					missing.Add ((MissingType) mt);
+ 				}
+ 
+ 				foreach (var iface in mt.GetInterfaces ()) {
+ 					if (iface is MissingType) {
+ 						if (missing == null)
+ 							missing = new List<MissingType> ();
+ 
+ 						missing.Add ((MissingType) iface);
+ 					}
+ 				}
+ 				foreach (var iface in mt.GetInterfaces ()) {
+ 					if (iface is MissingType) {
+ 						if (missing == null)
+ 							missing = new List<MissingType> ();
+ 
+ 						missing.Add ((MissingType) iface);
+ 					}
+ 				}
+ 
+ 				if (missing != null)
+ 					return missing;
+ 
+ 				mt = mt.BaseType;
+ 			} while (mt != null);
+ #endif
+ 			return null;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" startline="878" endline="928">
+<![CDATA[
+ 
+     Public Shared Function ConvertToBoolean(ByVal Context As ParsedObject, ByVal Source As Object, ByVal SourceTypeCode As TypeCode, ByRef result As Object) As Boolean
+         Select Case SourceTypeCode
+             Case TypeCode.Boolean
+                 result = Source
+                 Return True
+             Case TypeCode.Byte
+                 result = CBool(DirectCast(Source, Byte))
+                 Return True
+             Case TypeCode.Char
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30311, Context.Location, "Char", "Boolean")
+             Case TypeCode.DateTime
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30311, Context.Location, "Date", "Boolean")
+             Case TypeCode.Decimal
+                 result = CBool(DirectCast(Source, Decimal))
+                 Return True
+             Case TypeCode.Double
+                 result = CBool(DirectCast(Source, Double))
+                 Return True
+             Case TypeCode.Int16
+                 result = CBool(DirectCast(Source, Short))
+                 Return True
+             Case TypeCode.Int32
+                 result = CBool(DirectCast(Source, Integer))
+                 Return True
+             Case TypeCode.Int64
+                 result = CBool(DirectCast(Source, Long))
+                 Return True
+             Case TypeCode.SByte
+                 result = CBool(DirectCast(Source, SByte))
+                 Return True
+             Case TypeCode.Single
+                 result = CBool(DirectCast(Source, Single))
+                 Return True
+             Case TypeCode.String
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "Byte", "String")
+             Case TypeCode.UInt16
+                 result = CBool(DirectCast(Source, UShort))
+                 Return True
+             Case TypeCode.UInt32
+                 result = CBool(DirectCast(Source, UInteger))
+                 Return True
+             Case TypeCode.UInt64
+                 result = CBool(DirectCast(Source, ULong))
+                 Return True
+             Case TypeCode.DBNull
+                 result = CBool(Nothing)
+                 Return True
+         End Select
+         Return Context.Compiler.Report.ShowMessage(Messages.VBNC30439, Context.Location, "Boolean")
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2567" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="1695" endline="1718">
+<![CDATA[
+ 
+ 		public void SetRange (int offset, int length)
+ 		{
+ 			if (offset > Count || offset + length > Count)
+ 				throw new ArgumentOutOfRangeException ("flow-analysis");
+ 
+ 			if (shared == null && vector == null)
+ 				return;
+ 
+ 			int i = 0;
+ 			if (shared != null) {
+ 				if (offset + length <= shared.Count) {
+ 					for (; i < length; ++i)
+ 						if (!shared [i+offset])
+ 						    break;
+ 					for (; i < length; ++i)
+ 						if (!shared [i+offset])
+ 						    break;
+ 					if (i == length)
+ 						return;
+ 				}
+ 				initialize_vector ();
+ 			}
+ 			for (; i < length; ++i)
+ 				vector [i+offset] = true;
+ 			for (; i < length; ++i)
+ 				vector [i+offset] = true;
+ 
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Statements\ContinueStatement.vb" startline="81" endline="112">
+<![CDATA[
+ 
+     Public Overrides Function ResolveStatement(ByVal Info As ResolveInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         'If the Continue statement is not contained within the kind of block specified in the statement, a compile-time error occurs.
+         Select Case m_ContinueWhat
+             Case KS.While
+                 m_ContainingStatement = Me.FindFirstParent(Of WhileStatement)()
+                 If m_ContainingStatement Is Nothing Then
+                     'Helper.AddCheck("error BC30784
+                     Compiler.Report.ShowMessage(Messages.VBNC30784, Location)
+                 End If
+             Case KS.For
+                 m_ContainingStatement = CType(Me.FindFirstParent(Of ForEachStatement, ForStatement)(), Statement)
+                 If m_ContainingStatement Is Nothing Then
+                     'Helper.AddError("error BC30783
+                     Compiler.Report.ShowMessage(Messages.VBNC30783, Location)
+                 End If
+             Case KS.Do
+                 m_ContainingStatement = Me.FindFirstParent(Of DoStatement)()
+                 If m_ContainingStatement Is Nothing Then
+                     'Helper.AddCheck("error BC30782
+                     Compiler.Report.ShowMessage(Messages.VBNC30782, Location)
+                 End If
+             Case KS.Else
+                 Throw New InternalException(Me)
+         End Select
+         result = m_ContainingStatement IsNot Nothing
+ 
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2576" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\UnaryExpressions\UnaryNotExpression.vb" startline="59" endline="90">
+<![CDATA[
+     End Property
+ 
+     Public Overrides ReadOnly Property ConstantValue() As Object
+         Get
+             Helper.Assert(IsConstant)
+             Dim value As Object = Expression.ConstantValue
+             Helper.Assert(value IsNot Nothing)
+             Select Case Helper.GetTypeCode(Compiler, CecilHelper.GetType(Compiler, value))
+                 Case TypeCode.SByte
+                     Return Not CSByte(value)
+                 Case TypeCode.Byte
+                     Return Not CByte(value)
+                 Case TypeCode.Int16
+                     Return Not CShort(value)
+                 Case TypeCode.Int32
+                     Return Not CInt(value)
+                 Case TypeCode.Int64
+                     Return Not CLng(value)
+                 Case TypeCode.UInt16
+                     Return Not CUShort(value)
+                 Case TypeCode.UInt32
+                     Return Not CUInt(value)
+                 Case TypeCode.UInt64
+                     Return Not CULng(value)
+                 Case TypeCode.Decimal, TypeCode.Double, TypeCode.Single
+                     Throw New InternalException(Me)
+                 Case Else
+                     Throw New InternalException(Me)
+             End Select
+             Helper.Stop()
+             Return Nothing
+         End Get
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="2186" endline="2232">
+<![CDATA[
+ 
+ 		//
+ 		// Converts operator to System.Linq.Expressions.ExpressionType enum name
+ 		//
+ 		string GetOperatorExpressionTypeName ()
+ 		{
+ 			switch (oper) {
+ 			case Operator.Addition
+ 				return IsCompound ? "AddAssign" 
+ 			case Operator.BitwiseAnd
+ 				return IsCompound ? "AndAssign" 
+ 			case Operator.BitwiseOr
+ 				return IsCompound ? "OrAssign" 
+ 			case Operator.Division
+ 				return IsCompound ? "DivideAssign" 
+ 			case Operator.ExclusiveOr
+ 				return IsCompound ? "ExclusiveOrAssign" 
+ 			case Operator.Equality
+ 				return "Equal";
+ 			case Operator.GreaterThan
+ 				return "GreaterThan";
+ 			case Operator.GreaterThanOrEqual
+ 				return "GreaterThanOrEqual";
+ 			case Operator.Inequality
+ 				return "NotEqual";
+ 			case Operator.LeftShift
+ 				return IsCompound ? "LeftShiftAssign" 
+ 			case Operator.LessThan
+ 				return "LessThan";
+ 			case Operator.LessThanOrEqual
+ 				return "LessThanOrEqual";
+ 			case Operator.LogicalAnd
+ 				return "And";
+ 			case Operator.LogicalOr
+ 				return "Or";
+ 			case Operator.Modulus
+ 				return IsCompound ? "ModuloAssign" 
+ 			case Operator.Multiply
+ 				return IsCompound ? "MultiplyAssign" 
+ 			case Operator.RightShift
+ 				return IsCompound ? "RightShiftAssign" 
+ 			case Operator.Subtraction
+ 				return IsCompound ? "SubtractAssign" 
+ 			default
+ 				throw new NotImplementedException ("Unknown expression type operator " + oper.ToString ());
+ 			}
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2579" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\UnaryExpressions\UnaryNotExpression.vb" startline="59" endline="90">
+<![CDATA[
+     End Property
+ 
+     Public Overrides ReadOnly Property ConstantValue() As Object
+         Get
+             Helper.Assert(IsConstant)
+             Dim value As Object = Expression.ConstantValue
+             Helper.Assert(value IsNot Nothing)
+             Select Case Helper.GetTypeCode(Compiler, CecilHelper.GetType(Compiler, value))
+                 Case TypeCode.SByte
+                     Return Not CSByte(value)
+                 Case TypeCode.Byte
+                     Return Not CByte(value)
+                 Case TypeCode.Int16
+                     Return Not CShort(value)
+                 Case TypeCode.Int32
+                     Return Not CInt(value)
+                 Case TypeCode.Int64
+                     Return Not CLng(value)
+                 Case TypeCode.UInt16
+                     Return Not CUShort(value)
+                 Case TypeCode.UInt32
+                     Return Not CUInt(value)
+                 Case TypeCode.UInt64
+                     Return Not CULng(value)
+                 Case TypeCode.Decimal, TypeCode.Double, TypeCode.Single
+                     Throw New InternalException(Me)
+                 Case Else
+                     Throw New InternalException(Me)
+             End Select
+             Helper.Stop()
+             Return Nothing
+         End Get
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="2091" endline="2165">
+<![CDATA[
+ 		}
+ 
+ 		#endregion
+ 
+ 		/// <summary>
+ 		///   Returns a stringified representation of the Operator
+ 		/// </summary>
+ 		string OperName (Operator oper)
+ 		{
+ 			string s;
+ 			switch (oper){
+ 			case Operator.Multiply
+ 				s = "*";
+ 				break;
+ 			case Operator.Division
+ 				s = "/";
+ 				break;
+ 			case Operator.Modulus
+ 				s = "%";
+ 				break;
+ 			case Operator.Addition
+ 				s = "+";
+ 				break;
+ 			case Operator.Subtraction
+ 				s = "-";
+ 				break;
+ 			case Operator.LeftShift
+ 				s = "<<";
+ 				break;
+ 			case Operator.RightShift
+ 				s = ">>";
+ 				break;
+ 			case Operator.LessThan
+ 				s = "<";
+ 				break;
+ 			case Operator.GreaterThan
+ 				s = ">";
+ 				break;
+ 			case Operator.LessThanOrEqual
+ 				s = "<=";
+ 				break;
+ 			case Operator.GreaterThanOrEqual
+ 				s = ">=";
+ 				break;
+ 			case Operator.Equality
+ 				s = "==";
+ 				break;
+ 			case Operator.Inequality
+ 				s = "!=";
+ 				break;
+ 			case Operator.BitwiseAnd
+ 				s = "&";
+ 				break;
+ 			case Operator.BitwiseOr
+ 				s = "|";
+ 				break;
+ 			case Operator.ExclusiveOr
+ 				s = "^";
+ 				break;
+ 			case Operator.LogicalOr
+ 				s = "||";
+ 				break;
+ 			case Operator.LogicalAnd
+ 				s = "&&";
+ 				break;
+ 			default
+ 				s = oper.ToString ();
+ 				break;
+ 			}
+ 
+ 			if (IsCompound)
+ 				return s + "=";
+ 
+ 			return s;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2626" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\modifiers.cs" startline="192" endline="236">
+<![CDATA[
+ 
+ 		public static MethodAttributes MethodAttr (Modifiers mod_flags)
+ 		{
+ 			MethodAttributes ma = MethodAttributes.HideBySig;
+ 
+ 			switch (mod_flags & Modifiers.AccessibilityMask) {
+ 			case Modifiers.PUBLIC
+ 				ma |= MethodAttributes.Public;
+ 				break;
+ 			case Modifiers.PRIVATE
+ 				ma |= MethodAttributes.Private;
+ 				break;
+ 			case Modifiers.PROTECTED | Modifiers.INTERNAL
+ 				ma |= MethodAttributes.FamORAssem;
+ 				break;
+ 			case Modifiers.PROTECTED
+ 				ma |= MethodAttributes.Family;
+ 				break;
+ 			case Modifiers.INTERNAL
+ 				ma |= MethodAttributes.Assembly;
+ 				break;
+ 			default
+ 				throw new NotImplementedException (mod_flags.ToString ());
+ 			}
+ 
+ 			if ((mod_flags & Modifiers.STATIC) != 0)
+ 				ma |= MethodAttributes.Static;
+ 			if ((mod_flags & Modifiers.ABSTRACT) != 0) {
+ 				ma |= MethodAttributes.Abstract | MethodAttributes.Virtual;
+ 			}
+ 			if ((mod_flags & Modifiers.SEALED) != 0)
+ 				ma |= MethodAttributes.Final;
+ 
+ 			if ((mod_flags & Modifiers.VIRTUAL) != 0)
+ 				ma |= MethodAttributes.Virtual;
+ 
+ 			if ((mod_flags & Modifiers.OVERRIDE) != 0) {
+ 				ma |= MethodAttributes.Virtual;
+ 			} else {
+ 				if ((ma & MethodAttributes.Virtual) != 0)
+ 					ma |= MethodAttributes.NewSlot;
+ 			}
+ 			
+ 			return ma;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Scanner.vb" startline="456" endline="503">
+<![CDATA[
+ 
+     Public Function [Next]() As Token
+         Do
+             NextUnconditionally()
+ 
+             If m_Current.IsEndOfCode Then
+                 m_Peeked = m_Current
+                 Return m_Current
+             End If
+ 
+             If m_Current.IsEndOfFile Then
+                 ResetCurrentConstants()
+                 Return m_Current
+             End If
+ 
+             If TokensSeenOnLine = 1 AndAlso m_Current = KS.Numeral Then
+                 Me.NextUnconditionally()
+                 If m_Current = KS.If Then
+                     ParseIf()
+                 ElseIf m_Current = KS.Else Then
+                     ParseElse()
+                 ElseIf m_Current = KS.ElseIf Then
+                     ParseElseIf()
+                 ElseIf m_Current = KS.Const Then
+                     ParseConst()
+                 ElseIf m_Current.Equals("ExternalSource") Then
+                     ParseExternalSource()
+                 ElseIf m_Current.Equals("Region") Then
+                     ParseRegion()
+                 ElseIf m_Current = KS.End Then
+                     ParseEnd()
+                 Else
+                     Helper.AddError(Me.Compiler, Me.GetCurrentLocation, "Expected 'If', 'ElseIf', 'Else', 'Const' or 'Region'.")
+                     EatLine(False)
+                 End If
+             ElseIf IfdOut Then
+                 If m_Current.IsEndOfLine = False Then EatLine(False)
+                 Continue Do
+             Else
+                 If m_Current.IsEndOfLineOnly AndAlso m_LastWasNewline Then
+                     Continue Do
+                 End If
+                 m_LastWasNewline = m_Current.IsEndOfLineOnly
+                 Return m_Current
+             End If
+         Loop While m_Current.IsEndOfCode = False AndAlso m_Current.IsEndOfFile = False
+         Return m_Current
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2656" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\statement.cs" startline="3305" endline="3352">
+<![CDATA[
+ 
+ 		void EmitObjectInteger (EmitContext ec, object k)
+ 		{
+ 			if (k is int)
+ 				ec.EmitInt ((int) k);
+ 			else if (k is Constant) {
+ 				EmitObjectInteger (ec, ((Constant) k).GetValue ());
+ 			} 
+ 			else if (k is uint)
+ 				ec.EmitInt (unchecked ((int) (uint) k));
+ 			else if (k is long)
+ 			{
+ 				if ((long) k >= int.MinValue && (long) k <= int.MaxValue)
+ 				{
+ 					ec.EmitInt ((int) (long) k);
+ 					ec.Emit (OpCodes.Conv_I8);
+ 				}
+ 				else
+ 					ec.EmitLong ((long) k);
+ 			}
+ 			else if (k is ulong)
+ 			{
+ 				ulong ul = (ulong) k;
+ 				if (ul < (1L<<32))
+ 				{
+ 					ec.EmitInt (unchecked ((int) ul));
+ 					ec.Emit (OpCodes.Conv_U8);
+ 				}
+ 				else
+ 				{
+ 					ec.EmitLong (unchecked ((long) ul));
+ 				}
+ 			}
+ 			else if (k is char)
+ 				ec.EmitInt ((int) ((char) k));
+ 			else if (k is sbyte)
+ 				ec.EmitInt ((int) ((sbyte) k));
+ 			else if (k is byte)
+ 				ec.EmitInt ((int) ((byte) k));
+ 			else if (k is short)
+ 				ec.EmitInt ((int) ((short) k));
+ 			else if (k is ushort)
+ 				ec.EmitInt ((int) ((ushort) k));
+ 			else if (k is bool)
+ 				ec.EmitInt (((bool) k) ? 1 
+ 			else
+ 				throw new Exception ("Unhandled case");
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" startline="1423" endline="1463">
+<![CDATA[
+ 
+     Public Shared Function ConvertToString(ByVal Context As ParsedObject, ByVal Source As Object, ByVal SourceTypeCode As TypeCode, ByRef result As Object) As Boolean
+         Select Case SourceTypeCode
+             Case TypeCode.Boolean
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "Boolean", "String")
+             Case TypeCode.Byte
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "Byte", "String")
+             Case TypeCode.Char
+                 result = CStr(DirectCast(Source, Char))
+                 Return True
+             Case TypeCode.DateTime
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "Date", "String")
+             Case TypeCode.Decimal
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "Decimal", "String")
+             Case TypeCode.Double
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "Double", "String")
+             Case TypeCode.Int16
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "Short", "String")
+             Case TypeCode.Int32
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "Integer", "String")
+             Case TypeCode.Int64
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "Long", "String")
+             Case TypeCode.SByte
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "SByte", "String")
+             Case TypeCode.Single
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "Single", "String")
+             Case TypeCode.String
+                 result = Source
+                 Return True
+             Case TypeCode.UInt16
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "UShort", "String")
+             Case TypeCode.UInt32
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "UInteger", "String")
+             Case TypeCode.UInt64
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "ULong", "String")
+             Case TypeCode.DBNull
+                 result = Nothing
+                 Return True
+         End Select
+         Return Context.Compiler.Report.ShowMessage(Messages.VBNC30439, Context.Location, "String")
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

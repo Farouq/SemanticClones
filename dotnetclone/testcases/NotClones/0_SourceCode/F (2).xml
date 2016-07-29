@@ -1,0 +1,139 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+         Console.WriteLine("Chapter 1 example 3: PageSize")
+
+        ' step 1: creation of a document-object
+        Dim document As New Document(PageSize.A4.rotate())
+
+        ' step 2:
+        ' we create a writer that listens to the document
+        ' and directs a PDF-stream to a file
+
+        PdfWriter.getInstance(document, New FileOutputStream("Chap0103.pdf"))
+
+        ' step 3: we open the document
+        document.open()
+
+        ' step 4: we add some phrases to the document
+        Dim i As Integer
+        For i = 0 To 20
+            document.add(New Phrase("Hello World, Hello Sun, Hello Moon, Hello Stars, Hello Sea, Hello Land, Hello People. "))
+        Next
+
+        ' step 5: we close the document
+        document.close()
+
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+Console.WriteLine("Chapter 10 example 2: Text at absolute positions");
+        
+		// step 1: creation of a document-object
+		Document document = new Document();
+        
+		// step 2:
+		// we create a writer that listens to the document
+		// and directs a PDF-stream to a file
+		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1002.pdf", FileMode.Create));
+        
+		// step 3: we open the document
+		document.open();
+        
+		// step 4: we grab the ContentByte and do some stuff with it
+		PdfContentByte cb = writer.getDirectContent();
+        
+		// first we draw some lines to be able to visualize the text alignment functions
+		cb.setLineWidth(0f);
+		cb.moveTo(250, 500);
+		cb.lineTo(250, 800);
+		cb.moveTo(50, 700);
+		cb.lineTo(400, 700);
+		cb.moveTo(50, 650);
+		cb.lineTo(400, 650);
+		cb.moveTo(50, 600);
+		cb.lineTo(400, 600);
+		cb.stroke();
+        
+		// we tell the ContentByte we're ready to draw text
+		cb.beginText();
+        
+		BaseFont bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+		cb.setFontAndSize(bf, 12);
+		String text = "Sample text for alignment";
+		// we show some text starting on some absolute position with a given alignment
+		cb.showTextAligned(PdfContentByte.ALIGN_CENTER, text + " Center", 250, 700, 0);
+		cb.showTextAligned(PdfContentByte.ALIGN_RIGHT, text + " Right", 250, 650, 0);
+		cb.showTextAligned(PdfContentByte.ALIGN_LEFT, text + " Left", 250, 600, 0);
+        
+		// we draw some text on a certain position
+		cb.setTextMatrix(100, 400);
+		cb.showText("Text at position 100,400.");
+        
+		// we draw some rotated text on a certain position
+		cb.setTextMatrix(0, 1, -1, 0, 100, 300);
+		cb.showText("Text at position 100,300, rotated 90 degrees.");
+        
+		// we draw some mirrored, rotated text on a certain position
+		cb.setTextMatrix(0, 1, 1, 0, 200, 200);
+		cb.showText("Text at position 200,200, mirrored and rotated 90 degrees.");
+        
+		// we tell the contentByte, we've finished GDI text
+		cb.endText();
+        
+		// step 5: we close the document
+		document.close();
+
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+         System.out.println("Chapter 5 example 11: avoid table splitting");
+        // step 1: creation of a document-object
+        Document document = new Document();
+        try {
+            // step 2:
+            // we create a writer that listens to the document
+            // and directs a PDF-stream to a file
+            PdfWriter.getInstance(document, new FileOutputStream("Chap0511.pdf"));
+            // step 3: we open the document
+            document.open();
+            // step 4: we create a table and add it to the document
+            Table table = new Table(3);
+            table.setTableFitsPage(true);
+            table.setBorderWidth(1);
+            table.setBorderColor(new Color(0, 0, 255));
+            table.setPadding(5);
+            table.setSpacing(5);
+            Cell cell = new Cell("header");
+            cell.setHeader(true);
+            cell.setColspan(3);
+            table.addCell(cell);
+            cell = new Cell("example cell with colspan 1 and rowspan 2");
+            cell.setRowspan(2);
+            cell.setBorderColor(new Color(255, 0, 0));
+            table.addCell(cell);
+            table.addCell("1.1");
+            table.addCell("2.1");
+            table.addCell("1.2");
+            table.addCell("2.2");
+            table.addCell("cell test1");
+            cell = new Cell("big cell");
+            cell.setRowspan(2);
+            cell.setColspan(2);
+            cell.setBackgroundColor(new Color(0xC0, 0xC0, 0xC0));
+            table.addCell(cell);
+            table.addCell("cell test2");
+            document.add(new Paragraph("repeating the same table 10 times:"));
+            for (int i = 0; i < 10; i++) {
+                document.add(table);
+            }
+        }
+        catch(DocumentException de) {
+            System.out.println(de.getMessage());
+        }
+        catch(IOException ioe) {
+            System.out.println(ioe.getMessage());
+        }
+        // step 5: we close the document
+        document.close();
+]]></source>
+</source_elements></project>

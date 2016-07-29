@@ -1,0 +1,282 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly '01.HelloWorld'
+{
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0D 30 31 2E 48 65 6C 6C 6F 57 6F 72 6C 64   // ...01.HelloWorld
+                                                                                              00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0D 30 31 2E 48 65 6C 6C 6F 57 6F 72 6C 64   // ...01.HelloWorld
+                                                                                                00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 30 00 00 )                            //  2010..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 36 66 36 63 66 37 35 63 2D 64 62 31 36   // ..$6f6cf75c-db16
+                                                                                                  2D 34 31 66 36 2D 38 31 37 37 2D 34 32 36 32 63   // -41f6-8177-4262c
+                                                                                                  37 31 61 63 66 64 64 00 00 )                      // 71acfdd..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public _01.HelloWorld.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.module '01.HelloWorld.exe'
+// MVID: {3DFE9A94-47B1-45E3-88F8-9E694D2DCE8B}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x003F0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit _01.HelloWorld.Program
+       extends [mscorlib]System.Object
+{
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       287 (0x11f)
+    .maxstack  7
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [1] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [2] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+             [3] class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment gui,
+             [4] class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh mesh,
+             [5] class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode node,
+             [6] bool CS$4$0000)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\01.HelloWorld\Program.cs' 
+//000017: 		{
+    IL_0000:  nop
+//000018: 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(
+    IL_0001:  ldc.i4.1
+    IL_0002:  ldc.i4     0x280
+    IL_0007:  ldc.i4     0x1e0
+    IL_000c:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_0011:  ldc.i4.s   16
+    IL_0013:  ldc.i4.0
+    IL_0014:  ldc.i4.0
+    IL_0015:  ldc.i4.0
+    IL_0016:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di,
+                                                                                                                                 int32,
+                                                                                                                                 bool,
+                                                                                                                                 bool,
+                                                                                                                                 bool)
+    IL_001b:  stloc.0
+//000019: 				DriverType.Software, new Dimension2Di(640, 480), 16, false, false, false);
+//000020: 
+//000021: 			device.SetWindowCaption("Hello World! - Irrlicht Engine Demo");
+    IL_001c:  ldloc.0
+    IL_001d:  ldstr      "Hello World! - Irrlicht Engine Demo"
+    IL_0022:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_0027:  nop
+//000022: 
+//000023: 			VideoDriver driver = device.VideoDriver;
+    IL_0028:  ldloc.0
+    IL_0029:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_002e:  stloc.1
+//000024: 			SceneManager smgr = device.SceneManager;
+    IL_002f:  ldloc.0
+    IL_0030:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0035:  stloc.2
+//000025: 			GUIEnvironment gui = device.GUIEnvironment;
+    IL_0036:  ldloc.0
+    IL_0037:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_003c:  stloc.3
+//000026: 
+//000027: 			gui.AddStaticText("Hello World! This is the Irrlicht Software renderer!",
+    IL_003d:  ldloc.3
+    IL_003e:  ldstr      "Hello World! This is the Irrlicht Software renderer!"
+    IL_0043:  ldc.i4.s   10
+    IL_0045:  ldc.i4.s   10
+    IL_0047:  ldc.i4     0x104
+    IL_004c:  ldc.i4.s   22
+    IL_004e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_0053:  ldc.i4.1
+    IL_0054:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddStaticText(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                  bool)
+    IL_0059:  pop
+//000028: 				new Recti(10, 10, 260, 22), true);
+//000029: 
+//000030: 			AnimatedMesh mesh = smgr.GetMesh("../../media/sydney.md2");
+    IL_005a:  ldloc.2
+    IL_005b:  ldstr      "../../media/sydney.md2"
+    IL_0060:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh [IrrlichtLime]IrrlichtLime.Scene.SceneManager::GetMesh(string)
+    IL_0065:  stloc.s    mesh
+//000031: 			AnimatedMeshSceneNode node = smgr.AddAnimatedMeshSceneNode(mesh);
+    IL_0067:  ldloc.2
+    IL_0068:  ldloc.s    mesh
+    IL_006a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddAnimatedMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh)
+    IL_006f:  stloc.s    node
+//000032: 
+//000033: 			if (node != null)
+    IL_0071:  ldloc.s    node
+    IL_0073:  ldnull
+    IL_0074:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0079:  ldc.i4.0
+    IL_007a:  ceq
+    IL_007c:  stloc.s    CS$4$0000
+    IL_007e:  ldloc.s    CS$4$0000
+    IL_0080:  brtrue.s   IL_00ab
+
+//000034: 			{
+    IL_0082:  nop
+//000035: 				node.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_0083:  ldloc.s    node
+    IL_0085:  ldc.i4.8
+    IL_0086:  ldc.i4.0
+    IL_0087:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_008c:  nop
+//000036: 				node.SetMD2Animation(AnimationTypeMD2.Stand);
+    IL_008d:  ldloc.s    node
+    IL_008f:  ldc.i4.0
+    IL_0090:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode::SetMD2Animation(valuetype [IrrlichtLime]IrrlichtLime.Scene.AnimationTypeMD2)
+    IL_0095:  pop
+//000037: 				node.SetMaterialTexture(0, driver.GetTexture("../../media/sydney.bmp"));
+    IL_0096:  ldloc.s    node
+    IL_0098:  ldc.i4.0
+    IL_0099:  ldloc.1
+    IL_009a:  ldstr      "../../media/sydney.bmp"
+    IL_009f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_00a4:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_00a9:  nop
+//000038: 			}
+    IL_00aa:  nop
+//000039: 
+//000040: 			smgr.AddCameraSceneNode(null, new Vector3Df(0, 30, -40), new Vector3Df(0, 5, 0));
+    IL_00ab:  ldloc.2
+    IL_00ac:  ldnull
+    IL_00ad:  ldc.r4     0.0
+    IL_00b2:  ldc.r4     30.
+    IL_00b7:  ldc.r4     -40.
+    IL_00bc:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00c1:  ldc.r4     0.0
+    IL_00c6:  ldc.r4     5.
+    IL_00cb:  ldc.r4     0.0
+    IL_00d0:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00d5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                           class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                           class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_00da:  pop
+    IL_00db:  br.s       IL_010b
+
+//000041: 
+//000042: 			while (device.Run())
+//000043: 			{
+    IL_00dd:  nop
+//000044: 				driver.BeginScene(true, true, new Color(100, 101, 140));
+    IL_00de:  ldloc.1
+    IL_00df:  ldc.i4.1
+    IL_00e0:  ldc.i4.1
+    IL_00e1:  ldc.i4.s   100
+    IL_00e3:  ldc.i4.s   101
+    IL_00e5:  ldc.i4     0x8c
+    IL_00ea:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_00ef:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool,
+                                                                                                bool,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_00f4:  pop
+//000045: 				
+//000046: 				smgr.DrawAll();
+    IL_00f5:  ldloc.2
+    IL_00f6:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_00fb:  nop
+//000047: 				gui.DrawAll();
+    IL_00fc:  ldloc.3
+    IL_00fd:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::DrawAll()
+    IL_0102:  nop
+//000048: 
+//000049: 				driver.EndScene();
+    IL_0103:  ldloc.1
+    IL_0104:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_0109:  pop
+//000050: 			}
+    IL_010a:  nop
+//000042: 			while (device.Run())
+    IL_010b:  ldloc.0
+    IL_010c:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_0111:  stloc.s    CS$4$0000
+    IL_0113:  ldloc.s    CS$4$0000
+    IL_0115:  brtrue.s   IL_00dd
+
+//000043: 			{
+//000044: 				driver.BeginScene(true, true, new Color(100, 101, 140));
+//000045: 				
+//000046: 				smgr.DrawAll();
+//000047: 				gui.DrawAll();
+//000048: 
+//000049: 				driver.EndScene();
+//000050: 			}
+//000051: 
+//000052: 			device.Drop();
+    IL_0117:  ldloc.0
+    IL_0118:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_011d:  pop
+//000053: 		}
+    IL_011e:  ret
+  } // end of method Program::Main
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+} // end of class _01.HelloWorld.Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

@@ -1,0 +1,90 @@
+<clones  >
+<clone_pair groupid="0" nfragments="5" Csharpe_files="5" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="c:\users\faa634\documents\visual studio 2010\Projects\ConsoleApplication9\ConsoleApplication9\Program.cs" startline="44" endline="59">
+<![CDATA[
+static long Fib(int n)
+{
+if (n < 2)
+return n;
+long[] f = new long[n + 1];
+f[0] = 0;
+f[1] = 1;
+for (int i = 2; i <= n; i++)
+{
+f[i] = f[i - 1] + f[i - 2];
+}
+for (int i = 2; i <= n; i++)
+{
+f[i] = f[i - 1] + f[i - 2];
+}
+return f[n];
+}
+]]>
+</clone_fragment>
+<clone_fragment file="c:\users\faa634\documents\visual studio 2010\Projects\ConsoleApplication9\ConsoleApplication9\Program.cs" startline="67" endline="86">
+<![CDATA[
+static void CompositionBooleans(string result, int counter)
+{
+if (counter == 0)
+return;
+bool[] booleans = new bool[2] { true, false };
+for (int j = 0; j < 2; j++)
+{
+StringBuilder stringBuilder = new StringBuilder(result);
+stringBuilder.Append(string.Format("{0} ", booleans[j].ToString())).ToString();
+if (counter == 1)
+Console.WriteLine(stringBuilder.ToString());
+CompositionBooleans(stringBuilder.ToString(), counter - 1);
+}
+for (int j = 0; j < 2; j++)
+{
+StringBuilder stringBuilder = new StringBuilder(result);
+stringBuilder.Append(string.Format("{0} ", booleans[j].ToString())).ToString();
+if (counter == 1)
+Console.WriteLine(stringBuilder.ToString());
+CompositionBooleans(stringBuilder.ToString(), counter - 1);
+}
+}
+]]>
+</clone_fragment>
+<clone_fragment file="c:\users\faa634\documents\visual studio 2010\Projects\ConsoleApplication9\ConsoleApplication9\Program.cs" startline="24" endline="36">
+<![CDATA[
+static long Factorial(int n)
+{
+if (n == 0)
+return 1;
+long value = 1;
+for (int i = n; i > 0; i--)
+{
+value *= i;
+}
+for (int i = n; i > 0; i--)
+{
+value *= i;
+}
+return value;
+}
+]]>
+</clone_fragment>
+<clone_fragment file="c:\users\faa634\documents\visual studio 2010\Projects\ConsoleApplication9\ConsoleApplication9\Program.cs" startline="37" endline="43">
+<![CDATA[
+static long Factorialr(int n)
+{
+if (n == 0)//The condition that limites the method for calling itself
+return 1;
+return n * Factorial(n - 1);
+}
+]]>
+</clone_fragment>
+<clone_fragment file="c:\users\faa634\documents\visual studio 2010\Projects\ConsoleApplication9\ConsoleApplication9\Program.cs" startline="60" endline="66">
+<![CDATA[
+static long Fibr(int n)
+{
+if (n == 0 || n == 1)//satisfaction condition
+return n;
+return Fib(n - 2) + Fib(n - 1);
+}
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

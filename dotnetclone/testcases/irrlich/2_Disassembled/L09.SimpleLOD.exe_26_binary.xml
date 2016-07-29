@@ -1,0 +1,1820 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="21" endline="244"><![CDATA[
+  {
+    .entrypoint
+    // Code size       2042 (0x7fa)
+    .maxstack  6
+    .locals init ([0] int32 lodItemCount,
+             [1] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType,
+             [2] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [3] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager scene,
+             [4] class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh> lodMesh,
+             [5] class [IrrlichtLime]IrrlichtLime.Video.Material meshMaterial,
+             [6] class [mscorlib]System.Collections.Generic.List`1<int32> lodTriangleCount,
+             [7] int32[] p,
+             [8] int32 i,
+             [9] class [IrrlichtLime]IrrlichtLime.Scene.Mesh m,
+             [10] class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer mb,
+             [11] int32 virtualCubeSide,
+             [12] class L09.SimpleLOD.LODItem[] lodItems,
+             [13] class [mscorlib]System.Random r,
+             [14] class [IrrlichtLime]IrrlichtLime.Core.Matrix tmat,
+             [15] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df rvect,
+             [16] int32 lodSectorSide,
+             [17] int32 lodSectorSize,
+             [18] class L09.SimpleLOD.LODSector[0...,0...,0...] lodSectors,
+             [19] int32 j,
+             [20] int32 k,
+             [21] class [IrrlichtLime]IrrlichtLime.Core.AABBox dimension,
+             [22] class L09.SimpleLOD.LODSector s,
+             [23] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df pos,
+             [24] int32 ix,
+             [25] int32 iy,
+             [26] int32 iz,
+             [27] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode camera,
+             [28] class [IrrlichtLime]IrrlichtLime.GUI.GUIFont font,
+             [29] uint32 timer,
+             [30] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df cameraPosition,
+             [31] class [IrrlichtLime]IrrlichtLime.Core.AABBox cameraViewBox,
+             [32] int32[] lodCount,
+             [33] string f,
+             [34] int32 n,
+             [35] string l,
+             [36] bool CS$4$0000,
+             [37] int32[] CS$0$0001,
+             [38] string CS$0$0002,
+             [39] string[] CS$0$0003,
+             [40] int32 CS$0$0004,
+             [41] object[] CS$0$0005)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+    IL_0000:  nop
+    IL_0001:  call       int32 L09.SimpleLOD.Program::AskUserForLODItemCount()
+    IL_0006:  stloc.0
+    IL_0007:  ldloca.s   driverType
+    IL_0009:  call       bool L09.SimpleLOD.Program::AskUserForDriver(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType&)
+    IL_000e:  stloc.s    CS$4$0000
+    IL_0010:  ldloc.s    CS$4$0000
+    IL_0012:  brtrue.s   IL_0019
+
+    IL_0014:  br         IL_07f9
+
+    IL_0019:  ldloc.1
+    IL_001a:  ldc.i4     0x320
+    IL_001f:  ldc.i4     0x258
+    IL_0024:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_0029:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+    IL_002e:  stsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_0033:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_0038:  ldnull
+    IL_0039:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_003e:  ldc.i4.0
+    IL_003f:  ceq
+    IL_0041:  stloc.s    CS$4$0000
+    IL_0043:  ldloc.s    CS$4$0000
+    IL_0045:  brtrue.s   IL_004c
+
+    IL_0047:  br         IL_07f9
+
+    IL_004c:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_0051:  ldnull
+    IL_0052:  ldftn      bool L09.SimpleLOD.Program::device_OnEvent(class [IrrlichtLime]IrrlichtLime.Event)
+    IL_0058:  newobj     instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler::.ctor(object,
+                                                                                                     native int)
+    IL_005d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::add_OnEvent(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler)
+    IL_0062:  nop
+    IL_0063:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_0068:  ldstr      "Simple LOD - Irrlicht Lime"
+    IL_006d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_0072:  nop
+    IL_0073:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_0078:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.CursorControl [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_CursorControl()
+    IL_007d:  ldc.i4.0
+    IL_007e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.CursorControl::set_Visible(bool)
+    IL_0083:  nop
+    IL_0084:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_0089:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_008e:  stloc.2
+    IL_008f:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_0094:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0099:  stloc.3
+    IL_009a:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh>::.ctor()
+    IL_009f:  stloc.s    lodMesh
+    IL_00a1:  ldnull
+    IL_00a2:  stloc.s    meshMaterial
+    IL_00a4:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<int32>::.ctor()
+    IL_00a9:  stloc.s    lodTriangleCount
+    IL_00ab:  ldc.i4.7
+    IL_00ac:  newarr     [mscorlib]System.Int32
+    IL_00b1:  dup
+    IL_00b2:  ldtoken    field valuetype '<PrivateImplementationDetails>{AF634971-6D48-4E47-85E9-DC75373C100E}'/'__StaticArrayInitTypeSize=28' '<PrivateImplementationDetails>{AF634971-6D48-4E47-85E9-DC75373C100E}'::'$$method0x6000001-1'
+    IL_00b7:  call       void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(class [mscorlib]System.Array,
+                                                                                                        valuetype [mscorlib]System.RuntimeFieldHandle)
+    IL_00bc:  stloc.s    p
+    IL_00be:  ldc.i4.0
+    IL_00bf:  stloc.s    i
+    IL_00c1:  br         IL_015d
+
+    IL_00c6:  nop
+    IL_00c7:  ldloc.3
+    IL_00c8:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_GeometryCreator()
+    IL_00cd:  ldc.r4     50.
+    IL_00d2:  ldloc.s    p
+    IL_00d4:  ldloc.s    i
+    IL_00d6:  ldelem.i4
+    IL_00d7:  ldloc.s    p
+    IL_00d9:  ldloc.s    i
+    IL_00db:  ldelem.i4
+    IL_00dc:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator::CreateSphereMesh(float32,
+                                                                                                                                                 int32,
+                                                                                                                                                 int32)
+    IL_00e1:  stloc.s    m
+    IL_00e3:  ldloc.s    m
+    IL_00e5:  ldc.i4.0
+    IL_00e6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer [IrrlichtLime]IrrlichtLime.Scene.Mesh::GetMeshBuffer(int32)
+    IL_00eb:  stloc.s    mb
+    IL_00ed:  ldloc.s    mb
+    IL_00ef:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::get_Material()
+    IL_00f4:  ldc.i4.0
+    IL_00f5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_Type(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_00fa:  nop
+    IL_00fb:  ldloc.s    mb
+    IL_00fd:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::get_Material()
+    IL_0102:  ldc.i4.0
+    IL_0103:  ldloc.2
+    IL_0104:  ldstr      "../../media/earth.jpg"
+    IL_0109:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_010e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::SetTexture(int32,
+                                                                                             class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_0113:  nop
+    IL_0114:  ldloc.s    m
+    IL_0116:  ldc.i4.8
+    IL_0117:  ldc.i4.0
+    IL_0118:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.Mesh::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                              bool)
+    IL_011d:  nop
+    IL_011e:  ldloc.s    lodMesh
+    IL_0120:  ldloc.s    m
+    IL_0122:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh>::Add(!0)
+    IL_0127:  nop
+    IL_0128:  ldloc.s    meshMaterial
+    IL_012a:  ldnull
+    IL_012b:  ceq
+    IL_012d:  ldc.i4.0
+    IL_012e:  ceq
+    IL_0130:  stloc.s    CS$4$0000
+    IL_0132:  ldloc.s    CS$4$0000
+    IL_0134:  brtrue.s   IL_0145
+
+    IL_0136:  ldloc.s    m
+    IL_0138:  ldc.i4.0
+    IL_0139:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer [IrrlichtLime]IrrlichtLime.Scene.Mesh::GetMeshBuffer(int32)
+    IL_013e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::get_Material()
+    IL_0143:  stloc.s    meshMaterial
+    IL_0145:  ldloc.s    lodTriangleCount
+    IL_0147:  ldloc.s    mb
+    IL_0149:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::get_IndexCount()
+    IL_014e:  ldc.i4.3
+    IL_014f:  div
+    IL_0150:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<int32>::Add(!0)
+    IL_0155:  nop
+    IL_0156:  nop
+    IL_0157:  ldloc.s    i
+    IL_0159:  ldc.i4.1
+    IL_015a:  add
+    IL_015b:  stloc.s    i
+    IL_015d:  ldloc.s    i
+    IL_015f:  ldloc.s    p
+    IL_0161:  ldlen
+    IL_0162:  conv.i4
+    IL_0163:  clt
+    IL_0165:  stloc.s    CS$4$0000
+    IL_0167:  ldloc.s    CS$4$0000
+    IL_0169:  brtrue     IL_00c6
+
+    IL_016e:  ldc.i4     0x4e20
+    IL_0173:  stloc.s    virtualCubeSide
+    IL_0175:  ldloc.0
+    IL_0176:  newarr     L09.SimpleLOD.LODItem
+    IL_017b:  stloc.s    lodItems
+    IL_017d:  ldc.i4     0xbc5ea8
+    IL_0182:  newobj     instance void [mscorlib]System.Random::.ctor(int32)
+    IL_0187:  stloc.s    r
+    IL_0189:  ldc.i4.0
+    IL_018a:  stloc.s    i
+    IL_018c:  br         IL_0218
+
+    IL_0191:  nop
+    IL_0192:  ldloc.s    r
+    IL_0194:  ldloc.s    virtualCubeSide
+    IL_0196:  callvirt   instance int32 [mscorlib]System.Random::Next(int32)
+    IL_019b:  ldloc.s    virtualCubeSide
+    IL_019d:  ldc.i4.2
+    IL_019e:  div
+    IL_019f:  sub
+    IL_01a0:  conv.r4
+    IL_01a1:  ldloc.s    r
+    IL_01a3:  ldloc.s    virtualCubeSide
+    IL_01a5:  callvirt   instance int32 [mscorlib]System.Random::Next(int32)
+    IL_01aa:  ldloc.s    virtualCubeSide
+    IL_01ac:  ldc.i4.2
+    IL_01ad:  div
+    IL_01ae:  sub
+    IL_01af:  conv.r4
+    IL_01b0:  ldloc.s    r
+    IL_01b2:  ldloc.s    virtualCubeSide
+    IL_01b4:  callvirt   instance int32 [mscorlib]System.Random::Next(int32)
+    IL_01b9:  ldloc.s    virtualCubeSide
+    IL_01bb:  ldc.i4.2
+    IL_01bc:  div
+    IL_01bd:  sub
+    IL_01be:  conv.r4
+    IL_01bf:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_01c4:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Matrix::.ctor(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_01c9:  stloc.s    tmat
+    IL_01cb:  ldloc.s    r
+    IL_01cd:  callvirt   instance float64 [mscorlib]System.Random::NextDouble()
+    IL_01d2:  conv.r4
+    IL_01d3:  ldc.r4     200.
+    IL_01d8:  div
+    IL_01d9:  ldloc.s    r
+    IL_01db:  callvirt   instance float64 [mscorlib]System.Random::NextDouble()
+    IL_01e0:  conv.r4
+    IL_01e1:  ldc.r4     200.
+    IL_01e6:  div
+    IL_01e7:  ldloc.s    r
+    IL_01e9:  callvirt   instance float64 [mscorlib]System.Random::NextDouble()
+    IL_01ee:  conv.r4
+    IL_01ef:  ldc.r4     200.
+    IL_01f4:  div
+    IL_01f5:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_01fa:  stloc.s    rvect
+    IL_01fc:  ldloc.s    lodItems
+    IL_01fe:  ldloc.s    i
+    IL_0200:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_0205:  ldloc.s    lodMesh
+    IL_0207:  ldloc.s    tmat
+    IL_0209:  ldloc.s    rvect
+    IL_020b:  call       class L09.SimpleLOD.LODItem L09.SimpleLOD.LODItem::Create(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice,
+                                                                                   class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh>,
+                                                                                   class [IrrlichtLime]IrrlichtLime.Core.Matrix,
+                                                                                   class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0210:  stelem.ref
+    IL_0211:  nop
+    IL_0212:  ldloc.s    i
+    IL_0214:  ldc.i4.1
+    IL_0215:  add
+    IL_0216:  stloc.s    i
+    IL_0218:  ldloc.s    i
+    IL_021a:  ldloc.0
+    IL_021b:  clt
+    IL_021d:  stloc.s    CS$4$0000
+    IL_021f:  ldloc.s    CS$4$0000
+    IL_0221:  brtrue     IL_0191
+
+    IL_0226:  ldc.i4.6
+    IL_0227:  stloc.s    lodSectorSide
+    IL_0229:  ldloc.s    virtualCubeSide
+    IL_022b:  ldloc.s    lodSectorSide
+    IL_022d:  div
+    IL_022e:  stloc.s    lodSectorSize
+    IL_0230:  ldloc.s    lodSectorSide
+    IL_0232:  ldloc.s    lodSectorSide
+    IL_0234:  ldloc.s    lodSectorSide
+    IL_0236:  newobj     instance void class L09.SimpleLOD.LODSector[0...,0...,0...]::.ctor(int32,
+                                                                                            int32,
+                                                                                            int32)
+    IL_023b:  stloc.s    lodSectors
+    IL_023d:  ldc.i4.0
+    IL_023e:  stloc.s    i
+    IL_0240:  br         IL_030e
+
+    IL_0245:  nop
+    IL_0246:  ldc.i4.0
+    IL_0247:  stloc.s    j
+    IL_0249:  br         IL_02f8
+
+    IL_024e:  nop
+    IL_024f:  ldc.i4.0
+    IL_0250:  stloc.s    k
+    IL_0252:  br         IL_02e2
+
+    IL_0257:  nop
+    IL_0258:  ldloc.s    i
+    IL_025a:  ldloc.s    lodSectorSize
+    IL_025c:  mul
+    IL_025d:  conv.r4
+    IL_025e:  ldloc.s    j
+    IL_0260:  ldloc.s    lodSectorSize
+    IL_0262:  mul
+    IL_0263:  conv.r4
+    IL_0264:  ldloc.s    k
+    IL_0266:  ldloc.s    lodSectorSize
+    IL_0268:  mul
+    IL_0269:  conv.r4
+    IL_026a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_026f:  ldloc.s    i
+    IL_0271:  ldc.i4.1
+    IL_0272:  add
+    IL_0273:  ldloc.s    lodSectorSize
+    IL_0275:  mul
+    IL_0276:  conv.r4
+    IL_0277:  ldloc.s    j
+    IL_0279:  ldc.i4.1
+    IL_027a:  add
+    IL_027b:  ldloc.s    lodSectorSize
+    IL_027d:  mul
+    IL_027e:  conv.r4
+    IL_027f:  ldloc.s    k
+    IL_0281:  ldc.i4.1
+    IL_0282:  add
+    IL_0283:  ldloc.s    lodSectorSize
+    IL_0285:  mul
+    IL_0286:  conv.r4
+    IL_0287:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_028c:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.AABBox::.ctor(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                     class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0291:  stloc.s    dimension
+    IL_0293:  ldloc.s    dimension
+    IL_0295:  dup
+    IL_0296:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MinEdge()
+    IL_029b:  ldloc.s    virtualCubeSide
+    IL_029d:  ldc.i4.2
+    IL_029e:  div
+    IL_029f:  conv.r4
+    IL_02a0:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Subtraction(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                   float32)
+    IL_02a5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.AABBox::set_MinEdge(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_02aa:  nop
+    IL_02ab:  ldloc.s    dimension
+    IL_02ad:  dup
+    IL_02ae:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MaxEdge()
+    IL_02b3:  ldloc.s    virtualCubeSide
+    IL_02b5:  ldc.i4.2
+    IL_02b6:  div
+    IL_02b7:  conv.r4
+    IL_02b8:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Subtraction(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                   float32)
+    IL_02bd:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.AABBox::set_MaxEdge(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_02c2:  nop
+    IL_02c3:  ldloc.s    dimension
+    IL_02c5:  call       class L09.SimpleLOD.LODSector L09.SimpleLOD.LODSector::Create(class [IrrlichtLime]IrrlichtLime.Core.AABBox)
+    IL_02ca:  stloc.s    s
+    IL_02cc:  ldloc.s    lodSectors
+    IL_02ce:  ldloc.s    i
+    IL_02d0:  ldloc.s    j
+    IL_02d2:  ldloc.s    k
+    IL_02d4:  ldloc.s    s
+    IL_02d6:  call       instance void class L09.SimpleLOD.LODSector[0...,0...,0...]::Set(int32,
+                                                                                          int32,
+                                                                                          int32,
+                                                                                          class L09.SimpleLOD.LODSector)
+    IL_02db:  nop
+    IL_02dc:  ldloc.s    k
+    IL_02de:  ldc.i4.1
+    IL_02df:  add
+    IL_02e0:  stloc.s    k
+    IL_02e2:  ldloc.s    k
+    IL_02e4:  ldloc.s    lodSectorSide
+    IL_02e6:  clt
+    IL_02e8:  stloc.s    CS$4$0000
+    IL_02ea:  ldloc.s    CS$4$0000
+    IL_02ec:  brtrue     IL_0257
+
+    IL_02f1:  nop
+    IL_02f2:  ldloc.s    j
+    IL_02f4:  ldc.i4.1
+    IL_02f5:  add
+    IL_02f6:  stloc.s    j
+    IL_02f8:  ldloc.s    j
+    IL_02fa:  ldloc.s    lodSectorSide
+    IL_02fc:  clt
+    IL_02fe:  stloc.s    CS$4$0000
+    IL_0300:  ldloc.s    CS$4$0000
+    IL_0302:  brtrue     IL_024e
+
+    IL_0307:  nop
+    IL_0308:  ldloc.s    i
+    IL_030a:  ldc.i4.1
+    IL_030b:  add
+    IL_030c:  stloc.s    i
+    IL_030e:  ldloc.s    i
+    IL_0310:  ldloc.s    lodSectorSide
+    IL_0312:  clt
+    IL_0314:  stloc.s    CS$4$0000
+    IL_0316:  ldloc.s    CS$4$0000
+    IL_0318:  brtrue     IL_0245
+
+    IL_031d:  ldc.i4.0
+    IL_031e:  stloc.s    i
+    IL_0320:  br         IL_0401
+
+    IL_0325:  nop
+    IL_0326:  ldloc.s    lodItems
+    IL_0328:  ldloc.s    i
+    IL_032a:  ldelem.ref
+    IL_032b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODItem::get_Position()
+    IL_0330:  stloc.s    pos
+    IL_0332:  ldloc.s    pos
+    IL_0334:  ldloc.s    virtualCubeSide
+    IL_0336:  ldc.i4.2
+    IL_0337:  div
+    IL_0338:  conv.r4
+    IL_0339:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Addition(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                float32)
+    IL_033e:  stloc.s    pos
+    IL_0340:  ldloc.s    pos
+    IL_0342:  ldloc.s    lodSectorSize
+    IL_0344:  conv.r4
+    IL_0345:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Division(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                float32)
+    IL_034a:  stloc.s    pos
+    IL_034c:  ldloc.s    pos
+    IL_034e:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_X()
+    IL_0353:  conv.i4
+    IL_0354:  stloc.s    ix
+    IL_0356:  ldloc.s    pos
+    IL_0358:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Y()
+    IL_035d:  conv.i4
+    IL_035e:  stloc.s    iy
+    IL_0360:  ldloc.s    pos
+    IL_0362:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Z()
+    IL_0367:  conv.i4
+    IL_0368:  stloc.s    iz
+    IL_036a:  ldloc.s    ix
+    IL_036c:  ldc.i4.0
+    IL_036d:  clt
+    IL_036f:  ldc.i4.0
+    IL_0370:  ceq
+    IL_0372:  stloc.s    CS$4$0000
+    IL_0374:  ldloc.s    CS$4$0000
+    IL_0376:  brtrue.s   IL_037b
+
+    IL_0378:  ldc.i4.0
+    IL_0379:  stloc.s    ix
+    IL_037b:  ldloc.s    ix
+    IL_037d:  ldloc.s    lodSectorSide
+    IL_037f:  ldc.i4.1
+    IL_0380:  sub
+    IL_0381:  cgt
+    IL_0383:  ldc.i4.0
+    IL_0384:  ceq
+    IL_0386:  stloc.s    CS$4$0000
+    IL_0388:  ldloc.s    CS$4$0000
+    IL_038a:  brtrue.s   IL_0392
+
+    IL_038c:  ldloc.s    lodSectorSide
+    IL_038e:  ldc.i4.1
+    IL_038f:  sub
+    IL_0390:  stloc.s    ix
+    IL_0392:  ldloc.s    iy
+    IL_0394:  ldc.i4.0
+    IL_0395:  clt
+    IL_0397:  ldc.i4.0
+    IL_0398:  ceq
+    IL_039a:  stloc.s    CS$4$0000
+    IL_039c:  ldloc.s    CS$4$0000
+    IL_039e:  brtrue.s   IL_03a3
+
+    IL_03a0:  ldc.i4.0
+    IL_03a1:  stloc.s    ix
+    IL_03a3:  ldloc.s    iy
+    IL_03a5:  ldloc.s    lodSectorSide
+    IL_03a7:  ldc.i4.1
+    IL_03a8:  sub
+    IL_03a9:  cgt
+    IL_03ab:  ldc.i4.0
+    IL_03ac:  ceq
+    IL_03ae:  stloc.s    CS$4$0000
+    IL_03b0:  ldloc.s    CS$4$0000
+    IL_03b2:  brtrue.s   IL_03ba
+
+    IL_03b4:  ldloc.s    lodSectorSide
+    IL_03b6:  ldc.i4.1
+    IL_03b7:  sub
+    IL_03b8:  stloc.s    iy
+    IL_03ba:  ldloc.s    iz
+    IL_03bc:  ldc.i4.0
+    IL_03bd:  clt
+    IL_03bf:  ldc.i4.0
+    IL_03c0:  ceq
+    IL_03c2:  stloc.s    CS$4$0000
+    IL_03c4:  ldloc.s    CS$4$0000
+    IL_03c6:  brtrue.s   IL_03cb
+
+    IL_03c8:  ldc.i4.0
+    IL_03c9:  stloc.s    iz
+    IL_03cb:  ldloc.s    iz
+    IL_03cd:  ldloc.s    lodSectorSide
+    IL_03cf:  ldc.i4.1
+    IL_03d0:  sub
+    IL_03d1:  cgt
+    IL_03d3:  ldc.i4.0
+    IL_03d4:  ceq
+    IL_03d6:  stloc.s    CS$4$0000
+    IL_03d8:  ldloc.s    CS$4$0000
+    IL_03da:  brtrue.s   IL_03e2
+
+    IL_03dc:  ldloc.s    lodSectorSide
+    IL_03de:  ldc.i4.1
+    IL_03df:  sub
+    IL_03e0:  stloc.s    iz
+    IL_03e2:  ldloc.s    lodSectors
+    IL_03e4:  ldloc.s    ix
+    IL_03e6:  ldloc.s    iy
+    IL_03e8:  ldloc.s    iz
+    IL_03ea:  call       instance class L09.SimpleLOD.LODSector class L09.SimpleLOD.LODSector[0...,0...,0...]::Get(int32,
+                                                                                                                   int32,
+                                                                                                                   int32)
+    IL_03ef:  ldloc.s    lodItems
+    IL_03f1:  ldloc.s    i
+    IL_03f3:  ldelem.ref
+    IL_03f4:  callvirt   instance void L09.SimpleLOD.LODSector::AddLODItem(class L09.SimpleLOD.LODItem)
+    IL_03f9:  nop
+    IL_03fa:  nop
+    IL_03fb:  ldloc.s    i
+    IL_03fd:  ldc.i4.1
+    IL_03fe:  add
+    IL_03ff:  stloc.s    i
+    IL_0401:  ldloc.s    i
+    IL_0403:  ldloc.s    lodItems
+    IL_0405:  ldlen
+    IL_0406:  conv.i4
+    IL_0407:  clt
+    IL_0409:  stloc.s    CS$4$0000
+    IL_040b:  ldloc.s    CS$4$0000
+    IL_040d:  brtrue     IL_0325
+
+    IL_0412:  ldloc.3
+    IL_0413:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNodeFPS()
+    IL_0418:  stloc.s    camera
+    IL_041a:  ldloc.s    camera
+    IL_041c:  ldc.r4     30000.
+    IL_0421:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_FarValue(float32)
+    IL_0426:  nop
+    IL_0427:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_042c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0431:  ldstr      "../../media/fontlucida.png"
+    IL_0436:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::GetFont(string)
+    IL_043b:  stloc.s    font
+    IL_043d:  br         IL_07db
+
+    IL_0442:  nop
+    IL_0443:  ldloc.2
+    IL_0444:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene()
+    IL_0449:  pop
+    IL_044a:  ldloc.3
+    IL_044b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_0450:  nop
+    IL_0451:  ldsfld     bool L09.SimpleLOD.Program::isLabelMode
+    IL_0456:  ldc.i4.0
+    IL_0457:  ceq
+    IL_0459:  stloc.s    CS$4$0000
+    IL_045b:  ldloc.s    CS$4$0000
+    IL_045d:  brtrue.s   IL_0477
+
+    IL_045f:  nop
+    IL_0460:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di>::.ctor()
+    IL_0465:  stsfld     class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di> L09.SimpleLOD.LODItem::LabelPositions
+    IL_046a:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<string>::.ctor()
+    IL_046f:  stsfld     class [mscorlib]System.Collections.Generic.List`1<string> L09.SimpleLOD.LODItem::LabelTexts
+    IL_0474:  nop
+    IL_0475:  br.s       IL_0485
+
+    IL_0477:  nop
+    IL_0478:  ldnull
+    IL_0479:  stsfld     class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di> L09.SimpleLOD.LODItem::LabelPositions
+    IL_047e:  ldnull
+    IL_047f:  stsfld     class [mscorlib]System.Collections.Generic.List`1<string> L09.SimpleLOD.LODItem::LabelTexts
+    IL_0484:  nop
+    IL_0485:  ldloc.s    meshMaterial
+    IL_0487:  ldsfld     bool L09.SimpleLOD.Program::isWireframeMode
+    IL_048c:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_Wireframe(bool)
+    IL_0491:  nop
+    IL_0492:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_0497:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_049c:  ldloc.s    meshMaterial
+    IL_049e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetMaterial(class [IrrlichtLime]IrrlichtLime.Video.Material)
+    IL_04a3:  nop
+    IL_04a4:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_04a9:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Timer [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Timer()
+    IL_04ae:  callvirt   instance uint32 [IrrlichtLime]IrrlichtLime.Timer::get_Time()
+    IL_04b3:  stloc.s    timer
+    IL_04b5:  ldloc.s    camera
+    IL_04b7:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_AbsolutePosition()
+    IL_04bc:  stloc.s    cameraPosition
+    IL_04be:  ldloc.s    camera
+    IL_04c0:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.ViewFrustum [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::get_ViewFrustum()
+    IL_04c5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.AABBox [IrrlichtLime]IrrlichtLime.Scene.ViewFrustum::get_BoundingBox()
+    IL_04ca:  stloc.s    cameraViewBox
+    IL_04cc:  ldc.i4.0
+    IL_04cd:  stloc.s    i
+    IL_04cf:  br.s       IL_0524
+
+    IL_04d1:  nop
+    IL_04d2:  ldc.i4.0
+    IL_04d3:  stloc.s    j
+    IL_04d5:  br.s       IL_0511
+
+    IL_04d7:  nop
+    IL_04d8:  ldc.i4.0
+    IL_04d9:  stloc.s    k
+    IL_04db:  br.s       IL_04fe
+
+    IL_04dd:  nop
+    IL_04de:  ldloc.s    lodSectors
+    IL_04e0:  ldloc.s    i
+    IL_04e2:  ldloc.s    j
+    IL_04e4:  ldloc.s    k
+    IL_04e6:  call       instance class L09.SimpleLOD.LODSector class L09.SimpleLOD.LODSector[0...,0...,0...]::Get(int32,
+                                                                                                                   int32,
+                                                                                                                   int32)
+    IL_04eb:  ldloc.s    timer
+    IL_04ed:  ldloc.s    cameraPosition
+    IL_04ef:  ldloc.s    cameraViewBox
+    IL_04f1:  callvirt   instance void L09.SimpleLOD.LODSector::Draw(uint32,
+                                                                     class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                     class [IrrlichtLime]IrrlichtLime.Core.AABBox)
+    IL_04f6:  nop
+    IL_04f7:  nop
+    IL_04f8:  ldloc.s    k
+    IL_04fa:  ldc.i4.1
+    IL_04fb:  add
+    IL_04fc:  stloc.s    k
+    IL_04fe:  ldloc.s    k
+    IL_0500:  ldloc.s    lodSectorSide
+    IL_0502:  clt
+    IL_0504:  stloc.s    CS$4$0000
+    IL_0506:  ldloc.s    CS$4$0000
+    IL_0508:  brtrue.s   IL_04dd
+
+    IL_050a:  nop
+    IL_050b:  ldloc.s    j
+    IL_050d:  ldc.i4.1
+    IL_050e:  add
+    IL_050f:  stloc.s    j
+    IL_0511:  ldloc.s    j
+    IL_0513:  ldloc.s    lodSectorSide
+    IL_0515:  clt
+    IL_0517:  stloc.s    CS$4$0000
+    IL_0519:  ldloc.s    CS$4$0000
+    IL_051b:  brtrue.s   IL_04d7
+
+    IL_051d:  nop
+    IL_051e:  ldloc.s    i
+    IL_0520:  ldc.i4.1
+    IL_0521:  add
+    IL_0522:  stloc.s    i
+    IL_0524:  ldloc.s    i
+    IL_0526:  ldloc.s    lodSectorSide
+    IL_0528:  clt
+    IL_052a:  stloc.s    CS$4$0000
+    IL_052c:  ldloc.s    CS$4$0000
+    IL_052e:  brtrue.s   IL_04d1
+
+    IL_0530:  ldsfld     bool L09.SimpleLOD.Program::isLabelMode
+    IL_0535:  ldc.i4.0
+    IL_0536:  ceq
+    IL_0538:  stloc.s    CS$4$0000
+    IL_053a:  ldloc.s    CS$4$0000
+    IL_053c:  brtrue     IL_060b
+
+    IL_0541:  nop
+    IL_0542:  ldc.i4.0
+    IL_0543:  stloc.s    i
+    IL_0545:  br         IL_05f3
+
+    IL_054a:  nop
+    IL_054b:  ldloc.2
+    IL_054c:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di> L09.SimpleLOD.LODItem::LabelPositions
+    IL_0551:  ldloc.s    i
+    IL_0553:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di>::get_Item(int32)
+    IL_0558:  ldc.i4.s   10
+    IL_055a:  ldc.i4.0
+    IL_055b:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_0560:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector2Di [IrrlichtLime]IrrlichtLime.Core.Vector2Di::op_Subtraction(class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                                                                   class [IrrlichtLime]IrrlichtLime.Core.Vector2Di)
+    IL_0565:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di> L09.SimpleLOD.LODItem::LabelPositions
+    IL_056a:  ldloc.s    i
+    IL_056c:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di>::get_Item(int32)
+    IL_0571:  ldc.i4.s   50
+    IL_0573:  ldc.i4.0
+    IL_0574:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_0579:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector2Di [IrrlichtLime]IrrlichtLime.Core.Vector2Di::op_Addition(class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                                                                class [IrrlichtLime]IrrlichtLime.Core.Vector2Di)
+    IL_057e:  call       class [IrrlichtLime]IrrlichtLime.Video.Color [IrrlichtLime]IrrlichtLime.Video.Color::get_OpaqueGreen()
+    IL_0583:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::Draw2DLine(class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0588:  nop
+    IL_0589:  ldloc.2
+    IL_058a:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di> L09.SimpleLOD.LODItem::LabelPositions
+    IL_058f:  ldloc.s    i
+    IL_0591:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di>::get_Item(int32)
+    IL_0596:  ldc.i4.0
+    IL_0597:  ldc.i4.s   10
+    IL_0599:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_059e:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector2Di [IrrlichtLime]IrrlichtLime.Core.Vector2Di::op_Subtraction(class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                                                                   class [IrrlichtLime]IrrlichtLime.Core.Vector2Di)
+    IL_05a3:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di> L09.SimpleLOD.LODItem::LabelPositions
+    IL_05a8:  ldloc.s    i
+    IL_05aa:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di>::get_Item(int32)
+    IL_05af:  ldc.i4.0
+    IL_05b0:  ldc.i4.s   50
+    IL_05b2:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_05b7:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector2Di [IrrlichtLime]IrrlichtLime.Core.Vector2Di::op_Addition(class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                                                                class [IrrlichtLime]IrrlichtLime.Core.Vector2Di)
+    IL_05bc:  call       class [IrrlichtLime]IrrlichtLime.Video.Color [IrrlichtLime]IrrlichtLime.Video.Color::get_OpaqueGreen()
+    IL_05c1:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::Draw2DLine(class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_05c6:  nop
+    IL_05c7:  ldloc.s    font
+    IL_05c9:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<string> L09.SimpleLOD.LODItem::LabelTexts
+    IL_05ce:  ldloc.s    i
+    IL_05d0:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<string>::get_Item(int32)
+    IL_05d5:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di> L09.SimpleLOD.LODItem::LabelPositions
+    IL_05da:  ldloc.s    i
+    IL_05dc:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di>::get_Item(int32)
+    IL_05e1:  call       class [IrrlichtLime]IrrlichtLime.Video.Color [IrrlichtLime]IrrlichtLime.Video.Color::get_OpaqueGreen()
+    IL_05e6:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIFont::Draw(string,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_05eb:  nop
+    IL_05ec:  nop
+    IL_05ed:  ldloc.s    i
+    IL_05ef:  ldc.i4.1
+    IL_05f0:  add
+    IL_05f1:  stloc.s    i
+    IL_05f3:  ldloc.s    i
+    IL_05f5:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di> L09.SimpleLOD.LODItem::LabelPositions
+    IL_05fa:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di>::get_Count()
+    IL_05ff:  clt
+    IL_0601:  stloc.s    CS$4$0000
+    IL_0603:  ldloc.s    CS$4$0000
+    IL_0605:  brtrue     IL_054a
+
+    IL_060a:  nop
+    IL_060b:  ldsfld     bool L09.SimpleLOD.Program::isStatsMode
+    IL_0610:  ldc.i4.0
+    IL_0611:  ceq
+    IL_0613:  stloc.s    CS$4$0000
+    IL_0615:  ldloc.s    CS$4$0000
+    IL_0617:  brtrue     IL_0746
+
+    IL_061c:  nop
+    IL_061d:  ldc.i4.7
+    IL_061e:  newarr     [mscorlib]System.Int32
+    IL_0623:  stloc.s    CS$0$0001
+    IL_0625:  ldloc.s    CS$0$0001
+    IL_0627:  stloc.s    lodCount
+    IL_0629:  ldc.i4.0
+    IL_062a:  stloc.s    i
+    IL_062c:  br.s       IL_0652
+
+    IL_062e:  ldloc.s    lodCount
+    IL_0630:  ldloc.s    lodItems
+    IL_0632:  ldloc.s    i
+    IL_0634:  ldelem.ref
+    IL_0635:  callvirt   instance int32 L09.SimpleLOD.LODItem::get_CurrentLOD()
+    IL_063a:  ldelema    [mscorlib]System.Int32
+    IL_063f:  dup
+    IL_0640:  ldobj      [mscorlib]System.Int32
+    IL_0645:  ldc.i4.1
+    IL_0646:  add
+    IL_0647:  stobj      [mscorlib]System.Int32
+    IL_064c:  ldloc.s    i
+    IL_064e:  ldc.i4.1
+    IL_064f:  add
+    IL_0650:  stloc.s    i
+    IL_0652:  ldloc.s    i
+    IL_0654:  ldloc.s    lodItems
+    IL_0656:  ldlen
+    IL_0657:  conv.i4
+    IL_0658:  clt
+    IL_065a:  stloc.s    CS$4$0000
+    IL_065c:  ldloc.s    CS$4$0000
+    IL_065e:  brtrue.s   IL_062e
+
+    IL_0660:  ldstr      ""
+    IL_0665:  stloc.s    f
+    IL_0667:  ldc.i4.0
+    IL_0668:  stloc.s    i
+    IL_066a:  br.s       IL_06e4
+
+    IL_066c:  nop
+    IL_066d:  ldloc.s    lodCount
+    IL_066f:  ldloc.s    i
+    IL_0671:  ldelem.i4
+    IL_0672:  stloc.s    n
+    IL_0674:  ldloc.s    f
+    IL_0676:  stloc.s    CS$0$0002
+    IL_0678:  ldc.i4.8
+    IL_0679:  newarr     [mscorlib]System.String
+    IL_067e:  stloc.s    CS$0$0003
+    IL_0680:  ldloc.s    CS$0$0003
+    IL_0682:  ldc.i4.0
+    IL_0683:  ldloc.s    CS$0$0002
+    IL_0685:  stelem.ref
+    IL_0686:  ldloc.s    CS$0$0003
+    IL_0688:  ldc.i4.1
+    IL_0689:  ldstr      "LOD"
+    IL_068e:  stelem.ref
+    IL_068f:  ldloc.s    CS$0$0003
+    IL_0691:  ldc.i4.2
+    IL_0692:  ldloca.s   i
+    IL_0694:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_0699:  stelem.ref
+    IL_069a:  ldloc.s    CS$0$0003
+    IL_069c:  ldc.i4.3
+    IL_069d:  ldstr      ": "
+    IL_06a2:  stelem.ref
+    IL_06a3:  ldloc.s    CS$0$0003
+    IL_06a5:  ldc.i4.4
+    IL_06a6:  ldloca.s   n
+    IL_06a8:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_06ad:  stelem.ref
+    IL_06ae:  ldloc.s    CS$0$0003
+    IL_06b0:  ldc.i4.5
+    IL_06b1:  ldstr      " ["
+    IL_06b6:  stelem.ref
+    IL_06b7:  ldloc.s    CS$0$0003
+    IL_06b9:  ldc.i4.6
+    IL_06ba:  ldloc.s    n
+    IL_06bc:  ldc.i4.s   100
+    IL_06be:  mul
+    IL_06bf:  ldloc.0
+    IL_06c0:  div
+    IL_06c1:  stloc.s    CS$0$0004
+    IL_06c3:  ldloca.s   CS$0$0004
+    IL_06c5:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_06ca:  stelem.ref
+    IL_06cb:  ldloc.s    CS$0$0003
+    IL_06cd:  ldc.i4.7
+    IL_06ce:  ldstr      "%] objects\n"
+    IL_06d3:  stelem.ref
+    IL_06d4:  ldloc.s    CS$0$0003
+    IL_06d6:  call       string [mscorlib]System.String::Concat(string[])
+    IL_06db:  stloc.s    f
+    IL_06dd:  nop
+    IL_06de:  ldloc.s    i
+    IL_06e0:  ldc.i4.1
+    IL_06e1:  add
+    IL_06e2:  stloc.s    i
+    IL_06e4:  ldloc.s    i
+    IL_06e6:  ldloc.s    lodCount
+    IL_06e8:  ldlen
+    IL_06e9:  conv.i4
+    IL_06ea:  clt
+    IL_06ec:  stloc.s    CS$4$0000
+    IL_06ee:  ldloc.s    CS$4$0000
+    IL_06f0:  brtrue     IL_066c
+
+    IL_06f5:  ldstr      "------------------------"
+    IL_06fa:  stloc.s    l
+    IL_06fc:  ldloc.s    font
+    IL_06fe:  ldstr      "Stats\n{0}\n{1}{2}\nTotal: {3} [100%] objects"
+    IL_0703:  ldc.i4.4
+    IL_0704:  newarr     [mscorlib]System.Object
+    IL_0709:  stloc.s    CS$0$0005
+    IL_070b:  ldloc.s    CS$0$0005
+    IL_070d:  ldc.i4.0
+    IL_070e:  ldloc.s    l
+    IL_0710:  stelem.ref
+    IL_0711:  ldloc.s    CS$0$0005
+    IL_0713:  ldc.i4.1
+    IL_0714:  ldloc.s    f
+    IL_0716:  stelem.ref
+    IL_0717:  ldloc.s    CS$0$0005
+    IL_0719:  ldc.i4.2
+    IL_071a:  ldloc.s    l
+    IL_071c:  stelem.ref
+    IL_071d:  ldloc.s    CS$0$0005
+    IL_071f:  ldc.i4.3
+    IL_0720:  ldloc.0
+    IL_0721:  box        [mscorlib]System.Int32
+    IL_0726:  stelem.ref
+    IL_0727:  ldloc.s    CS$0$0005
+    IL_0729:  call       string [mscorlib]System.String::Format(string,
+                                                                object[])
+    IL_072e:  ldc.i4.s   10
+    IL_0730:  ldc.i4     0x8c
+    IL_0735:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_073a:  call       class [IrrlichtLime]IrrlichtLime.Video.Color [IrrlichtLime]IrrlichtLime.Video.Color::get_OpaqueMagenta()
+    IL_073f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIFont::Draw(string,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0744:  nop
+    IL_0745:  nop
+    IL_0746:  ldloc.s    font
+    IL_0748:  ldstr      "Camera position: {0}\nTotal LOD 0 triangles: {1}\nTr"
+    + "iangles currently drawn: {2}\nDriver: {3}\nFPS: {4}"
+    IL_074d:  ldc.i4.5
+    IL_074e:  newarr     [mscorlib]System.Object
+    IL_0753:  stloc.s    CS$0$0005
+    IL_0755:  ldloc.s    CS$0$0005
+    IL_0757:  ldc.i4.0
+    IL_0758:  ldloc.s    camera
+    IL_075a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_AbsolutePosition()
+    IL_075f:  stelem.ref
+    IL_0760:  ldloc.s    CS$0$0005
+    IL_0762:  ldc.i4.1
+    IL_0763:  ldloc.s    lodTriangleCount
+    IL_0765:  ldc.i4.0
+    IL_0766:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<int32>::get_Item(int32)
+    IL_076b:  ldloc.0
+    IL_076c:  mul
+    IL_076d:  box        [mscorlib]System.Int32
+    IL_0772:  stelem.ref
+    IL_0773:  ldloc.s    CS$0$0005
+    IL_0775:  ldc.i4.2
+    IL_0776:  ldloc.2
+    IL_0777:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_PrimitiveCountDrawn()
+    IL_077c:  box        [mscorlib]System.Int32
+    IL_0781:  stelem.ref
+    IL_0782:  ldloc.s    CS$0$0005
+    IL_0784:  ldc.i4.3
+    IL_0785:  ldloc.2
+    IL_0786:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_078b:  stelem.ref
+    IL_078c:  ldloc.s    CS$0$0005
+    IL_078e:  ldc.i4.4
+    IL_078f:  ldloc.2
+    IL_0790:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_0795:  box        [mscorlib]System.Int32
+    IL_079a:  stelem.ref
+    IL_079b:  ldloc.s    CS$0$0005
+    IL_079d:  call       string [mscorlib]System.String::Format(string,
+                                                                object[])
+    IL_07a2:  ldc.i4.s   10
+    IL_07a4:  ldc.i4.s   10
+    IL_07a6:  call       class [IrrlichtLime]IrrlichtLime.Video.Color [IrrlichtLime]IrrlichtLime.Video.Color::get_OpaqueYellow()
+    IL_07ab:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIFont::Draw(string,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_07b0:  nop
+    IL_07b1:  ldloc.s    font
+    IL_07b3:  ldstr      "[S] Toggle stats\n[W] Toggle wireframe\n[L] Toggle l"
+    + "abels (only for LODs from 0 to 4)\n[Esc] Exit application"
+    IL_07b8:  ldc.i4.s   10
+    IL_07ba:  ldloc.2
+    IL_07bb:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_ScreenSize()
+    IL_07c0:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::get_Height()
+    IL_07c5:  ldc.i4.s   80
+    IL_07c7:  sub
+    IL_07c8:  call       class [IrrlichtLime]IrrlichtLime.Video.Color [IrrlichtLime]IrrlichtLime.Video.Color::get_OpaqueCyan()
+    IL_07cd:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIFont::Draw(string,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_07d2:  nop
+    IL_07d3:  ldloc.2
+    IL_07d4:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_07d9:  pop
+    IL_07da:  nop
+    IL_07db:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_07e0:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_07e5:  stloc.s    CS$4$0000
+    IL_07e7:  ldloc.s    CS$4$0000
+    IL_07e9:  brtrue     IL_0442
+
+    IL_07ee:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_07f3:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_07f8:  pop
+    IL_07f9:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="245" endline="272"><![CDATA[
+  {
+    // Code size       146 (0x92)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000,
+             [1] bool CS$4$0001,
+             [2] valuetype [IrrlichtLime]IrrlichtLime.KeyCode CS$4$0002)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.EventType [IrrlichtLime]IrrlichtLime.Event::get_Type()
+    IL_0007:  ldc.i4.2
+    IL_0008:  bne.un.s   IL_001a
+
+    IL_000a:  ldarg.0
+    IL_000b:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_0010:  ldfld      bool [IrrlichtLime]IrrlichtLime.Event/KeyEvent::PressedDown
+    IL_0015:  ldc.i4.0
+    IL_0016:  ceq
+    IL_0018:  br.s       IL_001b
+
+    IL_001a:  ldc.i4.1
+    IL_001b:  stloc.1
+    IL_001c:  ldloc.1
+    IL_001d:  brtrue.s   IL_008c
+
+    IL_001f:  nop
+    IL_0020:  ldarg.0
+    IL_0021:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_0026:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.KeyCode [IrrlichtLime]IrrlichtLime.Event/KeyEvent::Key
+    IL_002b:  stloc.2
+    IL_002c:  ldloc.2
+    IL_002d:  ldc.i4.s   76
+    IL_002f:  bgt.s      IL_003d
+
+    IL_0031:  ldloc.2
+    IL_0032:  ldc.i4.s   27
+    IL_0034:  beq.s      IL_007c
+
+    IL_0036:  ldloc.2
+    IL_0037:  ldc.i4.s   76
+    IL_0039:  beq.s      IL_006b
+
+    IL_003b:  br.s       IL_008b
+
+    IL_003d:  ldloc.2
+    IL_003e:  ldc.i4.s   83
+    IL_0040:  beq.s      IL_0049
+
+    IL_0042:  ldloc.2
+    IL_0043:  ldc.i4.s   87
+    IL_0045:  beq.s      IL_005a
+
+    IL_0047:  br.s       IL_008b
+
+    IL_0049:  ldsfld     bool L09.SimpleLOD.Program::isStatsMode
+    IL_004e:  ldc.i4.0
+    IL_004f:  ceq
+    IL_0051:  stsfld     bool L09.SimpleLOD.Program::isStatsMode
+    IL_0056:  ldc.i4.1
+    IL_0057:  stloc.0
+    IL_0058:  br.s       IL_0090
+
+    IL_005a:  ldsfld     bool L09.SimpleLOD.Program::isWireframeMode
+    IL_005f:  ldc.i4.0
+    IL_0060:  ceq
+    IL_0062:  stsfld     bool L09.SimpleLOD.Program::isWireframeMode
+    IL_0067:  ldc.i4.1
+    IL_0068:  stloc.0
+    IL_0069:  br.s       IL_0090
+
+    IL_006b:  ldsfld     bool L09.SimpleLOD.Program::isLabelMode
+    IL_0070:  ldc.i4.0
+    IL_0071:  ceq
+    IL_0073:  stsfld     bool L09.SimpleLOD.Program::isLabelMode
+    IL_0078:  ldc.i4.1
+    IL_0079:  stloc.0
+    IL_007a:  br.s       IL_0090
+
+    IL_007c:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.Program::device
+    IL_0081:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Close()
+    IL_0086:  nop
+    IL_0087:  ldc.i4.1
+    IL_0088:  stloc.0
+    IL_0089:  br.s       IL_0090
+
+    IL_008b:  nop
+    IL_008c:  ldc.i4.0
+    IL_008d:  stloc.0
+    IL_008e:  br.s       IL_0090
+
+    IL_0090:  ldloc.0
+    IL_0091:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="273" endline="283"><![CDATA[
+  {
+    // Code size       44 (0x2c)
+    .maxstack  2
+    .locals init ([0] string s,
+             [1] int32 i,
+             [2] int32 CS$1$0000,
+             [3] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldstr      "Enter number of planets to generate (recommended v"
+    + "alue is 5000): "
+    IL_0006:  call       void [mscorlib]System.Console::Write(string)
+    IL_000b:  nop
+    IL_000c:  call       string [mscorlib]System.Console::ReadLine()
+    IL_0011:  stloc.0
+    IL_0012:  ldloc.0
+    IL_0013:  call       int32 [mscorlib]System.Convert::ToInt32(string)
+    IL_0018:  stloc.1
+    IL_0019:  ldloc.1
+    IL_001a:  ldc.i4.1
+    IL_001b:  clt
+    IL_001d:  ldc.i4.0
+    IL_001e:  ceq
+    IL_0020:  stloc.3
+    IL_0021:  ldloc.3
+    IL_0022:  brtrue.s   IL_0026
+
+    IL_0024:  ldc.i4.1
+    IL_0025:  stloc.1
+    IL_0026:  ldloc.1
+    IL_0027:  stloc.2
+    IL_0028:  br.s       IL_002a
+
+    IL_002a:  ldloc.2
+    IL_002b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="284" endline="309"><![CDATA[
+  {
+    // Code size       104 (0x68)
+    .maxstack  2
+    .locals init ([0] valuetype [mscorlib]System.ConsoleKeyInfo i,
+             [1] bool CS$1$0000,
+             [2] valuetype [mscorlib]System.ConsoleKey CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  stind.i4
+    IL_0004:  ldstr      "Please select the driver you want for this example"
+    + ":\n (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n (d) Burning's Softw"
+    + "are Renderer\n (e) Software Renderer\n (f) NullDevice\n (otherKey) exit\n\n"
+    IL_0009:  call       void [mscorlib]System.Console::Write(string)
+    IL_000e:  nop
+    IL_000f:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0014:  stloc.0
+    IL_0015:  ldloca.s   i
+    IL_0017:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_001c:  stloc.2
+    IL_001d:  ldloc.2
+    IL_001e:  ldc.i4.s   65
+    IL_0020:  sub
+    IL_0021:  switch     ( 
+                          IL_0040,
+                          IL_0045,
+                          IL_004a,
+                          IL_004f,
+                          IL_0054,
+                          IL_0059)
+    IL_003e:  br.s       IL_005e
+
+    IL_0040:  ldarg.0
+    IL_0041:  ldc.i4.5
+    IL_0042:  stind.i4
+    IL_0043:  br.s       IL_0062
+
+    IL_0045:  ldarg.0
+    IL_0046:  ldc.i4.4
+    IL_0047:  stind.i4
+    IL_0048:  br.s       IL_0062
+
+    IL_004a:  ldarg.0
+    IL_004b:  ldc.i4.3
+    IL_004c:  stind.i4
+    IL_004d:  br.s       IL_0062
+
+    IL_004f:  ldarg.0
+    IL_0050:  ldc.i4.2
+    IL_0051:  stind.i4
+    IL_0052:  br.s       IL_0062
+
+    IL_0054:  ldarg.0
+    IL_0055:  ldc.i4.1
+    IL_0056:  stind.i4
+    IL_0057:  br.s       IL_0062
+
+    IL_0059:  ldarg.0
+    IL_005a:  ldc.i4.0
+    IL_005b:  stind.i4
+    IL_005c:  br.s       IL_0062
+
+    IL_005e:  ldc.i4.0
+    IL_005f:  stloc.1
+    IL_0060:  br.s       IL_0066
+
+    IL_0062:  ldc.i4.1
+    IL_0063:  stloc.1
+    IL_0064:  br.s       IL_0066
+
+    IL_0066:  ldloc.1
+    IL_0067:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="16" endline="18"><![CDATA[
+  {
+    // Code size       19 (0x13)
+    .maxstack  8
+    IL_0000:  ldc.i4.0
+    IL_0001:  stsfld     bool L09.SimpleLOD.Program::isWireframeMode
+    IL_0006:  ldc.i4.0
+    IL_0007:  stsfld     bool L09.SimpleLOD.Program::isLabelMode
+    IL_000c:  ldc.i4.0
+    IL_000d:  stsfld     bool L09.SimpleLOD.Program::isStatsMode
+    IL_0012:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="19" endline="328"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      int32 L09.SimpleLOD.LODItem::currentLOD
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="329" endline="329"><![CDATA[
+  {
+    // Code size       17 (0x11)
+    .maxstack  1
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Matrix L09.SimpleLOD.LODItem::transformation
+    IL_0007:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Matrix::get_Translation()
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="330" endline="345"><![CDATA[
+  {
+    // Code size       84 (0x54)
+    .maxstack  3
+    .locals init ([0] class L09.SimpleLOD.LODItem n,
+             [1] class L09.SimpleLOD.LODItem CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void L09.SimpleLOD.LODItem::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldarg.0
+    IL_0009:  stfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.LODItem::device
+    IL_000e:  ldloc.0
+    IL_000f:  ldarg.1
+    IL_0010:  stfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh> L09.SimpleLOD.LODItem::meshLODs
+    IL_0015:  ldloc.0
+    IL_0016:  ldarg.2
+    IL_0017:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Matrix L09.SimpleLOD.LODItem::transformation
+    IL_001c:  ldloc.0
+    IL_001d:  ldarg.3
+    IL_001e:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODItem::rotationVector
+    IL_0023:  ldloc.0
+    IL_0024:  ldarg.1
+    IL_0025:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh>::get_Count()
+    IL_002a:  ldc.i4.1
+    IL_002b:  sub
+    IL_002c:  stfld      int32 L09.SimpleLOD.LODItem::currentLOD
+    IL_0031:  ldloc.0
+    IL_0032:  ldarg.0
+    IL_0033:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0038:  stfld      class [IrrlichtLime]IrrlichtLime.Video.VideoDriver L09.SimpleLOD.LODItem::driver
+    IL_003d:  ldloc.0
+    IL_003e:  ldarg.0
+    IL_003f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0044:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_ScreenSize()
+    IL_0049:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di L09.SimpleLOD.LODItem::screenSize
+    IL_004e:  ldloc.0
+    IL_004f:  stloc.1
+    IL_0050:  br.s       IL_0052
+
+    IL_0052:  ldloc.1
+    IL_0053:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="346" endline="440"><![CDATA[
+  {
+    // Code size       535 (0x217)
+    .maxstack  4
+    .locals init ([0] float32 distanceSQ,
+             [1] int32 i,
+             [2] class [IrrlichtLime]IrrlichtLime.Core.Vector2Di p,
+             [3] int32 t,
+             [4] int32 d,
+             [5] bool CS$4$0000,
+             [6] string[] CS$0$0001)
+    IL_0000:  nop
+    IL_0001:  ldarg.1
+    IL_0002:  ldarg.0
+    IL_0003:  ldfld      uint32 L09.SimpleLOD.LODItem::nextUpdateAt
+    IL_0008:  cgt.un
+    IL_000a:  ldc.i4.0
+    IL_000b:  ceq
+    IL_000d:  stloc.s    CS$4$0000
+    IL_000f:  ldloc.s    CS$4$0000
+    IL_0011:  brtrue     IL_00ac
+
+    IL_0016:  nop
+    IL_0017:  ldarg.0
+    IL_0018:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Matrix L09.SimpleLOD.LODItem::transformation
+    IL_001d:  ldarg.0
+    IL_001e:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODItem::rotationVector
+    IL_0023:  ldarg.1
+    IL_0024:  conv.r.un
+    IL_0025:  conv.r4
+    IL_0026:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Multiply(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                float32)
+    IL_002b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.Matrix::set_Rotation(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0030:  nop
+    IL_0031:  ldarg.0
+    IL_0032:  ldarg.0
+    IL_0033:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh> L09.SimpleLOD.LODItem::meshLODs
+    IL_0038:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh>::get_Count()
+    IL_003d:  ldc.i4.1
+    IL_003e:  sub
+    IL_003f:  stfld      int32 L09.SimpleLOD.LODItem::currentLOD
+    IL_0044:  ldarg.0
+    IL_0045:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Matrix L09.SimpleLOD.LODItem::transformation
+    IL_004a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Matrix::get_Translation()
+    IL_004f:  ldarg.2
+    IL_0050:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Subtraction(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                   class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0055:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_LengthSQ()
+    IL_005a:  stloc.0
+    IL_005b:  ldc.i4.0
+    IL_005c:  stloc.1
+    IL_005d:  br.s       IL_0083
+
+    IL_005f:  nop
+    IL_0060:  ldloc.0
+    IL_0061:  ldarg.0
+    IL_0062:  ldfld      float32[] L09.SimpleLOD.LODItem::lodDistanceSQ
+    IL_0067:  ldloc.1
+    IL_0068:  ldelem.r4
+    IL_0069:  clt
+    IL_006b:  ldc.i4.0
+    IL_006c:  ceq
+    IL_006e:  stloc.s    CS$4$0000
+    IL_0070:  ldloc.s    CS$4$0000
+    IL_0072:  brtrue.s   IL_007e
+
+    IL_0074:  nop
+    IL_0075:  ldarg.0
+    IL_0076:  ldloc.1
+    IL_0077:  stfld      int32 L09.SimpleLOD.LODItem::currentLOD
+    IL_007c:  br.s       IL_0096
+
+    IL_007e:  nop
+    IL_007f:  ldloc.1
+    IL_0080:  ldc.i4.1
+    IL_0081:  add
+    IL_0082:  stloc.1
+    IL_0083:  ldloc.1
+    IL_0084:  ldarg.0
+    IL_0085:  ldfld      float32[] L09.SimpleLOD.LODItem::lodDistanceSQ
+    IL_008a:  ldlen
+    IL_008b:  conv.i4
+    IL_008c:  ldc.i4.1
+    IL_008d:  sub
+    IL_008e:  clt
+    IL_0090:  stloc.s    CS$4$0000
+    IL_0092:  ldloc.s    CS$4$0000
+    IL_0094:  brtrue.s   IL_005f
+
+    IL_0096:  ldarg.0
+    IL_0097:  ldarg.1
+    IL_0098:  ldarg.0
+    IL_0099:  ldfld      uint32[] L09.SimpleLOD.LODItem::updateIntervals
+    IL_009e:  ldarg.0
+    IL_009f:  ldfld      int32 L09.SimpleLOD.LODItem::currentLOD
+    IL_00a4:  ldelem.u4
+    IL_00a5:  add
+    IL_00a6:  stfld      uint32 L09.SimpleLOD.LODItem::nextUpdateAt
+    IL_00ab:  nop
+    IL_00ac:  ldarg.0
+    IL_00ad:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.VideoDriver L09.SimpleLOD.LODItem::driver
+    IL_00b2:  ldc.i4.1
+    IL_00b3:  ldarg.0
+    IL_00b4:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Matrix L09.SimpleLOD.LODItem::transformation
+    IL_00b9:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetTransform(valuetype [IrrlichtLime]IrrlichtLime.Video.TransformationState,
+                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Matrix)
+    IL_00be:  nop
+    IL_00bf:  ldarg.0
+    IL_00c0:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.VideoDriver L09.SimpleLOD.LODItem::driver
+    IL_00c5:  ldarg.0
+    IL_00c6:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh> L09.SimpleLOD.LODItem::meshLODs
+    IL_00cb:  ldarg.0
+    IL_00cc:  ldfld      int32 L09.SimpleLOD.LODItem::currentLOD
+    IL_00d1:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh>::get_Item(int32)
+    IL_00d6:  ldc.i4.0
+    IL_00d7:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer [IrrlichtLime]IrrlichtLime.Scene.Mesh::GetMeshBuffer(int32)
+    IL_00dc:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::DrawMeshBuffer(class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer)
+    IL_00e1:  nop
+    IL_00e2:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di> L09.SimpleLOD.LODItem::LabelPositions
+    IL_00e7:  brfalse.s  IL_00f4
+
+    IL_00e9:  ldarg.0
+    IL_00ea:  ldfld      int32 L09.SimpleLOD.LODItem::currentLOD
+    IL_00ef:  ldc.i4.4
+    IL_00f0:  cgt
+    IL_00f2:  br.s       IL_00f5
+
+    IL_00f4:  ldc.i4.1
+    IL_00f5:  stloc.s    CS$4$0000
+    IL_00f7:  ldloc.s    CS$4$0000
+    IL_00f9:  brtrue     IL_0216
+
+    IL_00fe:  nop
+    IL_00ff:  ldarg.0
+    IL_0100:  ldfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L09.SimpleLOD.LODItem::device
+    IL_0105:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_010a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneCollisionManager [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_SceneCollisionManager()
+    IL_010f:  ldarg.0
+    IL_0110:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Matrix L09.SimpleLOD.LODItem::transformation
+    IL_0115:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Matrix::get_Translation()
+    IL_011a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector2Di [IrrlichtLime]IrrlichtLime.Scene.SceneCollisionManager::GetScreenCoordinatesFrom3DPosition(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_011f:  stloc.2
+    IL_0120:  ldloc.2
+    IL_0121:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Vector2Di::get_X()
+    IL_0126:  ldc.i4     0xffffff38
+    IL_012b:  ble.s      IL_016b
+
+    IL_012d:  ldloc.2
+    IL_012e:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Vector2Di::get_X()
+    IL_0133:  ldarg.0
+    IL_0134:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di L09.SimpleLOD.LODItem::screenSize
+    IL_0139:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::get_Width()
+    IL_013e:  ldc.i4     0xc8
+    IL_0143:  add
+    IL_0144:  bge.s      IL_016b
+
+    IL_0146:  ldloc.2
+    IL_0147:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Vector2Di::get_Y()
+    IL_014c:  ldc.i4.s   -100
+    IL_014e:  ble.s      IL_016b
+
+    IL_0150:  ldloc.2
+    IL_0151:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Vector2Di::get_Y()
+    IL_0156:  ldarg.0
+    IL_0157:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di L09.SimpleLOD.LODItem::screenSize
+    IL_015c:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::get_Height()
+    IL_0161:  ldc.i4.s   100
+    IL_0163:  add
+    IL_0164:  clt
+    IL_0166:  ldc.i4.0
+    IL_0167:  ceq
+    IL_0169:  br.s       IL_016c
+
+    IL_016b:  ldc.i4.1
+    IL_016c:  stloc.s    CS$4$0000
+    IL_016e:  ldloc.s    CS$4$0000
+    IL_0170:  brtrue     IL_0215
+
+    IL_0175:  nop
+    IL_0176:  ldarg.0
+    IL_0177:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh> L09.SimpleLOD.LODItem::meshLODs
+    IL_017c:  ldarg.0
+    IL_017d:  ldfld      int32 L09.SimpleLOD.LODItem::currentLOD
+    IL_0182:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.Mesh>::get_Item(int32)
+    IL_0187:  ldc.i4.0
+    IL_0188:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer [IrrlichtLime]IrrlichtLime.Scene.Mesh::GetMeshBuffer(int32)
+    IL_018d:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::get_IndexCount()
+    IL_0192:  ldc.i4.3
+    IL_0193:  div
+    IL_0194:  stloc.3
+    IL_0195:  ldarg.0
+    IL_0196:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Matrix L09.SimpleLOD.LODItem::transformation
+    IL_019b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Matrix::get_Translation()
+    IL_01a0:  ldarg.2
+    IL_01a1:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Subtraction(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                   class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_01a6:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Length()
+    IL_01ab:  conv.i4
+    IL_01ac:  stloc.s    d
+    IL_01ae:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di> L09.SimpleLOD.LODItem::LabelPositions
+    IL_01b3:  ldloc.2
+    IL_01b4:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di>::Add(!0)
+    IL_01b9:  nop
+    IL_01ba:  ldsfld     class [mscorlib]System.Collections.Generic.List`1<string> L09.SimpleLOD.LODItem::LabelTexts
+    IL_01bf:  ldc.i4.6
+    IL_01c0:  newarr     [mscorlib]System.String
+    IL_01c5:  stloc.s    CS$0$0001
+    IL_01c7:  ldloc.s    CS$0$0001
+    IL_01c9:  ldc.i4.0
+    IL_01ca:  ldstr      "LOD: "
+    IL_01cf:  stelem.ref
+    IL_01d0:  ldloc.s    CS$0$0001
+    IL_01d2:  ldc.i4.1
+    IL_01d3:  ldarg.0
+    IL_01d4:  ldflda     int32 L09.SimpleLOD.LODItem::currentLOD
+    IL_01d9:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_01de:  stelem.ref
+    IL_01df:  ldloc.s    CS$0$0001
+    IL_01e1:  ldc.i4.2
+    IL_01e2:  ldstr      "\nTrinagles: "
+    IL_01e7:  stelem.ref
+    IL_01e8:  ldloc.s    CS$0$0001
+    IL_01ea:  ldc.i4.3
+    IL_01eb:  ldloca.s   t
+    IL_01ed:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_01f2:  stelem.ref
+    IL_01f3:  ldloc.s    CS$0$0001
+    IL_01f5:  ldc.i4.4
+    IL_01f6:  ldstr      "\nDistance: "
+    IL_01fb:  stelem.ref
+    IL_01fc:  ldloc.s    CS$0$0001
+    IL_01fe:  ldc.i4.5
+    IL_01ff:  ldloca.s   d
+    IL_0201:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_0206:  stelem.ref
+    IL_0207:  ldloc.s    CS$0$0001
+    IL_0209:  call       string [mscorlib]System.String::Concat(string[])
+    IL_020e:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<string>::Add(!0)
+    IL_0213:  nop
+    IL_0214:  nop
+    IL_0215:  nop
+    IL_0216:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="325" endline="358"><![CDATA[
+  {
+    // Code size       61 (0x3d)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.0
+    IL_0002:  stfld      uint32 L09.SimpleLOD.LODItem::nextUpdateAt
+    IL_0007:  ldarg.0
+    IL_0008:  ldc.i4.7
+    IL_0009:  newarr     [mscorlib]System.Single
+    IL_000e:  dup
+    IL_000f:  ldtoken    field valuetype '<PrivateImplementationDetails>{AF634971-6D48-4E47-85E9-DC75373C100E}'/'__StaticArrayInitTypeSize=28' '<PrivateImplementationDetails>{AF634971-6D48-4E47-85E9-DC75373C100E}'::'$$method0x600000a-1'
+    IL_0014:  call       void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(class [mscorlib]System.Array,
+                                                                                                        valuetype [mscorlib]System.RuntimeFieldHandle)
+    IL_0019:  stfld      float32[] L09.SimpleLOD.LODItem::lodDistanceSQ
+    IL_001e:  ldarg.0
+    IL_001f:  ldc.i4.7
+    IL_0020:  newarr     [mscorlib]System.UInt32
+    IL_0025:  dup
+    IL_0026:  ldtoken    field valuetype '<PrivateImplementationDetails>{AF634971-6D48-4E47-85E9-DC75373C100E}'/'__StaticArrayInitTypeSize=28' '<PrivateImplementationDetails>{AF634971-6D48-4E47-85E9-DC75373C100E}'::'$$method0x600000a-2'
+    IL_002b:  call       void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(class [mscorlib]System.Array,
+                                                                                                        valuetype [mscorlib]System.RuntimeFieldHandle)
+    IL_0030:  stfld      uint32[] L09.SimpleLOD.LODItem::updateIntervals
+    IL_0035:  ldarg.0
+    IL_0036:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_003b:  nop
+    IL_003c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="314" endline="315"><![CDATA[
+  {
+    // Code size       13 (0xd)
+    .maxstack  8
+    IL_0000:  ldnull
+    IL_0001:  stsfld     class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Core.Vector2Di> L09.SimpleLOD.LODItem::LabelPositions
+    IL_0006:  ldnull
+    IL_0007:  stsfld     class [mscorlib]System.Collections.Generic.List`1<string> L09.SimpleLOD.LODItem::LabelTexts
+    IL_000c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="316" endline="450"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Core.AABBox CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox L09.SimpleLOD.LODSector::dimension
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="451" endline="468"><![CDATA[
+  {
+    // Code size       319 (0x13f)
+    .maxstack  5
+    .locals init ([0] class L09.SimpleLOD.LODSector s,
+             [1] class L09.SimpleLOD.LODSector CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  newobj     instance void L09.SimpleLOD.LODSector::.ctor()
+    IL_0006:  stloc.0
+    IL_0007:  ldloc.0
+    IL_0008:  ldarg.0
+    IL_0009:  stfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox L09.SimpleLOD.LODSector::dimension
+    IL_000e:  ldloc.0
+    IL_000f:  ldarg.0
+    IL_0010:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MinEdge()
+    IL_0015:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d1
+    IL_001a:  ldloc.0
+    IL_001b:  ldarg.0
+    IL_001c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MinEdge()
+    IL_0021:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_X()
+    IL_0026:  ldarg.0
+    IL_0027:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MinEdge()
+    IL_002c:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Y()
+    IL_0031:  ldarg.0
+    IL_0032:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MaxEdge()
+    IL_0037:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Z()
+    IL_003c:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0041:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d2
+    IL_0046:  ldloc.0
+    IL_0047:  ldarg.0
+    IL_0048:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MinEdge()
+    IL_004d:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_X()
+    IL_0052:  ldarg.0
+    IL_0053:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MaxEdge()
+    IL_0058:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Y()
+    IL_005d:  ldarg.0
+    IL_005e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MinEdge()
+    IL_0063:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Z()
+    IL_0068:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_006d:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d3
+    IL_0072:  ldloc.0
+    IL_0073:  ldarg.0
+    IL_0074:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MinEdge()
+    IL_0079:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_X()
+    IL_007e:  ldarg.0
+    IL_007f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MaxEdge()
+    IL_0084:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Y()
+    IL_0089:  ldarg.0
+    IL_008a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MaxEdge()
+    IL_008f:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Z()
+    IL_0094:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0099:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d4
+    IL_009e:  ldloc.0
+    IL_009f:  ldarg.0
+    IL_00a0:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MaxEdge()
+    IL_00a5:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d5
+    IL_00aa:  ldloc.0
+    IL_00ab:  ldarg.0
+    IL_00ac:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MaxEdge()
+    IL_00b1:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_X()
+    IL_00b6:  ldarg.0
+    IL_00b7:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MinEdge()
+    IL_00bc:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Y()
+    IL_00c1:  ldarg.0
+    IL_00c2:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MinEdge()
+    IL_00c7:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Z()
+    IL_00cc:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00d1:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d6
+    IL_00d6:  ldloc.0
+    IL_00d7:  ldarg.0
+    IL_00d8:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MaxEdge()
+    IL_00dd:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_X()
+    IL_00e2:  ldarg.0
+    IL_00e3:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MinEdge()
+    IL_00e8:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Y()
+    IL_00ed:  ldarg.0
+    IL_00ee:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MaxEdge()
+    IL_00f3:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Z()
+    IL_00f8:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00fd:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d7
+    IL_0102:  ldloc.0
+    IL_0103:  ldarg.0
+    IL_0104:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MaxEdge()
+    IL_0109:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_X()
+    IL_010e:  ldarg.0
+    IL_010f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MaxEdge()
+    IL_0114:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Y()
+    IL_0119:  ldarg.0
+    IL_011a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.AABBox::get_MinEdge()
+    IL_011f:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Z()
+    IL_0124:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0129:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d8
+    IL_012e:  ldloc.0
+    IL_012f:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class L09.SimpleLOD.LODItem>::.ctor()
+    IL_0134:  stfld      class [mscorlib]System.Collections.Generic.List`1<class L09.SimpleLOD.LODItem> L09.SimpleLOD.LODSector::lodItems
+    IL_0139:  ldloc.0
+    IL_013a:  stloc.1
+    IL_013b:  br.s       IL_013d
+
+    IL_013d:  ldloc.1
+    IL_013e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="469" endline="473"><![CDATA[
+  {
+    // Code size       15 (0xf)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class L09.SimpleLOD.LODItem> L09.SimpleLOD.LODSector::lodItems
+    IL_0007:  ldarg.1
+    IL_0008:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class L09.SimpleLOD.LODItem>::Add(!0)
+    IL_000d:  nop
+    IL_000e:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="474" endline="491"><![CDATA[
+  {
+    // Code size       172 (0xac)
+    .maxstack  3
+    .locals init ([0] int32 i,
+             [1] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.3
+    IL_0002:  ldarg.0
+    IL_0003:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d1
+    IL_0008:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Core.AABBox::IsInside(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_000d:  brtrue.s   IL_0074
+
+    IL_000f:  ldarg.3
+    IL_0010:  ldarg.0
+    IL_0011:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d2
+    IL_0016:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Core.AABBox::IsInside(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_001b:  brtrue.s   IL_0074
+
+    IL_001d:  ldarg.3
+    IL_001e:  ldarg.0
+    IL_001f:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d3
+    IL_0024:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Core.AABBox::IsInside(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0029:  brtrue.s   IL_0074
+
+    IL_002b:  ldarg.3
+    IL_002c:  ldarg.0
+    IL_002d:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d4
+    IL_0032:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Core.AABBox::IsInside(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0037:  brtrue.s   IL_0074
+
+    IL_0039:  ldarg.3
+    IL_003a:  ldarg.0
+    IL_003b:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d5
+    IL_0040:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Core.AABBox::IsInside(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0045:  brtrue.s   IL_0074
+
+    IL_0047:  ldarg.3
+    IL_0048:  ldarg.0
+    IL_0049:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d6
+    IL_004e:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Core.AABBox::IsInside(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0053:  brtrue.s   IL_0074
+
+    IL_0055:  ldarg.3
+    IL_0056:  ldarg.0
+    IL_0057:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d7
+    IL_005c:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Core.AABBox::IsInside(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0061:  brtrue.s   IL_0074
+
+    IL_0063:  ldarg.3
+    IL_0064:  ldarg.0
+    IL_0065:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Vector3Df L09.SimpleLOD.LODSector::d8
+    IL_006a:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Core.AABBox::IsInside(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_006f:  ldc.i4.0
+    IL_0070:  ceq
+    IL_0072:  br.s       IL_0075
+
+    IL_0074:  ldc.i4.0
+    IL_0075:  stloc.1
+    IL_0076:  ldloc.1
+    IL_0077:  brtrue.s   IL_00ab
+
+    IL_0079:  nop
+    IL_007a:  ldc.i4.0
+    IL_007b:  stloc.0
+    IL_007c:  br.s       IL_0098
+
+    IL_007e:  nop
+    IL_007f:  ldarg.0
+    IL_0080:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class L09.SimpleLOD.LODItem> L09.SimpleLOD.LODSector::lodItems
+    IL_0085:  ldloc.0
+    IL_0086:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class L09.SimpleLOD.LODItem>::get_Item(int32)
+    IL_008b:  ldarg.1
+    IL_008c:  ldarg.2
+    IL_008d:  callvirt   instance void L09.SimpleLOD.LODItem::Draw(uint32,
+                                                                   class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0092:  nop
+    IL_0093:  nop
+    IL_0094:  ldloc.0
+    IL_0095:  ldc.i4.1
+    IL_0096:  add
+    IL_0097:  stloc.0
+    IL_0098:  ldloc.0
+    IL_0099:  ldarg.0
+    IL_009a:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class L09.SimpleLOD.LODItem> L09.SimpleLOD.LODSector::lodItems
+    IL_009f:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class L09.SimpleLOD.LODItem>::get_Count()
+    IL_00a4:  clt
+    IL_00a6:  stloc.1
+    IL_00a7:  ldloc.1
+    IL_00a8:  brtrue.s   IL_007e
+
+    IL_00aa:  nop
+    IL_00ab:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+]]></source>
+</source_elements></project>

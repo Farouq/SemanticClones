@@ -1,0 +1,38 @@
+<clones  >
+<clone_pair groupid="441" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="32" endline="43">
+<![CDATA[
+ 
+     Private Shared Sub ExecuteExample(ByVal Typ As Type, ByVal Name As String, ByVal Arguments As Object())
+         Try
+             Call Typ.InvokeMember(Name, BindingFlags.InvokeMethod, Nothing, Nothing, Arguments)
+         Catch ee As Exception
+             If StopOnError Then
+                 Throw ee
+             Else
+                 Console.WriteLine(ee.Message)
+             End If
+ 		end try
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\MainModule.cs" startline="26" endline="39">
+<![CDATA[
+ 	private static void ExecuteExample(Type type, string name, object[] arguments)
+ 	{
+ 		try
+ 		{
+ 			type.InvokeMember(name, BindingFlags.InvokeMethod, null, null, arguments);
+ 		}
+ 		catch (TargetInvocationException ee)
+ 		{
+ 			Exception e = ee.GetBaseException();
+ 			Console.WriteLine(e.Message + "\n" + e.StackTrace);
+ 			if (StopOnError)
+ 				throw e;
+ 		}
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

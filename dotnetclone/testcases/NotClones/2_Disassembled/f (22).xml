@@ -1,0 +1,414 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+IL_0000:  nop
+  IL_0001:  newobj     instance void EditDistance.Program/_Closure$__1::.ctor()
+  IL_0006:  stloc.0
+  IL_0007:  ldloc.0
+  IL_0008:  ldarg.1
+  IL_0009:  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  IL_000e:  ldloc.0
+  IL_000f:  ldarg.0
+  IL_0010:  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  IL_0015:  ldloc.0
+  IL_0016:  ldloc.0
+  IL_0017:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  IL_001c:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_0021:  ldc.i4.1
+  IL_0022:  add.ovf
+  IL_0023:  ldloc.0
+  IL_0024:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  IL_0029:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_002e:  ldc.i4.1
+  IL_002f:  add.ovf
+  IL_0030:  newobj     instance void int32[0...,0...]::.ctor(int32,
+                                                             int32)
+  IL_0035:  stfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  IL_003a:  ldc.i4.0
+  IL_003b:  ldloc.0
+  IL_003c:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  IL_0041:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_0046:  stloc.s    VB$t_i4$L0
+  IL_0048:  stloc.3
+  IL_0049:  br.s       IL_005e
+  IL_004b:  ldloc.0
+  IL_004c:  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  IL_0051:  ldloc.3
+  IL_0052:  ldc.i4.0
+  IL_0053:  ldloc.3
+  IL_0054:  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  IL_0059:  nop
+  IL_005a:  ldloc.3
+  IL_005b:  ldc.i4.1
+  IL_005c:  add.ovf
+  IL_005d:  stloc.3
+  IL_005e:  ldloc.3
+  IL_005f:  ldloc.s    VB$t_i4$L0
+  IL_0061:  stloc.s    VB$CG$t_i4$S0
+  IL_0063:  ldloc.s    VB$CG$t_i4$S0
+  IL_0065:  ble.s      IL_004b
+  IL_0067:  ldc.i4.0
+  IL_0068:  ldloc.0
+  IL_0069:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  IL_006e:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_0073:  stloc.s    VB$t_i4$L1
+  IL_0075:  stloc.s    j
+  IL_0077:  br.s       IL_0090
+  IL_0079:  ldloc.0
+  IL_007a:  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  IL_007f:  ldc.i4.0
+  IL_0080:  ldloc.s    j
+  IL_0082:  ldloc.s    j
+  IL_0084:  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  IL_0089:  nop
+  IL_008a:  ldloc.s    j
+  IL_008c:  ldc.i4.1
+  IL_008d:  add.ovf
+  IL_008e:  stloc.s    j
+  IL_0090:  ldloc.s    j
+  IL_0092:  ldloc.s    VB$t_i4$L1
+  IL_0094:  stloc.s    VB$CG$t_i4$S0
+  IL_0096:  ldloc.s    VB$CG$t_i4$S0
+  IL_0098:  ble.s      IL_0079
+  IL_009a:  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+  IL_009f:  ldc.i4.4
+  IL_00a0:  mul.ovf
+  IL_00a1:  stloc.1
+  IL_00a2:  ldloc.0
+  IL_00a3:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  IL_00a8:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_00ad:  ldloc.0
+  IL_00ae:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  IL_00b3:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_00b8:  ldloc.1
+  IL_00b9:  ldloc.1
+  IL_00ba:  ldloc.0
+  IL_00bb:  dup
+  IL_00bc:  ldvirtftn  instance void EditDistance.Program/_Closure$__1::_Lambda$__1(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+  IL_00c2:  newobj     instance void class [mscorlib]System.Action`4<int32,int32,int32,int32>::.ctor(object,
+                                                                                                     native int)
+  IL_00c7:  call       void [ParallelExtensionsExtras]System.Threading.Algorithms.ParallelAlgorithms::Wavefront(int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                class [mscorlib]System.Action`4<int32,int32,int32,int32>)
+  IL_00cc:  nop
+  IL_00cd:  ldloc.0
+  IL_00ce:  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  IL_00d3:  ldloc.0
+  IL_00d4:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  IL_00d9:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_00de:  ldloc.0
+  IL_00df:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  IL_00e4:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_00e9:  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                            int32)
+  IL_00ee:  stloc.2
+  IL_00ef:  br.s       IL_00f1
+  IL_00f1:  ldloc.2
+  IL_00f2:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 11 example 8: outline"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A6
+  IL_0011:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle)
+  IL_0016:  stloc.0
+  IL_0017:  ldloc.0
+  IL_0018:  ldstr      "Chap1108.pdf"
+  IL_001d:  ldc.i4.2
+  IL_001e:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_0023:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_0028:  stloc.1
+  IL_0029:  ldloc.0
+  IL_002a:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_002f:  nop
+  IL_0030:  newobj     instance void PageOutline::.ctor()
+  IL_0035:  stloc.2
+  IL_0036:  ldloc.1
+  IL_0037:  ldloc.2
+  IL_0038:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setPageEvent(class [iTextdotNET]com.lowagie.text.pdf.PdfPageEvent)
+  IL_003d:  nop
+  IL_003e:  ldloc.0
+  IL_003f:  ldstr      "GALLIA est omnis divisa in partes tres, quarum una"
+  + "m incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, n"
+  + "ostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se"
+  + " differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Seq"
+  + "uana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cul"
+  + "tu atque humanitate provinciae longissime absunt, minimeque ad eos merc"
+  + "atores saepe commeant atque ea quae ad effeminandos animos pertinent im"
+  + "portant, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum"
+  + " continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gall"
+  + "os virtute praecedunt, quod fere cotidianis proeliis cum Germanis conte"
+  + "ndunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bel"
+  + "lum gerunt."
+  IL_0044:  ldc.i4.1
+  IL_0045:  ldc.r4     12.
+  IL_004a:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                               float32)
+  IL_004f:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  IL_0054:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0059:  pop
+  IL_005a:  ldloc.0
+  IL_005b:  ldstr      "[Eorum una, pars, quam Gallos obtinere dictum est,"
+  + " initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, f"
+  + "inibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum,"
+  + " vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, "
+  + "pertinent ad inferiorem partem fluminis Rheni, spectant in septentrione"
+  + "m et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et"
+  + " eam partem Oceani quae est ad Hispaniam pertinet; spectat inter occasu"
+  + "m solis et septentriones.]"
+  IL_0060:  ldc.i4.1
+  IL_0061:  ldc.r4     12.
+  IL_0066:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                               float32)
+  IL_006b:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  IL_0070:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0075:  pop
+  IL_0076:  ldloc.0
+  IL_0077:  ldstr      "Apud Helvetios longe nobilissimus fuit et ditissim"
+  + "us Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupid"
+  + "itate inductus coniurationem nobilitatis fecit et civitati persuasit ut"
+  + " de finibus suis cum omnibus copiis exirent:  perfacile esse, cum virtu"
+  + "te omnibus praestarent, totius Galliae imperio potiri.  Id hoc facilius"
+  + " iis persuasit, quod undique loci natura Helvetii continentur:  una ex "
+  + "parte flumine Rheno latissimo atque altissimo, qui agrum Helvetium a Ge"
+  + "rmanis dividit; altera ex parte monte Iura altissimo, qui est inter Seq"
+  + "uanos et Helvetios; tertia lacu Lemanno et flumine Rhodano, qui provinc"
+  + "iam nostram ab Helvetiis dividit.  His rebus fiebat ut et minus late va"
+  + "garentur et minus facile finitimis bellum inferre possent; qua ex parte"
+  + " homines bellandi cupidi magno dolore adficiebantur.  Pro multitudine a"
+  + "utem hominum et pro gloria belli atque fortitudinis angustos se fines h"
+  + "abere arbitrabantur, qui in longitudinem milia passuum CCXL, in latitud"
+  + "inem CLXXX patebant."
+  IL_007c:  ldc.i4.1
+  IL_007d:  ldc.r4     12.
+  IL_0082:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                               float32)
+  IL_0087:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  IL_008c:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0091:  pop
+  IL_0092:  ldloc.0
+  IL_0093:  ldstr      "His rebus adducti et auctoritate Orgetorigis permo"
+  + "ti constituerunt ea quae ad proficiscendum pertinerent comparare, iumen"
+  + "torum et carrorum quam maximum numerum coemere, sementes quam maximas f"
+  + "acere, ut in itinere copia frumenti suppeteret, cum proximis civitatibu"
+  + "s pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi"
+  + " satis esse duxerunt; in tertium annum profectionem lege confirmant.  A"
+  + "d eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civi"
+  + "tates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio"
+  + ", Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a "
+  + "senatu populi Romani amicus appellatus erat, ut regnum in civitate sua "
+  + "occuparet, quod pater ante habuerit; itemque Dumnorigi Haeduo, fratri D"
+  + "iviciaci, qui eo tempore principatum in civitate obtinebat ac maxime pl"
+  + "ebi acceptus erat, ut idem conaretur persuadet eique filiam suam in mat"
+  + "rimonium dat.  Perfacile factu esse illis probat conata perficere, prop"
+  + "terea quod ipse suae civitatis imperium obtenturus esset:  non esse dub"
+  + "ium quin totius Galliae plurimum Helvetii possent; se suis copiis suoqu"
+  + "e exercitu illis regna conciliaturum confirmat.  Hac oratione adducti i"
+  + "nter se fidem et ius iurandum dant et regno occupato per tres potentiss"
+  + "imos ac firmissimos populos totius Galliae sese potiri posse sperant."
+  IL_0098:  ldc.i4.1
+  IL_0099:  ldc.r4     12.
+  IL_009e:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                               float32)
+  IL_00a3:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  IL_00a8:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_00ad:  pop
+  IL_00ae:  ldloc.0
+  IL_00af:  ldstr      "Ea res est Helvetiis per indicium enuntiata.  Mori"
+  + "bus suis Orgetoricem ex vinculis causam dicere coegerunt; damnatum poen"
+  + "am sequi oportebat, ut igni cremaretur.  Die constituta causae dictioni"
+  + "s Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, un"
+  + "dique coegit, et omnes clientes obaeratosque suos, quorum magnum numeru"
+  + "m habebat, eodem conduxit; per eos ne causam diceret se eripuit.  Cum c"
+  + "ivitas ob eam rem incitata armis ius suum exequi conaretur multitudinem"
+  + "que hominum ex agris magistratus cogerent, Orgetorix mortuus est; neque"
+  + " abest suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciv"
+  + "erit."
+  IL_00b4:  ldc.i4.1
+  IL_00b5:  ldc.r4     12.
+  IL_00ba:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                               float32)
+  IL_00bf:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  IL_00c4:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_00c9:  pop
+  IL_00ca:  ldloc.0
+  IL_00cb:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_00d0:  nop
+  IL_00d1:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 6 example 16: images and annotations"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  IL_0014:  ldc.r4     50.
+  IL_0019:  ldc.r4     50.
+  IL_001e:  ldc.r4     50.
+  IL_0023:  ldc.r4     50.
+  IL_0028:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  IL_002d:  stloc.0
+  IL_002e:  ldloc.0
+  IL_002f:  ldstr      "Chap0616.pdf"
+  IL_0034:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_0039:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [vjslib_7]java.io.OutputStream)
+  IL_003e:  stloc.1
+  IL_003f:  ldloc.0
+  IL_0040:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_0045:  ldstr      "http://www.ujihara.jp/iTextdotNET/examples/harbour"
+  + ".wmf"
+  IL_004a:  newobj     instance void [vjslib]java.net.URL::.ctor(string)
+  IL_004f:  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(class [vjslib_7]java.net.URL)
+  IL_0054:  stloc.2
+  IL_0055:  ldloc.2
+  IL_0056:  ldc.r4     0.0
+  IL_005b:  ldc.r4     0.0
+  IL_0060:  ldc.r4     0.0
+  IL_0065:  ldc.r4     0.0
+  IL_006a:  ldstr      "http://www.ujihara.jp"
+  IL_006f:  newobj     instance void [iTextdotNET]com.lowagie.text.Annotation::.ctor(float32,
+                                                                                     float32,
+                                                                                     float32,
+                                                                                     float32,
+                                                                                     string)
+  IL_0074:  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAnnotation(class [iTextdotNET]com.lowagie.text.Annotation)
+  IL_0079:  ldloc.2
+  IL_007a:  ldc.r4     100.
+  IL_007f:  ldc.r4     600.
+  IL_0084:  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAbsolutePosition(float32,
+                                                                                              float32)
+  IL_0089:  ldloc.0
+  IL_008a:  ldloc.2
+  IL_008b:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0090:  pop
+  IL_0091:  ldstr      "http://www.ujihara.jp/iTextdotNET/examples/vonnegu"
+  + "t.gif"
+  IL_0096:  newobj     instance void [vjslib]java.net.URL::.ctor(string)
+  IL_009b:  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(class [vjslib_7]java.net.URL)
+  IL_00a0:  stloc.3
+  IL_00a1:  ldloc.3
+  IL_00a2:  ldc.r4     0.0
+  IL_00a7:  ldc.r4     0.0
+  IL_00ac:  ldc.r4     0.0
+  IL_00b1:  ldc.r4     0.0
+  IL_00b6:  ldstr      "Chap1102b.pdf"
+  IL_00bb:  ldc.i4.3
+  IL_00bc:  newobj     instance void [iTextdotNET]com.lowagie.text.Annotation::.ctor(float32,
+                                                                                     float32,
+                                                                                     float32,
+                                                                                     float32,
+                                                                                     string,
+                                                                                     int32)
+  IL_00c1:  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAnnotation(class [iTextdotNET]com.lowagie.text.Annotation)
+  IL_00c6:  ldloc.3
+  IL_00c7:  ldc.r4     100.
+  IL_00cc:  ldc.r4     400.
+  IL_00d1:  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAbsolutePosition(float32,
+                                                                                              float32)
+  IL_00d6:  ldloc.0
+  IL_00d7:  ldloc.3
+  IL_00d8:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_00dd:  pop
+  IL_00de:  ldstr      "http://www.ujihara.jp/iTextdotNET/examples/myKids."
+  + "jpg"
+  IL_00e3:  newobj     instance void [vjslib]java.net.URL::.ctor(string)
+  IL_00e8:  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(class [vjslib_7]java.net.URL)
+  IL_00ed:  stloc.s    jpeg
+  IL_00ef:  ldloc.s    jpeg
+  IL_00f1:  ldstr      "picture"
+  IL_00f6:  ldstr      "These are my children"
+  IL_00fb:  ldc.r4     0.0
+  IL_0100:  ldc.r4     0.0
+  IL_0105:  ldc.r4     0.0
+  IL_010a:  ldc.r4     0.0
+  IL_010f:  newobj     instance void [iTextdotNET]com.lowagie.text.Annotation::.ctor(string,
+                                                                                     string,
+                                                                                     float32,
+                                                                                     float32,
+                                                                                     float32,
+                                                                                     float32)
+  IL_0114:  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAnnotation(class [iTextdotNET]com.lowagie.text.Annotation)
+  IL_0119:  ldloc.s    jpeg
+  IL_011b:  ldc.r4     100.
+  IL_0120:  ldc.r4     150.
+  IL_0125:  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAbsolutePosition(float32,
+                                                                                              float32)
+  IL_012a:  ldloc.0
+  IL_012b:  ldloc.s    jpeg
+  IL_012d:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0132:  pop
+  IL_0133:  ldstr      "http://www.ujihara.jp/iTextdotNET/examples/hitchco"
+  + "ck.png"
+  IL_0138:  newobj     instance void [vjslib]java.net.URL::.ctor(string)
+  IL_013d:  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(class [vjslib_7]java.net.URL)
+  IL_0142:  stloc.s    png
+  IL_0144:  ldloc.s    png
+  IL_0146:  ldc.r4     0.0
+  IL_014b:  ldc.r4     0.0
+  IL_0150:  ldc.r4     0.0
+  IL_0155:  ldc.r4     0.0
+  IL_015a:  ldstr      "Chap1102a.pdf"
+  IL_015f:  ldstr      "test"
+  IL_0164:  newobj     instance void [iTextdotNET]com.lowagie.text.Annotation::.ctor(float32,
+                                                                                     float32,
+                                                                                     float32,
+                                                                                     float32,
+                                                                                     string,
+                                                                                     string)
+  IL_0169:  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAnnotation(class [iTextdotNET]com.lowagie.text.Annotation)
+  IL_016e:  ldloc.s    png
+  IL_0170:  ldc.r4     350.
+  IL_0175:  ldc.r4     250.
+  IL_017a:  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAbsolutePosition(float32,
+                                                                                              float32)
+  IL_017f:  ldloc.0
+  IL_0180:  ldloc.s    png
+  IL_0182:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0187:  pop
+  IL_0188:  leave.s    IL_01ae
+  IL_018a:  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  IL_018f:  stloc.s    V_7
+  IL_0191:  ldloc.s    V_7
+  IL_0193:  brfalse.s  IL_0198
+  IL_0195:  ldc.i4.1
+  IL_0196:  br.s       IL_0199
+  IL_0198:  ldc.i4.0
+  IL_0199:  endfilter
+  IL_019b:  pop
+  IL_019c:  ldloc.s    V_7
+  IL_019e:  castclass  [vjslib]java.lang.Exception
+  IL_01a3:  stloc.s    de
+  IL_01a5:  ldloc.s    de
+  IL_01a7:  callvirt   instance void [vjslib]java.lang.Throwable::printStackTrace()
+  IL_01ac:  leave.s    IL_01ae
+  IL_01ae:  ldloc.0
+  .try IL_002e to IL_018a filter IL_018a handler IL_019b to IL_01ae
+  IL_01af:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_01b4:  br.s       IL_01b6
+  IL_01b6:  ret
+
+]]></source>
+</source_elements></project>

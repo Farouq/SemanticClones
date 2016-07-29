@@ -1,0 +1,683 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldc.r8     0.90000000000000002
+  IL_000a:  stloc.2
+  IL_000b:  ldarg.0
+  IL_000c:  call       instance int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::ToInt32()
+  IL_0011:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32)
+  IL_0016:  stloc.s    VB$t_struct$S0
+  IL_0018:  ldloca.s   VB$t_struct$S0
+  IL_001a:  call       instance float32 [System.Drawing]System.Drawing.Color::GetBrightness()
+  IL_001f:  conv.r8
+  IL_0020:  ldc.r8     0.5
+  IL_0029:  sub
+  IL_002a:  ldc.r8     0.5
+  IL_0033:  mul
+  IL_0034:  ldc.r8     0.5
+  IL_003d:  add
+  IL_003e:  stloc.1
+  IL_003f:  ldarg.1
+  IL_0040:  stloc.0
+  IL_0041:  ldloc.1
+  IL_0042:  ldc.r8     0.0
+  IL_004b:  ceq
+  IL_004d:  stloc.s    VB$CG$t_bool$S0
+  IL_004f:  ldloc.s    VB$CG$t_bool$S0
+  IL_0051:  brfalse.s  IL_0085
+  IL_0053:  ldarg.0
+  IL_0054:  ldc.r8     0.0
+  IL_005d:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  IL_0062:  ldarg.0
+  IL_0063:  ldc.r8     0.0
+  IL_006c:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  IL_0071:  ldarg.0
+  IL_0072:  ldc.r8     0.0
+  IL_007b:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+  IL_0080:  br         IL_0292
+  IL_0085:  ldloc.2
+  IL_0086:  ldc.r8     0.0
+  IL_008f:  ceq
+  IL_0091:  stloc.s    VB$CG$t_bool$S0
+  IL_0093:  ldloc.s    VB$CG$t_bool$S0
+  IL_0095:  brfalse.s  IL_00b1
+  IL_0097:  ldarg.0
+  IL_0098:  ldloc.1
+  IL_0099:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  IL_009e:  ldarg.0
+  IL_009f:  ldloc.1
+  IL_00a0:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  IL_00a5:  ldarg.0
+  IL_00a6:  ldloc.1
+  IL_00a7:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+  IL_00ac:  br         IL_0292
+  IL_00b1:  nop
+  IL_00b2:  ldloc.1
+  IL_00b3:  ldc.r8     0.5
+  IL_00bc:  ble.s      IL_00c7
+  IL_00be:  ldloc.1
+  IL_00bf:  ldloc.2
+  IL_00c0:  add
+  IL_00c1:  ldloc.1
+  IL_00c2:  ldloc.2
+  IL_00c3:  mul
+  IL_00c4:  sub
+  IL_00c5:  br.s       IL_00d4
+  IL_00c7:  ldloc.1
+  IL_00c8:  ldc.r8     1.
+  IL_00d1:  ldloc.2
+  IL_00d2:  add
+  IL_00d3:  mul
+  IL_00d4:  stloc.s    temp2
+  IL_00d6:  ldc.r8     2.
+  IL_00df:  ldloc.1
+  IL_00e0:  mul
+  IL_00e1:  ldloc.s    temp2
+  IL_00e3:  sub
+  IL_00e4:  stloc.s    temp1
+  IL_00e6:  ldc.i4.3
+  IL_00e7:  newarr     [mscorlib]System.Double
+  IL_00ec:  stloc.s    VB$t_array$S0
+  IL_00ee:  ldloc.s    VB$t_array$S0
+  IL_00f0:  ldc.i4.0
+  IL_00f1:  ldloc.0
+  IL_00f2:  ldc.r8     0.33333333333333331
+  IL_00fb:  add
+  IL_00fc:  stelem.r8
+  IL_00fd:  ldloc.s    VB$t_array$S0
+  IL_00ff:  ldc.i4.1
+  IL_0100:  ldloc.0
+  IL_0101:  stelem.r8
+  IL_0102:  ldloc.s    VB$t_array$S0
+  IL_0104:  ldc.i4.2
+  IL_0105:  ldloc.0
+  IL_0106:  ldc.r8     0.33333333333333331
+  IL_010f:  sub
+  IL_0110:  stelem.r8
+  IL_0111:  ldloc.s    VB$t_array$S0
+  IL_0113:  stloc.s    t3
+  IL_0115:  ldc.i4.3
+  IL_0116:  newarr     [mscorlib]System.Double
+  IL_011b:  stloc.s    VB$t_array$S0
+  IL_011d:  ldloc.s    VB$t_array$S0
+  IL_011f:  ldc.i4.0
+  IL_0120:  ldc.r8     0.0
+  IL_0129:  stelem.r8
+  IL_012a:  ldloc.s    VB$t_array$S0
+  IL_012c:  ldc.i4.1
+  IL_012d:  ldc.r8     0.0
+  IL_0136:  stelem.r8
+  IL_0137:  ldloc.s    VB$t_array$S0
+  IL_0139:  ldc.i4.2
+  IL_013a:  ldc.r8     0.0
+  IL_0143:  stelem.r8
+  IL_0144:  ldloc.s    VB$t_array$S0
+  IL_0146:  stloc.3
+  IL_0147:  ldc.i4.0
+  IL_0148:  stloc.s    i
+  IL_014a:  ldloc.s    t3
+  IL_014c:  ldloc.s    i
+  IL_014e:  ldelem.r8
+  IL_014f:  ldc.r8     0.0
+  IL_0158:  clt
+  IL_015a:  stloc.s    VB$CG$t_bool$S0
+  IL_015c:  ldloc.s    VB$CG$t_bool$S0
+  IL_015e:  brfalse.s  IL_017c
+  IL_0160:  ldloc.s    t3
+  IL_0162:  stloc.s    VB$t_array$S0
+  IL_0164:  ldloc.s    VB$t_array$S0
+  IL_0166:  ldloc.s    i
+  IL_0168:  stloc.s    VB$t_i4$S0
+  IL_016a:  ldloc.s    VB$t_i4$S0
+  IL_016c:  ldloc.s    VB$t_array$S0
+  IL_016e:  ldloc.s    VB$t_i4$S0
+  IL_0170:  ldelem.r8
+  IL_0171:  ldc.r8     1.
+  IL_017a:  add
+  IL_017b:  stelem.r8
+  IL_017c:  ldloc.s    t3
+  IL_017e:  ldloc.s    i
+  IL_0180:  ldelem.r8
+  IL_0181:  ldc.r8     1.
+  IL_018a:  cgt
+  IL_018c:  stloc.s    VB$CG$t_bool$S0
+  IL_018e:  ldloc.s    VB$CG$t_bool$S0
+  IL_0190:  brfalse.s  IL_01ae
+  IL_0192:  ldloc.s    t3
+  IL_0194:  stloc.s    VB$t_array$S0
+  IL_0196:  ldloc.s    VB$t_array$S0
+  IL_0198:  ldloc.s    i
+  IL_019a:  stloc.s    VB$t_i4$S0
+  IL_019c:  ldloc.s    VB$t_i4$S0
+  IL_019e:  ldloc.s    VB$t_array$S0
+  IL_01a0:  ldloc.s    VB$t_i4$S0
+  IL_01a2:  ldelem.r8
+  IL_01a3:  ldc.r8     1.
+  IL_01ac:  sub
+  IL_01ad:  stelem.r8
+  IL_01ae:  ldc.r8     6.
+  IL_01b7:  ldloc.s    t3
+  IL_01b9:  ldloc.s    i
+  IL_01bb:  ldelem.r8
+  IL_01bc:  mul
+  IL_01bd:  ldc.r8     1.
+  IL_01c6:  clt
+  IL_01c8:  stloc.s    VB$CG$t_bool$S0
+  IL_01ca:  ldloc.s    VB$CG$t_bool$S0
+  IL_01cc:  brfalse.s  IL_01ec
+  IL_01ce:  ldloc.3
+  IL_01cf:  ldloc.s    i
+  IL_01d1:  ldloc.s    temp1
+  IL_01d3:  ldloc.s    temp2
+  IL_01d5:  ldloc.s    temp1
+  IL_01d7:  sub
+  IL_01d8:  ldloc.s    t3
+  IL_01da:  ldloc.s    i
+  IL_01dc:  ldelem.r8
+  IL_01dd:  mul
+  IL_01de:  ldc.r8     6.
+  IL_01e7:  mul
+  IL_01e8:  add
+  IL_01e9:  stelem.r8
+  IL_01ea:  br.s       IL_0263
+  IL_01ec:  ldc.r8     2.
+  IL_01f5:  ldloc.s    t3
+  IL_01f7:  ldloc.s    i
+  IL_01f9:  ldelem.r8
+  IL_01fa:  mul
+  IL_01fb:  ldc.r8     1.
+  IL_0204:  clt
+  IL_0206:  stloc.s    VB$CG$t_bool$S0
+  IL_0208:  ldloc.s    VB$CG$t_bool$S0
+  IL_020a:  brfalse.s  IL_0214
+  IL_020c:  ldloc.3
+  IL_020d:  ldloc.s    i
+  IL_020f:  ldloc.s    temp2
+  IL_0211:  stelem.r8
+  IL_0212:  br.s       IL_0263
+  IL_0214:  ldc.r8     3.
+  IL_021d:  ldloc.s    t3
+  IL_021f:  ldloc.s    i
+  IL_0221:  ldelem.r8
+  IL_0222:  mul
+  IL_0223:  ldc.r8     2.
+  IL_022c:  clt
+  IL_022e:  stloc.s    VB$CG$t_bool$S0
+  IL_0230:  ldloc.s    VB$CG$t_bool$S0
+  IL_0232:  brfalse.s  IL_025c
+  IL_0234:  ldloc.3
+  IL_0235:  ldloc.s    i
+  IL_0237:  ldloc.s    temp1
+  IL_0239:  ldloc.s    temp2
+  IL_023b:  ldloc.s    temp1
+  IL_023d:  sub
+  IL_023e:  ldc.r8     0.66666666666666663
+  IL_0247:  ldloc.s    t3
+  IL_0249:  ldloc.s    i
+  IL_024b:  ldelem.r8
+  IL_024c:  sub
+  IL_024d:  mul
+  IL_024e:  ldc.r8     6.
+  IL_0257:  mul
+  IL_0258:  add
+  IL_0259:  stelem.r8
+  IL_025a:  br.s       IL_0263
+  IL_025c:  nop
+  IL_025d:  ldloc.3
+  IL_025e:  ldloc.s    i
+  IL_0260:  ldloc.s    temp1
+  IL_0262:  stelem.r8
+  IL_0263:  nop
+  IL_0264:  nop
+  IL_0265:  ldloc.s    i
+  IL_0267:  ldc.i4.1
+  IL_0268:  add.ovf
+  IL_0269:  stloc.s    i
+  IL_026b:  ldloc.s    i
+  IL_026d:  ldc.i4.2
+  IL_026e:  stloc.s    VB$CG$t_i4$S0
+  IL_0270:  ldloc.s    VB$CG$t_i4$S0
+  IL_0272:  ble        IL_014a
+  IL_0277:  ldarg.0
+  IL_0278:  ldloc.3
+  IL_0279:  ldc.i4.0
+  IL_027a:  ldelem.r8
+  IL_027b:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  IL_0280:  ldarg.0
+  IL_0281:  ldloc.3
+  IL_0282:  ldc.i4.1
+  IL_0283:  ldelem.r8
+  IL_0284:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  IL_0289:  ldarg.0
+  IL_028a:  ldloc.3
+  IL_028b:  ldc.i4.2
+  IL_028c:  ldelem.r8
+  IL_028d:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+  IL_0292:  nop
+  IL_0293:  nop
+  IL_0294:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldarg.0
+  IL_0002:  call       instance int32 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::ToInt32()
+  IL_0007:  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32)
+  IL_000c:  stloc.3
+  IL_000d:  ldloca.s   c
+  IL_000f:  call       instance float32 [System.Drawing]System.Drawing.Color::GetSaturation()
+  IL_0014:  conv.r8
+  IL_0015:  stloc.1
+  IL_0016:  ldloca.s   c
+  IL_0018:  call       instance float32 [System.Drawing]System.Drawing.Color::GetBrightness()
+  IL_001d:  conv.r8
+  IL_001e:  stloc.2
+  IL_001f:  ldloca.s   c
+  IL_0021:  call       instance float32 [System.Drawing]System.Drawing.Color::GetHue()
+  IL_0026:  conv.r8
+  IL_0027:  stloc.0
+  IL_0028:  ldarg.1
+  IL_0029:  stloc.0
+  IL_002a:  ldc.r8     0.90000000000000002
+  IL_0033:  stloc.1
+  IL_0034:  ldloc.2
+  IL_0035:  ldc.r8     0.5
+  IL_003e:  sub
+  IL_003f:  ldc.r8     0.5
+  IL_0048:  mul
+  IL_0049:  ldc.r8     0.5
+  IL_0052:  add
+  IL_0053:  stloc.2
+  IL_0054:  ldloc.2
+  IL_0055:  ldc.r8     0.0
+  IL_005e:  ceq
+  IL_0060:  ldc.i4.0
+  IL_0061:  ceq
+  IL_0063:  stloc.s    CS$4$0000
+  IL_0065:  ldloc.s    CS$4$0000
+  IL_0067:  brtrue.s   IL_0095
+  IL_0069:  nop
+  IL_006a:  ldarg.0
+  IL_006b:  ldarg.0
+  IL_006c:  ldarg.0
+  IL_006d:  ldc.r8     0.0
+  IL_0076:  dup
+  IL_0077:  stloc.s    CS$0$0001
+  IL_0079:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+  IL_007e:  ldloc.s    CS$0$0001
+  IL_0080:  dup
+  IL_0081:  stloc.s    CS$0$0001
+  IL_0083:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  IL_0088:  ldloc.s    CS$0$0001
+  IL_008a:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  IL_008f:  nop
+  IL_0090:  br         IL_02ac
+  IL_0095:  nop
+  IL_0096:  ldloc.1
+  IL_0097:  ldc.r8     0.0
+  IL_00a0:  ceq
+  IL_00a2:  ldc.i4.0
+  IL_00a3:  ceq
+  IL_00a5:  stloc.s    CS$4$0000
+  IL_00a7:  ldloc.s    CS$4$0000
+  IL_00a9:  brtrue.s   IL_00cf
+  IL_00ab:  nop
+  IL_00ac:  ldarg.0
+  IL_00ad:  ldarg.0
+  IL_00ae:  ldarg.0
+  IL_00af:  ldloc.2
+  IL_00b0:  dup
+  IL_00b1:  stloc.s    CS$0$0001
+  IL_00b3:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+  IL_00b8:  ldloc.s    CS$0$0001
+  IL_00ba:  dup
+  IL_00bb:  stloc.s    CS$0$0001
+  IL_00bd:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  IL_00c2:  ldloc.s    CS$0$0001
+  IL_00c4:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  IL_00c9:  nop
+  IL_00ca:  br         IL_02ab
+  IL_00cf:  nop
+  IL_00d0:  ldloc.2
+  IL_00d1:  ldc.r8     0.5
+  IL_00da:  ble.s      IL_00e5
+  IL_00dc:  ldloc.2
+  IL_00dd:  ldloc.1
+  IL_00de:  add
+  IL_00df:  ldloc.2
+  IL_00e0:  ldloc.1
+  IL_00e1:  mul
+  IL_00e2:  sub
+  IL_00e3:  br.s       IL_00f2
+  IL_00e5:  ldloc.2
+  IL_00e6:  ldc.r8     1.
+  IL_00ef:  ldloc.1
+  IL_00f0:  add
+  IL_00f1:  mul
+  IL_00f2:  stloc.s    temp2
+  IL_00f4:  ldc.r8     2.
+  IL_00fd:  ldloc.2
+  IL_00fe:  mul
+  IL_00ff:  ldloc.s    temp2
+  IL_0101:  sub
+  IL_0102:  stloc.s    temp1
+  IL_0104:  ldc.i4.3
+  IL_0105:  newarr     [mscorlib]System.Double
+  IL_010a:  stloc.s    CS$0$0002
+  IL_010c:  ldloc.s    CS$0$0002
+  IL_010e:  ldc.i4.0
+  IL_010f:  ldloc.0
+  IL_0110:  ldc.r8     0.33333333333333331
+  IL_0119:  add
+  IL_011a:  stelem.r8
+  IL_011b:  ldloc.s    CS$0$0002
+  IL_011d:  ldc.i4.1
+  IL_011e:  ldloc.0
+  IL_011f:  stelem.r8
+  IL_0120:  ldloc.s    CS$0$0002
+  IL_0122:  ldc.i4.2
+  IL_0123:  ldloc.0
+  IL_0124:  ldc.r8     0.33333333333333331
+  IL_012d:  sub
+  IL_012e:  stelem.r8
+  IL_012f:  ldloc.s    CS$0$0002
+  IL_0131:  stloc.s    t3
+  IL_0133:  ldc.i4.3
+  IL_0134:  newarr     [mscorlib]System.Double
+  IL_0139:  stloc.s    CS$0$0002
+  IL_013b:  ldloc.s    CS$0$0002
+  IL_013d:  stloc.s    clr
+  IL_013f:  ldc.i4.0
+  IL_0140:  stloc.s    i
+  IL_0142:  br         IL_027e
+  IL_0147:  nop
+  IL_0148:  ldloc.s    t3
+  IL_014a:  ldloc.s    i
+  IL_014c:  ldelem.r8
+  IL_014d:  ldc.r8     0.0
+  IL_0156:  clt
+  IL_0158:  ldc.i4.0
+  IL_0159:  ceq
+  IL_015b:  stloc.s    CS$4$0000
+  IL_015d:  ldloc.s    CS$4$0000
+  IL_015f:  brtrue.s   IL_017f
+  IL_0161:  ldloc.s    t3
+  IL_0163:  ldloc.s    i
+  IL_0165:  ldelema    [mscorlib]System.Double
+  IL_016a:  dup
+  IL_016b:  ldobj      [mscorlib]System.Double
+  IL_0170:  ldc.r8     1.
+  IL_0179:  add
+  IL_017a:  stobj      [mscorlib]System.Double
+  IL_017f:  ldloc.s    t3
+  IL_0181:  ldloc.s    i
+  IL_0183:  ldelem.r8
+  IL_0184:  ldc.r8     1.
+  IL_018d:  cgt
+  IL_018f:  ldc.i4.0
+  IL_0190:  ceq
+  IL_0192:  stloc.s    CS$4$0000
+  IL_0194:  ldloc.s    CS$4$0000
+  IL_0196:  brtrue.s   IL_01b6
+  IL_0198:  ldloc.s    t3
+  IL_019a:  ldloc.s    i
+  IL_019c:  ldelema    [mscorlib]System.Double
+  IL_01a1:  dup
+  IL_01a2:  ldobj      [mscorlib]System.Double
+  IL_01a7:  ldc.r8     1.
+  IL_01b0:  sub
+  IL_01b1:  stobj      [mscorlib]System.Double
+  IL_01b6:  ldc.r8     6.
+  IL_01bf:  ldloc.s    t3
+  IL_01c1:  ldloc.s    i
+  IL_01c3:  ldelem.r8
+  IL_01c4:  mul
+  IL_01c5:  ldc.r8     1.
+  IL_01ce:  clt
+  IL_01d0:  ldc.i4.0
+  IL_01d1:  ceq
+  IL_01d3:  stloc.s    CS$4$0000
+  IL_01d5:  ldloc.s    CS$4$0000
+  IL_01d7:  brtrue.s   IL_01f8
+  IL_01d9:  ldloc.s    clr
+  IL_01db:  ldloc.s    i
+  IL_01dd:  ldloc.s    temp1
+  IL_01df:  ldloc.s    temp2
+  IL_01e1:  ldloc.s    temp1
+  IL_01e3:  sub
+  IL_01e4:  ldloc.s    t3
+  IL_01e6:  ldloc.s    i
+  IL_01e8:  ldelem.r8
+  IL_01e9:  mul
+  IL_01ea:  ldc.r8     6.
+  IL_01f3:  mul
+  IL_01f4:  add
+  IL_01f5:  stelem.r8
+  IL_01f6:  br.s       IL_0277
+  IL_01f8:  ldc.r8     2.
+  IL_0201:  ldloc.s    t3
+  IL_0203:  ldloc.s    i
+  IL_0205:  ldelem.r8
+  IL_0206:  mul
+  IL_0207:  ldc.r8     1.
+  IL_0210:  clt
+  IL_0212:  ldc.i4.0
+  IL_0213:  ceq
+  IL_0215:  stloc.s    CS$4$0000
+  IL_0217:  ldloc.s    CS$4$0000
+  IL_0219:  brtrue.s   IL_0224
+  IL_021b:  ldloc.s    clr
+  IL_021d:  ldloc.s    i
+  IL_021f:  ldloc.s    temp2
+  IL_0221:  stelem.r8
+  IL_0222:  br.s       IL_0277
+  IL_0224:  ldc.r8     3.
+  IL_022d:  ldloc.s    t3
+  IL_022f:  ldloc.s    i
+  IL_0231:  ldelem.r8
+  IL_0232:  mul
+  IL_0233:  ldc.r8     2.
+  IL_023c:  clt
+  IL_023e:  ldc.i4.0
+  IL_023f:  ceq
+  IL_0241:  stloc.s    CS$4$0000
+  IL_0243:  ldloc.s    CS$4$0000
+  IL_0245:  brtrue.s   IL_0270
+  IL_0247:  ldloc.s    clr
+  IL_0249:  ldloc.s    i
+  IL_024b:  ldloc.s    temp1
+  IL_024d:  ldloc.s    temp2
+  IL_024f:  ldloc.s    temp1
+  IL_0251:  sub
+  IL_0252:  ldc.r8     0.66666666666666663
+  IL_025b:  ldloc.s    t3
+  IL_025d:  ldloc.s    i
+  IL_025f:  ldelem.r8
+  IL_0260:  sub
+  IL_0261:  mul
+  IL_0262:  ldc.r8     6.
+  IL_026b:  mul
+  IL_026c:  add
+  IL_026d:  stelem.r8
+  IL_026e:  br.s       IL_0277
+  IL_0270:  ldloc.s    clr
+  IL_0272:  ldloc.s    i
+  IL_0274:  ldloc.s    temp1
+  IL_0276:  stelem.r8
+  IL_0277:  nop
+  IL_0278:  ldloc.s    i
+  IL_027a:  ldc.i4.1
+  IL_027b:  add
+  IL_027c:  stloc.s    i
+  IL_027e:  ldloc.s    i
+  IL_0280:  ldc.i4.3
+  IL_0281:  clt
+  IL_0283:  stloc.s    CS$4$0000
+  IL_0285:  ldloc.s    CS$4$0000
+  IL_0287:  brtrue     IL_0147
+  IL_028c:  ldarg.0
+  IL_028d:  ldloc.s    clr
+  IL_028f:  ldc.i4.0
+  IL_0290:  ldelem.r8
+  IL_0291:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::R
+  IL_0296:  ldarg.0
+  IL_0297:  ldloc.s    clr
+  IL_0299:  ldc.i4.1
+  IL_029a:  ldelem.r8
+  IL_029b:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::G
+  IL_02a0:  ldarg.0
+  IL_02a1:  ldloc.s    clr
+  IL_02a3:  ldc.i4.2
+  IL_02a4:  ldelem.r8
+  IL_02a5:  stfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Color::B
+  IL_02aa:  nop
+  IL_02ab:  nop
+  IL_02ac:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldarg.0
+  IL_0002:  call       instance valuetype [System.Drawing]System.Drawing.Color Raytracer_FSharp/Color::ToDrawingColor()
+  IL_0007:  stloc.0
+  IL_0008:  ldarg.1
+  IL_0009:  ldc.r8     0.90000000000000002
+  IL_0012:  ldloca.s   c
+  IL_0014:  call       instance float32 [System.Drawing]System.Drawing.Color::GetBrightness()
+  IL_0019:  conv.r8
+  IL_001a:  ldc.r8     0.5
+  IL_0023:  sub
+  IL_0024:  ldc.r8     0.5
+  IL_002d:  mul
+  IL_002e:  ldc.r8     0.5
+  IL_0037:  add
+  IL_0038:  newobj     instance void class [mscorlib]System.Tuple`3<float64,float64,float64>::.ctor(!0,
+                                                                                                    !1,
+                                                                                                    !2)
+  IL_003d:  stloc.1
+  IL_003e:  ldloc.1
+  IL_003f:  call       instance !1 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item2()
+  IL_0044:  stloc.2
+  IL_0045:  ldloc.1
+  IL_0046:  call       instance !2 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item3()
+  IL_004b:  stloc.3
+  IL_004c:  ldloc.1
+  IL_004d:  call       instance !0 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item1()
+  IL_0052:  stloc.s    h
+  IL_0054:  ldloc.2
+  IL_0055:  ldloc.3
+  IL_0056:  newobj     instance void class [mscorlib]System.Tuple`2<float64,float64>::.ctor(!0,
+                                                                                            !1)
+  IL_005b:  stloc.s    V_5
+  IL_005d:  ldloc.s    V_5
+  IL_005f:  call       instance !1 class [mscorlib]System.Tuple`2<float64,float64>::get_Item2()
+  IL_0064:  ldc.r8     0.0
+  IL_006d:  ceq
+  IL_006f:  brfalse.s  IL_0073
+  IL_0071:  br.s       IL_008b
+  IL_0073:  ldloc.s    V_5
+  IL_0075:  call       instance !0 class [mscorlib]System.Tuple`2<float64,float64>::get_Item1()
+  IL_007a:  ldc.r8     0.0
+  IL_0083:  ceq
+  IL_0085:  brfalse.s  IL_0089
+  IL_0087:  br.s       IL_00ac
+  IL_0089:  br.s       IL_00b5
+  IL_008b:  ldc.r8     0.0
+  IL_0094:  ldc.r8     0.0
+  IL_009d:  ldc.r8     0.0
+  IL_00a6:  newobj     instance void Raytracer_FSharp/Color::.ctor(float64,
+                                                                   float64,
+                                                                   float64)
+  IL_00ab:  ret
+  IL_00ac:  ldloc.3
+  IL_00ad:  ldloc.3
+  IL_00ae:  ldloc.3
+  IL_00af:  newobj     instance void Raytracer_FSharp/Color::.ctor(float64,
+                                                                   float64,
+                                                                   float64)
+  IL_00b4:  ret
+  IL_00b5:  ldloc.s    V_5
+  IL_00b7:  call       instance !0 class [mscorlib]System.Tuple`2<float64,float64>::get_Item1()
+  IL_00bc:  stloc.s    V_6
+  IL_00be:  ldloc.s    V_5
+  IL_00c0:  call       instance !1 class [mscorlib]System.Tuple`2<float64,float64>::get_Item2()
+  IL_00c5:  stloc.s    V_7
+  IL_00c7:  nop
+  IL_00c8:  ldloc.s    V_7
+  IL_00ca:  stloc.s    V_9
+  IL_00cc:  ldc.r8     0.5
+  IL_00d5:  stloc.s    V_10
+  IL_00d7:  ldloc.s    V_9
+  IL_00d9:  ldloc.s    V_10
+  IL_00db:  cgt.un
+  IL_00dd:  ldc.i4.0
+  IL_00de:  ceq
+  IL_00e0:  brfalse.s  IL_00e4
+  IL_00e2:  br.s       IL_00e6
+  IL_00e4:  br.s       IL_00f8
+  IL_00e6:  ldloc.s    V_7
+  IL_00e8:  ldc.r8     1.
+  IL_00f1:  ldloc.s    V_6
+  IL_00f3:  add
+  IL_00f4:  mul
+  IL_00f5:  nop
+  IL_00f6:  br.s       IL_0104
+  IL_00f8:  ldloc.s    V_7
+  IL_00fa:  ldloc.s    V_6
+  IL_00fc:  add
+  IL_00fd:  ldloc.s    V_7
+  IL_00ff:  ldloc.s    V_6
+  IL_0101:  mul
+  IL_0102:  sub
+  IL_0103:  nop
+  IL_0104:  stloc.s    temp2
+  IL_0106:  ldc.r8     2.
+  IL_010f:  ldloc.s    V_7
+  IL_0111:  mul
+  IL_0112:  ldloc.s    temp2
+  IL_0114:  sub
+  IL_0115:  stloc.s    temp1
+  IL_0117:  ldloc.s    temp2
+  IL_0119:  ldloc.s    temp1
+  IL_011b:  newobj     instance void Raytracer_FSharp/convert@55::.ctor(float64,
+                                                                        float64)
+  IL_0120:  stloc.s    convert
+  IL_0122:  ldloc.s    convert
+  IL_0124:  ldloc.s    h
+  IL_0126:  ldc.r8     1.
+  IL_012f:  ldc.r8     3.
+  IL_0138:  div
+  IL_0139:  add
+  IL_013a:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<float64,float64>::Invoke(!0)
+  IL_013f:  ldloc.s    convert
+  IL_0141:  ldloc.s    h
+  IL_0143:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<float64,float64>::Invoke(!0)
+  IL_0148:  ldloc.s    convert
+  IL_014a:  ldloc.s    h
+  IL_014c:  ldc.r8     1.
+  IL_0155:  ldc.r8     3.
+  IL_015e:  div
+  IL_015f:  sub
+  IL_0160:  callvirt   instance !1 class [FSharp.Core]Microsoft.FSharp.Core.FSharpFunc`2<float64,float64>::Invoke(!0)
+  IL_0165:  newobj     instance void class [mscorlib]System.Tuple`3<float64,float64,float64>::.ctor(!0,
+                                                                                                    !1,
+                                                                                                    !2)
+  IL_016a:  stloc.s    V_13
+  IL_016c:  ldloc.s    V_13
+  IL_016e:  call       instance !2 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item3()
+  IL_0173:  stloc.s    c3
+  IL_0175:  ldloc.s    V_13
+  IL_0177:  call       instance !1 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item2()
+  IL_017c:  stloc.s    c2
+  IL_017e:  ldloc.s    V_13
+  IL_0180:  call       instance !0 class [mscorlib]System.Tuple`3<float64,float64,float64>::get_Item1()
+  IL_0185:  stloc.s    c1
+  IL_0187:  ldloc.s    c1
+  IL_0189:  ldloc.s    c2
+  IL_018b:  ldloc.s    c3
+  IL_018d:  newobj     instance void Raytracer_FSharp/Color::.ctor(float64,
+                                                                   float64,
+                                                                   float64)
+
+]]></source>
+</source_elements></project>

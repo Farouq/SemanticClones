@@ -1,0 +1,1133 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  ldstr      "Chapter 2 example 9: generic tags"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  stloc.0
+  ldloc.0
+  ldstr      "Chap0209.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  stloc.s    Writer
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  nop
+  newobj     instance void Glossary::.ctor()
+  stloc.s    pageEvent
+  ldloc.s    Writer
+  ldloc.s    pageEvent
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfWriter::setPageEvent(class [iText]com.lowagie.text.pdf.PdfPageEvent)
+  nop
+  ldc.i4.s   14
+  newarr     [mscorlib]System.String
+  stloc.1
+  ldloc.1
+  ldc.i4.0
+  ldstr      "Courier"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.1
+  ldstr      "Courier Bold"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.2
+  ldstr      "Courier Italic"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.3
+  ldstr      "Courier Bold Italic"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.4
+  ldstr      "Helvetica"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.5
+  ldstr      "Helvetica bold"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.6
+  ldstr      "Helvetica italic"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.7
+  ldstr      "Helvetica bold italic"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.8
+  ldstr      "Times New Roman"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.s   9
+  ldstr      "Times New Roman bold"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.s   10
+  ldstr      "Times New Roman italic"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.s   11
+  ldstr      "Times New Roman bold italic"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.s   12
+  ldstr      "Symbol"
+  stelem.ref
+  nop
+  ldloc.1
+  ldc.i4.s   13
+  ldstr      "Zapfdingbats"
+  stelem.ref
+  nop
+  ldc.i4.s   14
+  newarr     [iText]com.lowagie.text.Font
+  stloc.2
+  ldloc.2
+  ldc.i4.0
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.1
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.1
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.2
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.2
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.3
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.3
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.4
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.5
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.1
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.6
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.2
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.7
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.3
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.8
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.s   9
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.1
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.s   10
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.2
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.s   11
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.3
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.s   12
+  ldstr      "Symbol"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldloc.2
+  ldc.i4.s   13
+  ldstr      "ZapfDingbats"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32,
+                                                                                                       int32)
+  stelem.ref
+  nop
+  ldc.i4.0
+  stloc.s    i
+  ldstr      "This is font "
+  ldloc.2
+  ldloc.s    i
+  ldelem.ref
+  newobj     instance void [iText]com.lowagie.text.Chunk::.ctor(string,
+                                                                          class [iText]com.lowagie.text.Font)
+  stloc.s    chunk
+  ldloc.s    chunk
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(class [iText]com.lowagie.text.Chunk)
+  stloc.s    p
+  ldloc.s    p
+  ldloc.1
+  ldloc.s    i
+  ldelem.ref
+  ldloc.2
+  ldloc.s    i
+  ldelem.ref
+  newobj     instance void [iText]com.lowagie.text.Chunk::.ctor(string,
+                                                                          class [iText]com.lowagie.text.Font)
+  ldloc.1
+  ldloc.s    i
+  ldelem.ref
+  callvirt   instance class [iText]com.lowagie.text.Chunk [iText]com.lowagie.text.Chunk::setGenericTag(string)
+  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(class [iText]com.lowagie.text.Chunk)
+  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  pop
+  ldloc.0
+  ldloc.s    p
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc.s    i
+  ldc.i4.4
+  rem
+  ldc.i4.3
+  ceq
+  stloc.s    VB$CG$t_bool$S0
+  ldloc.s    VB$CG$t_bool$S0
+  brfalse.s  IL_0248
+  ldloc.0
+  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  pop
+  nop
+  nop
+  ldloc.s    i
+  ldc.i4.1
+  add.ovf
+  stloc.s    i
+  ldloc.s    i
+  ldc.i4.s   13
+  stloc.s    VB$CG$t_i4$S0
+  ldloc.s    VB$CG$t_i4$S0
+  ble.s      IL_01ef
+  ldloc.0
+  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.s    pageEvent
+  callvirt   instance class [Gnu.Classpath.Core]jp.ujihara.java.util.TreeMap Glossary::getGlossary()
+  stloc.3
+  ldloc.3
+  callvirt   instance class [Gnu.Classpath.Core]jp.ujihara.java.util.Set [Gnu.Classpath.Core]jp.ujihara.java.util.TreeMap::keySet()
+  callvirt   instance class [Gnu.Classpath.Core]jp.ujihara.java.util.Iterator [Gnu.Classpath.Core]jp.ujihara.java.util.Set::iterator()
+  stloc.s    it
+  br.s       IL_02c9
+  ldloc.s    it
+  callvirt   instance object [vjslib]java.util.Iterator::next()
+  castclass  [mscorlib]System.String
+  stloc.s    key
+  ldloc.3
+  ldloc.s    key
+  callvirt   instance object [Gnu.Classpath.Core]jp.ujihara.java.util.TreeMap::get(object)
+  unbox      [mscorlib]System.Int32
+  ldobj      [mscorlib]System.Int32
+  stloc.s    page
+  ldloc.s    key
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  stloc.s    g
+  ldloc.s    g
+  ldstr      " : page "
+  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  pop
+  ldloc.s    g
+  ldloc.s    page
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  pop
+  ldloc.0
+  ldloc.s    g
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  nop
+  ldloc.s    it
+  callvirt   instance bool [vjslib]java.util.Iterator::hasNext()
+  stloc.s    VB$CG$t_bool$S0
+  ldloc.s    VB$CG$t_bool$S0
+  brtrue.s   IL_0278
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  nop
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldstr      "Chapter 2 example 9: generic tags"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  ldloc.0
+  ldstr      "Chap0209.pdf"
+  ldc.i4.2
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  stloc.1
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  nop
+  newobj     instance void Glossary::.ctor()
+  stloc.2
+  ldloc.1
+  ldloc.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setPageEvent(class [iTextdotNET]com.lowagie.text.pdf.PdfPageEvent)
+  nop
+  ldc.i4.s   14
+  newarr     [mscorlib]System.String
+  stloc.s    f
+  ldc.i4.0
+  stloc.3
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Courier"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Courier Bold"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Courier Italic"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Courier Bold Italic"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Helvetica"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Helvetica bold"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Helvetica italic"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Helvetica bold italic"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Times New Roman"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Times New Roman bold"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Times New Roman italic"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Times New Roman bold italic"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Symbol"
+  stelem.ref
+  ldloc.s    f
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Zapfdingbats"
+  stelem.ref
+  ldloc.s    f
+  ldlen
+  conv.i4
+  newarr     [iTextdotNET]com.lowagie.text.Font
+  stloc.s    fonts
+  ldc.i4.0
+  stloc.3
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.1
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.2
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.3
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.1
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.2
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.3
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.1
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.2
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.3
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "Symbol"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  dup
+  ldc.i4.1
+  add
+  stloc.3
+  ldstr      "ZapfDingbats"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  stelem.ref
+  ldc.i4.0
+  stloc.3
+  br.s       IL_02be
+  nop
+  ldstr      "This is font "
+  ldloc.s    fonts
+  ldloc.3
+  ldelem.ref
+  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                class [iTextdotNET]com.lowagie.text.Font)
+  stloc.s    chunk
+  ldloc.s    chunk
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  stloc.s    p
+  ldloc.s    p
+  ldloc.s    f
+  ldloc.3
+  ldelem.ref
+  ldloc.s    fonts
+  ldloc.3
+  ldelem.ref
+  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                class [iTextdotNET]com.lowagie.text.Font)
+  ldloc.s    f
+  ldloc.3
+  ldelem.ref
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setGenericTag(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  pop
+  ldloc.0
+  ldloc.s    p
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.3
+  ldc.i4.4
+  rem
+  ldc.i4.3
+  ceq
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0000
+  ldloc.s    CS$4$0000
+  brtrue.s   IL_02b9
+  nop
+  ldloc.0
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  nop
+  nop
+  ldloc.3
+  ldc.i4.1
+  add
+  stloc.3
+  ldloc.3
+  ldloc.s    f
+  ldlen
+  conv.i4
+  clt
+  stloc.s    CS$4$0000
+  ldloc.s    CS$4$0000
+  brtrue.s   IL_025b
+  ldloc.0
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.2
+  callvirt   instance class [mscorlib]System.Collections.SortedList Glossary::getGlossary()
+  stloc.s    glossary
+  ldc.i4.0
+  stloc.3
+  br.s       IL_0330
+  nop
+  ldloc.s    glossary
+  ldloc.3
+  callvirt   instance object [mscorlib]System.Collections.SortedList::GetKey(int32)
+  castclass  [mscorlib]System.String
+  stloc.s    key
+  ldloc.s    glossary
+  ldloc.3
+  callvirt   instance object [mscorlib]System.Collections.SortedList::GetByIndex(int32)
+  unbox.any  [mscorlib]System.Int32
+  stloc.s    page
+  ldloc.s    key
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  stloc.s    g
+  ldloc.s    g
+  ldstr      " : page "
+  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  pop
+  ldloc.s    g
+  ldloca.s   page
+  call       instance string [mscorlib]System.Int32::ToString()
+  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  pop
+  ldloc.0
+  ldloc.s    g
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  nop
+  ldloc.3
+  ldc.i4.1
+  add
+  stloc.3
+  ldloc.3
+  ldloc.s    glossary
+  callvirt   instance int32 [mscorlib]System.Collections.SortedList::get_Count()
+  clt
+  stloc.s    CS$4$0000
+  ldloc.s    CS$4$0000
+  brtrue.s   IL_02de
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 2 example 9: generic tags"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  .try
+  {
+  ldloc.0
+  ldstr      "Chap0209.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+  stloc.1
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  newobj     instance void Glossary::.ctor()
+  stloc.2
+  ldloc.1
+  ldloc.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setPageEvent(class [iTextdotNET]com.lowagie.text.pdf.PdfPageEvent)
+  ldc.i4.s   14
+  stloc.s    V_15
+  ldloc.s    V_15
+  ldc.i4.0
+  blt.s      IL_0044
+  br.s       IL_004a
+  newobj     instance void [vjslib]java.lang.NegativeArraySizeException::.ctor()
+  throw
+  ldloc.s    V_15
+  newarr     [mscorlib]System.String
+  stloc.3
+  ldloc.3
+  ldc.i4.0
+  ldstr      "Courier"
+  stelem.ref
+  ldloc.3
+  ldc.i4.1
+  ldstr      "Courier Bold"
+  stelem.ref
+  ldloc.3
+  ldc.i4.2
+  ldstr      "Courier Italic"
+  stelem.ref
+  ldloc.3
+  ldc.i4.3
+  ldstr      "Courier Bold Italic"
+  stelem.ref
+  ldloc.3
+  ldc.i4.4
+  ldstr      "Helvetica"
+  stelem.ref
+  ldloc.3
+  ldc.i4.5
+  ldstr      "Helvetica bold"
+  stelem.ref
+  ldloc.3
+  ldc.i4.s   6
+  ldstr      "Helvetica italic"
+  stelem.ref
+  ldloc.3
+  ldc.i4.s   7
+  ldstr      "Helvetica bold italic"
+  stelem.ref
+  ldloc.3
+  ldc.i4.s   8
+  ldstr      "Times New Roman"
+  stelem.ref
+  ldloc.3
+  ldc.i4.s   9
+  ldstr      "Times New Roman bold"
+  stelem.ref
+  ldloc.3
+  ldc.i4.s   10
+  ldstr      "Times New Roman italic"
+  stelem.ref
+  ldloc.3
+  ldc.i4.s   11
+  ldstr      "Times New Roman bold italic"
+  stelem.ref
+  ldloc.3
+  ldc.i4.s   12
+  ldstr      "Symbol"
+  stelem.ref
+  ldloc.3
+  ldc.i4.s   13
+  ldstr      "Zapfdingbats"
+  stelem.ref
+  ldc.i4.s   14
+  stloc.s    V_15
+  ldloc.s    V_15
+  ldc.i4.0
+  blt.s      IL_00d5
+  br.s       IL_00db
+  newobj     instance void [vjslib]java.lang.NegativeArraySizeException::.ctor()
+  throw
+  ldloc.s    V_15
+  newarr     [iTextdotNET]com.lowagie.text.Font
+  stloc.s    fonts
+  ldloc.s    fonts
+  ldc.i4.0
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.1
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.1
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.2
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.2
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.3
+  ldstr      "Courier"
+  ldc.r4     12.
+  ldc.i4.3
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.4
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.5
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.1
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.s   6
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.2
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.s   7
+  ldstr      "Helvetica"
+  ldc.r4     12.
+  ldc.i4.3
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.s   8
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.s   9
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.1
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.s   10
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.2
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.s   11
+  ldstr      "Times-Roman"
+  ldc.r4     12.
+  ldc.i4.3
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.s   12
+  ldstr      "Symbol"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldloc.s    fonts
+  ldc.i4.s   13
+  ldstr      "ZapfDingbats"
+  ldc.r4     12.
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32,
+                                                                                                                     int32)
+  stelem.ref
+  ldc.i4.0
+  stloc.s    i
+  br.s       IL_0264
+  ldstr      "This is font "
+  ldloc.s    fonts
+  ldloc.s    i
+  ldelem.ref
+  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                  class [iTextdotNET]com.lowagie.text.Font)
+  stloc.s    chunk
+  ldloc.s    chunk
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  stloc.s    p
+  ldloc.s    p
+  ldloc.3
+  ldloc.s    i
+  ldelem.ref
+  ldloc.s    fonts
+  ldloc.s    i
+  ldelem.ref
+  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                  class [iTextdotNET]com.lowagie.text.Font)
+  ldloc.3
+  ldloc.s    i
+  ldelem.ref
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setGenericTag(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+  pop
+  ldloc.0
+  ldloc.s    p
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.s    i
+  ldc.i4.4
+  rem
+  ldc.i4.3
+  bne.un.s   IL_025e
+  ldloc.0
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.s    i
+  ldc.i4.1
+  add
+  stloc.s    i
+  ldloc.s    i
+  ldc.i4.s   14
+  blt.s      IL_0209
+  ldloc.0
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.2
+  callvirt   instance class [Gnu.Classpath.Core]jp.ujihara.java.util.TreeMap Glossary::getGlossary()
+  stloc.s    glossary
+  ldloc.s    glossary
+  callvirt   instance class [Gnu.Classpath.Core]jp.ujihara.java.util.Set [Gnu.Classpath.Core]jp.ujihara.java.util.TreeMap::keySet()
+  callvirt   instance class [Gnu.Classpath.Core]jp.ujihara.java.util.Iterator [Gnu.Classpath.Core]jp.ujihara.java.util.Set::iterator()
+  stloc.s    V_9
+  br.s       IL_02da
+  ldloc.s    V_9
+  callvirt   instance object [vjslib_7]java.util.Iterator::next()
+  call       string [vjslib]com.ms.vjsharp.lang.'<VerifierFix>'::genCastToString(object)
+  stloc.s    key
+  ldloc.s    glossary
+  ldloc.s    key
+  callvirt   instance object [Gnu.Classpath.Core]jp.ujihara.java.util.TreeMap::get(object)
+  castclass  [vjslib]java.lang.Integer
+  callvirt   instance int32 [vjslib]java.lang.Integer::intValue()
+  stloc.s    page
+  ldloc.s    key
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  stloc.s    g
+  ldloc.s    g
+  ldstr      " : page "
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+  pop
+  ldloc.s    g
+  ldloc.s    page
+  call       string [vjslib]com.ms.vjsharp.lang.StringImpl::valueOf(int32)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+  pop
+  ldloc.0
+  ldloc.s    g
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.s    V_9
+  callvirt   instance bool [vjslib_7]java.util.Iterator::hasNext()
+  brtrue.s   IL_0289
+  leave.s    IL_0315
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+  dup
+  stloc.s    V_16
+  stloc.s    de
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.s    de
+  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  leave.s    IL_0315
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+  dup
+  stloc.s    V_17
+  stloc.s    ioe
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.s    ioe
+  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  leave.s    IL_0315
+  }  // end handler
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  br.s       IL_031d
+  ret
+
+]]></source>
+</source_elements></project>

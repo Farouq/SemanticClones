@@ -1,0 +1,1599 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly L07.FastStaticRendering
+{
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 17 4C 30 37 2E 46 61 73 74 53 74 61 74 69   // ...L07.FastStati
+                                                                                              63 52 65 6E 64 65 72 69 6E 67 00 00 )             // cRendering..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 17 4C 30 37 2E 46 61 73 74 53 74 61 74 69   // ...L07.FastStati
+                                                                                                63 52 65 6E 64 65 72 69 6E 67 00 00 )             // cRendering..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 31 00 00 )                            //  2011..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 39 36 33 66 39 35 61 31 2D 36 35 66 38   // ..$963f95a1-65f8
+                                                                                                  2D 34 39 65 63 2D 38 33 39 37 2D 65 62 61 31 38   // -49ec-8397-eba18
+                                                                                                  32 33 65 35 31 37 36 00 00 )                      // 23e5176..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public L07.FastStaticRendering.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.module L07.FastStaticRendering.exe
+// MVID: {D1F099C5-C2F1-4F06-97AF-9DD1E04789A7}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x00860000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit L07.FastStaticRendering.Program
+       extends [mscorlib]System.Object
+{
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       398 (0x18e)
+    .maxstack  5
+    .locals init ([0] int32 N,
+             [1] bool B,
+             [2] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType,
+             [3] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [4] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode camera,
+             [5] class L07.FastStaticRendering.MeshBuffersBatch batch,
+             [6] bool CS$4$0000,
+             [7] object[] CS$0$0001)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L07.FastStaticRendering\Program.cs' 
+//000016: 		{
+    IL_0000:  nop
+//000017: 			int N = AskUserForN();
+    IL_0001:  call       int32 L07.FastStaticRendering.Program::AskUserForN()
+    IL_0006:  stloc.0
+//000018: 			bool B = AskUserForB();
+    IL_0007:  call       bool L07.FastStaticRendering.Program::AskUserForB()
+    IL_000c:  stloc.1
+//000019: 
+//000020: 			DriverType driverType;
+//000021: 			if (!AskUserForDriver(out driverType))
+    IL_000d:  ldloca.s   driverType
+    IL_000f:  call       bool L07.FastStaticRendering.Program::AskUserForDriver(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType&)
+    IL_0014:  stloc.s    CS$4$0000
+    IL_0016:  ldloc.s    CS$4$0000
+    IL_0018:  brtrue.s   IL_001f
+
+//000022: 				return;
+    IL_001a:  br         IL_018d
+
+//000023: 
+//000024: 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(driverType, new Dimension2Di(800, 600));
+    IL_001f:  ldloc.2
+    IL_0020:  ldc.i4     0x320
+    IL_0025:  ldc.i4     0x258
+    IL_002a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_002f:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+    IL_0034:  stloc.3
+//000025: 			if (device == null)
+    IL_0035:  ldloc.3
+    IL_0036:  ldnull
+    IL_0037:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_003c:  ldc.i4.0
+    IL_003d:  ceq
+    IL_003f:  stloc.s    CS$4$0000
+    IL_0041:  ldloc.s    CS$4$0000
+    IL_0043:  brtrue.s   IL_004a
+
+//000026: 				return;
+    IL_0045:  br         IL_018d
+
+//000027: 
+//000028: 			device.CursorControl.Visible = false;
+    IL_004a:  ldloc.3
+    IL_004b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.CursorControl [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_CursorControl()
+    IL_0050:  ldc.i4.0
+    IL_0051:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.CursorControl::set_Visible(bool)
+    IL_0056:  nop
+//000029: 
+//000030: 			CameraSceneNode camera = device.SceneManager.AddCameraSceneNodeFPS();
+    IL_0057:  ldloc.3
+    IL_0058:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_005d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNodeFPS()
+    IL_0062:  stloc.s    camera
+//000031: 			camera.FarValue = 20000;
+    IL_0064:  ldloc.s    camera
+    IL_0066:  ldc.r4     20000.
+    IL_006b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_FarValue(float32)
+    IL_0070:  nop
+//000032: 			camera.Position = new Vector3Df(-200);
+    IL_0071:  ldloc.s    camera
+    IL_0073:  ldc.r4     -200.
+    IL_0078:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32)
+    IL_007d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0082:  nop
+//000033: 			camera.Target = new Vector3Df(0);
+    IL_0083:  ldloc.s    camera
+    IL_0085:  ldc.r4     0.0
+    IL_008a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32)
+    IL_008f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_Target(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0094:  nop
+//000034: 
+//000035: 			MeshBuffersBatch batch = new MeshBuffersBatch(device, N, B);
+    IL_0095:  ldloc.3
+    IL_0096:  ldloc.0
+    IL_0097:  ldloc.1
+    IL_0098:  newobj     instance void L07.FastStaticRendering.MeshBuffersBatch::.ctor(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice,
+                                                                                       int32,
+                                                                                       bool)
+    IL_009d:  stloc.s    batch
+    IL_009f:  br         IL_016f
+
+//000036: 
+//000037: 			while (device.Run())
+//000038: 			{
+    IL_00a4:  nop
+//000039: 				device.VideoDriver.BeginScene();
+    IL_00a5:  ldloc.3
+    IL_00a6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00ab:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene()
+    IL_00b0:  pop
+//000040: 
+//000041: 				device.SceneManager.DrawAll();
+    IL_00b1:  ldloc.3
+    IL_00b2:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_00b7:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_00bc:  nop
+//000042: 
+//000043: 				batch.Draw();
+    IL_00bd:  ldloc.s    batch
+    IL_00bf:  callvirt   instance void L07.FastStaticRendering.MeshBuffersBatch::Draw()
+    IL_00c4:  nop
+//000044: 
+//000045: 				device.VideoDriver.EndScene();
+    IL_00c5:  ldloc.3
+    IL_00c6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00cb:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_00d0:  pop
+//000046: 
+//000047: 				device.SetWindowCaption(
+    IL_00d1:  ldloc.3
+    IL_00d2:  ldc.i4.s   11
+    IL_00d4:  newarr     [mscorlib]System.Object
+    IL_00d9:  stloc.s    CS$0$0001
+    IL_00db:  ldloc.s    CS$0$0001
+    IL_00dd:  ldc.i4.0
+    IL_00de:  ldstr      "Fast static rendering - Irrlicht Lime - "
+    IL_00e3:  stelem.ref
+    IL_00e4:  ldloc.s    CS$0$0001
+    IL_00e6:  ldc.i4.1
+    IL_00e7:  ldloc.3
+    IL_00e8:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00ed:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_00f2:  stelem.ref
+    IL_00f3:  ldloc.s    CS$0$0001
+    IL_00f5:  ldc.i4.2
+    IL_00f6:  ldstr      " | "
+    IL_00fb:  stelem.ref
+    IL_00fc:  ldloc.s    CS$0$0001
+    IL_00fe:  ldc.i4.3
+    IL_00ff:  ldloc.3
+    IL_0100:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0105:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_010a:  box        [mscorlib]System.Int32
+    IL_010f:  stelem.ref
+    IL_0110:  ldloc.s    CS$0$0001
+    IL_0112:  ldc.i4.4
+    IL_0113:  ldstr      " fps | "
+    IL_0118:  stelem.ref
+    IL_0119:  ldloc.s    CS$0$0001
+    IL_011b:  ldc.i4.5
+    IL_011c:  ldloc.0
+    IL_011d:  ldloc.0
+    IL_011e:  mul
+    IL_011f:  ldloc.0
+    IL_0120:  mul
+    IL_0121:  box        [mscorlib]System.Int32
+    IL_0126:  stelem.ref
+    IL_0127:  ldloc.s    CS$0$0001
+    IL_0129:  ldc.i4.6
+    IL_012a:  ldstr      " cubes  | "
+    IL_012f:  stelem.ref
+    IL_0130:  ldloc.s    CS$0$0001
+    IL_0132:  ldc.i4.7
+    IL_0133:  ldloc.3
+    IL_0134:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0139:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_PrimitiveCountDrawn()
+    IL_013e:  box        [mscorlib]System.Int32
+    IL_0143:  stelem.ref
+    IL_0144:  ldloc.s    CS$0$0001
+    IL_0146:  ldc.i4.8
+    IL_0147:  ldstr      " primitives | "
+    IL_014c:  stelem.ref
+    IL_014d:  ldloc.s    CS$0$0001
+    IL_014f:  ldc.i4.s   9
+    IL_0151:  call       string L07.FastStaticRendering.Program::get_MemUsageText()
+    IL_0156:  stelem.ref
+    IL_0157:  ldloc.s    CS$0$0001
+    IL_0159:  ldc.i4.s   10
+    IL_015b:  ldstr      " of physical memory used"
+    IL_0160:  stelem.ref
+    IL_0161:  ldloc.s    CS$0$0001
+    IL_0163:  call       string [mscorlib]System.String::Concat(object[])
+    IL_0168:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_016d:  nop
+//000048: 					"Fast static rendering - Irrlicht Lime - " +
+//000049: 					device.VideoDriver.Name + " | " +
+//000050: 					device.VideoDriver.FPS + " fps | " +
+//000051: 					N * N * N + " cubes  | " +
+//000052: 					device.VideoDriver.PrimitiveCountDrawn + " primitives | " +
+//000053: 					MemUsageText + " of physical memory used");
+//000054: 			}
+    IL_016e:  nop
+//000037: 			while (device.Run())
+    IL_016f:  ldloc.3
+    IL_0170:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_0175:  stloc.s    CS$4$0000
+    IL_0177:  ldloc.s    CS$4$0000
+    IL_0179:  brtrue     IL_00a4
+
+//000038: 			{
+//000039: 				device.VideoDriver.BeginScene();
+//000040: 
+//000041: 				device.SceneManager.DrawAll();
+//000042: 
+//000043: 				batch.Draw();
+//000044: 
+//000045: 				device.VideoDriver.EndScene();
+//000046: 
+//000047: 				device.SetWindowCaption(
+//000048: 					"Fast static rendering - Irrlicht Lime - " +
+//000049: 					device.VideoDriver.Name + " | " +
+//000050: 					device.VideoDriver.FPS + " fps | " +
+//000051: 					N * N * N + " cubes  | " +
+//000052: 					device.VideoDriver.PrimitiveCountDrawn + " primitives | " +
+//000053: 					MemUsageText + " of physical memory used");
+//000054: 			}
+//000055: 
+//000056: 			batch.Drop();
+    IL_017e:  ldloc.s    batch
+    IL_0180:  callvirt   instance void L07.FastStaticRendering.MeshBuffersBatch::Drop()
+    IL_0185:  nop
+//000057: 			device.Drop();
+    IL_0186:  ldloc.3
+    IL_0187:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_018c:  pop
+//000058: 		}
+    IL_018d:  ret
+  } // end of method Program::Main
+
+  .method private hidebysig static int32 
+          AskUserForN() cil managed
+  {
+    // Code size       51 (0x33)
+    .maxstack  1
+    .locals init ([0] string s,
+             [1] int32 CS$1$0000)
+//000059: 
+//000060: 		static int AskUserForN()
+//000061: 		{
+    IL_0000:  nop
+//000062: 			Console.WriteLine("Enter size of bounding cube side");
+    IL_0001:  ldstr      "Enter size of bounding cube side"
+    IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_000b:  nop
+//000063: 			Console.WriteLine(" (10 to render 10*10*10=1k cubes; 20 for 8k; 40 => 64k; 50 => 125k)");
+    IL_000c:  ldstr      " (10 to render 10*10*10=1k cubes; 20 for 8k; 40 =>"
+    + " 64k; 50 => 125k)"
+    IL_0011:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0016:  nop
+//000064: 			Console.WriteLine(" (typing less than 1 or more than 80 (512k) is not recommended): ");
+    IL_0017:  ldstr      " (typing less than 1 or more than 80 (512k) is not"
+    + " recommended): "
+    IL_001c:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0021:  nop
+//000065: 			string s = Console.ReadLine();
+    IL_0022:  call       string [mscorlib]System.Console::ReadLine()
+    IL_0027:  stloc.0
+//000066: 
+//000067: 			return Convert.ToInt32(s);
+    IL_0028:  ldloc.0
+    IL_0029:  call       int32 [mscorlib]System.Convert::ToInt32(string)
+    IL_002e:  stloc.1
+    IL_002f:  br.s       IL_0031
+
+//000068: 		}
+    IL_0031:  ldloc.1
+    IL_0032:  ret
+  } // end of method Program::AskUserForN
+
+  .method private hidebysig static bool  AskUserForB() cil managed
+  {
+    // Code size       56 (0x38)
+    .maxstack  2
+    .locals init ([0] valuetype [mscorlib]System.ConsoleKeyInfo k,
+             [1] bool CS$1$0000)
+//000069: 
+//000070: 		static bool AskUserForB()
+//000071: 		{
+    IL_0000:  nop
+//000072: 			Console.WriteLine("What meshbuffers to use?");
+    IL_0001:  ldstr      "What meshbuffers to use\?"
+    IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_000b:  nop
+//000073: 			Console.WriteLine(" (1) split to 16-bit meshbuffers");
+    IL_000c:  ldstr      " (1) split to 16-bit meshbuffers"
+    IL_0011:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0016:  nop
+//000074: 			Console.WriteLine(" (2) use single 32-bit meshbuffer ");
+    IL_0017:  ldstr      " (2) use single 32-bit meshbuffer "
+    IL_001c:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0021:  nop
+//000075: 			ConsoleKeyInfo k = Console.ReadKey();
+    IL_0022:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0027:  stloc.0
+//000076: 
+//000077: 			return k.KeyChar == '1';
+    IL_0028:  ldloca.s   k
+    IL_002a:  call       instance char [mscorlib]System.ConsoleKeyInfo::get_KeyChar()
+    IL_002f:  ldc.i4.s   49
+    IL_0031:  ceq
+    IL_0033:  stloc.1
+    IL_0034:  br.s       IL_0036
+
+//000078: 		}
+    IL_0036:  ldloc.1
+    IL_0037:  ret
+  } // end of method Program::AskUserForB
+
+  .method private hidebysig static bool  AskUserForDriver([out] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType& driverType) cil managed
+  {
+    // Code size       104 (0x68)
+    .maxstack  2
+    .locals init ([0] valuetype [mscorlib]System.ConsoleKeyInfo i,
+             [1] bool CS$1$0000,
+             [2] valuetype [mscorlib]System.ConsoleKey CS$4$0001)
+//000079: 
+//000080: 		static bool AskUserForDriver(out DriverType driverType)
+//000081: 		{
+    IL_0000:  nop
+//000082: 			driverType = DriverType.Null;
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  stind.i4
+//000083: 
+//000084: 			Console.Write("Please select the driver you want for this example:\n" +
+    IL_0004:  ldstr      "Please select the driver you want for this example"
+    + ":\n (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n (d) Burning's Softw"
+    + "are Renderer\n (e) Software Renderer\n (f) NullDevice\n (otherKey) exit\n\n"
+    IL_0009:  call       void [mscorlib]System.Console::Write(string)
+    IL_000e:  nop
+//000085: 						" (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n" +
+//000086: 						" (d) Burning's Software Renderer\n (e) Software Renderer\n" +
+//000087: 						" (f) NullDevice\n (otherKey) exit\n\n");
+//000088: 
+//000089: 			ConsoleKeyInfo i = Console.ReadKey();
+    IL_000f:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0014:  stloc.0
+//000090: 
+//000091: 			switch (i.Key)
+    IL_0015:  ldloca.s   i
+    IL_0017:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_001c:  stloc.2
+    IL_001d:  ldloc.2
+    IL_001e:  ldc.i4.s   65
+    IL_0020:  sub
+    IL_0021:  switch     ( 
+                          IL_0040,
+                          IL_0045,
+                          IL_004a,
+                          IL_004f,
+                          IL_0054,
+                          IL_0059)
+    IL_003e:  br.s       IL_005e
+
+//000092: 			{
+//000093: 				case ConsoleKey.A: driverType = DriverType.OpenGL; break;
+    IL_0040:  ldarg.0
+    IL_0041:  ldc.i4.5
+    IL_0042:  stind.i4
+    IL_0043:  br.s       IL_0062
+
+//000094: 				case ConsoleKey.B: driverType = DriverType.Direct3D9; break;
+    IL_0045:  ldarg.0
+    IL_0046:  ldc.i4.4
+    IL_0047:  stind.i4
+    IL_0048:  br.s       IL_0062
+
+//000095: 				case ConsoleKey.C: driverType = DriverType.Direct3D8; break;
+    IL_004a:  ldarg.0
+    IL_004b:  ldc.i4.3
+    IL_004c:  stind.i4
+    IL_004d:  br.s       IL_0062
+
+//000096: 				case ConsoleKey.D: driverType = DriverType.BurningsVideo; break;
+    IL_004f:  ldarg.0
+    IL_0050:  ldc.i4.2
+    IL_0051:  stind.i4
+    IL_0052:  br.s       IL_0062
+
+//000097: 				case ConsoleKey.E: driverType = DriverType.Software; break;
+    IL_0054:  ldarg.0
+    IL_0055:  ldc.i4.1
+    IL_0056:  stind.i4
+    IL_0057:  br.s       IL_0062
+
+//000098: 				case ConsoleKey.F: driverType = DriverType.Null; break;
+    IL_0059:  ldarg.0
+    IL_005a:  ldc.i4.0
+    IL_005b:  stind.i4
+    IL_005c:  br.s       IL_0062
+
+//000099: 				default:
+//000100: 					return false;
+    IL_005e:  ldc.i4.0
+    IL_005f:  stloc.1
+    IL_0060:  br.s       IL_0066
+
+//000101: 			}
+//000102: 
+//000103: 			return true;
+    IL_0062:  ldc.i4.1
+    IL_0063:  stloc.1
+    IL_0064:  br.s       IL_0066
+
+//000104: 		}
+    IL_0066:  ldloc.1
+    IL_0067:  ret
+  } // end of method Program::AskUserForDriver
+
+  .method public hidebysig specialname static 
+          string  get_MemUsageText() cil managed
+  {
+    // Code size       38 (0x26)
+    .maxstack  2
+    .locals init ([0] string CS$1$0000)
+//000105: 
+//000106: 		static public string MemUsageText
+//000107: 		{
+//000108: 			get { return System.Diagnostics.Process.GetCurrentProcess().WorkingSet64 / (1024 * 1024) + " Mb"; }
+    IL_0000:  nop
+    IL_0001:  call       class [System]System.Diagnostics.Process [System]System.Diagnostics.Process::GetCurrentProcess()
+    IL_0006:  callvirt   instance int64 [System]System.Diagnostics.Process::get_WorkingSet64()
+    IL_000b:  ldc.i4     0x100000
+    IL_0010:  conv.i8
+    IL_0011:  div
+    IL_0012:  box        [mscorlib]System.Int64
+    IL_0017:  ldstr      " Mb"
+    IL_001c:  call       string [mscorlib]System.String::Concat(object,
+                                                                object)
+    IL_0021:  stloc.0
+    IL_0022:  br.s       IL_0024
+
+    IL_0024:  ldloc.0
+    IL_0025:  ret
+  } // end of method Program::get_MemUsageText
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+  .property string MemUsageText()
+  {
+    .get string L07.FastStaticRendering.Program::get_MemUsageText()
+  } // end of property Program::MemUsageText
+} // end of class L07.FastStaticRendering.Program
+
+.class private auto ansi beforefieldinit L07.FastStaticRendering.MeshBuffersBatch
+       extends [mscorlib]System.Object
+{
+  .field private class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device
+  .field private class [IrrlichtLime]IrrlichtLime.Video.Material material
+  .field private class [IrrlichtLime]IrrlichtLime.Core.Matrix matrix
+  .field private class [IrrlichtLime]IrrlichtLime.Scene.Mesh mesh
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+                               int32 N,
+                               bool B) cil managed
+  {
+    // Code size       124 (0x7c)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+//000109: 		}
+//000110: 	}
+//000111: 
+//000112: 	class MeshBuffersBatch
+//000113: 	{
+//000114: 		IrrlichtDevice device;
+//000115: 		Material material;
+//000116: 		Matrix matrix;
+//000117: 		Mesh mesh;
+//000118: 
+//000119: 		public MeshBuffersBatch(IrrlichtDevice device, int N, bool B)
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+//000120: 		{
+    IL_0007:  nop
+//000121: 			this.device = device;
+    IL_0008:  ldarg.0
+    IL_0009:  ldarg.1
+    IL_000a:  stfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L07.FastStaticRendering.MeshBuffersBatch::device
+//000122: 			material = new Material();
+    IL_000f:  ldarg.0
+    IL_0010:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Material::.ctor()
+    IL_0015:  stfld      class [IrrlichtLime]IrrlichtLime.Video.Material L07.FastStaticRendering.MeshBuffersBatch::material
+//000123: 			material.Lighting = false;
+    IL_001a:  ldarg.0
+    IL_001b:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Material L07.FastStaticRendering.MeshBuffersBatch::material
+    IL_0020:  ldc.i4.0
+    IL_0021:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_Lighting(bool)
+    IL_0026:  nop
+//000124: 			matrix = new Matrix();
+    IL_0027:  ldarg.0
+    IL_0028:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Matrix::.ctor()
+    IL_002d:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Matrix L07.FastStaticRendering.MeshBuffersBatch::matrix
+//000125: 
+//000126: 			mesh = Mesh.Create();
+    IL_0032:  ldarg.0
+    IL_0033:  call       class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.Mesh::Create()
+    IL_0038:  stfld      class [IrrlichtLime]IrrlichtLime.Scene.Mesh L07.FastStaticRendering.MeshBuffersBatch::mesh
+//000127: 
+//000128: 			if (B)
+    IL_003d:  ldarg.3
+    IL_003e:  ldc.i4.0
+    IL_003f:  ceq
+    IL_0041:  stloc.0
+    IL_0042:  ldloc.0
+    IL_0043:  brtrue.s   IL_004f
+
+//000129: 				generateMultiple16bitMeshbuffers(N);
+    IL_0045:  ldarg.0
+    IL_0046:  ldarg.2
+    IL_0047:  call       instance void L07.FastStaticRendering.MeshBuffersBatch::generateMultiple16bitMeshbuffers(int32)
+    IL_004c:  nop
+    IL_004d:  br.s       IL_0057
+
+//000130: 			else
+//000131: 				generateSingle32BitMeshbuffer(N);
+    IL_004f:  ldarg.0
+    IL_0050:  ldarg.2
+    IL_0051:  call       instance void L07.FastStaticRendering.MeshBuffersBatch::generateSingle32BitMeshbuffer(int32)
+    IL_0056:  nop
+//000132: 
+//000133: 			mesh.RecalculateBoundingBox();
+    IL_0057:  ldarg.0
+    IL_0058:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.Mesh L07.FastStaticRendering.MeshBuffersBatch::mesh
+    IL_005d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.Mesh::RecalculateBoundingBox()
+    IL_0062:  nop
+//000134: 
+//000135: 			device.Logger.Log("Collecting garbage...");
+    IL_0063:  ldarg.1
+    IL_0064:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_0069:  ldstr      "Collecting garbage..."
+    IL_006e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+    IL_0073:  nop
+//000136: 			GC.Collect();
+    IL_0074:  call       void [mscorlib]System.GC::Collect()
+    IL_0079:  nop
+//000137: 		}
+    IL_007a:  nop
+    IL_007b:  ret
+  } // end of method MeshBuffersBatch::.ctor
+
+  .method public hidebysig instance void 
+          Drop() cil managed
+  {
+    // Code size       14 (0xe)
+    .maxstack  8
+//000138: 
+//000139: 		public void Drop()
+//000140: 		{
+    IL_0000:  nop
+//000141: 			mesh.Drop();
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.Mesh L07.FastStaticRendering.MeshBuffersBatch::mesh
+    IL_0007:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_000c:  pop
+//000142: 		}
+    IL_000d:  ret
+  } // end of method MeshBuffersBatch::Drop
+
+  .method public hidebysig instance void 
+          Draw() cil managed
+  {
+    // Code size       104 (0x68)
+    .maxstack  3
+    .locals init ([0] int32 i,
+             [1] bool CS$4$0000)
+//000143: 
+//000144: 		public void Draw()
+//000145: 		{
+    IL_0000:  nop
+//000146: 			device.VideoDriver.SetTransform(TransformationState.World, matrix);
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L07.FastStaticRendering.MeshBuffersBatch::device
+    IL_0007:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_000c:  ldc.i4.1
+    IL_000d:  ldarg.0
+    IL_000e:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Matrix L07.FastStaticRendering.MeshBuffersBatch::matrix
+    IL_0013:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetTransform(valuetype [IrrlichtLime]IrrlichtLime.Video.TransformationState,
+                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Matrix)
+    IL_0018:  nop
+//000147: 			device.VideoDriver.SetMaterial(material);
+    IL_0019:  ldarg.0
+    IL_001a:  ldfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L07.FastStaticRendering.MeshBuffersBatch::device
+    IL_001f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0024:  ldarg.0
+    IL_0025:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Material L07.FastStaticRendering.MeshBuffersBatch::material
+    IL_002a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetMaterial(class [IrrlichtLime]IrrlichtLime.Video.Material)
+    IL_002f:  nop
+//000148: 
+//000149: 			for (int i = 0; i < mesh.MeshBufferCount; i++)
+    IL_0030:  ldc.i4.0
+    IL_0031:  stloc.0
+    IL_0032:  br.s       IL_0055
+
+//000150: 				device.VideoDriver.DrawMeshBuffer(mesh.GetMeshBuffer(i));
+    IL_0034:  ldarg.0
+    IL_0035:  ldfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L07.FastStaticRendering.MeshBuffersBatch::device
+    IL_003a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_003f:  ldarg.0
+    IL_0040:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.Mesh L07.FastStaticRendering.MeshBuffersBatch::mesh
+    IL_0045:  ldloc.0
+    IL_0046:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer [IrrlichtLime]IrrlichtLime.Scene.Mesh::GetMeshBuffer(int32)
+    IL_004b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::DrawMeshBuffer(class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer)
+    IL_0050:  nop
+//000149: 			for (int i = 0; i < mesh.MeshBufferCount; i++)
+    IL_0051:  ldloc.0
+    IL_0052:  ldc.i4.1
+    IL_0053:  add
+    IL_0054:  stloc.0
+    IL_0055:  ldloc.0
+    IL_0056:  ldarg.0
+    IL_0057:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.Mesh L07.FastStaticRendering.MeshBuffersBatch::mesh
+    IL_005c:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Scene.Mesh::get_MeshBufferCount()
+    IL_0061:  clt
+    IL_0063:  stloc.1
+    IL_0064:  ldloc.1
+    IL_0065:  brtrue.s   IL_0034
+
+//000150: 				device.VideoDriver.DrawMeshBuffer(mesh.GetMeshBuffer(i));
+//000151: 		}
+    IL_0067:  ret
+  } // end of method MeshBuffersBatch::Draw
+
+  .method private hidebysig instance void 
+          generateMultiple16bitMeshbuffers(int32 N) cil managed
+  {
+    // Code size       422 (0x1a6)
+    .maxstack  5
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] vertices32bit,
+             [1] uint32[] indices32bit,
+             [2] class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Vertex3D> verticesChunk,
+             [3] class [mscorlib]System.Collections.Generic.List`1<uint16> indicesChunk,
+             [4] int32 totalCubes,
+             [5] int32 indicesInCube,
+             [6] int32 verticesInCube,
+             [7] int32 maximumVerticesPerChunk,
+             [8] int32 verticesIndexOffset,
+             [9] int32 cubeIndex,
+             [10] int32 i,
+             [11] class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer mb,
+             [12] bool CS$4$0000,
+             [13] object[] CS$0$0001)
+//000152: 
+//000153: 		void generateMultiple16bitMeshbuffers(int N)
+//000154: 		{
+    IL_0000:  nop
+//000155: 			Vertex3D[] vertices32bit;
+//000156: 			uint[] indices32bit;
+//000157: 			generateVerticesAndIndices(N, out vertices32bit, out indices32bit);
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  ldloca.s   vertices32bit
+    IL_0005:  ldloca.s   indices32bit
+    IL_0007:  call       instance void L07.FastStaticRendering.MeshBuffersBatch::generateVerticesAndIndices(int32,
+                                                                                                            class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[]&,
+                                                                                                            uint32[]&)
+    IL_000c:  nop
+//000158: 
+//000159: 			List<Vertex3D> verticesChunk = new List<Vertex3D>();
+    IL_000d:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Vertex3D>::.ctor()
+    IL_0012:  stloc.2
+//000160: 			List<ushort> indicesChunk = new List<ushort>();
+    IL_0013:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<uint16>::.ctor()
+    IL_0018:  stloc.3
+//000161: 			
+//000162: 			int totalCubes = N * N * N;
+    IL_0019:  ldarg.1
+    IL_001a:  ldarg.1
+    IL_001b:  mul
+    IL_001c:  ldarg.1
+    IL_001d:  mul
+    IL_001e:  stloc.s    totalCubes
+//000163: 			int indicesInCube = indices32bit.Length / totalCubes;
+    IL_0020:  ldloc.1
+    IL_0021:  ldlen
+    IL_0022:  conv.i4
+    IL_0023:  ldloc.s    totalCubes
+    IL_0025:  div
+    IL_0026:  stloc.s    indicesInCube
+//000164: 			int verticesInCube = vertices32bit.Length / totalCubes;
+    IL_0028:  ldloc.0
+    IL_0029:  ldlen
+    IL_002a:  conv.i4
+    IL_002b:  ldloc.s    totalCubes
+    IL_002d:  div
+    IL_002e:  stloc.s    verticesInCube
+//000165: 			int maximumVerticesPerChunk = ushort.MaxValue; // must not be more than 0xffff (because we use 16-bit indices)
+    IL_0030:  ldc.i4     0xffff
+    IL_0035:  stloc.s    maximumVerticesPerChunk
+//000166: 			int verticesIndexOffset = 0;
+    IL_0037:  ldc.i4.0
+    IL_0038:  stloc.s    verticesIndexOffset
+//000167: 
+//000168: 			device.Logger.Log("Batching cubes into 16-bit meshbuffers...");
+    IL_003a:  ldarg.0
+    IL_003b:  ldfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L07.FastStaticRendering.MeshBuffersBatch::device
+    IL_0040:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_0045:  ldstr      "Batching cubes into 16-bit meshbuffers..."
+    IL_004a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+    IL_004f:  nop
+//000169: 
+//000170: 			for (int cubeIndex = 0; cubeIndex < totalCubes; cubeIndex++)
+    IL_0050:  ldc.i4.0
+    IL_0051:  stloc.s    cubeIndex
+    IL_0053:  br         IL_0196
+
+//000171: 			{
+    IL_0058:  nop
+//000172: 				// add vertices
+//000173: 				for (int i = 0; i < verticesInCube; i++)
+    IL_0059:  ldc.i4.0
+    IL_005a:  stloc.s    i
+    IL_005c:  br.s       IL_0075
+
+//000174: 					verticesChunk.Add(vertices32bit[cubeIndex * verticesInCube + i]);
+    IL_005e:  ldloc.2
+    IL_005f:  ldloc.0
+    IL_0060:  ldloc.s    cubeIndex
+    IL_0062:  ldloc.s    verticesInCube
+    IL_0064:  mul
+    IL_0065:  ldloc.s    i
+    IL_0067:  add
+    IL_0068:  ldelem.ref
+    IL_0069:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Vertex3D>::Add(!0)
+    IL_006e:  nop
+//000173: 				for (int i = 0; i < verticesInCube; i++)
+    IL_006f:  ldloc.s    i
+    IL_0071:  ldc.i4.1
+    IL_0072:  add
+    IL_0073:  stloc.s    i
+    IL_0075:  ldloc.s    i
+    IL_0077:  ldloc.s    verticesInCube
+    IL_0079:  clt
+    IL_007b:  stloc.s    CS$4$0000
+    IL_007d:  ldloc.s    CS$4$0000
+    IL_007f:  brtrue.s   IL_005e
+
+//000174: 					verticesChunk.Add(vertices32bit[cubeIndex * verticesInCube + i]);
+//000175: 
+//000176: 				// add indices
+//000177: 				for (int i = 0; i < indicesInCube; i++)
+    IL_0081:  ldc.i4.0
+    IL_0082:  stloc.s    i
+    IL_0084:  br.s       IL_00a3
+
+//000178: 					indicesChunk.Add((ushort)(indices32bit[cubeIndex * indicesInCube + i] - verticesIndexOffset));
+    IL_0086:  ldloc.3
+    IL_0087:  ldloc.1
+    IL_0088:  ldloc.s    cubeIndex
+    IL_008a:  ldloc.s    indicesInCube
+    IL_008c:  mul
+    IL_008d:  ldloc.s    i
+    IL_008f:  add
+    IL_0090:  ldelem.u4
+    IL_0091:  conv.u8
+    IL_0092:  ldloc.s    verticesIndexOffset
+    IL_0094:  conv.i8
+    IL_0095:  sub
+    IL_0096:  conv.u2
+    IL_0097:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<uint16>::Add(!0)
+    IL_009c:  nop
+//000177: 				for (int i = 0; i < indicesInCube; i++)
+    IL_009d:  ldloc.s    i
+    IL_009f:  ldc.i4.1
+    IL_00a0:  add
+    IL_00a1:  stloc.s    i
+    IL_00a3:  ldloc.s    i
+    IL_00a5:  ldloc.s    indicesInCube
+    IL_00a7:  clt
+    IL_00a9:  stloc.s    CS$4$0000
+    IL_00ab:  ldloc.s    CS$4$0000
+    IL_00ad:  brtrue.s   IL_0086
+
+//000178: 					indicesChunk.Add((ushort)(indices32bit[cubeIndex * indicesInCube + i] - verticesIndexOffset));
+//000179: 
+//000180: 				if (verticesChunk.Count + verticesInCube > maximumVerticesPerChunk // if this chunk is full
+    IL_00af:  ldloc.2
+    IL_00b0:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Vertex3D>::get_Count()
+    IL_00b5:  ldloc.s    verticesInCube
+    IL_00b7:  add
+    IL_00b8:  ldloc.s    maximumVerticesPerChunk
+    IL_00ba:  bgt.s      IL_00c9
+
+    IL_00bc:  ldloc.s    cubeIndex
+    IL_00be:  ldloc.s    totalCubes
+    IL_00c0:  ldc.i4.1
+    IL_00c1:  sub
+    IL_00c2:  ceq
+    IL_00c4:  ldc.i4.0
+    IL_00c5:  ceq
+    IL_00c7:  br.s       IL_00ca
+
+    IL_00c9:  ldc.i4.0
+    IL_00ca:  stloc.s    CS$4$0000
+    IL_00cc:  ldloc.s    CS$4$0000
+    IL_00ce:  brtrue     IL_018f
+
+//000181: 					|| cubeIndex == totalCubes - 1) // or this is last cube
+//000182: 				{
+    IL_00d3:  nop
+//000183: 					// we create meshbuffer and add it to the main mesh
+//000184: 					MeshBuffer mb = MeshBuffer.Create(VertexType.Standard, IndexType._16Bit);
+    IL_00d4:  ldc.i4.0
+    IL_00d5:  ldc.i4.0
+    IL_00d6:  call       class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::Create(valuetype [IrrlichtLime]IrrlichtLime.Video.VertexType,
+                                                                                                                               valuetype [IrrlichtLime]IrrlichtLime.Video.IndexType)
+    IL_00db:  stloc.s    mb
+//000185: 					mb.SetHardwareMappingHint(HardwareMappingHint.Static, HardwareBufferType.VertexAndIndex);
+    IL_00dd:  ldloc.s    mb
+    IL_00df:  ldc.i4.1
+    IL_00e0:  ldc.i4.3
+    IL_00e1:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::SetHardwareMappingHint(valuetype [IrrlichtLime]IrrlichtLime.Scene.HardwareMappingHint,
+                                                                                                           valuetype [IrrlichtLime]IrrlichtLime.Scene.HardwareBufferType)
+    IL_00e6:  nop
+//000186: 					mb.Append(verticesChunk.ToArray(), indicesChunk.ToArray());
+    IL_00e7:  ldloc.s    mb
+    IL_00e9:  ldloc.2
+    IL_00ea:  callvirt   instance !0[] class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Vertex3D>::ToArray()
+    IL_00ef:  ldloc.3
+    IL_00f0:  callvirt   instance !0[] class [mscorlib]System.Collections.Generic.List`1<uint16>::ToArray()
+    IL_00f5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::Append(class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[],
+                                                                                           uint16[])
+    IL_00fa:  nop
+//000187: 					mb.RecalculateBoundingBox();
+    IL_00fb:  ldloc.s    mb
+    IL_00fd:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::RecalculateBoundingBox()
+    IL_0102:  nop
+//000188: 					mesh.AddMeshBuffer(mb);
+    IL_0103:  ldarg.0
+    IL_0104:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.Mesh L07.FastStaticRendering.MeshBuffersBatch::mesh
+    IL_0109:  ldloc.s    mb
+    IL_010b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.Mesh::AddMeshBuffer(class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer)
+    IL_0110:  nop
+//000189: 					mb.Drop();
+    IL_0111:  ldloc.s    mb
+    IL_0113:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0118:  pop
+//000190: 
+//000191: 					// clean up vertex and index chunks
+//000192: 					verticesIndexOffset += verticesChunk.Count;
+    IL_0119:  ldloc.s    verticesIndexOffset
+    IL_011b:  ldloc.2
+    IL_011c:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Vertex3D>::get_Count()
+    IL_0121:  add
+    IL_0122:  stloc.s    verticesIndexOffset
+//000193: 					verticesChunk = new List<Vertex3D>();
+    IL_0124:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Vertex3D>::.ctor()
+    IL_0129:  stloc.2
+//000194: 					indicesChunk = new List<ushort>();
+    IL_012a:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<uint16>::.ctor()
+    IL_012f:  stloc.3
+//000195: 
+//000196: 					device.Logger.Log(
+    IL_0130:  ldarg.0
+    IL_0131:  ldfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L07.FastStaticRendering.MeshBuffersBatch::device
+    IL_0136:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_013b:  ldc.i4.5
+    IL_013c:  newarr     [mscorlib]System.Object
+    IL_0141:  stloc.s    CS$0$0001
+    IL_0143:  ldloc.s    CS$0$0001
+    IL_0145:  ldc.i4.0
+    IL_0146:  ldloc.s    cubeIndex
+    IL_0148:  ldc.i4.1
+    IL_0149:  add
+    IL_014a:  ldc.i4.s   100
+    IL_014c:  mul
+    IL_014d:  ldloc.s    totalCubes
+    IL_014f:  div
+    IL_0150:  box        [mscorlib]System.Int32
+    IL_0155:  stelem.ref
+    IL_0156:  ldloc.s    CS$0$0001
+    IL_0158:  ldc.i4.1
+    IL_0159:  ldstr      "%: "
+    IL_015e:  stelem.ref
+    IL_015f:  ldloc.s    CS$0$0001
+    IL_0161:  ldc.i4.2
+    IL_0162:  ldarg.0
+    IL_0163:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.Mesh L07.FastStaticRendering.MeshBuffersBatch::mesh
+    IL_0168:  stelem.ref
+    IL_0169:  ldloc.s    CS$0$0001
+    IL_016b:  ldc.i4.3
+    IL_016c:  ldstr      ". ~"
+    IL_0171:  stelem.ref
+    IL_0172:  ldloc.s    CS$0$0001
+    IL_0174:  ldc.i4.4
+    IL_0175:  call       string L07.FastStaticRendering.Program::get_MemUsageText()
+    IL_017a:  stelem.ref
+    IL_017b:  ldloc.s    CS$0$0001
+    IL_017d:  call       string [mscorlib]System.String::Concat(object[])
+    IL_0182:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+    IL_0187:  nop
+//000197: 						(((cubeIndex + 1) * 100) / totalCubes) + "%: " +
+//000198: 						mesh + ". ~" +
+//000199: 						Program.MemUsageText);
+//000200: 
+//000201: 					GC.Collect();
+    IL_0188:  call       void [mscorlib]System.GC::Collect()
+    IL_018d:  nop
+//000202: 				}
+    IL_018e:  nop
+//000203: 			}
+    IL_018f:  nop
+//000170: 			for (int cubeIndex = 0; cubeIndex < totalCubes; cubeIndex++)
+    IL_0190:  ldloc.s    cubeIndex
+    IL_0192:  ldc.i4.1
+    IL_0193:  add
+    IL_0194:  stloc.s    cubeIndex
+    IL_0196:  ldloc.s    cubeIndex
+    IL_0198:  ldloc.s    totalCubes
+    IL_019a:  clt
+    IL_019c:  stloc.s    CS$4$0000
+    IL_019e:  ldloc.s    CS$4$0000
+    IL_01a0:  brtrue     IL_0058
+
+//000171: 			{
+//000172: 				// add vertices
+//000173: 				for (int i = 0; i < verticesInCube; i++)
+//000174: 					verticesChunk.Add(vertices32bit[cubeIndex * verticesInCube + i]);
+//000175: 
+//000176: 				// add indices
+//000177: 				for (int i = 0; i < indicesInCube; i++)
+//000178: 					indicesChunk.Add((ushort)(indices32bit[cubeIndex * indicesInCube + i] - verticesIndexOffset));
+//000179: 
+//000180: 				if (verticesChunk.Count + verticesInCube > maximumVerticesPerChunk // if this chunk is full
+//000181: 					|| cubeIndex == totalCubes - 1) // or this is last cube
+//000182: 				{
+//000183: 					// we create meshbuffer and add it to the main mesh
+//000184: 					MeshBuffer mb = MeshBuffer.Create(VertexType.Standard, IndexType._16Bit);
+//000185: 					mb.SetHardwareMappingHint(HardwareMappingHint.Static, HardwareBufferType.VertexAndIndex);
+//000186: 					mb.Append(verticesChunk.ToArray(), indicesChunk.ToArray());
+//000187: 					mb.RecalculateBoundingBox();
+//000188: 					mesh.AddMeshBuffer(mb);
+//000189: 					mb.Drop();
+//000190: 
+//000191: 					// clean up vertex and index chunks
+//000192: 					verticesIndexOffset += verticesChunk.Count;
+//000193: 					verticesChunk = new List<Vertex3D>();
+//000194: 					indicesChunk = new List<ushort>();
+//000195: 
+//000196: 					device.Logger.Log(
+//000197: 						(((cubeIndex + 1) * 100) / totalCubes) + "%: " +
+//000198: 						mesh + ". ~" +
+//000199: 						Program.MemUsageText);
+//000200: 
+//000201: 					GC.Collect();
+//000202: 				}
+//000203: 			}
+//000204: 		}
+    IL_01a5:  ret
+  } // end of method MeshBuffersBatch::generateMultiple16bitMeshbuffers
+
+  .method private hidebysig instance void 
+          generateSingle32BitMeshbuffer(int32 N) cil managed
+  {
+    // Code size       136 (0x88)
+    .maxstack  4
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] vertices32bit,
+             [1] uint32[] indices32bit,
+             [2] class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer mb,
+             [3] object[] CS$0$0000)
+//000205: 
+//000206: 		void generateSingle32BitMeshbuffer(int N)
+//000207: 		{
+    IL_0000:  nop
+//000208: 			Vertex3D[] vertices32bit;
+//000209: 			uint[] indices32bit;
+//000210: 			generateVerticesAndIndices(N, out vertices32bit, out indices32bit);
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.1
+    IL_0003:  ldloca.s   vertices32bit
+    IL_0005:  ldloca.s   indices32bit
+    IL_0007:  call       instance void L07.FastStaticRendering.MeshBuffersBatch::generateVerticesAndIndices(int32,
+                                                                                                            class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[]&,
+                                                                                                            uint32[]&)
+    IL_000c:  nop
+//000211: 
+//000212: 			MeshBuffer mb = MeshBuffer.Create(VertexType.Standard, IndexType._32Bit);
+    IL_000d:  ldc.i4.0
+    IL_000e:  ldc.i4.1
+    IL_000f:  call       class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::Create(valuetype [IrrlichtLime]IrrlichtLime.Video.VertexType,
+                                                                                                                               valuetype [IrrlichtLime]IrrlichtLime.Video.IndexType)
+    IL_0014:  stloc.2
+//000213: 			mesh.AddMeshBuffer(mb);
+    IL_0015:  ldarg.0
+    IL_0016:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.Mesh L07.FastStaticRendering.MeshBuffersBatch::mesh
+    IL_001b:  ldloc.2
+    IL_001c:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.Mesh::AddMeshBuffer(class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer)
+    IL_0021:  nop
+//000214: 			mb.Drop();
+    IL_0022:  ldloc.2
+    IL_0023:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0028:  pop
+//000215: 
+//000216: 			device.Logger.Log("Appending " +
+    IL_0029:  ldarg.0
+    IL_002a:  ldfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L07.FastStaticRendering.MeshBuffersBatch::device
+    IL_002f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_0034:  ldc.i4.5
+    IL_0035:  newarr     [mscorlib]System.Object
+    IL_003a:  stloc.3
+    IL_003b:  ldloc.3
+    IL_003c:  ldc.i4.0
+    IL_003d:  ldstr      "Appending "
+    IL_0042:  stelem.ref
+    IL_0043:  ldloc.3
+    IL_0044:  ldc.i4.1
+    IL_0045:  ldloc.0
+    IL_0046:  ldlen
+    IL_0047:  conv.i4
+    IL_0048:  box        [mscorlib]System.Int32
+    IL_004d:  stelem.ref
+    IL_004e:  ldloc.3
+    IL_004f:  ldc.i4.2
+    IL_0050:  ldstr      " vertices and "
+    IL_0055:  stelem.ref
+    IL_0056:  ldloc.3
+    IL_0057:  ldc.i4.3
+    IL_0058:  ldloc.1
+    IL_0059:  ldlen
+    IL_005a:  conv.i4
+    IL_005b:  box        [mscorlib]System.Int32
+    IL_0060:  stelem.ref
+    IL_0061:  ldloc.3
+    IL_0062:  ldc.i4.4
+    IL_0063:  ldstr      " indices to 32-bit meshbuffer..."
+    IL_0068:  stelem.ref
+    IL_0069:  ldloc.3
+    IL_006a:  call       string [mscorlib]System.String::Concat(object[])
+    IL_006f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+    IL_0074:  nop
+//000217: 				vertices32bit.Length + " vertices and " +
+//000218: 				indices32bit.Length + " indices to 32-bit meshbuffer...");
+//000219: 
+//000220: 			mb.Append(vertices32bit, indices32bit);
+    IL_0075:  ldloc.2
+    IL_0076:  ldloc.0
+    IL_0077:  ldloc.1
+    IL_0078:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::Append(class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[],
+                                                                                           uint32[])
+    IL_007d:  nop
+//000221: 			mb.SetHardwareMappingHint(HardwareMappingHint.Static, HardwareBufferType.VertexAndIndex);
+    IL_007e:  ldloc.2
+    IL_007f:  ldc.i4.1
+    IL_0080:  ldc.i4.3
+    IL_0081:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::SetHardwareMappingHint(valuetype [IrrlichtLime]IrrlichtLime.Scene.HardwareMappingHint,
+                                                                                                           valuetype [IrrlichtLime]IrrlichtLime.Scene.HardwareBufferType)
+    IL_0086:  nop
+//000222: 		}
+    IL_0087:  ret
+  } // end of method MeshBuffersBatch::generateSingle32BitMeshbuffer
+
+  .method private hidebysig instance void 
+          generateVerticesAndIndices(int32 N,
+                                     [out] class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[]& vertices,
+                                     [out] uint32[]& indices) cil managed
+  {
+    // Code size       559 (0x22f)
+    .maxstack  6
+    .locals init ([0] int32 cubeSide,
+             [1] class [IrrlichtLime]IrrlichtLime.Scene.Mesh cubeMesh,
+             [2] uint16[] cubeIndices,
+             [3] class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] cubeVertices,
+             [4] int32 verticesIndex,
+             [5] int32 indicesIndex,
+             [6] int32 colorBase,
+             [7] float32 cubePosOffset,
+             [8] int32 i,
+             [9] int32 j,
+             [10] int32 k,
+             [11] uint32 firstfreeIndex,
+             [12] int32 l,
+             [13] class [IrrlichtLime]IrrlichtLime.Video.Vertex3D v,
+             [14] bool CS$4$0000,
+             [15] object[] CS$0$0001)
+//000223: 
+//000224: 		/// <param name="N">Number of cubes in single dimension (e.g. total cubes for 20 is 20^3=8000)</param>
+//000225: 		void generateVerticesAndIndices(int N, out Vertex3D[] vertices, out uint[] indices)
+//000226: 		{
+    IL_0000:  nop
+//000227: 			int cubeSide = 32;
+    IL_0001:  ldc.i4.s   32
+    IL_0003:  stloc.0
+//000228: 
+//000229: 			// ask Irrlicht to generate cube mesh for us (we use it like a template)
+//000230: 
+//000231: 			Mesh cubeMesh = device.SceneManager.GeometryCreator.CreateCubeMesh(new Vector3Df(cubeSide));
+    IL_0004:  ldarg.0
+    IL_0005:  ldfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L07.FastStaticRendering.MeshBuffersBatch::device
+    IL_000a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_000f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_GeometryCreator()
+    IL_0014:  ldloc.0
+    IL_0015:  conv.r4
+    IL_0016:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32)
+    IL_001b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator::CreateCubeMesh(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0020:  stloc.1
+//000232: 			ushort[] cubeIndices = cubeMesh.GetMeshBuffer(0).Indices as ushort[];
+    IL_0021:  ldloc.1
+    IL_0022:  ldc.i4.0
+    IL_0023:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer [IrrlichtLime]IrrlichtLime.Scene.Mesh::GetMeshBuffer(int32)
+    IL_0028:  callvirt   instance object [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::get_Indices()
+    IL_002d:  isinst     uint16[]
+    IL_0032:  stloc.2
+//000233: 			Vertex3D[] cubeVertices = cubeMesh.GetMeshBuffer(0).Vertices as Vertex3D[];
+    IL_0033:  ldloc.1
+    IL_0034:  ldc.i4.0
+    IL_0035:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer [IrrlichtLime]IrrlichtLime.Scene.Mesh::GetMeshBuffer(int32)
+    IL_003a:  callvirt   instance object [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::get_Vertices()
+    IL_003f:  isinst     class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[]
+    IL_0044:  stloc.3
+//000234: 			cubeMesh.Drop();
+    IL_0045:  ldloc.1
+    IL_0046:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_004b:  pop
+//000235: 
+//000236: 			// generate cubes
+//000237: 
+//000238: 			device.Logger.Log("Generating " + N * N * N + " cubes...");
+    IL_004c:  ldarg.0
+    IL_004d:  ldfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L07.FastStaticRendering.MeshBuffersBatch::device
+    IL_0052:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_0057:  ldstr      "Generating "
+    IL_005c:  ldarg.1
+    IL_005d:  ldarg.1
+    IL_005e:  mul
+    IL_005f:  ldarg.1
+    IL_0060:  mul
+    IL_0061:  box        [mscorlib]System.Int32
+    IL_0066:  ldstr      " cubes..."
+    IL_006b:  call       string [mscorlib]System.String::Concat(object,
+                                                                object,
+                                                                object)
+    IL_0070:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+    IL_0075:  nop
+//000239: 
+//000240: 			vertices = new Vertex3D[N * N * N * cubeVertices.Length];
+    IL_0076:  ldarg.2
+    IL_0077:  ldarg.1
+    IL_0078:  ldarg.1
+    IL_0079:  mul
+    IL_007a:  ldarg.1
+    IL_007b:  mul
+    IL_007c:  ldloc.3
+    IL_007d:  ldlen
+    IL_007e:  conv.i4
+    IL_007f:  mul
+    IL_0080:  newarr     [IrrlichtLime]IrrlichtLime.Video.Vertex3D
+    IL_0085:  stind.ref
+//000241: 			indices = new uint[N * N * N * cubeIndices.Length];
+    IL_0086:  ldarg.3
+    IL_0087:  ldarg.1
+    IL_0088:  ldarg.1
+    IL_0089:  mul
+    IL_008a:  ldarg.1
+    IL_008b:  mul
+    IL_008c:  ldloc.2
+    IL_008d:  ldlen
+    IL_008e:  conv.i4
+    IL_008f:  mul
+    IL_0090:  newarr     [mscorlib]System.UInt32
+    IL_0095:  stind.ref
+//000242: 
+//000243: 			int verticesIndex = 0;
+    IL_0096:  ldc.i4.0
+    IL_0097:  stloc.s    verticesIndex
+//000244: 			int indicesIndex = 0;
+    IL_0099:  ldc.i4.0
+    IL_009a:  stloc.s    indicesIndex
+//000245: 			int colorBase = (255 - cubeVertices.Length) / N;
+    IL_009c:  ldc.i4     0xff
+    IL_00a1:  ldloc.3
+    IL_00a2:  ldlen
+    IL_00a3:  conv.i4
+    IL_00a4:  sub
+    IL_00a5:  ldarg.1
+    IL_00a6:  div
+    IL_00a7:  stloc.s    colorBase
+//000246: 			float cubePosOffset = 2.0f * cubeSide;
+    IL_00a9:  ldc.r4     2.
+    IL_00ae:  ldloc.0
+    IL_00af:  conv.r4
+    IL_00b0:  mul
+    IL_00b1:  stloc.s    cubePosOffset
+//000247: 
+//000248: 			for (int i = 0; i < N; i++)
+    IL_00b3:  ldc.i4.0
+    IL_00b4:  stloc.s    i
+    IL_00b6:  br         IL_0220
+
+//000249: 			{
+    IL_00bb:  nop
+//000250: 				for (int j = 0; j < N; j++)
+    IL_00bc:  ldc.i4.0
+    IL_00bd:  stloc.s    j
+    IL_00bf:  br         IL_0195
+
+//000251: 				{
+    IL_00c4:  nop
+//000252: 					for (int k = 0; k < N; k++)
+    IL_00c5:  ldc.i4.0
+    IL_00c6:  stloc.s    k
+    IL_00c8:  br         IL_0180
+
+//000253: 					{
+    IL_00cd:  nop
+//000254: 						// add indices
+//000255: 						uint firstfreeIndex = (uint)verticesIndex;
+    IL_00ce:  ldloc.s    verticesIndex
+    IL_00d0:  stloc.s    firstfreeIndex
+//000256: 						for (int l = 0; l < cubeIndices.Length; l++)
+    IL_00d2:  ldc.i4.0
+    IL_00d3:  stloc.s    l
+    IL_00d5:  br.s       IL_00ee
+
+//000257: 							indices[indicesIndex++] = firstfreeIndex + cubeIndices[l];
+    IL_00d7:  ldarg.3
+    IL_00d8:  ldind.ref
+    IL_00d9:  ldloc.s    indicesIndex
+    IL_00db:  dup
+    IL_00dc:  ldc.i4.1
+    IL_00dd:  add
+    IL_00de:  stloc.s    indicesIndex
+    IL_00e0:  ldloc.s    firstfreeIndex
+    IL_00e2:  ldloc.2
+    IL_00e3:  ldloc.s    l
+    IL_00e5:  ldelem.u2
+    IL_00e6:  add
+    IL_00e7:  stelem.i4
+//000256: 						for (int l = 0; l < cubeIndices.Length; l++)
+    IL_00e8:  ldloc.s    l
+    IL_00ea:  ldc.i4.1
+    IL_00eb:  add
+    IL_00ec:  stloc.s    l
+    IL_00ee:  ldloc.s    l
+    IL_00f0:  ldloc.2
+    IL_00f1:  ldlen
+    IL_00f2:  conv.i4
+    IL_00f3:  clt
+    IL_00f5:  stloc.s    CS$4$0000
+    IL_00f7:  ldloc.s    CS$4$0000
+    IL_00f9:  brtrue.s   IL_00d7
+
+//000257: 							indices[indicesIndex++] = firstfreeIndex + cubeIndices[l];
+//000258: 
+//000259: 						// add vertices
+//000260: 						for (int l = 0; l < cubeVertices.Length; l++)
+    IL_00fb:  ldc.i4.0
+    IL_00fc:  stloc.s    l
+    IL_00fe:  br.s       IL_016c
+
+//000261: 						{
+    IL_0100:  nop
+//000262: 							Vertex3D v = new Vertex3D(cubeVertices[l]);
+    IL_0101:  ldloc.3
+    IL_0102:  ldloc.s    l
+    IL_0104:  ldelem.ref
+    IL_0105:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Vertex3D::.ctor(class [IrrlichtLime]IrrlichtLime.Video.Vertex3D)
+    IL_010a:  stloc.s    v
+//000263: 							v.Color = new Color(i * colorBase + l, j * colorBase + l, k * colorBase + l);
+    IL_010c:  ldloc.s    v
+    IL_010e:  ldloc.s    i
+    IL_0110:  ldloc.s    colorBase
+    IL_0112:  mul
+    IL_0113:  ldloc.s    l
+    IL_0115:  add
+    IL_0116:  ldloc.s    j
+    IL_0118:  ldloc.s    colorBase
+    IL_011a:  mul
+    IL_011b:  ldloc.s    l
+    IL_011d:  add
+    IL_011e:  ldloc.s    k
+    IL_0120:  ldloc.s    colorBase
+    IL_0122:  mul
+    IL_0123:  ldloc.s    l
+    IL_0125:  add
+    IL_0126:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_012b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Vertex3D::set_Color(class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0130:  nop
+//000264: 							v.Position += new Vector3Df(i, j, k) * cubePosOffset;
+    IL_0131:  ldloc.s    v
+    IL_0133:  dup
+    IL_0134:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Video.Vertex3D::get_Position()
+    IL_0139:  ldloc.s    i
+    IL_013b:  conv.r4
+    IL_013c:  ldloc.s    j
+    IL_013e:  conv.r4
+    IL_013f:  ldloc.s    k
+    IL_0141:  conv.r4
+    IL_0142:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0147:  ldloc.s    cubePosOffset
+    IL_0149:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Multiply(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                float32)
+    IL_014e:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Addition(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0153:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Vertex3D::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0158:  nop
+//000265: 							vertices[verticesIndex++] = v;
+    IL_0159:  ldarg.2
+    IL_015a:  ldind.ref
+    IL_015b:  ldloc.s    verticesIndex
+    IL_015d:  dup
+    IL_015e:  ldc.i4.1
+    IL_015f:  add
+    IL_0160:  stloc.s    verticesIndex
+    IL_0162:  ldloc.s    v
+    IL_0164:  stelem.ref
+//000266: 						}
+    IL_0165:  nop
+//000260: 						for (int l = 0; l < cubeVertices.Length; l++)
+    IL_0166:  ldloc.s    l
+    IL_0168:  ldc.i4.1
+    IL_0169:  add
+    IL_016a:  stloc.s    l
+    IL_016c:  ldloc.s    l
+    IL_016e:  ldloc.3
+    IL_016f:  ldlen
+    IL_0170:  conv.i4
+    IL_0171:  clt
+    IL_0173:  stloc.s    CS$4$0000
+    IL_0175:  ldloc.s    CS$4$0000
+    IL_0177:  brtrue.s   IL_0100
+
+//000261: 						{
+//000262: 							Vertex3D v = new Vertex3D(cubeVertices[l]);
+//000263: 							v.Color = new Color(i * colorBase + l, j * colorBase + l, k * colorBase + l);
+//000264: 							v.Position += new Vector3Df(i, j, k) * cubePosOffset;
+//000265: 							vertices[verticesIndex++] = v;
+//000266: 						}
+//000267: 					}
+    IL_0179:  nop
+//000252: 					for (int k = 0; k < N; k++)
+    IL_017a:  ldloc.s    k
+    IL_017c:  ldc.i4.1
+    IL_017d:  add
+    IL_017e:  stloc.s    k
+    IL_0180:  ldloc.s    k
+    IL_0182:  ldarg.1
+    IL_0183:  clt
+    IL_0185:  stloc.s    CS$4$0000
+    IL_0187:  ldloc.s    CS$4$0000
+    IL_0189:  brtrue     IL_00cd
+
+//000253: 					{
+//000254: 						// add indices
+//000255: 						uint firstfreeIndex = (uint)verticesIndex;
+//000256: 						for (int l = 0; l < cubeIndices.Length; l++)
+//000257: 							indices[indicesIndex++] = firstfreeIndex + cubeIndices[l];
+//000258: 
+//000259: 						// add vertices
+//000260: 						for (int l = 0; l < cubeVertices.Length; l++)
+//000261: 						{
+//000262: 							Vertex3D v = new Vertex3D(cubeVertices[l]);
+//000263: 							v.Color = new Color(i * colorBase + l, j * colorBase + l, k * colorBase + l);
+//000264: 							v.Position += new Vector3Df(i, j, k) * cubePosOffset;
+//000265: 							vertices[verticesIndex++] = v;
+//000266: 						}
+//000267: 					}
+//000268: 				}
+    IL_018e:  nop
+//000250: 				for (int j = 0; j < N; j++)
+    IL_018f:  ldloc.s    j
+    IL_0191:  ldc.i4.1
+    IL_0192:  add
+    IL_0193:  stloc.s    j
+    IL_0195:  ldloc.s    j
+    IL_0197:  ldarg.1
+    IL_0198:  clt
+    IL_019a:  stloc.s    CS$4$0000
+    IL_019c:  ldloc.s    CS$4$0000
+    IL_019e:  brtrue     IL_00c4
+
+//000251: 				{
+//000252: 					for (int k = 0; k < N; k++)
+//000253: 					{
+//000254: 						// add indices
+//000255: 						uint firstfreeIndex = (uint)verticesIndex;
+//000256: 						for (int l = 0; l < cubeIndices.Length; l++)
+//000257: 							indices[indicesIndex++] = firstfreeIndex + cubeIndices[l];
+//000258: 
+//000259: 						// add vertices
+//000260: 						for (int l = 0; l < cubeVertices.Length; l++)
+//000261: 						{
+//000262: 							Vertex3D v = new Vertex3D(cubeVertices[l]);
+//000263: 							v.Color = new Color(i * colorBase + l, j * colorBase + l, k * colorBase + l);
+//000264: 							v.Position += new Vector3Df(i, j, k) * cubePosOffset;
+//000265: 							vertices[verticesIndex++] = v;
+//000266: 						}
+//000267: 					}
+//000268: 				}
+//000269: 
+//000270: 				device.Logger.Log(
+    IL_01a3:  ldarg.0
+    IL_01a4:  ldfld      class [IrrlichtLime]IrrlichtLime.IrrlichtDevice L07.FastStaticRendering.MeshBuffersBatch::device
+    IL_01a9:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_01ae:  ldc.i4.5
+    IL_01af:  newarr     [mscorlib]System.Object
+    IL_01b4:  stloc.s    CS$0$0001
+    IL_01b6:  ldloc.s    CS$0$0001
+    IL_01b8:  ldc.i4.0
+    IL_01b9:  ldloc.s    i
+    IL_01bb:  ldc.i4.1
+    IL_01bc:  add
+    IL_01bd:  ldc.i4.s   100
+    IL_01bf:  mul
+    IL_01c0:  ldarg.1
+    IL_01c1:  div
+    IL_01c2:  box        [mscorlib]System.Int32
+    IL_01c7:  stelem.ref
+    IL_01c8:  ldloc.s    CS$0$0001
+    IL_01ca:  ldc.i4.1
+    IL_01cb:  ldstr      "%: "
+    IL_01d0:  stelem.ref
+    IL_01d1:  ldloc.s    CS$0$0001
+    IL_01d3:  ldc.i4.2
+    IL_01d4:  ldloc.s    i
+    IL_01d6:  ldc.i4.1
+    IL_01d7:  add
+    IL_01d8:  ldarg.1
+    IL_01d9:  mul
+    IL_01da:  ldarg.1
+    IL_01db:  mul
+    IL_01dc:  box        [mscorlib]System.Int32
+    IL_01e1:  stelem.ref
+    IL_01e2:  ldloc.s    CS$0$0001
+    IL_01e4:  ldc.i4.3
+    IL_01e5:  ldstr      " cubes has been generated. ~"
+    IL_01ea:  stelem.ref
+    IL_01eb:  ldloc.s    CS$0$0001
+    IL_01ed:  ldc.i4.4
+    IL_01ee:  call       string L07.FastStaticRendering.Program::get_MemUsageText()
+    IL_01f3:  stelem.ref
+    IL_01f4:  ldloc.s    CS$0$0001
+    IL_01f6:  call       string [mscorlib]System.String::Concat(object[])
+    IL_01fb:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+    IL_0200:  nop
+//000271: 					(((i + 1) * 100) / N) + "%: " +
+//000272: 					(i + 1) * N * N + " cubes has been generated. ~" +
+//000273: 					Program.MemUsageText);
+//000274: 
+//000275: 				if ((i & 0xf) == 0xf)
+    IL_0201:  ldloc.s    i
+    IL_0203:  ldc.i4.s   15
+    IL_0205:  and
+    IL_0206:  ldc.i4.s   15
+    IL_0208:  ceq
+    IL_020a:  ldc.i4.0
+    IL_020b:  ceq
+    IL_020d:  stloc.s    CS$4$0000
+    IL_020f:  ldloc.s    CS$4$0000
+    IL_0211:  brtrue.s   IL_0219
+
+//000276: 					GC.Collect();
+    IL_0213:  call       void [mscorlib]System.GC::Collect()
+    IL_0218:  nop
+//000277: 			}
+    IL_0219:  nop
+//000248: 			for (int i = 0; i < N; i++)
+    IL_021a:  ldloc.s    i
+    IL_021c:  ldc.i4.1
+    IL_021d:  add
+    IL_021e:  stloc.s    i
+    IL_0220:  ldloc.s    i
+    IL_0222:  ldarg.1
+    IL_0223:  clt
+    IL_0225:  stloc.s    CS$4$0000
+    IL_0227:  ldloc.s    CS$4$0000
+    IL_0229:  brtrue     IL_00bb
+
+//000249: 			{
+//000250: 				for (int j = 0; j < N; j++)
+//000251: 				{
+//000252: 					for (int k = 0; k < N; k++)
+//000253: 					{
+//000254: 						// add indices
+//000255: 						uint firstfreeIndex = (uint)verticesIndex;
+//000256: 						for (int l = 0; l < cubeIndices.Length; l++)
+//000257: 							indices[indicesIndex++] = firstfreeIndex + cubeIndices[l];
+//000258: 
+//000259: 						// add vertices
+//000260: 						for (int l = 0; l < cubeVertices.Length; l++)
+//000261: 						{
+//000262: 							Vertex3D v = new Vertex3D(cubeVertices[l]);
+//000263: 							v.Color = new Color(i * colorBase + l, j * colorBase + l, k * colorBase + l);
+//000264: 							v.Position += new Vector3Df(i, j, k) * cubePosOffset;
+//000265: 							vertices[verticesIndex++] = v;
+//000266: 						}
+//000267: 					}
+//000268: 				}
+//000269: 
+//000270: 				device.Logger.Log(
+//000271: 					(((i + 1) * 100) / N) + "%: " +
+//000272: 					(i + 1) * N * N + " cubes has been generated. ~" +
+//000273: 					Program.MemUsageText);
+//000274: 
+//000275: 				if ((i & 0xf) == 0xf)
+//000276: 					GC.Collect();
+//000277: 			}
+//000278: 		}
+    IL_022e:  ret
+  } // end of method MeshBuffersBatch::generateVerticesAndIndices
+
+} // end of class L07.FastStaticRendering.MeshBuffersBatch
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

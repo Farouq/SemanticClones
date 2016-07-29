@@ -1,0 +1,120 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  ldarg.s    ck
+  ldnull
+  ceq
+stloc.2
+ldloc.2
+brfalse.s
+  ldarg.s    cc
+  ldarg.2
+  ldelem.u2
+stloc.0
+br.s
+  nop
+  ldarg.s    ck
+  ldarg.2
+  ldarg.s    ck
+  ldlen
+  conv.ovf.i4
+  ldc.i4.1
+  sub.ovf
+  call       int32 [mscorlib]System.Math::Min(int32,
+                                                        int32)
+  ldelem.ref
+  ldarg.s    cc
+  ldarg.2
+  ldelem.u2
+  callvirt   instance char [iText]com.lowagie.text.pdf.PdfChunk::getUnicodeEquivalent(char)
+stloc.0
+  nop
+ldloc.0
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(char)
+  ldstr      "."
+  ldc.i4.0
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string,
+                                                                                                                    string,
+                                                                                                                    bool)
+  ldc.i4.0
+  ceq
+stloc.1
+ldloc.1
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldarg.s    ck
+  ldnull
+  ceq
+  ldc.i4.0
+  ceq
+stloc.2
+ldloc.2
+brtrue.s
+  ldarg.s    cc
+  ldarg.2
+  ldelem.u2
+stloc.0
+br.s
+  ldarg.s    ck
+  ldarg.2
+  ldarg.s    ck
+  ldlen
+  conv.i4
+  ldc.i4.1
+  sub
+  call       int32 [mscorlib]System.Math::Min(int32,
+                                                        int32)
+  ldelem.ref
+  ldarg.s    cc
+  ldarg.2
+  ldelem.u2
+  callvirt   instance char [iTextdotNET]com.lowagie.text.pdf.PdfChunk::getUnicodeEquivalent(char)
+stloc.0
+ldloc.0
+  ldc.i4.s   46
+  ceq
+stloc.1
+br.s
+ldloc.1
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+  ldarg.s    ck
+brtrue.s
+  ldarg.s    cc
+  ldarg.2
+  ldelem.u2
+stloc.0
+br.s
+  ldarg.s    ck
+  ldarg.2
+  ldarg.s    ck
+  ldlen
+  ldc.i4.1
+  sub
+  call       int32 [vjslib]java.lang.Math::min(int32,
+                                                         int32)
+  ldelem.ref
+  ldarg.s    cc
+  ldarg.2
+  ldelem.u2
+  callvirt   instance char [iTextdotNET]com.lowagie.text.pdf.PdfChunk::getUnicodeEquivalent(char)
+stloc.0
+ldloc.0
+  conv.i4
+  ldc.i4.s   46
+beq.s
+  ldc.i4.0
+br.s
+  ldc.i4.1
+stloc.1
+br.s
+ldloc.1
+  ret
+
+]]></source>
+</source_elements></project>

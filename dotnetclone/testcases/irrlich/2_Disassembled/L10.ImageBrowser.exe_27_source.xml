@@ -1,0 +1,1120 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L09.SimpleLOD\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="26" endline="57"><![CDATA[
+ 		public TextureManager(IrrDevice irrDevice)
+ 		{
+ 			this.irrDevice = irrDevice;
+ 
+ 			threadCommands = new Queue<ThreadCommand>();
+ 			loadedTextures = new List<string>();
+ 
+ 			// generate "no preview" texture
+ 
+ 			int h = 256;
+ 			Image i = irrDevice.DriverNoCheck.CreateImage(ColorFormat.A8R8G8B8, new Dimension2Di(h));
+ 			i.Fill(new Color(0x112233));
+ 			for (int a = 0; a < h; a++)
+ 			{
+ 				i.SetPixel(a, 0, new Color(0x557799));
+ 				i.SetPixel(a, h - 1, new Color(0x557799));
+ 				i.SetPixel(0, a, new Color(0x557799));
+ 				i.SetPixel(h - 1, a, new Color(0x557799));
+ 
+ 				if (a > 16 && a < h - 16)
+ 				{
+ 					i.SetPixel(a, a, new Color(0x557799));
+ 					i.SetPixel(h - a - 1, a, new Color(0x557799));
+ 				}
+ 			}
+ 			for (int a = 0; a < h; a++)
+ 			{
+ 				i.SetPixel(a, 0, new Color(0x557799));
+ 				i.SetPixel(a, h - 1, new Color(0x557799));
+ 				i.SetPixel(0, a, new Color(0x557799));
+ 				i.SetPixel(h - 1, a, new Color(0x557799));
+ 
+ 				if (a > 16 && a < h - 16)
+ 				{
+ 					i.SetPixel(a, a, new Color(0x557799));
+ 					i.SetPixel(h - a - 1, a, new Color(0x557799));
+ 				}
+ 			}
+ 
+ 			irrDevice.Lock();
+ 			noPreviewTexture = irrDevice.Driver.AddTexture("NoPreviewTexture", i);
+ 			irrDevice.Unlock();
+ 
+ 			i.Drop();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="58" endline="68"><![CDATA[
+ 
+ 		public void Start(int threadCount)
+ 		{
+ 			threads = new Thread[threadCount];
+ 			for (int i = 0; i < threadCount; i++)
+ 			{
+ 				threads[i] = new Thread(thread_Main);
+ 				threads[i].Name = GetType().Name + "/Thread#" + (i + 1);
+ 				threads[i].Start();
+ 			}
+ 			for (int i = 0; i < threadCount; i++)
+ 			{
+ 				threads[i] = new Thread(thread_Main);
+ 				threads[i].Name = GetType().Name + "/Thread#" + (i + 1);
+ 				threads[i].Start();
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="69" endline="81"><![CDATA[
+ 
+ 		public void Stop()
+ 		{
+ 			if (threads == null)
+ 				return;
+ 
+ 			addThreadCommand(ThreadCommandType.Stop, false);
+ 			foreach (Thread t in threads)
+ 				t.Join();
+ 			foreach (Thread t in threads)
+ 				t.Join();
+ 
+ 			System.Diagnostics.Debug.Assert(threadCommands.Count == 1);
+ 			threadCommands.Dequeue();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="82" endline="87"><![CDATA[
+ 
+ 		public void LoadTexture(SceneNode node, string path, Dimension2Di size, bool topPriority = false)
+ 		{
+ 			node.Grab();
+ 			addThreadCommand(ThreadCommandType.LoadTexture, topPriority, node, path, size);
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="88" endline="92"><![CDATA[
+ 
+ 		public void UnloadTexture(string path)
+ 		{
+ 			addThreadCommand(ThreadCommandType.UnloadTexture, false, path);
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="93" endline="103"><![CDATA[
+ 
+ 		public void EnqueueUnloadingOfAllLoadedTextures()
+ 		{
+ 			lock (loadedTextures)
+ 			{
+ 				foreach (string t in loadedTextures)
+ 					addThreadCommand(ThreadCommandType.UnloadTexture, false, t);
+ 				foreach (string t in loadedTextures)
+ 					addThreadCommand(ThreadCommandType.UnloadTexture, false, t);
+ 
+ 				loadedTextures.Clear();
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="104" endline="111"><![CDATA[
+ 
+ 		public int GetCommandQueueLength()
+ 		{
+ 			lock (threadCommands)
+ 			{
+ 				return threadCommands.Count;
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="112" endline="143"><![CDATA[
+ 
+ 		void addThreadCommand(ThreadCommandType command, bool topPriority, params object[] args)
+ 		{
+ 			ThreadCommand cmd = new ThreadCommand();
+ 			cmd.Type = command;
+ 			cmd.Params = args;
+ 
+ 			lock (threadCommands)
+ 			{
+ 				if (cmd.Type == ThreadCommandType.Stop)
+ 				{
+ 					foreach (ThreadCommand c in threadCommands)
+ 						if (c.Type == ThreadCommandType.LoadTexture)
+ 							(c.Params[0] as SceneNode).Drop();
+ 					foreach (ThreadCommand c in threadCommands)
+ 						if (c.Type == ThreadCommandType.LoadTexture)
+ 							(c.Params[0] as SceneNode).Drop();
+ 
+ 					threadCommands.Clear();
+ 				}
+ 
+ 				if (topPriority && threadCommands.Count > 0)
+ 				{
+ 					ThreadCommand[] a = threadCommands.ToArray();
+ 					threadCommands.Clear();
+ 					threadCommands.Enqueue(cmd);
+ 					for (int i = 0; i < a.Length; i++)
+ 						threadCommands.Enqueue(a[i]);
+ 					for (int i = 0; i < a.Length; i++)
+ 						threadCommands.Enqueue(a[i]);
+ 				}
+ 				else
+ 				{
+ 					threadCommands.Enqueue(cmd);
+ 				}
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="144" endline="176"><![CDATA[
+ 
+ 		void thread_Main()
+ 		{
+ 			irrDevice.Logger.Log(Thread.CurrentThread.Name, "Started", LogLevel.Information);
+ 
+ 			while (true)
+ 			{
+ 				ThreadCommand cmd = thread_GetNextCommand();
+ 
+ 				if (cmd == null)
+ 				{
+ 					Thread.Sleep(1);
+ 					continue;
+ 				}
+ 
+ 				switch (cmd.Type)
+ 				{
+ 					case ThreadCommandType.Stop
+ 						irrDevice.Logger.Log(Thread.CurrentThread.Name, "Finished", LogLevel.Information);
+ 						return;
+ 
+ 					case ThreadCommandType.LoadTexture
+ 						irrDevice.Logger.Log(Thread.CurrentThread.Name, "Loading " + (cmd.Params[1] as string) + "|" + (cmd.Params[2] as Dimension2Di), LogLevel.Information);
+ 						thread_LoadTexture(cmd.Params[0] as SceneNode, cmd.Params[1] as string, cmd.Params[2] as Dimension2Di);
+ 						break;
+ 
+ 					case ThreadCommandType.UnloadTexture
+ 						irrDevice.Logger.Log(Thread.CurrentThread.Name, "Unloading " + (cmd.Params[0] as string), LogLevel.Information);
+ 						thread_UnloadTexture(cmd.Params[0] as string);
+ 						break;
+ 				}
+ 			}
+ 			while (true)
+ 			{
+ 				ThreadCommand cmd = thread_GetNextCommand();
+ 
+ 				if (cmd == null)
+ 				{
+ 					Thread.Sleep(1);
+ 					continue;
+ 				}
+ 
+ 				switch (cmd.Type)
+ 				{
+ 					case ThreadCommandType.Stop
+ 						irrDevice.Logger.Log(Thread.CurrentThread.Name, "Finished", LogLevel.Information);
+ 						return;
+ 
+ 					case ThreadCommandType.LoadTexture
+ 						irrDevice.Logger.Log(Thread.CurrentThread.Name, "Loading " + (cmd.Params[1] as string) + "|" + (cmd.Params[2] as Dimension2Di), LogLevel.Information);
+ 						thread_LoadTexture(cmd.Params[0] as SceneNode, cmd.Params[1] as string, cmd.Params[2] as Dimension2Di);
+ 						break;
+ 
+ 					case ThreadCommandType.UnloadTexture
+ 						irrDevice.Logger.Log(Thread.CurrentThread.Name, "Unloading " + (cmd.Params[0] as string), LogLevel.Information);
+ 						thread_UnloadTexture(cmd.Params[0] as string);
+ 						break;
+ 				}
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="177" endline="196"><![CDATA[
+ 
+ 		ThreadCommand thread_GetNextCommand()
+ 		{
+ 			ThreadCommand cmd = null;
+ 
+ 			lock (threadCommands)
+ 			{
+ 				if (threadCommands.Count > 0)
+ 				{
+ 					// We do first Peek and only then Dequeue, because we do not want Stop command to be processed only by one thread (so other will not get this command)
+ 
+ 					cmd = threadCommands.Peek();
+ 
+ 					if (cmd.Type != ThreadCommandType.Stop)
+ 						threadCommands.Dequeue();
+ 				}
+ 			}
+ 
+ 			return cmd;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="197" endline="237"><![CDATA[
+ 
+ 		void thread_LoadTexture(SceneNode node, string path, Dimension2Di size)
+ 		{
+ 			Texture t;
+ 			Dimension2Di si;
+ 			Image i = irrDevice.DriverNoCheck.CreateImage(path);
+ 
+ 			if (i != null)
+ 			{
+ 				Image j = irrDevice.DriverNoCheck.CreateImage(ColorFormat.A8R8G8B8, size);
+ 				i.CopyToScaling(j);
+ 
+ 				irrDevice.Lock();
+ 				t = irrDevice.Driver.AddTexture(path + "|" + size.ToString(), j);
+ 				irrDevice.Unlock();
+ 
+ 				si = i.Dimension;
+ 
+ 				i.Drop();
+ 				j.Drop();
+ 
+ 				lock (loadedTextures)
+ 				{
+ 					loadedTextures.Add(t.Name.Path);
+ 				}
+ 			}
+ 			else
+ 			{
+ 				t = noPreviewTexture;
+ 				si = noPreviewTexture.Size;
+ 			}
+ 
+ 			irrDevice.Lock();
+ 			node.SetMaterialTexture(0, t);
+ 			irrDevice.Unlock();
+ 
+ 			if (OnTextureLoaded != null)
+ 				OnTextureLoaded(node, t, si);
+ 
+ 			node.Drop();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\TextureManager.cs" startline="238" endline="248"><![CDATA[
+ 
+ 		void thread_UnloadTexture(string path)
+ 		{
+ 			irrDevice.Lock();
+ 
+ 			Texture t = irrDevice.Driver.FindTexture(path);
+ 			if (t != null)
+ 				irrDevice.Driver.RemoveTexture(t);
+ 
+ 			irrDevice.Unlock();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="21" endline="21"><![CDATA[
+ 		public IrrlichtDevice Device { get { if (!IsLocked()) throw new InvalidOperationException(); else return device; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="22" endline="22"><![CDATA[
+ 		public VideoDriver Driver { get { if (!IsLocked()) throw new InvalidOperationException(); else return device.VideoDriver; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="23" endline="23"><![CDATA[
+ 		public VideoDriver DriverNoCheck { get { return device.VideoDriver; } } // this one used for creating software images
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="24" endline="24"><![CDATA[
+ 		public SceneManager Scene { get { return device.SceneManager; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="25" endline="25"><![CDATA[
+ 		public GUIEnvironment GUI { get { return device.GUIEnvironment; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="26" endline="26"><![CDATA[
+ 		public IrrlichtLime.Timer Timer { get { return device.Timer; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="27" endline="27"><![CDATA[
+ 		public Randomizer Randomizer { get { return device.Randomizer; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="28" endline="28"><![CDATA[
+ 		public Logger Logger { get { return device.Logger; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="29" endline="45"><![CDATA[
+ 
+ 		public void Lock()
+ 		{
+ 			while (true)
+ 			{
+ 				Thread.Sleep(1);
+ 
+ 				lock (locker)
+ 				{
+ 					if (locked)
+ 						continue;
+ 
+ 					locked = true;
+ 					break;
+ 			while (true)
+ 			{
+ 				Thread.Sleep(1);
+ 
+ 				lock (locker)
+ 				{
+ 					if (locked)
+ 						continue;
+ 
+ 					locked = true;
+ 					break;
+ 				}
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="46" endline="56"><![CDATA[
+ 
+ 		public void Unlock()
+ 		{
+ 			lock (locker)
+ 			{
+ 				if (!locked)
+ 					throw new InvalidOperationException();
+ 
+ 				locked = false;
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="57" endline="64"><![CDATA[
+ 
+ 		public bool IsLocked()
+ 		{
+ 			lock (locker)
+ 			{
+ 				return locked;
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="65" endline="69"><![CDATA[
+ 
+ 		public void CreateDevice(DriverType driverType, Dimension2Di windowSize)
+ 		{
+ 			device = IrrlichtDevice.CreateDevice(driverType, windowSize);
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="70" endline="77"><![CDATA[
+ 
+ 		public void Drop()
+ 		{
+ 			if (IsLocked())
+ 				throw new InvalidOperationException();
+ 
+ 			device.Drop();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\IrrDevice.cs" startline="17" endline="18"><![CDATA[
+ 		object locker = new object();
+ 		bool locked = false;
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\AnimationManager.cs" startline="15" endline="20"><![CDATA[
+ 		List<AnimationItem> animationItems = new List<AnimationItem>();
+ 
+ 		public AnimationManager(IrrDevice irrDevice)
+ 		{
+ 			this.irrDevice = irrDevice;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\AnimationManager.cs" startline="21" endline="56"><![CDATA[
+ 
+ 		public void Add(SceneNode node, uint duration, Vector3Df targetPosition, Vector3Df targetRotation, Vector3Df targetScale)
+ 		{
+ 			Remove(node);
+ 
+ 			irrDevice.Timer.Tick();
+ 
+ 			AnimationItem a = new AnimationItem();
+ 			a.Node = node;
+ 			a.Node.Grab();
+ 			a.Duration = duration;
+ 			a.StartTime = irrDevice.Timer.Time;
+ 			
+ 			if (targetPosition != null)
+ 			{
+ 				a.TargetPosition = targetPosition;
+ 				a.StartPosition = node.Position;
+ 			}
+ 
+ 			if (targetRotation != null)
+ 			{
+ 				a.TargetRotation = targetRotation;
+ 				a.StartRotation = node.Rotation;
+ 			}
+ 
+ 			if (targetScale != null)
+ 			{
+ 				a.TargetScale = targetScale;
+ 				a.StartScale = node.Scale;
+ 			}
+ 
+ 			lock (animationItems)
+ 			{
+ 				animationItems.Add(a);
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\AnimationManager.cs" startline="57" endline="76"><![CDATA[
+ 
+ 		public void Remove(SceneNode node)
+ 		{
+ 			lock (animationItems)
+ 			{
+ 				int i = 0;
+ 				for (i = 0; i < animationItems.Count; i++)
+ 				{
+ 					if (animationItems[i].Node == node)
+ 						break;
+ 				}
+ 				for (i = 0; i < animationItems.Count; i++)
+ 				{
+ 					if (animationItems[i].Node == node)
+ 						break;
+ 				}
+ 
+ 				if (i < animationItems.Count)
+ 				{
+ 					setFinalAnimationState(i);
+ 					animationItems[i].Node.Drop();
+ 					animationItems.RemoveAt(i);
+ 				}
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\AnimationManager.cs" startline="77" endline="91"><![CDATA[
+ 
+ 		public bool IsAnimated(SceneNode node)
+ 		{
+ 			lock (animationItems)
+ 			{
+ 				int i = 0;
+ 				for (i = 0; i < animationItems.Count; i++)
+ 				{
+ 					if (animationItems[i].Node == node)
+ 						break;
+ 				}
+ 				for (i = 0; i < animationItems.Count; i++)
+ 				{
+ 					if (animationItems[i].Node == node)
+ 						break;
+ 				}
+ 
+ 				return i < animationItems.Count;
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\AnimationManager.cs" startline="92" endline="141"><![CDATA[
+ 
+ 		public void Run()
+ 		{
+ 			lock (animationItems)
+ 			{
+ 				uint t = irrDevice.Timer.Time;
+ 				List<int> candidatesToBeRemoved = new List<int>();
+ 
+ 				for (int i = 0; i < animationItems.Count; i++)
+ 				{
+ 					AnimationItem a = animationItems[i];
+ 					if (t >= a.StartTime + a.Duration)
+ 					{
+ 						setFinalAnimationState(i);
+ 						candidatesToBeRemoved.Add(i);
+ 					}
+ 					else
+ 					{
+ 						double d = (double)(t - a.StartTime) / a.Duration;
+ 
+ 						if (a.TargetPosition != null)
+ 						{
+ 							Vector3Df v = a.Node.Position;
+ 							v.Interpolate(a.TargetPosition, a.StartPosition, d);
+ 							a.Node.Position = v;
+ 						}
+ 
+ 						if (a.TargetRotation != null)
+ 						{
+ 							Vector3Df v = a.Node.Rotation;
+ 							v.Interpolate(a.TargetRotation, a.StartRotation, d);
+ 							a.Node.Rotation = v;
+ 						}
+ 
+ 						if (a.TargetScale != null)
+ 						{
+ 							Vector3Df v = a.Node.Scale;
+ 							v.Interpolate(a.TargetScale, a.StartScale, d);
+ 							a.Node.Scale = v;
+ 						}
+ 					}
+ 				}
+ 				for (int i = 0; i < animationItems.Count; i++)
+ 				{
+ 					AnimationItem a = animationItems[i];
+ 					if (t >= a.StartTime + a.Duration)
+ 					{
+ 						setFinalAnimationState(i);
+ 						candidatesToBeRemoved.Add(i);
+ 					}
+ 					else
+ 					{
+ 						double d = (double)(t - a.StartTime) / a.Duration;
+ 
+ 						if (a.TargetPosition != null)
+ 						{
+ 							Vector3Df v = a.Node.Position;
+ 							v.Interpolate(a.TargetPosition, a.StartPosition, d);
+ 							a.Node.Position = v;
+ 						}
+ 
+ 						if (a.TargetRotation != null)
+ 						{
+ 							Vector3Df v = a.Node.Rotation;
+ 							v.Interpolate(a.TargetRotation, a.StartRotation, d);
+ 							a.Node.Rotation = v;
+ 						}
+ 
+ 						if (a.TargetScale != null)
+ 						{
+ 							Vector3Df v = a.Node.Scale;
+ 							v.Interpolate(a.TargetScale, a.StartScale, d);
+ 							a.Node.Scale = v;
+ 						}
+ 					}
+ 				}
+ 
+ 				for (int i = candidatesToBeRemoved.Count - 1; i >= 0; i--)
+ 				{
+ 					animationItems[candidatesToBeRemoved[i]].Node.Drop();
+ 					animationItems.RemoveAt(candidatesToBeRemoved[i]);
+ 				}
+ 				for (int i = candidatesToBeRemoved.Count - 1; i >= 0; i--)
+ 				{
+ 					animationItems[candidatesToBeRemoved[i]].Node.Drop();
+ 					animationItems.RemoveAt(candidatesToBeRemoved[i]);
+ 				}
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\AnimationManager.cs" startline="142" endline="152"><![CDATA[
+ 
+ 		public void Clear()
+ 		{
+ 			lock (animationItems)
+ 			{
+ 				for (int i = 0; i < animationItems.Count; i++)
+ 					animationItems[i].Node.Drop();
+ 				for (int i = 0; i < animationItems.Count; i++)
+ 					animationItems[i].Node.Drop();
+ 
+ 				animationItems.Clear();
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\AnimationManager.cs" startline="153" endline="166"><![CDATA[
+ 
+ 		void setFinalAnimationState(int i)
+ 		{
+ 			AnimationItem a = animationItems[i];
+ 
+ 			if (a.TargetPosition != null)
+ 				a.Node.Position = a.TargetPosition;
+ 
+ 			if (a.TargetRotation != null)
+ 				a.Node.Rotation = a.TargetRotation;
+ 
+ 			if (a.TargetScale != null)
+ 				a.Node.Scale = a.TargetScale;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\Program.cs" startline="43" endline="118"><![CDATA[
+ 		{
+ 			irr = new IrrDevice();
+ 			irr.CreateDevice(DriverType.Direct3D9, new Dimension2Di(1024, 600));
+ 			animationManager = new AnimationManager(irr);
+ 			textureManager = new TextureManager(irr);
+ 			textureManager.OnTextureLoaded += new TextureManager.TextureLoadedDelegate(textureManager_OnTextureLoaded);
+ 
+ 			irr.Lock();
+ 
+ 			irr.Device.SetWindowResizable(true);
+ 			irr.Device.OnEvent += new IrrlichtDevice.EventHandler(Device_OnEvent);
+ 
+ 			irr.Scene.AddCameraSceneNode();
+ 			irr.Scene.AddEmptySceneNode(null, PreviewRootNodeId);
+ 			irr.Scene.AddHillPlaneMesh(PreviewPlateMeshName, new Dimension2Df(PreviewPlateSize), new Dimension2Di(1));
+ 
+ 			initUI();
+ 			openFolder(Path.GetFullPath("../../media"));
+ 
+ 			int lastFPS = -1;
+ 			while (irr.Device.Run())
+ 			{
+ 				irr.Driver.BeginScene(true, true, new Color(0x112233));
+ 
+ 				irr.Scene.DrawAll();
+ 
+ 				if (selectedNode == null)
+ 					irr.GUI.DrawAll();
+ 
+ 				drawScrollPosition();
+ 				drawTextureManagerActivity();
+ 				drawPreviewPlateTooltip();
+ 
+ 				irr.Driver.EndScene();
+ 
+ 				int fps = irr.Driver.FPS;
+ 				if (lastFPS != fps)
+ 				{
+ 					irr.Device.SetWindowCaption(String.Format(
+ 						"Image Browser - Irrlicht Lime [{0}] fps
+ 						irr.Driver.Name, fps));
+ 
+ 					lastFPS = fps;
+ 				}
+ 
+ 				irr.Unlock();
+ 
+ 				animationManager.Run();
+ 
+ 				if (wantChangeFolder)
+ 				{
+ 					wantChangeFolder = false;
+ 					string p = irr.GUI.RootElement.GetElementFromID(CurrentFolderStaticTextId).Text;
+ 					System.Windows.Forms.FolderBrowserDialog d = new System.Windows.Forms.FolderBrowserDialog();
+ 					d.SelectedPath = p;
+ 					if (d.ShowDialog() == System.Windows.Forms.DialogResult.OK &&
+ 						d.SelectedPath != p)
+ 					{
+ 						openFolder(d.SelectedPath);
+ 					}
+ 				}
+ 
+ 				if (wantUpdateActiveCameraAspectRatio)
+ 				{
+ 					wantUpdateActiveCameraAspectRatio = false;
+ 					irr.Scene.ActiveCamera.AspectRatio = (float)irr.DriverNoCheck.ScreenSize.Width / irr.DriverNoCheck.ScreenSize.Height;
+ 				}
+ 
+ 				irr.Lock();
+ 			}
+ 			while (irr.Device.Run())
+ 			{
+ 				irr.Driver.BeginScene(true, true, new Color(0x112233));
+ 
+ 				irr.Scene.DrawAll();
+ 
+ 				if (selectedNode == null)
+ 					irr.GUI.DrawAll();
+ 
+ 				drawScrollPosition();
+ 				drawTextureManagerActivity();
+ 				drawPreviewPlateTooltip();
+ 
+ 				irr.Driver.EndScene();
+ 
+ 				int fps = irr.Driver.FPS;
+ 				if (lastFPS != fps)
+ 				{
+ 					irr.Device.SetWindowCaption(String.Format(
+ 						"Image Browser - Irrlicht Lime [{0}] fps
+ 						irr.Driver.Name, fps));
+ 
+ 					lastFPS = fps;
+ 				}
+ 
+ 				irr.Unlock();
+ 
+ 				animationManager.Run();
+ 
+ 				if (wantChangeFolder)
+ 				{
+ 					wantChangeFolder = false;
+ 					string p = irr.GUI.RootElement.GetElementFromID(CurrentFolderStaticTextId).Text;
+ 					System.Windows.Forms.FolderBrowserDialog d = new System.Windows.Forms.FolderBrowserDialog();
+ 					d.SelectedPath = p;
+ 					if (d.ShowDialog() == System.Windows.Forms.DialogResult.OK &&
+ 						d.SelectedPath != p)
+ 					{
+ 						openFolder(d.SelectedPath);
+ 					}
+ 				}
+ 
+ 				if (wantUpdateActiveCameraAspectRatio)
+ 				{
+ 					wantUpdateActiveCameraAspectRatio = false;
+ 					irr.Scene.ActiveCamera.AspectRatio = (float)irr.DriverNoCheck.ScreenSize.Width / irr.DriverNoCheck.ScreenSize.Height;
+ 				}
+ 
+ 				irr.Lock();
+ 			}
+ 
+ 			irr.Unlock();
+ 			textureManager.Stop();
+ 			animationManager.Clear();
+ 			irr.Drop();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\Program.cs" startline="119" endline="134"><![CDATA[
+ 
+ 		static void textureManager_OnTextureLoaded(SceneNode node, Texture texture, Dimension2Di sourceDimension)
+ 		{
+ 			if (texture.Size == PreviewTextureSize || texture.Name.Path == "NoPreviewTexture")
+ 			{
+ 				float a = (float)sourceDimension.Height / sourceDimension.Width;
+ 				animationManager.Remove(node);
+ 				animationManager.Add(node, 400, new Vector3Df(node.Position.X, 0, node.Position.Z), null, new Vector3Df(1, 1, a));
+ 
+ 				if (texture.Name.Path != "NoPreviewTexture")
+ 				{
+ 					previewPlateInfo[node.ID] += "\n" + sourceDimension.ToString();
+ 					node.ID |= SelectableNodeIdFlag;
+ 				}
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\Program.cs" startline="135" endline="281"><![CDATA[
+ 
+ 		static bool Device_OnEvent(Event evnt)
+ 		{
+ 			if (evnt.Type == EventType.GUI &&
+ 				evnt.GUI.Type == GUIEventType.ButtonClicked &&
+ 				evnt.GUI.Caller.ID == ChooseFolderButtonId)
+ 			{
+ 				wantChangeFolder = true;
+ 				return true;
+ 			}
+ 
+ 			if (evnt.Type == EventType.Mouse &&
+ 				evnt.Mouse.Type == MouseEventType.Wheel &&
+ 				selectedNode == null)
+ 			{
+ 				Vector3Df p = irr.Scene.ActiveCamera.Position;
+ 				Vector3Df t = irr.Scene.ActiveCamera.Target;
+ 				float s = irr.Scene.ActiveCamera.Position.Z + evnt.Mouse.Wheel * 16;
+ 
+ 				if (s < 0)
+ 					s = 0;
+ 
+ 				if (s > maxScrollPosition)
+ 					s = maxScrollPosition;
+ 
+ 				t.Z = t.Z - p.Z + s;
+ 				p.Z = s;
+ 
+ 				irr.Scene.ActiveCamera.Position = p;
+ 				irr.Scene.ActiveCamera.Target = t;
+ 
+ 				return true;
+ 			}
+ 
+ 			if (evnt.Type == EventType.Mouse &&
+ 				evnt.Mouse.Type == MouseEventType.Move &&
+ 				selectedNode == null)
+ 			{
+ 				SceneNode n =
+ 					irr.Scene.SceneCollisionManager.GetSceneNodeFromScreenCoordinatesBB(
+ 					new Vector2Di(evnt.Mouse.X, evnt.Mouse.Y),
+ 					0,
+ 					irr.Scene.GetSceneNodeFromID(PreviewRootNodeId));
+ 
+ 				if (hoveredNode != n)
+ 				{
+ 					if (hoveredNode != null)
+ 					{
+ 						animationManager.Remove(hoveredNode);
+ 
+ 						animationManager.Add(
+ 							hoveredNode,
+ 							500,
+ 							new Vector3Df(hoveredNode.Position.X, hoveredNode.Position.Y - 15, hoveredNode.Position.Z),
+ 							new Vector3Df(0),
+ 							hoveredNode.Scale / 1.5f);
+ 					}
+ 
+ 					if (n != null)
+ 					{
+ 						animationManager.Remove(n);
+ 
+ 						animationManager.Add(
+ 							n,
+ 							40,
+ 							new Vector3Df(n.Position.X, n.Position.Y + 15, n.Position.Z),
+ 							new Vector3Df(-20, 0, 0),
+ 							n.Scale * 1.5f);
+ 					}
+ 
+ 					hoveredNode = n;
+ 				}
+ 
+ 				return true;
+ 			}
+ 
+ 			if (evnt.Type == EventType.Mouse &&
+ 				evnt.Mouse.Type == MouseEventType.LeftUp &&
+ 				hoveredNode != null &&
+ 				(hoveredNode.ID & SelectableNodeIdFlag) == SelectableNodeIdFlag &&
+ 				selectedNode == null)
+ 			{
+ 				animationManager.Remove(hoveredNode);
+ 
+ 				Mesh m = irr.Scene.MeshCache.GetMesh(PreviewPlateMeshName);
+ 				MeshSceneNode n = irr.Scene.AddMeshSceneNode(m);
+ 				n.SetMaterialFlag(MaterialFlag.Lighting, false);
+ 				n.Position = hoveredNode.Position;
+ 				n.Rotation = hoveredNode.Rotation;
+ 				n.Scale = hoveredNode.Scale;
+ 
+ 				string t = hoveredNode.GetMaterial(0).GetTexture(0).Name.Path.Split('|')[0];
+ 
+ 				Dimension2Di d = new Dimension2Di(2048);
+ 				if (d.Area > irr.Driver.MaxTextureSize.Area)
+ 					d = irr.Driver.MaxTextureSize;
+ 
+ 				n.SetMaterialTexture(0, hoveredNode.GetMaterial(0).GetTexture(0));
+ 				textureManager.LoadTexture(n, t, d, true);
+ 
+ 				animationManager.Add(
+ 					n,
+ 					200,
+ 					irr.Scene.ActiveCamera.AbsolutePosition + new Vector3Df(0, -48, 40), // TODO
+ 					new Vector3Df(-39.85f, 0, 0), // using current active camera info (like view matrix or projection one)
+ 					n.Scale * ((irr.Scene.ActiveCamera.FOV - 0.125f) / n.Scale.Z));
+ 
+ 				selectedNode = n;
+ 				hoveredNode.Visible = false;
+ 				irr.GUI.RootElement.GetElementFromID(ChooseFolderButtonId).Enabled = false;
+ 
+ 				return true;
+ 			}
+ 
+ 			if (evnt.Type == EventType.Mouse &&
+ 				evnt.Mouse.Type == MouseEventType.LeftUp &&
+ 				selectedNode != null &&
+ 				selectedNode.GetMaterial(0).GetTexture(0) != hoveredNode.GetMaterial(0).GetTexture(0))
+ 			{
+ 				if (animationManager.IsAnimated(selectedNode))
+ 					return true;
+ 
+ 				Texture t = selectedNode.GetMaterial(0).GetTexture(0);
+ 				if (t != null)
+ 				{
+ 					string s = t.Name.Path;
+ 					selectedNode.SetMaterialTexture(0, null);
+ 					textureManager.UnloadTexture(s);
+ 				}
+ 
+ 				selectedNode.Remove();
+ 				selectedNode = null;
+ 
+ 				hoveredNode.Visible = true;
+ 				irr.GUI.RootElement.GetElementFromID(ChooseFolderButtonId).Enabled = true;
+ 
+ 				return true;
+ 			}
+ 
+ 			if (evnt.Type == EventType.Log &&
+ 				evnt.Log.Text.StartsWith("Resizing window"))
+ 			{
+ 				wantUpdateActiveCameraAspectRatio = true;
+ 			}
+ 
+ 			return false;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\Program.cs" startline="282" endline="292"><![CDATA[
+ 
+ 		static void initUI()
+ 		{
+ 			irr.GUI.Skin.SetFont(irr.GUI.GetFont("../../media/fontlucida.png"));
+ 
+ 			irr.GUI.AddButton(new Recti(20, 10, 160, 40), null, ChooseFolderButtonId, "Choose folder...");
+ 
+ 			GUIStaticText t = irr.GUI.AddStaticText("???", new Recti(180, 10, irr.Device.VideoDriver.ScreenSize.Width - 20, 40), false, false, null, CurrentFolderStaticTextId);
+ 			t.SetTextAlignment(GUIAlignment.UpperLeft, GUIAlignment.Center);
+ 			t.OverrideColor = Color.OpaqueWhite;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\Program.cs" startline="293" endline="338"><![CDATA[
+ 
+ 		static void openFolder(string newFolder)
+ 		{
+ 			textureManager.Stop();
+ 			textureManager.Start(TextureManagerThreadCount);
+ 			textureManager.EnqueueUnloadingOfAllLoadedTextures();
+ 			animationManager.Clear();
+ 			previewPlateInfo.Clear();
+ 
+ 			irr.GUI.RootElement.GetElementFromID(CurrentFolderStaticTextId).Text = newFolder;
+ 
+ 			SceneNode p = irr.Scene.GetSceneNodeFromID(PreviewRootNodeId);
+ 			p.RemoveChildren();
+ 
+ 			int r = 10;
+ 			float x = 0, z = 0;
+ 			Mesh m = irr.Scene.MeshCache.GetMesh(PreviewPlateMeshName);
+ 			string[] f = Directory.GetFiles(newFolder, "*.*", SearchOption.TopDirectoryOnly);
+ 			for (int i = 0; i < f.Length; i++)
+ 			{
+ 				x += PreviewPlateSize * 1.1f;
+ 				if ((i % r) == 0)
+ 				{
+ 					x = 0;
+ 					z += PreviewPlateSize * 1.1f;
+ 				}
+ 
+ 				MeshSceneNode n = irr.Scene.AddMeshSceneNode(m, p, i | PreviewPlateNodeIdFlag);
+ 				n.SetMaterialFlag(MaterialFlag.Lighting, false);
+ 				n.Position = new Vector3Df(x, 1000, z);
+ 
+ 				textureManager.LoadTexture(n, f[i], PreviewTextureSize);
+ 
+ 				TriangleSelector s = irr.Scene.CreateTriangleSelector(n.Mesh, n);
+ 				n.TriangleSelector = s;
+ 				s.Drop();
+ 
+ 				previewPlateInfo.Add(n.ID, Path.GetFileName(f[i]));
+ 			}
+ 			for (int i = 0; i < f.Length; i++)
+ 			{
+ 				x += PreviewPlateSize * 1.1f;
+ 				if ((i % r) == 0)
+ 				{
+ 					x = 0;
+ 					z += PreviewPlateSize * 1.1f;
+ 				}
+ 
+ 				MeshSceneNode n = irr.Scene.AddMeshSceneNode(m, p, i | PreviewPlateNodeIdFlag);
+ 				n.SetMaterialFlag(MaterialFlag.Lighting, false);
+ 				n.Position = new Vector3Df(x, 1000, z);
+ 
+ 				textureManager.LoadTexture(n, f[i], PreviewTextureSize);
+ 
+ 				TriangleSelector s = irr.Scene.CreateTriangleSelector(n.Mesh, n);
+ 				n.TriangleSelector = s;
+ 				s.Drop();
+ 
+ 				previewPlateInfo.Add(n.ID, Path.GetFileName(f[i]));
+ 			}
+ 
+ 			irr.Scene.ActiveCamera.Position = new Vector3Df(PreviewPlateSize * (r - 1) * 1.1f / 2, 6 * PreviewPlateSize, 0);
+ 			irr.Scene.ActiveCamera.Target = new Vector3Df(irr.Scene.ActiveCamera.Position.X, 0, PreviewPlateSize * 5);
+ 			maxScrollPosition = (f.Length / r) * PreviewPlateSize * 1.1f;
+ 
+ 			tasksAddedToTextureManager = textureManager.GetCommandQueueLength();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\Program.cs" startline="339" endline="359"><![CDATA[
+ 
+ 		static void drawScrollPosition()
+ 		{
+ 			if (selectedNode != null)
+ 				return;
+ 
+ 			if (maxScrollPosition < 1)
+ 				return;
+ 
+ 			VideoDriver v = irr.Driver;
+ 			if (v.ScreenSize.Height < 200)
+ 				return;
+ 
+ 			float p = irr.Scene.ActiveCamera.Position.Z / maxScrollPosition;
+ 
+ 			v.Draw2DLine(v.ScreenSize.Width - 26, 80, v.ScreenSize.Width - 26, v.ScreenSize.Height - 80, new Color(0x88446699));
+ 
+ 			float y = (v.ScreenSize.Height - 80 - 80 - 40) * (1.0f - p);
+ 			Recti r = new Recti(v.ScreenSize.Width - 30, (int)y + 80, v.ScreenSize.Width - 23, (int)y + 80 + 40);
+ 			v.Draw2DRectangle(r, new Color(0x88446699));
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\Program.cs" startline="360" endline="387"><![CDATA[
+ 
+ 		static void drawTextureManagerActivity()
+ 		{
+ 			if (selectedNode != null)
+ 				return;
+ 
+ 			if (tasksAddedToTextureManager == 0)
+ 				return;
+ 
+ 			int l = textureManager.GetCommandQueueLength();
+ 			if (l == 0)
+ 			{
+ 				tasksAddedToTextureManager = 0;
+ 				return;
+ 			}
+ 
+ 			VideoDriver v = irr.Driver;
+ 			float p = (tasksAddedToTextureManager - l) / (float)tasksAddedToTextureManager;
+ 			if (p > 1)
+ 				p = 1;
+ 
+ 			Recti r = new Recti(v.ScreenSize.Width - 140, 20, v.ScreenSize.Width - 24, 30);
+ 			v.Draw2DRectangleOutline(r, new Color(0x88446699));
+ 
+ 			r.Inflate(-4, -4);
+ 			r.LowerRightCorner = new Vector2Di(r.UpperLeftCorner.X + (int)(r.Width * p), r.LowerRightCorner.Y);
+ 			v.Draw2DRectangle(r, new Color(0x88446699));
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\Program.cs" startline="388" endline="430"><![CDATA[
+ 
+ 		static void drawPreviewPlateTooltip()
+ 		{
+ 			if (hoveredNode == null ||
+ 				!hoveredNode.Visible)
+ 				return;
+ 
+ 			int k = hoveredNode.ID;
+ 
+ 			Texture t = hoveredNode.GetMaterial(0).GetTexture(0);
+ 			if (t != null && t.Name.Path != "NoPreviewTexture")
+ 				k = hoveredNode.ID & (0xFFFFFFF ^ SelectableNodeIdFlag);
+ 
+ 			string s = previewPlateInfo.ContainsKey(k)
+ 				? previewPlateInfo[k]
+ 				
+ 
+ 			if (s != null)
+ 			{
+ 				Vector2Di p = irr.Device.CursorControl.Position + new Vector2Di(16);
+ 				GUIFont f = irr.GUI.Skin.GetFont(GUIDefaultFont.Default);
+ 
+ 				Dimension2Di d = f.GetDimension(s);
+ 				d.Inflate(16, 12);
+ 
+ 				Recti r = new Recti(p, d);
+ 				VideoDriver v = irr.Driver;
+ 
+ 				int ax = r.LowerRightCorner.X - v.ScreenSize.Width;
+ 				int ay = r.LowerRightCorner.Y - v.ScreenSize.Height;
+ 				if (ax > 0 || ay > 0)
+ 				{
+ 					if (ax < 0) ax = 0;
+ 					if (ay < 0) ay = 0;
+ 					r.Offset(-ax, -ay);
+ 				}
+ 
+ 				v.Draw2DRectangle(r, new Color(0xbb223355));
+ 				v.Draw2DRectangleOutline(r, new Color(0xbb445577));
+ 
+ 				f.Draw(s, r.UpperLeftCorner + new Vector2Di(8, 6), Color.OpaqueYellow);
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L10.ImageBrowser\Program.cs" startline="22" endline="39"><![CDATA[
+ 		static bool wantChangeFolder = false;
+ 		static bool wantUpdateActiveCameraAspectRatio = false;
+ 		static Dimension2Di PreviewTextureSize = new Dimension2Di(128);
+ 		static float maxScrollPosition = 0;
+ 		static int tasksAddedToTextureManager = 0;
+ 
+ 		const int TextureManagerThreadCount = 4;
+ 		const int PreviewPlateSize = 80;
+ 		const int PreviewRootNodeId = 1001;
+ 		const int ChooseFolderButtonId = 1002;
+ 		const int CurrentFolderStaticTextId = 1003;
+ 		const string PreviewPlateMeshName = "previewPlate";
+ 		const int PreviewPlateNodeIdFlag = 1 << 17;
+ 		const int SelectableNodeIdFlag = 1 << 18;
+ 
+ 		static SceneNode hoveredNode;
+ 		static SceneNode selectedNode;
+ 		static Dictionary<int, string> previewPlateInfo = new Dictionary<int, string>();
+]]></source>
+</source_elements></project>

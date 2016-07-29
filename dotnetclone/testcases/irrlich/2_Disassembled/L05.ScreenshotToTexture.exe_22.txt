@@ -1,0 +1,632 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.module extern user32.dll
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly extern System.Drawing
+{
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
+  .ver 4:0:0:0
+}
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System.Windows.Forms
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly L05.ScreenshotToTexture
+{
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 17 4C 30 35 2E 53 63 72 65 65 6E 73 68 6F   // ...L05.Screensho
+                                                                                              74 54 6F 54 65 78 74 75 72 65 00 00 )             // tToTexture..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 17 4C 30 35 2E 53 63 72 65 65 6E 73 68 6F   // ...L05.Screensho
+                                                                                                74 54 6F 54 65 78 74 75 72 65 00 00 )             // tToTexture..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 30 00 00 )                            //  2010..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 65 35 38 30 37 37 37 33 2D 34 38 38 36   // ..$e5807773-4886
+                                                                                                  2D 34 64 36 63 2D 39 61 34 37 2D 30 64 32 31 34   // -4d6c-9a47-0d214
+                                                                                                  37 35 66 66 38 38 38 00 00 )                      // 75ff888..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public L05.ScreenshotToTexture.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.module L05.ScreenshotToTexture.exe
+// MVID: {C9901D05-3944-47A8-9EEC-894AF1A9586C}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x002D0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit L05.ScreenshotToTexture.Program
+       extends [mscorlib]System.Object
+{
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       478 (0x1de)
+    .maxstack  7
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [1] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode cam,
+             [2] class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator anim,
+             [3] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode cube,
+             [4] class [IrrlichtLime]IrrlichtLime.Video.Texture t,
+             [5] string[] CS$0$0000,
+             [6] int64 CS$0$0001,
+             [7] int32 CS$0$0002,
+             [8] bool CS$4$0003)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L05.ScreenshotToTexture\Program.cs' 
+//000021: 		{
+    IL_0000:  nop
+//000022: 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(DriverType.Direct3D8, new Dimension2Di(512, 512));
+    IL_0001:  ldc.i4.3
+    IL_0002:  ldc.i4     0x200
+    IL_0007:  ldc.i4     0x200
+    IL_000c:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_0011:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+    IL_0016:  stloc.0
+//000023: 			device.SetWindowCaption("Screenshot to texture - Irrlicht Lime");
+    IL_0017:  ldloc.0
+    IL_0018:  ldstr      "Screenshot to texture - Irrlicht Lime"
+    IL_001d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_0022:  nop
+//000024: 
+//000025: 			// set up very simple scene {{
+//000026: 
+//000027: 			CameraSceneNode cam = device.SceneManager.AddCameraSceneNode();
+    IL_0023:  ldloc.0
+    IL_0024:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0029:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNode()
+    IL_002e:  stloc.1
+//000028: 			cam.Target = new Vector3Df(0);
+    IL_002f:  ldloc.1
+    IL_0030:  ldc.r4     0.0
+    IL_0035:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32)
+    IL_003a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_Target(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_003f:  nop
+//000029: 
+//000030: 			SceneNodeAnimator anim = device.SceneManager.CreateFlyCircleAnimator(new Vector3Df(0, 16, 0), 30, 0.0004f);
+    IL_0040:  ldloc.0
+    IL_0041:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0046:  ldc.r4     0.0
+    IL_004b:  ldc.r4     16.
+    IL_0050:  ldc.r4     0.0
+    IL_0055:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_005a:  ldc.r4     30.
+    IL_005f:  ldc.r4     3.9999999e-004
+    IL_0064:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateFlyCircleAnimator(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                                  float32,
+                                                                                                                                                                  float32)
+    IL_0069:  stloc.2
+//000031: 			cam.AddAnimator(anim);
+    IL_006a:  ldloc.1
+    IL_006b:  ldloc.2
+    IL_006c:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::AddAnimator(class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator)
+    IL_0071:  nop
+//000032: 			anim.Drop();
+    IL_0072:  ldloc.2
+    IL_0073:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0078:  pop
+//000033: 
+//000034: 			SceneNode cube = device.SceneManager.AddCubeSceneNode(20);
+    IL_0079:  ldloc.0
+    IL_007a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_007f:  ldc.r4     20.
+    IL_0084:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCubeSceneNode(float32)
+    IL_0089:  stloc.3
+//000035: 			cube.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_008a:  ldloc.3
+    IL_008b:  ldc.i4.8
+    IL_008c:  ldc.i4.0
+    IL_008d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0092:  nop
+    IL_0093:  br         IL_01c7
+
+//000036: 
+//000037: 			// }}
+//000038: 
+//000039: 			while (device.Run())
+//000040: 			{
+    IL_0098:  nop
+//000041: 				cube.SetMaterialTexture(0, null);
+    IL_0099:  ldloc.3
+    IL_009a:  ldc.i4.0
+    IL_009b:  ldnull
+    IL_009c:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_00a1:  nop
+//000042: 				device.VideoDriver.RemoveAllTextures();
+    IL_00a2:  ldloc.0
+    IL_00a3:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00a8:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::RemoveAllTextures()
+    IL_00ad:  nop
+//000043: 
+//000044: 				Texture t = getDesktopTexture(device);
+    IL_00ae:  ldloc.0
+    IL_00af:  call       class [IrrlichtLime]IrrlichtLime.Video.Texture L05.ScreenshotToTexture.Program::getDesktopTexture(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice)
+    IL_00b4:  stloc.s    t
+//000045: 				cube.SetMaterialTexture(0, t);
+    IL_00b6:  ldloc.3
+    IL_00b7:  ldc.i4.0
+    IL_00b8:  ldloc.s    t
+    IL_00ba:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_00bf:  nop
+//000046: 
+//000047: 				device.VideoDriver.BeginScene(false);
+    IL_00c0:  ldloc.0
+    IL_00c1:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00c6:  ldc.i4.0
+    IL_00c7:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool)
+    IL_00cc:  pop
+//000048: 
+//000049: 				device.VideoDriver.Draw2DImage(t, device.VideoDriver.ViewPort, new Recti(new Vector2Di(0), t.Size));
+    IL_00cd:  ldloc.0
+    IL_00ce:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00d3:  ldloc.s    t
+    IL_00d5:  ldloc.0
+    IL_00d6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00db:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Recti [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_ViewPort()
+    IL_00e0:  ldc.i4.0
+    IL_00e1:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32)
+    IL_00e6:  ldloc.s    t
+    IL_00e8:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di [IrrlichtLime]IrrlichtLime.Video.Texture::get_Size()
+    IL_00ed:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+    IL_00f2:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::Draw2DImage(class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Recti)
+    IL_00f7:  nop
+//000050: 				device.VideoDriver.Draw2DRectangle(device.VideoDriver.ViewPort, new IrrlichtLime.Video.Color(0, 0, 0, 160));
+    IL_00f8:  ldloc.0
+    IL_00f9:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00fe:  ldloc.0
+    IL_00ff:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0104:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Recti [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_ViewPort()
+    IL_0109:  ldc.i4.0
+    IL_010a:  ldc.i4.0
+    IL_010b:  ldc.i4.0
+    IL_010c:  ldc.i4     0xa0
+    IL_0111:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0116:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::Draw2DRectangle(class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                     class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_011b:  nop
+//000051: 
+//000052: 				device.SceneManager.DrawAll();
+    IL_011c:  ldloc.0
+    IL_011d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0122:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_0127:  nop
+//000053: 
+//000054: 				device.GUIEnvironment.BuiltInFont.Draw(
+    IL_0128:  ldloc.0
+    IL_0129:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_012e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_BuiltInFont()
+    IL_0133:  ldc.i4.5
+    IL_0134:  newarr     [mscorlib]System.String
+    IL_0139:  stloc.s    CS$0$0000
+    IL_013b:  ldloc.s    CS$0$0000
+    IL_013d:  ldc.i4.0
+    IL_013e:  ldloc.0
+    IL_013f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Timer [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Timer()
+    IL_0144:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_0149:  stelem.ref
+    IL_014a:  ldloc.s    CS$0$0000
+    IL_014c:  ldc.i4.1
+    IL_014d:  ldstr      "\nMemory: "
+    IL_0152:  stelem.ref
+    IL_0153:  ldloc.s    CS$0$0000
+    IL_0155:  ldc.i4.2
+    IL_0156:  call       class [System]System.Diagnostics.Process [System]System.Diagnostics.Process::GetCurrentProcess()
+    IL_015b:  callvirt   instance int64 [System]System.Diagnostics.Process::get_WorkingSet64()
+    IL_0160:  ldc.i4     0x100000
+    IL_0165:  conv.i8
+    IL_0166:  div
+    IL_0167:  stloc.s    CS$0$0001
+    IL_0169:  ldloca.s   CS$0$0001
+    IL_016b:  call       instance string [mscorlib]System.Int64::ToString()
+    IL_0170:  stelem.ref
+    IL_0171:  ldloc.s    CS$0$0000
+    IL_0173:  ldc.i4.3
+    IL_0174:  ldstr      " Mb\nFPS: "
+    IL_0179:  stelem.ref
+    IL_017a:  ldloc.s    CS$0$0000
+    IL_017c:  ldc.i4.4
+    IL_017d:  ldloc.0
+    IL_017e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0183:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_0188:  stloc.s    CS$0$0002
+    IL_018a:  ldloca.s   CS$0$0002
+    IL_018c:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_0191:  stelem.ref
+    IL_0192:  ldloc.s    CS$0$0000
+    IL_0194:  call       string [mscorlib]System.String::Concat(string[])
+    IL_0199:  ldc.i4.s   16
+    IL_019b:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32)
+    IL_01a0:  ldc.i4     0xff
+    IL_01a5:  ldc.i4     0xff
+    IL_01aa:  ldc.i4     0xff
+    IL_01af:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_01b4:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIFont::Draw(string,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_01b9:  nop
+//000055: 					device.Timer.ToString() +
+//000056: 					"\nMemory: " + (System.Diagnostics.Process.GetCurrentProcess().WorkingSet64 / (1 << 20)).ToString() + " Mb" +
+//000057: 					"\nFPS: " + device.VideoDriver.FPS.ToString(),
+//000058: 					new Vector2Di(16),
+//000059: 					new IrrlichtLime.Video.Color(255, 255, 255));
+//000060: 
+//000061: 				device.VideoDriver.EndScene();
+    IL_01ba:  ldloc.0
+    IL_01bb:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_01c0:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_01c5:  pop
+//000062: 			}
+    IL_01c6:  nop
+//000039: 			while (device.Run())
+    IL_01c7:  ldloc.0
+    IL_01c8:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_01cd:  stloc.s    CS$4$0003
+    IL_01cf:  ldloc.s    CS$4$0003
+    IL_01d1:  brtrue     IL_0098
+
+//000040: 			{
+//000041: 				cube.SetMaterialTexture(0, null);
+//000042: 				device.VideoDriver.RemoveAllTextures();
+//000043: 
+//000044: 				Texture t = getDesktopTexture(device);
+//000045: 				cube.SetMaterialTexture(0, t);
+//000046: 
+//000047: 				device.VideoDriver.BeginScene(false);
+//000048: 
+//000049: 				device.VideoDriver.Draw2DImage(t, device.VideoDriver.ViewPort, new Recti(new Vector2Di(0), t.Size));
+//000050: 				device.VideoDriver.Draw2DRectangle(device.VideoDriver.ViewPort, new IrrlichtLime.Video.Color(0, 0, 0, 160));
+//000051: 
+//000052: 				device.SceneManager.DrawAll();
+//000053: 
+//000054: 				device.GUIEnvironment.BuiltInFont.Draw(
+//000055: 					device.Timer.ToString() +
+//000056: 					"\nMemory: " + (System.Diagnostics.Process.GetCurrentProcess().WorkingSet64 / (1 << 20)).ToString() + " Mb" +
+//000057: 					"\nFPS: " + device.VideoDriver.FPS.ToString(),
+//000058: 					new Vector2Di(16),
+//000059: 					new IrrlichtLime.Video.Color(255, 255, 255));
+//000060: 
+//000061: 				device.VideoDriver.EndScene();
+//000062: 			}
+//000063: 
+//000064: 			device.Drop();
+    IL_01d6:  ldloc.0
+    IL_01d7:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_01dc:  pop
+//000065: 		}
+    IL_01dd:  ret
+  } // end of method Program::Main
+
+  .method private hidebysig static class [IrrlichtLime]IrrlichtLime.Video.Texture 
+          getDesktopTexture(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device) cil managed
+  {
+    // Code size       377 (0x179)
+    .maxstack  8
+    .locals init ([0] int32 screenX,
+             [1] int32 screenY,
+             [2] int32 screenWidth,
+             [3] int32 screenHeight,
+             [4] valuetype [System.Drawing]System.Drawing.Point p,
+             [5] class [System.Drawing]System.Drawing.Bitmap b,
+             [6] class [System.Drawing]System.Drawing.Graphics g,
+             [7] class [mscorlib]System.IO.MemoryStream s,
+             [8] uint8[] c,
+             [9] valuetype [IrrlichtLime]IrrlichtLime.LogLevel o,
+             [10] class [IrrlichtLime]IrrlichtLime.IO.ReadFile f,
+             [11] class [IrrlichtLime]IrrlichtLime.Video.Texture t,
+             [12] class [IrrlichtLime]IrrlichtLime.Video.Texture CS$1$0000,
+             [13] bool CS$4$0001,
+             [14] valuetype [System.Drawing]System.Drawing.Rectangle CS$0$0002)
+//000066: 
+//000067: 		private static Texture getDesktopTexture(IrrlichtDevice device)
+//000068: 		{
+    IL_0000:  nop
+//000069: 			int screenX = 0;
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+//000070: 			int screenY = 0;
+    IL_0003:  ldc.i4.0
+    IL_0004:  stloc.1
+//000071: 			int screenWidth = device.VideoDriver.ScreenSize.Width;
+    IL_0005:  ldarg.0
+    IL_0006:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_000b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_ScreenSize()
+    IL_0010:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::get_Width()
+    IL_0015:  stloc.2
+//000072: 			int screenHeight = device.VideoDriver.ScreenSize.Height;
+    IL_0016:  ldarg.0
+    IL_0017:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_001c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_ScreenSize()
+    IL_0021:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::get_Height()
+    IL_0026:  stloc.3
+//000073: 
+//000074: 			Point p = new Point();
+    IL_0027:  ldloca.s   p
+    IL_0029:  initobj    [System.Drawing]System.Drawing.Point
+//000075: 			GetCursorPos(ref p);
+    IL_002f:  ldloca.s   p
+    IL_0031:  call       bool L05.ScreenshotToTexture.Program::GetCursorPos(valuetype [System.Drawing]System.Drawing.Point&)
+    IL_0036:  pop
+//000076: 			screenX = p.X - screenWidth / 2;
+    IL_0037:  ldloca.s   p
+    IL_0039:  call       instance int32 [System.Drawing]System.Drawing.Point::get_X()
+    IL_003e:  ldloc.2
+    IL_003f:  ldc.i4.2
+    IL_0040:  div
+    IL_0041:  sub
+    IL_0042:  stloc.0
+//000077: 			screenY = p.Y - screenHeight / 2;
+    IL_0043:  ldloca.s   p
+    IL_0045:  call       instance int32 [System.Drawing]System.Drawing.Point::get_Y()
+    IL_004a:  ldloc.3
+    IL_004b:  ldc.i4.2
+    IL_004c:  div
+    IL_004d:  sub
+    IL_004e:  stloc.1
+//000078: 
+//000079: 			// validate grabbing rect (note: works fine without validation too) {{
+//000080: 
+//000081: 			if (screenX < 0)
+    IL_004f:  ldloc.0
+    IL_0050:  ldc.i4.0
+    IL_0051:  clt
+    IL_0053:  ldc.i4.0
+    IL_0054:  ceq
+    IL_0056:  stloc.s    CS$4$0001
+    IL_0058:  ldloc.s    CS$4$0001
+    IL_005a:  brtrue.s   IL_005e
+
+//000082: 				screenX = 0;
+    IL_005c:  ldc.i4.0
+    IL_005d:  stloc.0
+//000083: 
+//000084: 			if (screenX + screenWidth > SystemInformation.VirtualScreen.Width)
+    IL_005e:  ldloc.0
+    IL_005f:  ldloc.2
+    IL_0060:  add
+    IL_0061:  call       valuetype [System.Drawing]System.Drawing.Rectangle [System.Windows.Forms]System.Windows.Forms.SystemInformation::get_VirtualScreen()
+    IL_0066:  stloc.s    CS$0$0002
+    IL_0068:  ldloca.s   CS$0$0002
+    IL_006a:  call       instance int32 [System.Drawing]System.Drawing.Rectangle::get_Width()
+    IL_006f:  cgt
+    IL_0071:  ldc.i4.0
+    IL_0072:  ceq
+    IL_0074:  stloc.s    CS$4$0001
+    IL_0076:  ldloc.s    CS$4$0001
+    IL_0078:  brtrue.s   IL_008b
+
+//000085: 				screenX = SystemInformation.VirtualScreen.Width - screenWidth;
+    IL_007a:  call       valuetype [System.Drawing]System.Drawing.Rectangle [System.Windows.Forms]System.Windows.Forms.SystemInformation::get_VirtualScreen()
+    IL_007f:  stloc.s    CS$0$0002
+    IL_0081:  ldloca.s   CS$0$0002
+    IL_0083:  call       instance int32 [System.Drawing]System.Drawing.Rectangle::get_Width()
+    IL_0088:  ldloc.2
+    IL_0089:  sub
+    IL_008a:  stloc.0
+//000086: 
+//000087: 			if (screenY < 0)
+    IL_008b:  ldloc.1
+    IL_008c:  ldc.i4.0
+    IL_008d:  clt
+    IL_008f:  ldc.i4.0
+    IL_0090:  ceq
+    IL_0092:  stloc.s    CS$4$0001
+    IL_0094:  ldloc.s    CS$4$0001
+    IL_0096:  brtrue.s   IL_009a
+
+//000088: 				screenY = 0;
+    IL_0098:  ldc.i4.0
+    IL_0099:  stloc.1
+//000089: 
+//000090: 			if (screenY + screenHeight > SystemInformation.VirtualScreen.Height)
+    IL_009a:  ldloc.1
+    IL_009b:  ldloc.3
+    IL_009c:  add
+    IL_009d:  call       valuetype [System.Drawing]System.Drawing.Rectangle [System.Windows.Forms]System.Windows.Forms.SystemInformation::get_VirtualScreen()
+    IL_00a2:  stloc.s    CS$0$0002
+    IL_00a4:  ldloca.s   CS$0$0002
+    IL_00a6:  call       instance int32 [System.Drawing]System.Drawing.Rectangle::get_Height()
+    IL_00ab:  cgt
+    IL_00ad:  ldc.i4.0
+    IL_00ae:  ceq
+    IL_00b0:  stloc.s    CS$4$0001
+    IL_00b2:  ldloc.s    CS$4$0001
+    IL_00b4:  brtrue.s   IL_00c7
+
+//000091: 				screenY = SystemInformation.VirtualScreen.Height - screenHeight;
+    IL_00b6:  call       valuetype [System.Drawing]System.Drawing.Rectangle [System.Windows.Forms]System.Windows.Forms.SystemInformation::get_VirtualScreen()
+    IL_00bb:  stloc.s    CS$0$0002
+    IL_00bd:  ldloca.s   CS$0$0002
+    IL_00bf:  call       instance int32 [System.Drawing]System.Drawing.Rectangle::get_Height()
+    IL_00c4:  ldloc.3
+    IL_00c5:  sub
+    IL_00c6:  stloc.1
+//000092: 
+//000093: 			// }}
+//000094: 
+//000095: 			Bitmap b = new Bitmap(
+    IL_00c7:  ldloc.2
+    IL_00c8:  ldloc.3
+    IL_00c9:  ldc.i4     0x26200a
+    IL_00ce:  newobj     instance void [System.Drawing]System.Drawing.Bitmap::.ctor(int32,
+                                                                                    int32,
+                                                                                    valuetype [System.Drawing]System.Drawing.Imaging.PixelFormat)
+    IL_00d3:  stloc.s    b
+//000096: 					screenWidth,
+//000097: 					screenHeight,
+//000098: 					PixelFormat.Format32bppArgb);
+//000099: 
+//000100: 			Graphics g = Graphics.FromImage(b);
+    IL_00d5:  ldloc.s    b
+    IL_00d7:  call       class [System.Drawing]System.Drawing.Graphics [System.Drawing]System.Drawing.Graphics::FromImage(class [System.Drawing]System.Drawing.Image)
+    IL_00dc:  stloc.s    g
+//000101: 
+//000102: 			g.CopyFromScreen(
+    IL_00de:  ldloc.s    g
+    IL_00e0:  ldloc.0
+    IL_00e1:  ldloc.1
+    IL_00e2:  ldc.i4.0
+    IL_00e3:  ldc.i4.0
+    IL_00e4:  ldloc.2
+    IL_00e5:  ldloc.3
+    IL_00e6:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_00eb:  ldc.i4     0xcc0020
+    IL_00f0:  callvirt   instance void [System.Drawing]System.Drawing.Graphics::CopyFromScreen(int32,
+                                                                                               int32,
+                                                                                               int32,
+                                                                                               int32,
+                                                                                               valuetype [System.Drawing]System.Drawing.Size,
+                                                                                               valuetype [System.Drawing]System.Drawing.CopyPixelOperation)
+    IL_00f5:  nop
+//000103: 				screenX,
+//000104: 				screenY,
+//000105: 				0, 0,
+//000106: 				new Size(screenWidth, screenHeight),
+//000107: 				CopyPixelOperation.SourceCopy);
+//000108: 
+//000109: 			MemoryStream s = new MemoryStream();
+    IL_00f6:  newobj     instance void [mscorlib]System.IO.MemoryStream::.ctor()
+    IL_00fb:  stloc.s    s
+//000110: 			b.Save(s, ImageFormat.Bmp);
+    IL_00fd:  ldloc.s    b
+    IL_00ff:  ldloc.s    s
+    IL_0101:  call       class [System.Drawing]System.Drawing.Imaging.ImageFormat [System.Drawing]System.Drawing.Imaging.ImageFormat::get_Bmp()
+    IL_0106:  callvirt   instance void [System.Drawing]System.Drawing.Image::Save(class [mscorlib]System.IO.Stream,
+                                                                                  class [System.Drawing]System.Drawing.Imaging.ImageFormat)
+    IL_010b:  nop
+//000111: 
+//000112: 			byte[] c = s.ToArray();
+    IL_010c:  ldloc.s    s
+    IL_010e:  callvirt   instance uint8[] [mscorlib]System.IO.MemoryStream::ToArray()
+    IL_0113:  stloc.s    c
+//000113: 			s.Close();
+    IL_0115:  ldloc.s    s
+    IL_0117:  callvirt   instance void [mscorlib]System.IO.Stream::Close()
+    IL_011c:  nop
+//000114: 
+//000115: 			LogLevel o = device.Logger.LogLevel;
+    IL_011d:  ldarg.0
+    IL_011e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_0123:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.LogLevel [IrrlichtLime]IrrlichtLime.Logger::get_LogLevel()
+    IL_0128:  stloc.s    o
+//000116: 			device.Logger.LogLevel = LogLevel.Error; // we hide all those "Loaded texture" messages in console {{
+    IL_012a:  ldarg.0
+    IL_012b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_0130:  ldc.i4.3
+    IL_0131:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::set_LogLevel(valuetype [IrrlichtLime]IrrlichtLime.LogLevel)
+    IL_0136:  nop
+//000117: 
+//000118: 			ReadFile f = device.FileSystem.CreateMemoryReadFile("screenTexture", c);
+    IL_0137:  ldarg.0
+    IL_0138:  callvirt   instance class [IrrlichtLime]IrrlichtLime.IO.FileSystem [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_FileSystem()
+    IL_013d:  ldstr      "screenTexture"
+    IL_0142:  ldloc.s    c
+    IL_0144:  callvirt   instance class [IrrlichtLime]IrrlichtLime.IO.ReadFile [IrrlichtLime]IrrlichtLime.IO.FileSystem::CreateMemoryReadFile(string,
+                                                                                                                                              uint8[])
+    IL_0149:  stloc.s    f
+//000119: 			Texture t = device.VideoDriver.GetTexture(f);
+    IL_014b:  ldarg.0
+    IL_014c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0151:  ldloc.s    f
+    IL_0153:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(class [IrrlichtLime]IrrlichtLime.IO.ReadFile)
+    IL_0158:  stloc.s    t
+//000120: 			f.Drop();
+    IL_015a:  ldloc.s    f
+    IL_015c:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0161:  pop
+//000121: 
+//000122: 			device.Logger.LogLevel = o; // }}
+    IL_0162:  ldarg.0
+    IL_0163:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_0168:  ldloc.s    o
+    IL_016a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::set_LogLevel(valuetype [IrrlichtLime]IrrlichtLime.LogLevel)
+    IL_016f:  nop
+//000123: 
+//000124: 			return t;
+    IL_0170:  ldloc.s    t
+    IL_0172:  stloc.s    CS$1$0000
+    IL_0174:  br.s       IL_0176
+
+//000125: 		}
+    IL_0176:  ldloc.s    CS$1$0000
+    IL_0178:  ret
+  } // end of method Program::getDesktopTexture
+
+  .method private hidebysig static pinvokeimpl("user32.dll" winapi) 
+          bool  GetCursorPos(valuetype [System.Drawing]System.Drawing.Point& lpPoint) cil managed preservesig
+  {
+  }
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+} // end of class L05.ScreenshotToTexture.Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

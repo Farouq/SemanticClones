@@ -1,0 +1,784 @@
+<clones  >
+<clone_pair groupid="41" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0106.vb" startline="23" endline="51">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 6
+ 
+         ' step 1
+         Dim document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileStream("Chap0106.pdf", FileMode.Create))
+         HtmlWriter.getInstance(document, Console.OpenStandardOutput())
+ 
+         ' step 3
+ 
+         document.addTitle("Hello World example")
+         document.addSubject("This example explains step 3 in Chapter 1")
+         document.addKeywords("Metadata, iText, step 3, tutorial")
+         document.addCreator("My program using iText")
+         document.addAuthor("Bruno Lowagie")
+         document.addHeader("Expires", "0")
+         document.open()
+ 
+         ' step 4
+         document.add(New Paragraph("Hello World"))
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0106.cs" startline="25" endline="51">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 1 example 6
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0106.pdf", FileMode.Create));
+ 		HtmlWriter.getInstance(document, Console.OpenStandardOutput());
+          
+ 		// step 3
+ 		document.addTitle("Hello World example");
+ 		document.addSubject("This example explains step 3 in Chapter 1");
+ 		document.addKeywords("Metadata, iText, step 3, tutorial");
+ 		document.addCreator("My program using iText");
+ 		document.addAuthor("Bruno Lowagie");
+ 		document.addHeader("Expires", "0");
+ 		document.open();
+             
+ 		// step 4
+ 		document.add(new Paragraph("Hello World"));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="49" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0208.cs" startline="24" endline="54">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 2 example 8
+         
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap0208.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+ 		// we add some content
+ 		String text = "Some.text.to.show.the.splitting.action.of.the.interface.";
+ 		Chap0208 split = new Chap0208();
+ 		Chunk ck = new Chunk(text, FontFactory.getFont(FontFactory.HELVETICA, 24));
+ 		Paragraph p = new Paragraph(24, ck);
+ 		document.add(new Paragraph("Normal split."));
+ 		document.add(p);
+ 		ck = new Chunk(text, FontFactory.getFont(FontFactory.HELVETICA, 24));
+ 		ck.setSplitCharacter(split);
+ 		p = new Paragraph(24, ck);
+ 		document.add(new Paragraph("The dot '.' is the split character."));
+ 		document.add(p);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="60" endline="89">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 8
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0208.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         ' we add some content
+         Dim text As String = "Some.text.to.show.the.splitting.action.of.the.interface."
+         Dim Split As New Chap0208()
+         Dim ck As New Chunk(text, FontFactory.getFont(FontFactory.HELVETICA, 24))
+         Dim p As New Paragraph(24, ck)
+         Document.add(New Paragraph("Normal split."))
+         Document.add(p)
+         ck = New Chunk(text, FontFactory.getFont(FontFactory.HELVETICA, 24))
+         ck.setSplitCharacter(Split)
+         p = New Paragraph(24, ck)
+         Document.add(New Paragraph("The dot '.' is the split character."))
+         Document.add(p)
+         ' step 5
+         Document.close()
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="82" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0206.cs" startline="24" endline="58">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 2 example 6
+         
+ 		// step 1
+ 		Document document = new Document(PageSize.A6);
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap0206.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+ 		Paragraph p;
+ 		p = new Paragraph("GALLIA est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.", FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		p.setKeepTogether(true);
+ 		document.add(p);
+ 		p = new Paragraph("[Eorum una, pars, quam Gallos obtinere dictum est, initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et eam partem Oceani quae est ad Hispaniam pertinet; spectat inter occasum solis et septentriones.]", FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		p.setKeepTogether(true);
+ 		document.add(p);
+ 		p = new Paragraph("Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupiditate inductus coniurationem nobilitatis fecit et civitati persuasit ut de finibus suis cum omnibus copiis exirent
+ ctory.getFont(FontFactory.HELVETICA, 12));
+ 		p.setKeepTogether(true);
+ 		document.add(p);
+ 		p = new Paragraph("His rebus adducti et auctoritate Orgetorigis permoti constituerunt ea quae ad proficiscendum pertinerent comparare, iumentorum et carrorum quam maximum numerum coemere, sementes quam maximas facere, ut in itinere copia frumenti suppeteret, cum proximis civitatibus pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi satis esse duxerunt; in tertium annum profectionem lege confirmant.  Ad eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civitates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio, Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a senatu populi Romani amicus appellatus erat, ut regnum in civitate sua occuparet, quod pater ante habuerit; itemque Dumnorigi Haeduo, fratri Diviciaci, qui eo tempore principatum in civitate obtinebat ac maxime plebi acceptus erat, ut idem conaretur persuadet eique filiam suam in matrimonium dat.  Perfacile factu esse illis probat conata perficere, propterea quod ipse suae civitati
+ s imperium obtenturus esset
+ 		p.setKeepTogether(true);
+ 		document.add(p);
+ 		p = new Paragraph("Ea res est Helvetiis per indicium enuntiata.  Moribus suis Orgetoricem ex vinculis causam dicere coegerunt; damnatum poenam sequi oportebat, ut igni cremaretur.  Die constituta causae dictionis Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, undique coegit, et omnes clientes obaeratosque suos, quorum magnum numerum habebat, eodem conduxit; per eos ne causam diceret se eripuit.  Cum civitas ob eam rem incitata armis ius suum exequi conaretur multitudinemque hominum ex agris magistratus cogerent, Orgetorix mortuus est; neque abest suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciverit.", FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		p.setKeepTogether(true);
+ 		document.add(p);
+ 
+ 		// step 5
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="59" endline="92">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 6
+ 
+         ' step 1
+         Dim Document As New Document(PageSize.A6)
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0206.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         Dim p As Paragraph = New Paragraph("GALLIA est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.", FontFactory.getFont(FontFactory.HELVETICA, 12))
+         p.setKeepTogether(True)
+         Document.add(p)
+         p = New Paragraph("[Eorum una, pars, quam Gallos obtinere dictum est, initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et eam partem Oceani quae est ad Hispaniam pertinet spectat inter occasum solis et septentriones.]", FontFactory.getFont(FontFactory.HELVETICA, 12))
+         p.setKeepTogether(True)
+         Document.add(p)
+         p = New Paragraph("Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupiditate inductus coniurationem nobilitatis fecit et civitati persuasit ut de finibus suis cum omnibus copiis exirent
+ tFactory.getFont(FontFactory.HELVETICA, 12))
+         p.setKeepTogether(True)
+         Document.add(p)
+         p = New Paragraph("His rebus adducti et auctoritate Orgetorigis permoti constituerunt ea quae ad proficiscendum pertinerent comparare, iumentorum et carrorum quam maximum numerum coemere, sementes quam maximas facere, ut in itinere copia frumenti suppeteret, cum proximis civitatibus pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi satis esse duxerunt in tertium annum profectionem lege confirmant.  Ad eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civitates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio, Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a senatu populi Romani amicus appellatus erat, ut regnum in civitate sua occuparet, quod pater ante habuerit itemque Dumnorigi Haeduo, fratri Diviciaci, qui eo tempore principatum in civitate obtinebat ac maxime plebi acceptus erat, ut idem conaretur persuadet eique filiam suam in matrimonium dat.  Perfacile factu esse illis probat conata perficere, propterea quod ipse suae civi
+ tatis imperium obtenturus esset
+         p.setKeepTogether(True)
+         Document.add(p)
+         p = New Paragraph("Ea res est Helvetiis per indicium enuntiata.  Moribus suis Orgetoricem ex vinculis causam dicere coegerunt damnatum poenam sequi oportebat, ut igni cremaretur.  Die constituta causae dictionis Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, undique coegit, et omnes clientes obaeratosque suos, quorum magnum numerum habebat, eodem conduxit per eos ne causam diceret se eripuit.  Cum civitas ob eam rem incitata armis ius suum exequi conaretur multitudinemque hominum ex agris magistratus cogerent, Orgetorix mortuus est neque abest suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciverit.", FontFactory.getFont(FontFactory.HELVETICA, 12))
+         p.setKeepTogether(True)
+         Document.add(p)
+ 
+         ' step 5
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="88" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 4
+ 
+         Dim document As New Document()
+         Try
+             Dim FileOutputStream As FileOutputStream
+             FileOutputStream = New FileOutputStream("Chap0804.rtf")
+             RtfWriter.getInstance(document, FileOutputStream)
+             document.open()
+             Dim table As Table = New Table(3)
+             table.setBorderWidth(1)
+             table.setPadding(5)
+             table.setSpacing(5)
+             Dim cell As Cell = New Cell("header")
+             cell.setHeader(True)
+             cell.setColspan(3)
+             table.addCell(cell)
+             cell = New Cell("example cell with colspan 1 and rowspan 2")
+             cell.setRowspan(2)
+             table.addCell(cell)
+             table.addCell("1.1")
+             table.addCell("2.1")
+             table.addCell("1.2")
+             table.addCell("2.2")
+             table.addCell("cell test1")
+             cell = New Cell("big cell")
+             cell.setRowspan(2)
+             cell.setColspan(2)
+             table.addCell(cell)
+             table.addCell("cell test2")
+             document.add(table)
+         Catch ee As Exception
+             Console.WriteLine(ee.ToString())
+         End Try
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0804.cs" startline="25" endline="63">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 8 example 4
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		RtfWriter.getInstance(document, new FileStream("Chap0804.rtf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Table table = new Table(3);
+ 		table.setBorderWidth(1);
+ 		table.setBorderColor(GDI.Color.Blue);
+ 		table.setPadding(5);
+ 		table.setSpacing(5);
+ 		Cell cell = new Cell("header");
+ 		cell.setHeader(true);
+ 		cell.setColspan(3);
+ 		table.addCell(cell);
+ 		cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 		cell.setRowspan(2);
+ 		cell.setBorderColor(GDI.Color.Red);
+ 		table.addCell(cell);
+ 		table.addCell("1.1");
+ 		table.addCell("2.1");
+ 		table.addCell("1.2");
+ 		table.addCell("2.2");
+ 		table.addCell("cell test1");
+ 		cell = new Cell("big cell");
+ 		cell.setRowspan(2);
+ 		cell.setColspan(2);
+ 		cell.setBackgroundColor(GDI.Color.LightGray);
+ 		table.addCell(cell);
+ 		table.addCell("cell test2");
+ 		document.add(table);
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="89" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 4
+ 
+         Dim document As New Document()
+         Try
+             Dim FileOutputStream As FileOutputStream
+             FileOutputStream = New FileOutputStream("Chap0804.rtf")
+             RtfWriter.getInstance(document, FileOutputStream)
+             document.open()
+             Dim table As Table = New Table(3)
+             table.setBorderWidth(1)
+             table.setPadding(5)
+             table.setSpacing(5)
+             Dim cell As Cell = New Cell("header")
+             cell.setHeader(True)
+             cell.setColspan(3)
+             table.addCell(cell)
+             cell = New Cell("example cell with colspan 1 and rowspan 2")
+             cell.setRowspan(2)
+             table.addCell(cell)
+             table.addCell("1.1")
+             table.addCell("2.1")
+             table.addCell("1.2")
+             table.addCell("2.2")
+             table.addCell("cell test1")
+             cell = New Cell("big cell")
+             cell.setRowspan(2)
+             cell.setColspan(2)
+             table.addCell(cell)
+             table.addCell("cell test2")
+             document.add(table)
+         Catch ee As Exception
+             Console.WriteLine(ee.ToString())
+         End Try
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0505.cs" startline="25" endline="63">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 5 example 5
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0505.pdf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Table table = new Table(3);
+ 		table.setBorderWidth(1);
+ 		table.setBorderColor(GDI.Color.Blue);
+ 		table.setPadding(5);
+ 		table.setSpacing(5);
+ 		Cell cell = new Cell("header");
+ 		cell.setHeader(true);
+ 		cell.setColspan(3);
+ 		table.addCell(cell);
+ 		cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 		cell.setRowspan(2);
+ 		cell.setBorderColor(GDI.Color.Red);
+ 		table.addCell(cell);
+ 		table.addCell("1.1");
+ 		table.addCell("2.1");
+ 		table.addCell("1.2");
+ 		table.addCell("2.2");
+ 		table.addCell("cell test1");
+ 		cell = new Cell("big cell");
+ 		cell.setRowspan(2);
+ 		cell.setColspan(2);
+ 		cell.setBackgroundColor(GDI.Color.LightGray);
+ 		table.addCell(cell);
+ 		table.addCell("cell test2");
+ 		document.add(table);
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="90" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 4
+ 
+         Dim document As New Document()
+         Try
+             Dim FileOutputStream As FileOutputStream
+             FileOutputStream = New FileOutputStream("Chap0804.rtf")
+             RtfWriter.getInstance(document, FileOutputStream)
+             document.open()
+             Dim table As Table = New Table(3)
+             table.setBorderWidth(1)
+             table.setPadding(5)
+             table.setSpacing(5)
+             Dim cell As Cell = New Cell("header")
+             cell.setHeader(True)
+             cell.setColspan(3)
+             table.addCell(cell)
+             cell = New Cell("example cell with colspan 1 and rowspan 2")
+             cell.setRowspan(2)
+             table.addCell(cell)
+             table.addCell("1.1")
+             table.addCell("2.1")
+             table.addCell("1.2")
+             table.addCell("2.2")
+             table.addCell("cell test1")
+             cell = New Cell("big cell")
+             cell.setRowspan(2)
+             cell.setColspan(2)
+             table.addCell(cell)
+             table.addCell("cell test2")
+             document.add(table)
+         Catch ee As Exception
+             Console.WriteLine(ee.ToString())
+         End Try
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0506.cs" startline="24" endline="64">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 5 example 6
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0506.pdf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Table table = new Table(3);
+ 		table.setBorderWidth(1);
+ 		table.setBorderColor(GDI.Color.Blue);
+ 		table.setPadding(3);
+ 		table.setSpacing(1);
+ 		Cell cell = new Cell("header");
+ 		cell.setHeader(true);
+ 		cell.setColspan(3);
+ 		table.addCell(cell);
+ 		cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 		cell.setRowspan(2);
+ 		cell.setBorderColor(GDI.Color.Red);
+ 		table.addCell(cell);
+ 		table.addCell("1.1");
+ 		table.addCell("2.1");
+ 		table.addCell("1.2");
+ 		table.addCell("2.2");
+ 		table.addCell("cell test1");
+ 		cell = new Cell("big cell");
+ 		cell.setRowspan(2);
+ 		cell.setColspan(2);
+ 		cell.setHorizontalAlignment(ElementConst.ALIGN_CENTER);
+ 		cell.setVerticalAlignment(ElementConst.ALIGN_MIDDLE);
+ 		cell.setBackgroundColor(GDI.Color.LightGray);
+ 		table.addCell(cell);
+ 		table.addCell("cell test2");
+ 		document.add(table);
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="105" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0207.cs" startline="24" endline="66">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 2 example 7
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap0207.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+ 		// we add some content
+ 		Phrase myPhrase = new Phrase("Hello 1! ", new Font(Font.TIMES_ROMAN, 8, Font.BOLD));
+ 		myPhrase.add(new Phrase("some other font ", new Font(Font.HELVETICA, 8)));
+ 		myPhrase.add(new Phrase("This is the end of the sentence.\n", new Font(Font.TIMES_ROMAN, 8, Font.ITALIC)));
+ 		document.add(myPhrase);
+             
+ 		myPhrase = new Phrase("Hello 1bis! ", FontFactory.getFont(FontFactory.TIMES_ROMAN, 8, Font.BOLD));
+ 		myPhrase.add(new Phrase("some other font ", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		myPhrase.add(new Phrase("This is the end of the sentence.\n", FontFactory.getFont(FontFactory.TIMES_ROMAN, 8, Font.ITALIC)));
+ 		document.add(myPhrase);
+             
+ 		Paragraph myParagraph = new Paragraph("Hello 2! ", new Font(Font.TIMES_ROMAN, 8, Font.BOLD));
+ 		myParagraph.add(new Paragraph("This is the end of the sentence.", new Font(Font.TIMES_ROMAN, 8, Font.ITALIC)));
+ 		document.add(myParagraph);
+             
+ 		myParagraph = new Paragraph(12);
+ 		myParagraph.add(new Paragraph("Hello 3! ", new Font(Font.TIMES_ROMAN, 8, Font.BOLD)));
+ 		myParagraph.add(new Paragraph("This is the end of the sentence.", new Font(Font.TIMES_ROMAN, 8, Font.ITALIC)));
+ 		document.add(myParagraph);
+             
+ 		myPhrase = new Phrase(12);
+ 		myPhrase.add(new Phrase("Hello 4! ", new Font(Font.TIMES_ROMAN, 8, Font.BOLD)));
+ 		myPhrase.add(new Phrase("This is the end of the sentence.\n", new Font(Font.TIMES_ROMAN, 8, Font.ITALIC)));
+ 		document.add(myPhrase);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0207.vb" startline="56" endline="100">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+ 
+         Console.WriteLine("Chapter 2 example 7
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0207.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         ' we add some content
+         Dim myPhrase As New Phrase("Hello 1! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD))
+         myPhrase.add(New Phrase("some other font ", New Font(Font.HELVETICA, 8)))
+         myPhrase.add(New Phrase("This is the end of the sentence.\n", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myPhrase)
+ 
+         myPhrase = New Phrase("Hello 1bis! ", FontFactory.getFont(FontFactory.TIMES_ROMAN, 8, Font.BOLD))
+         myPhrase.add(New Phrase("some other font ", FontFactory.getFont(FontFactory.HELVETICA, 8)))
+         myPhrase.add(New Phrase("This is the end of the sentence.\n", FontFactory.getFont(FontFactory.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myPhrase)
+ 
+         Dim myParagraph As New Paragraph("Hello 2! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD))
+         myParagraph.add(New Paragraph("This is the end of the sentence.", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myParagraph)
+ 
+         myParagraph = New Paragraph(12)
+         myParagraph.add(New Paragraph("Hello 3! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD)))
+         myParagraph.add(New Paragraph("This is the end of the sentence.", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myParagraph)
+ 
+         myPhrase = New Phrase(12)
+         myPhrase.add(New Phrase("Hello 4! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD)))
+         myPhrase.add(New Phrase("This is the end of the sentence.\n", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myPhrase)
+ 
+         ' step 5
+         Document.close()
+ 
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="107" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="59" endline="163">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 11
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim writerA As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0111a.pdf"))
+         Dim writerB As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0111b.pdf"))
+ 
+         ' step 3
+ 
+         ' we add a Watermark that will show up on PAGE 1
+ 
+         writerB.pause()
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 200, 420)
+             Document.add(Watermark)
+         Catch e As Exception
+             Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+         End Try
+ 
+         writerB.resume()
+ 
+         ' we add a Header that will show up on PAGE 1
+         Dim Header As New HeaderFooter(New Phrase("This is a header"), False)
+         Document.setHeader(Header)
+ 
+         ' we open the document
+         Document.open()
+ 
+         ' we rotate the page, starting from PAGE 2
+         Document.setPageSize(PageSize.A4.rotate())
+ 
+         ' we need to change the position of the Watermark
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 320, 200)
+             Document.add(Watermark)
+         Catch e As Exception
+             Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+         End Try
+ 
+         ' we add a Footer that will show up on PAGE 2
+         Dim footer As New HeaderFooter(New Phrase("This is page
+         Document.setFooter(footer)
+ 
+         ' step 4
+ 
+         ' PAGE 1
+ 
+         Document.add(New Paragraph("Hello World"))
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 2
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Earth"))
+ 
+         ' we remove the header starting from PAGE 3
+ 
+         writerA.pause()
+         Document.resetHeader()
+ 
+         writerA.resume()
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 3
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Sun"))
+ 
+         writerA.pause()
+         Document.add(New Paragraph("Remark
+ 
+         writerA.resume()
+ 
+         ' we reset the page numbering
+ 
+         writerB.pause()
+         Document.resetPageCount()
+ 
+         writerB.resume()
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 4
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Moon"))
+ 
+         writerB.pause()
+         Document.add(New Paragraph("Remark
+ 
+         writerB.resume()
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0111.cs" startline="24" endline="119">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 1 example 11
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writerA = PdfWriter.getInstance(document, new FileStream("Chap0111a.pdf", FileMode.Create));
+ 		PdfWriter writerB = PdfWriter.getInstance(document, new FileStream("Chap0111b.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		// we add a Watermark that will show up on PAGE 1
+ 		writerB.pause();
+ 		try 
+ 		{
+ 			Watermark watermark = new Watermark(Image.getInstance("watermark.jpg"), 200, 420);
+ 			document.add(watermark);
+ 		}
+ 		catch(Exception e) 
+ 		{
+ 			Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?");
+ 		}
+ 		writerB.resume();
+             
+ 		// we add a Header that will show up on PAGE 1
+ 		HeaderFooter header = new HeaderFooter(new Phrase("This is a header"), false);
+ 		document.setHeader(header);
+             
+ 		// we open the document
+ 		document.open();
+             
+ 		// we rotate the page, starting from PAGE 2
+ 		document.setPageSize(PageSize.A4.rotate());
+             
+ 		// we need to change the position of the Watermark
+ 		try 
+ 		{
+ 			Watermark watermark = new Watermark(Image.getInstance("watermark.jpg"), 320, 200);
+ 			document.add(watermark);
+ 		}
+ 		catch(Exception e) 
+ 		{
+ 			Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?");
+ 		}
+             
+ 		// we add a Footer that will show up on PAGE 2
+ 		HeaderFooter footer = new HeaderFooter(new Phrase("This is page
+ 		document.setFooter(footer);
+             
+ 		// step 4
+             
+ 		// PAGE 1
+ 		document.add(new Paragraph("Hello World"));
+             
+ 		// we trigger a page break
+ 		document.newPage();
+             
+ 		// PAGE 2
+ 		// we add some more content
+ 		document.add(new Paragraph("Hello Earth"));
+             
+ 		// we remove the header starting from PAGE 3
+ 		writerA.pause();
+ 		document.resetHeader();
+ 		writerA.resume();
+             
+ 		// we trigger a page break
+ 		document.newPage();
+             
+ 		// PAGE 3
+ 		// we add some more content
+ 		document.add(new Paragraph("Hello Sun"));
+ 		writerA.pause();
+ 		document.add(new Paragraph("Remark
+ 		writerA.resume();
+             
+ 		// we reset the page numbering
+ 		writerB.pause();
+ 		document.resetPageCount();
+ 		writerB.resume();
+             
+ 		// we trigger a page break
+ 		document.newPage();
+             
+ 		// PAGE 4
+ 		// we add some more content
+ 		document.add(new Paragraph("Hello Moon"));
+ 		writerB.pause();
+ 		document.add(new Paragraph("Remark
+ 		writerB.resume();
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

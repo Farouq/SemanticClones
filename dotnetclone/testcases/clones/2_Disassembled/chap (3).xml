@@ -1,0 +1,200 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+   IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 1 example 4: Margins"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  ldsfld     class [iText]com.lowagie.text.Rectangle [iText]com.lowagie.text.PageSize::A5
+  IL_0011:  ldc.r4     36.
+  IL_0016:  ldc.r4     72.
+  IL_001b:  ldc.r4     108.
+  IL_0020:  ldc.r4     180.
+  IL_0025:  newobj     instance void [iText]com.lowagie.text.Document::.ctor(class [iText]com.lowagie.text.Rectangle,
+                                                                             float32,
+                                                                             float32,
+                                                                             float32,
+                                                                             float32)
+  IL_002a:  stloc.0
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "Chap0104.pdf"
+  IL_0031:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_0036:  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  IL_003b:  pop
+  IL_003c:  ldloc.0
+  IL_003d:  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  IL_0042:  nop
+  IL_0043:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor()
+  IL_0048:  stloc.2
+  IL_0049:  ldloc.2
+  IL_004a:  ldc.i4.3
+  IL_004b:  callvirt   instance void [iText]com.lowagie.text.Paragraph::setAlignment(int32)
+  IL_0050:  nop
+  IL_0051:  ldc.i4.0
+  IL_0052:  stloc.1
+  IL_0053:  ldloc.2
+  IL_0054:  ldstr      "Hello World, Hello Sun, Hello Moon, Hello Stars, H"
+  + "ello Sea, Hello Land, Hello People. "
+  IL_0059:  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  IL_005e:  pop
+  IL_005f:  nop
+  IL_0060:  ldloc.1
+  IL_0061:  ldc.i4.1
+  IL_0062:  add.ovf
+  IL_0063:  stloc.1
+  IL_0064:  ldloc.1
+  IL_0065:  ldc.i4.s   20
+  IL_0067:  stloc.3
+  IL_0068:  ldloc.3
+  IL_0069:  ble.s      IL_0053
+  IL_006b:  ldloc.0
+  IL_006c:  ldloc.2
+  IL_006d:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_0072:  pop
+  IL_0073:  ldloc.0
+  IL_0074:  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  IL_0079:  nop
+  IL_007a:  nop
+  IL_007b:  ret
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+   IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 1 example 4: Margins"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A5
+  IL_0011:  ldc.r4     36.
+  IL_0016:  ldc.r4     72.
+  IL_001b:  ldc.r4     108.
+  IL_0020:  ldc.r4     180.
+  IL_0025:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  IL_002a:  stloc.0
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "Chap0104.pdf"
+  IL_0031:  ldc.i4.2
+  IL_0032:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_0037:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_003c:  pop
+  IL_003d:  ldloc.0
+  IL_003e:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_0043:  nop
+  IL_0044:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor()
+  IL_0049:  stloc.1
+  IL_004a:  ldloc.1
+  IL_004b:  ldc.i4.3
+  IL_004c:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setAlignment(int32)
+  IL_0051:  nop
+  IL_0052:  ldc.i4.0
+  IL_0053:  stloc.2
+  IL_0054:  br.s       IL_0068
+  IL_0056:  nop
+  IL_0057:  ldloc.1
+  IL_0058:  ldstr      "Hello World, Hello Sun, Hello Moon, Hello Stars, H"
+  + "ello Sea, Hello Land, Hello People. "
+  IL_005d:  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  IL_0062:  pop
+  IL_0063:  nop
+  IL_0064:  ldloc.2
+  IL_0065:  ldc.i4.1
+  IL_0066:  add
+  IL_0067:  stloc.2
+  IL_0068:  ldloc.2
+  IL_0069:  ldc.i4.s   20
+  IL_006b:  clt
+  IL_006d:  stloc.3
+  IL_006e:  ldloc.3
+  IL_006f:  brtrue.s   IL_0056
+  IL_0071:  ldloc.0
+  IL_0072:  ldloc.1
+  IL_0073:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0078:  pop
+  IL_0079:  ldloc.0
+  IL_007a:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_007f:  nop
+  IL_0080:  ret
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+   IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 1 example 4: Margins"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A5
+  IL_0014:  ldc.r4     36.
+  IL_0019:  ldc.r4     72.
+  IL_001e:  ldc.r4     108.
+  IL_0023:  ldc.r4     180.
+  IL_0028:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  IL_002d:  stloc.0
+  .try
+  {
+    IL_002e:  ldloc.0
+    IL_002f:  ldstr      "Chap0104.pdf"
+    IL_0034:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+    IL_0039:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+    IL_003e:  pop
+    IL_003f:  ldloc.0
+    IL_0040:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+    IL_0045:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor()
+    IL_004a:  stloc.1
+    IL_004b:  ldloc.1
+    IL_004c:  ldc.i4.3
+    IL_004d:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setAlignment(int32)
+    IL_0052:  ldc.i4.0
+    IL_0053:  stloc.2
+    IL_0054:  br.s       IL_0066
+    IL_0056:  ldloc.1
+    IL_0057:  ldstr      "Hello World, Hello Sun, Hello Moon, Hello Stars, H"
+    + "ello Sea, Hello Land, Hello People. "
+    IL_005c:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+    IL_0061:  pop
+    IL_0062:  ldloc.2
+    IL_0063:  ldc.i4.1
+    IL_0064:  add
+    IL_0065:  stloc.2
+    IL_0066:  ldloc.2
+    IL_0067:  ldc.i4.s   20
+    IL_0069:  blt.s      IL_0056
+    IL_006b:  ldloc.0
+    IL_006c:  ldloc.1
+    IL_006d:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_0072:  pop
+    IL_0073:  leave.s    IL_00a3
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+    IL_0075:  dup
+    IL_0076:  stloc.s    V_5
+    IL_0078:  stloc.3
+    IL_0079:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_007e:  ldloc.3
+    IL_007f:  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+    IL_0084:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_0089:  leave.s    IL_00a3
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+    IL_008b:  dup
+    IL_008c:  stloc.s    V_6
+    IL_008e:  stloc.s    ioe
+    IL_0090:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_0095:  ldloc.s    ioe
+    IL_0097:  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+    IL_009c:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_00a1:  leave.s    IL_00a3
+  }  // end handler
+  IL_00a3:  ldloc.0
+  IL_00a4:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_00a9:  br.s       IL_00ab
+  IL_00ab:  ret
+]]></source>
+</source_elements></project>

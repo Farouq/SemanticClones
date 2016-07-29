@@ -1,0 +1,3054 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="87" endline="281"><![CDATA[
+  {
+    .entrypoint
+    // Code size       1993 (0x7c9)
+    .maxstack  8
+    .locals init ([0] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType,
+             [1] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [2] class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment env,
+             [3] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+             [4] class [System.Xml]System.Xml.XmlDocument xml,
+             [5] class [IrrlichtLime]IrrlichtLime.GUI.GUIFont font,
+             [6] class [IrrlichtLime]IrrlichtLime.GUI.GUIImage img,
+             [7] class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu menu,
+             [8] class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu submenu,
+             [9] class [IrrlichtLime]IrrlichtLime.GUI.GUIToolBar bar,
+             [10] class [IrrlichtLime]IrrlichtLime.Video.Texture image,
+             [11] class [IrrlichtLime]IrrlichtLime.GUI.GUIComboBox 'box',
+             [12] class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText fpstext,
+             [13] class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText postext,
+             [14] bool hasFocus,
+             [15] bool focused,
+             [16] string str,
+             [17] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode cam,
+             [18] bool CS$4$0000)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+    IL_0000:  nop
+    IL_0001:  ldloca.s   driverType
+    IL_0003:  call       bool _09.Meshviewer.Program::AskUserForDriver(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType&)
+    IL_0008:  stloc.s    CS$4$0000
+    IL_000a:  ldloc.s    CS$4$0000
+    IL_000c:  brtrue.s   IL_0013
+
+    IL_000e:  br         IL_07c8
+
+    IL_0013:  ldloc.0
+    IL_0014:  ldc.i4     0x320
+    IL_0019:  ldc.i4     0x258
+    IL_001e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_0023:  ldc.i4.s   16
+    IL_0025:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di,
+                                                                                                                                 int32)
+    IL_002a:  stsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_002f:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0034:  ldnull
+    IL_0035:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_003a:  ldc.i4.0
+    IL_003b:  ceq
+    IL_003d:  stloc.s    CS$4$0000
+    IL_003f:  ldloc.s    CS$4$0000
+    IL_0041:  brtrue.s   IL_0048
+
+    IL_0043:  br         IL_07c8
+
+    IL_0048:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_004d:  ldnull
+    IL_004e:  ldftn      bool _09.Meshviewer.Program::device_OnEvent(class [IrrlichtLime]IrrlichtLime.Event)
+    IL_0054:  newobj     instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler::.ctor(object,
+                                                                                                     native int)
+    IL_0059:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::add_OnEvent(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler)
+    IL_005e:  nop
+    IL_005f:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0064:  ldc.i4.1
+    IL_0065:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowResizable(bool)
+    IL_006a:  nop
+    IL_006b:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0070:  ldstr      "Irrlicht Engine - Loading..."
+    IL_0075:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_007a:  nop
+    IL_007b:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0080:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0085:  stloc.1
+    IL_0086:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_008b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0090:  stloc.2
+    IL_0091:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0096:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_009b:  stloc.3
+    IL_009c:  ldloc.3
+    IL_009d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.IO.Attributes [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_Attributes()
+    IL_00a2:  call       string [IrrlichtLime]IrrlichtLime.Scene.SceneParameters::get_COLLADA_CreateSceneInstances()
+    IL_00a7:  ldc.i4.1
+    IL_00a8:  box        [mscorlib]System.Boolean
+    IL_00ad:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IO.Attributes::SetValue(string,
+                                                                                          object)
+    IL_00b2:  nop
+    IL_00b3:  ldloc.1
+    IL_00b4:  ldc.i4.2
+    IL_00b5:  ldc.i4.1
+    IL_00b6:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetTextureCreationFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.TextureCreationFlag,
+                                                                                                            bool)
+    IL_00bb:  nop
+    IL_00bc:  ldloc.3
+    IL_00bd:  ldnull
+    IL_00be:  ldc.r4     200.
+    IL_00c3:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32)
+    IL_00c8:  ldc.r4     1.
+    IL_00cd:  ldc.r4     1.
+    IL_00d2:  ldc.r4     1.
+    IL_00d7:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Colorf::.ctor(float32,
+                                                                                      float32,
+                                                                                      float32)
+    IL_00dc:  ldc.r4     2000.
+    IL_00e1:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.LightSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddLightSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Video.Colorf,
+                                                                                                                                                         float32)
+    IL_00e6:  pop
+    IL_00e7:  ldloc.3
+    IL_00e8:  ldc.r4     0.30000001
+    IL_00ed:  ldc.r4     0.30000001
+    IL_00f2:  ldc.r4     0.30000001
+    IL_00f7:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Colorf::.ctor(float32,
+                                                                                      float32,
+                                                                                      float32)
+    IL_00fc:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::set_AmbientLight(class [IrrlichtLime]IrrlichtLime.Video.Colorf)
+    IL_0101:  nop
+    IL_0102:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0107:  callvirt   instance class [IrrlichtLime]IrrlichtLime.IO.FileSystem [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_FileSystem()
+    IL_010c:  ldstr      "../../media/"
+    IL_0111:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IO.FileSystem::AddFileArchive(string)
+    IL_0116:  pop
+    IL_0117:  newobj     instance void [System.Xml]System.Xml.XmlDocument::.ctor()
+    IL_011c:  stloc.s    xml
+    IL_011e:  ldloc.s    xml
+    IL_0120:  ldstr      "../../media/config.xml"
+    IL_0125:  callvirt   instance void [System.Xml]System.Xml.XmlDocument::Load(string)
+    IL_012a:  nop
+    IL_012b:  ldloc.s    xml
+    IL_012d:  callvirt   instance class [System.Xml]System.Xml.XmlElement [System.Xml]System.Xml.XmlDocument::get_DocumentElement()
+    IL_0132:  ldstr      "startUpModel"
+    IL_0137:  callvirt   instance class [System.Xml]System.Xml.XmlElement [System.Xml]System.Xml.XmlNode::get_Item(string)
+    IL_013c:  callvirt   instance class [System.Xml]System.Xml.XmlAttributeCollection [System.Xml]System.Xml.XmlNode::get_Attributes()
+    IL_0141:  ldstr      "file"
+    IL_0146:  callvirt   instance class [System.Xml]System.Xml.XmlAttribute [System.Xml]System.Xml.XmlAttributeCollection::get_ItemOf(string)
+    IL_014b:  callvirt   instance string [System.Xml]System.Xml.XmlNode::get_Value()
+    IL_0150:  stsfld     string _09.Meshviewer.Program::startUpModelFile
+    IL_0155:  ldloc.s    xml
+    IL_0157:  callvirt   instance class [System.Xml]System.Xml.XmlElement [System.Xml]System.Xml.XmlDocument::get_DocumentElement()
+    IL_015c:  ldstr      "messageText"
+    IL_0161:  callvirt   instance class [System.Xml]System.Xml.XmlElement [System.Xml]System.Xml.XmlNode::get_Item(string)
+    IL_0166:  callvirt   instance class [System.Xml]System.Xml.XmlAttributeCollection [System.Xml]System.Xml.XmlNode::get_Attributes()
+    IL_016b:  ldstr      "caption"
+    IL_0170:  callvirt   instance class [System.Xml]System.Xml.XmlAttribute [System.Xml]System.Xml.XmlAttributeCollection::get_ItemOf(string)
+    IL_0175:  callvirt   instance string [System.Xml]System.Xml.XmlNode::get_Value()
+    IL_017a:  stsfld     string _09.Meshviewer.Program::caption
+    IL_017f:  ldloc.s    xml
+    IL_0181:  callvirt   instance class [System.Xml]System.Xml.XmlElement [System.Xml]System.Xml.XmlDocument::get_DocumentElement()
+    IL_0186:  ldstr      "messageText"
+    IL_018b:  callvirt   instance class [System.Xml]System.Xml.XmlElement [System.Xml]System.Xml.XmlNode::get_Item(string)
+    IL_0190:  callvirt   instance string [System.Xml]System.Xml.XmlNode::get_InnerText()
+    IL_0195:  stsfld     string _09.Meshviewer.Program::messageText
+    IL_019a:  ldarg.0
+    IL_019b:  ldlen
+    IL_019c:  conv.i4
+    IL_019d:  ldc.i4.0
+    IL_019e:  cgt
+    IL_01a0:  ldc.i4.0
+    IL_01a1:  ceq
+    IL_01a3:  stloc.s    CS$4$0000
+    IL_01a5:  ldloc.s    CS$4$0000
+    IL_01a7:  brtrue.s   IL_01b1
+
+    IL_01a9:  ldarg.0
+    IL_01aa:  ldc.i4.0
+    IL_01ab:  ldelem.ref
+    IL_01ac:  stsfld     string _09.Meshviewer.Program::startUpModelFile
+    IL_01b1:  ldloc.2
+    IL_01b2:  ldstr      "fonthaettenschweiler.bmp"
+    IL_01b7:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::GetFont(string)
+    IL_01bc:  stloc.s    font
+    IL_01be:  ldloc.s    font
+    IL_01c0:  ldnull
+    IL_01c1:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_01c6:  ldc.i4.0
+    IL_01c7:  ceq
+    IL_01c9:  stloc.s    CS$4$0000
+    IL_01cb:  ldloc.s    CS$4$0000
+    IL_01cd:  brtrue.s   IL_01dd
+
+    IL_01cf:  ldloc.2
+    IL_01d0:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUISkin [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_Skin()
+    IL_01d5:  ldloc.s    font
+    IL_01d7:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUISkin::SetFont(class [IrrlichtLime]IrrlichtLime.GUI.GUIFont)
+    IL_01dc:  nop
+    IL_01dd:  ldloc.2
+    IL_01de:  ldloc.1
+    IL_01df:  ldstr      "irrlichtlogoalpha2.tga"
+    IL_01e4:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_01e9:  ldc.i4.s   10
+    IL_01eb:  ldloc.1
+    IL_01ec:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_ScreenSize()
+    IL_01f1:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::get_Height()
+    IL_01f6:  ldc.i4     0x80
+    IL_01fb:  sub
+    IL_01fc:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_0201:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIImage [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddImage(class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                        class [IrrlichtLime]IrrlichtLime.Core.Vector2Di)
+    IL_0206:  stloc.s    img
+    IL_0208:  ldloc.s    img
+    IL_020a:  ldc.i4     0x10023
+    IL_020f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::set_ID(int32)
+    IL_0214:  nop
+    IL_0215:  ldloc.s    img
+    IL_0217:  ldc.i4.0
+    IL_0218:  ldc.i4.0
+    IL_0219:  ldc.i4.1
+    IL_021a:  ldc.i4.1
+    IL_021b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::SetAlignment(valuetype [IrrlichtLime]IrrlichtLime.GUI.GUIAlignment,
+                                                                                               valuetype [IrrlichtLime]IrrlichtLime.GUI.GUIAlignment,
+                                                                                               valuetype [IrrlichtLime]IrrlichtLime.GUI.GUIAlignment,
+                                                                                               valuetype [IrrlichtLime]IrrlichtLime.GUI.GUIAlignment)
+    IL_0220:  nop
+    IL_0221:  ldloc.2
+    IL_0222:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddMenu()
+    IL_0227:  stloc.s    menu
+    IL_0229:  ldloc.s    menu
+    IL_022b:  ldstr      "File"
+    IL_0230:  ldc.i4.m1
+    IL_0231:  ldc.i4.1
+    IL_0232:  ldc.i4.1
+    IL_0233:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32,
+                                                                                               bool,
+                                                                                               bool)
+    IL_0238:  pop
+    IL_0239:  ldloc.s    menu
+    IL_023b:  ldstr      "View"
+    IL_0240:  ldc.i4.m1
+    IL_0241:  ldc.i4.1
+    IL_0242:  ldc.i4.1
+    IL_0243:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32,
+                                                                                               bool,
+                                                                                               bool)
+    IL_0248:  pop
+    IL_0249:  ldloc.s    menu
+    IL_024b:  ldstr      "Camera"
+    IL_0250:  ldc.i4.m1
+    IL_0251:  ldc.i4.1
+    IL_0252:  ldc.i4.1
+    IL_0253:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32,
+                                                                                               bool,
+                                                                                               bool)
+    IL_0258:  pop
+    IL_0259:  ldloc.s    menu
+    IL_025b:  ldstr      "Help"
+    IL_0260:  ldc.i4.m1
+    IL_0261:  ldc.i4.1
+    IL_0262:  ldc.i4.1
+    IL_0263:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32,
+                                                                                               bool,
+                                                                                               bool)
+    IL_0268:  pop
+    IL_0269:  ldloc.s    menu
+    IL_026b:  ldc.i4.0
+    IL_026c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetSubMenu(int32)
+    IL_0271:  stloc.s    submenu
+    IL_0273:  ldloc.s    submenu
+    IL_0275:  ldstr      "Open Model File & Texture..."
+    IL_027a:  ldc.i4     0x10004
+    IL_027f:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_0284:  pop
+    IL_0285:  ldloc.s    submenu
+    IL_0287:  ldstr      "Set Model Archive..."
+    IL_028c:  ldc.i4     0x10005
+    IL_0291:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_0296:  pop
+    IL_0297:  ldloc.s    submenu
+    IL_0299:  ldstr      "Load as Octree"
+    IL_029e:  ldc.i4     0x10006
+    IL_02a3:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_02a8:  pop
+    IL_02a9:  ldloc.s    submenu
+    IL_02ab:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddSeparator()
+    IL_02b0:  nop
+    IL_02b1:  ldloc.s    submenu
+    IL_02b3:  ldstr      "Quit"
+    IL_02b8:  ldc.i4     0x10018
+    IL_02bd:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_02c2:  pop
+    IL_02c3:  ldloc.s    menu
+    IL_02c5:  ldc.i4.1
+    IL_02c6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetSubMenu(int32)
+    IL_02cb:  stloc.s    submenu
+    IL_02cd:  ldloc.s    submenu
+    IL_02cf:  ldstr      "sky box visible"
+    IL_02d4:  ldc.i4     0x10007
+    IL_02d9:  ldc.i4.1
+    IL_02da:  ldc.i4.0
+    IL_02db:  ldc.i4.1
+    IL_02dc:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32,
+                                                                                               bool,
+                                                                                               bool,
+                                                                                               bool)
+    IL_02e1:  pop
+    IL_02e2:  ldloc.s    submenu
+    IL_02e4:  ldstr      "toggle model debug information"
+    IL_02e9:  ldc.i4     0x10008
+    IL_02ee:  ldc.i4.1
+    IL_02ef:  ldc.i4.1
+    IL_02f0:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32,
+                                                                                               bool,
+                                                                                               bool)
+    IL_02f5:  pop
+    IL_02f6:  ldloc.s    submenu
+    IL_02f8:  ldstr      "model material"
+    IL_02fd:  ldc.i4.m1
+    IL_02fe:  ldc.i4.1
+    IL_02ff:  ldc.i4.1
+    IL_0300:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32,
+                                                                                               bool,
+                                                                                               bool)
+    IL_0305:  pop
+    IL_0306:  ldloc.s    submenu
+    IL_0308:  ldc.i4.1
+    IL_0309:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetSubMenu(int32)
+    IL_030e:  stloc.s    submenu
+    IL_0310:  ldloc.s    submenu
+    IL_0312:  ldstr      "Off"
+    IL_0317:  ldc.i4     0x10009
+    IL_031c:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_0321:  pop
+    IL_0322:  ldloc.s    submenu
+    IL_0324:  ldstr      "Bounding Box"
+    IL_0329:  ldc.i4     0x1000a
+    IL_032e:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_0333:  pop
+    IL_0334:  ldloc.s    submenu
+    IL_0336:  ldstr      "Normals"
+    IL_033b:  ldc.i4     0x1000b
+    IL_0340:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_0345:  pop
+    IL_0346:  ldloc.s    submenu
+    IL_0348:  ldstr      "Skeleton"
+    IL_034d:  ldc.i4     0x1000c
+    IL_0352:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_0357:  pop
+    IL_0358:  ldloc.s    submenu
+    IL_035a:  ldstr      "Wire overlay"
+    IL_035f:  ldc.i4     0x1000d
+    IL_0364:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_0369:  pop
+    IL_036a:  ldloc.s    submenu
+    IL_036c:  ldstr      "Half-Transparent"
+    IL_0371:  ldc.i4     0x1000e
+    IL_0376:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_037b:  pop
+    IL_037c:  ldloc.s    submenu
+    IL_037e:  ldstr      "Buffers bounding boxes"
+    IL_0383:  ldc.i4     0x1000f
+    IL_0388:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_038d:  pop
+    IL_038e:  ldloc.s    submenu
+    IL_0390:  ldstr      "All"
+    IL_0395:  ldc.i4     0x10010
+    IL_039a:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_039f:  pop
+    IL_03a0:  ldloc.s    menu
+    IL_03a2:  ldc.i4.1
+    IL_03a3:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetSubMenu(int32)
+    IL_03a8:  ldc.i4.2
+    IL_03a9:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetSubMenu(int32)
+    IL_03ae:  stloc.s    submenu
+    IL_03b0:  ldloc.s    submenu
+    IL_03b2:  ldstr      "Solid"
+    IL_03b7:  ldc.i4     0x10011
+    IL_03bc:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_03c1:  pop
+    IL_03c2:  ldloc.s    submenu
+    IL_03c4:  ldstr      "Transparent"
+    IL_03c9:  ldc.i4     0x10012
+    IL_03ce:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_03d3:  pop
+    IL_03d4:  ldloc.s    submenu
+    IL_03d6:  ldstr      "Reflection"
+    IL_03db:  ldc.i4     0x10013
+    IL_03e0:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_03e5:  pop
+    IL_03e6:  ldloc.s    menu
+    IL_03e8:  ldc.i4.2
+    IL_03e9:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetSubMenu(int32)
+    IL_03ee:  stloc.s    submenu
+    IL_03f0:  ldloc.s    submenu
+    IL_03f2:  ldstr      "Maya Style"
+    IL_03f7:  ldc.i4     0x10014
+    IL_03fc:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_0401:  pop
+    IL_0402:  ldloc.s    submenu
+    IL_0404:  ldstr      "First Person"
+    IL_0409:  ldc.i4     0x10015
+    IL_040e:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_0413:  pop
+    IL_0414:  ldloc.s    menu
+    IL_0416:  ldc.i4.3
+    IL_0417:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetSubMenu(int32)
+    IL_041c:  stloc.s    submenu
+    IL_041e:  ldloc.s    submenu
+    IL_0420:  ldstr      "About"
+    IL_0425:  ldc.i4     0x10017
+    IL_042a:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::AddItem(string,
+                                                                                               int32)
+    IL_042f:  pop
+    IL_0430:  ldloc.2
+    IL_0431:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIToolBar [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddToolBar()
+    IL_0436:  stloc.s    bar
+    IL_0438:  ldloc.1
+    IL_0439:  ldstr      "open.png"
+    IL_043e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_0443:  stloc.s    image
+    IL_0445:  ldloc.s    bar
+    IL_0447:  ldc.i4     0x1001f
+    IL_044c:  ldnull
+    IL_044d:  ldstr      "Open a model"
+    IL_0452:  ldloc.s    image
+    IL_0454:  ldnull
+    IL_0455:  ldc.i4.0
+    IL_0456:  ldc.i4.1
+    IL_0457:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIButton [IrrlichtLime]IrrlichtLime.GUI.GUIToolBar::AddButton(int32,
+                                                                                                                                      string,
+                                                                                                                                      string,
+                                                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                      bool,
+                                                                                                                                      bool)
+    IL_045c:  pop
+    IL_045d:  ldloc.1
+    IL_045e:  ldstr      "tools.png"
+    IL_0463:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_0468:  stloc.s    image
+    IL_046a:  ldloc.s    bar
+    IL_046c:  ldc.i4     0x10021
+    IL_0471:  ldnull
+    IL_0472:  ldstr      "Open Toolset"
+    IL_0477:  ldloc.s    image
+    IL_0479:  ldnull
+    IL_047a:  ldc.i4.0
+    IL_047b:  ldc.i4.1
+    IL_047c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIButton [IrrlichtLime]IrrlichtLime.GUI.GUIToolBar::AddButton(int32,
+                                                                                                                                      string,
+                                                                                                                                      string,
+                                                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                      bool,
+                                                                                                                                      bool)
+    IL_0481:  pop
+    IL_0482:  ldloc.1
+    IL_0483:  ldstr      "zip.png"
+    IL_0488:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_048d:  stloc.s    image
+    IL_048f:  ldloc.s    bar
+    IL_0491:  ldc.i4     0x10022
+    IL_0496:  ldnull
+    IL_0497:  ldstr      "Set Model Archive"
+    IL_049c:  ldloc.s    image
+    IL_049e:  ldnull
+    IL_049f:  ldc.i4.0
+    IL_04a0:  ldc.i4.1
+    IL_04a1:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIButton [IrrlichtLime]IrrlichtLime.GUI.GUIToolBar::AddButton(int32,
+                                                                                                                                      string,
+                                                                                                                                      string,
+                                                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                      bool,
+                                                                                                                                      bool)
+    IL_04a6:  pop
+    IL_04a7:  ldloc.1
+    IL_04a8:  ldstr      "help.png"
+    IL_04ad:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_04b2:  stloc.s    image
+    IL_04b4:  ldloc.s    bar
+    IL_04b6:  ldc.i4     0x10020
+    IL_04bb:  ldnull
+    IL_04bc:  ldstr      "Open Help"
+    IL_04c1:  ldloc.s    image
+    IL_04c3:  ldnull
+    IL_04c4:  ldc.i4.0
+    IL_04c5:  ldc.i4.1
+    IL_04c6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIButton [IrrlichtLime]IrrlichtLime.GUI.GUIToolBar::AddButton(int32,
+                                                                                                                                      string,
+                                                                                                                                      string,
+                                                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                      bool,
+                                                                                                                                      bool)
+    IL_04cb:  pop
+    IL_04cc:  ldloc.2
+    IL_04cd:  ldc.i4     0xfa
+    IL_04d2:  ldc.i4.4
+    IL_04d3:  ldc.i4     0x15e
+    IL_04d8:  ldc.i4.s   23
+    IL_04da:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_04df:  ldloc.s    bar
+    IL_04e1:  ldc.i4     0x10019
+    IL_04e6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIComboBox [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddComboBox(class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                              class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                              int32)
+    IL_04eb:  stloc.s    'box'
+    IL_04ed:  ldloc.s    'box'
+    IL_04ef:  ldstr      "No filtering"
+    IL_04f4:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIComboBox::AddItem(string)
+    IL_04f9:  pop
+    IL_04fa:  ldloc.s    'box'
+    IL_04fc:  ldstr      "Bilinear"
+    IL_0501:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIComboBox::AddItem(string)
+    IL_0506:  pop
+    IL_0507:  ldloc.s    'box'
+    IL_0509:  ldstr      "Trilinear"
+    IL_050e:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIComboBox::AddItem(string)
+    IL_0513:  pop
+    IL_0514:  ldloc.s    'box'
+    IL_0516:  ldstr      "Anisotropic"
+    IL_051b:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIComboBox::AddItem(string)
+    IL_0520:  pop
+    IL_0521:  ldloc.s    'box'
+    IL_0523:  ldstr      "Isotropic"
+    IL_0528:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIComboBox::AddItem(string)
+    IL_052d:  pop
+    IL_052e:  ldc.i4     0xff
+    IL_0533:  ldloc.2
+    IL_0534:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUISkin [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_Skin()
+    IL_0539:  call       void _09.Meshviewer.Program::setSkinTransparency(int32,
+                                                                          class [IrrlichtLime]IrrlichtLime.GUI.GUISkin)
+    IL_053e:  nop
+    IL_053f:  call       void _09.Meshviewer.Program::createToolBox()
+    IL_0544:  nop
+    IL_0545:  ldloc.2
+    IL_0546:  ldstr      ""
+    IL_054b:  ldc.i4     0x190
+    IL_0550:  ldc.i4.4
+    IL_0551:  ldc.i4     0x23a
+    IL_0556:  ldc.i4.s   23
+    IL_0558:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_055d:  ldc.i4.1
+    IL_055e:  ldc.i4.0
+    IL_055f:  ldloc.s    bar
+    IL_0561:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddStaticText(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                  bool,
+                                                                                                                                                  bool,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.GUI.GUIElement)
+    IL_0566:  stloc.s    fpstext
+    IL_0568:  ldloc.2
+    IL_0569:  ldstr      ""
+    IL_056e:  ldc.i4.s   10
+    IL_0570:  ldc.i4.s   50
+    IL_0572:  ldc.i4     0x1d6
+    IL_0577:  ldc.i4.s   80
+    IL_0579:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_057e:  ldc.i4.0
+    IL_057f:  ldc.i4.0
+    IL_0580:  ldnull
+    IL_0581:  ldc.i4     0x10016
+    IL_0586:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddStaticText(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                  bool,
+                                                                                                                                                  bool,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                                  int32)
+    IL_058b:  stloc.s    postext
+    IL_058d:  ldloc.s    postext
+    IL_058f:  ldc.i4.0
+    IL_0590:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::set_Visible(bool)
+    IL_0595:  nop
+    IL_0596:  ldarg.0
+    IL_0597:  ldlen
+    IL_0598:  conv.i4
+    IL_0599:  ldc.i4.0
+    IL_059a:  ceq
+    IL_059c:  ldc.i4.0
+    IL_059d:  ceq
+    IL_059f:  stloc.s    CS$4$0000
+    IL_05a1:  ldloc.s    CS$4$0000
+    IL_05a3:  brtrue.s   IL_05ab
+
+    IL_05a5:  call       void _09.Meshviewer.Program::showAboutText()
+    IL_05aa:  nop
+    IL_05ab:  ldsfld     string _09.Meshviewer.Program::startUpModelFile
+    IL_05b0:  call       void _09.Meshviewer.Program::loadModel(string)
+    IL_05b5:  nop
+    IL_05b6:  ldloc.3
+    IL_05b7:  ldstr      "irrlicht2_up.jpg"
+    IL_05bc:  ldstr      "irrlicht2_dn.jpg"
+    IL_05c1:  ldstr      "irrlicht2_lf.jpg"
+    IL_05c6:  ldstr      "irrlicht2_rt.jpg"
+    IL_05cb:  ldstr      "irrlicht2_ft.jpg"
+    IL_05d0:  ldstr      "irrlicht2_bk.jpg"
+    IL_05d5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddSkyBoxSceneNode(string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string)
+    IL_05da:  stsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::skybox
+    IL_05df:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_05e4:  ldc.i4.0
+    IL_05e5:  ldloc.3
+    IL_05e6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNodeMaya()
+    IL_05eb:  stelem.ref
+    IL_05ec:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_05f1:  ldc.i4.0
+    IL_05f2:  ldelem.ref
+    IL_05f3:  ldc.r4     20000.
+    IL_05f8:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_FarValue(float32)
+    IL_05fd:  nop
+    IL_05fe:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_0603:  ldc.i4.0
+    IL_0604:  ldelem.ref
+    IL_0605:  ldc.r4     0.0
+    IL_060a:  ldc.r4     30.
+    IL_060f:  ldc.r4     0.0
+    IL_0614:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0619:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_Target(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_061e:  nop
+    IL_061f:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_0624:  ldc.i4.1
+    IL_0625:  ldloc.3
+    IL_0626:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNodeFPS()
+    IL_062b:  stelem.ref
+    IL_062c:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_0631:  ldc.i4.1
+    IL_0632:  ldelem.ref
+    IL_0633:  ldc.r4     20000.
+    IL_0638:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_FarValue(float32)
+    IL_063d:  nop
+    IL_063e:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_0643:  ldc.i4.1
+    IL_0644:  ldelem.ref
+    IL_0645:  ldc.r4     0.0
+    IL_064a:  ldc.r4     0.0
+    IL_064f:  ldc.r4     -70.
+    IL_0654:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0659:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_065e:  nop
+    IL_065f:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_0664:  ldc.i4.1
+    IL_0665:  ldelem.ref
+    IL_0666:  ldc.r4     0.0
+    IL_066b:  ldc.r4     30.
+    IL_0670:  ldc.r4     0.0
+    IL_0675:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_067a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_Target(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_067f:  nop
+    IL_0680:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_0685:  ldc.i4.0
+    IL_0686:  ldelem.ref
+    IL_0687:  call       void _09.Meshviewer.Program::setActiveCamera(class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode)
+    IL_068c:  nop
+    IL_068d:  ldstr      "{0} - [{1}]"
+    IL_0692:  ldsfld     string _09.Meshviewer.Program::caption
+    IL_0697:  ldloc.1
+    IL_0698:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_069d:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_06a2:  stsfld     string _09.Meshviewer.Program::caption
+    IL_06a7:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_06ac:  ldsfld     string _09.Meshviewer.Program::caption
+    IL_06b1:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_06b6:  nop
+    IL_06b7:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_06bc:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_WindowFocused()
+    IL_06c1:  stloc.s    hasFocus
+    IL_06c3:  br         IL_079e
+
+    IL_06c8:  nop
+    IL_06c9:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_06ce:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_WindowFocused()
+    IL_06d3:  stloc.s    focused
+    IL_06d5:  ldloc.s    hasFocus
+    IL_06d7:  brfalse.s  IL_06dd
+
+    IL_06d9:  ldloc.s    focused
+    IL_06db:  br.s       IL_06de
+
+    IL_06dd:  ldc.i4.1
+    IL_06de:  stloc.s    CS$4$0000
+    IL_06e0:  ldloc.s    CS$4$0000
+    IL_06e2:  brtrue.s   IL_06ea
+
+    IL_06e4:  call       void _09.Meshviewer.Program::onKillFocus()
+    IL_06e9:  nop
+    IL_06ea:  ldloc.s    focused
+    IL_06ec:  stloc.s    hasFocus
+    IL_06ee:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_06f3:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_WindowActive()
+    IL_06f8:  ldc.i4.0
+    IL_06f9:  ceq
+    IL_06fb:  stloc.s    CS$4$0000
+    IL_06fd:  ldloc.s    CS$4$0000
+    IL_06ff:  brtrue     IL_0792
+
+    IL_0704:  nop
+    IL_0705:  ldloc.1
+    IL_0706:  ldc.i4.1
+    IL_0707:  ldc.i4.1
+    IL_0708:  ldc.i4.s   50
+    IL_070a:  ldc.i4.s   50
+    IL_070c:  ldc.i4.s   50
+    IL_070e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0713:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool,
+                                                                                                bool,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0718:  pop
+    IL_0719:  ldloc.3
+    IL_071a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_071f:  nop
+    IL_0720:  ldloc.2
+    IL_0721:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::DrawAll()
+    IL_0726:  nop
+    IL_0727:  ldloc.1
+    IL_0728:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_072d:  pop
+    IL_072e:  ldstr      "FPS: {0} Tris: {1}"
+    IL_0733:  ldloc.1
+    IL_0734:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_0739:  box        [mscorlib]System.Int32
+    IL_073e:  ldloc.1
+    IL_073f:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_PrimitiveCountDrawn()
+    IL_0744:  box        [mscorlib]System.Int32
+    IL_0749:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_074e:  stloc.s    str
+    IL_0750:  ldloc.s    fpstext
+    IL_0752:  ldloc.s    str
+    IL_0754:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::set_Text(string)
+    IL_0759:  nop
+    IL_075a:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_075f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0764:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_ActiveCamera()
+    IL_0769:  stloc.s    cam
+    IL_076b:  ldstr      "Pos: {0} Tgt: {1}"
+    IL_0770:  ldloc.s    cam
+    IL_0772:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_Position()
+    IL_0777:  ldloc.s    cam
+    IL_0779:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::get_Target()
+    IL_077e:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_0783:  stloc.s    str
+    IL_0785:  ldloc.s    postext
+    IL_0787:  ldloc.s    str
+    IL_0789:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::set_Text(string)
+    IL_078e:  nop
+    IL_078f:  nop
+    IL_0790:  br.s       IL_079d
+
+    IL_0792:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0797:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Yield()
+    IL_079c:  nop
+    IL_079d:  nop
+    IL_079e:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_07a3:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_07a8:  brfalse.s  IL_07b3
+
+    IL_07aa:  ldloc.1
+    IL_07ab:  ldnull
+    IL_07ac:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_07b1:  br.s       IL_07b4
+
+    IL_07b3:  ldc.i4.0
+    IL_07b4:  stloc.s    CS$4$0000
+    IL_07b6:  ldloc.s    CS$4$0000
+    IL_07b8:  brtrue     IL_06c8
+
+    IL_07bd:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_07c2:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_07c7:  pop
+    IL_07c8:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="282" endline="383"><![CDATA[
+  {
+    // Code size       770 (0x302)
+    .maxstack  5
+    .locals init ([0] valuetype _09.Meshviewer.Program/guiID id,
+             [1] class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment env,
+             [2] int32 p,
+             [3] class [IrrlichtLime]IrrlichtLime.GUI.GUIElement r,
+             [4] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df s,
+             [5] bool CS$1$0000,
+             [6] bool CS$4$0001,
+             [7] valuetype [IrrlichtLime]IrrlichtLime.GUI.GUIEventType CS$4$0002,
+             [8] valuetype _09.Meshviewer.Program/guiID CS$4$0003)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.EventType [IrrlichtLime]IrrlichtLime.Event::get_Type()
+    IL_0007:  ldc.i4.2
+    IL_0008:  bne.un.s   IL_002c
+
+    IL_000a:  ldarg.0
+    IL_000b:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_0010:  ldfld      bool [IrrlichtLime]IrrlichtLime.Event/KeyEvent::PressedDown
+    IL_0015:  brtrue.s   IL_002c
+
+    IL_0017:  ldarg.0
+    IL_0018:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_001d:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.KeyCode [IrrlichtLime]IrrlichtLime.Event/KeyEvent::Key
+    IL_0022:  call       bool _09.Meshviewer.Program::OnKeyUp(valuetype [IrrlichtLime]IrrlichtLime.KeyCode)
+    IL_0027:  ldc.i4.0
+    IL_0028:  ceq
+    IL_002a:  br.s       IL_002d
+
+    IL_002c:  ldc.i4.1
+    IL_002d:  stloc.s    CS$4$0001
+    IL_002f:  ldloc.s    CS$4$0001
+    IL_0031:  brtrue.s   IL_003b
+
+    IL_0033:  ldc.i4.1
+    IL_0034:  stloc.s    CS$1$0000
+    IL_0036:  br         IL_02ff
+
+    IL_003b:  ldarg.0
+    IL_003c:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.EventType [IrrlichtLime]IrrlichtLime.Event::get_Type()
+    IL_0041:  ldc.i4.0
+    IL_0042:  ceq
+    IL_0044:  ldc.i4.0
+    IL_0045:  ceq
+    IL_0047:  stloc.s    CS$4$0001
+    IL_0049:  ldloc.s    CS$4$0001
+    IL_004b:  brtrue     IL_02fa
+
+    IL_0050:  nop
+    IL_0051:  ldarg.0
+    IL_0052:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/GUIEvent [IrrlichtLime]IrrlichtLime.Event::get_GUI()
+    IL_0057:  ldfld      class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.Event/GUIEvent::Caller
+    IL_005c:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIElement::get_ID()
+    IL_0061:  stloc.0
+    IL_0062:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0067:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_006c:  stloc.1
+    IL_006d:  ldarg.0
+    IL_006e:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/GUIEvent [IrrlichtLime]IrrlichtLime.Event::get_GUI()
+    IL_0073:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.GUI.GUIEventType [IrrlichtLime]IrrlichtLime.Event/GUIEvent::Type
+    IL_0078:  stloc.s    CS$4$0002
+    IL_007a:  ldloc.s    CS$4$0002
+    IL_007c:  ldc.i4.5
+    IL_007d:  sub
+    IL_007e:  switch     ( 
+                          IL_01a1,
+                          IL_00e3)
+    IL_008b:  ldloc.s    CS$4$0002
+    IL_008d:  ldc.i4.s   10
+    IL_008f:  beq.s      IL_00c3
+
+    IL_0091:  ldloc.s    CS$4$0002
+    IL_0093:  ldc.i4.s   21
+    IL_0095:  sub
+    IL_0096:  switch     ( 
+                          IL_00a8,
+                          IL_0175)
+    IL_00a3:  br         IL_02f9
+
+    IL_00a8:  ldarg.0
+    IL_00a9:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/GUIEvent [IrrlichtLime]IrrlichtLime.Event::get_GUI()
+    IL_00ae:  ldfld      class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.Event/GUIEvent::Caller
+    IL_00b3:  isinst     [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu
+    IL_00b8:  call       void _09.Meshviewer.Program::OnMenuItemSelected(class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu)
+    IL_00bd:  nop
+    IL_00be:  br         IL_02f9
+
+    IL_00c3:  ldarg.0
+    IL_00c4:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/GUIEvent [IrrlichtLime]IrrlichtLime.Event::get_GUI()
+    IL_00c9:  ldfld      class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.Event/GUIEvent::Caller
+    IL_00ce:  isinst     [IrrlichtLime]IrrlichtLime.GUI.GUIFileOpenDialog
+    IL_00d3:  callvirt   instance string [IrrlichtLime]IrrlichtLime.GUI.GUIFileOpenDialog::get_FileName()
+    IL_00d8:  call       void _09.Meshviewer.Program::loadModel(string)
+    IL_00dd:  nop
+    IL_00de:  br         IL_02f9
+
+    IL_00e3:  ldloc.0
+    IL_00e4:  ldc.i4     0x1001a
+    IL_00e9:  ceq
+    IL_00eb:  ldc.i4.0
+    IL_00ec:  ceq
+    IL_00ee:  stloc.s    CS$4$0001
+    IL_00f0:  ldloc.s    CS$4$0001
+    IL_00f2:  brtrue.s   IL_011b
+
+    IL_00f4:  nop
+    IL_00f5:  ldarg.0
+    IL_00f6:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/GUIEvent [IrrlichtLime]IrrlichtLime.Event::get_GUI()
+    IL_00fb:  ldfld      class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.Event/GUIEvent::Caller
+    IL_0100:  isinst     [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar
+    IL_0105:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar::get_Position()
+    IL_010a:  stloc.2
+    IL_010b:  ldloc.2
+    IL_010c:  ldloc.1
+    IL_010d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUISkin [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_Skin()
+    IL_0112:  call       void _09.Meshviewer.Program::setSkinTransparency(int32,
+                                                                          class [IrrlichtLime]IrrlichtLime.GUI.GUISkin)
+    IL_0117:  nop
+    IL_0118:  nop
+    IL_0119:  br.s       IL_0170
+
+    IL_011b:  ldloc.0
+    IL_011c:  ldc.i4     0x1001b
+    IL_0121:  ceq
+    IL_0123:  ldc.i4.0
+    IL_0124:  ceq
+    IL_0126:  stloc.s    CS$4$0001
+    IL_0128:  ldloc.s    CS$4$0001
+    IL_012a:  brtrue.s   IL_0170
+
+    IL_012c:  nop
+    IL_012d:  ldarg.0
+    IL_012e:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/GUIEvent [IrrlichtLime]IrrlichtLime.Event::get_GUI()
+    IL_0133:  ldfld      class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.Event/GUIEvent::Caller
+    IL_0138:  isinst     [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar
+    IL_013d:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar::get_Position()
+    IL_0142:  stloc.2
+    IL_0143:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0148:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Scene.SceneNodeType [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_Type()
+    IL_014d:  ldc.i4     0x68736d61
+    IL_0152:  ceq
+    IL_0154:  ldc.i4.0
+    IL_0155:  ceq
+    IL_0157:  stloc.s    CS$4$0001
+    IL_0159:  ldloc.s    CS$4$0001
+    IL_015b:  brtrue.s   IL_016f
+
+    IL_015d:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0162:  isinst     [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode
+    IL_0167:  ldloc.2
+    IL_0168:  conv.r4
+    IL_0169:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode::set_AnimationSpeed(float32)
+    IL_016e:  nop
+    IL_016f:  nop
+    IL_0170:  br         IL_02f9
+
+    IL_0175:  ldloc.0
+    IL_0176:  ldc.i4     0x10019
+    IL_017b:  ceq
+    IL_017d:  ldc.i4.0
+    IL_017e:  ceq
+    IL_0180:  stloc.s    CS$4$0001
+    IL_0182:  ldloc.s    CS$4$0001
+    IL_0184:  brtrue.s   IL_019c
+
+    IL_0186:  ldarg.0
+    IL_0187:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/GUIEvent [IrrlichtLime]IrrlichtLime.Event::get_GUI()
+    IL_018c:  ldfld      class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.Event/GUIEvent::Caller
+    IL_0191:  isinst     [IrrlichtLime]IrrlichtLime.GUI.GUIComboBox
+    IL_0196:  call       void _09.Meshviewer.Program::OnTextureFilterSelected(class [IrrlichtLime]IrrlichtLime.GUI.GUIComboBox)
+    IL_019b:  nop
+    IL_019c:  br         IL_02f9
+
+    IL_01a1:  ldloc.0
+    IL_01a2:  stloc.s    CS$4$0003
+    IL_01a4:  ldloc.s    CS$4$0003
+    IL_01a6:  ldc.i4     0x1001c
+    IL_01ab:  sub
+    IL_01ac:  switch     ( 
+                          IL_01d2,
+                          IL_0253,
+                          IL_028f,
+                          IL_02cb,
+                          IL_02e7,
+                          IL_02ef,
+                          IL_02d9)
+    IL_01cd:  br         IL_02f7
+
+    IL_01d2:  ldloc.1
+    IL_01d3:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_RootElement()
+    IL_01d8:  stloc.3
+    IL_01d9:  ldloc.3
+    IL_01da:  ldc.i4     0x10001
+    IL_01df:  ldc.i4.1
+    IL_01e0:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_01e5:  callvirt   instance string [IrrlichtLime]IrrlichtLime.GUI.GUIElement::get_Text()
+    IL_01ea:  call       float32 [mscorlib]System.Convert::ToSingle(string)
+    IL_01ef:  ldloc.3
+    IL_01f0:  ldc.i4     0x10002
+    IL_01f5:  ldc.i4.1
+    IL_01f6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_01fb:  callvirt   instance string [IrrlichtLime]IrrlichtLime.GUI.GUIElement::get_Text()
+    IL_0200:  call       float32 [mscorlib]System.Convert::ToSingle(string)
+    IL_0205:  ldloc.3
+    IL_0206:  ldc.i4     0x10003
+    IL_020b:  ldc.i4.1
+    IL_020c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_0211:  callvirt   instance string [IrrlichtLime]IrrlichtLime.GUI.GUIElement::get_Text()
+    IL_0216:  call       float32 [mscorlib]System.Convert::ToSingle(string)
+    IL_021b:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0220:  stloc.s    s
+    IL_0222:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0227:  ldnull
+    IL_0228:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_022d:  ldc.i4.0
+    IL_022e:  ceq
+    IL_0230:  stloc.s    CS$4$0001
+    IL_0232:  ldloc.s    CS$4$0001
+    IL_0234:  brtrue.s   IL_0243
+
+    IL_0236:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_023b:  ldloc.s    s
+    IL_023d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Scale(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0242:  nop
+    IL_0243:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0248:  call       void _09.Meshviewer.Program::updateScaleInfo(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_024d:  nop
+    IL_024e:  br         IL_02f7
+
+    IL_0253:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0258:  ldnull
+    IL_0259:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_025e:  ldc.i4.0
+    IL_025f:  ceq
+    IL_0261:  stloc.s    CS$4$0001
+    IL_0263:  ldloc.s    CS$4$0001
+    IL_0265:  brtrue.s   IL_0282
+
+    IL_0267:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_026c:  dup
+    IL_026d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_Scale()
+    IL_0272:  ldc.r4     10.
+    IL_0277:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Multiply(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                float32)
+    IL_027c:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Scale(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0281:  nop
+    IL_0282:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0287:  call       void _09.Meshviewer.Program::updateScaleInfo(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_028c:  nop
+    IL_028d:  br.s       IL_02f7
+
+    IL_028f:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0294:  ldnull
+    IL_0295:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_029a:  ldc.i4.0
+    IL_029b:  ceq
+    IL_029d:  stloc.s    CS$4$0001
+    IL_029f:  ldloc.s    CS$4$0001
+    IL_02a1:  brtrue.s   IL_02be
+
+    IL_02a3:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_02a8:  dup
+    IL_02a9:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_Scale()
+    IL_02ae:  ldc.r4     0.1
+    IL_02b3:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Multiply(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                float32)
+    IL_02b8:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Scale(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_02bd:  nop
+    IL_02be:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_02c3:  call       void _09.Meshviewer.Program::updateScaleInfo(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_02c8:  nop
+    IL_02c9:  br.s       IL_02f7
+
+    IL_02cb:  ldloc.1
+    IL_02cc:  ldstr      "Please select a model file to open"
+    IL_02d1:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFileOpenDialog [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddFileOpenDialog(string)
+    IL_02d6:  pop
+    IL_02d7:  br.s       IL_02f7
+
+    IL_02d9:  ldloc.1
+    IL_02da:  ldstr      "Please select your game archive/directory"
+    IL_02df:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFileOpenDialog [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddFileOpenDialog(string)
+    IL_02e4:  pop
+    IL_02e5:  br.s       IL_02f7
+
+    IL_02e7:  call       void _09.Meshviewer.Program::showAboutText()
+    IL_02ec:  nop
+    IL_02ed:  br.s       IL_02f7
+
+    IL_02ef:  call       void _09.Meshviewer.Program::createToolBox()
+    IL_02f4:  nop
+    IL_02f5:  br.s       IL_02f7
+
+    IL_02f7:  br.s       IL_02f9
+
+    IL_02f9:  nop
+    IL_02fa:  ldc.i4.0
+    IL_02fb:  stloc.s    CS$1$0000
+    IL_02fd:  br.s       IL_02ff
+
+    IL_02ff:  ldloc.s    CS$1$0000
+    IL_0301:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="384" endline="398"><![CDATA[
+  {
+    // Code size       77 (0x4d)
+    .maxstack  2
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.GUI.GUIElement focused,
+             [1] bool CS$1$0000,
+             [2] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0006:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_000b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_Focus()
+    IL_0010:  stloc.0
+    IL_0011:  br.s       IL_003c
+
+    IL_0013:  nop
+    IL_0014:  ldloc.0
+    IL_0015:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.GUI.GUIElement::get_Visible()
+    IL_001a:  brfalse.s  IL_002b
+
+    IL_001c:  ldloc.0
+    IL_001d:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.GUI.GUIElementType [IrrlichtLime]IrrlichtLime.GUI.GUIElement::get_Type()
+    IL_0022:  ldc.i4.s   13
+    IL_0024:  ceq
+    IL_0026:  ldc.i4.0
+    IL_0027:  ceq
+    IL_0029:  br.s       IL_002c
+
+    IL_002b:  ldc.i4.1
+    IL_002c:  stloc.2
+    IL_002d:  ldloc.2
+    IL_002e:  brtrue.s   IL_0034
+
+    IL_0030:  ldc.i4.1
+    IL_0031:  stloc.1
+    IL_0032:  br.s       IL_004b
+
+    IL_0034:  ldloc.0
+    IL_0035:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::get_Parent()
+    IL_003a:  stloc.0
+    IL_003b:  nop
+    IL_003c:  ldloc.0
+    IL_003d:  ldnull
+    IL_003e:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0043:  stloc.2
+    IL_0044:  ldloc.2
+    IL_0045:  brtrue.s   IL_0013
+
+    IL_0047:  ldc.i4.0
+    IL_0048:  stloc.1
+    IL_0049:  br.s       IL_004b
+
+    IL_004b:  ldloc.1
+    IL_004c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="399" endline="440"><![CDATA[
+  {
+    // Code size       286 (0x11e)
+    .maxstack  3
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode c,
+             [1] class [IrrlichtLime]IrrlichtLime.GUI.GUIElement e,
+             [2] bool CS$1$0000,
+             [3] bool CS$4$0001,
+             [4] valuetype [IrrlichtLime]IrrlichtLime.KeyCode CS$4$0002)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0006:  ldnull
+    IL_0007:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.3
+    IL_0010:  ldloc.3
+    IL_0011:  brtrue.s   IL_001a
+
+    IL_0013:  ldc.i4.0
+    IL_0014:  stloc.2
+    IL_0015:  br         IL_011c
+
+    IL_001a:  call       bool _09.Meshviewer.Program::hasModalDialog()
+    IL_001f:  ldc.i4.0
+    IL_0020:  ceq
+    IL_0022:  stloc.3
+    IL_0023:  ldloc.3
+    IL_0024:  brtrue.s   IL_002d
+
+    IL_0026:  ldc.i4.0
+    IL_0027:  stloc.2
+    IL_0028:  br         IL_011c
+
+    IL_002d:  ldarg.0
+    IL_002e:  stloc.s    CS$4$0002
+    IL_0030:  ldloc.s    CS$4$0002
+    IL_0032:  ldc.i4.s   27
+    IL_0034:  beq.s      IL_0053
+
+    IL_0036:  ldloc.s    CS$4$0002
+    IL_0038:  ldc.i4.s   76
+    IL_003a:  sub
+    IL_003b:  switch     ( 
+                          IL_00cf,
+                          IL_00c2)
+    IL_0048:  ldloc.s    CS$4$0002
+    IL_004a:  ldc.i4.s   112
+    IL_004c:  beq.s      IL_0088
+
+    IL_004e:  br         IL_0118
+
+    IL_0053:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0058:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_005d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_ActiveCamera()
+    IL_0062:  stloc.0
+    IL_0063:  ldloc.0
+    IL_0064:  ldnull
+    IL_0065:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_006a:  ldc.i4.0
+    IL_006b:  ceq
+    IL_006d:  stloc.3
+    IL_006e:  ldloc.3
+    IL_006f:  brtrue.s   IL_0081
+
+    IL_0071:  ldloc.0
+    IL_0072:  ldloc.0
+    IL_0073:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::get_InputReceiverEnabled()
+    IL_0078:  ldc.i4.0
+    IL_0079:  ceq
+    IL_007b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_InputReceiverEnabled(bool)
+    IL_0080:  nop
+    IL_0081:  ldc.i4.1
+    IL_0082:  stloc.2
+    IL_0083:  br         IL_011c
+
+    IL_0088:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_008d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0092:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_RootElement()
+    IL_0097:  ldc.i4     0x10016
+    IL_009c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32)
+    IL_00a1:  stloc.1
+    IL_00a2:  ldloc.1
+    IL_00a3:  ldnull
+    IL_00a4:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_00a9:  ldc.i4.0
+    IL_00aa:  ceq
+    IL_00ac:  stloc.3
+    IL_00ad:  ldloc.3
+    IL_00ae:  brtrue.s   IL_00c0
+
+    IL_00b0:  ldloc.1
+    IL_00b1:  ldloc.1
+    IL_00b2:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.GUI.GUIElement::get_Visible()
+    IL_00b7:  ldc.i4.0
+    IL_00b8:  ceq
+    IL_00ba:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::set_Visible(bool)
+    IL_00bf:  nop
+    IL_00c0:  br.s       IL_0118
+
+    IL_00c2:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_00c7:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::MinimizeWindow()
+    IL_00cc:  nop
+    IL_00cd:  br.s       IL_0118
+
+    IL_00cf:  ldsfld     bool _09.Meshviewer.Program::useLight
+    IL_00d4:  ldc.i4.0
+    IL_00d5:  ceq
+    IL_00d7:  stsfld     bool _09.Meshviewer.Program::useLight
+    IL_00dc:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_00e1:  ldnull
+    IL_00e2:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_00e7:  ldc.i4.0
+    IL_00e8:  ceq
+    IL_00ea:  stloc.3
+    IL_00eb:  ldloc.3
+    IL_00ec:  brtrue.s   IL_0116
+
+    IL_00ee:  nop
+    IL_00ef:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_00f4:  ldc.i4.8
+    IL_00f5:  ldsfld     bool _09.Meshviewer.Program::useLight
+    IL_00fa:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00ff:  nop
+    IL_0100:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0105:  ldc.i4     0x1000
+    IL_010a:  ldsfld     bool _09.Meshviewer.Program::useLight
+    IL_010f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0114:  nop
+    IL_0115:  nop
+    IL_0116:  br.s       IL_0118
+
+    IL_0118:  ldc.i4.0
+    IL_0119:  stloc.2
+    IL_011a:  br.s       IL_011c
+
+    IL_011c:  ldloc.2
+    IL_011d:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="441" endline="567"><![CDATA[
+  {
+    // Code size       993 (0x3e1)
+    .maxstack  4
+    .locals init ([0] valuetype _09.Meshviewer.Program/guiID id,
+             [1] class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment env,
+             [2] int32 i,
+             [3] valuetype _09.Meshviewer.Program/guiID CS$4$0000,
+             [4] bool CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedCommandID()
+    IL_0007:  stloc.0
+    IL_0008:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_000d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0012:  stloc.1
+    IL_0013:  ldloc.0
+    IL_0014:  stloc.3
+    IL_0015:  ldloc.3
+    IL_0016:  ldc.i4     0x10004
+    IL_001b:  sub
+    IL_001c:  switch     ( 
+                          IL_007a,
+                          IL_008b,
+                          IL_009c,
+                          IL_00d0,
+                          IL_03e0,
+                          IL_0109,
+                          IL_0153,
+                          IL_019b,
+                          IL_01e3,
+                          IL_022b,
+                          IL_0273,
+                          IL_02bc,
+                          IL_0305,
+                          IL_035a,
+                          IL_037c,
+                          IL_039f,
+                          IL_03c2,
+                          IL_03d1,
+                          IL_03e0,
+                          IL_034f,
+                          IL_00c0)
+    IL_0075:  br         IL_03e0
+
+    IL_007a:  ldloc.1
+    IL_007b:  ldstr      "Please select a model file to open"
+    IL_0080:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFileOpenDialog [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddFileOpenDialog(string)
+    IL_0085:  pop
+    IL_0086:  br         IL_03e0
+
+    IL_008b:  ldloc.1
+    IL_008c:  ldstr      "Please select your game archive/directory"
+    IL_0091:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFileOpenDialog [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddFileOpenDialog(string)
+    IL_0096:  pop
+    IL_0097:  br         IL_03e0
+
+    IL_009c:  ldsfld     bool _09.Meshviewer.Program::octree
+    IL_00a1:  ldc.i4.0
+    IL_00a2:  ceq
+    IL_00a4:  stsfld     bool _09.Meshviewer.Program::octree
+    IL_00a9:  ldarg.0
+    IL_00aa:  ldarg.0
+    IL_00ab:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_00b0:  ldsfld     bool _09.Meshviewer.Program::octree
+    IL_00b5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::SetItemChecked(int32,
+                                                                                                     bool)
+    IL_00ba:  nop
+    IL_00bb:  br         IL_03e0
+
+    IL_00c0:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_00c5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Close()
+    IL_00ca:  nop
+    IL_00cb:  br         IL_03e0
+
+    IL_00d0:  ldarg.0
+    IL_00d1:  ldarg.0
+    IL_00d2:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_00d7:  ldarg.0
+    IL_00d8:  ldarg.0
+    IL_00d9:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_00de:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetItemChecked(int32)
+    IL_00e3:  ldc.i4.0
+    IL_00e4:  ceq
+    IL_00e6:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::SetItemChecked(int32,
+                                                                                                     bool)
+    IL_00eb:  nop
+    IL_00ec:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::skybox
+    IL_00f1:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::skybox
+    IL_00f6:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_Visible()
+    IL_00fb:  ldc.i4.0
+    IL_00fc:  ceq
+    IL_00fe:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Visible(bool)
+    IL_0103:  nop
+    IL_0104:  br         IL_03e0
+
+    IL_0109:  ldc.i4.1
+    IL_010a:  stloc.2
+    IL_010b:  br.s       IL_0121
+
+    IL_010d:  ldarg.0
+    IL_010e:  ldarg.0
+    IL_010f:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_0114:  ldloc.2
+    IL_0115:  add
+    IL_0116:  ldc.i4.0
+    IL_0117:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::SetItemChecked(int32,
+                                                                                                     bool)
+    IL_011c:  nop
+    IL_011d:  ldloc.2
+    IL_011e:  ldc.i4.1
+    IL_011f:  add
+    IL_0120:  stloc.2
+    IL_0121:  ldloc.2
+    IL_0122:  ldc.i4.6
+    IL_0123:  cgt
+    IL_0125:  ldc.i4.0
+    IL_0126:  ceq
+    IL_0128:  stloc.s    CS$4$0001
+    IL_012a:  ldloc.s    CS$4$0001
+    IL_012c:  brtrue.s   IL_010d
+
+    IL_012e:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0133:  ldnull
+    IL_0134:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0139:  ldc.i4.0
+    IL_013a:  ceq
+    IL_013c:  stloc.s    CS$4$0001
+    IL_013e:  ldloc.s    CS$4$0001
+    IL_0140:  brtrue.s   IL_014e
+
+    IL_0142:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0147:  ldc.i4.0
+    IL_0148:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_DebugDataVisible(valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType)
+    IL_014d:  nop
+    IL_014e:  br         IL_03e0
+
+    IL_0153:  ldarg.0
+    IL_0154:  ldarg.0
+    IL_0155:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_015a:  ldarg.0
+    IL_015b:  ldarg.0
+    IL_015c:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_0161:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetItemChecked(int32)
+    IL_0166:  ldc.i4.0
+    IL_0167:  ceq
+    IL_0169:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::SetItemChecked(int32,
+                                                                                                     bool)
+    IL_016e:  nop
+    IL_016f:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0174:  ldnull
+    IL_0175:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_017a:  ldc.i4.0
+    IL_017b:  ceq
+    IL_017d:  stloc.s    CS$4$0001
+    IL_017f:  ldloc.s    CS$4$0001
+    IL_0181:  brtrue.s   IL_0196
+
+    IL_0183:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0188:  dup
+    IL_0189:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_DebugDataVisible()
+    IL_018e:  ldc.i4.1
+    IL_018f:  xor
+    IL_0190:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_DebugDataVisible(valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType)
+    IL_0195:  nop
+    IL_0196:  br         IL_03e0
+
+    IL_019b:  ldarg.0
+    IL_019c:  ldarg.0
+    IL_019d:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_01a2:  ldarg.0
+    IL_01a3:  ldarg.0
+    IL_01a4:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_01a9:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetItemChecked(int32)
+    IL_01ae:  ldc.i4.0
+    IL_01af:  ceq
+    IL_01b1:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::SetItemChecked(int32,
+                                                                                                     bool)
+    IL_01b6:  nop
+    IL_01b7:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_01bc:  ldnull
+    IL_01bd:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_01c2:  ldc.i4.0
+    IL_01c3:  ceq
+    IL_01c5:  stloc.s    CS$4$0001
+    IL_01c7:  ldloc.s    CS$4$0001
+    IL_01c9:  brtrue.s   IL_01de
+
+    IL_01cb:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_01d0:  dup
+    IL_01d1:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_DebugDataVisible()
+    IL_01d6:  ldc.i4.2
+    IL_01d7:  xor
+    IL_01d8:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_DebugDataVisible(valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType)
+    IL_01dd:  nop
+    IL_01de:  br         IL_03e0
+
+    IL_01e3:  ldarg.0
+    IL_01e4:  ldarg.0
+    IL_01e5:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_01ea:  ldarg.0
+    IL_01eb:  ldarg.0
+    IL_01ec:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_01f1:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetItemChecked(int32)
+    IL_01f6:  ldc.i4.0
+    IL_01f7:  ceq
+    IL_01f9:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::SetItemChecked(int32,
+                                                                                                     bool)
+    IL_01fe:  nop
+    IL_01ff:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0204:  ldnull
+    IL_0205:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_020a:  ldc.i4.0
+    IL_020b:  ceq
+    IL_020d:  stloc.s    CS$4$0001
+    IL_020f:  ldloc.s    CS$4$0001
+    IL_0211:  brtrue.s   IL_0226
+
+    IL_0213:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0218:  dup
+    IL_0219:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_DebugDataVisible()
+    IL_021e:  ldc.i4.4
+    IL_021f:  xor
+    IL_0220:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_DebugDataVisible(valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType)
+    IL_0225:  nop
+    IL_0226:  br         IL_03e0
+
+    IL_022b:  ldarg.0
+    IL_022c:  ldarg.0
+    IL_022d:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_0232:  ldarg.0
+    IL_0233:  ldarg.0
+    IL_0234:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_0239:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetItemChecked(int32)
+    IL_023e:  ldc.i4.0
+    IL_023f:  ceq
+    IL_0241:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::SetItemChecked(int32,
+                                                                                                     bool)
+    IL_0246:  nop
+    IL_0247:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_024c:  ldnull
+    IL_024d:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0252:  ldc.i4.0
+    IL_0253:  ceq
+    IL_0255:  stloc.s    CS$4$0001
+    IL_0257:  ldloc.s    CS$4$0001
+    IL_0259:  brtrue.s   IL_026e
+
+    IL_025b:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0260:  dup
+    IL_0261:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_DebugDataVisible()
+    IL_0266:  ldc.i4.8
+    IL_0267:  xor
+    IL_0268:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_DebugDataVisible(valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType)
+    IL_026d:  nop
+    IL_026e:  br         IL_03e0
+
+    IL_0273:  ldarg.0
+    IL_0274:  ldarg.0
+    IL_0275:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_027a:  ldarg.0
+    IL_027b:  ldarg.0
+    IL_027c:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_0281:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetItemChecked(int32)
+    IL_0286:  ldc.i4.0
+    IL_0287:  ceq
+    IL_0289:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::SetItemChecked(int32,
+                                                                                                     bool)
+    IL_028e:  nop
+    IL_028f:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0294:  ldnull
+    IL_0295:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_029a:  ldc.i4.0
+    IL_029b:  ceq
+    IL_029d:  stloc.s    CS$4$0001
+    IL_029f:  ldloc.s    CS$4$0001
+    IL_02a1:  brtrue.s   IL_02b7
+
+    IL_02a3:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_02a8:  dup
+    IL_02a9:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_DebugDataVisible()
+    IL_02ae:  ldc.i4.s   16
+    IL_02b0:  xor
+    IL_02b1:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_DebugDataVisible(valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType)
+    IL_02b6:  nop
+    IL_02b7:  br         IL_03e0
+
+    IL_02bc:  ldarg.0
+    IL_02bd:  ldarg.0
+    IL_02be:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_02c3:  ldarg.0
+    IL_02c4:  ldarg.0
+    IL_02c5:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_02ca:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::GetItemChecked(int32)
+    IL_02cf:  ldc.i4.0
+    IL_02d0:  ceq
+    IL_02d2:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::SetItemChecked(int32,
+                                                                                                     bool)
+    IL_02d7:  nop
+    IL_02d8:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_02dd:  ldnull
+    IL_02de:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_02e3:  ldc.i4.0
+    IL_02e4:  ceq
+    IL_02e6:  stloc.s    CS$4$0001
+    IL_02e8:  ldloc.s    CS$4$0001
+    IL_02ea:  brtrue.s   IL_0300
+
+    IL_02ec:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_02f1:  dup
+    IL_02f2:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_DebugDataVisible()
+    IL_02f7:  ldc.i4.s   32
+    IL_02f9:  xor
+    IL_02fa:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_DebugDataVisible(valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType)
+    IL_02ff:  nop
+    IL_0300:  br         IL_03e0
+
+    IL_0305:  ldc.i4.1
+    IL_0306:  stloc.2
+    IL_0307:  br.s       IL_031d
+
+    IL_0309:  ldarg.0
+    IL_030a:  ldarg.0
+    IL_030b:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::get_SelectedIndex()
+    IL_0310:  ldloc.2
+    IL_0311:  sub
+    IL_0312:  ldc.i4.1
+    IL_0313:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::SetItemChecked(int32,
+                                                                                                     bool)
+    IL_0318:  nop
+    IL_0319:  ldloc.2
+    IL_031a:  ldc.i4.1
+    IL_031b:  add
+    IL_031c:  stloc.2
+    IL_031d:  ldloc.2
+    IL_031e:  ldc.i4.6
+    IL_031f:  cgt
+    IL_0321:  ldc.i4.0
+    IL_0322:  ceq
+    IL_0324:  stloc.s    CS$4$0001
+    IL_0326:  ldloc.s    CS$4$0001
+    IL_0328:  brtrue.s   IL_0309
+
+    IL_032a:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_032f:  ldnull
+    IL_0330:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0335:  ldc.i4.0
+    IL_0336:  ceq
+    IL_0338:  stloc.s    CS$4$0001
+    IL_033a:  ldloc.s    CS$4$0001
+    IL_033c:  brtrue.s   IL_034a
+
+    IL_033e:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0343:  ldc.i4.m1
+    IL_0344:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_DebugDataVisible(valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType)
+    IL_0349:  nop
+    IL_034a:  br         IL_03e0
+
+    IL_034f:  call       void _09.Meshviewer.Program::showAboutText()
+    IL_0354:  nop
+    IL_0355:  br         IL_03e0
+
+    IL_035a:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_035f:  ldnull
+    IL_0360:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0365:  ldc.i4.0
+    IL_0366:  ceq
+    IL_0368:  stloc.s    CS$4$0001
+    IL_036a:  ldloc.s    CS$4$0001
+    IL_036c:  brtrue.s   IL_037a
+
+    IL_036e:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0373:  ldc.i4.0
+    IL_0374:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialType(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_0379:  nop
+    IL_037a:  br.s       IL_03e0
+
+    IL_037c:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0381:  ldnull
+    IL_0382:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0387:  ldc.i4.0
+    IL_0388:  ceq
+    IL_038a:  stloc.s    CS$4$0001
+    IL_038c:  ldloc.s    CS$4$0001
+    IL_038e:  brtrue.s   IL_039d
+
+    IL_0390:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0395:  ldc.i4.s   12
+    IL_0397:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialType(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_039c:  nop
+    IL_039d:  br.s       IL_03e0
+
+    IL_039f:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_03a4:  ldnull
+    IL_03a5:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_03aa:  ldc.i4.0
+    IL_03ab:  ceq
+    IL_03ad:  stloc.s    CS$4$0001
+    IL_03af:  ldloc.s    CS$4$0001
+    IL_03b1:  brtrue.s   IL_03c0
+
+    IL_03b3:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_03b8:  ldc.i4.s   10
+    IL_03ba:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialType(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_03bf:  nop
+    IL_03c0:  br.s       IL_03e0
+
+    IL_03c2:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_03c7:  ldc.i4.0
+    IL_03c8:  ldelem.ref
+    IL_03c9:  call       void _09.Meshviewer.Program::setActiveCamera(class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode)
+    IL_03ce:  nop
+    IL_03cf:  br.s       IL_03e0
+
+    IL_03d1:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_03d6:  ldc.i4.1
+    IL_03d7:  ldelem.ref
+    IL_03d8:  call       void _09.Meshviewer.Program::setActiveCamera(class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode)
+    IL_03dd:  nop
+    IL_03de:  br.s       IL_03e0
+
+    IL_03e0:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="568" endline="601"><![CDATA[
+  {
+    // Code size       228 (0xe4)
+    .maxstack  3
+    .locals init ([0] int32 p,
+             [1] bool CS$4$0000,
+             [2] int32 CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0006:  ldnull
+    IL_0007:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.1
+    IL_0010:  ldloc.1
+    IL_0011:  brtrue.s   IL_0018
+
+    IL_0013:  br         IL_00e3
+
+    IL_0018:  ldarg.0
+    IL_0019:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.GUI.GUIComboBox::get_SelectedIndex()
+    IL_001e:  stloc.0
+    IL_001f:  ldloc.0
+    IL_0020:  stloc.2
+    IL_0021:  ldloc.2
+    IL_0022:  switch     ( 
+                          IL_0040,
+                          IL_0075,
+                          IL_0099,
+                          IL_00bd,
+                          IL_00d0)
+    IL_003b:  br         IL_00e3
+
+    IL_0040:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0045:  ldc.i4     0x100
+    IL_004a:  ldc.i4.0
+    IL_004b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0050:  nop
+    IL_0051:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0056:  ldc.i4     0x200
+    IL_005b:  ldc.i4.0
+    IL_005c:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0061:  nop
+    IL_0062:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0067:  ldc.i4     0x400
+    IL_006c:  ldc.i4.0
+    IL_006d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0072:  nop
+    IL_0073:  br.s       IL_00e3
+
+    IL_0075:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_007a:  ldc.i4     0x100
+    IL_007f:  ldc.i4.1
+    IL_0080:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0085:  nop
+    IL_0086:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_008b:  ldc.i4     0x200
+    IL_0090:  ldc.i4.0
+    IL_0091:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0096:  nop
+    IL_0097:  br.s       IL_00e3
+
+    IL_0099:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_009e:  ldc.i4     0x100
+    IL_00a3:  ldc.i4.0
+    IL_00a4:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00a9:  nop
+    IL_00aa:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_00af:  ldc.i4     0x200
+    IL_00b4:  ldc.i4.1
+    IL_00b5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00ba:  nop
+    IL_00bb:  br.s       IL_00e3
+
+    IL_00bd:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_00c2:  ldc.i4     0x400
+    IL_00c7:  ldc.i4.1
+    IL_00c8:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00cd:  nop
+    IL_00ce:  br.s       IL_00e3
+
+    IL_00d0:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_00d5:  ldc.i4     0x400
+    IL_00da:  ldc.i4.0
+    IL_00db:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00e0:  nop
+    IL_00e1:  br.s       IL_00e3
+
+    IL_00e3:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="602" endline="623"><![CDATA[
+  {
+    // Code size       241 (0xf1)
+    .maxstack  4
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator a,
+             [1] class [IrrlichtLime]IrrlichtLime.Scene.CameraFPSSceneNodeAnimator f,
+             [2] class [mscorlib]System.Collections.Generic.List`1<valuetype [IrrlichtLime]IrrlichtLime.KeyCode> l,
+             [3] valuetype [IrrlichtLime]IrrlichtLime.KeyCode k,
+             [4] class [IrrlichtLime]IrrlichtLime.Event e,
+             [5] valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator> CS$5$0000,
+             [6] bool CS$4$0001,
+             [7] valuetype [mscorlib]System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator<valuetype [IrrlichtLime]IrrlichtLime.KeyAction,class [mscorlib]System.Collections.Generic.List`1<valuetype [IrrlichtLime]IrrlichtLime.KeyCode>> CS$5$0002,
+             [8] valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<valuetype [IrrlichtLime]IrrlichtLime.KeyCode> CS$5$0003)
+    IL_0000:  nop
+    IL_0001:  nop
+    IL_0002:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_0007:  ldc.i4.1
+    IL_0008:  ldelem.ref
+    IL_0009:  callvirt   instance class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator> [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_AnimatorList()
+    IL_000e:  callvirt   instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator>::GetEnumerator()
+    IL_0013:  stloc.s    CS$5$0000
+    .try
+    {
+      IL_0015:  br         IL_00ce
+
+      IL_001a:  ldloca.s   CS$5$0000
+      IL_001c:  call       instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator>::get_Current()
+      IL_0021:  stloc.0
+      IL_0022:  nop
+      IL_0023:  ldloc.0
+      IL_0024:  isinst     [IrrlichtLime]IrrlichtLime.Scene.CameraFPSSceneNodeAnimator
+      IL_0029:  stloc.1
+      IL_002a:  ldloc.1
+      IL_002b:  ldnull
+      IL_002c:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                           class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+      IL_0031:  ldc.i4.0
+      IL_0032:  ceq
+      IL_0034:  stloc.s    CS$4$0001
+      IL_0036:  ldloc.s    CS$4$0001
+      IL_0038:  brtrue     IL_00cd
+
+      IL_003d:  nop
+      IL_003e:  nop
+      IL_003f:  ldloc.1
+      IL_0040:  callvirt   instance class [IrrlichtLime]IrrlichtLime.KeyMap [IrrlichtLime]IrrlichtLime.Scene.CameraFPSSceneNodeAnimator::get_KeyMap()
+      IL_0045:  callvirt   instance class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyAction,class [mscorlib]System.Collections.Generic.List`1<valuetype [IrrlichtLime]IrrlichtLime.KeyCode>> [IrrlichtLime]IrrlichtLime.KeyMap::get_Map()
+      IL_004a:  callvirt   instance class [mscorlib]System.Collections.Generic.Dictionary`2/ValueCollection<!0,!1> class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyAction,class [mscorlib]System.Collections.Generic.List`1<valuetype [IrrlichtLime]IrrlichtLime.KeyCode>>::get_Values()
+      IL_004f:  callvirt   instance valuetype [mscorlib]System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator<!0,!1> class [mscorlib]System.Collections.Generic.Dictionary`2/ValueCollection<valuetype [IrrlichtLime]IrrlichtLime.KeyAction,class [mscorlib]System.Collections.Generic.List`1<valuetype [IrrlichtLime]IrrlichtLime.KeyCode>>::GetEnumerator()
+      IL_0054:  stloc.s    CS$5$0002
+      .try
+      {
+        IL_0056:  br.s       IL_00ad
+
+        IL_0058:  ldloca.s   CS$5$0002
+        IL_005a:  call       instance !1 valuetype [mscorlib]System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator<valuetype [IrrlichtLime]IrrlichtLime.KeyAction,class [mscorlib]System.Collections.Generic.List`1<valuetype [IrrlichtLime]IrrlichtLime.KeyCode>>::get_Current()
+        IL_005f:  stloc.2
+        IL_0060:  nop
+        IL_0061:  nop
+        IL_0062:  ldloc.2
+        IL_0063:  callvirt   instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<valuetype [IrrlichtLime]IrrlichtLime.KeyCode>::GetEnumerator()
+        IL_0068:  stloc.s    CS$5$0003
+        .try
+        {
+          IL_006a:  br.s       IL_008d
+
+          IL_006c:  ldloca.s   CS$5$0003
+          IL_006e:  call       instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<valuetype [IrrlichtLime]IrrlichtLime.KeyCode>::get_Current()
+          IL_0073:  stloc.3
+          IL_0074:  nop
+          IL_0075:  ldc.i4.0
+          IL_0076:  ldloc.3
+          IL_0077:  ldc.i4.0
+          IL_0078:  newobj     instance void [IrrlichtLime]IrrlichtLime.Event::.ctor(char,
+                                                                                     valuetype [IrrlichtLime]IrrlichtLime.KeyCode,
+                                                                                     bool)
+          IL_007d:  stloc.s    e
+          IL_007f:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+          IL_0084:  ldloc.s    e
+          IL_0086:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::PostEvent(class [IrrlichtLime]IrrlichtLime.Event)
+          IL_008b:  pop
+          IL_008c:  nop
+          IL_008d:  ldloca.s   CS$5$0003
+          IL_008f:  call       instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<valuetype [IrrlichtLime]IrrlichtLime.KeyCode>::MoveNext()
+          IL_0094:  stloc.s    CS$4$0001
+          IL_0096:  ldloc.s    CS$4$0001
+          IL_0098:  brtrue.s   IL_006c
+
+          IL_009a:  leave.s    IL_00ab
+
+        }  // end .try
+        finally
+        {
+          IL_009c:  ldloca.s   CS$5$0003
+          IL_009e:  constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<valuetype [IrrlichtLime]IrrlichtLime.KeyCode>
+          IL_00a4:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+          IL_00a9:  nop
+          IL_00aa:  endfinally
+        }  // end handler
+        IL_00ab:  nop
+        IL_00ac:  nop
+        IL_00ad:  ldloca.s   CS$5$0002
+        IL_00af:  call       instance bool valuetype [mscorlib]System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator<valuetype [IrrlichtLime]IrrlichtLime.KeyAction,class [mscorlib]System.Collections.Generic.List`1<valuetype [IrrlichtLime]IrrlichtLime.KeyCode>>::MoveNext()
+        IL_00b4:  stloc.s    CS$4$0001
+        IL_00b6:  ldloc.s    CS$4$0001
+        IL_00b8:  brtrue.s   IL_0058
+
+        IL_00ba:  leave.s    IL_00cb
+
+      }  // end .try
+      finally
+      {
+        IL_00bc:  ldloca.s   CS$5$0002
+        IL_00be:  constrained. valuetype [mscorlib]System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator<valuetype [IrrlichtLime]IrrlichtLime.KeyAction,class [mscorlib]System.Collections.Generic.List`1<valuetype [IrrlichtLime]IrrlichtLime.KeyCode>>
+        IL_00c4:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+        IL_00c9:  nop
+        IL_00ca:  endfinally
+      }  // end handler
+      IL_00cb:  nop
+      IL_00cc:  nop
+      IL_00cd:  nop
+      IL_00ce:  ldloca.s   CS$5$0000
+      IL_00d0:  call       instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator>::MoveNext()
+      IL_00d5:  stloc.s    CS$4$0001
+      IL_00d7:  ldloc.s    CS$4$0001
+      IL_00d9:  brtrue     IL_001a
+
+      IL_00de:  leave.s    IL_00ef
+
+    }  // end .try
+    finally
+    {
+      IL_00e0:  ldloca.s   CS$5$0000
+      IL_00e2:  constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator>
+      IL_00e8:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_00ed:  nop
+      IL_00ee:  endfinally
+    }  // end handler
+    IL_00ef:  nop
+    IL_00f0:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="624" endline="635"><![CDATA[
+  {
+    // Code size       71 (0x47)
+    .maxstack  2
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode c,
+             [1] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0006:  ldnull
+    IL_0007:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.1
+    IL_0010:  ldloc.1
+    IL_0011:  brtrue.s   IL_0015
+
+    IL_0013:  br.s       IL_0046
+
+    IL_0015:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_001a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_001f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_ActiveCamera()
+    IL_0024:  stloc.0
+    IL_0025:  ldloc.0
+    IL_0026:  ldc.i4.0
+    IL_0027:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_InputReceiverEnabled(bool)
+    IL_002c:  nop
+    IL_002d:  ldarg.0
+    IL_002e:  ldc.i4.1
+    IL_002f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_InputReceiverEnabled(bool)
+    IL_0034:  nop
+    IL_0035:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_003a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_003f:  ldarg.0
+    IL_0040:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::set_ActiveCamera(class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode)
+    IL_0045:  nop
+    IL_0046:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="636" endline="645"><![CDATA[
+  {
+    // Code size       104 (0x68)
+    .maxstack  3
+    .locals init ([0] valuetype [IrrlichtLime]IrrlichtLime.GUI.GUIDefaultColor i,
+             [1] class [IrrlichtLime]IrrlichtLime.Video.Color c,
+             [2] class [mscorlib]System.Collections.IEnumerator CS$5$0000,
+             [3] bool CS$4$0001,
+             [4] class [mscorlib]System.IDisposable CS$0$0002)
+    IL_0000:  nop
+    IL_0001:  nop
+    IL_0002:  ldtoken    [IrrlichtLime]IrrlichtLime.GUI.GUIDefaultColor
+    IL_0007:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_000c:  call       class [mscorlib]System.Array [mscorlib]System.Enum::GetValues(class [mscorlib]System.Type)
+    IL_0011:  callvirt   instance class [mscorlib]System.Collections.IEnumerator [mscorlib]System.Array::GetEnumerator()
+    IL_0016:  stloc.2
+    .try
+    {
+      IL_0017:  br.s       IL_0040
+
+      IL_0019:  ldloc.2
+      IL_001a:  callvirt   instance object [mscorlib]System.Collections.IEnumerator::get_Current()
+      IL_001f:  unbox.any  [IrrlichtLime]IrrlichtLime.GUI.GUIDefaultColor
+      IL_0024:  stloc.0
+      IL_0025:  nop
+      IL_0026:  ldarg.1
+      IL_0027:  ldloc.0
+      IL_0028:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Color [IrrlichtLime]IrrlichtLime.GUI.GUISkin::GetColor(valuetype [IrrlichtLime]IrrlichtLime.GUI.GUIDefaultColor)
+      IL_002d:  stloc.1
+      IL_002e:  ldloc.1
+      IL_002f:  ldarg.0
+      IL_0030:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Color::set_Alpha(int32)
+      IL_0035:  nop
+      IL_0036:  ldarg.1
+      IL_0037:  ldloc.1
+      IL_0038:  ldloc.0
+      IL_0039:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUISkin::SetColor(class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                          valuetype [IrrlichtLime]IrrlichtLime.GUI.GUIDefaultColor)
+      IL_003e:  nop
+      IL_003f:  nop
+      IL_0040:  ldloc.2
+      IL_0041:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0046:  stloc.3
+      IL_0047:  ldloc.3
+      IL_0048:  brtrue.s   IL_0019
+
+      IL_004a:  leave.s    IL_0066
+
+    }  // end .try
+    finally
+    {
+      IL_004c:  ldloc.2
+      IL_004d:  isinst     [mscorlib]System.IDisposable
+      IL_0052:  stloc.s    CS$0$0002
+      IL_0054:  ldloc.s    CS$0$0002
+      IL_0056:  ldnull
+      IL_0057:  ceq
+      IL_0059:  stloc.3
+      IL_005a:  ldloc.3
+      IL_005b:  brtrue.s   IL_0065
+
+      IL_005d:  ldloc.s    CS$0$0002
+      IL_005f:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_0064:  nop
+      IL_0065:  endfinally
+    }  // end handler
+    IL_0066:  nop
+    IL_0067:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="646" endline="666"><![CDATA[
+  {
+    // Code size       240 (0xf0)
+    .maxstack  3
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.GUI.GUIElement t,
+             [1] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df s,
+             [2] bool CS$4$0000,
+             [3] float32 CS$0$0001)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0006:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_000b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_RootElement()
+    IL_0010:  ldc.i4     0x10000
+    IL_0015:  ldc.i4.1
+    IL_0016:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_001b:  stloc.0
+    IL_001c:  ldloc.0
+    IL_001d:  ldnull
+    IL_001e:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0023:  ldc.i4.0
+    IL_0024:  ceq
+    IL_0026:  stloc.2
+    IL_0027:  ldloc.2
+    IL_0028:  brtrue.s   IL_002f
+
+    IL_002a:  br         IL_00ef
+
+    IL_002f:  ldarg.0
+    IL_0030:  ldnull
+    IL_0031:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0036:  ldc.i4.0
+    IL_0037:  ceq
+    IL_0039:  stloc.2
+    IL_003a:  ldloc.2
+    IL_003b:  brtrue.s   IL_0086
+
+    IL_003d:  nop
+    IL_003e:  ldloc.0
+    IL_003f:  ldc.i4     0x10001
+    IL_0044:  ldc.i4.1
+    IL_0045:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_004a:  ldstr      "-"
+    IL_004f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::set_Text(string)
+    IL_0054:  nop
+    IL_0055:  ldloc.0
+    IL_0056:  ldc.i4     0x10002
+    IL_005b:  ldc.i4.1
+    IL_005c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_0061:  ldstr      "-"
+    IL_0066:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::set_Text(string)
+    IL_006b:  nop
+    IL_006c:  ldloc.0
+    IL_006d:  ldc.i4     0x10003
+    IL_0072:  ldc.i4.1
+    IL_0073:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_0078:  ldstr      "-"
+    IL_007d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::set_Text(string)
+    IL_0082:  nop
+    IL_0083:  nop
+    IL_0084:  br.s       IL_00ef
+
+    IL_0086:  nop
+    IL_0087:  ldarg.0
+    IL_0088:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_Scale()
+    IL_008d:  stloc.1
+    IL_008e:  ldloc.0
+    IL_008f:  ldc.i4     0x10001
+    IL_0094:  ldc.i4.1
+    IL_0095:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_009a:  ldloc.1
+    IL_009b:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_X()
+    IL_00a0:  stloc.3
+    IL_00a1:  ldloca.s   CS$0$0001
+    IL_00a3:  call       instance string [mscorlib]System.Single::ToString()
+    IL_00a8:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::set_Text(string)
+    IL_00ad:  nop
+    IL_00ae:  ldloc.0
+    IL_00af:  ldc.i4     0x10002
+    IL_00b4:  ldc.i4.1
+    IL_00b5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_00ba:  ldloc.1
+    IL_00bb:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Y()
+    IL_00c0:  stloc.3
+    IL_00c1:  ldloca.s   CS$0$0001
+    IL_00c3:  call       instance string [mscorlib]System.Single::ToString()
+    IL_00c8:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::set_Text(string)
+    IL_00cd:  nop
+    IL_00ce:  ldloc.0
+    IL_00cf:  ldc.i4     0x10003
+    IL_00d4:  ldc.i4.1
+    IL_00d5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_00da:  ldloc.1
+    IL_00db:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Z()
+    IL_00e0:  stloc.3
+    IL_00e1:  ldloca.s   CS$0$0001
+    IL_00e3:  call       instance string [mscorlib]System.Single::ToString()
+    IL_00e8:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::set_Text(string)
+    IL_00ed:  nop
+    IL_00ee:  nop
+    IL_00ef:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="667" endline="671"><![CDATA[
+  {
+    // Code size       28 (0x1c)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0006:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_000b:  ldsfld     string _09.Meshviewer.Program::caption
+    IL_0010:  ldsfld     string _09.Meshviewer.Program::messageText
+    IL_0015:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIWindow [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddMessageBox(string,
+                                                                                                                                              string)
+    IL_001a:  pop
+    IL_001b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="672" endline="762"><![CDATA[
+  {
+    // Code size       881 (0x371)
+    .maxstack  4
+    .locals init ([0] string e,
+             [1] class [IrrlichtLime]IrrlichtLime.Video.Texture t,
+             [2] class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh m,
+             [3] class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode n,
+             [4] class [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu u,
+             [5] int32 i,
+             [6] string CS$4$0000,
+             [7] int32 CS$0$0001,
+             [8] bool CS$4$0002)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       string [mscorlib]System.IO.Path::GetExtension(string)
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  stloc.s    CS$4$0000
+    IL_000b:  ldloc.s    CS$4$0000
+    IL_000d:  brfalse    IL_01ce
+
+    IL_0012:  volatile.
+    IL_0014:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32> '<PrivateImplementationDetails>{3FCBEB02-84AC-417A-A696-E16D499C2DDD}'::'$$method0x600000c-1'
+    IL_0019:  brtrue     IL_00f3
+
+    IL_001e:  ldc.i4.s   16
+    IL_0020:  newobj     instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::.ctor(int32)
+    IL_0025:  dup
+    IL_0026:  ldstr      ".jpg"
+    IL_002b:  ldc.i4.0
+    IL_002c:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_0031:  dup
+    IL_0032:  ldstr      ".pcx"
+    IL_0037:  ldc.i4.1
+    IL_0038:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_003d:  dup
+    IL_003e:  ldstr      ".png"
+    IL_0043:  ldc.i4.2
+    IL_0044:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_0049:  dup
+    IL_004a:  ldstr      ".ppm"
+    IL_004f:  ldc.i4.3
+    IL_0050:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_0055:  dup
+    IL_0056:  ldstr      ".pgm"
+    IL_005b:  ldc.i4.4
+    IL_005c:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_0061:  dup
+    IL_0062:  ldstr      ".pbm"
+    IL_0067:  ldc.i4.5
+    IL_0068:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_006d:  dup
+    IL_006e:  ldstr      ".psd"
+    IL_0073:  ldc.i4.6
+    IL_0074:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_0079:  dup
+    IL_007a:  ldstr      ".tga"
+    IL_007f:  ldc.i4.7
+    IL_0080:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_0085:  dup
+    IL_0086:  ldstr      ".bmp"
+    IL_008b:  ldc.i4.8
+    IL_008c:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_0091:  dup
+    IL_0092:  ldstr      ".wal"
+    IL_0097:  ldc.i4.s   9
+    IL_0099:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_009e:  dup
+    IL_009f:  ldstr      ".rgb"
+    IL_00a4:  ldc.i4.s   10
+    IL_00a6:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_00ab:  dup
+    IL_00ac:  ldstr      ".rgba"
+    IL_00b1:  ldc.i4.s   11
+    IL_00b3:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_00b8:  dup
+    IL_00b9:  ldstr      ".pk3"
+    IL_00be:  ldc.i4.s   12
+    IL_00c0:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_00c5:  dup
+    IL_00c6:  ldstr      ".zip"
+    IL_00cb:  ldc.i4.s   13
+    IL_00cd:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_00d2:  dup
+    IL_00d3:  ldstr      ".pak"
+    IL_00d8:  ldc.i4.s   14
+    IL_00da:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_00df:  dup
+    IL_00e0:  ldstr      ".npk"
+    IL_00e5:  ldc.i4.s   15
+    IL_00e7:  call       instance void class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::Add(!0,
+                                                                                                                  !1)
+    IL_00ec:  volatile.
+    IL_00ee:  stsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32> '<PrivateImplementationDetails>{3FCBEB02-84AC-417A-A696-E16D499C2DDD}'::'$$method0x600000c-1'
+    IL_00f3:  volatile.
+    IL_00f5:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32> '<PrivateImplementationDetails>{3FCBEB02-84AC-417A-A696-E16D499C2DDD}'::'$$method0x600000c-1'
+    IL_00fa:  ldloc.s    CS$4$0000
+    IL_00fc:  ldloca.s   CS$0$0001
+    IL_00fe:  call       instance bool class [mscorlib]System.Collections.Generic.Dictionary`2<string,int32>::TryGetValue(!0,
+                                                                                                                          !1&)
+    IL_0103:  brfalse    IL_01ce
+
+    IL_0108:  ldloc.s    CS$0$0001
+    IL_010a:  switch     ( 
+                          IL_0151,
+                          IL_0151,
+                          IL_0151,
+                          IL_0151,
+                          IL_0151,
+                          IL_0151,
+                          IL_0151,
+                          IL_0151,
+                          IL_0151,
+                          IL_0151,
+                          IL_0151,
+                          IL_0151,
+                          IL_01b8,
+                          IL_01b8,
+                          IL_01b8,
+                          IL_01b8)
+    IL_014f:  br.s       IL_01ce
+
+    IL_0151:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0156:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_015b:  ldarg.0
+    IL_015c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_0161:  stloc.1
+    IL_0162:  ldloc.1
+    IL_0163:  ldnull
+    IL_0164:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0169:  brfalse.s  IL_017b
+
+    IL_016b:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0170:  ldnull
+    IL_0171:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0176:  ldc.i4.0
+    IL_0177:  ceq
+    IL_0179:  br.s       IL_017c
+
+    IL_017b:  ldc.i4.1
+    IL_017c:  stloc.s    CS$4$0002
+    IL_017e:  ldloc.s    CS$4$0002
+    IL_0180:  brtrue.s   IL_01b3
+
+    IL_0182:  nop
+    IL_0183:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0188:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_018d:  ldloc.1
+    IL_018e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::RemoveTexture(class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_0193:  nop
+    IL_0194:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0199:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_019e:  ldarg.0
+    IL_019f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_01a4:  stloc.1
+    IL_01a5:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_01aa:  ldc.i4.0
+    IL_01ab:  ldloc.1
+    IL_01ac:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_01b1:  nop
+    IL_01b2:  nop
+    IL_01b3:  br         IL_0370
+
+    IL_01b8:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_01bd:  callvirt   instance class [IrrlichtLime]IrrlichtLime.IO.FileSystem [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_FileSystem()
+    IL_01c2:  ldarg.0
+    IL_01c3:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IO.FileSystem::AddFileArchive(string)
+    IL_01c8:  pop
+    IL_01c9:  br         IL_0370
+
+    IL_01ce:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_01d3:  ldnull
+    IL_01d4:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_01d9:  ldc.i4.0
+    IL_01da:  ceq
+    IL_01dc:  stloc.s    CS$4$0002
+    IL_01de:  ldloc.s    CS$4$0002
+    IL_01e0:  brtrue.s   IL_01ed
+
+    IL_01e2:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_01e7:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::Remove()
+    IL_01ec:  nop
+    IL_01ed:  ldnull
+    IL_01ee:  stsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_01f3:  ldloc.0
+    IL_01f4:  ldstr      ".irr"
+    IL_01f9:  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                   string)
+    IL_01fe:  ldc.i4.0
+    IL_01ff:  ceq
+    IL_0201:  stloc.s    CS$4$0002
+    IL_0203:  ldloc.s    CS$4$0002
+    IL_0205:  brtrue.s   IL_0237
+
+    IL_0207:  nop
+    IL_0208:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_020d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0212:  ldarg.0
+    IL_0213:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Scene.SceneManager::LoadScene(string)
+    IL_0218:  pop
+    IL_0219:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_021e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0223:  ldc.i4     0x68736d61
+    IL_0228:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::GetSceneNodeFromType(valuetype [IrrlichtLime]IrrlichtLime.Scene.SceneNodeType)
+    IL_022d:  stsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0232:  br         IL_0370
+
+    IL_0237:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_023c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0241:  ldarg.0
+    IL_0242:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh [IrrlichtLime]IrrlichtLime.Scene.SceneManager::GetMesh(string)
+    IL_0247:  stloc.2
+    IL_0248:  ldloc.2
+    IL_0249:  ldnull
+    IL_024a:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_024f:  ldc.i4.0
+    IL_0250:  ceq
+    IL_0252:  stloc.s    CS$4$0002
+    IL_0254:  ldloc.s    CS$4$0002
+    IL_0256:  brtrue.s   IL_028c
+
+    IL_0258:  nop
+    IL_0259:  ldsfld     string _09.Meshviewer.Program::startUpModelFile
+    IL_025e:  ldarg.0
+    IL_025f:  call       bool [mscorlib]System.String::op_Inequality(string,
+                                                                     string)
+    IL_0264:  ldc.i4.0
+    IL_0265:  ceq
+    IL_0267:  stloc.s    CS$4$0002
+    IL_0269:  ldloc.s    CS$4$0002
+    IL_026b:  brtrue.s   IL_0287
+
+    IL_026d:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0272:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0277:  ldsfld     string _09.Meshviewer.Program::caption
+    IL_027c:  ldstr      "The model could not be loaded. Maybe it is not a s"
+    + "upported file format."
+    IL_0281:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIWindow [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddMessageBox(string,
+                                                                                                                                              string)
+    IL_0286:  pop
+    IL_0287:  br         IL_0370
+
+    IL_028c:  ldsfld     bool _09.Meshviewer.Program::octree
+    IL_0291:  ldc.i4.0
+    IL_0292:  ceq
+    IL_0294:  stloc.s    CS$4$0002
+    IL_0296:  ldloc.s    CS$4$0002
+    IL_0298:  brtrue.s   IL_02b9
+
+    IL_029a:  nop
+    IL_029b:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_02a0:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_02a5:  ldloc.2
+    IL_02a6:  ldc.i4.0
+    IL_02a7:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh::GetMesh(int32)
+    IL_02ac:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddOctreeSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.Mesh)
+    IL_02b1:  stsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_02b6:  nop
+    IL_02b7:  br.s       IL_02de
+
+    IL_02b9:  nop
+    IL_02ba:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_02bf:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_02c4:  ldloc.2
+    IL_02c5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddAnimatedMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh)
+    IL_02ca:  stloc.3
+    IL_02cb:  ldloc.3
+    IL_02cc:  ldc.r4     30.
+    IL_02d1:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode::set_AnimationSpeed(float32)
+    IL_02d6:  nop
+    IL_02d7:  ldloc.3
+    IL_02d8:  stsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_02dd:  nop
+    IL_02de:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_02e3:  ldc.i4.8
+    IL_02e4:  ldsfld     bool _09.Meshviewer.Program::useLight
+    IL_02e9:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_02ee:  nop
+    IL_02ef:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_02f4:  ldc.i4     0x1000
+    IL_02f9:  ldsfld     bool _09.Meshviewer.Program::useLight
+    IL_02fe:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0303:  nop
+    IL_0304:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_0309:  ldc.i4.0
+    IL_030a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_DebugDataVisible(valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType)
+    IL_030f:  nop
+    IL_0310:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0315:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_031a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_RootElement()
+    IL_031f:  ldc.i4     0x10008
+    IL_0324:  ldc.i4.1
+    IL_0325:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_032a:  isinst     [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu
+    IL_032f:  stloc.s    u
+    IL_0331:  ldloc.s    u
+    IL_0333:  ldnull
+    IL_0334:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0339:  ldc.i4.0
+    IL_033a:  ceq
+    IL_033c:  stloc.s    CS$4$0002
+    IL_033e:  ldloc.s    CS$4$0002
+    IL_0340:  brtrue.s   IL_0365
+
+    IL_0342:  nop
+    IL_0343:  ldc.i4.0
+    IL_0344:  stloc.s    i
+    IL_0346:  br.s       IL_0359
+
+    IL_0348:  ldloc.s    u
+    IL_034a:  ldloc.s    i
+    IL_034c:  ldc.i4.0
+    IL_034d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIContextMenu::SetItemChecked(int32,
+                                                                                                     bool)
+    IL_0352:  nop
+    IL_0353:  ldloc.s    i
+    IL_0355:  ldc.i4.1
+    IL_0356:  add
+    IL_0357:  stloc.s    i
+    IL_0359:  ldloc.s    i
+    IL_035b:  ldc.i4.6
+    IL_035c:  clt
+    IL_035e:  stloc.s    CS$4$0002
+    IL_0360:  ldloc.s    CS$4$0002
+    IL_0362:  brtrue.s   IL_0348
+
+    IL_0364:  nop
+    IL_0365:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_036a:  call       void _09.Meshviewer.Program::updateScaleInfo(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_036f:  nop
+    IL_0370:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="763" endline="814"><![CDATA[
+  {
+    // Code size       713 (0x2c9)
+    .maxstack  7
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment env,
+             [1] class [IrrlichtLime]IrrlichtLime.GUI.GUIElement root,
+             [2] class [IrrlichtLime]IrrlichtLime.GUI.GUIElement e,
+             [3] class [IrrlichtLime]IrrlichtLime.GUI.GUIWindow w,
+             [4] class [IrrlichtLime]IrrlichtLime.GUI.GUITabControl tab,
+             [5] class [IrrlichtLime]IrrlichtLime.GUI.GUITab t1,
+             [6] class [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar b,
+             [7] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0006:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_000b:  stloc.0
+    IL_000c:  ldloc.0
+    IL_000d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_RootElement()
+    IL_0012:  stloc.1
+    IL_0013:  ldloc.1
+    IL_0014:  ldc.i4     0x10000
+    IL_0019:  ldc.i4.1
+    IL_001a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_001f:  stloc.2
+    IL_0020:  ldloc.2
+    IL_0021:  ldnull
+    IL_0022:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0027:  ldc.i4.0
+    IL_0028:  ceq
+    IL_002a:  stloc.s    CS$4$0000
+    IL_002c:  ldloc.s    CS$4$0000
+    IL_002e:  brtrue.s   IL_0037
+
+    IL_0030:  ldloc.2
+    IL_0031:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIElement::Remove()
+    IL_0036:  nop
+    IL_0037:  ldloc.0
+    IL_0038:  ldc.i4     0x258
+    IL_003d:  ldc.i4.s   45
+    IL_003f:  ldc.i4     0x320
+    IL_0044:  ldc.i4     0x1e0
+    IL_0049:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_004e:  ldc.i4.0
+    IL_004f:  ldstr      "Toolset"
+    IL_0054:  ldnull
+    IL_0055:  ldc.i4     0x10000
+    IL_005a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIWindow [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddWindow(class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                          bool,
+                                                                                                                                          string,
+                                                                                                                                          class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                          int32)
+    IL_005f:  stloc.3
+    IL_0060:  ldloc.0
+    IL_0061:  ldc.i4.2
+    IL_0062:  ldc.i4.s   20
+    IL_0064:  ldc.i4     0xc6
+    IL_0069:  ldc.i4     0x1d9
+    IL_006e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_0073:  ldloc.3
+    IL_0074:  ldc.i4.1
+    IL_0075:  ldc.i4.1
+    IL_0076:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUITabControl [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddTabControl(class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                                  bool,
+                                                                                                                                                  bool)
+    IL_007b:  stloc.s    tab
+    IL_007d:  ldloc.s    tab
+    IL_007f:  ldstr      "Config"
+    IL_0084:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUITab [IrrlichtLime]IrrlichtLime.GUI.GUITabControl::AddTab(string)
+    IL_0089:  stloc.s    t1
+    IL_008b:  ldloc.0
+    IL_008c:  ldstr      "Scale:"
+    IL_0091:  ldc.i4.s   10
+    IL_0093:  ldc.i4.s   20
+    IL_0095:  ldc.i4.s   60
+    IL_0097:  ldc.i4.s   45
+    IL_0099:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_009e:  ldc.i4.0
+    IL_009f:  ldc.i4.0
+    IL_00a0:  ldloc.s    t1
+    IL_00a2:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddStaticText(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                  bool,
+                                                                                                                                                  bool,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.GUI.GUIElement)
+    IL_00a7:  pop
+    IL_00a8:  ldloc.0
+    IL_00a9:  ldstr      "X:"
+    IL_00ae:  ldc.i4.s   22
+    IL_00b0:  ldc.i4.s   48
+    IL_00b2:  ldc.i4.s   40
+    IL_00b4:  ldc.i4.s   66
+    IL_00b6:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_00bb:  ldc.i4.0
+    IL_00bc:  ldc.i4.0
+    IL_00bd:  ldloc.s    t1
+    IL_00bf:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddStaticText(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                  bool,
+                                                                                                                                                  bool,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.GUI.GUIElement)
+    IL_00c4:  pop
+    IL_00c5:  ldloc.0
+    IL_00c6:  ldstr      "1.0"
+    IL_00cb:  ldc.i4.s   40
+    IL_00cd:  ldc.i4.s   46
+    IL_00cf:  ldc.i4     0x82
+    IL_00d4:  ldc.i4.s   66
+    IL_00d6:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_00db:  ldc.i4.1
+    IL_00dc:  ldloc.s    t1
+    IL_00de:  ldc.i4     0x10001
+    IL_00e3:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEditBox [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddEditBox(string,
+                                                                                                                                            class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                            bool,
+                                                                                                                                            class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                            int32)
+    IL_00e8:  pop
+    IL_00e9:  ldloc.0
+    IL_00ea:  ldstr      "Y:"
+    IL_00ef:  ldc.i4.s   22
+    IL_00f1:  ldc.i4.s   78
+    IL_00f3:  ldc.i4.s   40
+    IL_00f5:  ldc.i4.s   96
+    IL_00f7:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_00fc:  ldc.i4.0
+    IL_00fd:  ldc.i4.0
+    IL_00fe:  ldloc.s    t1
+    IL_0100:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddStaticText(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                  bool,
+                                                                                                                                                  bool,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.GUI.GUIElement)
+    IL_0105:  pop
+    IL_0106:  ldloc.0
+    IL_0107:  ldstr      "1.0"
+    IL_010c:  ldc.i4.s   40
+    IL_010e:  ldc.i4.s   76
+    IL_0110:  ldc.i4     0x82
+    IL_0115:  ldc.i4.s   96
+    IL_0117:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_011c:  ldc.i4.1
+    IL_011d:  ldloc.s    t1
+    IL_011f:  ldc.i4     0x10002
+    IL_0124:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEditBox [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddEditBox(string,
+                                                                                                                                            class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                            bool,
+                                                                                                                                            class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                            int32)
+    IL_0129:  pop
+    IL_012a:  ldloc.0
+    IL_012b:  ldstr      "Z:"
+    IL_0130:  ldc.i4.s   22
+    IL_0132:  ldc.i4.s   108
+    IL_0134:  ldc.i4.s   40
+    IL_0136:  ldc.i4.s   126
+    IL_0138:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_013d:  ldc.i4.0
+    IL_013e:  ldc.i4.0
+    IL_013f:  ldloc.s    t1
+    IL_0141:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddStaticText(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                  bool,
+                                                                                                                                                  bool,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.GUI.GUIElement)
+    IL_0146:  pop
+    IL_0147:  ldloc.0
+    IL_0148:  ldstr      "1.0"
+    IL_014d:  ldc.i4.s   40
+    IL_014f:  ldc.i4.s   106
+    IL_0151:  ldc.i4     0x82
+    IL_0156:  ldc.i4.s   126
+    IL_0158:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_015d:  ldc.i4.1
+    IL_015e:  ldloc.s    t1
+    IL_0160:  ldc.i4     0x10003
+    IL_0165:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEditBox [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddEditBox(string,
+                                                                                                                                            class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                            bool,
+                                                                                                                                            class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                            int32)
+    IL_016a:  pop
+    IL_016b:  ldloc.0
+    IL_016c:  ldc.i4.s   10
+    IL_016e:  ldc.i4     0x86
+    IL_0173:  ldc.i4.s   85
+    IL_0175:  ldc.i4     0xa5
+    IL_017a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_017f:  ldloc.s    t1
+    IL_0181:  ldc.i4     0x1001c
+    IL_0186:  ldstr      "Set"
+    IL_018b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIButton [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddButton(class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                          class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                          int32,
+                                                                                                                                          string)
+    IL_0190:  pop
+    IL_0191:  ldloc.0
+    IL_0192:  ldc.i4.s   65
+    IL_0194:  ldc.i4.s   20
+    IL_0196:  ldc.i4.s   95
+    IL_0198:  ldc.i4.s   40
+    IL_019a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_019f:  ldloc.s    t1
+    IL_01a1:  ldc.i4     0x1001d
+    IL_01a6:  ldstr      "* 10"
+    IL_01ab:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIButton [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddButton(class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                          class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                          int32,
+                                                                                                                                          string)
+    IL_01b0:  pop
+    IL_01b1:  ldloc.0
+    IL_01b2:  ldc.i4.s   100
+    IL_01b4:  ldc.i4.s   20
+    IL_01b6:  ldc.i4     0x82
+    IL_01bb:  ldc.i4.s   40
+    IL_01bd:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_01c2:  ldloc.s    t1
+    IL_01c4:  ldc.i4     0x1001e
+    IL_01c9:  ldstr      "* 0.1"
+    IL_01ce:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIButton [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddButton(class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                          class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                          int32,
+                                                                                                                                          string)
+    IL_01d3:  pop
+    IL_01d4:  ldsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_01d9:  call       void _09.Meshviewer.Program::updateScaleInfo(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_01de:  nop
+    IL_01df:  ldloc.0
+    IL_01e0:  ldstr      "GUI Transparency Control:"
+    IL_01e5:  ldc.i4.s   10
+    IL_01e7:  ldc.i4     0xc8
+    IL_01ec:  ldc.i4     0x96
+    IL_01f1:  ldc.i4     0xe1
+    IL_01f6:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_01fb:  ldc.i4.1
+    IL_01fc:  ldc.i4.0
+    IL_01fd:  ldloc.s    t1
+    IL_01ff:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddStaticText(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                  bool,
+                                                                                                                                                  bool,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.GUI.GUIElement)
+    IL_0204:  pop
+    IL_0205:  ldloc.0
+    IL_0206:  ldc.i4.1
+    IL_0207:  ldc.i4.s   10
+    IL_0209:  ldc.i4     0xe1
+    IL_020e:  ldc.i4     0x96
+    IL_0213:  ldc.i4     0xf0
+    IL_0218:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_021d:  ldloc.s    t1
+    IL_021f:  ldc.i4     0x1001a
+    IL_0224:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddScrollBar(bool,
+                                                                                                                                                class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                                int32)
+    IL_0229:  stloc.s    b
+    IL_022b:  ldloc.s    b
+    IL_022d:  ldc.i4     0xff
+    IL_0232:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar::set_MaxValue(int32)
+    IL_0237:  nop
+    IL_0238:  ldloc.s    b
+    IL_023a:  ldc.i4     0xff
+    IL_023f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar::set_Position(int32)
+    IL_0244:  nop
+    IL_0245:  ldloc.0
+    IL_0246:  ldstr      "Framerate:"
+    IL_024b:  ldc.i4.s   10
+    IL_024d:  ldc.i4     0xf0
+    IL_0252:  ldc.i4     0x96
+    IL_0257:  ldc.i4     0x109
+    IL_025c:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_0261:  ldc.i4.1
+    IL_0262:  ldc.i4.0
+    IL_0263:  ldloc.s    t1
+    IL_0265:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddStaticText(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                  bool,
+                                                                                                                                                  bool,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.GUI.GUIElement)
+    IL_026a:  pop
+    IL_026b:  ldloc.0
+    IL_026c:  ldc.i4.1
+    IL_026d:  ldc.i4.s   10
+    IL_026f:  ldc.i4     0x109
+    IL_0274:  ldc.i4     0x96
+    IL_0279:  ldc.i4     0x118
+    IL_027e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_0283:  ldloc.s    t1
+    IL_0285:  ldc.i4     0x1001b
+    IL_028a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddScrollBar(bool,
+                                                                                                                                                class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                                int32)
+    IL_028f:  stloc.s    b
+    IL_0291:  ldloc.s    b
+    IL_0293:  ldc.i4     0x3e8
+    IL_0298:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar::set_MaxValue(int32)
+    IL_029d:  nop
+    IL_029e:  ldloc.s    b
+    IL_02a0:  ldc.i4     0xfffffc18
+    IL_02a5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar::set_MinValue(int32)
+    IL_02aa:  nop
+    IL_02ab:  ldloc.s    b
+    IL_02ad:  ldc.i4.s   30
+    IL_02af:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIScrollBar::set_Position(int32)
+    IL_02b4:  nop
+    IL_02b5:  ldloc.1
+    IL_02b6:  ldloc.1
+    IL_02b7:  ldc.i4     0x10023
+    IL_02bc:  ldc.i4.1
+    IL_02bd:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIElement [IrrlichtLime]IrrlichtLime.GUI.GUIElement::GetElementFromID(int32,
+                                                                                                                                              bool)
+    IL_02c2:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.GUI.GUIElement::BringToFront(class [IrrlichtLime]IrrlichtLime.GUI.GUIElement)
+    IL_02c7:  pop
+    IL_02c8:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="815" endline="840"><![CDATA[
+  {
+    // Code size       104 (0x68)
+    .maxstack  2
+    .locals init ([0] valuetype [mscorlib]System.ConsoleKeyInfo i,
+             [1] bool CS$1$0000,
+             [2] valuetype [mscorlib]System.ConsoleKey CS$4$0001)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  stind.i4
+    IL_0004:  ldstr      "Please select the driver you want for this example"
+    + ":\n (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n (d) Burning's Softw"
+    + "are Renderer\n (e) Software Renderer\n (f) NullDevice\n (otherKey) exit\n\n"
+    IL_0009:  call       void [mscorlib]System.Console::Write(string)
+    IL_000e:  nop
+    IL_000f:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0014:  stloc.0
+    IL_0015:  ldloca.s   i
+    IL_0017:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_001c:  stloc.2
+    IL_001d:  ldloc.2
+    IL_001e:  ldc.i4.s   65
+    IL_0020:  sub
+    IL_0021:  switch     ( 
+                          IL_0040,
+                          IL_0045,
+                          IL_004a,
+                          IL_004f,
+                          IL_0054,
+                          IL_0059)
+    IL_003e:  br.s       IL_005e
+
+    IL_0040:  ldarg.0
+    IL_0041:  ldc.i4.5
+    IL_0042:  stind.i4
+    IL_0043:  br.s       IL_0062
+
+    IL_0045:  ldarg.0
+    IL_0046:  ldc.i4.4
+    IL_0047:  stind.i4
+    IL_0048:  br.s       IL_0062
+
+    IL_004a:  ldarg.0
+    IL_004b:  ldc.i4.3
+    IL_004c:  stind.i4
+    IL_004d:  br.s       IL_0062
+
+    IL_004f:  ldarg.0
+    IL_0050:  ldc.i4.2
+    IL_0051:  stind.i4
+    IL_0052:  br.s       IL_0062
+
+    IL_0054:  ldarg.0
+    IL_0055:  ldc.i4.1
+    IL_0056:  stind.i4
+    IL_0057:  br.s       IL_0062
+
+    IL_0059:  ldarg.0
+    IL_005a:  ldc.i4.0
+    IL_005b:  stind.i4
+    IL_005c:  br.s       IL_0062
+
+    IL_005e:  ldc.i4.0
+    IL_005f:  stloc.1
+    IL_0060:  br.s       IL_0066
+
+    IL_0062:  ldc.i4.1
+    IL_0063:  stloc.1
+    IL_0064:  br.s       IL_0066
+
+    IL_0066:  ldloc.1
+    IL_0067:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\09.Meshviewer\Program.cs" startline="19" endline="28"><![CDATA[
+  {
+    // Code size       42 (0x2a)
+    .maxstack  8
+    IL_0000:  ldnull
+    IL_0001:  stsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _09.Meshviewer.Program::device
+    IL_0006:  ldnull
+    IL_0007:  stsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::model
+    IL_000c:  ldnull
+    IL_000d:  stsfld     class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _09.Meshviewer.Program::skybox
+    IL_0012:  ldc.i4.0
+    IL_0013:  stsfld     bool _09.Meshviewer.Program::octree
+    IL_0018:  ldc.i4.0
+    IL_0019:  stsfld     bool _09.Meshviewer.Program::useLight
+    IL_001e:  ldc.i4.2
+    IL_001f:  newarr     [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode
+    IL_0024:  stsfld     class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode[] _09.Meshviewer.Program::camera
+    IL_0029:  ret
+]]></source>
+</source_elements></project>

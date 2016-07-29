@@ -1,0 +1,376 @@
+<clones  >
+<clone_pair groupid="981" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" startline="779" endline="788">
+<![CDATA[
+ 
+     Private Shared Function GetResultType(ByVal op1 As TypeCode, ByVal array As String) As TypeCode
+         Dim chr As Char
+         chr = array.Chars(op1)
+         If chr = "X"c Then
+             Return Nothing
+         Else
+             Return GetTypeCodeOfChar(chr)
+         End If
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\cs-tokenizer.cs" startline="2061" endline="2070">
+<![CDATA[
+ 
+ 		bool IsTokenIdentifierEqual (char[] identifier)
+ 		{
+ 			for (int i = 0; i < identifier.Length; ++i) {
+ 				if (identifier[i] != id_builder[i])
+ 					return false;
+ 			}
+ 			for (int i = 0; i < identifier.Length; ++i) {
+ 				if (identifier[i] != id_builder[i])
+ 					return false;
+ 			}
+ 
+ 			return true;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="983" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" startline="779" endline="788">
+<![CDATA[
+ 
+     Private Shared Function GetResultType(ByVal op1 As TypeCode, ByVal array As String) As TypeCode
+         Dim chr As Char
+         chr = array.Chars(op1)
+         If chr = "X"c Then
+             Return Nothing
+         Else
+             Return GetTypeCodeOfChar(chr)
+         End If
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Util.cs" startline="97" endline="110">
+<![CDATA[
+ 
+ 		internal static Type[][] Copy(Type[][] types)
+ 		{
+ 			if (types == null || types.Length == 0)
+ 			{
+ 				return types;
+ 			}
+ 			Type[][] newArray = new Type[types.Length][];
+ 			for (int i = 0; i < newArray.Length; i++)
+ 			{
+ 				newArray[i] = Copy(types[i]);
+ 			}
+ 			for (int i = 0; i < newArray.Length; i++)
+ 			{
+ 				newArray[i] = Copy(types[i]);
+ 			}
+ 			return newArray;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1331" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Writer\ByteBuffer.cs" startline="288" endline="299">
+<![CDATA[
+ 
+ 		internal int Hash()
+ 		{
+ 			int hash = 0;
+ 			int len = this.Length;
+ 			for (int i = 0; i < len; i++)
+ 			{
+ 				hash *= 37;
+ 				hash ^= buffer[i];
+ 			}
+ 			for (int i = 0; i < len; i++)
+ 			{
+ 				hash *= 37;
+ 				hash ^= buffer[i];
+ 			}
+ 			return hash;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Enums\LiteralTypeCharacters.vb" startline="58" endline="65">
+<![CDATA[
+ 
+     Shared Function GetTypeCharacter(ByVal chr As String) As LiteralTypeCharacters_Characters
+         chr = chr.ToUpperInvariant
+         For i As Integer = 0 To m_Characters.GetUpperBound(0)
+             If m_Characters(i).Equals(chr, StringComparison.Ordinal) Then Return CType(i + 1, LiteralTypeCharacters_Characters)
+         Next
+         Return LiteralTypeCharacters_Characters.None
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1381" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\TypeDeclarations\AssemblyDeclaration.vb" startline="331" endline="353">
+<![CDATA[
+ 
+ 
+     ''' <summary>
+     ''' - Types are defined with the reflection.emit namespace. 
+     ''' - Only classes, modules, structures, interfaces, enums, delegates and eventnos (not a type by itself, bu an event might declare a new delegate). They are only defined, nothing else.
+     ''' - Classes, modules, structures, interfaces, enums,  delegates and events should implement IDefinable.DefineType()
+     ''' </summary>
+     ''' <returns></returns>
+     ''' <remarks></remarks>
+     Function DefineTypes() As Boolean
+         Dim result As Boolean = True
+ 
+         For Each type As TypeDeclaration In m_TypeDeclarations
+ #If EXTENDEDDEBUG Then
+             Dim iCount As Integer
+             iCount += 1
+             Compiler.Report.WriteLine(vbnc.Report.ReportLevels.Debug, "DefineTypes " & type.FullName & " (" & iCount & " of " & m_TypeDeclarations.Length & " types)")
+ #End If
+             result = DefineType(type) AndAlso result
+         Next
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Writer\VersionInfo.cs" startline="254" endline="278">
+<![CDATA[
+ 
+ 		private static ushort ParseVersionPart(string str, ref int pos)
+ 		{
+ 			ushort value = 0;
+ 			while (pos < str.Length)
+ 			{
+ 				char c = str[pos];
+ 				if (c == '.')
+ 				{
+ 					pos++;
+ 					break;
+ 				}
+ 				else if (c >= '0' && c <= '9')
+ 				{
+ 					value *= 10;
+ 					value += (ushort)(c - '0');
+ 					pos++;
+ 				}
+ 				else
+ 				{
+ 					break;
+ 				}
+ 			}
+ 			while (pos < str.Length)
+ 			{
+ 				char c = str[pos];
+ 				if (c == '.')
+ 				{
+ 					pos++;
+ 					break;
+ 				}
+ 				else if (c >= '0' && c <= '9')
+ 				{
+ 					value *= 10;
+ 					value += (ushort)(c - '0');
+ 					pos++;
+ 				}
+ 				else
+ 				{
+ 					break;
+ 				}
+ 			}
+ 			return value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1829" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="770" endline="802">
+<![CDATA[
+ 
+ 		public void Error_UnexpectedKind (ResolveContext ec, ResolveFlags flags, Location loc)
+ 		{
+ 			string [] valid = new string [4];
+ 			int count = 0;
+ 
+ 			if ((flags & ResolveFlags.VariableOrValue) != 0) {
+ 				valid [count++] = "variable";
+ 				valid [count++] = "value";
+ 			}
+ 
+ 			if ((flags & ResolveFlags.Type) != 0)
+ 				valid [count++] = "type";
+ 
+ 			if ((flags & ResolveFlags.MethodGroup) != 0)
+ 				valid [count++] = "method group";
+ 
+ 			if (count == 0)
+ 				valid [count++] = "unknown";
+ 
+ 			StringBuilder sb = new StringBuilder (valid [0]);
+ 			for (int i = 1; i < count - 1; i++) {
+ 				sb.Append ("', `");
+ 				sb.Append (valid [i]);
+ 			}
+ 			for (int i = 1; i < count - 1; i++) {
+ 				sb.Append ("', `");
+ 				sb.Append (valid [i]);
+ 			}
+ 			if (count > 1) {
+ 				sb.Append ("' or `");
+ 				sb.Append (valid [count - 1]);
+ 			}
+ 
+ 			ec.Report.Error (119, loc, 
+ 				"Expression denotes a `{0}', where a `{1}' was expected", ExprClassName, sb.ToString ());
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" startline="878" endline="928">
+<![CDATA[
+ 
+     Public Shared Function ConvertToBoolean(ByVal Context As ParsedObject, ByVal Source As Object, ByVal SourceTypeCode As TypeCode, ByRef result As Object) As Boolean
+         Select Case SourceTypeCode
+             Case TypeCode.Boolean
+                 result = Source
+                 Return True
+             Case TypeCode.Byte
+                 result = CBool(DirectCast(Source, Byte))
+                 Return True
+             Case TypeCode.Char
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30311, Context.Location, "Char", "Boolean")
+             Case TypeCode.DateTime
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30311, Context.Location, "Date", "Boolean")
+             Case TypeCode.Decimal
+                 result = CBool(DirectCast(Source, Decimal))
+                 Return True
+             Case TypeCode.Double
+                 result = CBool(DirectCast(Source, Double))
+                 Return True
+             Case TypeCode.Int16
+                 result = CBool(DirectCast(Source, Short))
+                 Return True
+             Case TypeCode.Int32
+                 result = CBool(DirectCast(Source, Integer))
+                 Return True
+             Case TypeCode.Int64
+                 result = CBool(DirectCast(Source, Long))
+                 Return True
+             Case TypeCode.SByte
+                 result = CBool(DirectCast(Source, SByte))
+                 Return True
+             Case TypeCode.Single
+                 result = CBool(DirectCast(Source, Single))
+                 Return True
+             Case TypeCode.String
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, "Byte", "String")
+             Case TypeCode.UInt16
+                 result = CBool(DirectCast(Source, UShort))
+                 Return True
+             Case TypeCode.UInt32
+                 result = CBool(DirectCast(Source, UInteger))
+                 Return True
+             Case TypeCode.UInt64
+                 result = CBool(DirectCast(Source, ULong))
+                 Return True
+             Case TypeCode.DBNull
+                 result = CBool(Nothing)
+                 Return True
+         End Select
+         Return Context.Compiler.Report.ShowMessage(Messages.VBNC30439, Context.Location, "Boolean")
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1830" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="770" endline="802">
+<![CDATA[
+ 
+ 		public void Error_UnexpectedKind (ResolveContext ec, ResolveFlags flags, Location loc)
+ 		{
+ 			string [] valid = new string [4];
+ 			int count = 0;
+ 
+ 			if ((flags & ResolveFlags.VariableOrValue) != 0) {
+ 				valid [count++] = "variable";
+ 				valid [count++] = "value";
+ 			}
+ 
+ 			if ((flags & ResolveFlags.Type) != 0)
+ 				valid [count++] = "type";
+ 
+ 			if ((flags & ResolveFlags.MethodGroup) != 0)
+ 				valid [count++] = "method group";
+ 
+ 			if (count == 0)
+ 				valid [count++] = "unknown";
+ 
+ 			StringBuilder sb = new StringBuilder (valid [0]);
+ 			for (int i = 1; i < count - 1; i++) {
+ 				sb.Append ("', `");
+ 				sb.Append (valid [i]);
+ 			}
+ 			for (int i = 1; i < count - 1; i++) {
+ 				sb.Append ("', `");
+ 				sb.Append (valid [i]);
+ 			}
+ 			if (count > 1) {
+ 				sb.Append ("' or `");
+ 				sb.Append (valid [count - 1]);
+ 			}
+ 
+ 			ec.Report.Error (119, loc, 
+ 				"Expression denotes a `{0}', where a `{1}' was expected", ExprClassName, sb.ToString ());
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" startline="1554" endline="1598">
+<![CDATA[
+ 
+     Public Shared Function ConvertToUInt64(ByVal Context As ParsedObject, ByVal Source As Object, ByVal SourceTypeCode As TypeCode, ByRef result As Object) As Boolean
+         Const DEST As String = "ULong"
+ 
+         Select Case SourceTypeCode
+             Case TypeCode.Boolean
+                 Dim i As Boolean = DirectCast(Source, Boolean)
+                 result = CULng(i)
+                 Return True
+             Case TypeCode.Decimal
+                 Dim i As Decimal = CDec(Source)
+                 If i >= ULong.MinValue AndAlso i <= ULong.MaxValue Then
+                     result = CULng(i)
+                     Return True
+                 End If
+             Case TypeCode.SByte, TypeCode.Int16, TypeCode.Int32, TypeCode.Int64
+                 Dim i As Long = CLng(Source)
+                 If i >= ULong.MinValue AndAlso i <= ULong.MaxValue Then
+                     result = CULng(i)
+                     Return True
+                 End If
+             Case TypeCode.Double, TypeCode.Single
+                 Dim i As Double = CDbl(Source)
+                 If i >= ULong.MinValue AndAlso i <= ULong.MaxValue Then
+                     result = CULng(i)
+                     Return True
+                 End If
+             Case TypeCode.Byte, TypeCode.UInt16, TypeCode.UInt32, TypeCode.UInt64
+                 Dim i As ULong = CULng(Source)
+                 If i >= ULong.MinValue AndAlso i <= ULong.MaxValue Then
+                     result = CULng(i)
+                     Return True
+                 End If
+             Case TypeCode.Char
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC32006, Context.Location, DEST)
+             Case TypeCode.DateTime
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30311, Context.Location, "Date", DEST)
+             Case TypeCode.String
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, DEST, "String")
+             Case TypeCode.DBNull
+                 result = 0UL
+                 Return True
+         End Select
+         Return Context.Compiler.Report.ShowMessage(Messages.VBNC30439, Context.Location, DEST)
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

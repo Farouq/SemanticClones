@@ -1,0 +1,2416 @@
+<clones>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="84" endline="119">
+<![CDATA[
+ 		{
+ 			switch (br.ReadByte())
+ 			{
+ 				case ELEMENT_TYPE_CLASS
+ 				case ELEMENT_TYPE_VALUETYPE
+ 					break;
+ 				default
+ 					throw new BadImageFormatException();
+ 			}
+ 			Type type = ReadTypeDefOrRefEncoded(module, br, context);
+ 			if (!type.IsGenericTypeDefinition)
+ 			{
+ 				throw new BadImageFormatException();
+ 			}
+ 			int genArgCount = br.ReadCompressedInt();
+ 			Type[] args = new Type[genArgCount];
+ 			Type[][] reqmod = null;
+ 			Type[][] optmod = null;
+ 			for (int i = 0; i < genArgCount; i++)
+ 			{
+ 				// LAMESPEC the Type production (23.2.12) doesn't include CustomMod* for genericinst, but C++ uses it, the verifier allows it and ildasm also supports it
+ 				CustomModifiers mods = ReadCustomModifiers(module, br, context);
+ 				if (mods.required != null || mods.optional != null)
+ 				{
+ 					if (reqmod == null)
+ 					{
+ 						reqmod = new Type[genArgCount][];
+ 						optmod = new Type[genArgCount][];
+ 					}
+ 					reqmod[i] = mods.required;
+ 					optmod[i] = mods.optional;
+ 				}
+ 				args[i] = ReadType(module, br, context);
+ 			}
+ 			for (int i = 0; i < genArgCount; i++)
+ 			{
+ 				// LAMESPEC the Type production (23.2.12) doesn't include CustomMod* for genericinst, but C++ uses it, the verifier allows it and ildasm also supports it
+ 				CustomModifiers mods = ReadCustomModifiers(module, br, context);
+ 				if (mods.required != null || mods.optional != null)
+ 				{
+ 					if (reqmod == null)
+ 					{
+ 						reqmod = new Type[genArgCount][];
+ 						optmod = new Type[genArgCount][];
+ 					}
+ 					reqmod[i] = mods.required;
+ 					optmod[i] = mods.optional;
+ 				}
+ 				args[i] = ReadType(module, br, context);
+ 			}
+ 			return GenericTypeInstance.Make(type, args, reqmod, optmod);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\PropertySignature.cs" startline="172" endline="216">
+<![CDATA[
+ 
+ 		internal static PropertySignature ReadSig(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			byte flags = br.ReadByte();
+ 			if ((flags & PROPERTY) == 0)
+ 			{
+ 				throw new BadImageFormatException();
+ 			}
+ 			CallingConventions callingConvention = CallingConventions.Standard;
+ 			if ((flags & HASTHIS) != 0)
+ 			{
+ 				callingConvention |= CallingConventions.HasThis;
+ 			}
+ 			if ((flags & EXPLICITTHIS) != 0)
+ 			{
+ 				callingConvention |= CallingConventions.ExplicitThis;
+ 			}
+ 			Type returnType;
+ 			Type[] returnTypeRequiredCustomModifiers;
+ 			Type[] returnTypeOptionalCustomModifiers;
+ 			Type[] parameterTypes;
+ 			Type[][] parameterRequiredCustomModifiers;
+ 			Type[][] parameterOptionalCustomModifiers;
+ 			int paramCount = br.ReadCompressedInt();
+ 			ReadCustomModifiers(module, br, context, out returnTypeRequiredCustomModifiers, out returnTypeOptionalCustomModifiers);
+ 			returnType = ReadRetType(module, br, context);
+ 			parameterTypes = new Type[paramCount];
+ 			parameterRequiredCustomModifiers = null;
+ 			parameterOptionalCustomModifiers = null;
+ 			for (int i = 0; i < parameterTypes.Length; i++)
+ 			{
+ 				if (IsCustomModifier(br.PeekByte()))
+ 				{
+ 					if (parameterOptionalCustomModifiers == null)
+ 					{
+ 						parameterOptionalCustomModifiers = new Type[parameterTypes.Length][];
+ 						parameterRequiredCustomModifiers = new Type[parameterTypes.Length][];
+ 					}
+ 					ReadCustomModifiers(module, br, context, out parameterRequiredCustomModifiers[i], out parameterOptionalCustomModifiers[i]);
+ 				}
+ 				parameterTypes[i] = ReadParam(module, br, context);
+ 			}
+ 			for (int i = 0; i < parameterTypes.Length; i++)
+ 			{
+ 				if (IsCustomModifier(br.PeekByte()))
+ 				{
+ 					if (parameterOptionalCustomModifiers == null)
+ 					{
+ 						parameterOptionalCustomModifiers = new Type[parameterTypes.Length][];
+ 						parameterRequiredCustomModifiers = new Type[parameterTypes.Length][];
+ 					}
+ 					ReadCustomModifiers(module, br, context, out parameterRequiredCustomModifiers[i], out parameterOptionalCustomModifiers[i]);
+ 				}
+ 				parameterTypes[i] = ReadParam(module, br, context);
+ 			}
+ 			return new PropertySignature(callingConvention, returnType, returnTypeOptionalCustomModifiers, returnTypeRequiredCustomModifiers,
+ 				parameterTypes, parameterOptionalCustomModifiers, parameterRequiredCustomModifiers);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="129" endline="136">
+<![CDATA[
+ 
+ 		private static Type ReadFunctionPointer(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// TODO like .NET we return System.IntPtr here, but ideally we should fire an event in Universe that
+ 			// the user can hook to provide a custom type (or we simply should build in full support for function pointer types)
+ 			MethodSignature.ReadStandAloneMethodSig(module, br, context);
+ 			return module.universe.System_IntPtr;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\decl.cs" startline="988" endline="997">
+<![CDATA[
+ 		}
+ 
+ 		//
+ 		// Return true when this member is a generic in C# terms
+ 		// A nested non-generic type of generic type will return false
+ 		//
+ 		public bool IsGeneric {
+ 			get {
+ 				return (state & StateFlags.IsGeneric) != 0;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="403" endline="411">
+<![CDATA[
+ 
+ 		protected abstract void AddSibling (UsageVector uv);
+ 
+ 		protected abstract UsageVector Merge ();
+ 
+ 		public UsageVector MergeChild (FlowBranching child)
+ 		{
+ 			return CurrentUsageVector.MergeChild (child.Merge (), true);
+  		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="539" endline="546">
+<![CDATA[
+ 
+ 		protected override UsageVector Merge ()
+ 		{
+ 			Report.Debug (2, "  MERGING SIBLINGS", Name);
+ 			UsageVector vector = UsageVector.MergeSiblings (sibling_list, Location);
+ 			Report.Debug (2, "  MERGING SIBLINGS DONE", Name, vector);
+ 			return vector;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="547" endline="555">
+<![CDATA[
+ 	}
+ 
+ 	public class FlowBranchingBreakable 
+ 	{
+ 		UsageVector break_origins;
+ 
+ 		public FlowBranchingBreakable (FlowBranching parent, BranchingType type, SiblingType stype, Block block, Location loc)
+ 			
+ 		{ }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="556" endline="563">
+<![CDATA[
+ 
+ 		public override bool AddBreakOrigin (UsageVector vector, Location loc)
+ 		{
+ 			vector = vector.Clone ();
+ 			vector.Next = break_origins;
+ 			break_origins = vector;
+ 			return false;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="564" endline="570">
+<![CDATA[
+ 
+ 		protected override UsageVector Merge ()
+ 		{
+ 			UsageVector vector = base.Merge ();
+ 			vector.MergeOrigins (break_origins);
+ 			return vector;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="571" endline="579">
+<![CDATA[
+ 	}
+ 
+ 	public class FlowBranchingContinuable 
+ 	{
+ 		UsageVector continue_origins;
+ 
+ 		public FlowBranchingContinuable (FlowBranching parent, BranchingType type, SiblingType stype, Block block, Location loc)
+ 			
+ 		{ }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="580" endline="587">
+<![CDATA[
+ 
+ 		public override bool AddContinueOrigin (UsageVector vector, Location loc)
+ 		{
+ 			vector = vector.Clone ();
+ 			vector.Next = continue_origins;
+ 			continue_origins = vector;
+ 			return false;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="588" endline="594">
+<![CDATA[
+ 
+ 		protected override UsageVector Merge ()
+ 		{
+ 			UsageVector vector = base.Merge ();
+ 			vector.MergeOrigins (continue_origins);
+ 			return vector;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="671" endline="677">
+<![CDATA[
+ 		}
+ 
+ 		public override bool AddBreakOrigin (UsageVector vector, Location loc)
+ 		{
+ 			Report.Error (139, loc, "No enclosing loop out of which to break or continue");
+ 			return false;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="749" endline="757">
+<![CDATA[
+ 		}
+ 		
+ 		/// <summary>
+ 		///   Reports that we were expecting `expr' to be of class `expected'
+ 		/// </summary>
+ 		public void Error_UnexpectedKind (Report r, MemberCore mc, string expected, Location loc)
+ 		{
+ 			Error_UnexpectedKind (r, mc, expected, ExprClassName, loc);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="906" endline="927">
+<![CDATA[
+ 				String.Format (
+ 					"CloneTo not implemented for expression {0}", this.GetType ()));
+ 		}
+ 
+ 		//
+ 		// Clones an expression created by the parser.
+ 		//
+ 		// We only support expressions created by the parser so far, not
+ 		// expressions that have been resolved (many more classes would need
+ 		// to implement CloneTo).
+ 		//
+ 		// This infrastructure is here merely for Lambda expressions which
+ 		// compile the same code using different type values for the same
+ 		// arguments to find the correct overload
+ 		//
+ 		public virtual Expression Clone (CloneContext clonectx)
+ 		{
+ 			Expression cloned = (Expression) MemberwiseClone ();
+ 			CloneTo (clonectx, cloned);
+ 
+ 			return cloned;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="928" endline="937">
+<![CDATA[
+ 
+ 		//
+ 		// Implementation of expression to expression tree conversion
+ 		//
+ 		public abstract Expression CreateExpressionTree (ResolveContext ec);
+ 
+ 		protected Expression CreateExpressionFactoryCall (ResolveContext ec, string name, Arguments args)
+ 		{
+ 			return CreateExpressionFactoryCall (ec, name, null, args, loc);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\MemberInfo.cs" startline="43" endline="53">
+<![CDATA[
+ 		}
+ 
+ 		public abstract Module Module
+ 		{
+ 			get;
+ 		}
+ 
+ 		public bool IsDefined(Type attributeType, bool inherit)
+ 		{
+ 			return CustomAttributeData.__GetCustomAttributes(this, attributeType, inherit).Count != 0;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Emit\TypeBuilder.cs" startline="381" endline="387">
+<![CDATA[
+ 
+ 		public PropertyBuilder DefineProperty(string name, PropertyAttributes attributes, Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers,
+ 			Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers)
+ 		{
+ 			return DefinePropertyImpl(name, attributes, CallingConventions.Standard, true, returnType, returnTypeRequiredCustomModifiers, returnTypeOptionalCustomModifiers,
+ 				parameterTypes, parameterTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Emit\TypeBuilder.cs" startline="388" endline="395">
+<![CDATA[
+ 
+ 		public PropertyBuilder DefineProperty(string name, PropertyAttributes attributes, CallingConventions callingConvention,
+ 			Type returnType, Type[] returnTypeRequiredCustomModifiers, Type[] returnTypeOptionalCustomModifiers,
+ 			Type[] parameterTypes, Type[][] parameterTypeRequiredCustomModifiers, Type[][] parameterTypeOptionalCustomModifiers)
+ 		{
+ 			return DefinePropertyImpl(name, attributes, callingConvention, false, returnType, returnTypeRequiredCustomModifiers, returnTypeOptionalCustomModifiers,
+ 				parameterTypes, parameterTypeRequiredCustomModifiers, parameterTypeOptionalCustomModifiers);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Emit\TypeBuilder.cs" startline="741" endline="749">
+<![CDATA[
+ 		}
+ 
+ 		public override string Namespace
+ 		{
+ 			get
+ 			{
+ 				// for some reason, TypeBuilder doesn't return null (and mcs depends on this)
+ 				return base.Namespace ?? "";
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\import.cs" startline="1651" endline="1657">
+<![CDATA[
+ 
+ 		#region Properties
+ 
+ 		public IAssemblyDefinition DeclaringAssembly {
+ 			get {
+ 				return importer.GetAssemblyDefinition (provider.Module.Assembly);
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\field.cs" startline="277" endline="283">
+<![CDATA[
+ 
+ 		#region Properties
+ 
+ 		public bool IsReadOnly {
+ 			get {
+ 				return (Modifiers & Modifiers.READONLY) != 0;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\field.cs" startline="364" endline="379">
+<![CDATA[
+ 
+ 		#region Properties
+ 
+ 		//
+ 		// Explicit struct layout set by parent
+ 		//
+ 		public CharSet? CharSet {
+ 			get; set;
+ 		}		
+ 
+ 		#endregion
+ 
+ 		public override Constant ConvertInitializer (ResolveContext rc, Constant expr)
+ 		{
+ 			return expr.ImplicitConversionRequired (rc, TypeManager.int32_type, Location);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\cs-tokenizer.cs" startline="1120" endline="1130">
+<![CDATA[
+ 		
+ 		public int peek_token ()
+ 		{
+ 			int the_token;
+ 
+ 			PushPosition ();
+ 			the_token = token ();
+ 			PopPosition ();
+ 			
+ 			return the_token;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\cs-tokenizer.cs" startline="2380" endline="2386">
+<![CDATA[
+ 
+ 		void Error_UnexpectedDirective (string extra)
+ 		{
+ 			Report.Error (
+ 				1028, Location,
+ 				"Unexpected processor directive ({0})", extra);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\anonymous.cs" startline="1184" endline="1190">
+<![CDATA[
+ 
+ 		public static void Error_AddressOfCapturedVar (ResolveContext ec, IVariableReference var, Location loc)
+ 		{
+ 			ec.Report.Error (1686, loc,
+ 				"Local variable or parameter `{0}' cannot have their address taken and be used inside an anonymous method or lambda expression",
+ 				var.Name);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\class.cs" startline="3248" endline="3254">
+<![CDATA[
+ 
+ 		protected void Error_StaticReturnType ()
+ 		{
+ 			Report.Error (722, Location,
+ 				"`{0}'
+ 				MemberType.GetSignatureForError ());
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\method.cs" startline="113" endline="121">
+<![CDATA[
+ 
+ 		protected override bool CheckBase ()
+ 		{
+ 			// Check whether arguments were correct.
+ 			if (!DefineParameters (parameters))
+ 				return false;
+ 
+ 			return base.CheckBase ();
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\method.cs" startline="638" endline="644">
+<![CDATA[
+ 
+ 		protected void Error_ConditionalAttributeIsNotValid ()
+ 		{
+ 			Report.Error (577, Location,
+ 				"Conditional not valid on `{0}' because it is a constructor, destructor, operator or explicit interface implementation",
+ 				GetSignatureForError ());
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\method.cs" startline="848" endline="855">
+<![CDATA[
+ 		}
+ 
+ #endregion
+ 
+ 		public override string GetSignatureForError()
+ 		{
+ 			return base.GetSignatureForError () + parameters.GetSignatureForError ();
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\anonymous.cs" startline="1432" endline="1440">
+<![CDATA[
+ 		}
+ 
+ 		#endregion
+ 
+ 		public override Expression CreateExpressionTree (ResolveContext ec)
+ 		{
+ 			ec.Report.Error (1945, loc, "An expression tree cannot contain an anonymous method expression");
+ 			return null;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\statement.cs" startline="71" endline="83">
+<![CDATA[
+ 
+ 		//
+ 		// This routine must be overrided in derived classes and make copies
+ 		// of all the data that might be modified if resolved
+ 		// 
+ 		protected abstract void CloneTo (CloneContext clonectx, Statement target);
+ 
+ 		public Statement Clone (CloneContext clonectx)
+ 		{
+ 			Statement s = (Statement) this.MemberwiseClone ();
+ 			CloneTo (clonectx, s);
+ 			return s;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\EventInfo.cs" startline="32" endline="45">
+<![CDATA[
+ 		}
+ 
+ 		public abstract EventAttributes Attributes { get; }
+ 		public abstract MethodInfo GetAddMethod(bool nonPublic);
+ 		public abstract MethodInfo GetRaiseMethod(bool nonPublic);
+ 		public abstract MethodInfo GetRemoveMethod(bool nonPublic);
+ 		public abstract MethodInfo[] GetOtherMethods(bool nonPublic);
+ 		public abstract Type EventHandlerType { get; }
+ 		internal abstract bool IsPublic { get; }
+ 		internal abstract bool IsStatic { get; }
+ 
+ 		public bool IsSpecialName
+ 		{
+ 			get { return (Attributes & EventAttributes.SpecialName) != 0; }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="38" endline="48">
+<![CDATA[
+ 		}
+ 
+ 		internal abstract int RowCount { get; set; }
+ 
+ 		internal abstract void Write(MetadataWriter mw);
+ 		internal abstract void Read(MetadataReader mr);
+ 
+ 		internal int GetLength(MetadataWriter md)
+ 		{
+ 			return RowCount * GetRowSize(new RowSizeCalc(md));
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="602" endline="610">
+<![CDATA[
+ 
+ 		protected override int GetRowSize(RowSizeCalc rsc)
+ 		{
+ 			return rsc
+ 				.AddFixed(2)
+ 				.WriteStringIndex()
+ 				.WriteBlobIndex()
+ 				.Value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="865" endline="873">
+<![CDATA[
+ 
+ 		protected override int GetRowSize(RowSizeCalc rsc)
+ 		{
+ 			return rsc
+ 				.AddFixed(2)
+ 				.WriteHasConstant()
+ 				.WriteBlobIndex()
+ 				.Value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="1188" endline="1196">
+<![CDATA[
+ 
+ 		protected override int GetRowSize(RowSizeCalc rsc)
+ 		{
+ 			return rsc
+ 				.AddFixed(2)
+ 				.WriteHasDeclSecurity()
+ 				.WriteBlobIndex()
+ 				.Value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="1461" endline="1469">
+<![CDATA[
+ 
+ 		protected override int GetRowSize(RowSizeCalc rsc)
+ 		{
+ 			return rsc
+ 				.AddFixed(2)
+ 				.WriteStringIndex()
+ 				.WriteTypeDefOrRef()
+ 				.Value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="1539" endline="1547">
+<![CDATA[
+ 
+ 		protected override int GetRowSize(RowSizeCalc rsc)
+ 		{
+ 			return rsc
+ 				.AddFixed(2)
+ 				.WriteStringIndex()
+ 				.WriteBlobIndex()
+ 				.Value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="1588" endline="1596">
+<![CDATA[
+ 
+ 		protected override int GetRowSize(RowSizeCalc rsc)
+ 		{
+ 			return rsc
+ 				.AddFixed(2)
+ 				.WriteMethodDef()
+ 				.WriteHasSemantics()
+ 				.Value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="2103" endline="2111">
+<![CDATA[
+ 
+ 		protected override int GetRowSize(RowSizeCalc rsc)
+ 		{
+ 			return rsc
+ 				.AddFixed(4)
+ 				.WriteStringIndex()
+ 				.WriteBlobIndex()
+ 				.Value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="2209" endline="2217">
+<![CDATA[
+ 
+ 		protected override int GetRowSize(RowSizeCalc rsc)
+ 		{
+ 			return rsc
+ 				.AddFixed(8)
+ 				.WriteStringIndex()
+ 				.WriteImplementation()
+ 				.Value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="2305" endline="2313">
+<![CDATA[
+ 
+ 		protected override int GetRowSize(RowSizeCalc rsc)
+ 		{
+ 			return rsc
+ 				.AddFixed(4)
+ 				.WriteTypeOrMethodDef()
+ 				.WriteStringIndex()
+ 				.Value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Util.cs" startline="267" endline="282">
+<![CDATA[
+ 	}
+ 
+ 	[System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Explicit)]
+ 	struct SingleConverter
+ 	{
+ 		[System.Runtime.InteropServices.FieldOffset(0)]
+ 		private int i;
+ 		[System.Runtime.InteropServices.FieldOffset(0)]
+ 		private float f;
+ 
+ 		internal static int SingleToInt32Bits(float v)
+ 		{
+ 			SingleConverter c = new SingleConverter();
+ 			c.f = v;
+ 			return c.i;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Util.cs" startline="283" endline="289">
+<![CDATA[
+ 
+ 		internal static float Int32BitsToSingle(int v)
+ 		{
+ 			SingleConverter c = new SingleConverter();
+ 			c.i = v;
+ 			return c.f;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\ParameterInfo.cs" startline="50" endline="64">
+<![CDATA[
+ 
+ 		public abstract string Name { get; }
+ 		public abstract Type ParameterType { get; }
+ 		public abstract ParameterAttributes Attributes { get; }
+ 		public abstract int Position { get; }
+ 		public abstract object RawDefaultValue { get; }
+ 		public abstract Type[] GetOptionalCustomModifiers();
+ 		public abstract Type[] GetRequiredCustomModifiers();
+ 		public abstract MemberInfo Member { get; }
+ 		public abstract int MetadataToken { get; }
+ 		internal abstract Module Module { get; }
+ 
+ 		public bool IsIn
+ 		{
+ 			get { return (Attributes & ParameterAttributes.In) != 0; }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="2088" endline="2094">
+<![CDATA[
+ 
+ 		#region Properties
+ 
+ 		protected int Arity {
+ 			get {
+ 				return targs == null ? 0 
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="5331" endline="5351">
+<![CDATA[
+ 
+ 		/// <remarks>
+ 		///   is_base tells whether we want to force the use of the `call'
+ 		///   opcode instead of using callvirt.  Call is required to call
+ 		///   a specific method, while callvirt will always use the most
+ 		///   recent method in the vtable.
+ 		///
+ 		///   is_static tells whether this is an invocation on a static method
+ 		///
+ 		///   instance_expr is an expression that represents the instance
+ 		///   it must be non-null if is_static is false.
+ 		///
+ 		///   method is the method to invoke.
+ 		///
+ 		///   Arguments is the list of arguments to pass to the method or constructor.
+ 		/// </remarks>
+ 		public static void EmitCall (EmitContext ec, Expression instance_expr,
+ 					     MethodSpec method, Arguments Arguments, Location loc)
+ 		{
+ 			EmitCall (ec, instance_expr, method, Arguments, loc, false, false);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\statement.cs" startline="2423" endline="2432">
+<![CDATA[
+ 
+ 		#region Properties
+ 
+ 		//
+ 		// Block has been converted to expression tree
+ 		//
+ 		public bool IsExpressionTree {
+ 			get {
+ 				return (flags & Flags.IsExpressionTree) != 0;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\property.cs" startline="833" endline="840">
+<![CDATA[
+ 		}
+ 
+ 		static readonly string[] attribute_targets = new string [] { "event" };
+ 
+ 		public EventProperty (DeclSpace parent, FullNamedExpression type, Modifiers mod_flags, MemberName name, Attributes attrs)
+ 			
+ 		{
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\property.cs" startline="841" endline="849">
+<![CDATA[
+ 
+ 		public override bool Define()
+ 		{
+ 			if (!base.Define ())
+ 				return false;
+ 
+ 			SetIsUsed ();
+ 			return true;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\property.cs" startline="1003" endline="1009">
+<![CDATA[
+ 
+ 		#region Properties
+ 
+ 		bool HasBackingField {
+ 			get {
+ 				return !IsInterface && (ModFlags & Modifiers.ABSTRACT) == 0;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\location.cs" startline="566" endline="572">
+<![CDATA[
+ 
+ 		public Location[] GetLocations (object element)
+ 		{
+ 			Location[] found;
+ 			simple_locs.TryGetValue (element, out found);
+ 			return found;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\location.cs" startline="573" endline="579">
+<![CDATA[
+ 
+ 		public MemberLocations GetMemberLocation (MemberCore element)
+ 		{
+ 			MemberLocations found;
+ 			member_locs.TryGetValue (element, out found);
+ 			return found;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\class.cs" startline="304" endline="311">
+<![CDATA[
+ 		}
+ 
+ 		#endregion
+ 
+ 		public bool AddMember (MemberCore symbol)
+ 		{
+ 			return AddToContainer (symbol, symbol.MemberName.Basename);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\class.cs" startline="2165" endline="2172">
+<![CDATA[
+ 
+ 		/// <summary>
+ 		/// Method container contains Equals method
+ 		/// </summary>
+ 		public bool HasEquals {
+ 			get {
+ 				return (cached_method & CachedMethods.Equals) != 0;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\class.cs" startline="2173" endline="2181">
+<![CDATA[
+ 		}
+  
+ 		/// <summary>
+ 		/// Method container contains GetHashCode method
+ 		/// </summary>
+ 		public bool HasGetHashCode {
+ 			get {
+ 				return (cached_method & CachedMethods.GetHashCode) != 0;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\enum.cs" startline="169" endline="175">
+<![CDATA[
+ 		}
+ 
+ 		protected override TypeAttributes TypeAttr {
+ 			get {
+ 				return ModifiersExtensions.TypeAttr (ModFlags, IsTopLevel) |
+ 					TypeAttributes.Class | TypeAttributes.Sealed | base.TypeAttr;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\enum.cs" startline="236" endline="242">
+<![CDATA[
+ 
+ 		protected override TypeExpr[] ResolveBaseTypes (out TypeExpr base_class)
+ 		{
+ 			base_type = TypeManager.enum_type;
+ 			base_class = base_type_expr;
+ 			return null;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\constant.cs" startline="31" endline="45">
+<![CDATA[
+ 
+ 		/// <remarks>
+ 		///   This is different from ToString in that ToString
+ 		///   is supposed to be there for debugging purposes,
+ 		///   and is not guaranteed to be useful for anything else,
+ 		///   AsString() will provide something that can be used
+ 		///   for round-tripping C# code.  Maybe it can be used
+ 		///   for IL assembly as well.
+ 		/// </remarks>
+ 		public abstract string AsString ();
+ 
+ 		override public string ToString ()
+ 		{
+ 			return this.GetType ().Name + " (" + AsString () + ")";
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\constant.cs" startline="105" endline="112">
+<![CDATA[
+ 
+ 		//
+ 		//  Returns a constant instance based on Type
+ 		//
+ 		public static Constant CreateConstant (ResolveContext rc, TypeSpec t, object v, Location loc)
+ 		{
+ 			return CreateConstantFromValue (t, v, loc).Resolve (rc);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="1342" endline="1348">
+<![CDATA[
+ 
+ 		protected override Expression DoResolve (ResolveContext rc)
+ 		{
+ 			Child = Child.Resolve (rc);
+ 			this.eclass = ExprClass.Value;
+ 			return this;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="1475" endline="1481">
+<![CDATA[
+ 
+ 		public override void Emit (EmitContext ec)
+ 		{
+ 			base.Emit (ec);
+ 			
+ 			ec.Emit (OpCodes.Box, child.Type);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="1508" endline="1514">
+<![CDATA[
+ 
+ 		public override void Emit (EmitContext ec)
+ 		{
+ 			base.Emit (ec);
+ 
+ 			ec.Emit (OpCodes.Unbox_Any, type);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="1982" endline="1995">
+<![CDATA[
+ 	}
+ 
+ 	//
+ 	// Standard composite pattern
+ 	//
+ 	public abstract class CompositeExpression 
+ 	{
+ 		protected Expression expr;
+ 
+ 		protected CompositeExpression (Expression expr)
+ 		{
+ 			this.expr = expr;
+ 			this.loc = expr.Location;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="5782" endline="5788">
+<![CDATA[
+ 		}
+ 
+ 		public static TemporaryVariableReference Create (TypeSpec type, Block block, Location loc)
+ 		{
+ 			var li = LocalVariable.CreateCompilerGenerated (type, block, loc);
+ 			return new TemporaryVariableReference (li, loc);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="5822" endline="5828">
+<![CDATA[
+ 
+ 		public void EmitAssign (EmitContext ec, Expression source)
+ 		{
+ 			li.CreateBuilder (ec);
+ 
+ 			EmitAssign (ec, source, false, false);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\delegate.cs" startline="321" endline="327">
+<![CDATA[
+ 
+ 		protected override TypeExpr[] ResolveBaseTypes (out TypeExpr base_class)
+ 		{
+ 			base_type = TypeManager.multicast_delegate_type;
+ 			base_class = null;
+ 			return null;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\delegate.cs" startline="328" endline="334">
+<![CDATA[
+ 
+ 		protected override TypeAttributes TypeAttr {
+ 			get {
+ 				return ModifiersExtensions.TypeAttr (ModFlags, IsTopLevel) |
+ 					TypeAttributes.Class | TypeAttributes.Sealed |
+ 					base.TypeAttr;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\delegate.cs" startline="626" endline="632">
+<![CDATA[
+ 
+ 		static public Expression Create (ResolveContext ec, MethodGroupExpr mge,
+ 						 TypeSpec target_type, Location loc)
+ 		{
+ 			ImplicitDelegateCreation d = new ImplicitDelegateCreation (target_type, mge, loc);
+ 			return d.DoResolve (ec);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Writer\TextSection.cs" startline="118" endline="125">
+<![CDATA[
+ 		}
+ 
+ 		internal uint StrongNameSignatureRVA
+ 		{
+ 			get
+ 			{
+ 				return (ResourcesRVA + ResourcesLength + 3) & ~3U;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Writer\TextSection.cs" startline="134" endline="141">
+<![CDATA[
+ 		}
+ 
+ 		private uint MetadataRVA
+ 		{
+ 			get
+ 			{
+ 				return (StrongNameSignatureRVA + StrongNameSignatureLength + 3) & ~3U;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\report.cs" startline="423" endline="429">
+<![CDATA[
+ 
+ 		public ReportPrinter SetPrinter (ReportPrinter printer)
+ 		{
+ 			ReportPrinter old = this.printer;
+ 			this.printer = printer;
+ 			return old;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\tools\monop\outline.cs" startline="915" endline="927">
+<![CDATA[
+ 
+ //	static Comparer TypeComparer = new Comparer (new ComparerFunc (CompareType));
+ 
+ //	static Type [] Sort (Type [] types)
+ //	{
+ //		Array.Sort (types, TypeComparer);
+ //		return types;
+ //	}
+ 	
+ 	static int CompareMemberInfo (object a, object b)
+ 	{
+ 		return string.Compare (((MemberInfo) a).Name, ((MemberInfo) b).Name);
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\cs-parser.cs" startline="1221" endline="1233">
+<![CDATA[
+ 
+   /** the generated parser, with debugging messages.
+       Maintains a state and a value stack, currently with fixed maximum size.
+       @param yyLex scanner.
+       @param yydebug debug message writer implementing yyDebug, or null.
+       @return result of the last reduction, if any.
+       @throws yyException on irrecoverable parse error.
+     */
+   internal Object yyparse (yyParser.yyInput yyLex, Object yyd)
+ 				 {
+     this.debug = (yydebug.yyDebug)yyd;
+     return yyparse(yyLex);
+   }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Reader\Method.cs" startline="154" endline="162">
+<![CDATA[
+ 		}
+ 
+ 		public override bool IsGenericMethodDefinition
+ 		{
+ 			get
+ 			{
+ 				PopulateGenericArguments();
+ 				return typeArgs.Length > 0;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Reader\Method.cs" startline="168" endline="174">
+<![CDATA[
+ 		}
+ 
+ 		public override Type[] GetGenericArguments()
+ 		{
+ 			PopulateGenericArguments();
+ 			return Util.Copy(typeArgs);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Reader\Method.cs" startline="449" endline="456">
+<![CDATA[
+ 
+ 		public override MemberInfo Member
+ 		{
+ 			get
+ 			{
+ 				// return the right ConstructorInfo wrapper
+ 				return method.Module.ResolveMethod(method.MetadataToken);
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Reader\Method.cs" startline="457" endline="466">
+<![CDATA[
+ 		}
+ 
+ 		public override int MetadataToken
+ 		{
+ 			get
+ 			{
+ 				// for parameters that don't have a row in the Param table, we return 0x08000000 (because index is -1 in that case),
+ 				// just like .NET
+ 				return (ParamTable.Index << 24) + index + 1;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\FieldInfo.cs" startline="113" endline="120">
+<![CDATA[
+ 		}
+ 
+ 		internal abstract int ImportTo(Emit.ModuleBuilder module);
+ 
+ 		internal virtual FieldInfo BindTypeParameters(Type type)
+ 		{
+ 			return new GenericFieldInstance(this.DeclaringType.BindTypeParameters(type), this);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\GenericWrappers.cs" startline="376" endline="383">
+<![CDATA[
+ 		}
+ 
+ 		public override Type[] GetOptionalCustomModifiers()
+ 		{
+ 			Type[] modifiers = parameterInfo.GetOptionalCustomModifiers();
+ 			Type.InplaceBindTypeParameters(method, modifiers);
+ 			return modifiers;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\GenericWrappers.cs" startline="384" endline="390">
+<![CDATA[
+ 
+ 		public override Type[] GetRequiredCustomModifiers()
+ 		{
+ 			Type[] modifiers = parameterInfo.GetRequiredCustomModifiers();
+ 			Type.InplaceBindTypeParameters(method, modifiers);
+ 			return modifiers;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\typemanager.cs" startline="586" endline="594">
+<![CDATA[
+ 
+ 	//
+ 	// Returns the ConstructorInfo for "args"
+ 	//
+ 	public static MethodSpec GetPredefinedConstructor (TypeSpec t, Location loc, params TypeSpec [] args)
+ 	{
+ 		var pc = ParametersCompiled.CreateFullyResolved (args);
+ 		return GetPredefinedMember (t, MemberFilter.Constructor (pc), false, loc) as MethodSpec;
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Signature.cs" startline="120" endline="128">
+<![CDATA[
+ 
+ 		internal static Type ReadTypeSpec(ModuleReader module, ByteReader br, IGenericContext context)
+ 		{
+ 			// LAMESPEC a TypeSpec can contain custom modifiers (C++/CLI generates "newarr (TypeSpec with custom modifiers)")
+ 			SkipCustomModifiers(br);
+ 			// LAMESPEC anything can be adorned by (useless) custom modifiers
+ 			// also, VAR and MVAR are also used in TypeSpec (contrary to what the spec says)
+ 			return ReadType(module, br, context);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment fi

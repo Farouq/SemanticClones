@@ -1,0 +1,741 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  ldstr      "Chapter 1 example 7: newPage()"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  stloc.0
+  ldloc.0
+  ldstr      "Chap0107.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  pop
+  nop
+  .try
+  {
+  ldstr      "Watermark.jpg"
+  call       class [iText]com.lowagie.text.Image [iText]com.lowagie.text.Image::getInstance(string)
+  ldc.r4     200.
+  ldc.r4     420.
+  newobj     instance void [iText]com.lowagie.text.Watermark::.ctor(class [iText]com.lowagie.text.Image,
+                                                                                float32,
+                                                                                float32)
+  stloc.3
+  ldloc.0
+  ldloc.3
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Watermark)
+  pop
+leave.s
+  }  // end .try
+  catch [vjslib]java.lang.Exception 
+  {
+  dup
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+  stloc.s    ee
+  nop
+  ldstr      "Are you sure you have the file 'Watermark.jpg' in "
+    + "the right path\?"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::ClearProjectError()
+leave.s
+  }  // end handler
+  nop
+  ldstr      "This is a header"
+  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(string)
+  ldc.i4.0
+  newobj     instance void [iText]com.lowagie.text.HeaderFooter::.ctor(class [iText]com.lowagie.text.Phrase,
+                                                                                 bool)
+  stloc.2
+  ldloc.0
+  ldloc.2
+  callvirt   instance void [iText]com.lowagie.text.Document::setHeader(class [iText]com.lowagie.text.HeaderFooter)
+  nop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  nop
+  ldloc.0
+  ldsfld     class [iText]com.lowagie.text.Rectangle [iText]com.lowagie.text.PageSize::A4
+  callvirt   instance class [iText]com.lowagie.text.Rectangle [iText]com.lowagie.text.Rectangle::rotate()
+  callvirt   instance bool [iText]com.lowagie.text.Document::setPageSize(class [iText]com.lowagie.text.Rectangle)
+  pop
+  nop
+  .try
+  {
+  ldstr      "Watermark.jpg"
+  call       class [iText]com.lowagie.text.Image [iText]com.lowagie.text.Image::getInstance(string)
+  ldc.r4     320.
+  ldc.r4     200.
+  newobj     instance void [iText]com.lowagie.text.Watermark::.ctor(class [iText]com.lowagie.text.Image,
+                                                                                float32,
+                                                                                float32)
+  stloc.s    V_5
+  ldloc.0
+  ldloc.s    V_5
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Watermark)
+  pop
+leave.s
+  }  // end .try
+  catch [mscorlib]System.Exception 
+  {
+  dup
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+  stloc.s    V_6
+  nop
+  ldstr      "Are you sure you have the file 'Watermark.jpg' in "
+    + "the right path\?"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::ClearProjectError()
+leave.s
+  }  // end handler
+  nop
+  ldstr      "This is page: "
+  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(string)
+  ldc.i4.1
+  newobj     instance void [iText]com.lowagie.text.HeaderFooter::.ctor(class [iText]com.lowagie.text.Phrase,
+                                                                                 bool)
+  stloc.1
+  ldloc.0
+  ldloc.1
+  callvirt   instance void [iText]com.lowagie.text.Document::setFooter(class [iText]com.lowagie.text.HeaderFooter)
+  nop
+  ldloc.0
+  ldstr      "Hello World"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.0
+  ldstr      "Hello Earth"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::resetHeader()
+  nop
+  ldloc.0
+  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.0
+  ldstr      "Hello Sun"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldstr      "Remark: the header has vanished!"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::resetPageCount()
+  nop
+  ldloc.0
+  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.0
+  ldstr      "Hello Moon"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldstr      "Remark: the pagenumber has been reset!"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  nop
+  nop
+  ret
+
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldstr      "Chapter 10 example 5: Simple Columns"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  ldloc.0
+  ldstr      "Chap1005.pdf"
+  ldc.i4.2
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  stloc.1
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  nop
+  ldstr      "Courier"
+  ldstr      "Cp1252"
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.pdf.BaseFont [iTextdotNET]com.lowagie.text.pdf.BaseFont::createFont(string,
+                                                                                                                               string,
+                                                                                                                               bool)
+  stloc.2
+  ldloc.2
+  ldc.r4     11.
+  ldc.i4.0
+  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(class [iTextdotNET]com.lowagie.text.pdf.BaseFont,
+                                                                               float32,
+                                                                               int32)
+  stloc.3
+  ldc.r4     15.
+  ldstr      "UNI\n"
+  ldloc.3
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(float32,
+                                                                                 string,
+                                                                                 class [iTextdotNET]com.lowagie.text.Font)
+  stloc.s    unicodes
+  ldc.r4     15.
+  ldstr      "\n"
+  ldloc.3
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(float32,
+                                                                                 string,
+                                                                                 class [iTextdotNET]com.lowagie.text.Font)
+  stloc.s    characters
+  ldc.r4     15.
+  ldstr      "NAME\n"
+  ldloc.3
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(float32,
+                                                                                 string,
+                                                                                 class [iTextdotNET]com.lowagie.text.Font)
+  stloc.s    names
+  ldc.i4.0
+  stloc.s    i
+br.s
+  nop
+  ldloc.s    unicodes
+  ldsfld     string[] Chap1005::uni
+  ldloc.s    i
+  ldelem.ref
+  ldstr      "\n"
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  pop
+  ldloc.s    characters
+  ldsfld     string[] Chap1005::code
+  ldloc.s    i
+  ldelem.ref
+  ldstr      "\n"
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  pop
+  ldloc.s    names
+  ldsfld     string[] Chap1005::name
+  ldloc.s    i
+  ldelem.ref
+  ldstr      "\n"
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  pop
+  nop
+  ldloc.s    i
+  ldc.i4.1
+  add
+  stloc.s    i
+  ldloc.s    i
+  ldc.i4.s   27
+  clt
+  stloc.s    CS$4$0000
+  ldloc.s    CS$4$0000
+brtrue.s
+  ldloc.1
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfContentByte [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getDirectContent()
+  stloc.s    cb
+  ldloc.s    cb
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.ColumnText::.ctor(class [iTextdotNET]com.lowagie.text.pdf.PdfContentByte)
+  stloc.s    ct
+  ldloc.s    ct
+  ldloc.s    unicodes
+  ldc.r4     60.
+  ldc.r4     300.
+  ldc.r4     100.
+  ldc.r4     720.
+  ldc.r4     15.
+  ldc.i4.1
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.ColumnText::setSimpleColumn(class [iTextdotNET]com.lowagie.text.Phrase,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   int32)
+  nop
+  ldloc.s    ct
+  callvirt   instance int32 [iTextdotNET]com.lowagie.text.pdf.ColumnText::go()
+  pop
+  ldloc.s    cb
+  ldc.r4     103.
+  ldc.r4     295.
+  ldc.r4     52.
+  ldc.r4     428.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::rectangle(float32,
+                                                                                                 float32,
+                                                                                                 float32,
+                                                                                                 float32)
+  nop
+  ldloc.s    cb
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  nop
+  ldloc.s    ct
+  ldloc.s    characters
+  ldc.r4     105.
+  ldc.r4     300.
+  ldc.r4     150.
+  ldc.r4     720.
+  ldc.r4     15.
+  ldc.i4.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.ColumnText::setSimpleColumn(class [iTextdotNET]com.lowagie.text.Phrase,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   int32)
+  nop
+  ldloc.s    ct
+  callvirt   instance int32 [iTextdotNET]com.lowagie.text.pdf.ColumnText::go()
+  pop
+  ldloc.s    ct
+  ldloc.s    names
+  ldc.r4     160.
+  ldc.r4     300.
+  ldc.r4     500.
+  ldc.r4     720.
+  ldc.r4     15.
+  ldc.i4.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.ColumnText::setSimpleColumn(class [iTextdotNET]com.lowagie.text.Phrase,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   int32)
+  nop
+  ldloc.s    ct
+  callvirt   instance int32 [iTextdotNET]com.lowagie.text.pdf.ColumnText::go()
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 5 example 14: nested tables"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  .try
+  {
+  ldloc.0
+  ldstr      "Chap0514.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  ldc.i4.2
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32)
+  stloc.1
+  ldloc.1
+  ldstr      "2nd table 0.0"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.1
+  ldstr      "2nd table 0.1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.1
+  ldstr      "2nd table 1.0"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.1
+  ldstr      "2nd table 1.1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldc.i4.4
+  ldc.i4.4
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32,
+                                                                                  int32)
+  stloc.2
+  ldloc.2
+  ldc.i4.1
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setAutoFillEmptyCells(bool)
+  ldloc.2
+  ldstr      "2.2"
+  ldc.i4.2
+  ldc.i4.2
+  newobj     instance void [vjslib]java.awt.Point::.ctor(int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string,
+                                                                                    class [vjslib_7]java.awt.Point)
+  ldloc.2
+  ldstr      "3.3"
+  ldc.i4.3
+  ldc.i4.3
+  newobj     instance void [vjslib]java.awt.Point::.ctor(int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string,
+                                                                                    class [vjslib_7]java.awt.Point)
+  ldloc.2
+  ldstr      "2.1"
+  ldc.i4.2
+  ldc.i4.1
+  newobj     instance void [vjslib]java.awt.Point::.ctor(int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string,
+                                                                                    class [vjslib_7]java.awt.Point)
+  ldloc.2
+  ldloc.1
+  ldc.i4.1
+  ldc.i4.3
+  newobj     instance void [vjslib]java.awt.Point::.ctor(int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::insertTable(class [iTextdotNET]com.lowagie.text.Table,
+                                                                                        class [vjslib_7]java.awt.Point)
+  ldloc.0
+  ldloc.2
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldc.i4.2
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32)
+  stloc.3
+  ldloc.3
+  ldstr      "3rd table 0.0"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.3
+  ldstr      "3rd table 0.1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.3
+  ldstr      "3rd table 1.0"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.3
+  ldstr      "3rd table 1.1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldc.i4.5
+  ldc.i4.5
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32,
+                                                                                  int32)
+  stloc.2
+  ldloc.2
+  ldc.i4.1
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setAutoFillEmptyCells(bool)
+  ldloc.2
+  ldstr      "2.2"
+  ldc.i4.2
+  ldc.i4.2
+  newobj     instance void [vjslib]java.awt.Point::.ctor(int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string,
+                                                                                    class [vjslib_7]java.awt.Point)
+  ldloc.2
+  ldstr      "3.3"
+  ldc.i4.3
+  ldc.i4.3
+  newobj     instance void [vjslib]java.awt.Point::.ctor(int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string,
+                                                                                    class [vjslib_7]java.awt.Point)
+  ldloc.2
+  ldstr      "2.1"
+  ldc.i4.2
+  ldc.i4.1
+  newobj     instance void [vjslib]java.awt.Point::.ctor(int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string,
+                                                                                    class [vjslib_7]java.awt.Point)
+  ldloc.2
+  ldloc.1
+  ldc.i4.1
+  ldc.i4.3
+  newobj     instance void [vjslib]java.awt.Point::.ctor(int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::insertTable(class [iTextdotNET]com.lowagie.text.Table,
+                                                                                        class [vjslib_7]java.awt.Point)
+  ldloc.2
+  ldloc.3
+  ldc.i4.s   6
+  ldc.i4.2
+  newobj     instance void [vjslib]java.awt.Point::.ctor(int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::insertTable(class [iTextdotNET]com.lowagie.text.Table,
+                                                                                        class [vjslib_7]java.awt.Point)
+  ldloc.0
+  ldloc.2
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldc.i4.2
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32)
+  stloc.s    a
+  ldloc.s    a
+  ldc.i4.2
+  stloc.s    V_15
+  ldloc.s    V_15
+  ldc.i4.0
+blt.s
+br.s
+  newobj     instance void [vjslib]java.lang.NegativeArraySizeException::.ctor()
+  throw
+  ldloc.s    V_15
+  newarr     [mscorlib]System.Single
+  dup
+  ldc.i4.0
+  ldc.r4     85.
+  stelem.r4
+  dup
+  ldc.i4.1
+  ldc.r4     15.
+  stelem.r4
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setWidths(float32[])
+  ldloc.s    a
+  ldstr      "a-1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    a
+  ldstr      "a-2"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldc.i4.5
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32)
+  stloc.s    b
+  ldloc.s    b
+  ldc.i4.5
+  stloc.s    V_15
+  ldloc.s    V_15
+  ldc.i4.0
+blt.s
+br.s
+  newobj     instance void [vjslib]java.lang.NegativeArraySizeException::.ctor()
+  throw
+  ldloc.s    V_15
+  newarr     [mscorlib]System.Single
+  dup
+  ldc.i4.0
+  ldc.r4     15.
+  stelem.r4
+  dup
+  ldc.i4.1
+  ldc.r4     7.
+  stelem.r4
+  dup
+  ldc.i4.2
+  ldc.r4     7.
+  stelem.r4
+  dup
+  ldc.i4.3
+  ldc.r4     7.
+  stelem.r4
+  dup
+  ldc.i4.4
+  ldc.r4     7.
+  stelem.r4
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setWidths(float32[])
+  ldloc.s    b
+  ldstr      "b-1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    b
+  ldstr      "b-2"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    b
+  ldstr      "b-3"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    b
+  ldstr      "b-4"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    b
+  ldstr      "b-5"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldc.i4.3
+  ldc.i4.1
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32,
+                                                                                  int32)
+  stloc.s    c
+  ldloc.s    c
+  ldc.r4     100.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setWidth(float32)
+  ldloc.s    c
+  ldc.i4.3
+  stloc.s    V_15
+  ldloc.s    V_15
+  ldc.i4.0
+blt.s
+br.s
+  newobj     instance void [vjslib]java.lang.NegativeArraySizeException::.ctor()
+  throw
+  ldloc.s    V_15
+  newarr     [mscorlib]System.Single
+  dup
+  ldc.i4.0
+  ldc.r4     20.
+  stelem.r4
+  dup
+  ldc.i4.1
+  ldc.r4     2.
+  stelem.r4
+  dup
+  ldc.i4.2
+  ldc.r4     78.
+  stelem.r4
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setWidths(float32[])
+  ldloc.s    c
+  ldloc.s    a
+  ldc.i4.0
+  ldc.i4.0
+  newobj     instance void [vjslib]java.awt.Point::.ctor(int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::insertTable(class [iTextdotNET]com.lowagie.text.Table,
+                                                                                        class [vjslib_7]java.awt.Point)
+  ldloc.s    c
+  ldloc.s    b
+  ldc.i4.0
+  ldc.i4.2
+  newobj     instance void [vjslib]java.awt.Point::.ctor(int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::insertTable(class [iTextdotNET]com.lowagie.text.Table,
+                                                                                        class [vjslib_7]java.awt.Point)
+  ldloc.0
+  ldloc.s    c
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldc.i4.3
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32)
+  stloc.s    t1
+  ldloc.s    t1
+  ldstr      "1.1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    t1
+  ldstr      "1.2"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    t1
+  ldstr      "1.3"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldc.i4.2
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32)
+  stloc.s    t2
+  ldloc.s    t2
+  ldstr      "2.1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    t2
+  ldstr      "2.2"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    t1
+  ldloc.s    t2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::insertTable(class [iTextdotNET]com.lowagie.text.Table)
+  ldloc.s    t1
+  ldstr      "new cell"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.0
+  ldloc.s    t1
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldc.i4.2
+  ldc.i4.2
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32,
+                                                                                  int32)
+  stloc.s    t1
+  ldc.i4.0
+  stloc.s    i
+br.s
+  ldloc.s    t1
+  ldstr      "t1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    i
+  ldc.i4.1
+  add
+  stloc.s    i
+  ldloc.s    i
+  ldc.i4.4
+blt.s
+  ldc.i4.3
+  ldc.i4.3
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32,
+                                                                                  int32)
+  stloc.s    t2
+  ldc.i4.0
+  stloc.s    V_10
+br.s
+  ldloc.s    V_10
+  ldc.i4.4
+bne.un.s
+  ldloc.s    t2
+  ldloc.s    t1
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::insertTable(class [iTextdotNET]com.lowagie.text.Table)
+br.s
+  ldloc.s    t2
+  ldstr      "t2"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    V_10
+  ldc.i4.1
+  add
+  stloc.s    V_10
+  ldloc.s    V_10
+  ldc.i4.s   9
+blt.s
+  ldc.i4.4
+  ldc.i4.4
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32,
+                                                                                  int32)
+  stloc.s    t3
+  ldc.i4.0
+  stloc.s    V_12
+br.s
+  ldloc.s    V_12
+  ldc.i4.s   10
+bne.un.s
+  ldloc.s    t3
+  ldloc.s    t2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::insertTable(class [iTextdotNET]com.lowagie.text.Table)
+br.s
+  ldloc.s    t3
+  ldstr      "t3"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.s    V_12
+  ldc.i4.1
+  add
+  stloc.s    V_12
+  ldloc.s    V_12
+  ldc.i4.s   16
+blt.s
+  ldloc.0
+  ldloc.s    t3
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+leave.s
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+  dup
+  stloc.s    V_16
+  stloc.s    de
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.s    de
+  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+  dup
+  stloc.s    V_17
+  stloc.s    ioe
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.s    ioe
+  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+br.s
+  ret
+
+]]></source>
+</source_elements></project>

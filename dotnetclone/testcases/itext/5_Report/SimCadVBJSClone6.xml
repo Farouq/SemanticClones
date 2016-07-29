@@ -1,0 +1,62 @@
+<clones  >
+<clone_pair groupid="77" nfragments="2" Csharpe_files="0" vb_files="1" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\fonts\FontEncoding.java" startline="35" endline="54">
+<![CDATA[
+ 		System.out.println("Encodings");
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		PdfWriter.getInstance(document, new FileOutputStream("fontencoding.pdf"));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+ 		BaseFont helvetica = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.EMBEDDED);
+ 		Font font = new Font(helvetica, 12, Font.NORMAL);
+ 		Chunk chunk = new Chunk("Sponsor this example and send me 1\u20ac. These are some special characters
+ 		document.add(chunk);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="60" endline="89">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 8
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0208.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         ' we add some content
+         Dim text As String = "Some.text.to.show.the.splitting.action.of.the.interface."
+         Dim Split As New Chap0208()
+         Dim ck As New Chunk(text, FontFactory.getFont(FontFactory.HELVETICA, 24))
+         Dim p As New Paragraph(24, ck)
+         Document.add(New Paragraph("Normal split."))
+         Document.add(p)
+         ck = New Chunk(text, FontFactory.getFont(FontFactory.HELVETICA, 24))
+         ck.setSplitCharacter(Split)
+         p = New Paragraph(24, ck)
+         Document.add(New Paragraph("The dot '.' is the split character."))
+         Document.add(p)
+         ' step 5
+         Document.close()
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

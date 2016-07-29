@@ -1,0 +1,535 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  newobj     instance void EditDistance.Program/_Closure$__1::.ctor()
+  stloc
+  ldloc
+  ldarg.1
+  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  ldloc
+  ldarg.0
+  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  ldloc
+  ldloc
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldc.i4
+  add.ovf
+  ldloc
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldc.i4
+  add.ovf
+  newobj     instance void int32[0...,0...]::.ctor(int32,
+                                                             int32)
+  stfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldc.i4
+  ldloc
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  stloc
+  stloc
+br.s
+  ldloc
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldloc
+  ldc.i4
+  ldloc
+  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  nop
+  ldloc
+  ldc.i4
+  add.ovf
+  stloc
+  ldloc
+  ldloc
+  stloc
+  ldloc
+ble.s
+  ldc.i4
+  ldloc
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  stloc
+  stloc
+br.s
+  ldloc
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldc.i4
+  ldloc
+  ldloc
+  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  nop
+  ldloc
+  ldc.i4
+  add.ovf
+  stloc
+  ldloc
+  ldloc
+  stloc
+  ldloc
+ble.s
+  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+  ldc.i4
+  mul.ovf
+  stloc
+  ldloc
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc
+  ldloc
+  ldloc
+  dup
+  ldvirtftn  instance void EditDistance.Program/_Closure$__1::_Lambda$__1(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+  newobj     instance void class [mscorlib]System.Action`4<int32,int32,int32,int32>::.ctor(object,
+                                                                                                     native int)
+  call       void [ParallelExtensionsExtras]System.Threading.Algorithms.ParallelAlgorithms::Wavefront(int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                class [mscorlib]System.Action`4<int32,int32,int32,int32>)
+  nop
+  ldloc
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldloc
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                            int32)
+  stloc
+br.s
+  ldloc
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldstr      "Chapter 10 Example 13: Spot Color"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc
+  ldloc
+  ldstr      "Chap1013.pdf"
+  ldc.i4
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  stloc
+  ldstr      "Helvetica"
+  ldstr      "winansi"
+  ldc.i4
+  call       class [iTextdotNET]com.lowagie.text.pdf.BaseFont [iTextdotNET]com.lowagie.text.pdf.BaseFont::createFont(string,
+                                                                                                                               string,
+                                                                                                                               bool)
+  stloc
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  nop
+  ldloc
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfContentByte [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getDirectContent()
+  stloc
+  ldstr      "PANTONE 280 CV"
+  ldc.r4     0.25
+  ldc.r4     0.89999998
+  ldc.r4     0.2
+  ldc.r4     0.30000001
+  ldc.r4     0.1
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.CMYKColor::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32)
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor::.ctor(string,
+                                                                                           float32,
+                                                                                           class [vjslib_7]java.awt.Color)
+  stloc
+  ldstr      "PANTONE 147"
+  ldc.r4     0.89999998
+  ldc.i4.s   114
+  ldc.i4.s   94
+  ldc.i4.s   38
+  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::FromArgb(int32,
+                                                                                                                     int32,
+                                                                                                                     int32)
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor::.ctor(string,
+                                                                                           float32,
+                                                                                           valuetype [System.Drawing_5]System.Drawing.Color)
+  stloc
+  ldstr      "PANTONE 100 CV"
+  ldc.r4     0.5
+  ldc.r4     0.89999998
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.GrayColor::.ctor(float32)
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor::.ctor(string,
+                                                                                           float32,
+                                                                                           class [vjslib_7]java.awt.Color)
+  stloc
+  ldloc
+  ldloc
+  ldc.r4     0.5
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setColorStroke(class [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor,
+                                                                                                      float32)
+  nop
+  ldloc
+  ldc.r4     10.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setLineWidth(float32)
+  nop
+  ldloc
+  ldc.r4     100.
+  ldc.r4     700.
+  ldc.r4     100.
+  ldc.r4     100.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::rectangle(float32,
+                                                                                                 float32,
+                                                                                                 float32,
+                                                                                                 float32)
+  nop
+  ldloc
+  ldc.r4     100.
+  ldc.r4     700.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::moveTo(float32,
+                                                                                              float32)
+  nop
+  ldloc
+  ldc.r4     200.
+  ldc.r4     800.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                              float32)
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  nop
+  ldloc
+  ldloc
+  ldloc
+  callvirt   instance float32 [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor::getTint()
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setColorFill(class [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor,
+                                                                                                    float32)
+  nop
+  ldloc
+  ldc.r4     250.
+  ldc.r4     700.
+  ldc.r4     100.
+  ldc.r4     100.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::rectangle(float32,
+                                                                                                 float32,
+                                                                                                 float32,
+                                                                                                 float32)
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::fill()
+  nop
+  ldloc
+  ldloc
+  ldloc
+  callvirt   instance float32 [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor::getTint()
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setColorStroke(class [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor,
+                                                                                                      float32)
+  nop
+  ldloc
+  ldc.r4     5.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setLineWidth(float32)
+  nop
+  ldloc
+  ldc.r4     150.
+  ldc.r4     500.
+  ldc.r4     100.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::circle(float32,
+                                                                                              float32,
+                                                                                              float32)
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  nop
+  ldloc
+  ldloc
+  ldloc
+  callvirt   instance float32 [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor::getTint()
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setColorFill(class [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor,
+                                                                                                    float32)
+  nop
+  ldloc
+  ldc.r4     150.
+  ldc.r4     500.
+  ldc.r4     50.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::circle(float32,
+                                                                                              float32,
+                                                                                              float32)
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::fill()
+  nop
+  ldloc
+  ldloc
+  ldloc
+  callvirt   instance float32 [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor::getTint()
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setColorFill(class [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor,
+                                                                                                    float32)
+  nop
+  ldloc
+  ldc.r4     100.
+  ldc.r4     200.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::moveTo(float32,
+                                                                                              float32)
+  nop
+  ldloc
+  ldc.r4     200.
+  ldc.r4     250.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                              float32)
+  nop
+  ldloc
+  ldc.r4     400.
+  ldc.r4     150.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                              float32)
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::fill()
+  nop
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldstr      "Some text to show"
+  stloc
+  ldloc
+  ldloc
+  ldstr      "Helvetica"
+  ldc.r4     24.
+  ldc.i4
+  ldloc
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.SpotColor::.ctor(class [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor)
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32,
+                                                                                                                   class [vjslib_7]java.awt.Color)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  ldloc
+  ldstr      "Helvetica"
+  ldc.r4     24.
+  ldc.i4
+  ldloc
+  ldc.r4     0.5
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.SpotColor::.ctor(class [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor,
+                                                                                        float32)
+  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32,
+                                                                                                                   class [vjslib_7]java.awt.Color)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  ldc.r4     500.
+  ldc.r4     500.
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfTemplate [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::createTemplate(float32,
+                                                                                                                                                     float32)
+  stloc
+  ldloc
+  ldloc
+  ldc.r4     0.5
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.SpotColor::.ctor(class [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor,
+                                                                                        float32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setColorStroke(class [vjslib_7]java.awt.Color)
+  nop
+  ldloc
+  ldc.r4     10.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setLineWidth(float32)
+  nop
+  ldloc
+  ldc.r4     100.
+  ldc.r4     10.
+  ldc.r4     100.
+  ldc.r4     100.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::rectangle(float32,
+                                                                                                 float32,
+                                                                                                 float32,
+                                                                                                 float32)
+  nop
+  ldloc
+  ldc.r4     100.
+  ldc.r4     10.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::moveTo(float32,
+                                                                                              float32)
+  nop
+  ldloc
+  ldc.r4     200.
+  ldc.r4     100.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                              float32)
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  nop
+  ldloc
+  ldloc
+  ldloc
+  callvirt   instance float32 [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor::getTint()
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setColorFill(class [iTextdotNET]com.lowagie.text.pdf.PdfSpotColor,
+                                                                                                    float32)
+  nop
+  ldloc
+  ldc.r4     100.
+  ldc.r4     125.
+  ldc.r4     100.
+  ldc.r4     100.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::rectangle(float32,
+                                                                                                 float32,
+                                                                                                 float32,
+                                                                                                 float32)
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::fill()
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::beginText()
+  nop
+  ldloc
+  ldloc
+  ldc.r4     20.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setFontAndSize(class [iTextdotNET]com.lowagie.text.pdf.BaseFont,
+                                                                                                      float32)
+  nop
+  ldloc
+  ldc.r4     1.
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     1.
+  ldc.r4     10.
+  ldc.r4     10.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setTextMatrix(float32,
+                                                                                                     float32,
+                                                                                                     float32,
+                                                                                                     float32,
+                                                                                                     float32,
+                                                                                                     float32)
+  nop
+  ldloc
+  ldstr      "Template text upside down"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::showText(string)
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::endText()
+  nop
+  ldloc
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     499.
+  ldc.r4     499.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::rectangle(float32,
+                                                                                                 float32,
+                                                                                                 float32,
+                                                                                                 float32)
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  nop
+  ldloc
+  ldloc
+  ldc.r4     -1.
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     -1.
+  ldc.r4     550.
+  ldc.r4     550.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iTextdotNET]com.lowagie.text.pdf.PdfTemplate,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32)
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 6 example 6: Absolute Positioning of an Im"
+  + "age"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc
+  .try
+  {
+  ldloc
+  ldstr      "Chap0606.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+  pop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  ldstr      "hitchcock.png"
+  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(string)
+  stloc
+  ldloc
+  ldc.r4     171.
+  ldc.r4     250.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAbsolutePosition(float32,
+                                                                                                float32)
+  ldloc
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  ldc.r4     342.
+  ldc.r4     500.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAbsolutePosition(float32,
+                                                                                                float32)
+  ldloc
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+leave.s
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+  dup
+  stloc
+  stloc
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc
+  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+  dup
+  stloc
+  stloc
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc
+  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+br.s
+  ret
+
+]]></source>
+</source_elements></project>

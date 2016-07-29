@@ -1,0 +1,869 @@
+<clones  >
+<clone_pair groupid="33" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\images\Alignment.java" startline="33" endline="56">
+<![CDATA[
+ 		System.out.println("Alignment of images");
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		PdfWriter.getInstance(document, new FileOutputStream("alignment.pdf"));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		Image gif = Image.getInstance("vonnegut.gif");
+ 		gif.setAlignment(Image.RIGHT);
+ 		Image jpeg = Image.getInstance("otsoe.jpg");
+ 		jpeg.setAlignment(Image.MIDDLE);
+ 		Image png = Image.getInstance("hitchcock.png");
+ 		png.setAlignment(Image.LEFT);
+             
+ 		document.add(gif);
+ 		document.add(jpeg);
+ 		document.add(png);
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1101.cs" startline="25" endline="59">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 11 example 1
+     
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1101.pdf", FileMode.Create));
+     
+ 		// step 3
+ 		document.open();
+     
+ 		// step 4
+     
+ 		Paragraph p1 = new Paragraph("We will do something special with this paragraph. If you click on ", FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		p1.add(new Chunk("this word", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, GDI.Color.Blue)).setLocalGoto("test"));
+ 		p1.add(" you will automatically jump to another location in this document.");
+ 		Paragraph p2 = new Paragraph("blah, blah, blah");
+ 		Paragraph p3 = new Paragraph("This paragraph contains a local ");
+ 		p3.add(new Chunk("local destination", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, GDI.Color.FromArgb(0, 255, 0))).setLocalDestination("test"));
+ 		document.add(p1);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p3);
+     
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="43" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\DifferentFonts.java" startline="35" endline="49">
+<![CDATA[
+ 		Document document = new Document();
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("differentfonts.pdf"));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Paragraph p = new Paragraph();
+ 		p.add(new Chunk("This text is in Times Roman. This is ZapfDingbats
+ 		p.add(new Chunk("abcdefghijklmnopqrstuvwxyz", new Font(Font.ZAPFDINGBATS, 12)));
+ 		p.add(new Chunk(". This is font Symbol
+ 		p.add(new Chunk("abcdefghijklmnopqrstuvwxyz", new Font(Font.SYMBOL, 12)));
+ 		document.add(new Paragraph(p));
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1108.cs" startline="25" endline="67">
+<![CDATA[
+ 
+ 	// we override only the onParagraph method
+ 	public override void onParagraph(PdfWriter writer, Document document, float position) 
+ 	{
+ 		n++;
+ 		PdfContentByte cb = writer.getDirectContent();
+ 		PdfDestination destination = new PdfDestination(PdfDestination.FITH, position);
+ 		PdfOutline outline = new PdfOutline(cb.getRootOutline(), destination, "paragraph " + n);
+ 		cb.addOutline(outline, outline.getTitle());
+ 	}
+ }
+ 
+ public class Chap1108 
+ {
+ 	public static void Main(String[] args) 
+ 	{
+ 		Console.WriteLine("Chapter 11 example 8
+     
+ 		// step 1
+ 		Document document = new Document(PageSize.A6);
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1108.pdf", FileMode.Create));
+     
+ 		// step 3
+ 		document.open();
+     
+ 		// step 4
+ 		// we create an Event and add it to the writer
+ 		PageOutline pageEvent = new PageOutline();
+ 		writer.setPageEvent(pageEvent);
+     
+ 		document.add(new Paragraph("GALLIA est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("[Eorum una, pars, quam Gallos obtinere dictum est, initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et eam partem Oceani quae est ad Hispaniam pertinet; spectat inter occasum solis et septentriones.]", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupiditate inductus coniurationem nobilitatis fecit et civitati persuasit ut de finibus suis cum omnibus copiis exirent
+ ", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("His rebus adducti et auctoritate Orgetorigis permoti constituerunt ea quae ad proficiscendum pertinerent comparare, iumentorum et carrorum quam maximum numerum coemere, sementes quam maximas facere, ut in itinere copia frumenti suppeteret, cum proximis civitatibus pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi satis esse duxerunt; in tertium annum profectionem lege confirmant.  Ad eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civitates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio, Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a senatu populi Romani amicus appellatus erat, ut regnum in civitate sua occuparet, quod pater ante habuerit; itemque Dumnorigi Haeduo, fratri Diviciaci, qui eo tempore principatum in civitate obtinebat ac maxime plebi acceptus erat, ut idem conaretur persuadet eique filiam suam in matrimonium dat.  Perfacile factu esse illis probat conata perficere, propterea quod ipse suae
+  civitatis imperium obtenturus esset
+ 		document.add(new Paragraph("Ea res est Helvetiis per indicium enuntiata.  Moribus suis Orgetoricem ex vinculis causam dicere coegerunt; damnatum poenam sequi oportebat, ut igni cremaretur.  Die constituta causae dictionis Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, undique coegit, et omnes clientes obaeratosque suos, quorum magnum numerum habebat, eodem conduxit; per eos ne causam diceret se eripuit.  Cum civitas ob eam rem incitata armis ius suum exequi conaretur multitudinemque hominum ex agris magistratus cogerent, Orgetorix mortuus est; neque abest suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciverit.", new Font(Font.HELVETICA, 12)));
+     
+ 		// step 5
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="50" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\Paragraphs.java" startline="45" endline="79">
+<![CDATA[
+ 		System.out.println("the Paragraph object");
+ 
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		PdfWriter.getInstance(document, new FileOutputStream("Paragraphs.pdf"));
+ 
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Paragraph p1 = new Paragraph(new Chunk(
+ 			"This is my first paragraph. ",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 10)));
+ 		p1.add("The leading of this paragraph is calculated automagically. ");
+ 		p1.add("The default leading is 1.5 times the fontsize. ");
+ 		p1.add(new Chunk("You can add chunks "));
+ 		p1.add(new Phrase("or you can add phrases. "));
+ 		p1.add(new Phrase(
+ 			"Unless you change the leading with the method setLeading, the leading doesn't change if you add text with another leading. This can lead to some problems.",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 18)));
+ 		document.add(p1);
+ 		Paragraph p2 = new Paragraph(new Phrase(
+ 			"This is my second paragraph. ", FontFactory.getFont(
+ 			FontFactory.HELVETICA, 12)));
+ 		p2.add("As you can see, it started on a new line.");
+ 		document.add(p2);
+ 		Paragraph p3 = new Paragraph("This is my third paragraph.",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		document.add(p3);
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 2 example 5
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0205.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+ 		Paragraph p1 = new Paragraph(new Chunk("This is my first paragraph. ",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 10)));
+ 		p1.add("The leading of this paragraph is calculated automagically. ");
+ 		p1.add("The default leading is 1.5 times the fontsize. ");
+ 		p1.add(new Chunk("You can add chunks "));
+ 		p1.add(new Phrase("or you can add phrases. "));
+ 		p1.add(new Phrase("Unless you change the leading with the method setLeading, the leading doesn't change if you add text with another leading. This can lead to some problems.", FontFactory.getFont(FontFactory.HELVETICA, 18)));
+ 		document.add(p1);
+ 		Paragraph p2 = new Paragraph(new Phrase("This is my second paragraph. ",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 12)));
+ 		p2.add("As you can see, it started on a new line.");
+ 		document.add(p2);
+ 		Paragraph p3 = new Paragraph("This is my third paragraph.",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		document.add(p3);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="111" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1102.cs" startline="26" endline="91">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 11 example 2
+     
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writerA = PdfWriter.getInstance(document, new FileStream("Chap1102a.pdf", FileMode.Create));
+ 		PdfWriter writerB = PdfWriter.getInstance(document, new FileStream("Chap1102b.pdf", FileMode.Create));
+     
+ 		// step 3
+ 		document.open();
+     
+ 		// step 4
+     
+ 		Paragraph p1 = new Paragraph("We discussed anchors in chapter 3, but you can add an URL to a chunk to to make it an ", FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		p1.add(new Chunk("anchor", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.UNDERLINE, GDI.Color.Blue)).setAnchor(new Uri("http
+ 		p1.add(" you will automatically jump to another location in this document.");
+ 		Paragraph p2 = new Paragraph("blah, blah, blah");
+ 		Paragraph p3a = new Paragraph("This paragraph contains a ");
+ 		p3a.add(new Chunk("local destination in document A", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, GDI.Color.FromArgb(0, 255, 0))).setLocalDestination("test"));
+ 		Paragraph p3b = new Paragraph("This paragraph contains a local ");
+ 		p3b.add(new Chunk("local destination in document B", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, GDI.Color.FromArgb(0, 255, 0))).setLocalDestination("test"));
+ 		Paragraph p4a = new Paragraph(new Chunk("Click this paragraph to go to a certain destination on document B").setRemoteGoto("Chap1102b.pdf", "test"));
+ 		Paragraph p4b = new Paragraph(new Chunk("Click this paragraph to go to a certain destination on document A").setRemoteGoto("Chap1102a.pdf", "test"));
+ 		Paragraph p5a = new Paragraph("you can also jump to a ");
+ 		p5a.add(new Chunk("specific page on another document", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.ITALIC)).setRemoteGoto("Chap1102b.pdf", 3));
+ 		document.add(p1);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		writerA.pause();
+ 		document.add(p4b);
+ 		writerA.resume();
+ 		writerB.pause();
+ 		document.add(p4a);
+ 		document.add(p5a);
+ 		writerB.resume();
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		writerA.pause();
+ 		document.add(p3b);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.newPage();
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.newPage();
+ 		writerA.resume();
+ 		writerB.pause();
+ 		document.add(p3a);
+ 		writerB.resume();
+ 		document.add(p2);
+ 		document.add(p2);
+     
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap1102.java" startline="34" endline="110">
+<![CDATA[
+         System.out.println("Chapter 11 example 2
+         
+         // step 1
+         Document document = new Document();
+         
+         try {
+             
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a PDF-stream to a file
+             PdfWriter writerA = PdfWriter.getInstance(document, new FileOutputStream("Chap1102a.pdf"));
+             PdfWriter writerB = PdfWriter.getInstance(document, new FileOutputStream("Chap1102b.pdf"));
+             
+             // step 3
+             document.open();
+             
+             // step 4
+             
+             Paragraph p1 = new Paragraph("We discussed anchors in chapter 3, but you can add an URL to a chunk to to make it an ", FontFactory.getFont(FontFactory.HELVETICA, 12));
+             p1.add(new Chunk("anchor", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.UNDERLINE, new Color(0, 0, 255))).setAnchor(new URL("http
+             p1.add(" you will automatically jump to another location in this document.");
+             Paragraph p2 = new Paragraph("blah, blah, blah");
+             Paragraph p3a = new Paragraph("This paragraph contains a ");
+             p3a.add(new Chunk("local destination in document A", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, new Color(0, 255, 0))).setLocalDestination("test"));
+             Paragraph p3b = new Paragraph("This paragraph contains a local ");
+             p3b.add(new Chunk("local destination in document B", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, new Color(0, 255, 0))).setLocalDestination("test"));
+             Paragraph p4a = new Paragraph(new Chunk("Click this paragraph to go to a certain destination on document B").setRemoteGoto("Chap1102b.pdf", "test"));
+             Paragraph p4b = new Paragraph(new Chunk("Click this paragraph to go to a certain destination on document A").setRemoteGoto("Chap1102a.pdf", "test"));
+             Paragraph p5a = new Paragraph("you can also jump to a ");
+             p5a.add(new Chunk("specific page on another document", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.ITALIC)).setRemoteGoto("Chap1102b.pdf", 3));
+             document.add(p1);
+             document.add(p2);
+             document.add(p2);
+             document.add(p2);
+             document.add(p2);
+             document.add(p2);
+             document.add(p2);
+             document.add(p2);
+             writerA.pause();
+             document.add(p4b);
+             writerA.resume();
+             writerB.pause();
+             document.add(p4a);
+             document.add(p5a);
+             writerB.resume();
+             document.add(p2);
+             document.add(p2);
+             document.add(p2);
+             document.add(p2);
+             writerA.pause();
+             document.add(p3b);
+             document.add(p2);
+             document.add(p2);
+             document.newPage();
+             document.add(p2);
+             document.add(p2);
+             document.newPage();
+             writerA.resume();
+             writerB.pause();
+             document.add(p3a);
+             writerB.resume();
+             document.add(p2);
+             document.add(p2);
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         catch(Exception e) {
+             System.out.println(e.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="112" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1102.cs" startline="26" endline="91">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 11 example 2
+     
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writerA = PdfWriter.getInstance(document, new FileStream("Chap1102a.pdf", FileMode.Create));
+ 		PdfWriter writerB = PdfWriter.getInstance(document, new FileStream("Chap1102b.pdf", FileMode.Create));
+     
+ 		// step 3
+ 		document.open();
+     
+ 		// step 4
+     
+ 		Paragraph p1 = new Paragraph("We discussed anchors in chapter 3, but you can add an URL to a chunk to to make it an ", FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		p1.add(new Chunk("anchor", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.UNDERLINE, GDI.Color.Blue)).setAnchor(new Uri("http
+ 		p1.add(" you will automatically jump to another location in this document.");
+ 		Paragraph p2 = new Paragraph("blah, blah, blah");
+ 		Paragraph p3a = new Paragraph("This paragraph contains a ");
+ 		p3a.add(new Chunk("local destination in document A", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, GDI.Color.FromArgb(0, 255, 0))).setLocalDestination("test"));
+ 		Paragraph p3b = new Paragraph("This paragraph contains a local ");
+ 		p3b.add(new Chunk("local destination in document B", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, GDI.Color.FromArgb(0, 255, 0))).setLocalDestination("test"));
+ 		Paragraph p4a = new Paragraph(new Chunk("Click this paragraph to go to a certain destination on document B").setRemoteGoto("Chap1102b.pdf", "test"));
+ 		Paragraph p4b = new Paragraph(new Chunk("Click this paragraph to go to a certain destination on document A").setRemoteGoto("Chap1102a.pdf", "test"));
+ 		Paragraph p5a = new Paragraph("you can also jump to a ");
+ 		p5a.add(new Chunk("specific page on another document", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.ITALIC)).setRemoteGoto("Chap1102b.pdf", 3));
+ 		document.add(p1);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		writerA.pause();
+ 		document.add(p4b);
+ 		writerA.resume();
+ 		writerB.pause();
+ 		document.add(p4a);
+ 		document.add(p5a);
+ 		writerB.resume();
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		writerA.pause();
+ 		document.add(p3b);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.newPage();
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.newPage();
+ 		writerA.resume();
+ 		writerB.pause();
+ 		document.add(p3a);
+ 		writerB.resume();
+ 		document.add(p2);
+ 		document.add(p2);
+     
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\anchors\RemoteGoto.java" startline="46" endline="126">
+<![CDATA[
+ 		System.out.println("Remote goto (URLs and local destinations in another document)");
+         
+ 		// step 1
+ 		Document document = new Document();
+             
+ 		// step 2
+ 		PdfWriter writerA = PdfWriter.getInstance(document, new FileOutputStream("DocumentA.pdf"));
+ 		PdfWriter writerB = PdfWriter.getInstance(document, new FileOutputStream("DocumentB.pdf"));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+             
+ 		// we create some content
+             
+ 		// a paragraph with a link to an external url
+ 		Paragraph p1 = new Paragraph("You can turn a Chunk into an ", FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		p1.add(new Chunk("anchor", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.UNDERLINE, new Color(0, 0, 255))).setAnchor(new URL("http
+ 		p1.add(", for instance to the iText site.");
+             
+ 		// some paragraph
+ 		Paragraph p2 = new Paragraph("blah, blah, blah");
+             
+ 		// two paragraphs with a local destination
+ 		Paragraph p3a = new Paragraph("This paragraph contains a ");
+ 		p3a.add(new Chunk("local destination in document A", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, new Color(0, 255, 0))).setLocalDestination("test"));
+ 		Paragraph p3b = new Paragraph("This paragraph contains a ");
+ 		p3b.add(new Chunk("local destination in document B", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, new Color(0, 255, 0))).setLocalDestination("test"));
+             
+ 		// two paragraphs with a remote goto
+ 		Paragraph p4a = new Paragraph(new Chunk("Click this paragraph to go to a certain destination on document B").setRemoteGoto("DocumentB.pdf", "test"));
+ 		Paragraph p4b = new Paragraph(new Chunk("Click this paragraph to go to a certain destination on document A").setRemoteGoto("DocumentA.pdf", "test"));
+             
+ 		// a special remote goto
+ 		Paragraph p5a = new Paragraph("you can also jump to a ");
+ 		p5a.add(new Chunk("specific page on another document", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.ITALIC)).setRemoteGoto("DocumentB.pdf", 3));
+             
+ 		// we add all the content
+ 		document.add(p1);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		// only for DocumentB.pdf
+ 		writerA.pause();
+ 		document.add(p4b);
+ 		writerA.resume();
+ 		// only for DocumentA.pdf
+ 		writerB.pause();
+ 		document.add(p4a);
+ 		document.add(p5a);
+ 		writerB.resume();
+ 		// for both documents
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		// only for DocumentB.pdf
+ 		writerA.pause();
+ 		document.add(p3b);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.newPage();
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.newPage();
+ 		writerA.resume();
+ 		// only for documentA.pdf
+ 		writerB.pause();
+ 		document.add(p3a);
+ 		writerB.resume();
+ 		// for both documents
+ 		document.add(p2);
+ 		document.add(p2);
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="124" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0303.java" startline="33" endline="114">
+<![CDATA[
+         System.out.println("Chapter 3 example 3
+         
+         // step 1
+         Document document = new Document();
+         
+         try {
+             
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a PDF-stream to a file
+             PdfWriter.getInstance(document, new FileOutputStream("Chap0303.pdf"));
+             
+             // step 3
+             document.open();
+             
+             // step 4
+             
+             List list = new List(true, 20);
+             list.add(new ListItem("First line"));
+             list.add(new ListItem("The second line is longer to see what happens once the end of the line is reached. Will it start on a new line?"));
+             list.add(new ListItem("Third line"));
+             document.add(list);
+             
+             document.add(new Paragraph("some books I really like
+             document.add(new Annotation("books", "This is really a very short list, I like a lot of books."));
+             ListItem listItem;
+             list = new List(true, 15);
+             listItem = new ListItem("When Harlie was one", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by David Gerrold", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             listItem = new ListItem("The World according to Garp", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by John Irving", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             listItem = new ListItem("Decamerone", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by Giovanni Boccaccio", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             document.add(list);
+             
+             document.add(new Phrase("Some authors I really like
+             document.add(new Annotation("authors", "Maybe it's because I wanted to be an writer myself that I wrote iText."));
+             list = new List(false, 20);
+             list.setListSymbol(new Chunk("*", FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD)));
+             listItem = new ListItem("Isaac Asimov");
+             list.add(listItem);
+             List sublist;
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The Foundation Trilogy");
+             sublist.add("The Complete Robot");
+             sublist.add("Caves of Steel");
+             sublist.add("The Naked Sun");
+             list.add(sublist);
+             listItem = new ListItem("John Irving");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The World according to Garp");
+             sublist.add("Hotel New Hampshire");
+             sublist.add("A prayer for Owen Meany");
+             sublist.add("Widow for a year");
+             list.add(sublist);
+             listItem = new ListItem("Kurt Vonnegut");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("Slaughterhouse 5");
+             sublist.add("Welcome to the Monkey House");
+             sublist.add("The great pianola");
+             sublist.add("Galapagos");
+             list.add(sublist);
+             document.add(list);
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0303.cs" startline="24" endline="97">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 3 example 3
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0303.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+             
+ 		List list = new List(true, 20);
+ 		list.add(new ListItem("First line"));
+ 		list.add(new ListItem("The second line is longer to see what happens once the end of the line is reached. Will it start on a new line?"));
+ 		list.add(new ListItem("Third line"));
+ 		document.add(list);
+             
+ 		document.add(new Paragraph("some books I really like
+ 		document.add(new Annotation("books", "This is really a very short list, I like a lot of books."));
+ 		ListItem listItem;
+ 		list = new List(true, 15);
+ 		listItem = new ListItem("When Harlie was one", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by David Gerrold", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		listItem = new ListItem("The World according to Garp", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by John Irving", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		listItem = new ListItem("Decamerone", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by Giovanni Boccaccio", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		document.add(list);
+             
+ 		document.add(new Phrase("Some authors I really like
+ 		document.add(new Annotation("authors", "Maybe it's because I wanted to be an writer myself that I wrote iText."));
+ 		list = new List(false, 20);
+ 		list.setListSymbol(new Chunk("*", FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD)));
+ 		listItem = new ListItem("Isaac Asimov");
+ 		list.add(listItem);
+ 		List sublist;
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("The Foundation Trilogy");
+ 		sublist.add("The Complete Robot");
+ 		sublist.add("Caves of Steel");
+ 		sublist.add("The Naked Sun");
+ 		list.add(sublist);
+ 		listItem = new ListItem("John Irving");
+ 		list.add(listItem);
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("The World according to Garp");
+ 		sublist.add("Hotel New Hampshire");
+ 		sublist.add("A prayer for Owen Meany");
+ 		sublist.add("Widow for a year");
+ 		list.add(sublist);
+ 		listItem = new ListItem("Kurt Vonnegut");
+ 		list.add(listItem);
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("Slaughterhouse 5");
+ 		sublist.add("Welcome to the Monkey House");
+ 		sublist.add("The great pianola");
+ 		sublist.add("Galapagos");
+ 		list.add(sublist);
+ 		document.add(list);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="125" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0303.java" startline="33" endline="114">
+<![CDATA[
+         System.out.println("Chapter 3 example 3
+         
+         // step 1
+         Document document = new Document();
+         
+         try {
+             
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a PDF-stream to a file
+             PdfWriter.getInstance(document, new FileOutputStream("Chap0303.pdf"));
+             
+             // step 3
+             document.open();
+             
+             // step 4
+             
+             List list = new List(true, 20);
+             list.add(new ListItem("First line"));
+             list.add(new ListItem("The second line is longer to see what happens once the end of the line is reached. Will it start on a new line?"));
+             list.add(new ListItem("Third line"));
+             document.add(list);
+             
+             document.add(new Paragraph("some books I really like
+             document.add(new Annotation("books", "This is really a very short list, I like a lot of books."));
+             ListItem listItem;
+             list = new List(true, 15);
+             listItem = new ListItem("When Harlie was one", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by David Gerrold", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             listItem = new ListItem("The World according to Garp", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by John Irving", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             listItem = new ListItem("Decamerone", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by Giovanni Boccaccio", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             document.add(list);
+             
+             document.add(new Phrase("Some authors I really like
+             document.add(new Annotation("authors", "Maybe it's because I wanted to be an writer myself that I wrote iText."));
+             list = new List(false, 20);
+             list.setListSymbol(new Chunk("*", FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD)));
+             listItem = new ListItem("Isaac Asimov");
+             list.add(listItem);
+             List sublist;
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The Foundation Trilogy");
+             sublist.add("The Complete Robot");
+             sublist.add("Caves of Steel");
+             sublist.add("The Naked Sun");
+             list.add(sublist);
+             listItem = new ListItem("John Irving");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The World according to Garp");
+             sublist.add("Hotel New Hampshire");
+             sublist.add("A prayer for Owen Meany");
+             sublist.add("Widow for a year");
+             list.add(sublist);
+             listItem = new ListItem("Kurt Vonnegut");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("Slaughterhouse 5");
+             sublist.add("Welcome to the Monkey House");
+             sublist.add("The great pianola");
+             sublist.add("Galapagos");
+             list.add(sublist);
+             document.add(list);
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0302.cs" startline="25" endline="107">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 3 example 2
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0302.pdf", FileMode.Create));
+ 		HtmlWriter.getInstance(document, new FileStream("Chap0302.html", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+             
+ 		List list = new List(true, 20);
+ 		list.add(new ListItem("First line"));
+ 		list.add(new ListItem("The second line is longer to see what happens once the end of the line is reached. Will it start on a new line?"));
+ 		list.add(new ListItem("Third line"));
+ 		document.add(list);
+             
+ 		document.add(new Paragraph("some books I really like
+ 		ListItem listItem;
+ 		list = new List(true, 15);
+ 		listItem = new ListItem("When Harlie was one", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by David Gerrold", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		listItem = new ListItem("The World according to Garp", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by John Irving", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		listItem = new ListItem("Decamerone", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by Giovanni Boccaccio", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		document.add(list);
+             
+ 		Paragraph paragraph = new Paragraph("some movies I really like
+ 		list = new List(false, 10);
+ 		list.add("Wild At Heart");
+ 		list.add("Casablanca");
+ 		list.add("When Harry met Sally");
+ 		list.add("True Romance");
+ 		list.add("Le mari de la coiffeuse");
+ 		paragraph.add(list);
+ 		document.add(paragraph);
+             
+ 		document.add(new Paragraph("Some authors I really like
+ 		list = new List(false, 20);
+ 		list.setListSymbol(new Chunk("\u2022", FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD)));
+ 		listItem = new ListItem("Isaac Asimov");
+ 		list.add(listItem);
+ 		List sublist;
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("The Foundation Trilogy");
+ 		sublist.add("The Complete Robot");
+ 		sublist.add("Caves of Steel");
+ 		sublist.add("The Naked Sun");
+ 		list.add(sublist);
+ 		listItem = new ListItem("John Irving");
+ 		list.add(listItem);
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("The World according to Garp");
+ 		sublist.add("Hotel New Hampshire");
+ 		sublist.add("A prayer for Owen Meany");
+ 		sublist.add("Widow for a year");
+ 		list.add(sublist);
+ 		listItem = new ListItem("Kurt Vonnegut");
+ 		list.add(listItem);
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("Slaughterhouse 5");
+ 		sublist.add("Welcome to the Monkey House");
+ 		sublist.add("The great pianola");
+ 		sublist.add("Galapagos");
+ 		list.add(sublist);
+ 		document.add(list);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

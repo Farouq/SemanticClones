@@ -1,0 +1,1402 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+
+  nop
+  ldarg.0
+  ldfld      int32 ASXGui.Edit::intdragdrop
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S0
+  ldloc.s    VB$CG$t_bool$S0
+brfalse.s
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.OpenFileDialog ASXGui.Edit::get_openVideo()
+  callvirt   instance valuetype [System.Windows.Forms]System.Windows.Forms.DialogResult [System.Windows.Forms]System.Windows.Forms.CommonDialog::ShowDialog()
+  ldc.i4.2
+  ceq
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  nop
+br
+br.s
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.OpenFileDialog ASXGui.Edit::get_openVideo()
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TextBox ASXGui.Edit::get_txtVideo()
+  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.TextBox::get_Text()
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.FileDialog::set_FileName(string)
+  nop
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::Video
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.OpenFileDialog ASXGui.Edit::get_openVideo()
+  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.FileDialog::get_FileName()
+  ldc.i4.0
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string,
+                                                                                                                    string,
+                                                                                                                    bool)
+  ldc.i4.0
+  ceq
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::videoinfo
+  call       bool [mscorlib]System.IO.File::Exists(string)
+  stloc.s    VB$CG$t_bool$S0
+  ldloc.s    VB$CG$t_bool$S0
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::videoinfo
+  call       void [mscorlib]System.IO.File::Delete(string)
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::audioinfo
+  call       bool [mscorlib]System.IO.File::Exists(string)
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::audioinfo
+  call       void [mscorlib]System.IO.File::Delete(string)
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::screenshot
+  call       bool [mscorlib]System.IO.File::Exists(string)
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::screenshot
+  call       void [mscorlib]System.IO.File::Delete(string)
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::mpeginfo
+  call       bool [mscorlib]System.IO.File::Exists(string)
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::mpeginfo
+  call       void [mscorlib]System.IO.File::Delete(string)
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::trackinfo
+  call       bool [mscorlib]System.IO.File::Exists(string)
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::trackinfo
+  call       void [mscorlib]System.IO.File::Delete(string)
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldstr      ""
+  stfld      string ASXGui.Module1/video::videoinfo
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldstr      ""
+  stfld      string ASXGui.Module1/video::audioinfo
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldstr      ""
+  stfld      string ASXGui.Module1/video::screenshot
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldstr      ""
+  stfld      string ASXGui.Module1/video::mpeginfo
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldstr      ""
+  stfld      string ASXGui.Module1/video::trackinfo
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldc.i4.0
+  stfld      bool ASXGui.Module1/video::autocropped
+  ldsfld     string ASXGui.Module1::tempDir
+  call       void [mscorlib]System.IO.Directory::SetCurrentDirectory(string)
+  nop
+  ldc.i4.s   15
+  newarr     [mscorlib]System.String
+  stloc.s    VB$t_array$S0
+  ldloc.s    VB$t_array$S0
+  ldc.i4.0
+  ldstr      "cmd /c del "
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.1
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::key
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.2
+  ldstr      "*.d2v "
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.3
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::key
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.4
+  ldstr      "*.ac3 "
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.5
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::key
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.6
+  ldstr      "*.dts "
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.7
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::key
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.8
+  ldstr      "*.wav "
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.s   9
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::key
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.s   10
+  ldstr      "*.aac "
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.s   11
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::key
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.s   12
+  ldstr      "*.mp* "
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.s   13
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::key
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  ldc.i4.s   14
+  ldstr      "*.pcm"
+  stelem.ref
+  nop
+  ldloc.s    VB$t_array$S0
+  call       string [mscorlib]System.String::Concat(string[])
+  ldc.i4.0
+  ldc.i4.1
+  ldc.i4.m1
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.Interaction::Shell(string,
+                                                                                             valuetype [Microsoft.VisualBasic]Microsoft.VisualBasic.AppWinStyle,
+                                                                                             bool,
+                                                                                             int32)
+  pop
+  nop
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldarg.0
+  ldc.i4.8
+  ldc.i4.1
+  callvirt   instance string ASXGui.Edit::RandomString(int32,
+                                                                 bool)
+  stfld      string ASXGui.Module1/video::key
+  ldc.i4.0
+  stloc.s    used
+  ldc.i4.0
+  ldsfld     class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/video> ASXGui.Module1::videoList
+  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/video>::get_Count()
+  ldc.i4.1
+  sub.ovf
+  stloc.s    VB$t_i4$L0
+  stloc.1
+br.s
+  ldsfld     class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/video> ASXGui.Module1::videoList
+  ldloc.1
+  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/video>::get_Item(int32)
+  stloc.s    VB$t_struct$S0
+  ldloca.s   VB$t_struct$S0
+  ldfld      string ASXGui.Module1/video::key
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::key
+  ldc.i4.0
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string,
+                                                                                                                    string,
+                                                                                                                    bool)
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  ldc.i4.1
+  stloc.s    used
+  nop
+  ldloc.1
+  ldc.i4.1
+  add.ovf
+  stloc.1
+  ldloc.1
+  ldloc.s    VB$t_i4$L0
+  stloc.s    VB$CG$t_i4$S0
+  ldloc.s    VB$CG$t_i4$S0
+ble.s
+  ldloc.s    used
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+br.s
+br.s
+  nop
+  nop
+br
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.OpenFileDialog ASXGui.Edit::get_openVideo()
+  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.FileDialog::get_FileName()
+  stfld      string ASXGui.Module1/video::Video
+  ldstr      ""
+  stloc.s    strFilePrefix
+  ldc.i4.0
+  stloc.0
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldarg.0
+  callvirt   instance string ASXGui.Edit::Filename_Nodir()
+  stfld      string ASXGui.Module1/video::Jobname
+  ldsfld     bool ASXGui.Module1::customoutput
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::Video
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.Strings::Len(string)
+  stloc.2
+br.s
+  ldloc.2
+  ldc.i4.1
+  sub.ovf
+  stloc.2
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::Video
+  ldloc.2
+  ldc.i4.1
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.Strings::Mid(string,
+                                                                                        int32,
+                                                                                        int32)
+  ldstr      "."
+  ldc.i4.0
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string,
+                                                                                                                    string,
+                                                                                                                    bool)
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  ldc.i4.1
+  stloc.0
+  nop
+  ldloc.2
+  ldc.i4.0
+  cgt
+  ldloc.0
+  ldc.i4.0
+  ceq
+  and
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brtrue.s
+  ldloc.0
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::Video
+  stfld      string ASXGui.Module1/video::outfile
+br.s
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::Video
+  ldc.i4.1
+  ldloc.2
+  ldc.i4.1
+  sub.ovf
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.Strings::Mid(string,
+                                                                                        int32,
+                                                                                        int32)
+  stfld      string ASXGui.Module1/video::outfile
+br
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::Jobname
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.Strings::Len(string)
+  stloc.2
+br.s
+  ldloc.2
+  ldc.i4.1
+  sub.ovf
+  stloc.2
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::Jobname
+  ldloc.2
+  ldc.i4.1
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.Strings::Mid(string,
+                                                                                        int32,
+                                                                                        int32)
+  ldstr      "."
+  ldc.i4.0
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string,
+                                                                                                                    string,
+                                                                                                                    bool)
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  ldc.i4.1
+  stloc.0
+  nop
+  ldloc.2
+  ldc.i4.0
+  cgt
+  ldloc.0
+  ldc.i4.0
+  ceq
+  and
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brtrue.s
+  ldloc.0
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::Jobname
+  stfld      string ASXGui.Module1/video::outfile
+br.s
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::Jobname
+  ldc.i4.1
+  ldloc.2
+  ldc.i4.1
+  sub.ovf
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.Strings::Mid(string,
+                                                                                        int32,
+                                                                                        int32)
+  stfld      string ASXGui.Module1/video::outfile
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldsfld     string ASXGui.Module1::outputdir
+  ldstr      "\\"
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::outfile
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string,
+                                                              string)
+  stfld      string ASXGui.Module1/video::outfile
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_cboSettings()
+  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Text()
+  stfld      string ASXGui.Module1/video::Profile
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      bool ASXGui.Module1/video::MKV
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::outfile
+  ldstr      ".mp4"
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  call       bool [mscorlib]System.IO.File::Exists(string)
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S0
+  ldloc.s    VB$CG$t_bool$S0
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::outfile
+  ldstr      ".mp4"
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  stfld      string ASXGui.Module1/video::outfile
+br.s
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::outfile
+  ldstr      " (2).mp4"
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  stfld      string ASXGui.Module1/video::outfile
+br.s
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::outfile
+  ldstr      ".mkv"
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  call       bool [mscorlib]System.IO.File::Exists(string)
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::outfile
+  ldstr      ".mkv"
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  stfld      string ASXGui.Module1/video::outfile
+br.s
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::outfile
+  ldstr      " (2).mkv"
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  stfld      string ASXGui.Module1/video::outfile
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TextBox ASXGui.Edit::get_txtOutFile()
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::outfile
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TextBox::set_Text(string)
+  nop
+  ldarg.0
+  ldc.i4.0
+  stfld      int32 ASXGui.Edit::intdragdrop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TextBox ASXGui.Edit::get_txtVideo()
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::Video
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TextBox::set_Text(string)
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldarg.0
+  callvirt   instance string ASXGui.Edit::VideoInfo()
+  stfld      string ASXGui.Module1/video::videoinfo
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      bool ASXGui.Module1/video::avs
+  stloc.s    VB$CG$t_bool$S1
+  ldloc.s    VB$CG$t_bool$S1
+brfalse
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      int32 ASXGui.Module1/video::avsaudio
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S0
+  ldloc.s    VB$CG$t_bool$S0
+brfalse
+  ldsfld     string ASXGui.Module1::strAVSAudio
+  ldstr      "Always Ask"
+  ldc.i4.0
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string,
+                                                                                                                    string,
+                                                                                                                    bool)
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S2
+  ldloc.s    VB$CG$t_bool$S2
+brfalse.s
+  ldstr      "Would you like to try to load the audio from the a"
+  + "visynth script\?"
+  ldc.i4.4
+  ldnull
+  call       valuetype [Microsoft.VisualBasic]Microsoft.VisualBasic.MsgBoxResult [Microsoft.VisualBasic]Microsoft.VisualBasic.Interaction::MsgBox(object,
+                                                                                                                                                            valuetype [Microsoft.VisualBasic]Microsoft.VisualBasic.MsgBoxStyle,
+                                                                                                                                                            object)
+  ldc.i4.6
+  ceq
+  stloc.s    VB$CG$t_bool$S3
+  ldloc.s    VB$CG$t_bool$S3
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldarg.0
+  callvirt   instance string ASXGui.Edit::AVSAudio()
+  stfld      string ASXGui.Module1/video::audioinfo
+br.s
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldc.i4.2
+  stfld      int32 ASXGui.Module1/video::avsaudio
+br.s
+  nop
+  ldsfld     string ASXGui.Module1::strAVSAudio
+  ldstr      "Always Read Audio"
+  ldc.i4.0
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string,
+                                                                                                                    string,
+                                                                                                                    bool)
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S3
+  ldloc.s    VB$CG$t_bool$S3
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldarg.0
+  callvirt   instance string ASXGui.Edit::AVSAudio()
+  stfld      string ASXGui.Module1/video::audioinfo
+br.s
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldc.i4.2
+  stfld      int32 ASXGui.Module1/video::avsaudio
+  nop
+  nop
+  nop
+  nop
+  ldarg.0
+  ldarg.0
+  callvirt   instance string ASXGui.Edit::Filename_Nodir()
+  stfld      string ASXGui.Edit::strfilename
+  ldarg.0
+  ldstr      "ASXGui - "
+  ldarg.0
+  ldfld      string ASXGui.Edit::strfilename
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Form::set_Text(string)
+  nop
+  ldarg.0
+  callvirt   instance void ASXGui.Edit::Read_Videoinfo()
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldstr      ""
+  stfld      string ASXGui.Module1/video::screenshot
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.PictureBox ASXGui.Edit::get_imgLoad()
+  ldc.i4.1
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+  nop
+  ldarg.0
+  dup
+  ldvirtftn  instance void ASXGui.Edit::refresh_screenshot()
+  newobj     instance void [mscorlib]System.Threading.ThreadStart::.ctor(object,
+                                                                                   native int)
+  newobj     instance void [mscorlib]System.Threading.Thread::.ctor(class [mscorlib]System.Threading.ThreadStart)
+  stloc.3
+  ldloc.3
+  ldc.i4.0
+  callvirt   instance void [mscorlib]System.Threading.Thread::set_Priority(valuetype [mscorlib]System.Threading.ThreadPriority)
+  nop
+  ldloc.3
+  callvirt   instance void [mscorlib]System.Threading.Thread::Start()
+  nop
+br.s
+  call       void [System.Windows.Forms]System.Windows.Forms.Application::DoEvents()
+  nop
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::screenshot
+  ldstr      ""
+  ldc.i4.0
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Operators::CompareString(string,
+                                                                                                                    string,
+                                                                                                                    bool)
+  ldc.i4.0
+  ceq
+  stloc.s    VB$CG$t_bool$S3
+  ldloc.s    VB$CG$t_bool$S3
+brtrue.s
+  ldloc.3
+  callvirt   instance void [mscorlib]System.Threading.Thread::Abort()
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::screenshot
+  call       bool [mscorlib]System.IO.File::Exists(string)
+  stloc.s    VB$CG$t_bool$S3
+  ldloc.s    VB$CG$t_bool$S3
+brfalse.s
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::screenshot
+  ldc.i4.3
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  stloc.s    fs
+  ldloc.s    fs
+  newobj     instance void [System.Drawing]System.Drawing.Bitmap::.ctor(class [mscorlib]System.IO.Stream)
+  stloc.s    bm
+  ldloc.s    fs
+  callvirt   instance void [mscorlib]System.IO.Stream::Close()
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.PictureBox ASXGui.Edit::get_imgScreen()
+  ldloc.s    bm
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.PictureBox::set_Image(class [System.Drawing]System.Drawing.Image)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.TrackBar ASXGui.Edit::get_trackbar()
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      int32 ASXGui.Module1/video::trackbar
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.TrackBar::set_Value(int32)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.PictureBox ASXGui.Edit::get_imgLoad()
+  ldc.i4.0
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Visible(bool)
+  nop
+br.s
+  nop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldstr      ""
+  stfld      string ASXGui.Module1/video::screenshot
+  nop
+  ldarg.0
+  ldc.i4.1
+  stfld      bool ASXGui.Edit::enterdrop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      bool ASXGui.Module1/video::separatefile
+  stloc.s    VB$CG$t_bool$S3
+  ldloc.s    VB$CG$t_bool$S3
+brfalse
+  ldarg.0
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track> ASXGui.Module1/video::tracks
+  stfld      class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track> ASXGui.Edit::edittracklist
+  ldc.i4.0
+  ldarg.0
+  ldfld      class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track> ASXGui.Edit::edittracklist
+  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track>::get_Count()
+  ldc.i4.1
+  sub.ovf
+  stloc.s    VB$t_i4$L1
+  stloc.1
+br.s
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_txtAudio()
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Items()
+  ldarg.0
+  ldfld      class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track> ASXGui.Edit::edittracklist
+  ldloc.1
+  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track>::get_Item(int32)
+  stloc.s    VB$t_struct$S1
+  ldloca.s   VB$t_struct$S1
+  ldfld      string ASXGui.Module1/track::path
+  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection::Add(object)
+  pop
+  nop
+  ldloc.1
+  ldc.i4.1
+  add.ovf
+  stloc.1
+  ldloc.1
+  ldloc.s    VB$t_i4$L1
+  stloc.s    VB$CG$t_i4$S0
+  ldloc.s    VB$CG$t_i4$S0
+ble.s
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Label ASXGui.Edit::get_lblTrack()
+  ldstr      "1 / "
+  ldarg.0
+  ldfld      class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track> ASXGui.Edit::edittracklist
+  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track>::get_Count()
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Label::set_Text(string)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_txtAudio()
+  ldarg.0
+  ldfld      class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track> ASXGui.Edit::edittracklist
+  ldc.i4.0
+  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track>::get_Item(int32)
+  stloc.s    VB$t_struct$S1
+  ldloca.s   VB$t_struct$S1
+  ldfld      string ASXGui.Module1/track::path
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_Text(string)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_cboABitrate()
+  ldarg.0
+  ldfld      class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track> ASXGui.Edit::edittracklist
+  ldc.i4.0
+  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track>::get_Item(int32)
+  stloc.s    VB$t_struct$S1
+  ldloca.s   VB$t_struct$S1
+  ldfld      int32 ASXGui.Module1/track::bitrate
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_Text(string)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox ASXGui.Edit::get_chkABitrate()
+  ldarg.0
+  ldfld      class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track> ASXGui.Edit::edittracklist
+  ldc.i4.0
+  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track>::get_Item(int32)
+  stloc.s    VB$t_struct$S1
+  ldloca.s   VB$t_struct$S1
+  ldfld      bool ASXGui.Module1/track::custombitrate
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::set_Checked(bool)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox ASXGui.Edit::get_chkDownmix()
+  ldarg.0
+  ldfld      class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track> ASXGui.Edit::edittracklist
+  ldc.i4.0
+  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track>::get_Item(int32)
+  stloc.s    VB$t_struct$S1
+  ldloca.s   VB$t_struct$S1
+  ldfld      bool ASXGui.Module1/track::downmix
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::set_Checked(bool)
+  nop
+br
+  nop
+  ldarg.0
+  ldfld      class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track> ASXGui.Edit::edittracklist
+  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track>::Clear()
+  nop
+  ldloca.s   newtrack
+  initobj    ASXGui.Module1/track
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_txtAudio()
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      string ASXGui.Module1/video::Audio
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_Text(string)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_cboABitrate()
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      int32 ASXGui.Module1/video::ABitrate
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_Text(string)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox ASXGui.Edit::get_chkABitrate()
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      bool ASXGui.Module1/video::CustomABitrate
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::set_Checked(bool)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox ASXGui.Edit::get_chkDownmix()
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      bool ASXGui.Module1/video::Downmix
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::set_Checked(bool)
+  nop
+  ldloca.s   newtrack
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_txtAudio()
+  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Text()
+  stfld      string ASXGui.Module1/track::path
+  ldloca.s   newtrack
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox ASXGui.Edit::get_chkDownmix()
+  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.CheckBox::get_Checked()
+  stfld      bool ASXGui.Module1/track::downmix
+  ldloca.s   newtrack
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.CheckBox ASXGui.Edit::get_chkABitrate()
+  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.CheckBox::get_Checked()
+  stfld      bool ASXGui.Module1/track::custombitrate
+  ldloca.s   newtrack
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_cboABitrate()
+  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Text()
+  call       float64 [Microsoft.VisualBasic]Microsoft.VisualBasic.Conversion::Val(string)
+  call       float64 [mscorlib]System.Math::Round(float64)
+  conv.ovf.i4
+  stfld      int32 ASXGui.Module1/track::bitrate
+  ldarg.0
+  ldfld      class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track> ASXGui.Edit::edittracklist
+  ldloc.s    newtrack
+  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<valuetype ASXGui.Module1/track>::Add(!0)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_txtAudio()
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Items()
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_txtAudio()
+  callvirt   instance string [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Text()
+  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection::Add(object)
+  pop
+  nop
+  ldarg.0
+  ldc.i4.0
+  stfld      int32 ASXGui.Edit::currenttrack
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_txtAudio()
+  ldc.i4.0
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_SelectedIndex(int32)
+  nop
+  ldarg.0
+  ldc.i4.1
+  stfld      bool ASXGui.Edit::enterdrop
+  ldsflda    valuetype ASXGui.Module1/video ASXGui.Module1::editVid
+  ldfld      bool ASXGui.Module1/video::separatefile
+  stloc.s    VB$CG$t_bool$S3
+  ldloc.s    VB$CG$t_bool$S3
+brfalse.s
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton ASXGui.Edit::get_optSeparate()
+  ldc.i4.1
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.RadioButton::set_Checked(bool)
+  nop
+br.s
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox ASXGui.Edit::get_txtAudio()
+  ldstr      ""
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_Text(string)
+  nop
+  ldarg.0
+  ldc.i4.0
+  stfld      bool ASXGui.Edit::enterdrop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton ASXGui.Edit::get_optVideo()
+  ldc.i4.1
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Enabled(bool)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.RadioButton ASXGui.Edit::get_optSeparate()
+  ldc.i4.1
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Enabled(bool)
+  nop
+  ldarg.0
+  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.Timer ASXGui.Edit::get_tmrOutput()
+  ldc.i4.1
+  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Timer::set_Enabled(bool)
+  nop
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+
+  nop
+  ldc.i4.0
+  stloc.0
+  ldc.i4.0
+  stloc.1
+  ldarg.1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  stloc.2
+  ldloc.2
+  ldc.i4.2
+  cgt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue
+  nop
+  ldarg.1
+  ldc.i4.0
+  ldc.i4.3
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  stloc.3
+  ldloc.3
+  ldstr      "AVI"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+brtrue.s
+  ldloc.3
+  ldstr      "AVC"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+brtrue.s
+  ldloc.3
+  ldstr      "OGG"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+br.s
+  ldc.i4.0
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.0
+  ldarg.1
+  ldloc.2
+  ldc.i4.3
+  sub
+  ldc.i4.3
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  ldstr      "AVC"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.1
+  ldloc.2
+  ldc.i4.3
+  cgt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue
+  nop
+  ldarg.1
+  ldc.i4.0
+  ldc.i4.4
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  stloc.3
+  ldloc.3
+  ldstr      "H264"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+brtrue.s
+  ldarg.0
+  ldflda     valuetype ASXGui.MainForm/video ASXGui.Edit::editvid
+  ldfld      bool ASXGui.MainForm/video::MKV
+brtrue.s
+  ldloc.3
+  ldstr      "H263"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+br.s
+  ldc.i4.1
+br.s
+  ldc.i4.0
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.0
+  ldarg.1
+  ldloc.2
+  ldc.i4.4
+  sub
+  ldc.i4.4
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  stloc.3
+  ldloc.3
+  ldstr      "H263"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+brtrue.s
+  ldloc.3
+  ldstr      "H264"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+br.s
+  ldc.i4.0
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.1
+  ldloc.2
+  ldc.i4.4
+  cgt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue
+  nop
+  ldarg.1
+  ldc.i4.0
+  ldc.i4.5
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  ldstr      "H263+"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.0
+  ldarg.1
+  ldloc.2
+  ldc.i4.5
+  sub
+  ldc.i4.5
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  ldstr      "H263+"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.1
+  ldloc.2
+  ldc.i4.5
+  cgt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue
+  nop
+  ldarg.1
+  ldc.i4.0
+  ldc.i4.6
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  ldstr      "MPEG-4"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.0
+  ldloc.2
+  ldc.i4.6
+  cgt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue
+  nop
+  ldarg.1
+  ldc.i4.0
+  ldc.i4.7
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  stloc.3
+  ldloc.3
+  ldstr      "MPEG-PS"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+brtrue.s
+  ldarg.0
+  ldflda     valuetype ASXGui.MainForm/video ASXGui.Edit::editvid
+  ldfld      bool ASXGui.MainForm/video::MKV
+brtrue.s
+  ldloc.3
+  ldstr      "MPEG-TS"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+br.s
+  ldc.i4.1
+br.s
+  ldc.i4.0
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.0
+  ldloc.2
+  ldc.i4.7
+  cgt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue
+  nop
+  ldarg.0
+  ldflda     valuetype ASXGui.MainForm/video ASXGui.Edit::editvid
+  ldfld      bool ASXGui.MainForm/video::MKV
+brfalse.s
+  ldarg.0
+  ldflda     valuetype ASXGui.MainForm/video ASXGui.Edit::editvid
+  ldfld      bool ASXGui.MainForm/video::bluray
+brtrue.s
+  ldarg.1
+  ldc.i4.0
+  ldc.i4.8
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  ldstr      "Matroska"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+br.s
+  ldc.i4.1
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.0
+  ldloc.2
+  ldc.i4.8
+  cgt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue
+  nop
+  ldarg.1
+  ldc.i4.0
+  ldc.i4.s   9
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  ldstr      "Quicktime"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.0
+  ldarg.1
+  ldloc.2
+  ldc.i4.s   9
+  sub
+  ldc.i4.s   9
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  ldstr      "DVD-Video"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.1
+  ldloc.2
+  ldc.i4.s   9
+  cgt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue
+  nop
+  ldarg.1
+  ldc.i4.0
+  ldc.i4.s   10
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  ldstr      "MPEG Video"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.0
+  ldarg.1
+  ldloc.2
+  ldc.i4.s   10
+  sub
+  ldc.i4.s   10
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  ldstr      "MPEG Video"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.1
+  ldloc.2
+  ldc.i4.s   12
+  cgt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  nop
+  ldarg.1
+  ldc.i4.0
+  ldc.i4.s   13
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  ldstr      "MPEG-4 Visual"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.0
+  ldarg.1
+  ldloc.2
+  ldc.i4.s   13
+  sub
+  ldc.i4.s   13
+  callvirt   instance string [mscorlib]System.String::Substring(int32,
+                                                                          int32)
+  ldstr      "MPEG-4 Visual"
+  call       bool [mscorlib]System.String::op_Equality(string,
+                                                                 string)
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0001
+  ldloc.s    CS$4$0001
+brtrue.s
+  ldc.i4.1
+  stloc.1
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  nop
+  ldloc.0
+brfalse.s
+  ldloc.1
+br.s
+  ldc.i4.0
+  stloc.s    CS$1$0000
+br.s
+  ldloc.s    CS$1$0000
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 2 example 3: Greek Characters"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  .try
+  {
+  ldloc.0
+  ldstr      "Chap0203.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  ldloc.0
+  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  ldstr      "What is the "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldc.i4     0x3b1
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(char)
+  ldstr      "-coefficient of the "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldc.i4     0x3b2
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(char)
+  ldstr      "-factor in the "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldc.i4     0x3b3
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(char)
+  ldstr      "-equation\?\n"
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldc.i4     0x391
+  stloc.1
+br.s
+  ldloc.0
+  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  ldstr      " "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc.1
+  call       string [vjslib]com.ms.vjsharp.lang.StringImpl::valueOf(int32)
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldstr      ": "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc.1
+  conv.u2
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(char)
+  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.1
+  ldc.i4.1
+  add
+  stloc.1
+  ldloc.1
+  ldc.i4     0x3ca
+blt.s
+leave.s
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+  dup
+  stloc.s    V_4
+  stloc.2
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.2
+  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+  dup
+  stloc.s    V_5
+  stloc.3
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.3
+  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+br.s
+  ret
+]]></source>
+</source_elements></project>

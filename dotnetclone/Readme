@@ -1,0 +1,5 @@
+the Configeration file is set as follows
+1- the path of IlDasm intermediate language disassembler
+2- similarity threshold used for LCS or Levenshtien
+3- comperison method used set 1 to use SimCad or 2 to use LCS or 3 to use Levenshtien 
+4- the testcase folder

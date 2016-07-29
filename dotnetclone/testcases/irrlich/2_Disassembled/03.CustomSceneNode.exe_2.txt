@@ -1,0 +1,716 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly '03.CustomSceneNode'
+{
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 30 00 00 )                            //  2010..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 12 30 33 2E 43 75 73 74 6F 6D 53 63 65 6E   // ...03.CustomScen
+                                                                                              65 4E 6F 64 65 00 00 )                            // eNode..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 12 30 33 2E 43 75 73 74 6F 6D 53 63 65 6E   // ...03.CustomScen
+                                                                                                65 4E 6F 64 65 00 00 )                            // eNode..
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 36 64 37 65 66 66 33 36 2D 35 39 31 39   // ..$6d7eff36-5919
+                                                                                                  2D 34 37 66 38 2D 39 63 38 33 2D 39 32 61 61 61   // -47f8-9c83-92aaa
+                                                                                                  61 62 33 35 64 62 33 00 00 )                      // ab35db3..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public _03.CustomSceneNode.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.module '03.CustomSceneNode.exe'
+// MVID: {693E67CF-77AC-412A-8CD8-0955FD63AC7F}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x002E0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit _03.CustomSceneNode.Program
+       extends [mscorlib]System.Object
+{
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       292 (0x124)
+    .maxstack  7
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [1] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [2] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+             [3] class _03.CustomSceneNode.CSampleSceneNode myNode,
+             [4] class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator anim,
+             [5] int32 frames,
+             [6] bool CS$4$0000)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\03.CustomSceneNode\Program.cs' 
+//000016: 		{
+    IL_0000:  nop
+//000017: 			IrrlichtDevice device =
+    IL_0001:  ldc.i4.5
+    IL_0002:  ldc.i4     0x280
+    IL_0007:  ldc.i4     0x1e0
+    IL_000c:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_0011:  ldc.i4.s   16
+    IL_0013:  ldc.i4.0
+    IL_0014:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di,
+                                                                                                                                 int32,
+                                                                                                                                 bool)
+    IL_0019:  stloc.0
+//000018: 				IrrlichtDevice.CreateDevice(DriverType.OpenGL, new Dimension2Di(640, 480), 16, false);
+//000019: 
+//000020: 			VideoDriver driver = device.VideoDriver;
+    IL_001a:  ldloc.0
+    IL_001b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0020:  stloc.1
+//000021: 			SceneManager smgr = device.SceneManager;
+    IL_0021:  ldloc.0
+    IL_0022:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0027:  stloc.2
+//000022: 
+//000023: 			smgr.AddCameraSceneNode(null, new Vector3Df(0, -40, 0), new Vector3Df(0));
+    IL_0028:  ldloc.2
+    IL_0029:  ldnull
+    IL_002a:  ldc.r4     0.0
+    IL_002f:  ldc.r4     -40.
+    IL_0034:  ldc.r4     0.0
+    IL_0039:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_003e:  ldc.r4     0.0
+    IL_0043:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32)
+    IL_0048:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                           class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                           class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_004d:  pop
+//000024: 
+//000025: 			CSampleSceneNode myNode = new CSampleSceneNode(smgr.RootNode, smgr, 667);
+    IL_004e:  ldloc.2
+    IL_004f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_RootNode()
+    IL_0054:  ldloc.2
+    IL_0055:  ldc.i4     0x29b
+    IL_005a:  newobj     instance void _03.CustomSceneNode.CSampleSceneNode::.ctor(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                   class [IrrlichtLime]IrrlichtLime.Scene.SceneManager,
+                                                                                   int32)
+    IL_005f:  stloc.3
+//000026: 
+//000027: 			SceneNodeAnimator anim = smgr.CreateRotationAnimator(new Vector3Df(0.8f, 0, 0.8f));
+    IL_0060:  ldloc.2
+    IL_0061:  ldc.r4     0.80000001
+    IL_0066:  ldc.r4     0.0
+    IL_006b:  ldc.r4     0.80000001
+    IL_0070:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0075:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateRotationAnimator(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_007a:  stloc.s    anim
+//000028: 
+//000029: 			if (anim != null)
+    IL_007c:  ldloc.s    anim
+    IL_007e:  ldnull
+    IL_007f:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0084:  ldc.i4.0
+    IL_0085:  ceq
+    IL_0087:  stloc.s    CS$4$0000
+    IL_0089:  ldloc.s    CS$4$0000
+    IL_008b:  brtrue.s   IL_00a3
+
+//000030: 			{
+    IL_008d:  nop
+//000031: 				myNode.AddAnimator(anim);
+    IL_008e:  ldloc.3
+    IL_008f:  ldloc.s    anim
+    IL_0091:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::AddAnimator(class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator)
+    IL_0096:  nop
+//000032: 				anim.Drop();
+    IL_0097:  ldloc.s    anim
+    IL_0099:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_009e:  pop
+//000033: 				anim = null;
+    IL_009f:  ldnull
+    IL_00a0:  stloc.s    anim
+//000034: 			}
+    IL_00a2:  nop
+//000035: 
+//000036: 			myNode.Drop();
+    IL_00a3:  ldloc.3
+    IL_00a4:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_00a9:  pop
+//000037: 			myNode = null;
+    IL_00aa:  ldnull
+    IL_00ab:  stloc.3
+//000038: 
+//000039: 			int frames = 0;
+    IL_00ac:  ldc.i4.0
+    IL_00ad:  stloc.s    frames
+    IL_00af:  br.s       IL_0110
+
+//000040: 			while (device.Run())
+//000041: 			{
+    IL_00b1:  nop
+//000042: 				driver.BeginScene(true, true, new Color(100, 100, 100));
+    IL_00b2:  ldloc.1
+    IL_00b3:  ldc.i4.1
+    IL_00b4:  ldc.i4.1
+    IL_00b5:  ldc.i4.s   100
+    IL_00b7:  ldc.i4.s   100
+    IL_00b9:  ldc.i4.s   100
+    IL_00bb:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_00c0:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool,
+                                                                                                bool,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_00c5:  pop
+//000043: 				smgr.DrawAll();
+    IL_00c6:  ldloc.2
+    IL_00c7:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_00cc:  nop
+//000044: 				driver.EndScene();
+    IL_00cd:  ldloc.1
+    IL_00ce:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_00d3:  pop
+//000045: 
+//000046: 				if (++frames == 100)
+    IL_00d4:  ldloc.s    frames
+    IL_00d6:  ldc.i4.1
+    IL_00d7:  add
+    IL_00d8:  dup
+    IL_00d9:  stloc.s    frames
+    IL_00db:  ldc.i4.s   100
+    IL_00dd:  ceq
+    IL_00df:  ldc.i4.0
+    IL_00e0:  ceq
+    IL_00e2:  stloc.s    CS$4$0000
+    IL_00e4:  ldloc.s    CS$4$0000
+    IL_00e6:  brtrue.s   IL_010f
+
+//000047: 				{
+    IL_00e8:  nop
+//000048: 					device.SetWindowCaption(String.Format(
+    IL_00e9:  ldloc.0
+    IL_00ea:  ldstr      "Custom Scene Node - Irrlicht Engine [{0}] fps: {1}"
+    IL_00ef:  ldloc.1
+    IL_00f0:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_00f5:  ldloc.1
+    IL_00f6:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_00fb:  box        [mscorlib]System.Int32
+    IL_0100:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_0105:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_010a:  nop
+//000049: 						"Custom Scene Node - Irrlicht Engine [{0}] fps: {1}",
+//000050: 						driver.Name, driver.FPS));
+//000051: 
+//000052: 					frames = 0;
+    IL_010b:  ldc.i4.0
+    IL_010c:  stloc.s    frames
+//000053: 				}
+    IL_010e:  nop
+//000054: 			}
+    IL_010f:  nop
+//000040: 			while (device.Run())
+    IL_0110:  ldloc.0
+    IL_0111:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_0116:  stloc.s    CS$4$0000
+    IL_0118:  ldloc.s    CS$4$0000
+    IL_011a:  brtrue.s   IL_00b1
+
+//000041: 			{
+//000042: 				driver.BeginScene(true, true, new Color(100, 100, 100));
+//000043: 				smgr.DrawAll();
+//000044: 				driver.EndScene();
+//000045: 
+//000046: 				if (++frames == 100)
+//000047: 				{
+//000048: 					device.SetWindowCaption(String.Format(
+//000049: 						"Custom Scene Node - Irrlicht Engine [{0}] fps: {1}",
+//000050: 						driver.Name, driver.FPS));
+//000051: 
+//000052: 					frames = 0;
+//000053: 				}
+//000054: 			}
+//000055: 
+//000056: 			device.Drop();
+    IL_011c:  ldloc.0
+    IL_011d:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0122:  pop
+//000057: 		}
+    IL_0123:  ret
+  } // end of method Program::Main
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+} // end of class _03.CustomSceneNode.Program
+
+.class private auto ansi beforefieldinit _03.CustomSceneNode.CSampleSceneNode
+       extends [IrrlichtLime]IrrlichtLime.Scene.SceneNode
+{
+  .field private class [IrrlichtLime]IrrlichtLime.Core.AABBox bbox
+  .field private class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] vertices
+  .field private class [IrrlichtLime]IrrlichtLime.Video.Material material
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode parent,
+                               class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+                               int32 id) cil managed
+  {
+    // Code size       513 (0x201)
+    .maxstack  12
+    .locals init ([0] int32 i,
+             [1] bool CS$4$0000)
+//000058: 	}
+//000059: 
+//000060: 	class CSampleSceneNode : SceneNode
+//000061: 	{
+//000062: 		AABBox bbox = new AABBox();
+    IL_0000:  ldarg.0
+    IL_0001:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.AABBox::.ctor()
+    IL_0006:  stfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox _03.CustomSceneNode.CSampleSceneNode::bbox
+//000063: 		Vertex3D[] vertices;
+//000064: 		Material material = new Material();
+    IL_000b:  ldarg.0
+    IL_000c:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Material::.ctor()
+    IL_0011:  stfld      class [IrrlichtLime]IrrlichtLime.Video.Material _03.CustomSceneNode.CSampleSceneNode::material
+//000065: 
+//000066: 		public CSampleSceneNode(SceneNode parent, SceneManager smgr, int id)
+    IL_0016:  ldarg.0
+    IL_0017:  ldarg.1
+    IL_0018:  ldarg.2
+    IL_0019:  ldarg.3
+    IL_001a:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::.ctor(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                         class [IrrlichtLime]IrrlichtLime.Scene.SceneManager,
+                                                                                         int32)
+    IL_001f:  nop
+//000067: 			: base(parent, smgr, id)
+//000068: 		{
+    IL_0020:  nop
+//000069: 			this.OnRegisterSceneNode += new RegisterSceneNodeEventHandler(CSampleSceneNode_OnRegisterSceneNode);
+    IL_0021:  ldarg.0
+    IL_0022:  ldarg.0
+    IL_0023:  ldftn      instance void _03.CustomSceneNode.CSampleSceneNode::CSampleSceneNode_OnRegisterSceneNode()
+    IL_0029:  newobj     instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode/RegisterSceneNodeEventHandler::.ctor(object,
+                                                                                                                       native int)
+    IL_002e:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::add_OnRegisterSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode/RegisterSceneNodeEventHandler)
+    IL_0033:  nop
+//000070: 			this.OnRender += new RenderEventHandler(CSampleSceneNode_OnRender);
+    IL_0034:  ldarg.0
+    IL_0035:  ldarg.0
+    IL_0036:  ldftn      instance void _03.CustomSceneNode.CSampleSceneNode::CSampleSceneNode_OnRender()
+    IL_003c:  newobj     instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode/RenderEventHandler::.ctor(object,
+                                                                                                            native int)
+    IL_0041:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::add_OnRender(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode/RenderEventHandler)
+    IL_0046:  nop
+//000071: 			this.OnGetBoundingBox += new GetBoundingBoxEventHandler(CSampleSceneNode_OnGetBoundingBox);
+    IL_0047:  ldarg.0
+    IL_0048:  ldarg.0
+    IL_0049:  ldftn      instance class [IrrlichtLime]IrrlichtLime.Core.AABBox _03.CustomSceneNode.CSampleSceneNode::CSampleSceneNode_OnGetBoundingBox()
+    IL_004f:  newobj     instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetBoundingBoxEventHandler::.ctor(object,
+                                                                                                                    native int)
+    IL_0054:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::add_OnGetBoundingBox(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetBoundingBoxEventHandler)
+    IL_0059:  nop
+//000072: 			this.OnGetMaterialCount += new GetMaterialCountEventHandler(CSampleSceneNode_OnGetMaterialCount);
+    IL_005a:  ldarg.0
+    IL_005b:  ldarg.0
+    IL_005c:  ldftn      instance int32 _03.CustomSceneNode.CSampleSceneNode::CSampleSceneNode_OnGetMaterialCount()
+    IL_0062:  newobj     instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetMaterialCountEventHandler::.ctor(object,
+                                                                                                                      native int)
+    IL_0067:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::add_OnGetMaterialCount(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetMaterialCountEventHandler)
+    IL_006c:  nop
+//000073: 			this.OnGetMaterial += new GetMaterialEventHandler(CSampleSceneNode_OnGetMaterial);
+    IL_006d:  ldarg.0
+    IL_006e:  ldarg.0
+    IL_006f:  ldftn      instance class [IrrlichtLime]IrrlichtLime.Video.Material _03.CustomSceneNode.CSampleSceneNode::CSampleSceneNode_OnGetMaterial(int32)
+    IL_0075:  newobj     instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetMaterialEventHandler::.ctor(object,
+                                                                                                                 native int)
+    IL_007a:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::add_OnGetMaterial(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetMaterialEventHandler)
+    IL_007f:  nop
+//000074: 
+//000075: 			material.Wireframe = false;
+    IL_0080:  ldarg.0
+    IL_0081:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Material _03.CustomSceneNode.CSampleSceneNode::material
+    IL_0086:  ldc.i4.0
+    IL_0087:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_Wireframe(bool)
+    IL_008c:  nop
+//000076: 			material.Lighting = false;
+    IL_008d:  ldarg.0
+    IL_008e:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Material _03.CustomSceneNode.CSampleSceneNode::material
+    IL_0093:  ldc.i4.0
+    IL_0094:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_Lighting(bool)
+    IL_0099:  nop
+//000077: 
+//000078: 			vertices = new Vertex3D[4];
+    IL_009a:  ldarg.0
+    IL_009b:  ldc.i4.4
+    IL_009c:  newarr     [IrrlichtLime]IrrlichtLime.Video.Vertex3D
+    IL_00a1:  stfld      class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] _03.CustomSceneNode.CSampleSceneNode::vertices
+//000079: 			vertices[0] = new Vertex3D(0, 0, 10, 1, 1, 0, new Color(0, 255, 255), 0, 1);
+    IL_00a6:  ldarg.0
+    IL_00a7:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] _03.CustomSceneNode.CSampleSceneNode::vertices
+    IL_00ac:  ldc.i4.0
+    IL_00ad:  ldc.r4     0.0
+    IL_00b2:  ldc.r4     0.0
+    IL_00b7:  ldc.r4     10.
+    IL_00bc:  ldc.r4     1.
+    IL_00c1:  ldc.r4     1.
+    IL_00c6:  ldc.r4     0.0
+    IL_00cb:  ldc.i4.0
+    IL_00cc:  ldc.i4     0xff
+    IL_00d1:  ldc.i4     0xff
+    IL_00d6:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_00db:  ldc.r4     0.0
+    IL_00e0:  ldc.r4     1.
+    IL_00e5:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Vertex3D::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00ea:  stelem.ref
+//000080: 			vertices[1] = new Vertex3D(10, 0, -10, 1, 0, 0, new Color(255, 0, 255), 1, 1);
+    IL_00eb:  ldarg.0
+    IL_00ec:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] _03.CustomSceneNode.CSampleSceneNode::vertices
+    IL_00f1:  ldc.i4.1
+    IL_00f2:  ldc.r4     10.
+    IL_00f7:  ldc.r4     0.0
+    IL_00fc:  ldc.r4     -10.
+    IL_0101:  ldc.r4     1.
+    IL_0106:  ldc.r4     0.0
+    IL_010b:  ldc.r4     0.0
+    IL_0110:  ldc.i4     0xff
+    IL_0115:  ldc.i4.0
+    IL_0116:  ldc.i4     0xff
+    IL_011b:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0120:  ldc.r4     1.
+    IL_0125:  ldc.r4     1.
+    IL_012a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Vertex3D::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                        float32,
+                                                                                        float32)
+    IL_012f:  stelem.ref
+//000081: 			vertices[2] = new Vertex3D(0, 20, 0, 0, 1, 1, new Color(255, 255, 0), 1, 0);
+    IL_0130:  ldarg.0
+    IL_0131:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] _03.CustomSceneNode.CSampleSceneNode::vertices
+    IL_0136:  ldc.i4.2
+    IL_0137:  ldc.r4     0.0
+    IL_013c:  ldc.r4     20.
+    IL_0141:  ldc.r4     0.0
+    IL_0146:  ldc.r4     0.0
+    IL_014b:  ldc.r4     1.
+    IL_0150:  ldc.r4     1.
+    IL_0155:  ldc.i4     0xff
+    IL_015a:  ldc.i4     0xff
+    IL_015f:  ldc.i4.0
+    IL_0160:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0165:  ldc.r4     1.
+    IL_016a:  ldc.r4     0.0
+    IL_016f:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Vertex3D::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0174:  stelem.ref
+//000082: 			vertices[3] = new Vertex3D(-10, 0, -10, 0, 0, 1, new Color(0, 255, 0), 0, 0);
+    IL_0175:  ldarg.0
+    IL_0176:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] _03.CustomSceneNode.CSampleSceneNode::vertices
+    IL_017b:  ldc.i4.3
+    IL_017c:  ldc.r4     -10.
+    IL_0181:  ldc.r4     0.0
+    IL_0186:  ldc.r4     -10.
+    IL_018b:  ldc.r4     0.0
+    IL_0190:  ldc.r4     0.0
+    IL_0195:  ldc.r4     1.
+    IL_019a:  ldc.i4.0
+    IL_019b:  ldc.i4     0xff
+    IL_01a0:  ldc.i4.0
+    IL_01a1:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_01a6:  ldc.r4     0.0
+    IL_01ab:  ldc.r4     0.0
+    IL_01b0:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Vertex3D::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        float32,
+                                                                                        class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                        float32,
+                                                                                        float32)
+    IL_01b5:  stelem.ref
+//000083: 
+//000084: 			bbox.Set(vertices[0].Position);
+    IL_01b6:  ldarg.0
+    IL_01b7:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox _03.CustomSceneNode.CSampleSceneNode::bbox
+    IL_01bc:  ldarg.0
+    IL_01bd:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] _03.CustomSceneNode.CSampleSceneNode::vertices
+    IL_01c2:  ldc.i4.0
+    IL_01c3:  ldelem.ref
+    IL_01c4:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Video.Vertex3D::get_Position()
+    IL_01c9:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.AABBox::Set(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_01ce:  nop
+//000085: 			for (int i = 1; i < vertices.Length; i++)
+    IL_01cf:  ldc.i4.1
+    IL_01d0:  stloc.0
+    IL_01d1:  br.s       IL_01f0
+
+//000086: 				bbox.AddInternalPoint(vertices[i].Position);
+    IL_01d3:  ldarg.0
+    IL_01d4:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox _03.CustomSceneNode.CSampleSceneNode::bbox
+    IL_01d9:  ldarg.0
+    IL_01da:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] _03.CustomSceneNode.CSampleSceneNode::vertices
+    IL_01df:  ldloc.0
+    IL_01e0:  ldelem.ref
+    IL_01e1:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Video.Vertex3D::get_Position()
+    IL_01e6:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.AABBox::AddInternalPoint(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_01eb:  nop
+//000085: 			for (int i = 1; i < vertices.Length; i++)
+    IL_01ec:  ldloc.0
+    IL_01ed:  ldc.i4.1
+    IL_01ee:  add
+    IL_01ef:  stloc.0
+    IL_01f0:  ldloc.0
+    IL_01f1:  ldarg.0
+    IL_01f2:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] _03.CustomSceneNode.CSampleSceneNode::vertices
+    IL_01f7:  ldlen
+    IL_01f8:  conv.i4
+    IL_01f9:  clt
+    IL_01fb:  stloc.1
+    IL_01fc:  ldloc.1
+    IL_01fd:  brtrue.s   IL_01d3
+
+//000086: 				bbox.AddInternalPoint(vertices[i].Position);
+//000087: 		}
+    IL_01ff:  nop
+    IL_0200:  ret
+  } // end of method CSampleSceneNode::.ctor
+
+  .method private hidebysig instance void 
+          CSampleSceneNode_OnRegisterSceneNode() cil managed
+  {
+    // Code size       28 (0x1c)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+//000088: 
+//000089: 		void CSampleSceneNode_OnRegisterSceneNode()
+//000090: 		{
+    IL_0000:  nop
+//000091: 			if (Visible)
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance bool [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_Visible()
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.0
+    IL_000b:  ldloc.0
+    IL_000c:  brtrue.s   IL_001b
+
+//000092: 				SceneManager.RegisterNodeForRendering(this);
+    IL_000e:  ldarg.0
+    IL_000f:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_0014:  ldarg.0
+    IL_0015:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Scene.SceneManager::RegisterNodeForRendering(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_001a:  pop
+//000093: 		}
+    IL_001b:  ret
+  } // end of method CSampleSceneNode::CSampleSceneNode_OnRegisterSceneNode
+
+  .method private hidebysig instance void 
+          CSampleSceneNode_OnRender() cil managed
+  {
+    // Code size       74 (0x4a)
+    .maxstack  3
+    .locals init ([0] uint16[] indices,
+             [1] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver)
+//000094: 
+//000095: 		void CSampleSceneNode_OnRender()
+//000096: 		{
+    IL_0000:  nop
+//000097: 			ushort[] indices = new ushort[] { 0, 2, 3, 2, 1, 3, 1, 0, 3, 2, 0, 1 };
+    IL_0001:  ldc.i4.s   12
+    IL_0003:  newarr     [mscorlib]System.UInt16
+    IL_0008:  dup
+    IL_0009:  ldtoken    field valuetype '<PrivateImplementationDetails>{693E67CF-77AC-412A-8CD8-0955FD63AC7F}'/'__StaticArrayInitTypeSize=24' '<PrivateImplementationDetails>{693E67CF-77AC-412A-8CD8-0955FD63AC7F}'::'$$method0x6000005-1'
+    IL_000e:  call       void [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::InitializeArray(class [mscorlib]System.Array,
+                                                                                                        valuetype [mscorlib]System.RuntimeFieldHandle)
+    IL_0013:  stloc.0
+//000098: 			VideoDriver driver = SceneManager.VideoDriver;
+    IL_0014:  ldarg.0
+    IL_0015:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_001a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_VideoDriver()
+    IL_001f:  stloc.1
+//000099: 
+//000100: 			driver.SetMaterial(material);
+    IL_0020:  ldloc.1
+    IL_0021:  ldarg.0
+    IL_0022:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Material _03.CustomSceneNode.CSampleSceneNode::material
+    IL_0027:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetMaterial(class [IrrlichtLime]IrrlichtLime.Video.Material)
+    IL_002c:  nop
+//000101: 			driver.SetTransform(TransformationState.World, AbsoluteTransformation);
+    IL_002d:  ldloc.1
+    IL_002e:  ldc.i4.1
+    IL_002f:  ldarg.0
+    IL_0030:  call       instance class [IrrlichtLime]IrrlichtLime.Core.Matrix [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_AbsoluteTransformation()
+    IL_0035:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetTransform(valuetype [IrrlichtLime]IrrlichtLime.Video.TransformationState,
+                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Matrix)
+    IL_003a:  nop
+//000102: 			driver.DrawVertexPrimitiveList(vertices, indices);
+    IL_003b:  ldloc.1
+    IL_003c:  ldarg.0
+    IL_003d:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] _03.CustomSceneNode.CSampleSceneNode::vertices
+    IL_0042:  ldloc.0
+    IL_0043:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::DrawVertexPrimitiveList(class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[],
+                                                                                                             uint16[])
+    IL_0048:  nop
+//000103: 		}
+    IL_0049:  ret
+  } // end of method CSampleSceneNode::CSampleSceneNode_OnRender
+
+  .method private hidebysig instance class [IrrlichtLime]IrrlichtLime.Core.AABBox 
+          CSampleSceneNode_OnGetBoundingBox() cil managed
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Core.AABBox CS$1$0000)
+//000104: 
+//000105: 		AABBox CSampleSceneNode_OnGetBoundingBox()
+//000106: 		{
+    IL_0000:  nop
+//000107: 			return bbox;
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox _03.CustomSceneNode.CSampleSceneNode::bbox
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+//000108: 		}
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+  } // end of method CSampleSceneNode::CSampleSceneNode_OnGetBoundingBox
+
+  .method private hidebysig instance int32 
+          CSampleSceneNode_OnGetMaterialCount() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+//000109: 
+//000110: 		int CSampleSceneNode_OnGetMaterialCount()
+//000111: 		{
+    IL_0000:  nop
+//000112: 			return 1;
+    IL_0001:  ldc.i4.1
+    IL_0002:  stloc.0
+    IL_0003:  br.s       IL_0005
+
+//000113: 		}
+    IL_0005:  ldloc.0
+    IL_0006:  ret
+  } // end of method CSampleSceneNode::CSampleSceneNode_OnGetMaterialCount
+
+  .method private hidebysig instance class [IrrlichtLime]IrrlichtLime.Video.Material 
+          CSampleSceneNode_OnGetMaterial(int32 index) cil managed
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Video.Material CS$1$0000)
+//000114: 
+//000115: 		Material CSampleSceneNode_OnGetMaterial(int index)
+//000116: 		{
+    IL_0000:  nop
+//000117: 			return material;
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Material _03.CustomSceneNode.CSampleSceneNode::material
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+//000118: 		}
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+  } // end of method CSampleSceneNode::CSampleSceneNode_OnGetMaterial
+
+} // end of class _03.CustomSceneNode.CSampleSceneNode
+
+.class private auto ansi '<PrivateImplementationDetails>{693E67CF-77AC-412A-8CD8-0955FD63AC7F}'
+       extends [mscorlib]System.Object
+{
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .class explicit ansi sealed nested private '__StaticArrayInitTypeSize=24'
+         extends [mscorlib]System.ValueType
+  {
+    .pack 1
+    .size 24
+  } // end of class '__StaticArrayInitTypeSize=24'
+
+  .field static assembly valuetype '<PrivateImplementationDetails>{693E67CF-77AC-412A-8CD8-0955FD63AC7F}'/'__StaticArrayInitTypeSize=24' '$$method0x6000005-1' at I_000023C0
+} // end of class '<PrivateImplementationDetails>{693E67CF-77AC-412A-8CD8-0955FD63AC7F}'
+
+
+// =============================================================
+
+.data cil I_000023C0 = bytearray (
+                 00 00 02 00 03 00 02 00 01 00 03 00 01 00 00 00
+                 03 00 02 00 00 00 01 00) 
+// *********** DISASSEMBLY COMPLETE ***********************

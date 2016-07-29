@@ -1,0 +1,509 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 2 example 6: keeping a paragraph together"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  ldsfld     class [iText]com.lowagie.text.Rectangle [iText]com.lowagie.text.PageSize::A6
+  IL_0011:  newobj     instance void [iText]com.lowagie.text.Document::.ctor(class [iText]com.lowagie.text.Rectangle)
+  IL_0016:  stloc.0
+  IL_0017:  ldloc.0
+  IL_0018:  ldstr      "Chap0206.pdf"
+  IL_001d:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_0022:  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  IL_0027:  stloc.2
+  IL_0028:  ldloc.0
+  IL_0029:  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  IL_002e:  nop
+  IL_002f:  ldstr      "GALLIA est omnis divisa in partes tres, quarum una"
+  + "m incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, n"
+  + "ostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se"
+  + " differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Seq"
+  + "uana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cul"
+  + "tu atque humanitate provinciae longissime absunt, minimeque ad eos merc"
+  + "atores saepe commeant atque ea quae ad effeminandos animos pertinent im"
+  + "portant, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum"
+  + " continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gall"
+  + "os virtute praecedunt, quod fere cotidianis proeliis cum Germanis conte"
+  + "ndunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bel"
+  + "lum gerunt."
+  IL_0034:  ldstr      "Helvetica"
+  IL_0039:  ldc.r4     12.
+  IL_003e:  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32)
+  IL_0043:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string,
+                                                                              class [iText]com.lowagie.text.Font)
+  IL_0048:  stloc.1
+  IL_0049:  ldloc.1
+  IL_004a:  ldc.i4.1
+  IL_004b:  callvirt   instance void [iText]com.lowagie.text.Paragraph::setKeepTogether(bool)
+  IL_0050:  nop
+  IL_0051:  ldloc.0
+  IL_0052:  ldloc.1
+  IL_0053:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_0058:  pop
+  IL_0059:  ldstr      "[Eorum una, pars, quam Gallos obtinere dictum est,"
+  + " initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, f"
+  + "inibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum,"
+  + " vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, "
+  + "pertinent ad inferiorem partem fluminis Rheni, spectant in septentrione"
+  + "m et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et"
+  + " eam partem Oceani quae est ad Hispaniam pertinet spectat inter occasum"
+  + " solis et septentriones.]"
+  IL_005e:  ldstr      "Helvetica"
+  IL_0063:  ldc.r4     12.
+  IL_0068:  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32)
+  IL_006d:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string,
+                                                                              class [iText]com.lowagie.text.Font)
+  IL_0072:  stloc.1
+  IL_0073:  ldloc.1
+  IL_0074:  ldc.i4.1
+  IL_0075:  callvirt   instance void [iText]com.lowagie.text.Paragraph::setKeepTogether(bool)
+  IL_007a:  nop
+  IL_007b:  ldloc.0
+  IL_007c:  ldloc.1
+  IL_007d:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_0082:  pop
+  IL_0083:  ldstr      "Apud Helvetios longe nobilissimus fuit et ditissim"
+  + "us Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupid"
+  + "itate inductus coniurationem nobilitatis fecit et civitati persuasit ut"
+  + " de finibus suis cum omnibus copiis exirent:  perfacile esse, cum virtu"
+  + "te omnibus praestarent, totius Galliae imperio potiri.  Id hoc facilius"
+  + " iis persuasit, quod undique loci natura Helvetii continentur:  una ex "
+  + "parte flumine Rheno latissimo atque altissimo, qui agrum Helvetium a Ge"
+  + "rmanis dividit altera ex parte monte Iura altissimo, qui est inter Sequ"
+  + "anos et Helvetios tertia lacu Lemanno et flumine Rhodano, qui provincia"
+  + "m nostram ab Helvetiis dividit.  His rebus fiebat ut et minus late vaga"
+  + "rentur et minus facile finitimis bellum inferre possent qua ex parte ho"
+  + "mines bellandi cupidi magno dolore adficiebantur.  Pro multitudine aute"
+  + "m hominum et pro gloria belli atque fortitudinis angustos se fines habe"
+  + "re arbitrabantur, qui in longitudinem milia passuum CCXL, in latitudine"
+  + "m CLXXX patebant."
+  IL_0088:  ldstr      "Helvetica"
+  IL_008d:  ldc.r4     12.
+  IL_0092:  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32)
+  IL_0097:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string,
+                                                                              class [iText]com.lowagie.text.Font)
+  IL_009c:  stloc.1
+  IL_009d:  ldloc.1
+  IL_009e:  ldc.i4.1
+  IL_009f:  callvirt   instance void [iText]com.lowagie.text.Paragraph::setKeepTogether(bool)
+  IL_00a4:  nop
+  IL_00a5:  ldloc.0
+  IL_00a6:  ldloc.1
+  IL_00a7:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_00ac:  pop
+  IL_00ad:  ldstr      "His rebus adducti et auctoritate Orgetorigis permo"
+  + "ti constituerunt ea quae ad proficiscendum pertinerent comparare, iumen"
+  + "torum et carrorum quam maximum numerum coemere, sementes quam maximas f"
+  + "acere, ut in itinere copia frumenti suppeteret, cum proximis civitatibu"
+  + "s pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi"
+  + " satis esse duxerunt in tertium annum profectionem lege confirmant.  Ad"
+  + " eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civit"
+  + "ates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio,"
+  + " Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a s"
+  + "enatu populi Romani amicus appellatus erat, ut regnum in civitate sua o"
+  + "ccuparet, quod pater ante habuerit itemque Dumnorigi Haeduo, fratri Div"
+  + "iciaci, qui eo tempore principatum in civitate obtinebat ac maxime pleb"
+  + "i acceptus erat, ut idem conaretur persuadet eique filiam suam in matri"
+  + "monium dat.  Perfacile factu esse illis probat conata perficere, propte"
+  + "rea quod ipse suae civitatis imperium obtenturus esset:  non esse dubiu"
+  + "m quin totius Galliae plurimum Helvetii possent se suis copiis suoque e"
+  + "xercitu illis regna conciliaturum confirmat.  Hac oratione adducti inte"
+  + "r se fidem et ius iurandum dant et regno occupato per tres potentissimo"
+  + "s ac firmissimos populos totius Galliae sese potiri posse sperant."
+  IL_00b2:  ldstr      "Helvetica"
+  IL_00b7:  ldc.r4     12.
+  IL_00bc:  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32)
+  IL_00c1:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string,
+                                                                              class [iText]com.lowagie.text.Font)
+  IL_00c6:  stloc.1
+  IL_00c7:  ldloc.1
+  IL_00c8:  ldc.i4.1
+  IL_00c9:  callvirt   instance void [iText]com.lowagie.text.Paragraph::setKeepTogether(bool)
+  IL_00ce:  nop
+  IL_00cf:  ldloc.0
+  IL_00d0:  ldloc.1
+  IL_00d1:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_00d6:  pop
+  IL_00d7:  ldstr      "Ea res est Helvetiis per indicium enuntiata.  Mori"
+  + "bus suis Orgetoricem ex vinculis causam dicere coegerunt damnatum poena"
+  + "m sequi oportebat, ut igni cremaretur.  Die constituta causae dictionis"
+  + " Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, und"
+  + "ique coegit, et omnes clientes obaeratosque suos, quorum magnum numerum"
+  + " habebat, eodem conduxit per eos ne causam diceret se eripuit.  Cum civ"
+  + "itas ob eam rem incitata armis ius suum exequi conaretur multitudinemqu"
+  + "e hominum ex agris magistratus cogerent, Orgetorix mortuus est neque ab"
+  + "est suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciverit."
+  IL_00dc:  ldstr      "Helvetica"
+  IL_00e1:  ldc.r4     12.
+  IL_00e6:  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32)
+  IL_00eb:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string,
+                                                                              class [iText]com.lowagie.text.Font)
+  IL_00f0:  stloc.1
+  IL_00f1:  ldloc.1
+  IL_00f2:  ldc.i4.1
+  IL_00f3:  callvirt   instance void [iText]com.lowagie.text.Paragraph::setKeepTogether(bool)
+  IL_00f8:  nop
+  IL_00f9:  ldloc.0
+  IL_00fa:  ldloc.1
+  IL_00fb:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_0100:  pop
+  IL_0101:  ldloc.0
+  IL_0102:  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  IL_0107:  nop
+  IL_0108:  nop
+  IL_0109:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 2 example 6: keeping a paragraph together"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A6
+  IL_0011:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle)
+  IL_0016:  stloc.0
+  IL_0017:  ldloc.0
+  IL_0018:  ldstr      "Chap0206.pdf"
+  IL_001d:  ldc.i4.2
+  IL_001e:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_0023:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_0028:  stloc.1
+  IL_0029:  ldloc.0
+  IL_002a:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_002f:  nop
+  IL_0030:  ldstr      "GALLIA est omnis divisa in partes tres, quarum una"
+  + "m incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, n"
+  + "ostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se"
+  + " differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Seq"
+  + "uana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cul"
+  + "tu atque humanitate provinciae longissime absunt, minimeque ad eos merc"
+  + "atores saepe commeant atque ea quae ad effeminandos animos pertinent im"
+  + "portant, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum"
+  + " continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gall"
+  + "os virtute praecedunt, quod fere cotidianis proeliis cum Germanis conte"
+  + "ndunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bel"
+  + "lum gerunt."
+  IL_0035:  ldstr      "Helvetica"
+  IL_003a:  ldc.r4     12.
+  IL_003f:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  IL_0044:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  IL_0049:  stloc.2
+  IL_004a:  ldloc.2
+  IL_004b:  ldc.i4.1
+  IL_004c:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setKeepTogether(bool)
+  IL_0051:  nop
+  IL_0052:  ldloc.0
+  IL_0053:  ldloc.2
+  IL_0054:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0059:  pop
+  IL_005a:  ldstr      "[Eorum una, pars, quam Gallos obtinere dictum est,"
+  + " initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, f"
+  + "inibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum,"
+  + " vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, "
+  + "pertinent ad inferiorem partem fluminis Rheni, spectant in septentrione"
+  + "m et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et"
+  + " eam partem Oceani quae est ad Hispaniam pertinet; spectat inter occasu"
+  + "m solis et septentriones.]"
+  IL_005f:  ldstr      "Helvetica"
+  IL_0064:  ldc.r4     12.
+  IL_0069:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  IL_006e:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  IL_0073:  stloc.2
+  IL_0074:  ldloc.2
+  IL_0075:  ldc.i4.1
+  IL_0076:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setKeepTogether(bool)
+  IL_007b:  nop
+  IL_007c:  ldloc.0
+  IL_007d:  ldloc.2
+  IL_007e:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0083:  pop
+  IL_0084:  ldstr      "Apud Helvetios longe nobilissimus fuit et ditissim"
+  + "us Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupid"
+  + "itate inductus coniurationem nobilitatis fecit et civitati persuasit ut"
+  + " de finibus suis cum omnibus copiis exirent:  perfacile esse, cum virtu"
+  + "te omnibus praestarent, totius Galliae imperio potiri.  Id hoc facilius"
+  + " iis persuasit, quod undique loci natura Helvetii continentur:  una ex "
+  + "parte flumine Rheno latissimo atque altissimo, qui agrum Helvetium a Ge"
+  + "rmanis dividit; altera ex parte monte Iura altissimo, qui est inter Seq"
+  + "uanos et Helvetios; tertia lacu Lemanno et flumine Rhodano, qui provinc"
+  + "iam nostram ab Helvetiis dividit.  His rebus fiebat ut et minus late va"
+  + "garentur et minus facile finitimis bellum inferre possent; qua ex parte"
+  + " homines bellandi cupidi magno dolore adficiebantur.  Pro multitudine a"
+  + "utem hominum et pro gloria belli atque fortitudinis angustos se fines h"
+  + "abere arbitrabantur, qui in longitudinem milia passuum CCXL, in latitud"
+  + "inem CLXXX patebant."
+  IL_0089:  ldstr      "Helvetica"
+  IL_008e:  ldc.r4     12.
+  IL_0093:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  IL_0098:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  IL_009d:  stloc.2
+  IL_009e:  ldloc.2
+  IL_009f:  ldc.i4.1
+  IL_00a0:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setKeepTogether(bool)
+  IL_00a5:  nop
+  IL_00a6:  ldloc.0
+  IL_00a7:  ldloc.2
+  IL_00a8:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_00ad:  pop
+  IL_00ae:  ldstr      "His rebus adducti et auctoritate Orgetorigis permo"
+  + "ti constituerunt ea quae ad proficiscendum pertinerent comparare, iumen"
+  + "torum et carrorum quam maximum numerum coemere, sementes quam maximas f"
+  + "acere, ut in itinere copia frumenti suppeteret, cum proximis civitatibu"
+  + "s pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi"
+  + " satis esse duxerunt; in tertium annum profectionem lege confirmant.  A"
+  + "d eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civi"
+  + "tates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio"
+  + ", Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a "
+  + "senatu populi Romani amicus appellatus erat, ut regnum in civitate sua "
+  + "occuparet, quod pater ante habuerit; itemque Dumnorigi Haeduo, fratri D"
+  + "iviciaci, qui eo tempore principatum in civitate obtinebat ac maxime pl"
+  + "ebi acceptus erat, ut idem conaretur persuadet eique filiam suam in mat"
+  + "rimonium dat.  Perfacile factu esse illis probat conata perficere, prop"
+  + "terea quod ipse suae civitatis imperium obtenturus esset:  non esse dub"
+  + "ium quin totius Galliae plurimum Helvetii possent; se suis copiis suoqu"
+  + "e exercitu illis regna conciliaturum confirmat.  Hac oratione adducti i"
+  + "nter se fidem et ius iurandum dant et regno occupato per tres potentiss"
+  + "imos ac firmissimos populos totius Galliae sese potiri posse sperant."
+  IL_00b3:  ldstr      "Helvetica"
+  IL_00b8:  ldc.r4     12.
+  IL_00bd:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  IL_00c2:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  IL_00c7:  stloc.2
+  IL_00c8:  ldloc.2
+  IL_00c9:  ldc.i4.1
+  IL_00ca:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setKeepTogether(bool)
+  IL_00cf:  nop
+  IL_00d0:  ldloc.0
+  IL_00d1:  ldloc.2
+  IL_00d2:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_00d7:  pop
+  IL_00d8:  ldstr      "Ea res est Helvetiis per indicium enuntiata.  Mori"
+  + "bus suis Orgetoricem ex vinculis causam dicere coegerunt; damnatum poen"
+  + "am sequi oportebat, ut igni cremaretur.  Die constituta causae dictioni"
+  + "s Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, un"
+  + "dique coegit, et omnes clientes obaeratosque suos, quorum magnum numeru"
+  + "m habebat, eodem conduxit; per eos ne causam diceret se eripuit.  Cum c"
+  + "ivitas ob eam rem incitata armis ius suum exequi conaretur multitudinem"
+  + "que hominum ex agris magistratus cogerent, Orgetorix mortuus est; neque"
+  + " abest suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciv"
+  + "erit."
+  IL_00dd:  ldstr      "Helvetica"
+  IL_00e2:  ldc.r4     12.
+  IL_00e7:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  IL_00ec:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  IL_00f1:  stloc.2
+  IL_00f2:  ldloc.2
+  IL_00f3:  ldc.i4.1
+  IL_00f4:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setKeepTogether(bool)
+  IL_00f9:  nop
+  IL_00fa:  ldloc.0
+  IL_00fb:  ldloc.2
+  IL_00fc:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0101:  pop
+  IL_0102:  ldloc.0
+  IL_0103:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_0108:  nop
+  IL_0109:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 2 example 6: keeping a paragraph together"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A6
+  IL_0014:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle)
+  IL_0019:  stloc.0
+  .try
+  {
+    IL_001a:  ldloc.0
+    IL_001b:  ldstr      "Chap0206.pdf"
+    IL_0020:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+    IL_0025:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+    IL_002a:  stloc.1
+    IL_002b:  ldloc.0
+    IL_002c:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+    IL_0031:  ldstr      "GALLIA est omnis divisa in partes tres, quarum una"
+    + "m incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, n"
+    + "ostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se"
+    + " differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Seq"
+    + "uana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cul"
+    + "tu atque humanitate provinciae longissime absunt, minimeque ad eos merc"
+    + "atores saepe commeant atque ea quae ad effeminandos animos pertinent im"
+    + "portant, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum"
+    + " continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gall"
+    + "os virtute praecedunt, quod fere cotidianis proeliis cum Germanis conte"
+    + "ndunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bel"
+    + "lum gerunt."
+    IL_0036:  ldstr      "Helvetica"
+    IL_003b:  ldc.r4     12.
+    IL_0040:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32)
+    IL_0045:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                      class [iTextdotNET]com.lowagie.text.Font)
+    IL_004a:  stloc.2
+    IL_004b:  ldloc.2
+    IL_004c:  ldc.i4.1
+    IL_004d:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setKeepTogether(bool)
+    IL_0052:  ldloc.0
+    IL_0053:  ldloc.2
+    IL_0054:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_0059:  pop
+    IL_005a:  ldstr      "[Eorum una, pars, quam Gallos obtinere dictum est,"
+    + " initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, f"
+    + "inibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum,"
+    + " vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, "
+    + "pertinent ad inferiorem partem fluminis Rheni, spectant in septentrione"
+    + "m et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et"
+    + " eam partem Oceani quae est ad Hispaniam pertinet; spectat inter occasu"
+    + "m solis et septentriones.]"
+    IL_005f:  ldstr      "Helvetica"
+    IL_0064:  ldc.r4     12.
+    IL_0069:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32)
+    IL_006e:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                      class [iTextdotNET]com.lowagie.text.Font)
+    IL_0073:  stloc.2
+    IL_0074:  ldloc.2
+    IL_0075:  ldc.i4.1
+    IL_0076:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setKeepTogether(bool)
+    IL_007b:  ldloc.0
+    IL_007c:  ldloc.2
+    IL_007d:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_0082:  pop
+    IL_0083:  ldstr      "Apud Helvetios longe nobilissimus fuit et ditissim"
+    + "us Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupid"
+    + "itate inductus coniurationem nobilitatis fecit et civitati persuasit ut"
+    + " de finibus suis cum omnibus copiis exirent:  perfacile esse, cum virtu"
+    + "te omnibus praestarent, totius Galliae imperio potiri.  Id hoc facilius"
+    + " iis persuasit, quod undique loci natura Helvetii continentur:  una ex "
+    + "parte flumine Rheno latissimo atque altissimo, qui agrum Helvetium a Ge"
+    + "rmanis dividit; altera ex parte monte Iura altissimo, qui est inter Seq"
+    + "uanos et Helvetios; tertia lacu Lemanno et flumine Rhodano, qui provinc"
+    + "iam nostram ab Helvetiis dividit.  His rebus fiebat ut et minus late va"
+    + "garentur et minus facile finitimis bellum inferre possent; qua ex parte"
+    + " homines bellandi cupidi magno dolore adficiebantur.  Pro multitudine a"
+    + "utem hominum et pro gloria belli atque fortitudinis angustos se fines h"
+    + "abere arbitrabantur, qui in longitudinem milia passuum CCXL, in latitud"
+    + "inem CLXXX patebant."
+    IL_0088:  ldstr      "Helvetica"
+    IL_008d:  ldc.r4     12.
+    IL_0092:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32)
+    IL_0097:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                      class [iTextdotNET]com.lowagie.text.Font)
+    IL_009c:  stloc.2
+    IL_009d:  ldloc.2
+    IL_009e:  ldc.i4.1
+    IL_009f:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setKeepTogether(bool)
+    IL_00a4:  ldloc.0
+    IL_00a5:  ldloc.2
+    IL_00a6:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_00ab:  pop
+    IL_00ac:  ldstr      "His rebus adducti et auctoritate Orgetorigis permo"
+    + "ti constituerunt ea quae ad proficiscendum pertinerent comparare, iumen"
+    + "torum et carrorum quam maximum numerum coemere, sementes quam maximas f"
+    + "acere, ut in itinere copia frumenti suppeteret, cum proximis civitatibu"
+    + "s pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi"
+    + " satis esse duxerunt; in tertium annum profectionem lege confirmant.  A"
+    + "d eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civi"
+    + "tates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio"
+    + ", Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a "
+    + "senatu populi Romani amicus appellatus erat, ut regnum in civitate sua "
+    + "occuparet, quod pater ante habuerit; itemque Dumnorigi Haeduo, fratri D"
+    + "iviciaci, qui eo tempore principatum in civitate obtinebat ac maxime pl"
+    + "ebi acceptus erat, ut idem conaretur persuadet eique filiam suam in mat"
+    + "rimonium dat.  Perfacile factu esse illis probat conata perficere, prop"
+    + "terea quod ipse suae civitatis imperium obtenturus esset:  non esse dub"
+    + "ium quin totius Galliae plurimum Helvetii possent; se suis copiis suoqu"
+    + "e exercitu illis regna conciliaturum confirmat.  Hac oratione adducti i"
+    + "nter se fidem et ius iurandum dant et regno occupato per tres potentiss"
+    + "imos ac firmissimos populos totius Galliae sese potiri posse sperant."
+    IL_00b1:  ldstr      "Helvetica"
+    IL_00b6:  ldc.r4     12.
+    IL_00bb:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32)
+    IL_00c0:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                      class [iTextdotNET]com.lowagie.text.Font)
+    IL_00c5:  stloc.2
+    IL_00c6:  ldloc.2
+    IL_00c7:  ldc.i4.1
+    IL_00c8:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setKeepTogether(bool)
+    IL_00cd:  ldloc.0
+    IL_00ce:  ldloc.2
+    IL_00cf:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_00d4:  pop
+    IL_00d5:  ldstr      "Ea res est Helvetiis per indicium enuntiata.  Mori"
+    + "bus suis Orgetoricem ex vinculis causam dicere coegerunt; damnatum poen"
+    + "am sequi oportebat, ut igni cremaretur.  Die constituta causae dictioni"
+    + "s Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, un"
+    + "dique coegit, et omnes clientes obaeratosque suos, quorum magnum numeru"
+    + "m habebat, eodem conduxit; per eos ne causam diceret se eripuit.  Cum c"
+    + "ivitas ob eam rem incitata armis ius suum exequi conaretur multitudinem"
+    + "que hominum ex agris magistratus cogerent, Orgetorix mortuus est; neque"
+    + " abest suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciv"
+    + "erit."
+    IL_00da:  ldstr      "Helvetica"
+    IL_00df:  ldc.r4     12.
+    IL_00e4:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32)
+    IL_00e9:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                      class [iTextdotNET]com.lowagie.text.Font)
+    IL_00ee:  stloc.2
+    IL_00ef:  ldloc.2
+    IL_00f0:  ldc.i4.1
+    IL_00f1:  callvirt   instance void [iTextdotNET]com.lowagie.text.Paragraph::setKeepTogether(bool)
+    IL_00f6:  ldloc.0
+    IL_00f7:  ldloc.2
+    IL_00f8:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_00fd:  pop
+    IL_00fe:  leave.s    IL_012e
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+    IL_0100:  dup
+    IL_0101:  stloc.s    V_5
+    IL_0103:  stloc.3
+    IL_0104:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_0109:  ldloc.3
+    IL_010a:  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+    IL_010f:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_0114:  leave.s    IL_012e
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+    IL_0116:  dup
+    IL_0117:  stloc.s    V_6
+    IL_0119:  stloc.s    ioe
+    IL_011b:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_0120:  ldloc.s    ioe
+    IL_0122:  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+    IL_0127:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_012c:  leave.s    IL_012e
+  }  // end handler
+  IL_012e:  ldloc.0
+  IL_012f:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_0134:  br.s       IL_0136
+  IL_0136:  ret
+
+]]></source>
+</source_elements></project>

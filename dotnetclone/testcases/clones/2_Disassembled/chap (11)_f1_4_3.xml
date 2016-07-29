@@ -1,0 +1,335 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  ldstr      "Chapter 2 example 3: Greek Characters"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  stloc
+  ldloc
+  castclass  [iText]com.lowagie.text.Document
+  ldstr      "Chap0203.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  pop
+  ldloc
+  ldnull
+  ldstr      "open"
+  ldc.i4
+  newarr     [mscorlib]System.Object
+  ldnull
+  ldnull
+  ldnull
+  ldc.i4
+  call       object [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.NewLateBinding::LateCall(object,
+                                                                                                                     class [mscorlib]System.Type,
+                                                                                                                     string,
+                                                                                                                     object[],
+                                                                                                                     string[],
+                                                                                                                     class [mscorlib]System.Type[],
+                                                                                                                     bool[],
+                                                                                                                     bool)
+  pop
+  ldloc
+  ldnull
+  ldstr      "add"
+  ldc.i4
+  newarr     [mscorlib]System.Object
+  stloc
+  ldloc
+  ldc.i4
+  ldstr      bytearray (57 00 68 00 61 00 74 00 20 00 69 00 73 00 20 00   // W.h.a.t. .i.s. .
+                                  74 00 68 00 65 00 20 00 B1 03 2D 00 63 00 6F 00   // t.h.e. ...-.c.o.
+                                  65 00 66 00 66 00 69 00 63 00 69 00 65 00 6E 00   // e.f.f.i.c.i.e.n.
+                                  74 00 20 00 6F 00 66 00 20 00 74 00 68 00 65 00   // t. .o.f. .t.h.e.
+                                  20 00 B2 03 2D 00 66 00 61 00 63 00 74 00 6F 00   //  ...-.f.a.c.t.o.
+                                  72 00 20 00 69 00 6E 00 20 00 74 00 68 00 65 00   // r. .i.n. .t.h.e.
+                                  20 00 B3 03 2D 00 65 00 71 00 75 00 61 00 74 00   //  ...-.e.q.u.a.t.
+                                  69 00 6F 00 6E 00 3F 00 0D 00 0A 00 )             // i.o.n.?.....
+  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(string)
+  stelem.ref
+  nop
+  ldloc
+  ldnull
+  ldnull
+  ldnull
+  ldc.i4
+  call       object [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.NewLateBinding::LateCall(object,
+                                                                                                                     class [mscorlib]System.Type,
+                                                                                                                     string,
+                                                                                                                     object[],
+                                                                                                                     string[],
+                                                                                                                     class [mscorlib]System.Type[],
+                                                                                                                     bool[],
+                                                                                                                     bool)
+  pop
+  ldc.i4     0x391
+  stloc
+  ldloc
+  ldnull
+  ldstr      "add"
+  ldc.i4
+  newarr     [mscorlib]System.Object
+  stloc
+  ldloc
+  ldc.i4
+  ldstr      " "
+  ldloca.s   i
+  call       instance string [mscorlib]System.Int32::ToString()
+  ldstr      ": "
+  ldloc
+  call       char [Microsoft.VisualBasic]Microsoft.VisualBasic.Strings::ChrW(int32)
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(char)
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string,
+                                                              string,
+                                                              string)
+  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(string)
+  stelem.ref
+  nop
+  ldloc
+  ldnull
+  ldnull
+  ldnull
+  ldc.i4
+  call       object [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.NewLateBinding::LateCall(object,
+                                                                                                                     class [mscorlib]System.Type,
+                                                                                                                     string,
+                                                                                                                     object[],
+                                                                                                                     string[],
+                                                                                                                     class [mscorlib]System.Type[],
+                                                                                                                     bool[],
+                                                                                                                     bool)
+  pop
+  nop
+  ldloc
+  ldc.i4
+  add.ovf
+  stloc
+  ldloc
+  ldc.i4     0x3c9
+  stloc
+  ldloc
+ble.s
+  ldloc
+  ldnull
+  ldstr      "close"
+  ldc.i4
+  newarr     [mscorlib]System.Object
+  ldnull
+  ldnull
+  ldnull
+  ldc.i4
+  call       object [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.NewLateBinding::LateCall(object,
+                                                                                                                     class [mscorlib]System.Type,
+                                                                                                                     string,
+                                                                                                                     object[],
+                                                                                                                     string[],
+                                                                                                                     class [mscorlib]System.Type[],
+                                                                                                                     bool[],
+                                                                                                                     bool)
+  pop
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldstr      "Chapter 2 example 3: Greek Characters"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc
+  ldloc
+  ldstr      "Chap0203.pdf"
+  ldc.i4
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  pop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  nop
+  ldloc
+  ldc.i4
+  newarr     [mscorlib]System.Object
+  stloc
+  ldloc
+  ldc.i4
+  ldstr      "What is the "
+  stelem.ref
+  ldloc
+  ldc.i4
+  ldc.i4     0x3b1
+  box        [mscorlib]System.Char
+  stelem.ref
+  ldloc
+  ldc.i4
+  ldstr      "-coefficient of the "
+  stelem.ref
+  ldloc
+  ldc.i4
+  ldc.i4     0x3b2
+  box        [mscorlib]System.Char
+  stelem.ref
+  ldloc
+  ldc.i4
+  ldstr      "-factor in the "
+  stelem.ref
+  ldloc
+  ldc.i4
+  ldc.i4     0x3b3
+  box        [mscorlib]System.Char
+  stelem.ref
+  ldloc
+  ldc.i4
+  ldstr      "-equation\?\n"
+  stelem.ref
+  ldloc
+  call       string [mscorlib]System.String::Concat(object[])
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldc.i4     0x391
+  stloc
+br.s
+  nop
+  ldloc
+  ldc.i4
+  newarr     [mscorlib]System.Object
+  stloc
+  ldloc
+  ldc.i4
+  ldstr      " "
+  stelem.ref
+  ldloc
+  ldc.i4
+  ldloca.s   i
+  call       instance string [mscorlib]System.Int32::ToString()
+  stelem.ref
+  ldloc
+  ldc.i4
+  ldstr      ": "
+  stelem.ref
+  ldloc
+  ldc.i4
+  ldloc
+  conv.u2
+  box        [mscorlib]System.Char
+  stelem.ref
+  ldloc
+  call       string [mscorlib]System.String::Concat(object[])
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  nop
+  ldloc
+  ldc.i4
+  add
+  stloc
+  ldloc
+  ldc.i4     0x3ca
+  clt
+  stloc
+  ldloc
+brtrue.s
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 2 example 3: Greek Characters"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc
+  .try
+  {
+  ldloc
+  ldstr      "Chap0203.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+  pop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  ldloc
+  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  ldstr      "What is the "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldc.i4     0x3b1
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(char)
+  ldstr      "-coefficient of the "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldc.i4     0x3b2
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(char)
+  ldstr      "-factor in the "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldc.i4     0x3b3
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(char)
+  ldstr      "-equation\?\n"
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldc.i4     0x391
+  stloc
+br.s
+  ldloc
+  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  ldstr      " "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc
+  call       string [vjslib]com.ms.vjsharp.lang.StringImpl::valueOf(int32)
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldstr      ": "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc
+  conv.u2
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(char)
+  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  ldc.i4
+  add
+  stloc
+  ldloc
+  ldc.i4     0x3ca
+blt.s
+leave.s
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+  dup
+  stloc
+  stloc
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc
+  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+  dup
+  stloc
+  stloc
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc
+  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+br.s
+  ret
+]]></source>
+</source_elements></project>

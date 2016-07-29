@@ -1,0 +1,129 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+         Console.WriteLine("Chapter 1 example 6: Meta Information")
+
+        ' step 1: creation of a document-object
+        Dim document As New Document()
+
+        ' step 2:
+        ' we create a writer that listens to the document
+        ' and directs a PDF-stream to a file
+
+        PdfWriter.getInstance(document, New FileStream("Chap0106.pdf", FileMode.Create))
+        HtmlWriter.getInstance(document, Console.OpenStandardOutput())
+
+        ' step 3: we add some metadata and open the document
+
+        document.addTitle("Hello World example")
+        document.addSubject("This example explains step 3 in Chapter 1")
+        document.addKeywords("Metadata, iText, step 3, tutorial")
+        document.addCreator("My program using iText")
+        document.addAuthor("Bruno Lowagie")
+        document.addHeader("Expires", "0")
+        document.open()
+
+        ' step 4: we add a paragraph to the document
+        document.add(New Paragraph("Hello World"))
+
+        ' step 5: we close the document
+        document.close()
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+Console.WriteLine("Chapter 10 example 4: Templates");
+        
+		// step 1: creation of a document-object
+		Document document = new Document();
+            
+		// step 2:
+		// we create a writer that listens to the document
+		// and directs a PDF-stream to a file
+		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1004.pdf", FileMode.Create));
+        
+		// step 3: we open the document
+		document.open();
+        
+		// step 4: we grab the ContentByte and do some stuff with it
+		PdfContentByte cb = writer.getDirectContent();
+        
+		// we create a PdfTemplate
+		PdfTemplate template = cb.createTemplate(50, 50);
+		BaseFont bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+		// we add a number of pages
+		int i;
+		for (i = 1; i < 5; i++) 
+		{
+			String text = "Page " + writer.getPageNumber() + " of ";
+			float len = bf.getWidthPoint(text, 12);
+			cb.beginText();
+			cb.setFontAndSize(bf, 12);
+			cb.setTextMatrix(280, 40);
+			cb.showText(text);
+			cb.endText();
+			cb.addTemplate(template, 280 + len, 40);
+			document.newPage();
+		}
+		template.beginText();
+		template.setFontAndSize(bf, 12);
+		template.showText((writer.getPageNumber() - 1).ToString());
+		template.endText();
+	
+		// step 5: we close the document
+		document.close();
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+         System.out.println("Chapter 5 example 13: large tables with fitspage");
+        // creation of the document with a certain size and certain margins
+        Document document = new Document(PageSize.A4.rotate(), 50, 50, 50, 50);
+        
+        try {
+            // creation of the different writers
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("Chap0513.pdf"));
+            
+            // we add some meta information to the document
+            document.addAuthor("Alan Soukup");
+            document.addSubject("This is the result of a Test.");
+            
+            document.open();
+            
+            Table datatable = getTable();
+            
+            for (int i = 1; i < 30; i++) {
+                
+                datatable.setDefaultHorizontalAlignment(Element.ALIGN_LEFT);
+                
+                datatable.addCell("myUserId");
+                datatable.addCell("Somebody with a very, very, very, very, very, very, very, very, very, very, very, very, very, very, very, very, very long long name");
+                datatable.addCell("No Name Company");
+                datatable.addCell("D" + i);
+                
+                datatable.setDefaultHorizontalAlignment(Element.ALIGN_CENTER);
+                datatable.addCell("No");
+                datatable.addCell("Yes");
+                datatable.addCell("No");
+                datatable.addCell("Yes");
+                datatable.addCell("No");
+                datatable.addCell("Yes");
+                
+                if (!writer.fitsPage(datatable)) {
+                    datatable.deleteLastRow();
+                    i--;
+                    document.add(datatable);
+                    document.newPage();
+                    datatable = getTable();
+                }
+                
+            }
+            
+            
+            document.add(datatable);
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+        // we close the document
+        document.close();
+]]></source>
+</source_elements></project>

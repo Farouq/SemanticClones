@@ -1,0 +1,1193 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly '19.MouseAndJoystick'
+{
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 13 31 39 2E 4D 6F 75 73 65 41 6E 64 4A 6F   // ...19.MouseAndJo
+                                                                                              79 73 74 69 63 6B 00 00 )                         // ystick..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 13 31 39 2E 4D 6F 75 73 65 41 6E 64 4A 6F   // ...19.MouseAndJo
+                                                                                                79 73 74 69 63 6B 00 00 )                         // ystick..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 31 00 00 )                            //  2011..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 39 39 35 66 33 34 65 66 2D 37 36 32 63   // ..$995f34ef-762c
+                                                                                                  2D 34 66 32 64 2D 62 37 61 34 2D 39 38 38 64 31   // -4f2d-b7a4-988d1
+                                                                                                  61 63 31 35 65 38 33 00 00 )                      // ac15e83..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public _19.MouseAndJoystick.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.module '19.MouseAndJoystick.exe'
+// MVID: {60926DE3-88BF-49AD-85A8-0E5A0A44D525}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x004D0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit _19.MouseAndJoystick.Program
+       extends [mscorlib]System.Object
+{
+  .class auto ansi nested private beforefieldinit MouseStateInfo
+         extends [mscorlib]System.Object
+  {
+    .field public class [IrrlichtLime]IrrlichtLime.Core.Vector2Di Position
+    .field public bool IsLeftButtonDown
+    .method public hidebysig specialname rtspecialname 
+            instance void  .ctor() cil managed
+    {
+      // Code size       26 (0x1a)
+      .maxstack  8
+      .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\19.MouseAndJoystick\Program.cs' 
+//000179: 			public Vector2Di Position = new Vector2Di();
+      IL_0000:  ldarg.0
+      IL_0001:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor()
+      IL_0006:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Vector2Di _19.MouseAndJoystick.Program/MouseStateInfo::Position
+//000180: 			public bool IsLeftButtonDown = false;
+      IL_000b:  ldarg.0
+      IL_000c:  ldc.i4.0
+      IL_000d:  stfld      bool _19.MouseAndJoystick.Program/MouseStateInfo::IsLeftButtonDown
+      IL_0012:  ldarg.0
+      IL_0013:  call       instance void [mscorlib]System.Object::.ctor()
+      IL_0018:  nop
+      IL_0019:  ret
+    } // end of method MouseStateInfo::.ctor
+
+  } // end of class MouseStateInfo
+
+  .field private static class _19.MouseAndJoystick.Program/MouseStateInfo mouseState
+  .field private static valuetype [IrrlichtLime]IrrlichtLime.Event/JoystickEvent joystickState
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       1264 (0x4f0)
+    .maxstack  11
+    .locals init ([0] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType,
+             [1] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [2] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [3] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+             [4] class [IrrlichtLime]IrrlichtLime.Logger logger,
+             [5] class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.JoystickInfo> joystickList,
+             [6] class [IrrlichtLime]IrrlichtLime.JoystickInfo j,
+             [7] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode node,
+             [8] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode camera,
+             [9] uint32 then,
+             [10] uint32 now,
+             [11] float32 frameDeltaTime,
+             [12] bool movedWithJoystick,
+             [13] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df nodePosition,
+             [14] float32 moveHorizontal,
+             [15] float32 moveVertical,
+             [16] float32 DeadZone,
+             [17] uint16 povDegrees,
+             [18] float32 m,
+             [19] class [IrrlichtLime]IrrlichtLime.Core.Line3Df ray,
+             [20] class [IrrlichtLime]IrrlichtLime.Core.Plane3Df plane,
+             [21] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df mousePosition,
+             [22] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df toMousePosition,
+             [23] float32 availableMovement,
+             [24] bool CS$4$0000,
+             [25] int32 CS$0$0001,
+             [26] valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [IrrlichtLime]IrrlichtLime.JoystickInfo> CS$5$0002)
+//000016: 		{
+    IL_0000:  nop
+//000017: 			// Initialize device.
+//000018: 			
+//000019: 			DriverType driverType;
+//000020: 			if (!AskUserForDriver(out driverType))
+    IL_0001:  ldloca.s   driverType
+    IL_0003:  call       bool _19.MouseAndJoystick.Program::AskUserForDriver(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType&)
+    IL_0008:  stloc.s    CS$4$0000
+    IL_000a:  ldloc.s    CS$4$0000
+    IL_000c:  brtrue.s   IL_0013
+
+//000021: 				return;
+    IL_000e:  br         IL_04ef
+
+//000022: 
+//000023: 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(driverType, new Dimension2Di(640, 480));
+    IL_0013:  ldloc.0
+    IL_0014:  ldc.i4     0x280
+    IL_0019:  ldc.i4     0x1e0
+    IL_001e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_0023:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+    IL_0028:  stloc.1
+//000024: 			if (device == null)
+    IL_0029:  ldloc.1
+    IL_002a:  ldnull
+    IL_002b:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0030:  ldc.i4.0
+    IL_0031:  ceq
+    IL_0033:  stloc.s    CS$4$0000
+    IL_0035:  ldloc.s    CS$4$0000
+    IL_0037:  brtrue.s   IL_003e
+
+//000025: 				return;
+    IL_0039:  br         IL_04ef
+
+//000026: 
+//000027: 			// Add event handling.
+//000028: 
+//000029: 			device.OnEvent += new IrrlichtDevice.EventHandler(device_OnEvent);
+    IL_003e:  ldloc.1
+    IL_003f:  ldnull
+    IL_0040:  ldftn      bool _19.MouseAndJoystick.Program::device_OnEvent(class [IrrlichtLime]IrrlichtLime.Event)
+    IL_0046:  newobj     instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler::.ctor(object,
+                                                                                                     native int)
+    IL_004b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::add_OnEvent(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler)
+    IL_0050:  nop
+//000030: 
+//000031: 			// Save important pointers.
+//000032: 
+//000033: 			VideoDriver driver = device.VideoDriver;
+    IL_0051:  ldloc.1
+    IL_0052:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0057:  stloc.2
+//000034: 			SceneManager smgr = device.SceneManager;
+    IL_0058:  ldloc.1
+    IL_0059:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_005e:  stloc.3
+//000035: 			Logger logger = device.Logger;
+    IL_005f:  ldloc.1
+    IL_0060:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_0065:  stloc.s    logger
+//000036: 
+//000037: 			// Initialize joysticks and print info about them.
+//000038: 
+//000039: 			List<JoystickInfo> joystickList = device.ActivateJoysticks();
+    IL_0067:  ldloc.1
+    IL_0068:  callvirt   instance class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.JoystickInfo> [IrrlichtLime]IrrlichtLime.IrrlichtDevice::ActivateJoysticks()
+    IL_006d:  stloc.s    joystickList
+//000040: 			if (joystickList != null)
+    IL_006f:  ldloc.s    joystickList
+    IL_0071:  ldnull
+    IL_0072:  ceq
+    IL_0074:  stloc.s    CS$4$0000
+    IL_0076:  ldloc.s    CS$4$0000
+    IL_0078:  brtrue     IL_0184
+
+//000041: 			{
+    IL_007d:  nop
+//000042: 				logger.Log("Joystick support is enabled and " + joystickList.Count.ToString() + " joystick(s) are present.");
+    IL_007e:  ldloc.s    logger
+    IL_0080:  ldstr      "Joystick support is enabled and "
+    IL_0085:  ldloc.s    joystickList
+    IL_0087:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.JoystickInfo>::get_Count()
+    IL_008c:  stloc.s    CS$0$0001
+    IL_008e:  ldloca.s   CS$0$0001
+    IL_0090:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_0095:  ldstr      " joystick(s) are present."
+    IL_009a:  call       string [mscorlib]System.String::Concat(string,
+                                                                string,
+                                                                string)
+    IL_009f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+    IL_00a4:  nop
+//000043: 
+//000044: 				foreach (JoystickInfo j in joystickList)
+    IL_00a5:  nop
+    IL_00a6:  ldloc.s    joystickList
+    IL_00a8:  callvirt   instance valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<!0> class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.JoystickInfo>::GetEnumerator()
+    IL_00ad:  stloc.s    CS$5$0002
+    .try
+    {
+      IL_00af:  br         IL_015f
+
+      IL_00b4:  ldloca.s   CS$5$0002
+      IL_00b6:  call       instance !0 valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [IrrlichtLime]IrrlichtLime.JoystickInfo>::get_Current()
+      IL_00bb:  stloc.s    j
+//000045: 				{
+      IL_00bd:  nop
+//000046: 					logger.Log("Joystick " + j.Joystick.ToString() + ":");
+      IL_00be:  ldloc.s    logger
+      IL_00c0:  ldstr      "Joystick "
+      IL_00c5:  ldloc.s    j
+      IL_00c7:  ldflda     uint8 [IrrlichtLime]IrrlichtLime.JoystickInfo::Joystick
+      IL_00cc:  call       instance string [mscorlib]System.Byte::ToString()
+      IL_00d1:  ldstr      ":"
+      IL_00d6:  call       string [mscorlib]System.String::Concat(string,
+                                                                  string,
+                                                                  string)
+      IL_00db:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+      IL_00e0:  nop
+//000047: 					logger.Log("\tName: \"" + j.Name + "\"");
+      IL_00e1:  ldloc.s    logger
+      IL_00e3:  ldstr      "\tName: \""
+      IL_00e8:  ldloc.s    j
+      IL_00ea:  ldfld      string [IrrlichtLime]IrrlichtLime.JoystickInfo::Name
+      IL_00ef:  ldstr      "\""
+      IL_00f4:  call       string [mscorlib]System.String::Concat(string,
+                                                                  string,
+                                                                  string)
+      IL_00f9:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+      IL_00fe:  nop
+//000048: 					logger.Log("\tAxisCount: " + j.AxisCount.ToString());
+      IL_00ff:  ldloc.s    logger
+      IL_0101:  ldstr      "\tAxisCount: "
+      IL_0106:  ldloc.s    j
+      IL_0108:  ldflda     uint32 [IrrlichtLime]IrrlichtLime.JoystickInfo::AxisCount
+      IL_010d:  call       instance string [mscorlib]System.UInt32::ToString()
+      IL_0112:  call       string [mscorlib]System.String::Concat(string,
+                                                                  string)
+      IL_0117:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+      IL_011c:  nop
+//000049: 					logger.Log("\tButtonCount: " + j.ButtonCount.ToString());
+      IL_011d:  ldloc.s    logger
+      IL_011f:  ldstr      "\tButtonCount: "
+      IL_0124:  ldloc.s    j
+      IL_0126:  ldflda     uint32 [IrrlichtLime]IrrlichtLime.JoystickInfo::ButtonCount
+      IL_012b:  call       instance string [mscorlib]System.UInt32::ToString()
+      IL_0130:  call       string [mscorlib]System.String::Concat(string,
+                                                                  string)
+      IL_0135:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+      IL_013a:  nop
+//000050: 					logger.Log("\tPovHat: " + j.PovHat.ToString());
+      IL_013b:  ldloc.s    logger
+      IL_013d:  ldstr      "\tPovHat: "
+      IL_0142:  ldloc.s    j
+      IL_0144:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.JoystickInfo/PovHatPresence [IrrlichtLime]IrrlichtLime.JoystickInfo::PovHat
+      IL_0149:  box        [IrrlichtLime]IrrlichtLime.JoystickInfo/PovHatPresence
+      IL_014e:  callvirt   instance string [mscorlib]System.Object::ToString()
+      IL_0153:  call       string [mscorlib]System.String::Concat(string,
+                                                                  string)
+      IL_0158:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+      IL_015d:  nop
+//000051: 				}
+      IL_015e:  nop
+//000044: 				foreach (JoystickInfo j in joystickList)
+      IL_015f:  ldloca.s   CS$5$0002
+      IL_0161:  call       instance bool valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [IrrlichtLime]IrrlichtLime.JoystickInfo>::MoveNext()
+      IL_0166:  stloc.s    CS$4$0000
+      IL_0168:  ldloc.s    CS$4$0000
+      IL_016a:  brtrue     IL_00b4
+
+      IL_016f:  leave.s    IL_0180
+
+    }  // end .try
+    finally
+    {
+      IL_0171:  ldloca.s   CS$5$0002
+      IL_0173:  constrained. valuetype [mscorlib]System.Collections.Generic.List`1/Enumerator<class [IrrlichtLime]IrrlichtLime.JoystickInfo>
+      IL_0179:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_017e:  nop
+      IL_017f:  endfinally
+    }  // end handler
+    IL_0180:  nop
+//000045: 				{
+//000046: 					logger.Log("Joystick " + j.Joystick.ToString() + ":");
+//000047: 					logger.Log("\tName: \"" + j.Name + "\"");
+//000048: 					logger.Log("\tAxisCount: " + j.AxisCount.ToString());
+//000049: 					logger.Log("\tButtonCount: " + j.ButtonCount.ToString());
+//000050: 					logger.Log("\tPovHat: " + j.PovHat.ToString());
+//000051: 				}
+//000052: 			}
+    IL_0181:  nop
+    IL_0182:  br.s       IL_0193
+
+//000053: 			else
+//000054: 			{
+    IL_0184:  nop
+//000055: 				logger.Log("Joystick support is not enabled.");
+    IL_0185:  ldloc.s    logger
+    IL_0187:  ldstr      "Joystick support is not enabled."
+    IL_018c:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+    IL_0191:  nop
+//000056: 			}
+    IL_0192:  nop
+//000057: 
+//000058: 			device.SetWindowCaption("Mouse and joystick - Irrlicht Lime - " + joystickList.Count.ToString() + " joystick(s)");
+    IL_0193:  ldloc.1
+    IL_0194:  ldstr      "Mouse and joystick - Irrlicht Lime - "
+    IL_0199:  ldloc.s    joystickList
+    IL_019b:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.JoystickInfo>::get_Count()
+    IL_01a0:  stloc.s    CS$0$0001
+    IL_01a2:  ldloca.s   CS$0$0001
+    IL_01a4:  call       instance string [mscorlib]System.Int32::ToString()
+    IL_01a9:  ldstr      " joystick(s)"
+    IL_01ae:  call       string [mscorlib]System.String::Concat(string,
+                                                                string,
+                                                                string)
+    IL_01b3:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_01b8:  nop
+//000059: 
+//000060: 			// Create an arrow mesh and move it around either with the joystick axis/hat,
+//000061: 			// or make it follow the mouse pointer (when no joystick movement).
+//000062: 
+//000063: 			SceneNode node = smgr.AddMeshSceneNode(
+    IL_01b9:  ldloc.3
+    IL_01ba:  ldloc.3
+    IL_01bb:  ldstr      "Arrow"
+    IL_01c0:  ldc.i4     0xff
+    IL_01c5:  ldc.i4.0
+    IL_01c6:  ldc.i4.0
+    IL_01c7:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_01cc:  ldc.i4.0
+    IL_01cd:  ldc.i4     0xff
+    IL_01d2:  ldc.i4.0
+    IL_01d3:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_01d8:  ldc.i4.s   16
+    IL_01da:  ldc.i4.s   16
+    IL_01dc:  ldc.r4     2.
+    IL_01e1:  ldc.r4     1.3
+    IL_01e6:  ldc.r4     0.1
+    IL_01eb:  ldc.r4     0.60000002
+    IL_01f0:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddArrowMesh(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                                                                                  int32,
+                                                                                                                                                  int32,
+                                                                                                                                                  float32,
+                                                                                                                                                  float32,
+                                                                                                                                                  float32,
+                                                                                                                                                  float32)
+    IL_01f5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.Mesh)
+    IL_01fa:  stloc.s    node
+//000064: 				smgr.AddArrowMesh(
+//000065: 					"Arrow",
+//000066: 					new Color(255, 0, 0),
+//000067: 					new Color(0, 255, 0),
+//000068: 					16, 16,
+//000069: 					2.0f, 1.3f,
+//000070: 					0.1f, 0.6f
+//000071: 				)
+//000072: 			);
+//000073: 
+//000074: 			node.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_01fc:  ldloc.s    node
+    IL_01fe:  ldc.i4.8
+    IL_01ff:  ldc.i4.0
+    IL_0200:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0205:  nop
+//000075: 
+//000076: 			CameraSceneNode camera = smgr.AddCameraSceneNode();
+    IL_0206:  ldloc.3
+    IL_0207:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNode()
+    IL_020c:  stloc.s    camera
+//000077: 			camera.Position = new Vector3Df(0, 0, -10);
+    IL_020e:  ldloc.s    camera
+    IL_0210:  ldc.r4     0.0
+    IL_0215:  ldc.r4     0.0
+    IL_021a:  ldc.r4     -10.
+    IL_021f:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0224:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0229:  nop
+//000078: 
+//000079: 			// As in example #4, we'll use framerate independent movement.
+//000080: 			uint then = device.Timer.Time;
+    IL_022a:  ldloc.1
+    IL_022b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Timer [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Timer()
+    IL_0230:  callvirt   instance uint32 [IrrlichtLime]IrrlichtLime.Timer::get_Time()
+    IL_0235:  stloc.s    then
+    IL_0237:  br         IL_04d9
+
+//000081: 			const float MovementSpeed = 5.0f;
+//000082: 
+//000083: 			// Run main cycle.
+//000084: 
+//000085: 			while (device.Run())
+//000086: 			{
+    IL_023c:  nop
+//000087: 				// Work out a frame delta time.
+//000088: 				uint now = device.Timer.Time;
+    IL_023d:  ldloc.1
+    IL_023e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Timer [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Timer()
+    IL_0243:  callvirt   instance uint32 [IrrlichtLime]IrrlichtLime.Timer::get_Time()
+    IL_0248:  stloc.s    now
+//000089: 				float frameDeltaTime = (float)(now - then) / 1000.0f; // in seconds
+    IL_024a:  ldloc.s    now
+    IL_024c:  ldloc.s    then
+    IL_024e:  sub
+    IL_024f:  conv.r.un
+    IL_0250:  conv.r4
+    IL_0251:  ldc.r4     1000.
+    IL_0256:  div
+    IL_0257:  stloc.s    frameDeltaTime
+//000090: 				then = now;
+    IL_0259:  ldloc.s    now
+    IL_025b:  stloc.s    then
+//000091: 
+//000092: 				bool movedWithJoystick = false;
+    IL_025d:  ldc.i4.0
+    IL_025e:  stloc.s    movedWithJoystick
+//000093: 				Vector3Df nodePosition = node.Position;
+    IL_0260:  ldloc.s    node
+    IL_0262:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_Position()
+    IL_0267:  stloc.s    nodePosition
+//000094: 
+//000095: 				if (joystickList.Count > 0)
+    IL_0269:  ldloc.s    joystickList
+    IL_026b:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.JoystickInfo>::get_Count()
+    IL_0270:  ldc.i4.0
+    IL_0271:  cgt
+    IL_0273:  ldc.i4.0
+    IL_0274:  ceq
+    IL_0276:  stloc.s    CS$4$0000
+    IL_0278:  ldloc.s    CS$4$0000
+    IL_027a:  brtrue     IL_03ee
+
+//000096: 				{
+    IL_027f:  nop
+//000097: 					float moveHorizontal = 0.0f; // range is -1.0 for full left to +1.0 for full right
+    IL_0280:  ldc.r4     0.0
+    IL_0285:  stloc.s    moveHorizontal
+//000098: 					float moveVertical = 0.0f; // range is -1.0 for full down to +1.0 for full up
+    IL_0287:  ldc.r4     0.0
+    IL_028c:  stloc.s    moveVertical
+//000099: 
+//000100: 					// We receive the full analog range of the axes, and so have to implement our own dead zone.
+//000101: 					// This is an empirical value, since some joysticks have more jitter or creep around the center
+//000102: 					// point than others. We'll use 5% of the range as the dead zone, but generally you would want
+//000103: 					// to give the user the option to change this.
+//000104: 					float DeadZone = 0.05f;
+    IL_028e:  ldc.r4     5.0000001e-002
+    IL_0293:  stloc.s    DeadZone
+//000105: 
+//000106: 					moveHorizontal = joystickState.Axis[0] / 32767.0f; // "0" for X axis
+    IL_0295:  ldsflda    valuetype [IrrlichtLime]IrrlichtLime.Event/JoystickEvent _19.MouseAndJoystick.Program::joystickState
+    IL_029a:  ldfld      int16[] [IrrlichtLime]IrrlichtLime.Event/JoystickEvent::Axis
+    IL_029f:  ldc.i4.0
+    IL_02a0:  ldelem.i2
+    IL_02a1:  conv.r4
+    IL_02a2:  ldc.r4     32767.
+    IL_02a7:  div
+    IL_02a8:  stloc.s    moveHorizontal
+//000107: 					if (Math.Abs(moveHorizontal) < DeadZone)
+    IL_02aa:  ldloc.s    moveHorizontal
+    IL_02ac:  call       float32 [mscorlib]System.Math::Abs(float32)
+    IL_02b1:  ldloc.s    DeadZone
+    IL_02b3:  clt
+    IL_02b5:  ldc.i4.0
+    IL_02b6:  ceq
+    IL_02b8:  stloc.s    CS$4$0000
+    IL_02ba:  ldloc.s    CS$4$0000
+    IL_02bc:  brtrue.s   IL_02c5
+
+//000108: 						moveHorizontal = 0.0f;
+    IL_02be:  ldc.r4     0.0
+    IL_02c3:  stloc.s    moveHorizontal
+//000109: 
+//000110: 					moveVertical = joystickState.Axis[1] / -32767.0f; // "1" for Y axis
+    IL_02c5:  ldsflda    valuetype [IrrlichtLime]IrrlichtLime.Event/JoystickEvent _19.MouseAndJoystick.Program::joystickState
+    IL_02ca:  ldfld      int16[] [IrrlichtLime]IrrlichtLime.Event/JoystickEvent::Axis
+    IL_02cf:  ldc.i4.1
+    IL_02d0:  ldelem.i2
+    IL_02d1:  conv.r4
+    IL_02d2:  ldc.r4     -32767.
+    IL_02d7:  div
+    IL_02d8:  stloc.s    moveVertical
+//000111: 					if (Math.Abs(moveVertical) < DeadZone)
+    IL_02da:  ldloc.s    moveVertical
+    IL_02dc:  call       float32 [mscorlib]System.Math::Abs(float32)
+    IL_02e1:  ldloc.s    DeadZone
+    IL_02e3:  clt
+    IL_02e5:  ldc.i4.0
+    IL_02e6:  ceq
+    IL_02e8:  stloc.s    CS$4$0000
+    IL_02ea:  ldloc.s    CS$4$0000
+    IL_02ec:  brtrue.s   IL_02f5
+
+//000112: 						moveVertical = 0.0f;
+    IL_02ee:  ldc.r4     0.0
+    IL_02f3:  stloc.s    moveVertical
+//000113: 
+//000114: 					// POV will contain 65535 if POV hat info no0t supported, so we can check its range.
+//000115: 					ushort povDegrees = (ushort)(joystickState.POV / 100);
+    IL_02f5:  ldsflda    valuetype [IrrlichtLime]IrrlichtLime.Event/JoystickEvent _19.MouseAndJoystick.Program::joystickState
+    IL_02fa:  ldfld      uint16 [IrrlichtLime]IrrlichtLime.Event/JoystickEvent::POV
+    IL_02ff:  ldc.i4.s   100
+    IL_0301:  div
+    IL_0302:  conv.u2
+    IL_0303:  stloc.s    povDegrees
+//000116: 					if (povDegrees < 360)
+    IL_0305:  ldloc.s    povDegrees
+    IL_0307:  ldc.i4     0x168
+    IL_030c:  clt
+    IL_030e:  ldc.i4.0
+    IL_030f:  ceq
+    IL_0311:  stloc.s    CS$4$0000
+    IL_0313:  ldloc.s    CS$4$0000
+    IL_0315:  brtrue     IL_039e
+
+//000117: 					{
+    IL_031a:  nop
+//000118: 						if (povDegrees > 0 && povDegrees < 180)
+    IL_031b:  ldloc.s    povDegrees
+    IL_031d:  ldc.i4.0
+    IL_031e:  ble.s      IL_032e
+
+    IL_0320:  ldloc.s    povDegrees
+    IL_0322:  ldc.i4     0xb4
+    IL_0327:  clt
+    IL_0329:  ldc.i4.0
+    IL_032a:  ceq
+    IL_032c:  br.s       IL_032f
+
+    IL_032e:  ldc.i4.1
+    IL_032f:  stloc.s    CS$4$0000
+    IL_0331:  ldloc.s    CS$4$0000
+    IL_0333:  brtrue.s   IL_033e
+
+//000119: 							moveHorizontal = +1.0f;
+    IL_0335:  ldc.r4     1.
+    IL_033a:  stloc.s    moveHorizontal
+    IL_033c:  br.s       IL_0357
+
+//000120: 						else if (povDegrees > 180)
+    IL_033e:  ldloc.s    povDegrees
+    IL_0340:  ldc.i4     0xb4
+    IL_0345:  cgt
+    IL_0347:  ldc.i4.0
+    IL_0348:  ceq
+    IL_034a:  stloc.s    CS$4$0000
+    IL_034c:  ldloc.s    CS$4$0000
+    IL_034e:  brtrue.s   IL_0357
+
+//000121: 							moveHorizontal = -1.0f;
+    IL_0350:  ldc.r4     -1.
+    IL_0355:  stloc.s    moveHorizontal
+//000122: 
+//000123: 						if (povDegrees > 90 && povDegrees < 270)
+    IL_0357:  ldloc.s    povDegrees
+    IL_0359:  ldc.i4.s   90
+    IL_035b:  ble.s      IL_036b
+
+    IL_035d:  ldloc.s    povDegrees
+    IL_035f:  ldc.i4     0x10e
+    IL_0364:  clt
+    IL_0366:  ldc.i4.0
+    IL_0367:  ceq
+    IL_0369:  br.s       IL_036c
+
+    IL_036b:  ldc.i4.1
+    IL_036c:  stloc.s    CS$4$0000
+    IL_036e:  ldloc.s    CS$4$0000
+    IL_0370:  brtrue.s   IL_037b
+
+//000124: 							moveVertical = -1.0f;
+    IL_0372:  ldc.r4     -1.
+    IL_0377:  stloc.s    moveVertical
+    IL_0379:  br.s       IL_039d
+
+//000125: 						else if (povDegrees > 270 || povDegrees < 90)
+    IL_037b:  ldloc.s    povDegrees
+    IL_037d:  ldc.i4     0x10e
+    IL_0382:  bgt.s      IL_038f
+
+    IL_0384:  ldloc.s    povDegrees
+    IL_0386:  ldc.i4.s   90
+    IL_0388:  clt
+    IL_038a:  ldc.i4.0
+    IL_038b:  ceq
+    IL_038d:  br.s       IL_0390
+
+    IL_038f:  ldc.i4.0
+    IL_0390:  stloc.s    CS$4$0000
+    IL_0392:  ldloc.s    CS$4$0000
+    IL_0394:  brtrue.s   IL_039d
+
+//000126: 							moveVertical = +1.0f;
+    IL_0396:  ldc.r4     1.
+    IL_039b:  stloc.s    moveVertical
+//000127: 					}
+    IL_039d:  nop
+//000128: 
+//000129: 					// If we have any movement, apply it.
+//000130: 					if (Math.Abs(moveHorizontal) > 0.0001f || Math.Abs(moveVertical) > 0.0001f)
+    IL_039e:  ldloc.s    moveHorizontal
+    IL_03a0:  call       float32 [mscorlib]System.Math::Abs(float32)
+    IL_03a5:  ldc.r4     9.9999997e-005
+    IL_03aa:  bgt.s      IL_03bf
+
+    IL_03ac:  ldloc.s    moveVertical
+    IL_03ae:  call       float32 [mscorlib]System.Math::Abs(float32)
+    IL_03b3:  ldc.r4     9.9999997e-005
+    IL_03b8:  cgt
+    IL_03ba:  ldc.i4.0
+    IL_03bb:  ceq
+    IL_03bd:  br.s       IL_03c0
+
+    IL_03bf:  ldc.i4.0
+    IL_03c0:  stloc.s    CS$4$0000
+    IL_03c2:  ldloc.s    CS$4$0000
+    IL_03c4:  brtrue.s   IL_03ed
+
+//000131: 					{
+    IL_03c6:  nop
+//000132: 						float m = frameDeltaTime * MovementSpeed;
+    IL_03c7:  ldloc.s    frameDeltaTime
+    IL_03c9:  ldc.r4     5.
+    IL_03ce:  mul
+    IL_03cf:  stloc.s    m
+//000133: 						nodePosition = new Vector3Df(moveHorizontal * m, moveVertical * m, nodePosition.Z);
+    IL_03d1:  ldloc.s    moveHorizontal
+    IL_03d3:  ldloc.s    m
+    IL_03d5:  mul
+    IL_03d6:  ldloc.s    moveVertical
+    IL_03d8:  ldloc.s    m
+    IL_03da:  mul
+    IL_03db:  ldloc.s    nodePosition
+    IL_03dd:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Z()
+    IL_03e2:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_03e7:  stloc.s    nodePosition
+//000134: 						movedWithJoystick = true;
+    IL_03e9:  ldc.i4.1
+    IL_03ea:  stloc.s    movedWithJoystick
+//000135: 					}
+    IL_03ec:  nop
+//000136: 				}
+    IL_03ed:  nop
+//000137: 
+//000138: 				// If the arrow node isn't being moved with the joystick, then have it follow the mouse cursor.
+//000139: 				if (!movedWithJoystick)
+    IL_03ee:  ldloc.s    movedWithJoystick
+    IL_03f0:  stloc.s    CS$4$0000
+    IL_03f2:  ldloc.s    CS$4$0000
+    IL_03f4:  brtrue     IL_0496
+
+//000140: 				{
+    IL_03f9:  nop
+//000141: 					// Create a ray through the mouse cursor.
+//000142: 					Line3Df ray = smgr.SceneCollisionManager.GetRayFromScreenCoordinates(mouseState.Position, camera);
+    IL_03fa:  ldloc.3
+    IL_03fb:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneCollisionManager [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_SceneCollisionManager()
+    IL_0400:  ldsfld     class _19.MouseAndJoystick.Program/MouseStateInfo _19.MouseAndJoystick.Program::mouseState
+    IL_0405:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.Vector2Di _19.MouseAndJoystick.Program/MouseStateInfo::Position
+    IL_040a:  ldloc.s    camera
+    IL_040c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Line3Df [IrrlichtLime]IrrlichtLime.Scene.SceneCollisionManager::GetRayFromScreenCoordinates(class [IrrlichtLime]IrrlichtLime.Core.Vector2Di,
+                                                                                                                                                                    class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode)
+    IL_0411:  stloc.s    ray
+//000143: 
+//000144: 					// And intersect the ray with a plane around the node facing towards the camera.
+//000145: 					Plane3Df plane = new Plane3Df(nodePosition, new Vector3Df(0, 0, -1));
+    IL_0413:  ldloc.s    nodePosition
+    IL_0415:  ldc.r4     0.0
+    IL_041a:  ldc.r4     0.0
+    IL_041f:  ldc.r4     -1.
+    IL_0424:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0429:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Plane3Df::.ctor(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_042e:  stloc.s    plane
+//000146: 					Vector3Df mousePosition;
+//000147: 					if (plane.GetIntersectionWithLine(ray.Start, ray.Vector, out mousePosition))
+    IL_0430:  ldloc.s    plane
+    IL_0432:  ldloc.s    ray
+    IL_0434:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Line3Df::get_Start()
+    IL_0439:  ldloc.s    ray
+    IL_043b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Line3Df::get_Vector()
+    IL_0440:  ldloca.s   mousePosition
+    IL_0442:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Core.Plane3Df::GetIntersectionWithLine(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                         class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                         class [IrrlichtLime]IrrlichtLime.Core.Vector3Df&)
+    IL_0447:  ldc.i4.0
+    IL_0448:  ceq
+    IL_044a:  stloc.s    CS$4$0000
+    IL_044c:  ldloc.s    CS$4$0000
+    IL_044e:  brtrue.s   IL_0495
+
+//000148: 					{
+    IL_0450:  nop
+//000149: 						// We now have a mouse position in 3d space; move towards it.
+//000150: 						Vector3Df toMousePosition = mousePosition - nodePosition;
+    IL_0451:  ldloc.s    mousePosition
+    IL_0453:  ldloc.s    nodePosition
+    IL_0455:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Subtraction(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                   class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_045a:  stloc.s    toMousePosition
+//000151: 						float availableMovement = frameDeltaTime * MovementSpeed;
+    IL_045c:  ldloc.s    frameDeltaTime
+    IL_045e:  ldc.r4     5.
+    IL_0463:  mul
+    IL_0464:  stloc.s    availableMovement
+//000152: 
+//000153: 						if (toMousePosition.Length <= availableMovement)
+    IL_0466:  ldloc.s    toMousePosition
+    IL_0468:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Length()
+    IL_046d:  ldloc.s    availableMovement
+    IL_046f:  cgt.un
+    IL_0471:  stloc.s    CS$4$0000
+    IL_0473:  ldloc.s    CS$4$0000
+    IL_0475:  brtrue.s   IL_047d
+
+//000154: 							nodePosition = mousePosition; // jump to the final position
+    IL_0477:  ldloc.s    mousePosition
+    IL_0479:  stloc.s    nodePosition
+    IL_047b:  br.s       IL_0494
+
+//000155: 						else
+//000156: 							nodePosition += toMousePosition.Normalize() * availableMovement; // move towards it
+    IL_047d:  ldloc.s    nodePosition
+    IL_047f:  ldloc.s    toMousePosition
+    IL_0481:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::Normalize()
+    IL_0486:  ldloc.s    availableMovement
+    IL_0488:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Multiply(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                float32)
+    IL_048d:  call       class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::op_Addition(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0492:  stloc.s    nodePosition
+//000157: 					}
+    IL_0494:  nop
+//000158: 				}
+    IL_0495:  nop
+//000159: 
+//000160: 				node.Position = nodePosition;
+    IL_0496:  ldloc.s    node
+    IL_0498:  ldloc.s    nodePosition
+    IL_049a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_049f:  nop
+//000161: 
+//000162: 				// Turn lighting on and off depending on whether the left mouse button is down.
+//000163: 				node.SetMaterialFlag(MaterialFlag.Lighting, mouseState.IsLeftButtonDown);
+    IL_04a0:  ldloc.s    node
+    IL_04a2:  ldc.i4.8
+    IL_04a3:  ldsfld     class _19.MouseAndJoystick.Program/MouseStateInfo _19.MouseAndJoystick.Program::mouseState
+    IL_04a8:  ldfld      bool _19.MouseAndJoystick.Program/MouseStateInfo::IsLeftButtonDown
+    IL_04ad:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_04b2:  nop
+//000164: 
+//000165: 				// Draw all.
+//000166: 				driver.BeginScene(true, true, new Color(113, 113, 133));
+    IL_04b3:  ldloc.2
+    IL_04b4:  ldc.i4.1
+    IL_04b5:  ldc.i4.1
+    IL_04b6:  ldc.i4.s   113
+    IL_04b8:  ldc.i4.s   113
+    IL_04ba:  ldc.i4     0x85
+    IL_04bf:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_04c4:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool,
+                                                                                                bool,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_04c9:  pop
+//000167: 				smgr.DrawAll();
+    IL_04ca:  ldloc.3
+    IL_04cb:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_04d0:  nop
+//000168: 				driver.EndScene();
+    IL_04d1:  ldloc.2
+    IL_04d2:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_04d7:  pop
+//000169: 			}
+    IL_04d8:  nop
+//000085: 			while (device.Run())
+    IL_04d9:  ldloc.1
+    IL_04da:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_04df:  stloc.s    CS$4$0000
+    IL_04e1:  ldloc.s    CS$4$0000
+    IL_04e3:  brtrue     IL_023c
+
+//000086: 			{
+//000087: 				// Work out a frame delta time.
+//000088: 				uint now = device.Timer.Time;
+//000089: 				float frameDeltaTime = (float)(now - then) / 1000.0f; // in seconds
+//000090: 				then = now;
+//000091: 
+//000092: 				bool movedWithJoystick = false;
+//000093: 				Vector3Df nodePosition = node.Position;
+//000094: 
+//000095: 				if (joystickList.Count > 0)
+//000096: 				{
+//000097: 					float moveHorizontal = 0.0f; // range is -1.0 for full left to +1.0 for full right
+//000098: 					float moveVertical = 0.0f; // range is -1.0 for full down to +1.0 for full up
+//000099: 
+//000100: 					// We receive the full analog range of the axes, and so have to implement our own dead zone.
+//000101: 					// This is an empirical value, since some joysticks have more jitter or creep around the center
+//000102: 					// point than others. We'll use 5% of the range as the dead zone, but generally you would want
+//000103: 					// to give the user the option to change this.
+//000104: 					float DeadZone = 0.05f;
+//000105: 
+//000106: 					moveHorizontal = joystickState.Axis[0] / 32767.0f; // "0" for X axis
+//000107: 					if (Math.Abs(moveHorizontal) < DeadZone)
+//000108: 						moveHorizontal = 0.0f;
+//000109: 
+//000110: 					moveVertical = joystickState.Axis[1] / -32767.0f; // "1" for Y axis
+//000111: 					if (Math.Abs(moveVertical) < DeadZone)
+//000112: 						moveVertical = 0.0f;
+//000113: 
+//000114: 					// POV will contain 65535 if POV hat info no0t supported, so we can check its range.
+//000115: 					ushort povDegrees = (ushort)(joystickState.POV / 100);
+//000116: 					if (povDegrees < 360)
+//000117: 					{
+//000118: 						if (povDegrees > 0 && povDegrees < 180)
+//000119: 							moveHorizontal = +1.0f;
+//000120: 						else if (povDegrees > 180)
+//000121: 							moveHorizontal = -1.0f;
+//000122: 
+//000123: 						if (povDegrees > 90 && povDegrees < 270)
+//000124: 							moveVertical = -1.0f;
+//000125: 						else if (povDegrees > 270 || povDegrees < 90)
+//000126: 							moveVertical = +1.0f;
+//000127: 					}
+//000128: 
+//000129: 					// If we have any movement, apply it.
+//000130: 					if (Math.Abs(moveHorizontal) > 0.0001f || Math.Abs(moveVertical) > 0.0001f)
+//000131: 					{
+//000132: 						float m = frameDeltaTime * MovementSpeed;
+//000133: 						nodePosition = new Vector3Df(moveHorizontal * m, moveVertical * m, nodePosition.Z);
+//000134: 						movedWithJoystick = true;
+//000135: 					}
+//000136: 				}
+//000137: 
+//000138: 				// If the arrow node isn't being moved with the joystick, then have it follow the mouse cursor.
+//000139: 				if (!movedWithJoystick)
+//000140: 				{
+//000141: 					// Create a ray through the mouse cursor.
+//000142: 					Line3Df ray = smgr.SceneCollisionManager.GetRayFromScreenCoordinates(mouseState.Position, camera);
+//000143: 
+//000144: 					// And intersect the ray with a plane around the node facing towards the camera.
+//000145: 					Plane3Df plane = new Plane3Df(nodePosition, new Vector3Df(0, 0, -1));
+//000146: 					Vector3Df mousePosition;
+//000147: 					if (plane.GetIntersectionWithLine(ray.Start, ray.Vector, out mousePosition))
+//000148: 					{
+//000149: 						// We now have a mouse position in 3d space; move towards it.
+//000150: 						Vector3Df toMousePosition = mousePosition - nodePosition;
+//000151: 						float availableMovement = frameDeltaTime * MovementSpeed;
+//000152: 
+//000153: 						if (toMousePosition.Length <= availableMovement)
+//000154: 							nodePosition = mousePosition; // jump to the final position
+//000155: 						else
+//000156: 							nodePosition += toMousePosition.Normalize() * availableMovement; // move towards it
+//000157: 					}
+//000158: 				}
+//000159: 
+//000160: 				node.Position = nodePosition;
+//000161: 
+//000162: 				// Turn lighting on and off depending on whether the left mouse button is down.
+//000163: 				node.SetMaterialFlag(MaterialFlag.Lighting, mouseState.IsLeftButtonDown);
+//000164: 
+//000165: 				// Draw all.
+//000166: 				driver.BeginScene(true, true, new Color(113, 113, 133));
+//000167: 				smgr.DrawAll();
+//000168: 				driver.EndScene();
+//000169: 			}
+//000170: 
+//000171: 			// Drop the device.
+//000172: 
+//000173: 			device.Drop();
+    IL_04e8:  ldloc.1
+    IL_04e9:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_04ee:  pop
+//000174: 		}
+    IL_04ef:  ret
+  } // end of method Program::Main
+
+  .method private hidebysig static bool  device_OnEvent(class [IrrlichtLime]IrrlichtLime.Event evnt) cil managed
+  {
+    // Code size       164 (0xa4)
+    .maxstack  4
+    .locals init ([0] bool CS$1$0000,
+             [1] bool CS$4$0001,
+             [2] valuetype [IrrlichtLime]IrrlichtLime.MouseEventType CS$4$0002)
+//000175: 
+//000176: 		// We'll create a class to record info on the mouse state.
+//000177: 		class MouseStateInfo
+//000178: 		{
+//000179: 			public Vector2Di Position = new Vector2Di();
+//000180: 			public bool IsLeftButtonDown = false;
+//000181: 		}
+//000182: 
+//000183: 		static MouseStateInfo mouseState = new MouseStateInfo();
+//000184: 		static Event.JoystickEvent joystickState;
+//000185: 
+//000186: 		static bool device_OnEvent(Event evnt)
+//000187: 		{
+    IL_0000:  nop
+//000188: 			// Remember the mouse state.
+//000189: 			if (evnt.Type == EventType.Mouse)
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.EventType [IrrlichtLime]IrrlichtLime.Event::get_Type()
+    IL_0007:  ldc.i4.1
+    IL_0008:  ceq
+    IL_000a:  ldc.i4.0
+    IL_000b:  ceq
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.1
+    IL_000f:  brtrue.s   IL_0070
+
+//000190: 			{
+    IL_0011:  nop
+//000191: 				switch (evnt.Mouse.Type)
+    IL_0012:  ldarg.0
+    IL_0013:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/MouseEvent [IrrlichtLime]IrrlichtLime.Event::get_Mouse()
+    IL_0018:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.MouseEventType [IrrlichtLime]IrrlichtLime.Event/MouseEvent::Type
+    IL_001d:  stloc.2
+    IL_001e:  ldloc.2
+    IL_001f:  ldc.i4.0
+    IL_0020:  beq.s      IL_002c
+
+    IL_0022:  ldloc.2
+    IL_0023:  ldc.i4.3
+    IL_0024:  beq.s      IL_0039
+
+    IL_0026:  ldloc.2
+    IL_0027:  ldc.i4.6
+    IL_0028:  beq.s      IL_0046
+
+    IL_002a:  br.s       IL_006d
+
+//000192: 				{
+//000193: 					case MouseEventType.LeftDown:
+//000194: 						mouseState.IsLeftButtonDown = true;
+    IL_002c:  ldsfld     class _19.MouseAndJoystick.Program/MouseStateInfo _19.MouseAndJoystick.Program::mouseState
+    IL_0031:  ldc.i4.1
+    IL_0032:  stfld      bool _19.MouseAndJoystick.Program/MouseStateInfo::IsLeftButtonDown
+//000195: 						break;
+    IL_0037:  br.s       IL_006f
+
+//000196: 
+//000197: 					case MouseEventType.LeftUp:
+//000198: 						mouseState.IsLeftButtonDown = false;
+    IL_0039:  ldsfld     class _19.MouseAndJoystick.Program/MouseStateInfo _19.MouseAndJoystick.Program::mouseState
+    IL_003e:  ldc.i4.0
+    IL_003f:  stfld      bool _19.MouseAndJoystick.Program/MouseStateInfo::IsLeftButtonDown
+//000199: 						break;
+    IL_0044:  br.s       IL_006f
+
+//000200: 
+//000201: 					case MouseEventType.Move:
+//000202: 						mouseState.Position = new Vector2Di(evnt.Mouse.X, evnt.Mouse.Y);
+    IL_0046:  ldsfld     class _19.MouseAndJoystick.Program/MouseStateInfo _19.MouseAndJoystick.Program::mouseState
+    IL_004b:  ldarg.0
+    IL_004c:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/MouseEvent [IrrlichtLime]IrrlichtLime.Event::get_Mouse()
+    IL_0051:  ldfld      int32 [IrrlichtLime]IrrlichtLime.Event/MouseEvent::X
+    IL_0056:  ldarg.0
+    IL_0057:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/MouseEvent [IrrlichtLime]IrrlichtLime.Event::get_Mouse()
+    IL_005c:  ldfld      int32 [IrrlichtLime]IrrlichtLime.Event/MouseEvent::Y
+    IL_0061:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_0066:  stfld      class [IrrlichtLime]IrrlichtLime.Core.Vector2Di _19.MouseAndJoystick.Program/MouseStateInfo::Position
+//000203: 						break;
+    IL_006b:  br.s       IL_006f
+
+//000204: 					
+//000205: 					default:
+//000206: 						// We won't use any other mouse events.
+//000207: 						break;
+    IL_006d:  br.s       IL_006f
+
+//000208: 				}
+//000209: 			}
+    IL_006f:  nop
+//000210: 
+//000211: 			// The state of each connected joystick is sent to us once every run() of the Irrlicht device.
+//000212: 			// Store the state of the first joystick, ignoring other joysticks.
+//000213: 			if (evnt.Type == EventType.Joystick &&
+    IL_0070:  ldarg.0
+    IL_0071:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.EventType [IrrlichtLime]IrrlichtLime.Event::get_Type()
+    IL_0076:  ldc.i4.3
+    IL_0077:  bne.un.s   IL_008c
+
+    IL_0079:  ldarg.0
+    IL_007a:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/JoystickEvent [IrrlichtLime]IrrlichtLime.Event::get_Joystick()
+    IL_007f:  ldfld      uint8 [IrrlichtLime]IrrlichtLime.Event/JoystickEvent::Joystick
+    IL_0084:  ldc.i4.0
+    IL_0085:  ceq
+    IL_0087:  ldc.i4.0
+    IL_0088:  ceq
+    IL_008a:  br.s       IL_008d
+
+    IL_008c:  ldc.i4.1
+    IL_008d:  stloc.1
+    IL_008e:  ldloc.1
+    IL_008f:  brtrue.s   IL_009e
+
+//000214: 				evnt.Joystick.Joystick == 0)
+//000215: 			{
+    IL_0091:  nop
+//000216: 				joystickState = evnt.Joystick;
+    IL_0092:  ldarg.0
+    IL_0093:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/JoystickEvent [IrrlichtLime]IrrlichtLime.Event::get_Joystick()
+    IL_0098:  stsfld     valuetype [IrrlichtLime]IrrlichtLime.Event/JoystickEvent _19.MouseAndJoystick.Program::joystickState
+//000217: 			}
+    IL_009d:  nop
+//000218: 
+//000219: 			return false;
+    IL_009e:  ldc.i4.0
+    IL_009f:  stloc.0
+    IL_00a0:  br.s       IL_00a2
+
+//000220: 		}
+    IL_00a2:  ldloc.0
+    IL_00a3:  ret
+  } // end of method Program::device_OnEvent
+
+  .method private hidebysig static bool  AskUserForDriver([out] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType& driverType) cil managed
+  {
+    // Code size       104 (0x68)
+    .maxstack  2
+    .locals init ([0] valuetype [mscorlib]System.ConsoleKeyInfo i,
+             [1] bool CS$1$0000,
+             [2] valuetype [mscorlib]System.ConsoleKey CS$4$0001)
+//000221: 
+//000222: 		static bool AskUserForDriver(out DriverType driverType)
+//000223: 		{
+    IL_0000:  nop
+//000224: 			driverType = DriverType.Null;
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  stind.i4
+//000225: 
+//000226: 			Console.Write("Please select the driver you want for this example:\n" +
+    IL_0004:  ldstr      "Please select the driver you want for this example"
+    + ":\n (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n (d) Burning's Softw"
+    + "are Renderer\n (e) Software Renderer\n (f) NullDevice\n (otherKey) exit\n\n"
+    IL_0009:  call       void [mscorlib]System.Console::Write(string)
+    IL_000e:  nop
+//000227: 						" (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n" +
+//000228: 						" (d) Burning's Software Renderer\n (e) Software Renderer\n" +
+//000229: 						" (f) NullDevice\n (otherKey) exit\n\n");
+//000230: 
+//000231: 			ConsoleKeyInfo i = Console.ReadKey();
+    IL_000f:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0014:  stloc.0
+//000232: 
+//000233: 			switch (i.Key)
+    IL_0015:  ldloca.s   i
+    IL_0017:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_001c:  stloc.2
+    IL_001d:  ldloc.2
+    IL_001e:  ldc.i4.s   65
+    IL_0020:  sub
+    IL_0021:  switch     ( 
+                          IL_0040,
+                          IL_0045,
+                          IL_004a,
+                          IL_004f,
+                          IL_0054,
+                          IL_0059)
+    IL_003e:  br.s       IL_005e
+
+//000234: 			{
+//000235: 				case ConsoleKey.A: driverType = DriverType.OpenGL; break;
+    IL_0040:  ldarg.0
+    IL_0041:  ldc.i4.5
+    IL_0042:  stind.i4
+    IL_0043:  br.s       IL_0062
+
+//000236: 				case ConsoleKey.B: driverType = DriverType.Direct3D9; break;
+    IL_0045:  ldarg.0
+    IL_0046:  ldc.i4.4
+    IL_0047:  stind.i4
+    IL_0048:  br.s       IL_0062
+
+//000237: 				case ConsoleKey.C: driverType = DriverType.Direct3D8; break;
+    IL_004a:  ldarg.0
+    IL_004b:  ldc.i4.3
+    IL_004c:  stind.i4
+    IL_004d:  br.s       IL_0062
+
+//000238: 				case ConsoleKey.D: driverType = DriverType.BurningsVideo; break;
+    IL_004f:  ldarg.0
+    IL_0050:  ldc.i4.2
+    IL_0051:  stind.i4
+    IL_0052:  br.s       IL_0062
+
+//000239: 				case ConsoleKey.E: driverType = DriverType.Software; break;
+    IL_0054:  ldarg.0
+    IL_0055:  ldc.i4.1
+    IL_0056:  stind.i4
+    IL_0057:  br.s       IL_0062
+
+//000240: 				case ConsoleKey.F: driverType = DriverType.Null; break;
+    IL_0059:  ldarg.0
+    IL_005a:  ldc.i4.0
+    IL_005b:  stind.i4
+    IL_005c:  br.s       IL_0062
+
+//000241: 				default:
+//000242: 					return false;
+    IL_005e:  ldc.i4.0
+    IL_005f:  stloc.1
+    IL_0060:  br.s       IL_0066
+
+//000243: 			}
+//000244: 
+//000245: 			return true;
+    IL_0062:  ldc.i4.1
+    IL_0063:  stloc.1
+    IL_0064:  br.s       IL_0066
+
+//000246: 		}
+    IL_0066:  ldloc.1
+    IL_0067:  ret
+  } // end of method Program::AskUserForDriver
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+  .method private hidebysig specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  8
+//000183: 		static MouseStateInfo mouseState = new MouseStateInfo();
+    IL_0000:  newobj     instance void _19.MouseAndJoystick.Program/MouseStateInfo::.ctor()
+    IL_0005:  stsfld     class _19.MouseAndJoystick.Program/MouseStateInfo _19.MouseAndJoystick.Program::mouseState
+    IL_000a:  ret
+  } // end of method Program::.cctor
+
+} // end of class _19.MouseAndJoystick.Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

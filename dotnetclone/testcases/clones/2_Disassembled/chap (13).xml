@@ -1,0 +1,354 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 2 example 5: Paragraphs"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldloc.0
+  IL_0013:  ldstr      "Chap0205.pdf"
+  IL_0018:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_001d:  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  IL_0022:  pop
+  IL_0023:  ldloc.0
+  IL_0024:  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  IL_0029:  nop
+  IL_002a:  ldstr      "This is my first paragraph. "
+  IL_002f:  ldstr      "Helvetica"
+  IL_0034:  ldc.r4     10.
+  IL_0039:  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32)
+  IL_003e:  newobj     instance void [iText]com.lowagie.text.Chunk::.ctor(string,
+                                                                          class [iText]com.lowagie.text.Font)
+  IL_0043:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(class [iText]com.lowagie.text.Chunk)
+  IL_0048:  stloc.1
+  IL_0049:  ldloc.1
+  IL_004a:  ldstr      "The leading of this paragraph is calculated automa"
+  + "gically. "
+  IL_004f:  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  IL_0054:  pop
+  IL_0055:  ldloc.1
+  IL_0056:  ldstr      "The default leading is 1.5 times the fontsize. "
+  IL_005b:  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  IL_0060:  pop
+  IL_0061:  ldloc.1
+  IL_0062:  ldstr      "You can add chunks "
+  IL_0067:  newobj     instance void [iText]com.lowagie.text.Chunk::.ctor(string)
+  IL_006c:  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  IL_0071:  pop
+  IL_0072:  ldloc.1
+  IL_0073:  ldstr      "or you can add phrases. "
+  IL_0078:  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(string)
+  IL_007d:  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  IL_0082:  pop
+  IL_0083:  ldloc.1
+  IL_0084:  ldstr      "Unless you change the leading with the method setL"
+  + "eading, the leading doesn't change if you add text with another leading"
+  + ". This can lead to some problems."
+  IL_0089:  ldstr      "Helvetica"
+  IL_008e:  ldc.r4     18.
+  IL_0093:  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32)
+  IL_0098:  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(string,
+                                                                           class [iText]com.lowagie.text.Font)
+  IL_009d:  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  IL_00a2:  pop
+  IL_00a3:  ldloc.0
+  IL_00a4:  ldloc.1
+  IL_00a5:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_00aa:  pop
+  IL_00ab:  ldstr      "This is my second paragraph. "
+  IL_00b0:  ldstr      "Helvetica"
+  IL_00b5:  ldc.r4     12.
+  IL_00ba:  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32)
+  IL_00bf:  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(string,
+                                                                           class [iText]com.lowagie.text.Font)
+  IL_00c4:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(class [iText]com.lowagie.text.Phrase)
+  IL_00c9:  stloc.2
+  IL_00ca:  ldloc.2
+  IL_00cb:  ldstr      "As you can see, it started on a new line."
+  IL_00d0:  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  IL_00d5:  pop
+  IL_00d6:  ldloc.0
+  IL_00d7:  ldloc.2
+  IL_00d8:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_00dd:  pop
+  IL_00de:  ldstr      "This is my third paragraph."
+  IL_00e3:  ldstr      "Helvetica"
+  IL_00e8:  ldc.r4     12.
+  IL_00ed:  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32)
+  IL_00f2:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string,
+                                                                              class [iText]com.lowagie.text.Font)
+  IL_00f7:  stloc.3
+  IL_00f8:  ldloc.0
+  IL_00f9:  ldnull
+  IL_00fa:  ldstr      "add"
+  IL_00ff:  ldc.i4.1
+  IL_0100:  newarr     [mscorlib]System.Object
+  IL_0105:  stloc.s    VB$t_array$S0
+  IL_0107:  ldloc.s    VB$t_array$S0
+  IL_0109:  ldc.i4.0
+  IL_010a:  ldloc.3
+  IL_010b:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+  IL_0110:  stelem.ref
+  IL_0111:  nop
+  IL_0112:  ldloc.s    VB$t_array$S0
+  IL_0114:  stloc.s    VB$t_array$S1
+  IL_0116:  ldloc.s    VB$t_array$S1
+  IL_0118:  ldnull
+  IL_0119:  ldnull
+  IL_011a:  ldc.i4.1
+  IL_011b:  newarr     [mscorlib]System.Boolean
+  IL_0120:  stloc.s    VB$t_array$S2
+  IL_0122:  ldloc.s    VB$t_array$S2
+  IL_0124:  ldc.i4.0
+  IL_0125:  ldc.i4.1
+  IL_0126:  stelem.i1
+  IL_0127:  ldloc.s    VB$t_array$S2
+  IL_0129:  ldc.i4.1
+  IL_012a:  call       object [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.NewLateBinding::LateCall(object,
+                                                                                                                     class [mscorlib]System.Type,
+                                                                                                                     string,
+                                                                                                                     object[],
+                                                                                                                     string[],
+                                                                                                                     class [mscorlib]System.Type[],
+                                                                                                                     bool[],
+                                                                                                                     bool)
+  IL_012f:  pop
+  IL_0130:  ldloc.s    VB$t_array$S2
+  IL_0132:  ldc.i4.0
+  IL_0133:  ldelem.i1
+  IL_0134:  brfalse.s  IL_0140
+  IL_0136:  ldloc.s    VB$t_array$S1
+  IL_0138:  ldc.i4.0
+  IL_0139:  ldelem.ref
+  IL_013a:  call       object [mscorlib]System.Runtime.CompilerServices.RuntimeHelpers::GetObjectValue(object)
+  IL_013f:  stloc.3
+  IL_0140:  ldloc.0
+  IL_0141:  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  IL_0146:  nop
+  IL_0147:  nop
+  IL_0148:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 2 example 5: Paragraphs"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldloc.0
+  IL_0013:  ldstr      "Chap0205.pdf"
+  IL_0018:  ldc.i4.2
+  IL_0019:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_001e:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_0023:  pop
+  IL_0024:  ldloc.0
+  IL_0025:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_002a:  nop
+  IL_002b:  ldstr      "This is my first paragraph. "
+  IL_0030:  ldstr      "Helvetica"
+  IL_0035:  ldc.r4     10.
+  IL_003a:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  IL_003f:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                class [iTextdotNET]com.lowagie.text.Font)
+  IL_0044:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  IL_0049:  stloc.1
+  IL_004a:  ldloc.1
+  IL_004b:  ldstr      "The leading of this paragraph is calculated automa"
+  + "gically. "
+  IL_0050:  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  IL_0055:  pop
+  IL_0056:  ldloc.1
+  IL_0057:  ldstr      "The default leading is 1.5 times the fontsize. "
+  IL_005c:  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  IL_0061:  pop
+  IL_0062:  ldloc.1
+  IL_0063:  ldstr      "You can add chunks "
+  IL_0068:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+  IL_006d:  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  IL_0072:  pop
+  IL_0073:  ldloc.1
+  IL_0074:  ldstr      "or you can add phrases. "
+  IL_0079:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+  IL_007e:  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  IL_0083:  pop
+  IL_0084:  ldloc.1
+  IL_0085:  ldstr      "Unless you change the leading with the method setL"
+  + "eading, the leading doesn't change if you add text with another leading"
+  + ". This can lead to some problems."
+  IL_008a:  ldstr      "Helvetica"
+  IL_008f:  ldc.r4     18.
+  IL_0094:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  IL_0099:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string,
+                                                                                 class [iTextdotNET]com.lowagie.text.Font)
+  IL_009e:  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  IL_00a3:  pop
+  IL_00a4:  ldloc.0
+  IL_00a5:  ldloc.1
+  IL_00a6:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_00ab:  pop
+  IL_00ac:  ldstr      "This is my second paragraph. "
+  IL_00b1:  ldstr      "Helvetica"
+  IL_00b6:  ldc.r4     12.
+  IL_00bb:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  IL_00c0:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string,
+                                                                                 class [iTextdotNET]com.lowagie.text.Font)
+  IL_00c5:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(class [iTextdotNET]com.lowagie.text.Phrase)
+  IL_00ca:  stloc.2
+  IL_00cb:  ldloc.2
+  IL_00cc:  ldstr      "As you can see, it started on a new line."
+  IL_00d1:  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  IL_00d6:  pop
+  IL_00d7:  ldloc.0
+  IL_00d8:  ldloc.2
+  IL_00d9:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_00de:  pop
+  IL_00df:  ldstr      "This is my third paragraph."
+  IL_00e4:  ldstr      "Helvetica"
+  IL_00e9:  ldc.r4     12.
+  IL_00ee:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  IL_00f3:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                    class [iTextdotNET]com.lowagie.text.Font)
+  IL_00f8:  stloc.3
+  IL_00f9:  ldloc.0
+  IL_00fa:  ldloc.3
+  IL_00fb:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0100:  pop
+  IL_0101:  ldloc.0
+  IL_0102:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_0107:  nop
+  IL_0108:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 2 example 5: Paragraphs"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0014:  stloc.0
+  .try
+  {
+    IL_0015:  ldloc.0
+    IL_0016:  ldstr      "Chap0205.pdf"
+    IL_001b:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+    IL_0020:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+    IL_0025:  pop
+    IL_0026:  ldloc.0
+    IL_0027:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+    IL_002c:  ldstr      "This is my first paragraph. "
+    IL_0031:  ldstr      "Helvetica"
+    IL_0036:  ldc.r4     10.
+    IL_003b:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32)
+    IL_0040:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                  class [iTextdotNET]com.lowagie.text.Font)
+    IL_0045:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+    IL_004a:  stloc.1
+    IL_004b:  ldloc.1
+    IL_004c:  ldstr      "The leading of this paragraph is calculated automa"
+    + "gically. "
+    IL_0051:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+    IL_0056:  pop
+    IL_0057:  ldloc.1
+    IL_0058:  ldstr      "The default leading is 1.5 times the fontsize. "
+    IL_005d:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+    IL_0062:  pop
+    IL_0063:  ldloc.1
+    IL_0064:  ldstr      "You can add chunks "
+    IL_0069:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+    IL_006e:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+    IL_0073:  pop
+    IL_0074:  ldloc.1
+    IL_0075:  ldstr      "or you can add phrases. "
+    IL_007a:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+    IL_007f:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+    IL_0084:  pop
+    IL_0085:  ldloc.1
+    IL_0086:  ldstr      "Unless you change the leading with the method setL"
+    + "eading, the leading doesn't change if you add text with another leading"
+    + ". This can lead to some problems."
+    IL_008b:  ldstr      "Helvetica"
+    IL_0090:  ldc.r4     18.
+    IL_0095:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32)
+    IL_009a:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string,
+                                                                                   class [iTextdotNET]com.lowagie.text.Font)
+    IL_009f:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+    IL_00a4:  pop
+    IL_00a5:  ldloc.0
+    IL_00a6:  ldloc.1
+    IL_00a7:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_00ac:  pop
+    IL_00ad:  ldstr      "This is my second paragraph. "
+    IL_00b2:  ldstr      "Helvetica"
+    IL_00b7:  ldc.r4     12.
+    IL_00bc:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32)
+    IL_00c1:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string,
+                                                                                   class [iTextdotNET]com.lowagie.text.Font)
+    IL_00c6:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(class [iTextdotNET]com.lowagie.text.Phrase)
+    IL_00cb:  stloc.2
+    IL_00cc:  ldloc.2
+    IL_00cd:  ldstr      "As you can see, it started on a new line."
+    IL_00d2:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+    IL_00d7:  pop
+    IL_00d8:  ldloc.0
+    IL_00d9:  ldloc.2
+    IL_00da:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_00df:  pop
+    IL_00e0:  ldstr      "This is my third paragraph."
+    IL_00e5:  ldstr      "Helvetica"
+    IL_00ea:  ldc.r4     12.
+    IL_00ef:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32)
+    IL_00f4:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string,
+                                                                                      class [iTextdotNET]com.lowagie.text.Font)
+    IL_00f9:  stloc.3
+    IL_00fa:  ldloc.0
+    IL_00fb:  ldloc.3
+    IL_00fc:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_0101:  pop
+    IL_0102:  leave.s    IL_0134
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+    IL_0104:  dup
+    IL_0105:  stloc.s    V_6
+    IL_0107:  stloc.s    de
+    IL_0109:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_010e:  ldloc.s    de
+    IL_0110:  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+    IL_0115:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_011a:  leave.s    IL_0134
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+    IL_011c:  dup
+    IL_011d:  stloc.s    V_7
+    IL_011f:  stloc.s    ioe
+    IL_0121:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_0126:  ldloc.s    ioe
+    IL_0128:  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+    IL_012d:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_0132:  leave.s    IL_0134
+  }  // end handler
+  IL_0134:  ldloc.0
+  IL_0135:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_013a:  br.s       IL_013c
+  IL_013c:  ret
+
+]]></source>
+</source_elements></project>

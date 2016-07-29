@@ -1,0 +1,109 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+      IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 1 example 1: Hello World"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldloc.0
+  IL_0013:  ldstr      "Chap0101.pdf"
+  IL_0018:  ldc.i4.2
+  IL_0019:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_001e:  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [mscorlib]System.IO.Stream)
+  IL_0023:  pop
+  IL_0024:  ldloc.0
+  IL_0025:  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  IL_002a:  nop
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "Hello World"
+  IL_0031:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0036:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_003b:  pop
+  IL_003c:  ldloc.0
+  IL_003d:  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  IL_0042:  nop
+  IL_0043:  nop
+  IL_0044:  ret
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 1 example 1: Hello World"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldloc.0
+  IL_0013:  ldstr      "Chap0101.pdf"
+  IL_0018:  ldc.i4.2
+  IL_0019:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_001e:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_0023:  pop
+  IL_0024:  ldloc.0
+  IL_0025:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_002a:  nop
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "Hello World"
+  IL_0031:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0036:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_003b:  pop
+  IL_003c:  ldloc.0
+  IL_003d:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_0042:  nop
+  IL_0043:  ret
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+  IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 1 example 1: Hello World"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0014:  stloc.0
+  .try
+  {
+    IL_0015:  ldloc.0
+    IL_0016:  ldstr      "Chap0101.pdf"
+    IL_001b:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+    IL_0020:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+    IL_0025:  pop
+    IL_0026:  ldloc.0
+    IL_0027:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+    IL_002c:  ldloc.0
+    IL_002d:  ldstr      "Hello World"
+    IL_0032:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+    IL_0037:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_003c:  pop
+    IL_003d:  leave.s    IL_006a
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+    IL_003f:  dup
+    IL_0040:  stloc.3
+    IL_0041:  stloc.1
+    IL_0042:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_0047:  ldloc.1
+    IL_0048:  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+    IL_004d:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_0052:  leave.s    IL_006a
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+    IL_0054:  dup
+    IL_0055:  stloc.s    V_4
+    IL_0057:  stloc.2
+    IL_0058:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_005d:  ldloc.2
+    IL_005e:  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+    IL_0063:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_0068:  leave.s    IL_006a
+  }  // end handler
+  IL_006a:  ldloc.0
+  IL_006b:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_0070:  br.s       IL_0072
+  IL_0072:  ret
+]]></source>
+</source_elements></project>

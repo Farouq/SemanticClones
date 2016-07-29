@@ -1,0 +1,148 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\06.2DGraphics\Program.cs" startline="16" endline="86"><![CDATA[
+ 		{
+ 			DriverType driverType;
+ 			if (!AskUserForDriver(out driverType))
+ 				return;
+ 
+ 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(driverType, new Dimension2Di(512, 384));
+ 			if (device == null)
+ 				return;
+ 
+ 			device.SetWindowCaption("Irrlicht Engine - 2D Graphics Demo");
+ 
+ 			VideoDriver driver = device.VideoDriver;
+ 
+ 			Texture images = driver.GetTexture("../../media/2ddemo.png");
+ 			driver.MakeColorKeyTexture(images, new Vector2Di(0, 0));
+ 
+ 			GUIFont font = device.GUIEnvironment.BuiltInFont;
+ 			GUIFont font2 = device.GUIEnvironment.GetFont("../../media/fonthaettenschweiler.bmp");
+ 
+ 			Recti imp1 = new Recti(349, 15, 385, 78);
+ 			Recti imp2 = new Recti(387, 15, 423, 78);
+ 
+ 			driver.Material2D.Layer[0].BilinearFilter = true;
+ 			driver.Material2D.AntiAliasing = AntiAliasingMode.FullBasic;
+ 
+ 			while (device.Run())
+ 			{
+ 				if (device.WindowActive)
+ 				{
+ 					int time = (int)device.Timer.Time;
+ 
+ 					driver.BeginScene(true, true, new Color(120, 102, 136));
+ 
+ 					// draw fire & dragons background world
+ 					driver.Draw2DImage(images, new Vector2Di(50, 50),
+ 						new Recti(0, 0, 342, 224), null,
+ 						new Color(255, 255, 255), true);
+ 
+ 					// draw flying imp
+ 					driver.Draw2DImage(images, new Vector2Di(164, 125),
+ 						(time / 500 % 2) == 1 ? imp1 
+ 						new Color(255, 255, 255), true);
+ 
+ 					// draw second flying imp with colorcylce
+ 					driver.Draw2DImage(images, new Vector2Di(270, 105),
+ 						(time / 500 % 2) == 1 ? imp1 
+ 						new Color(time % 255, 255, 255), true);
+ 
+ 					// draw some text
+ 					if (font != null)
+ 						font.Draw("This demo shows that Irrlicht is also capable of drawing 2D graphics.",
+ 							130, 10, new Color(255, 255, 255));
+ 
+ 					// draw some other text
+ 					if (font2 != null)
+ 						font2.Draw("Also mixing with 3d graphics is possible.",
+ 							130, 20, new Color(time % 255, time % 255, 255));
+ 
+ 					driver.EnableMaterial2D();
+ 					driver.Draw2DImage(images, new Recti(10, 10, 108, 48), new Recti(354, 87, 442, 118));
+ 					driver.EnableMaterial2D(false);
+ 
+ 					Vector2Di m = device.CursorControl.Position;
+ 					driver.Draw2DRectangle(new Recti(m.X - 20, m.Y - 20, m.X + 20, m.Y + 20), new Color(255, 255, 255, 100));
+ 
+ 					driver.EndScene();
+ 				}
+ 			}
+ 			while (device.Run())
+ 			{
+ 				if (device.WindowActive)
+ 				{
+ 					int time = (int)device.Timer.Time;
+ 
+ 					driver.BeginScene(true, true, new Color(120, 102, 136));
+ 
+ 					// draw fire & dragons background world
+ 					driver.Draw2DImage(images, new Vector2Di(50, 50),
+ 						new Recti(0, 0, 342, 224), null,
+ 						new Color(255, 255, 255), true);
+ 
+ 					// draw flying imp
+ 					driver.Draw2DImage(images, new Vector2Di(164, 125),
+ 						(time / 500 % 2) == 1 ? imp1 
+ 						new Color(255, 255, 255), true);
+ 
+ 					// draw second flying imp with colorcylce
+ 					driver.Draw2DImage(images, new Vector2Di(270, 105),
+ 						(time / 500 % 2) == 1 ? imp1 
+ 						new Color(time % 255, 255, 255), true);
+ 
+ 					// draw some text
+ 					if (font != null)
+ 						font.Draw("This demo shows that Irrlicht is also capable of drawing 2D graphics.",
+ 							130, 10, new Color(255, 255, 255));
+ 
+ 					// draw some other text
+ 					if (font2 != null)
+ 						font2.Draw("Also mixing with 3d graphics is possible.",
+ 							130, 20, new Color(time % 255, time % 255, 255));
+ 
+ 					driver.EnableMaterial2D();
+ 					driver.Draw2DImage(images, new Recti(10, 10, 108, 48), new Recti(354, 87, 442, 118));
+ 					driver.EnableMaterial2D(false);
+ 
+ 					Vector2Di m = device.CursorControl.Position;
+ 					driver.Draw2DRectangle(new Recti(m.X - 20, m.Y - 20, m.X + 20, m.Y + 20), new Color(255, 255, 255, 100));
+ 
+ 					driver.EndScene();
+ 				}
+ 			}
+ 
+ 			device.Drop();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\06.2DGraphics\Program.cs" startline="87" endline="112"><![CDATA[
+ 
+ 		static bool AskUserForDriver(out DriverType driverType)
+ 		{
+ 			driverType = DriverType.Null;
+ 
+ 			Console.Write("Please select the driver you want for this example
+ 						" (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n" +
+ 						" (d) Burning's Software Renderer\n (e) Software Renderer\n" +
+ 						" (f) NullDevice\n (otherKey) exit\n\n");
+ 
+ 			ConsoleKeyInfo i = Console.ReadKey();
+ 
+ 			switch (i.Key)
+ 			{
+ 				case ConsoleKey.A
+ 				case ConsoleKey.B
+ 				case ConsoleKey.C
+ 				case ConsoleKey.D
+ 				case ConsoleKey.E
+ 				case ConsoleKey.F
+ 				default
+ 					return false;
+ 			}
+ 
+ 			return true;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\06.2DGraphics\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

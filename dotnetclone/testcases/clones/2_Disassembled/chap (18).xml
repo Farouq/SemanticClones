@@ -1,0 +1,142 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 7 example 3: parsing an XML document with "
+  + "custom tags"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  ldsfld     class [iText]com.lowagie.text.Rectangle [iText]com.lowagie.text.PageSize::A4
+  IL_0011:  ldc.r4     80.
+  IL_0016:  ldc.r4     50.
+  IL_001b:  ldc.r4     30.
+  IL_0020:  ldc.r4     65.
+  IL_0025:  newobj     instance void [iText]com.lowagie.text.Document::.ctor(class [iText]com.lowagie.text.Rectangle,
+                                                                             float32,
+                                                                             float32,
+                                                                             float32,
+                                                                             float32)
+  IL_002a:  stloc.0
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "Chap0703.pdf"
+  IL_0031:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_0036:  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  IL_003b:  pop
+  IL_003c:  call       class [Apache.Xml.Commons]javax.xml.parsers.SAXParserFactory [Apache.Xml.Commons]javax.xml.parsers.SAXParserFactory::newInstance()
+  IL_0041:  callvirt   instance class [Apache.Xml.Commons]javax.xml.parsers.SAXParser [Apache.Xml.Commons]javax.xml.parsers.SAXParserFactory::newSAXParser()
+  IL_0046:  stloc.1
+  IL_0047:  ldloc.1
+  IL_0048:  ldstr      "Chap0703.xml"
+  IL_004d:  ldloc.0
+  IL_004e:  ldstr      "tagmap0703.xml"
+  IL_0053:  newobj     instance void [iText]com.lowagie.text.xml.TagMap::.ctor(string)
+  IL_0058:  newobj     instance void [iText]com.lowagie.text.xml.SAXmyHandler::.ctor(class [iText]com.lowagie.text.DocListener,
+                                                                                     class [vjslib]java.util.HashMap)
+  IL_005d:  callvirt   instance void [Apache.Xml.Commons]javax.xml.parsers.SAXParser::parse(string,
+                                                                                            class [Apache.Xml.Commons]org.xml.sax.helpers.DefaultHandler)
+  IL_0062:  nop
+  IL_0063:  nop
+  IL_0064:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 7 example 3: parsing an XML document with "
+  + "custom tags"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  IL_0011:  ldc.r4     80.
+  IL_0016:  ldc.r4     50.
+  IL_001b:  ldc.r4     30.
+  IL_0020:  ldc.r4     65.
+  IL_0025:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  IL_002a:  stloc.0
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "Chap0703.pdf"
+  IL_0031:  ldc.i4.2
+  IL_0032:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_0037:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_003c:  pop
+  IL_003d:  call       class [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory::newInstance()
+  IL_0042:  callvirt   instance class [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParser [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory::newSAXParser()
+  IL_0047:  stloc.1
+  IL_0048:  ldloc.1
+  IL_0049:  ldstr      "Chap0703.xml"
+  IL_004e:  ldloc.0
+  IL_004f:  ldstr      "tagmap0703.xml"
+  IL_0054:  newobj     instance void [iTextdotNET]com.lowagie.text.xml.TagMap::.ctor(string)
+  IL_0059:  newobj     instance void [iTextdotNET]com.lowagie.text.xml.SAXmyHandler::.ctor(class [iTextdotNET]com.lowagie.text.DocListener,
+                                                                                           class [Gnu.Classpath.Core]jp.ujihara.java.util.HashMap)
+  IL_005e:  callvirt   instance void [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParser::parse(string,
+                                                                                                       class [Gnu.Classpath.JAXP]org.xml.sax.helpers.DefaultHandler)
+  IL_0063:  nop
+  IL_0064:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 7 example 3: parsing an XML document with "
+  + "custom tags"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  IL_0014:  ldc.r4     80.
+  IL_0019:  ldc.r4     50.
+  IL_001e:  ldc.r4     30.
+  IL_0023:  ldc.r4     65.
+  IL_0028:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  IL_002d:  stloc.0
+  IL_002e:  ldloc.0
+  IL_002f:  ldstr      "Chap0703.pdf"
+  IL_0034:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_0039:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [vjslib_7]java.io.OutputStream)
+  IL_003e:  pop
+  IL_003f:  call       class [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory::newInstance()
+  IL_0044:  callvirt   instance class [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParser [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParserFactory::newSAXParser()
+  IL_0049:  stloc.1
+  IL_004a:  ldloc.1
+  IL_004b:  ldstr      "Chap0703.xml"
+  IL_0050:  ldloc.0
+  IL_0051:  ldstr      "tagmap0703.xml"
+  IL_0056:  newobj     instance void [iTextdotNET]com.lowagie.text.xml.TagMap::.ctor(string)
+  IL_005b:  newobj     instance void [iTextdotNET]com.lowagie.text.xml.SAXmyHandler::.ctor(class [iTextdotNET]com.lowagie.text.DocListener,
+                                                                                           class [Gnu.Classpath.Core]jp.ujihara.java.util.HashMap)
+  IL_0060:  callvirt   instance void [Gnu.Classpath.JAXP]jp.ujihara.javax.xml.parsers.SAXParser::parse(string,
+                                                                                                       class [Gnu.Classpath.JAXP]org.xml.sax.helpers.DefaultHandler)
+  IL_0065:  leave.s    IL_0096
+  IL_0067:  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  IL_006c:  stloc.3
+  IL_006d:  ldloc.3
+  IL_006e:  brfalse.s  IL_0073
+  IL_0070:  ldc.i4.1
+  IL_0071:  br.s       IL_0074
+  IL_0073:  ldc.i4.0
+  IL_0074:  endfilter
+  IL_0076:  pop
+  IL_0077:  ldloc.3
+  IL_0078:  castclass  [vjslib]java.lang.Exception
+  IL_007d:  stloc.2
+  IL_007e:  ldloc.2
+  IL_007f:  callvirt   instance void [vjslib]java.lang.Throwable::printStackTrace()
+  IL_0084:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0089:  ldloc.2
+  IL_008a:  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  IL_008f:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_0094:  leave.s    IL_0096
+  IL_0096:  br.s       IL_0098
+  .try IL_002e to IL_0067 filter IL_0067 handler IL_0076 to IL_0096
+  IL_0098:  ret
+
+]]></source>
+</source_elements></project>

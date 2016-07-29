@@ -1,0 +1,1411 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly '10.Shaders'
+{
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0A 31 30 2E 53 68 61 64 65 72 73 00 00 )    // ...10.Shaders..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0A 31 30 2E 53 68 61 64 65 72 73 00 00 )    // ...10.Shaders..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 30 00 00 )                            //  2010..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 39 33 62 38 38 32 37 33 2D 35 39 37 36   // ..$93b88273-5976
+                                                                                                  2D 34 63 64 39 2D 38 31 35 30 2D 32 35 63 35 61   // -4cd9-8150-25c5a
+                                                                                                  37 39 65 62 62 39 33 00 00 )                      // 79ebb93..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public _10.Shaders.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.module '10.Shaders.exe'
+// MVID: {B16A02E5-5A10-44B3-875E-29215D8BBEC4}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x003F0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit _10.Shaders.Program
+       extends [mscorlib]System.Object
+{
+  .field private static class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device
+  .field private static bool useHighLevelShaders
+  .field private static bool useCgShaders
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       1348 (0x544)
+    .maxstack  10
+    .locals init ([0] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType,
+             [1] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [2] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+             [3] string vsFileName,
+             [4] string psFileName,
+             [5] class [IrrlichtLime]IrrlichtLime.Video.GPUProgrammingServices gpu,
+             [6] valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType newMaterialType1,
+             [7] valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType newMaterialType2,
+             [8] valuetype [IrrlichtLime]IrrlichtLime.Video.GPUShadingLanguage shadingLanguage,
+             [9] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode node,
+             [10] class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator anim,
+             [11] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode skybox,
+             [12] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode cam,
+             [13] int32 lastFPS,
+             [14] int32 fps,
+             [15] bool CS$4$0000,
+             [16] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType CS$4$0001)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\10.Shaders\Program.cs' 
+//000021: 		{
+    IL_0000:  nop
+//000022: 			DriverType driverType;
+//000023: 			if (!AskUserForDriver(out driverType))
+    IL_0001:  ldloca.s   driverType
+    IL_0003:  call       bool _10.Shaders.Program::AskUserForDriver(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType&)
+    IL_0008:  stloc.s    CS$4$0000
+    IL_000a:  ldloc.s    CS$4$0000
+    IL_000c:  brtrue.s   IL_0013
+
+//000024: 				return;
+    IL_000e:  br         IL_0543
+
+//000025: 
+//000026: 			useHighLevelShaders = AskUserForHighLevelShaders(driverType);
+    IL_0013:  ldloc.0
+    IL_0014:  call       bool _10.Shaders.Program::AskUserForHighLevelShaders(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType)
+    IL_0019:  stsfld     bool _10.Shaders.Program::useHighLevelShaders
+//000027: 
+//000028: 			if (useHighLevelShaders)
+    IL_001e:  ldsfld     bool _10.Shaders.Program::useHighLevelShaders
+    IL_0023:  ldc.i4.0
+    IL_0024:  ceq
+    IL_0026:  stloc.s    CS$4$0000
+    IL_0028:  ldloc.s    CS$4$0000
+    IL_002a:  brtrue.s   IL_0037
+
+//000029: 				useCgShaders = AskUserForCgShaders(driverType);
+    IL_002c:  ldloc.0
+    IL_002d:  call       bool _10.Shaders.Program::AskUserForCgShaders(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType)
+    IL_0032:  stsfld     bool _10.Shaders.Program::useCgShaders
+//000030: 
+//000031: 			device = IrrlichtDevice.CreateDevice(driverType, new Dimension2Di(640, 480));
+    IL_0037:  ldloc.0
+    IL_0038:  ldc.i4     0x280
+    IL_003d:  ldc.i4     0x1e0
+    IL_0042:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_0047:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+    IL_004c:  stsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+//000032: 			if (device == null)
+    IL_0051:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_0056:  ldnull
+    IL_0057:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_005c:  ldc.i4.0
+    IL_005d:  ceq
+    IL_005f:  stloc.s    CS$4$0000
+    IL_0061:  ldloc.s    CS$4$0000
+    IL_0063:  brtrue.s   IL_006a
+
+//000033: 				return;
+    IL_0065:  br         IL_0543
+
+//000034: 
+//000035: 			VideoDriver driver = device.VideoDriver;
+    IL_006a:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_006f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0074:  stloc.1
+//000036: 			SceneManager smgr = device.SceneManager;
+    IL_0075:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_007a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_007f:  stloc.2
+//000037: 
+//000038: 			string vsFileName = null; // filename for the vertex shader
+    IL_0080:  ldnull
+    IL_0081:  stloc.3
+//000039: 			string psFileName = null; // filename for the pixel shader
+    IL_0082:  ldnull
+    IL_0083:  stloc.s    psFileName
+//000040: 
+//000041: 			switch (driverType)
+    IL_0085:  ldloc.0
+    IL_0086:  stloc.s    CS$4$0001
+    IL_0088:  ldloc.s    CS$4$0001
+    IL_008a:  ldc.i4.3
+    IL_008b:  sub
+    IL_008c:  switch     ( 
+                          IL_00a2,
+                          IL_00b1,
+                          IL_00de)
+    IL_009d:  br         IL_012c
+
+//000042: 			{
+//000043: 				case DriverType.Direct3D8:
+//000044: 					psFileName = "../../media/d3d8.psh";
+    IL_00a2:  ldstr      "../../media/d3d8.psh"
+    IL_00a7:  stloc.s    psFileName
+//000045: 					vsFileName = "../../media/d3d8.vsh";
+    IL_00a9:  ldstr      "../../media/d3d8.vsh"
+    IL_00ae:  stloc.3
+//000046: 					break;
+    IL_00af:  br.s       IL_012c
+
+//000047: 
+//000048: 				case DriverType.Direct3D9:
+//000049: 					if (useHighLevelShaders)
+    IL_00b1:  ldsfld     bool _10.Shaders.Program::useHighLevelShaders
+    IL_00b6:  ldc.i4.0
+    IL_00b7:  ceq
+    IL_00b9:  stloc.s    CS$4$0000
+    IL_00bb:  ldloc.s    CS$4$0000
+    IL_00bd:  brtrue.s   IL_00cd
+
+//000050: 					{
+    IL_00bf:  nop
+//000051: 						// Cg can also handle this syntax
+//000052: 						psFileName = "../../media/d3d9.hlsl";
+    IL_00c0:  ldstr      "../../media/d3d9.hlsl"
+    IL_00c5:  stloc.s    psFileName
+//000053: 						vsFileName = psFileName; // both shaders are in the same file
+    IL_00c7:  ldloc.s    psFileName
+    IL_00c9:  stloc.3
+//000054: 					}
+    IL_00ca:  nop
+    IL_00cb:  br.s       IL_00dc
+
+//000055: 					else
+//000056: 					{
+    IL_00cd:  nop
+//000057: 						psFileName = "../../media/d3d9.psh";
+    IL_00ce:  ldstr      "../../media/d3d9.psh"
+    IL_00d3:  stloc.s    psFileName
+//000058: 						vsFileName = "../../media/d3d9.vsh";
+    IL_00d5:  ldstr      "../../media/d3d9.vsh"
+    IL_00da:  stloc.3
+//000059: 					}
+    IL_00db:  nop
+//000060: 					break;
+    IL_00dc:  br.s       IL_012c
+
+//000061: 
+//000062: 				case DriverType.OpenGL:
+//000063: 					if (useHighLevelShaders)
+    IL_00de:  ldsfld     bool _10.Shaders.Program::useHighLevelShaders
+    IL_00e3:  ldc.i4.0
+    IL_00e4:  ceq
+    IL_00e6:  stloc.s    CS$4$0000
+    IL_00e8:  ldloc.s    CS$4$0000
+    IL_00ea:  brtrue.s   IL_011b
+
+//000064: 					{
+    IL_00ec:  nop
+//000065: 						if (useCgShaders)
+    IL_00ed:  ldsfld     bool _10.Shaders.Program::useCgShaders
+    IL_00f2:  ldc.i4.0
+    IL_00f3:  ceq
+    IL_00f5:  stloc.s    CS$4$0000
+    IL_00f7:  ldloc.s    CS$4$0000
+    IL_00f9:  brtrue.s   IL_0109
+
+//000066: 						{
+    IL_00fb:  nop
+//000067: 							// Use HLSL syntax for Cg
+//000068: 							psFileName = "../../media/d3d9.hlsl";
+    IL_00fc:  ldstr      "../../media/d3d9.hlsl"
+    IL_0101:  stloc.s    psFileName
+//000069: 							vsFileName = psFileName; // both shaders are in the same file
+    IL_0103:  ldloc.s    psFileName
+    IL_0105:  stloc.3
+//000070: 						}
+    IL_0106:  nop
+    IL_0107:  br.s       IL_0118
+
+//000071: 						else
+//000072: 						{
+    IL_0109:  nop
+//000073: 							psFileName = "../../media/opengl.frag";
+    IL_010a:  ldstr      "../../media/opengl.frag"
+    IL_010f:  stloc.s    psFileName
+//000074: 							vsFileName = "../../media/opengl.vert";
+    IL_0111:  ldstr      "../../media/opengl.vert"
+    IL_0116:  stloc.3
+//000075: 						}
+    IL_0117:  nop
+//000076: 					}
+    IL_0118:  nop
+    IL_0119:  br.s       IL_012a
+
+//000077: 					else
+//000078: 					{
+    IL_011b:  nop
+//000079: 						psFileName = "../../media/opengl.psh";
+    IL_011c:  ldstr      "../../media/opengl.psh"
+    IL_0121:  stloc.s    psFileName
+//000080: 						vsFileName = "../../media/opengl.vsh";
+    IL_0123:  ldstr      "../../media/opengl.vsh"
+    IL_0128:  stloc.3
+//000081: 					}
+    IL_0129:  nop
+//000082: 					break;
+    IL_012a:  br.s       IL_012c
+
+//000083: 			}
+//000084: 
+//000085: 			if (!driver.QueryFeature(VideoDriverFeature.PixelShader_1_1) &&
+    IL_012c:  ldloc.1
+    IL_012d:  ldc.i4.s   10
+    IL_012f:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::QueryFeature(valuetype [IrrlichtLime]IrrlichtLime.Video.VideoDriverFeature)
+    IL_0134:  brtrue.s   IL_0140
+
+    IL_0136:  ldloc.1
+    IL_0137:  ldc.i4.s   17
+    IL_0139:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::QueryFeature(valuetype [IrrlichtLime]IrrlichtLime.Video.VideoDriverFeature)
+    IL_013e:  br.s       IL_0141
+
+    IL_0140:  ldc.i4.1
+    IL_0141:  stloc.s    CS$4$0000
+    IL_0143:  ldloc.s    CS$4$0000
+    IL_0145:  brtrue.s   IL_015c
+
+//000086: 				!driver.QueryFeature(VideoDriverFeature.ARB_FragmentProgram_1))
+//000087: 				device.Logger.Log("WARNING: Pixel shaders disabled because of missing driver/hardware support.");
+    IL_0147:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_014c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_0151:  ldstr      "WARNING: Pixel shaders disabled because of missing"
+    + " driver/hardware support."
+    IL_0156:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+    IL_015b:  nop
+//000088: 
+//000089: 			if (!driver.QueryFeature(VideoDriverFeature.VertexShader_1_1) &&
+    IL_015c:  ldloc.1
+    IL_015d:  ldc.i4.7
+    IL_015e:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::QueryFeature(valuetype [IrrlichtLime]IrrlichtLime.Video.VideoDriverFeature)
+    IL_0163:  brtrue.s   IL_016f
+
+    IL_0165:  ldloc.1
+    IL_0166:  ldc.i4.s   16
+    IL_0168:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::QueryFeature(valuetype [IrrlichtLime]IrrlichtLime.Video.VideoDriverFeature)
+    IL_016d:  br.s       IL_0170
+
+    IL_016f:  ldc.i4.1
+    IL_0170:  stloc.s    CS$4$0000
+    IL_0172:  ldloc.s    CS$4$0000
+    IL_0174:  brtrue.s   IL_018b
+
+//000090: 				!driver.QueryFeature(VideoDriverFeature.ARB_VertexProgram_1))
+//000091: 				device.Logger.Log("WARNING: Vertex shaders disabled because of missing driver/hardware support.");
+    IL_0176:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_017b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Logger [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Logger()
+    IL_0180:  ldstr      "WARNING: Vertex shaders disabled because of missin"
+    + "g driver/hardware support."
+    IL_0185:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Logger::Log(string)
+    IL_018a:  nop
+//000092: 
+//000093: 			// create materials
+//000094: 			
+//000095: 			GPUProgrammingServices gpu = driver.GPUProgrammingServices;
+    IL_018b:  ldloc.1
+    IL_018c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.GPUProgrammingServices [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_GPUProgrammingServices()
+    IL_0191:  stloc.s    gpu
+//000096: 			MaterialType newMaterialType1 = MaterialType.Solid;
+    IL_0193:  ldc.i4.0
+    IL_0194:  stloc.s    newMaterialType1
+//000097: 			MaterialType newMaterialType2 = MaterialType.TransparentAddColor;
+    IL_0196:  ldc.i4.s   12
+    IL_0198:  stloc.s    newMaterialType2
+//000098: 
+//000099: 			if (gpu != null)
+    IL_019a:  ldloc.s    gpu
+    IL_019c:  ldnull
+    IL_019d:  ceq
+    IL_019f:  stloc.s    CS$4$0000
+    IL_01a1:  ldloc.s    CS$4$0000
+    IL_01a3:  brtrue     IL_0233
+
+//000100: 			{
+    IL_01a8:  nop
+//000101: 				gpu.OnSetConstants += new GPUProgrammingServices.SetConstantsHandler(gpu_OnSetConstants);
+    IL_01a9:  ldloc.s    gpu
+    IL_01ab:  ldnull
+    IL_01ac:  ldftn      void _10.Shaders.Program::gpu_OnSetConstants(class [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices,
+                                                                      int32)
+    IL_01b2:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.GPUProgrammingServices/SetConstantsHandler::.ctor(object,
+                                                                                                                          native int)
+    IL_01b7:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.GPUProgrammingServices::add_OnSetConstants(class [IrrlichtLime]IrrlichtLime.Video.GPUProgrammingServices/SetConstantsHandler)
+    IL_01bc:  nop
+//000102: 
+//000103: 				// create the shaders depending on if the user wanted high level or low level shaders
+//000104: 
+//000105: 				if (useHighLevelShaders)
+    IL_01bd:  ldsfld     bool _10.Shaders.Program::useHighLevelShaders
+    IL_01c2:  ldc.i4.0
+    IL_01c3:  ceq
+    IL_01c5:  stloc.s    CS$4$0000
+    IL_01c7:  ldloc.s    CS$4$0000
+    IL_01c9:  brtrue.s   IL_0215
+
+//000106: 				{
+    IL_01cb:  nop
+//000107: 					GPUShadingLanguage shadingLanguage = useCgShaders
+    IL_01cc:  ldsfld     bool _10.Shaders.Program::useCgShaders
+    IL_01d1:  brtrue.s   IL_01d6
+
+    IL_01d3:  ldc.i4.0
+    IL_01d4:  br.s       IL_01d7
+
+    IL_01d6:  ldc.i4.1
+    IL_01d7:  stloc.s    shadingLanguage
+//000108: 						? GPUShadingLanguage.Cg
+//000109: 						: GPUShadingLanguage.Default;
+//000110: 
+//000111: 					newMaterialType1 = gpu.AddHighLevelShaderMaterialFromFiles(
+    IL_01d9:  ldloc.s    gpu
+    IL_01db:  ldloc.3
+    IL_01dc:  ldstr      "vertexMain"
+    IL_01e1:  ldc.i4.0
+    IL_01e2:  ldloc.s    psFileName
+    IL_01e4:  ldstr      "pixelMain"
+    IL_01e9:  ldc.i4.0
+    IL_01ea:  ldc.i4.0
+    IL_01eb:  ldc.i4.0
+    IL_01ec:  ldloc.s    shadingLanguage
+    IL_01ee:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType [IrrlichtLime]IrrlichtLime.Video.GPUProgrammingServices::AddHighLevelShaderMaterialFromFiles(string,
+                                                                                                                                                                                       string,
+                                                                                                                                                                                       valuetype [IrrlichtLime]IrrlichtLime.Video.VertexShaderType,
+                                                                                                                                                                                       string,
+                                                                                                                                                                                       string,
+                                                                                                                                                                                       valuetype [IrrlichtLime]IrrlichtLime.Video.PixelShaderType,
+                                                                                                                                                                                       valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType,
+                                                                                                                                                                                       int32,
+                                                                                                                                                                                       valuetype [IrrlichtLime]IrrlichtLime.Video.GPUShadingLanguage)
+    IL_01f3:  stloc.s    newMaterialType1
+//000112: 						vsFileName, "vertexMain", VertexShaderType.VS_1_1,
+//000113: 						psFileName, "pixelMain", PixelShaderType.PS_1_1,
+//000114: 						MaterialType.Solid, 0, shadingLanguage);
+//000115: 
+//000116: 					newMaterialType2 = gpu.AddHighLevelShaderMaterialFromFiles(
+    IL_01f5:  ldloc.s    gpu
+    IL_01f7:  ldloc.3
+    IL_01f8:  ldstr      "vertexMain"
+    IL_01fd:  ldc.i4.0
+    IL_01fe:  ldloc.s    psFileName
+    IL_0200:  ldstr      "pixelMain"
+    IL_0205:  ldc.i4.0
+    IL_0206:  ldc.i4.s   12
+    IL_0208:  ldc.i4.0
+    IL_0209:  ldloc.s    shadingLanguage
+    IL_020b:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType [IrrlichtLime]IrrlichtLime.Video.GPUProgrammingServices::AddHighLevelShaderMaterialFromFiles(string,
+                                                                                                                                                                                       string,
+                                                                                                                                                                                       valuetype [IrrlichtLime]IrrlichtLime.Video.VertexShaderType,
+                                                                                                                                                                                       string,
+                                                                                                                                                                                       string,
+                                                                                                                                                                                       valuetype [IrrlichtLime]IrrlichtLime.Video.PixelShaderType,
+                                                                                                                                                                                       valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType,
+                                                                                                                                                                                       int32,
+                                                                                                                                                                                       valuetype [IrrlichtLime]IrrlichtLime.Video.GPUShadingLanguage)
+    IL_0210:  stloc.s    newMaterialType2
+//000117: 						vsFileName, "vertexMain", VertexShaderType.VS_1_1,
+//000118: 						psFileName, "pixelMain", PixelShaderType.PS_1_1,
+//000119: 						MaterialType.TransparentAddColor, 0, shadingLanguage);
+//000120: 				}
+    IL_0212:  nop
+    IL_0213:  br.s       IL_0232
+
+//000121: 				else
+//000122: 				{
+    IL_0215:  nop
+//000123: 					// create material from low level shaders (asm or arb_asm)
+//000124: 
+//000125: 					newMaterialType1 = gpu.AddShaderMaterialFromFiles(vsFileName,
+    IL_0216:  ldloc.s    gpu
+    IL_0218:  ldloc.3
+    IL_0219:  ldloc.s    psFileName
+    IL_021b:  ldc.i4.0
+    IL_021c:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType [IrrlichtLime]IrrlichtLime.Video.GPUProgrammingServices::AddShaderMaterialFromFiles(string,
+                                                                                                                                                                              string,
+                                                                                                                                                                              valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_0221:  stloc.s    newMaterialType1
+//000126: 						psFileName, MaterialType.Solid);
+//000127: 
+//000128: 					newMaterialType2 = gpu.AddShaderMaterialFromFiles(vsFileName,
+    IL_0223:  ldloc.s    gpu
+    IL_0225:  ldloc.3
+    IL_0226:  ldloc.s    psFileName
+    IL_0228:  ldc.i4.s   12
+    IL_022a:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType [IrrlichtLime]IrrlichtLime.Video.GPUProgrammingServices::AddShaderMaterialFromFiles(string,
+                                                                                                                                                                              string,
+                                                                                                                                                                              valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_022f:  stloc.s    newMaterialType2
+//000129: 						psFileName, MaterialType.TransparentAddColor);
+//000130: 				}
+    IL_0231:  nop
+//000131: 			}
+    IL_0232:  nop
+//000132: 
+//000133: 			if ((int)newMaterialType1 == -1)
+    IL_0233:  ldloc.s    newMaterialType1
+    IL_0235:  ldc.i4.m1
+    IL_0236:  ceq
+    IL_0238:  ldc.i4.0
+    IL_0239:  ceq
+    IL_023b:  stloc.s    CS$4$0000
+    IL_023d:  ldloc.s    CS$4$0000
+    IL_023f:  brtrue.s   IL_0244
+
+//000134: 				newMaterialType1 = MaterialType.Solid;
+    IL_0241:  ldc.i4.0
+    IL_0242:  stloc.s    newMaterialType1
+//000135: 
+//000136: 			if ((int)newMaterialType2 == -1)
+    IL_0244:  ldloc.s    newMaterialType2
+    IL_0246:  ldc.i4.m1
+    IL_0247:  ceq
+    IL_0249:  ldc.i4.0
+    IL_024a:  ceq
+    IL_024c:  stloc.s    CS$4$0000
+    IL_024e:  ldloc.s    CS$4$0000
+    IL_0250:  brtrue.s   IL_0256
+
+//000137: 				newMaterialType2 = MaterialType.TransparentAddColor;
+    IL_0252:  ldc.i4.s   12
+    IL_0254:  stloc.s    newMaterialType2
+//000138: 
+//000139: 			// create test scene node 1, with the new created material type 1
+//000140: 
+//000141: 			SceneNode node = smgr.AddCubeSceneNode(50);
+    IL_0256:  ldloc.2
+    IL_0257:  ldc.r4     50.
+    IL_025c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCubeSceneNode(float32)
+    IL_0261:  stloc.s    node
+//000142: 			node.Position = new Vector3Df(0);
+    IL_0263:  ldloc.s    node
+    IL_0265:  ldc.r4     0.0
+    IL_026a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32)
+    IL_026f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0274:  nop
+//000143: 			node.SetMaterialTexture(0, driver.GetTexture("../../media/wall.bmp"));
+    IL_0275:  ldloc.s    node
+    IL_0277:  ldc.i4.0
+    IL_0278:  ldloc.1
+    IL_0279:  ldstr      "../../media/wall.bmp"
+    IL_027e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_0283:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_0288:  nop
+//000144: 			node.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_0289:  ldloc.s    node
+    IL_028b:  ldc.i4.8
+    IL_028c:  ldc.i4.0
+    IL_028d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0292:  nop
+//000145: 			node.SetMaterialType(newMaterialType1);
+    IL_0293:  ldloc.s    node
+    IL_0295:  ldloc.s    newMaterialType1
+    IL_0297:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialType(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_029c:  nop
+//000146: 
+//000147: 			smgr.AddTextSceneNode(device.GUIEnvironment.BuiltInFont, "PS & VS & EMT_SOLID", new Color(255, 255, 255), node);
+    IL_029d:  ldloc.2
+    IL_029e:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_02a3:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_02a8:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_BuiltInFont()
+    IL_02ad:  ldstr      "PS & VS & EMT_SOLID"
+    IL_02b2:  ldc.i4     0xff
+    IL_02b7:  ldc.i4     0xff
+    IL_02bc:  ldc.i4     0xff
+    IL_02c1:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_02c6:  ldloc.s    node
+    IL_02c8:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.TextSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddTextSceneNode(class [IrrlichtLime]IrrlichtLime.GUI.GUIFont,
+                                                                                                                                                       string,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_02cd:  pop
+//000148: 
+//000149: 			SceneNodeAnimator anim = smgr.CreateRotationAnimator(new Vector3Df(0, 0.3f, 0));
+    IL_02ce:  ldloc.2
+    IL_02cf:  ldc.r4     0.0
+    IL_02d4:  ldc.r4     0.30000001
+    IL_02d9:  ldc.r4     0.0
+    IL_02de:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_02e3:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateRotationAnimator(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_02e8:  stloc.s    anim
+//000150: 			node.AddAnimator(anim);
+    IL_02ea:  ldloc.s    node
+    IL_02ec:  ldloc.s    anim
+    IL_02ee:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::AddAnimator(class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator)
+    IL_02f3:  nop
+//000151: 			anim.Drop();
+    IL_02f4:  ldloc.s    anim
+    IL_02f6:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_02fb:  pop
+//000152: 
+//000153: 			// create test scene node 2, with the new created material type 2
+//000154: 
+//000155: 			node = smgr.AddCubeSceneNode(50);
+    IL_02fc:  ldloc.2
+    IL_02fd:  ldc.r4     50.
+    IL_0302:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCubeSceneNode(float32)
+    IL_0307:  stloc.s    node
+//000156: 			node.Position = new Vector3Df(0, -10, 50);
+    IL_0309:  ldloc.s    node
+    IL_030b:  ldc.r4     0.0
+    IL_0310:  ldc.r4     -10.
+    IL_0315:  ldc.r4     50.
+    IL_031a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_031f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0324:  nop
+//000157: 			node.SetMaterialTexture(0, driver.GetTexture("../../media/wall.bmp"));
+    IL_0325:  ldloc.s    node
+    IL_0327:  ldc.i4.0
+    IL_0328:  ldloc.1
+    IL_0329:  ldstr      "../../media/wall.bmp"
+    IL_032e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_0333:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_0338:  nop
+//000158: 			node.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_0339:  ldloc.s    node
+    IL_033b:  ldc.i4.8
+    IL_033c:  ldc.i4.0
+    IL_033d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0342:  nop
+//000159: 			node.SetMaterialFlag(MaterialFlag.BlendOperation, true);
+    IL_0343:  ldloc.s    node
+    IL_0345:  ldc.i4     0x40000
+    IL_034a:  ldc.i4.1
+    IL_034b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0350:  nop
+//000160: 			node.SetMaterialType(newMaterialType2);
+    IL_0351:  ldloc.s    node
+    IL_0353:  ldloc.s    newMaterialType2
+    IL_0355:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialType(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_035a:  nop
+//000161: 
+//000162: 			smgr.AddTextSceneNode(device.GUIEnvironment.BuiltInFont, "PS & VS & EMT_TRANSPARENT", new Color(255, 255, 255), node);
+    IL_035b:  ldloc.2
+    IL_035c:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_0361:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0366:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_BuiltInFont()
+    IL_036b:  ldstr      "PS & VS & EMT_TRANSPARENT"
+    IL_0370:  ldc.i4     0xff
+    IL_0375:  ldc.i4     0xff
+    IL_037a:  ldc.i4     0xff
+    IL_037f:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0384:  ldloc.s    node
+    IL_0386:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.TextSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddTextSceneNode(class [IrrlichtLime]IrrlichtLime.GUI.GUIFont,
+                                                                                                                                                       string,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_038b:  pop
+//000163: 
+//000164: 			anim = smgr.CreateRotationAnimator(new Vector3Df(0, 0.3f, 0));
+    IL_038c:  ldloc.2
+    IL_038d:  ldc.r4     0.0
+    IL_0392:  ldc.r4     0.30000001
+    IL_0397:  ldc.r4     0.0
+    IL_039c:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_03a1:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateRotationAnimator(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_03a6:  stloc.s    anim
+//000165: 			node.AddAnimator(anim);
+    IL_03a8:  ldloc.s    node
+    IL_03aa:  ldloc.s    anim
+    IL_03ac:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::AddAnimator(class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator)
+    IL_03b1:  nop
+//000166: 			anim.Drop();
+    IL_03b2:  ldloc.s    anim
+    IL_03b4:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_03b9:  pop
+//000167: 
+//000168: 			// create test scene node 3, with no shader
+//000169: 
+//000170: 			node = smgr.AddCubeSceneNode(50);
+    IL_03ba:  ldloc.2
+    IL_03bb:  ldc.r4     50.
+    IL_03c0:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCubeSceneNode(float32)
+    IL_03c5:  stloc.s    node
+//000171: 			node.Position = new Vector3Df(0, 50, 25);
+    IL_03c7:  ldloc.s    node
+    IL_03c9:  ldc.r4     0.0
+    IL_03ce:  ldc.r4     50.
+    IL_03d3:  ldc.r4     25.
+    IL_03d8:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_03dd:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_03e2:  nop
+//000172: 			node.SetMaterialTexture(0, driver.GetTexture("../../media/wall.bmp"));
+    IL_03e3:  ldloc.s    node
+    IL_03e5:  ldc.i4.0
+    IL_03e6:  ldloc.1
+    IL_03e7:  ldstr      "../../media/wall.bmp"
+    IL_03ec:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_03f1:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_03f6:  nop
+//000173: 			node.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_03f7:  ldloc.s    node
+    IL_03f9:  ldc.i4.8
+    IL_03fa:  ldc.i4.0
+    IL_03fb:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0400:  nop
+//000174: 
+//000175: 			smgr.AddTextSceneNode(device.GUIEnvironment.BuiltInFont, "NO SHADER", new Color(255, 255, 255), node);
+    IL_0401:  ldloc.2
+    IL_0402:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_0407:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_040c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_BuiltInFont()
+    IL_0411:  ldstr      "NO SHADER"
+    IL_0416:  ldc.i4     0xff
+    IL_041b:  ldc.i4     0xff
+    IL_0420:  ldc.i4     0xff
+    IL_0425:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_042a:  ldloc.s    node
+    IL_042c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.TextSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddTextSceneNode(class [IrrlichtLime]IrrlichtLime.GUI.GUIFont,
+                                                                                                                                                       string,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_0431:  pop
+//000176: 
+//000177: 			// add a nice skybox
+//000178: 
+//000179: 			driver.SetTextureCreationFlag(TextureCreationFlag.CreateMipMaps, false);
+    IL_0432:  ldloc.1
+    IL_0433:  ldc.i4.s   16
+    IL_0435:  ldc.i4.0
+    IL_0436:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetTextureCreationFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.TextureCreationFlag,
+                                                                                                            bool)
+    IL_043b:  nop
+//000180: 
+//000181: 			SceneNode skybox = smgr.AddSkyBoxSceneNode(
+    IL_043c:  ldloc.2
+    IL_043d:  ldstr      "../../media/irrlicht2_up.jpg"
+    IL_0442:  ldstr      "../../media/irrlicht2_dn.jpg"
+    IL_0447:  ldstr      "../../media/irrlicht2_lf.jpg"
+    IL_044c:  ldstr      "../../media/irrlicht2_rt.jpg"
+    IL_0451:  ldstr      "../../media/irrlicht2_ft.jpg"
+    IL_0456:  ldstr      "../../media/irrlicht2_bk.jpg"
+    IL_045b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddSkyBoxSceneNode(string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string)
+    IL_0460:  stloc.s    skybox
+//000182: 				"../../media/irrlicht2_up.jpg",
+//000183: 				"../../media/irrlicht2_dn.jpg",
+//000184: 				"../../media/irrlicht2_lf.jpg",
+//000185: 				"../../media/irrlicht2_rt.jpg",
+//000186: 				"../../media/irrlicht2_ft.jpg",
+//000187: 				"../../media/irrlicht2_bk.jpg");
+//000188: 
+//000189: 			driver.SetTextureCreationFlag(TextureCreationFlag.CreateMipMaps, true);
+    IL_0462:  ldloc.1
+    IL_0463:  ldc.i4.s   16
+    IL_0465:  ldc.i4.1
+    IL_0466:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetTextureCreationFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.TextureCreationFlag,
+                                                                                                            bool)
+    IL_046b:  nop
+//000190: 
+//000191: 			// add a camera and disable the mouse cursor
+//000192: 
+//000193: 			CameraSceneNode cam = smgr.AddCameraSceneNodeFPS();
+    IL_046c:  ldloc.2
+    IL_046d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNodeFPS()
+    IL_0472:  stloc.s    cam
+//000194: 			cam.Position = new Vector3Df(-100, 50, 100);
+    IL_0474:  ldloc.s    cam
+    IL_0476:  ldc.r4     -100.
+    IL_047b:  ldc.r4     50.
+    IL_0480:  ldc.r4     100.
+    IL_0485:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_048a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_048f:  nop
+//000195: 			cam.Target = new Vector3Df(0);
+    IL_0490:  ldloc.s    cam
+    IL_0492:  ldc.r4     0.0
+    IL_0497:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32)
+    IL_049c:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_Target(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_04a1:  nop
+//000196: 
+//000197: 			device.CursorControl.Visible = false;
+    IL_04a2:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_04a7:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.CursorControl [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_CursorControl()
+    IL_04ac:  ldc.i4.0
+    IL_04ad:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.CursorControl::set_Visible(bool)
+    IL_04b2:  nop
+//000198: 
+//000199: 			// draw everything
+//000200: 
+//000201: 			int lastFPS = -1;
+    IL_04b3:  ldc.i4.m1
+    IL_04b4:  stloc.s    lastFPS
+    IL_04b6:  br.s       IL_0528
+
+//000202: 
+//000203: 			while (device.Run())
+//000204: 			{
+    IL_04b8:  nop
+//000205: 				if (device.WindowActive)
+    IL_04b9:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_04be:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_WindowActive()
+    IL_04c3:  ldc.i4.0
+    IL_04c4:  ceq
+    IL_04c6:  stloc.s    CS$4$0000
+    IL_04c8:  ldloc.s    CS$4$0000
+    IL_04ca:  brtrue.s   IL_0527
+
+//000206: 				{
+    IL_04cc:  nop
+//000207: 					driver.BeginScene(true, true, new Color(0));
+    IL_04cd:  ldloc.1
+    IL_04ce:  ldc.i4.1
+    IL_04cf:  ldc.i4.1
+    IL_04d0:  ldc.i4.0
+    IL_04d1:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(uint32)
+    IL_04d6:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool,
+                                                                                                bool,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_04db:  pop
+//000208: 					smgr.DrawAll();
+    IL_04dc:  ldloc.2
+    IL_04dd:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_04e2:  nop
+//000209: 					driver.EndScene();
+    IL_04e3:  ldloc.1
+    IL_04e4:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_04e9:  pop
+//000210: 
+//000211: 					int fps = driver.FPS;
+    IL_04ea:  ldloc.1
+    IL_04eb:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_04f0:  stloc.s    fps
+//000212: 					if (lastFPS != fps)
+    IL_04f2:  ldloc.s    lastFPS
+    IL_04f4:  ldloc.s    fps
+    IL_04f6:  ceq
+    IL_04f8:  stloc.s    CS$4$0000
+    IL_04fa:  ldloc.s    CS$4$0000
+    IL_04fc:  brtrue.s   IL_0526
+
+//000213: 					{
+    IL_04fe:  nop
+//000214: 						device.SetWindowCaption(String.Format(
+    IL_04ff:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_0504:  ldstr      "Vertex and pixel shader example - Irrlicht Engine "
+    + "[{0}] fps: {1}"
+    IL_0509:  ldloc.1
+    IL_050a:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_050f:  ldloc.s    fps
+    IL_0511:  box        [mscorlib]System.Int32
+    IL_0516:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_051b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_0520:  nop
+//000215: 							"Vertex and pixel shader example - Irrlicht Engine [{0}] fps: {1}",
+//000216: 							driver.Name, fps));
+//000217: 
+//000218: 						lastFPS = fps;
+    IL_0521:  ldloc.s    fps
+    IL_0523:  stloc.s    lastFPS
+//000219: 					}
+    IL_0525:  nop
+//000220: 				}
+    IL_0526:  nop
+//000221: 			}
+    IL_0527:  nop
+//000203: 			while (device.Run())
+    IL_0528:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_052d:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_0532:  stloc.s    CS$4$0000
+    IL_0534:  ldloc.s    CS$4$0000
+    IL_0536:  brtrue.s   IL_04b8
+
+//000204: 			{
+//000205: 				if (device.WindowActive)
+//000206: 				{
+//000207: 					driver.BeginScene(true, true, new Color(0));
+//000208: 					smgr.DrawAll();
+//000209: 					driver.EndScene();
+//000210: 
+//000211: 					int fps = driver.FPS;
+//000212: 					if (lastFPS != fps)
+//000213: 					{
+//000214: 						device.SetWindowCaption(String.Format(
+//000215: 							"Vertex and pixel shader example - Irrlicht Engine [{0}] fps: {1}",
+//000216: 							driver.Name, fps));
+//000217: 
+//000218: 						lastFPS = fps;
+//000219: 					}
+//000220: 				}
+//000221: 			}
+//000222: 
+//000223: 			device.Drop();
+    IL_0538:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_053d:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0542:  pop
+//000224: 		}
+    IL_0543:  ret
+  } // end of method Program::Main
+
+  .method private hidebysig static void  gpu_OnSetConstants(class [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices services,
+                                                            int32 userData) cil managed
+  {
+    // Code size       414 (0x19e)
+    .maxstack  5
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [1] class [IrrlichtLime]IrrlichtLime.Core.Matrix invWorld,
+             [2] class [IrrlichtLime]IrrlichtLime.Core.Matrix worldViewProj,
+             [3] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df pos,
+             [4] class [IrrlichtLime]IrrlichtLime.Video.Colorf col,
+             [5] class [IrrlichtLime]IrrlichtLime.Core.Matrix transpWorld,
+             [6] bool CS$4$0000,
+             [7] float32[] CS$0$0001)
+//000225: 
+//000226: 		static void gpu_OnSetConstants(MaterialRendererServices services, int userData)
+//000227: 		{
+    IL_0000:  nop
+//000228: 			VideoDriver driver = services.VideoDriver;
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::get_VideoDriver()
+    IL_0007:  stloc.0
+//000229: 
+//000230: 			// set inverted world matrix
+//000231: 			// if we are using highlevel shaders (the user can select this when
+//000232: 			// starting the program), we must set the constants by name
+//000233: 
+//000234: 			Matrix invWorld = driver.GetTransform(TransformationState.World);
+    IL_0008:  ldloc.0
+    IL_0009:  ldc.i4.1
+    IL_000a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Matrix [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTransform(valuetype [IrrlichtLime]IrrlichtLime.Video.TransformationState)
+    IL_000f:  stloc.1
+//000235: 			invWorld.MakeInverse();
+    IL_0010:  ldloc.1
+    IL_0011:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Matrix [IrrlichtLime]IrrlichtLime.Core.Matrix::MakeInverse()
+    IL_0016:  pop
+//000236: 
+//000237: 			if (useHighLevelShaders)
+    IL_0017:  ldsfld     bool _10.Shaders.Program::useHighLevelShaders
+    IL_001c:  ldc.i4.0
+    IL_001d:  ceq
+    IL_001f:  stloc.s    CS$4$0000
+    IL_0021:  ldloc.s    CS$4$0000
+    IL_0023:  brtrue.s   IL_0039
+
+//000238: 				services.SetVertexShaderVariable("mInvWorld", invWorld.ToArray());
+    IL_0025:  ldarg.0
+    IL_0026:  ldstr      "mInvWorld"
+    IL_002b:  ldloc.1
+    IL_002c:  callvirt   instance float32[] [IrrlichtLime]IrrlichtLime.Core.Matrix::ToArray()
+    IL_0031:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::SetVertexShaderVariable(string,
+                                                                                                                          float32[])
+    IL_0036:  pop
+    IL_0037:  br.s       IL_0047
+
+//000239: 			else
+//000240: 				services.SetVertexShaderRegisters(0, invWorld.ToArray());
+    IL_0039:  ldarg.0
+    IL_003a:  ldc.i4.0
+    IL_003b:  ldloc.1
+    IL_003c:  callvirt   instance float32[] [IrrlichtLime]IrrlichtLime.Core.Matrix::ToArray()
+    IL_0041:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::SetVertexShaderRegisters(int32,
+                                                                                                                           float32[])
+    IL_0046:  nop
+//000241: 
+//000242: 			// set clip matrix
+//000243: 
+//000244: 			Matrix worldViewProj = driver.GetTransform(TransformationState.Projection);
+    IL_0047:  ldloc.0
+    IL_0048:  ldc.i4.2
+    IL_0049:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Matrix [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTransform(valuetype [IrrlichtLime]IrrlichtLime.Video.TransformationState)
+    IL_004e:  stloc.2
+//000245: 			worldViewProj *= driver.GetTransform(TransformationState.View);
+    IL_004f:  ldloc.2
+    IL_0050:  ldloc.0
+    IL_0051:  ldc.i4.0
+    IL_0052:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Matrix [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTransform(valuetype [IrrlichtLime]IrrlichtLime.Video.TransformationState)
+    IL_0057:  call       class [IrrlichtLime]IrrlichtLime.Core.Matrix [IrrlichtLime]IrrlichtLime.Core.Matrix::op_Multiply(class [IrrlichtLime]IrrlichtLime.Core.Matrix,
+                                                                                                                          class [IrrlichtLime]IrrlichtLime.Core.Matrix)
+    IL_005c:  stloc.2
+//000246: 			worldViewProj *= driver.GetTransform(TransformationState.World);
+    IL_005d:  ldloc.2
+    IL_005e:  ldloc.0
+    IL_005f:  ldc.i4.1
+    IL_0060:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Matrix [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTransform(valuetype [IrrlichtLime]IrrlichtLime.Video.TransformationState)
+    IL_0065:  call       class [IrrlichtLime]IrrlichtLime.Core.Matrix [IrrlichtLime]IrrlichtLime.Core.Matrix::op_Multiply(class [IrrlichtLime]IrrlichtLime.Core.Matrix,
+                                                                                                                          class [IrrlichtLime]IrrlichtLime.Core.Matrix)
+    IL_006a:  stloc.2
+//000247: 
+//000248: 			if (useHighLevelShaders)
+    IL_006b:  ldsfld     bool _10.Shaders.Program::useHighLevelShaders
+    IL_0070:  ldc.i4.0
+    IL_0071:  ceq
+    IL_0073:  stloc.s    CS$4$0000
+    IL_0075:  ldloc.s    CS$4$0000
+    IL_0077:  brtrue.s   IL_008d
+
+//000249: 				services.SetVertexShaderVariable("mWorldViewProj", worldViewProj.ToArray());
+    IL_0079:  ldarg.0
+    IL_007a:  ldstr      "mWorldViewProj"
+    IL_007f:  ldloc.2
+    IL_0080:  callvirt   instance float32[] [IrrlichtLime]IrrlichtLime.Core.Matrix::ToArray()
+    IL_0085:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::SetVertexShaderVariable(string,
+                                                                                                                          float32[])
+    IL_008a:  pop
+    IL_008b:  br.s       IL_009b
+
+//000250: 			else
+//000251: 				services.SetVertexShaderRegisters(4, worldViewProj.ToArray());
+    IL_008d:  ldarg.0
+    IL_008e:  ldc.i4.4
+    IL_008f:  ldloc.2
+    IL_0090:  callvirt   instance float32[] [IrrlichtLime]IrrlichtLime.Core.Matrix::ToArray()
+    IL_0095:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::SetVertexShaderRegisters(int32,
+                                                                                                                           float32[])
+    IL_009a:  nop
+//000252: 
+//000253: 			// set camera position
+//000254: 
+//000255: 			Vector3Df pos = device.SceneManager.ActiveCamera.AbsolutePosition;
+    IL_009b:  ldsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+    IL_00a0:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_00a5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_ActiveCamera()
+    IL_00aa:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_AbsolutePosition()
+    IL_00af:  stloc.3
+//000256: 
+//000257: 			if (useHighLevelShaders)
+    IL_00b0:  ldsfld     bool _10.Shaders.Program::useHighLevelShaders
+    IL_00b5:  ldc.i4.0
+    IL_00b6:  ceq
+    IL_00b8:  stloc.s    CS$4$0000
+    IL_00ba:  ldloc.s    CS$4$0000
+    IL_00bc:  brtrue.s   IL_00d2
+
+//000258: 				services.SetVertexShaderVariable("mLightPos", pos.ToArray());
+    IL_00be:  ldarg.0
+    IL_00bf:  ldstr      "mLightPos"
+    IL_00c4:  ldloc.3
+    IL_00c5:  callvirt   instance float32[] [IrrlichtLime]IrrlichtLime.Core.Vector3Df::ToArray()
+    IL_00ca:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::SetVertexShaderVariable(string,
+                                                                                                                          float32[])
+    IL_00cf:  pop
+    IL_00d0:  br.s       IL_00e0
+
+//000259: 			else
+//000260: 				services.SetVertexShaderRegisters(8, pos.ToArray());
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldc.i4.8
+    IL_00d4:  ldloc.3
+    IL_00d5:  callvirt   instance float32[] [IrrlichtLime]IrrlichtLime.Core.Vector3Df::ToArray()
+    IL_00da:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::SetVertexShaderRegisters(int32,
+                                                                                                                           float32[])
+    IL_00df:  nop
+//000261: 
+//000262: 			// set light color
+//000263: 
+//000264: 			Colorf col = new Colorf(0, 1, 1, 0);
+    IL_00e0:  ldc.r4     0.0
+    IL_00e5:  ldc.r4     1.
+    IL_00ea:  ldc.r4     1.
+    IL_00ef:  ldc.r4     0.0
+    IL_00f4:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Colorf::.ctor(float32,
+                                                                                      float32,
+                                                                                      float32,
+                                                                                      float32)
+    IL_00f9:  stloc.s    col
+//000265: 
+//000266: 			if (useHighLevelShaders)
+    IL_00fb:  ldsfld     bool _10.Shaders.Program::useHighLevelShaders
+    IL_0100:  ldc.i4.0
+    IL_0101:  ceq
+    IL_0103:  stloc.s    CS$4$0000
+    IL_0105:  ldloc.s    CS$4$0000
+    IL_0107:  brtrue.s   IL_011e
+
+//000267: 				services.SetVertexShaderVariable("mLightColor", col.ToArray());
+    IL_0109:  ldarg.0
+    IL_010a:  ldstr      "mLightColor"
+    IL_010f:  ldloc.s    col
+    IL_0111:  callvirt   instance float32[] [IrrlichtLime]IrrlichtLime.Video.Colorf::ToArray()
+    IL_0116:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::SetVertexShaderVariable(string,
+                                                                                                                          float32[])
+    IL_011b:  pop
+    IL_011c:  br.s       IL_012e
+
+//000268: 			else
+//000269: 				services.SetVertexShaderRegisters(9, col.ToArray());
+    IL_011e:  ldarg.0
+    IL_011f:  ldc.i4.s   9
+    IL_0121:  ldloc.s    col
+    IL_0123:  callvirt   instance float32[] [IrrlichtLime]IrrlichtLime.Video.Colorf::ToArray()
+    IL_0128:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::SetVertexShaderRegisters(int32,
+                                                                                                                           float32[])
+    IL_012d:  nop
+//000270: 
+//000271: 			// set transposed world matrix
+//000272: 
+//000273: 			Matrix transpWorld = driver.GetTransform(TransformationState.World).Transposed;
+    IL_012e:  ldloc.0
+    IL_012f:  ldc.i4.1
+    IL_0130:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Matrix [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTransform(valuetype [IrrlichtLime]IrrlichtLime.Video.TransformationState)
+    IL_0135:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Matrix [IrrlichtLime]IrrlichtLime.Core.Matrix::get_Transposed()
+    IL_013a:  stloc.s    transpWorld
+//000274: 
+//000275: 			if (useHighLevelShaders)
+    IL_013c:  ldsfld     bool _10.Shaders.Program::useHighLevelShaders
+    IL_0141:  ldc.i4.0
+    IL_0142:  ceq
+    IL_0144:  stloc.s    CS$4$0000
+    IL_0146:  ldloc.s    CS$4$0000
+    IL_0148:  brtrue.s   IL_018b
+
+//000276: 			{
+    IL_014a:  nop
+//000277: 				services.SetVertexShaderVariable("mTransWorld", transpWorld.ToArray());
+    IL_014b:  ldarg.0
+    IL_014c:  ldstr      "mTransWorld"
+    IL_0151:  ldloc.s    transpWorld
+    IL_0153:  callvirt   instance float32[] [IrrlichtLime]IrrlichtLime.Core.Matrix::ToArray()
+    IL_0158:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::SetVertexShaderVariable(string,
+                                                                                                                          float32[])
+    IL_015d:  pop
+//000278: 
+//000279: 				if (driver.DriverType == DriverType.OpenGL)
+    IL_015e:  ldloc.0
+    IL_015f:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_DriverType()
+    IL_0164:  ldc.i4.5
+    IL_0165:  ceq
+    IL_0167:  ldc.i4.0
+    IL_0168:  ceq
+    IL_016a:  stloc.s    CS$4$0000
+    IL_016c:  ldloc.s    CS$4$0000
+    IL_016e:  brtrue.s   IL_0188
+
+//000280: 				{
+    IL_0170:  nop
+//000281: 					// set texture
+//000282: 					services.SetPixelShaderVariable("myTexture", new float[1] { 0.0f });
+    IL_0171:  ldarg.0
+    IL_0172:  ldstr      "myTexture"
+    IL_0177:  ldc.i4.1
+    IL_0178:  newarr     [mscorlib]System.Single
+    IL_017d:  stloc.s    CS$0$0001
+    IL_017f:  ldloc.s    CS$0$0001
+    IL_0181:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::SetPixelShaderVariable(string,
+                                                                                                                         float32[])
+    IL_0186:  pop
+//000283: 				}
+    IL_0187:  nop
+//000284: 			}
+    IL_0188:  nop
+    IL_0189:  br.s       IL_019d
+
+//000285: 			else
+//000286: 			{
+    IL_018b:  nop
+//000287: 				services.SetVertexShaderRegisters(10, transpWorld.ToArray());
+    IL_018c:  ldarg.0
+    IL_018d:  ldc.i4.s   10
+    IL_018f:  ldloc.s    transpWorld
+    IL_0191:  callvirt   instance float32[] [IrrlichtLime]IrrlichtLime.Core.Matrix::ToArray()
+    IL_0196:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.MaterialRendererServices::SetVertexShaderRegisters(int32,
+                                                                                                                           float32[])
+    IL_019b:  nop
+//000288: 			}
+    IL_019c:  nop
+//000289: 		}
+    IL_019d:  ret
+  } // end of method Program::gpu_OnSetConstants
+
+  .method private hidebysig static bool  AskUserForCgShaders(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType) cil managed
+  {
+    // Code size       53 (0x35)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000,
+             [1] bool CS$4$0001,
+             [2] valuetype [mscorlib]System.ConsoleKeyInfo CS$0$0002)
+//000290: 
+//000291: 		static bool AskUserForCgShaders(DriverType driverType)
+//000292: 		{
+    IL_0000:  nop
+//000293: 			if (driverType != DriverType.Direct3D9 &&
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.4
+    IL_0003:  beq.s      IL_000b
+
+    IL_0005:  ldarg.0
+    IL_0006:  ldc.i4.5
+    IL_0007:  ceq
+    IL_0009:  br.s       IL_000c
+
+    IL_000b:  ldc.i4.1
+    IL_000c:  stloc.1
+    IL_000d:  ldloc.1
+    IL_000e:  brtrue.s   IL_0014
+
+//000294: 				driverType != DriverType.OpenGL)
+//000295: 				return false;
+    IL_0010:  ldc.i4.0
+    IL_0011:  stloc.0
+    IL_0012:  br.s       IL_0033
+
+//000296: 
+//000297: 			Console.WriteLine("\nPlease press 'y' if you want to use Cg shaders.");
+    IL_0014:  ldstr      "\nPlease press 'y' if you want to use Cg shaders."
+    IL_0019:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_001e:  nop
+//000298: 			return Console.ReadKey().Key == ConsoleKey.Y;
+    IL_001f:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0024:  stloc.2
+    IL_0025:  ldloca.s   CS$0$0002
+    IL_0027:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_002c:  ldc.i4.s   89
+    IL_002e:  ceq
+    IL_0030:  stloc.0
+    IL_0031:  br.s       IL_0033
+
+//000299: 		}
+    IL_0033:  ldloc.0
+    IL_0034:  ret
+  } // end of method Program::AskUserForCgShaders
+
+  .method private hidebysig static bool  AskUserForHighLevelShaders(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType) cil managed
+  {
+    // Code size       53 (0x35)
+    .maxstack  2
+    .locals init ([0] bool CS$1$0000,
+             [1] bool CS$4$0001,
+             [2] valuetype [mscorlib]System.ConsoleKeyInfo CS$0$0002)
+//000300: 
+//000301: 		static bool AskUserForHighLevelShaders(DriverType driverType)
+//000302: 		{
+    IL_0000:  nop
+//000303: 			if (driverType != DriverType.Direct3D9 &&
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.4
+    IL_0003:  beq.s      IL_000b
+
+    IL_0005:  ldarg.0
+    IL_0006:  ldc.i4.5
+    IL_0007:  ceq
+    IL_0009:  br.s       IL_000c
+
+    IL_000b:  ldc.i4.1
+    IL_000c:  stloc.1
+    IL_000d:  ldloc.1
+    IL_000e:  brtrue.s   IL_0014
+
+//000304: 				driverType != DriverType.OpenGL)
+//000305: 				return false;
+    IL_0010:  ldc.i4.0
+    IL_0011:  stloc.0
+    IL_0012:  br.s       IL_0033
+
+//000306: 
+//000307: 			Console.WriteLine("\nPlease press 'y' if you want to use high level shaders.");
+    IL_0014:  ldstr      "\nPlease press 'y' if you want to use high level sh"
+    + "aders."
+    IL_0019:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_001e:  nop
+//000308: 			return Console.ReadKey().Key == ConsoleKey.Y;
+    IL_001f:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0024:  stloc.2
+    IL_0025:  ldloca.s   CS$0$0002
+    IL_0027:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_002c:  ldc.i4.s   89
+    IL_002e:  ceq
+    IL_0030:  stloc.0
+    IL_0031:  br.s       IL_0033
+
+//000309: 		}
+    IL_0033:  ldloc.0
+    IL_0034:  ret
+  } // end of method Program::AskUserForHighLevelShaders
+
+  .method private hidebysig static bool  AskUserForDriver([out] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType& driverType) cil managed
+  {
+    // Code size       104 (0x68)
+    .maxstack  2
+    .locals init ([0] valuetype [mscorlib]System.ConsoleKeyInfo i,
+             [1] bool CS$1$0000,
+             [2] valuetype [mscorlib]System.ConsoleKey CS$4$0001)
+//000310: 
+//000311: 		static bool AskUserForDriver(out DriverType driverType)
+//000312: 		{
+    IL_0000:  nop
+//000313: 			driverType = DriverType.Null;
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  stind.i4
+//000314: 
+//000315: 			Console.Write("Please select the driver you want for this example:\n" +
+    IL_0004:  ldstr      "Please select the driver you want for this example"
+    + ":\n (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n (d) Burning's Softw"
+    + "are Renderer\n (e) Software Renderer\n (f) NullDevice\n (otherKey) exit\n\n"
+    IL_0009:  call       void [mscorlib]System.Console::Write(string)
+    IL_000e:  nop
+//000316: 						" (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n" +
+//000317: 						" (d) Burning's Software Renderer\n (e) Software Renderer\n" +
+//000318: 						" (f) NullDevice\n (otherKey) exit\n\n");
+//000319: 
+//000320: 			ConsoleKeyInfo i = Console.ReadKey();
+    IL_000f:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0014:  stloc.0
+//000321: 
+//000322: 			switch (i.Key)
+    IL_0015:  ldloca.s   i
+    IL_0017:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_001c:  stloc.2
+    IL_001d:  ldloc.2
+    IL_001e:  ldc.i4.s   65
+    IL_0020:  sub
+    IL_0021:  switch     ( 
+                          IL_0040,
+                          IL_0045,
+                          IL_004a,
+                          IL_004f,
+                          IL_0054,
+                          IL_0059)
+    IL_003e:  br.s       IL_005e
+
+//000323: 			{
+//000324: 				case ConsoleKey.A: driverType = DriverType.OpenGL; break;
+    IL_0040:  ldarg.0
+    IL_0041:  ldc.i4.5
+    IL_0042:  stind.i4
+    IL_0043:  br.s       IL_0062
+
+//000325: 				case ConsoleKey.B: driverType = DriverType.Direct3D9; break;
+    IL_0045:  ldarg.0
+    IL_0046:  ldc.i4.4
+    IL_0047:  stind.i4
+    IL_0048:  br.s       IL_0062
+
+//000326: 				case ConsoleKey.C: driverType = DriverType.Direct3D8; break;
+    IL_004a:  ldarg.0
+    IL_004b:  ldc.i4.3
+    IL_004c:  stind.i4
+    IL_004d:  br.s       IL_0062
+
+//000327: 				case ConsoleKey.D: driverType = DriverType.BurningsVideo; break;
+    IL_004f:  ldarg.0
+    IL_0050:  ldc.i4.2
+    IL_0051:  stind.i4
+    IL_0052:  br.s       IL_0062
+
+//000328: 				case ConsoleKey.E: driverType = DriverType.Software; break;
+    IL_0054:  ldarg.0
+    IL_0055:  ldc.i4.1
+    IL_0056:  stind.i4
+    IL_0057:  br.s       IL_0062
+
+//000329: 				case ConsoleKey.F: driverType = DriverType.Null; break;
+    IL_0059:  ldarg.0
+    IL_005a:  ldc.i4.0
+    IL_005b:  stind.i4
+    IL_005c:  br.s       IL_0062
+
+//000330: 				default:
+//000331: 					return false;
+    IL_005e:  ldc.i4.0
+    IL_005f:  stloc.1
+    IL_0060:  br.s       IL_0066
+
+//000332: 			}
+//000333: 
+//000334: 			return true;
+    IL_0062:  ldc.i4.1
+    IL_0063:  stloc.1
+    IL_0064:  br.s       IL_0066
+
+//000335: 		}
+    IL_0066:  ldloc.1
+    IL_0067:  ret
+  } // end of method Program::AskUserForDriver
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+  .method private hidebysig specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       19 (0x13)
+    .maxstack  8
+//000016: 		static IrrlichtDevice device = null;
+    IL_0000:  ldnull
+    IL_0001:  stsfld     class [IrrlichtLime]IrrlichtLime.IrrlichtDevice _10.Shaders.Program::device
+//000017: 		static bool useHighLevelShaders = false;
+    IL_0006:  ldc.i4.0
+    IL_0007:  stsfld     bool _10.Shaders.Program::useHighLevelShaders
+//000018: 		static bool useCgShaders = false;
+    IL_000c:  ldc.i4.0
+    IL_000d:  stsfld     bool _10.Shaders.Program::useCgShaders
+    IL_0012:  ret
+  } // end of method Program::.cctor
+
+} // end of class _10.Shaders.Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

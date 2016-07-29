@@ -1,0 +1,149 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+ 
+Console.WriteLine("Chapter 1 example 11: pause() and resume()")
+
+        ' step 1: creation of a document-object
+        Dim Document As New Document()
+
+        ' step 2:
+        ' we create a writer that listens to the document
+        ' and directs a PDF-stream to a file
+        Dim writerA As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0111a.pdf"))
+        Dim writerB As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0111b.pdf"))
+
+        ' step 3:
+
+        ' we add a Watermark that will show up on PAGE 1
+
+        writerB.pause()
+        Try
+            Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 200, 420)
+            Document.add(Watermark)
+        Catch e As Exception
+            Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+        End Try
+
+        writerB.resume()
+
+        ' we add a Header that will show up on PAGE 1
+        Dim Header As New HeaderFooter(New Phrase("This is a header"), False)
+        Document.setHeader(Header)
+
+        ' we open the document
+        Document.open()
+
+        ' we rotate the page, starting from PAGE 2
+        Document.setPageSize(PageSize.A4.rotate())
+
+        ' we need to change the position of the Watermark
+        Try
+            Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 320, 200)
+            Document.add(Watermark)
+        Catch e As Exception
+            Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+        End Try
+
+        ' we add a Footer that will show up on PAGE 2
+        Dim footer As New HeaderFooter(New Phrase("This is page: "), True)
+        Document.setFooter(footer)
+
+        ' step 4: we add content to the document
+
+        ' PAGE 1
+
+        Document.add(New Paragraph("Hello World"))
+
+        ' we trigger a page break
+        Document.newPage()
+
+        ' PAGE 2
+
+        ' we add some more content
+        Document.add(New Paragraph("Hello Earth"))
+
+        ' we remove the header starting from PAGE 3
+
+        writerA.pause()
+        Document.resetHeader()
+
+        writerA.resume()
+
+        ' we trigger a page break
+        Document.newPage()
+
+        ' PAGE 3
+
+        ' we add some more content
+        Document.add(New Paragraph("Hello Sun"))
+
+        writerA.pause()
+        Document.add(New Paragraph("Remark: the header has vanished!"))
+
+        writerA.resume()
+
+        ' we reset the page numbering
+
+        writerB.pause()
+        Document.resetPageCount()
+
+        writerB.resume()
+
+        ' we trigger a page break
+        Document.newPage()
+
+        ' PAGE 4
+
+        ' we add some more content
+        Document.add(New Paragraph("Hello Moon"))
+
+        writerB.pause()
+        Document.add(New Paragraph("Remark: the pagenumber has been reset!"))
+
+        writerB.resume()
+
+        ' step 5: we close the document
+        Document.close()
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+Console.WriteLine("Chapter 10 example 9: a PdfPTable at an absolute position");
+    
+		// step 1: creation of a document-object
+		Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+		// step 2:  we create a writer that listens to the document
+		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1009.pdf", FileMode.Create));
+		// step 3: we open the document
+		document.open();
+		// step 4: we add some content
+		PdfPTable table = new PdfPTable(4);
+		table.getDefaultCell().setBorder(Rectangle.LEFT | Rectangle.RIGHT);
+		for (int k = 0; k < 24; ++k) 
+		{
+			table.addCell("cell " + k);
+		}
+		table.setTotalWidth(300);
+		table.writeSelectedRows(0, -1, 100, 600, writer.getDirectContent());
+		// step 5: we close the document
+		document.close();
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+  System.out.println("Chapter 5 example 18: PdfPTable");
+        // step 1: creation of a document-object
+        Document document = new Document(PageSize.A4.rotate(), 10, 10, 10, 10);
+        try {
+            // step 2: we create a writer that listens to the document
+            PdfWriter.getInstance(document, new FileOutputStream("Chap0518.pdf"));
+            // step 3: we open the document
+            document.open();
+            // step 4: we add content to the document (this happens in a seperate method)
+            loadDocument(document);
+        }
+        catch (Exception e2) {
+            System.out.println(e2);
+        }
+        // step 5: we close the document
+        document.close();
+]]></source>
+</source_elements></project>

@@ -1,0 +1,772 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly '13.RenderToTexture'
+{
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 12 31 33 2E 52 65 6E 64 65 72 54 6F 54 65   // ...13.RenderToTe
+                                                                                              78 74 75 72 65 00 00 )                            // xture..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 12 31 33 2E 52 65 6E 64 65 72 54 6F 54 65   // ...13.RenderToTe
+                                                                                                78 74 75 72 65 00 00 )                            // xture..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 30 00 00 )                            //  2010..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 64 32 34 62 61 37 66 31 2D 61 64 35 63   // ..$d24ba7f1-ad5c
+                                                                                                  2D 34 35 36 38 2D 38 36 37 62 2D 38 61 62 65 35   // -4568-867b-8abe5
+                                                                                                  37 33 34 36 65 37 37 00 00 )                      // 7346e77..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public _13.RenderToTexture.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.module '13.RenderToTexture.exe'
+// MVID: {F887583E-74DE-48CE-B139-F52D4A0DE38D}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x001E0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit _13.RenderToTexture.Program
+       extends [mscorlib]System.Object
+{
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       896 (0x380)
+    .maxstack  8
+    .locals init ([0] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType,
+             [1] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [2] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [3] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+             [4] class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment env,
+             [5] class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode fairy,
+             [6] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode fpsCamera,
+             [7] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode test,
+             [8] class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator anim,
+             [9] class [IrrlichtLime]IrrlichtLime.Video.Texture rt,
+             [10] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode fixedCam,
+             [11] class [IrrlichtLime]IrrlichtLime.GUI.GUIFont font,
+             [12] class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText text,
+             [13] int32 lastFPS,
+             [14] int32 fps,
+             [15] bool CS$4$0000)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\13.RenderToTexture\Program.cs' 
+//000017: 		{
+    IL_0000:  nop
+//000018: 			DriverType driverType;
+//000019: 			if (!AskUserForDriver(out driverType))
+    IL_0001:  ldloca.s   driverType
+    IL_0003:  call       bool _13.RenderToTexture.Program::AskUserForDriver(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType&)
+    IL_0008:  stloc.s    CS$4$0000
+    IL_000a:  ldloc.s    CS$4$0000
+    IL_000c:  brtrue.s   IL_0013
+
+//000020: 				return;
+    IL_000e:  br         IL_037f
+
+//000021: 
+//000022: 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(driverType, new Dimension2Di(640, 480));
+    IL_0013:  ldloc.0
+    IL_0014:  ldc.i4     0x280
+    IL_0019:  ldc.i4     0x1e0
+    IL_001e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_0023:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+    IL_0028:  stloc.1
+//000023: 			if (device == null)
+    IL_0029:  ldloc.1
+    IL_002a:  ldnull
+    IL_002b:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0030:  ldc.i4.0
+    IL_0031:  ceq
+    IL_0033:  stloc.s    CS$4$0000
+    IL_0035:  ldloc.s    CS$4$0000
+    IL_0037:  brtrue.s   IL_003e
+
+//000024: 				return;
+    IL_0039:  br         IL_037f
+
+//000025: 
+//000026: 			VideoDriver driver = device.VideoDriver;
+    IL_003e:  ldloc.1
+    IL_003f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0044:  stloc.2
+//000027: 			SceneManager smgr = device.SceneManager;
+    IL_0045:  ldloc.1
+    IL_0046:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_004b:  stloc.3
+//000028: 			GUIEnvironment env = device.GUIEnvironment;
+    IL_004c:  ldloc.1
+    IL_004d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0052:  stloc.s    env
+//000029: 
+//000030: 			// load and display animated fairy mesh
+//000031: 			AnimatedMeshSceneNode fairy = smgr.AddAnimatedMeshSceneNode(smgr.GetMesh("../../media/faerie.md2"));
+    IL_0054:  ldloc.3
+    IL_0055:  ldloc.3
+    IL_0056:  ldstr      "../../media/faerie.md2"
+    IL_005b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh [IrrlichtLime]IrrlichtLime.Scene.SceneManager::GetMesh(string)
+    IL_0060:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddAnimatedMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh)
+    IL_0065:  stloc.s    fairy
+//000032: 			if (fairy != null)
+    IL_0067:  ldloc.s    fairy
+    IL_0069:  ldnull
+    IL_006a:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_006f:  ldc.i4.0
+    IL_0070:  ceq
+    IL_0072:  stloc.s    CS$4$0000
+    IL_0074:  ldloc.s    CS$4$0000
+    IL_0076:  brtrue.s   IL_00d0
+
+//000033: 			{
+    IL_0078:  nop
+//000034: 				fairy.SetMaterialTexture(0, driver.GetTexture("../../media/faerie2.bmp")); // set diffuse texture
+    IL_0079:  ldloc.s    fairy
+    IL_007b:  ldc.i4.0
+    IL_007c:  ldloc.2
+    IL_007d:  ldstr      "../../media/faerie2.bmp"
+    IL_0082:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_0087:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_008c:  nop
+//000035: 				fairy.SetMaterialFlag(MaterialFlag.Lighting, true); // enable dynamic lighting
+    IL_008d:  ldloc.s    fairy
+    IL_008f:  ldc.i4.8
+    IL_0090:  ldc.i4.1
+    IL_0091:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0096:  nop
+//000036: 				fairy.GetMaterial(0).Shininess = 20.0f; // set size of specular highlights
+    IL_0097:  ldloc.s    fairy
+    IL_0099:  ldc.i4.0
+    IL_009a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_009f:  ldc.r4     20.
+    IL_00a4:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_Shininess(float32)
+    IL_00a9:  nop
+//000037: 				fairy.Position = new Vector3Df(-10, 0, -100);
+    IL_00aa:  ldloc.s    fairy
+    IL_00ac:  ldc.r4     -10.
+    IL_00b1:  ldc.r4     0.0
+    IL_00b6:  ldc.r4     -100.
+    IL_00bb:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00c0:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_00c5:  nop
+//000038: 				fairy.SetMD2Animation(AnimationTypeMD2.Stand);
+    IL_00c6:  ldloc.s    fairy
+    IL_00c8:  ldc.i4.0
+    IL_00c9:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode::SetMD2Animation(valuetype [IrrlichtLime]IrrlichtLime.Scene.AnimationTypeMD2)
+    IL_00ce:  pop
+//000039: 			}
+    IL_00cf:  nop
+//000040: 
+//000041: 			// add white light
+//000042: 			smgr.AddLightSceneNode(null, new Vector3Df(-15, 5, -105), new Colorf(1, 1, 1));
+    IL_00d0:  ldloc.3
+    IL_00d1:  ldnull
+    IL_00d2:  ldc.r4     -15.
+    IL_00d7:  ldc.r4     5.
+    IL_00dc:  ldc.r4     -105.
+    IL_00e1:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00e6:  ldc.r4     1.
+    IL_00eb:  ldc.r4     1.
+    IL_00f0:  ldc.r4     1.
+    IL_00f5:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Colorf::.ctor(float32,
+                                                                                      float32,
+                                                                                      float32)
+    IL_00fa:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.LightSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddLightSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Video.Colorf)
+    IL_00ff:  pop
+//000043: 
+//000044: 			// set ambient light
+//000045: 			smgr.AmbientLight = new Colorf(0.25f, 0.25f, 0.25f);
+    IL_0100:  ldloc.3
+    IL_0101:  ldc.r4     0.25
+    IL_0106:  ldc.r4     0.25
+    IL_010b:  ldc.r4     0.25
+    IL_0110:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Colorf::.ctor(float32,
+                                                                                      float32,
+                                                                                      float32)
+    IL_0115:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::set_AmbientLight(class [IrrlichtLime]IrrlichtLime.Video.Colorf)
+    IL_011a:  nop
+//000046: 
+//000047: 			// add fps camera
+//000048: 			CameraSceneNode fpsCamera = smgr.AddCameraSceneNodeFPS();
+    IL_011b:  ldloc.3
+    IL_011c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNodeFPS()
+    IL_0121:  stloc.s    fpsCamera
+//000049: 			fpsCamera.Position = new Vector3Df(-50, 50, -150);
+    IL_0123:  ldloc.s    fpsCamera
+    IL_0125:  ldc.r4     -50.
+    IL_012a:  ldc.r4     50.
+    IL_012f:  ldc.r4     -150.
+    IL_0134:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0139:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_013e:  nop
+//000050: 
+//000051: 			// disable mouse cursor
+//000052: 			device.CursorControl.Visible = false;
+    IL_013f:  ldloc.1
+    IL_0140:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.CursorControl [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_CursorControl()
+    IL_0145:  ldc.i4.0
+    IL_0146:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.CursorControl::set_Visible(bool)
+    IL_014b:  nop
+//000053: 
+//000054: 			// create test cube
+//000055: 			SceneNode test = smgr.AddCubeSceneNode(60);
+    IL_014c:  ldloc.3
+    IL_014d:  ldc.r4     60.
+    IL_0152:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCubeSceneNode(float32)
+    IL_0157:  stloc.s    test
+//000056: 
+//000057: 			// let the cube rotate and set some light settings
+//000058: 			SceneNodeAnimator anim = smgr.CreateRotationAnimator(new Vector3Df(0.3f, 0.3f, 0));
+    IL_0159:  ldloc.3
+    IL_015a:  ldc.r4     0.30000001
+    IL_015f:  ldc.r4     0.30000001
+    IL_0164:  ldc.r4     0.0
+    IL_0169:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_016e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateRotationAnimator(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0173:  stloc.s    anim
+//000059: 
+//000060: 			test.Position = new Vector3Df(-100, 0, -100);
+    IL_0175:  ldloc.s    test
+    IL_0177:  ldc.r4     -100.
+    IL_017c:  ldc.r4     0.0
+    IL_0181:  ldc.r4     -100.
+    IL_0186:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_018b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0190:  nop
+//000061: 			test.SetMaterialFlag(MaterialFlag.Lighting, false); // disable dynamic lighting
+    IL_0191:  ldloc.s    test
+    IL_0193:  ldc.i4.8
+    IL_0194:  ldc.i4.0
+    IL_0195:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_019a:  nop
+//000062: 			test.AddAnimator(anim);
+    IL_019b:  ldloc.s    test
+    IL_019d:  ldloc.s    anim
+    IL_019f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::AddAnimator(class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator)
+    IL_01a4:  nop
+//000063: 			anim.Drop();
+    IL_01a5:  ldloc.s    anim
+    IL_01a7:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_01ac:  pop
+//000064: 
+//000065: 			// create render target
+//000066: 			Texture rt = null;
+    IL_01ad:  ldnull
+    IL_01ae:  stloc.s    rt
+//000067: 			CameraSceneNode fixedCam = null;
+    IL_01b0:  ldnull
+    IL_01b1:  stloc.s    fixedCam
+//000068: 
+//000069: 			if (driver.QueryFeature(VideoDriverFeature.RenderToTarget))
+    IL_01b3:  ldloc.2
+    IL_01b4:  ldc.i4.0
+    IL_01b5:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::QueryFeature(valuetype [IrrlichtLime]IrrlichtLime.Video.VideoDriverFeature)
+    IL_01ba:  ldc.i4.0
+    IL_01bb:  ceq
+    IL_01bd:  stloc.s    CS$4$0000
+    IL_01bf:  ldloc.s    CS$4$0000
+    IL_01c1:  brtrue.s   IL_021a
+
+//000070: 			{
+    IL_01c3:  nop
+//000071: 				rt = driver.AddRenderTargetTexture(new Dimension2Di(256), "RTT1");
+    IL_01c4:  ldloc.2
+    IL_01c5:  ldc.i4     0x100
+    IL_01ca:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32)
+    IL_01cf:  ldstr      "RTT1"
+    IL_01d4:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::AddRenderTargetTexture(class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di,
+                                                                                                                                                      string)
+    IL_01d9:  stloc.s    rt
+//000072: 				test.SetMaterialTexture(0, rt); // set material of cube to render target
+    IL_01db:  ldloc.s    test
+    IL_01dd:  ldc.i4.0
+    IL_01de:  ldloc.s    rt
+    IL_01e0:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_01e5:  nop
+//000073: 
+//000074: 				// add fixed camera
+//000075: 				fixedCam = smgr.AddCameraSceneNode(null, new Vector3Df(10, 10, -80), new Vector3Df(-10, 10, -100));
+    IL_01e6:  ldloc.3
+    IL_01e7:  ldnull
+    IL_01e8:  ldc.r4     10.
+    IL_01ed:  ldc.r4     10.
+    IL_01f2:  ldc.r4     -80.
+    IL_01f7:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_01fc:  ldc.r4     -10.
+    IL_0201:  ldc.r4     10.
+    IL_0206:  ldc.r4     -100.
+    IL_020b:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0210:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                           class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                           class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0215:  stloc.s    fixedCam
+//000076: 			}
+    IL_0217:  nop
+    IL_0218:  br.s       IL_0289
+
+//000077: 			else
+//000078: 			{
+    IL_021a:  nop
+//000079: 				// create problem text
+//000080: 				GUIFont font = env.GetFont("../../media/fonthaettenschweiler.bmp");
+    IL_021b:  ldloc.s    env
+    IL_021d:  ldstr      "../../media/fonthaettenschweiler.bmp"
+    IL_0222:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::GetFont(string)
+    IL_0227:  stloc.s    font
+//000081: 				if (font != null)
+    IL_0229:  ldloc.s    font
+    IL_022b:  ldnull
+    IL_022c:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0231:  ldc.i4.0
+    IL_0232:  ceq
+    IL_0234:  stloc.s    CS$4$0000
+    IL_0236:  ldloc.s    CS$4$0000
+    IL_0238:  brtrue.s   IL_0249
+
+//000082: 					env.Skin.SetFont(font);
+    IL_023a:  ldloc.s    env
+    IL_023c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUISkin [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_Skin()
+    IL_0241:  ldloc.s    font
+    IL_0243:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUISkin::SetFont(class [IrrlichtLime]IrrlichtLime.GUI.GUIFont)
+    IL_0248:  nop
+//000083: 
+//000084: 				GUIStaticText text = env.AddStaticText(
+    IL_0249:  ldloc.s    env
+    IL_024b:  ldstr      "Your hardware or this renderer is not able to use "
+    + "the render to texture feature. RTT Disabled."
+    IL_0250:  ldc.i4     0x96
+    IL_0255:  ldc.i4.s   20
+    IL_0257:  ldc.i4     0x1d6
+    IL_025c:  ldc.i4.s   60
+    IL_025e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_0263:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddStaticText(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Recti)
+    IL_0268:  stloc.s    text
+//000085: 					"Your hardware or this renderer is not able to use the " +
+//000086: 					"render to texture feature. RTT Disabled.",
+//000087: 					new Recti(150, 20, 470, 60));
+//000088: 
+//000089: 				text.OverrideColor = new Color(255, 255, 255, 100);
+    IL_026a:  ldloc.s    text
+    IL_026c:  ldc.i4     0xff
+    IL_0271:  ldc.i4     0xff
+    IL_0276:  ldc.i4     0xff
+    IL_027b:  ldc.i4.s   100
+    IL_027d:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0282:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText::set_OverrideColor(class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0287:  nop
+//000090: 			}
+    IL_0288:  nop
+//000091: 
+//000092: 			int lastFPS = -1;
+    IL_0289:  ldc.i4.m1
+    IL_028a:  stloc.s    lastFPS
+    IL_028c:  br         IL_0369
+
+//000093: 
+//000094: 			while (device.Run())
+//000095: 			{
+    IL_0291:  nop
+//000096: 				if (device.WindowActive)
+    IL_0292:  ldloc.1
+    IL_0293:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_WindowActive()
+    IL_0298:  ldc.i4.0
+    IL_0299:  ceq
+    IL_029b:  stloc.s    CS$4$0000
+    IL_029d:  ldloc.s    CS$4$0000
+    IL_029f:  brtrue     IL_0368
+
+//000097: 				{
+    IL_02a4:  nop
+//000098: 					driver.BeginScene(true, true, new Color(0));
+    IL_02a5:  ldloc.2
+    IL_02a6:  ldc.i4.1
+    IL_02a7:  ldc.i4.1
+    IL_02a8:  ldc.i4.0
+    IL_02a9:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(uint32)
+    IL_02ae:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool,
+                                                                                                bool,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_02b3:  pop
+//000099: 
+//000100: 					if (rt != null)
+    IL_02b4:  ldloc.s    rt
+    IL_02b6:  ldnull
+    IL_02b7:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_02bc:  ldc.i4.0
+    IL_02bd:  ceq
+    IL_02bf:  stloc.s    CS$4$0000
+    IL_02c1:  ldloc.s    CS$4$0000
+    IL_02c3:  brtrue.s   IL_0319
+
+//000101: 					{
+    IL_02c5:  nop
+//000102: 						// draw scene into render target
+//000103: 
+//000104: 						// set render target texture
+//000105: 						driver.SetRenderTarget(rt, true, true, new Color(0, 0, 255));
+    IL_02c6:  ldloc.2
+    IL_02c7:  ldloc.s    rt
+    IL_02c9:  ldc.i4.1
+    IL_02ca:  ldc.i4.1
+    IL_02cb:  ldc.i4.0
+    IL_02cc:  ldc.i4.0
+    IL_02cd:  ldc.i4     0xff
+    IL_02d2:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_02d7:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetRenderTarget(class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                     bool,
+                                                                                                     bool,
+                                                                                                     class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_02dc:  pop
+//000106: 
+//000107: 						// make cube invisible and set fixed camera as active camera
+//000108: 						test.Visible = false;
+    IL_02dd:  ldloc.s    test
+    IL_02df:  ldc.i4.0
+    IL_02e0:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Visible(bool)
+    IL_02e5:  nop
+//000109: 						smgr.ActiveCamera = fixedCam;
+    IL_02e6:  ldloc.3
+    IL_02e7:  ldloc.s    fixedCam
+    IL_02e9:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::set_ActiveCamera(class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode)
+    IL_02ee:  nop
+//000110: 
+//000111: 						// draw whole scene into render buffer
+//000112: 						smgr.DrawAll();
+    IL_02ef:  ldloc.3
+    IL_02f0:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_02f5:  nop
+//000113: 
+//000114: 						// set back old render target
+//000115: 						// The buffer might have been distorted, so clear it
+//000116: 						driver.SetRenderTarget(null, true, true, new Color(0));
+    IL_02f6:  ldloc.2
+    IL_02f7:  ldnull
+    IL_02f8:  ldc.i4.1
+    IL_02f9:  ldc.i4.1
+    IL_02fa:  ldc.i4.0
+    IL_02fb:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(uint32)
+    IL_0300:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetRenderTarget(class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                     bool,
+                                                                                                     bool,
+                                                                                                     class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0305:  pop
+//000117: 
+//000118: 						// make the cube visible and set the user controlled camera as active one
+//000119: 						test.Visible = true;
+    IL_0306:  ldloc.s    test
+    IL_0308:  ldc.i4.1
+    IL_0309:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Visible(bool)
+    IL_030e:  nop
+//000120: 						smgr.ActiveCamera = fpsCamera;
+    IL_030f:  ldloc.3
+    IL_0310:  ldloc.s    fpsCamera
+    IL_0312:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::set_ActiveCamera(class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode)
+    IL_0317:  nop
+//000121: 					}
+    IL_0318:  nop
+//000122: 
+//000123: 					// draw scene normally
+//000124: 					smgr.DrawAll();
+    IL_0319:  ldloc.3
+    IL_031a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_031f:  nop
+//000125: 					env.DrawAll();
+    IL_0320:  ldloc.s    env
+    IL_0322:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::DrawAll()
+    IL_0327:  nop
+//000126: 
+//000127: 					driver.EndScene();
+    IL_0328:  ldloc.2
+    IL_0329:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_032e:  pop
+//000128: 
+//000129: 					// display frames per second in window title
+//000130: 					int fps = driver.FPS;
+    IL_032f:  ldloc.2
+    IL_0330:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_0335:  stloc.s    fps
+//000131: 					if (lastFPS != fps)
+    IL_0337:  ldloc.s    lastFPS
+    IL_0339:  ldloc.s    fps
+    IL_033b:  ceq
+    IL_033d:  stloc.s    CS$4$0000
+    IL_033f:  ldloc.s    CS$4$0000
+    IL_0341:  brtrue.s   IL_0367
+
+//000132: 					{
+    IL_0343:  nop
+//000133: 						device.SetWindowCaption(String.Format(
+    IL_0344:  ldloc.1
+    IL_0345:  ldstr      "Render to Texture and Specular Highlights example "
+    + "- Irrlicht Engine [{0}] fps: {1}"
+    IL_034a:  ldloc.2
+    IL_034b:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_0350:  ldloc.s    fps
+    IL_0352:  box        [mscorlib]System.Int32
+    IL_0357:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_035c:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_0361:  nop
+//000134: 							"Render to Texture and Specular Highlights example - Irrlicht Engine [{0}] fps: {1}",
+//000135: 							driver.Name, fps));
+//000136: 
+//000137: 						lastFPS = fps;
+    IL_0362:  ldloc.s    fps
+    IL_0364:  stloc.s    lastFPS
+//000138: 					}
+    IL_0366:  nop
+//000139: 				}
+    IL_0367:  nop
+//000140: 			}
+    IL_0368:  nop
+//000094: 			while (device.Run())
+    IL_0369:  ldloc.1
+    IL_036a:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_036f:  stloc.s    CS$4$0000
+    IL_0371:  ldloc.s    CS$4$0000
+    IL_0373:  brtrue     IL_0291
+
+//000095: 			{
+//000096: 				if (device.WindowActive)
+//000097: 				{
+//000098: 					driver.BeginScene(true, true, new Color(0));
+//000099: 
+//000100: 					if (rt != null)
+//000101: 					{
+//000102: 						// draw scene into render target
+//000103: 
+//000104: 						// set render target texture
+//000105: 						driver.SetRenderTarget(rt, true, true, new Color(0, 0, 255));
+//000106: 
+//000107: 						// make cube invisible and set fixed camera as active camera
+//000108: 						test.Visible = false;
+//000109: 						smgr.ActiveCamera = fixedCam;
+//000110: 
+//000111: 						// draw whole scene into render buffer
+//000112: 						smgr.DrawAll();
+//000113: 
+//000114: 						// set back old render target
+//000115: 						// The buffer might have been distorted, so clear it
+//000116: 						driver.SetRenderTarget(null, true, true, new Color(0));
+//000117: 
+//000118: 						// make the cube visible and set the user controlled camera as active one
+//000119: 						test.Visible = true;
+//000120: 						smgr.ActiveCamera = fpsCamera;
+//000121: 					}
+//000122: 
+//000123: 					// draw scene normally
+//000124: 					smgr.DrawAll();
+//000125: 					env.DrawAll();
+//000126: 
+//000127: 					driver.EndScene();
+//000128: 
+//000129: 					// display frames per second in window title
+//000130: 					int fps = driver.FPS;
+//000131: 					if (lastFPS != fps)
+//000132: 					{
+//000133: 						device.SetWindowCaption(String.Format(
+//000134: 							"Render to Texture and Specular Highlights example - Irrlicht Engine [{0}] fps: {1}",
+//000135: 							driver.Name, fps));
+//000136: 
+//000137: 						lastFPS = fps;
+//000138: 					}
+//000139: 				}
+//000140: 			}
+//000141: 
+//000142: 			device.Drop();
+    IL_0378:  ldloc.1
+    IL_0379:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_037e:  pop
+//000143: 		}
+    IL_037f:  ret
+  } // end of method Program::Main
+
+  .method private hidebysig static bool  AskUserForDriver([out] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType& driverType) cil managed
+  {
+    // Code size       104 (0x68)
+    .maxstack  2
+    .locals init ([0] valuetype [mscorlib]System.ConsoleKeyInfo i,
+             [1] bool CS$1$0000,
+             [2] valuetype [mscorlib]System.ConsoleKey CS$4$0001)
+//000144: 
+//000145: 		static bool AskUserForDriver(out DriverType driverType)
+//000146: 		{
+    IL_0000:  nop
+//000147: 			driverType = DriverType.Null;
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  stind.i4
+//000148: 
+//000149: 			Console.Write("Please select the driver you want for this example:\n" +
+    IL_0004:  ldstr      "Please select the driver you want for this example"
+    + ":\n (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n (d) Burning's Softw"
+    + "are Renderer\n (e) Software Renderer\n (f) NullDevice\n (otherKey) exit\n\n"
+    IL_0009:  call       void [mscorlib]System.Console::Write(string)
+    IL_000e:  nop
+//000150: 						" (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n" +
+//000151: 						" (d) Burning's Software Renderer\n (e) Software Renderer\n" +
+//000152: 						" (f) NullDevice\n (otherKey) exit\n\n");
+//000153: 
+//000154: 			ConsoleKeyInfo i = Console.ReadKey();
+    IL_000f:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0014:  stloc.0
+//000155: 
+//000156: 			switch (i.Key)
+    IL_0015:  ldloca.s   i
+    IL_0017:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_001c:  stloc.2
+    IL_001d:  ldloc.2
+    IL_001e:  ldc.i4.s   65
+    IL_0020:  sub
+    IL_0021:  switch     ( 
+                          IL_0040,
+                          IL_0045,
+                          IL_004a,
+                          IL_004f,
+                          IL_0054,
+                          IL_0059)
+    IL_003e:  br.s       IL_005e
+
+//000157: 			{
+//000158: 				case ConsoleKey.A: driverType = DriverType.OpenGL; break;
+    IL_0040:  ldarg.0
+    IL_0041:  ldc.i4.5
+    IL_0042:  stind.i4
+    IL_0043:  br.s       IL_0062
+
+//000159: 				case ConsoleKey.B: driverType = DriverType.Direct3D9; break;
+    IL_0045:  ldarg.0
+    IL_0046:  ldc.i4.4
+    IL_0047:  stind.i4
+    IL_0048:  br.s       IL_0062
+
+//000160: 				case ConsoleKey.C: driverType = DriverType.Direct3D8; break;
+    IL_004a:  ldarg.0
+    IL_004b:  ldc.i4.3
+    IL_004c:  stind.i4
+    IL_004d:  br.s       IL_0062
+
+//000161: 				case ConsoleKey.D: driverType = DriverType.BurningsVideo; break;
+    IL_004f:  ldarg.0
+    IL_0050:  ldc.i4.2
+    IL_0051:  stind.i4
+    IL_0052:  br.s       IL_0062
+
+//000162: 				case ConsoleKey.E: driverType = DriverType.Software; break;
+    IL_0054:  ldarg.0
+    IL_0055:  ldc.i4.1
+    IL_0056:  stind.i4
+    IL_0057:  br.s       IL_0062
+
+//000163: 				case ConsoleKey.F: driverType = DriverType.Null; break;
+    IL_0059:  ldarg.0
+    IL_005a:  ldc.i4.0
+    IL_005b:  stind.i4
+    IL_005c:  br.s       IL_0062
+
+//000164: 				default:
+//000165: 					return false;
+    IL_005e:  ldc.i4.0
+    IL_005f:  stloc.1
+    IL_0060:  br.s       IL_0066
+
+//000166: 			}
+//000167: 
+//000168: 			return true;
+    IL_0062:  ldc.i4.1
+    IL_0063:  stloc.1
+    IL_0064:  br.s       IL_0066
+
+//000169: 		}
+    IL_0066:  ldloc.1
+    IL_0067:  ret
+  } // end of method Program::AskUserForDriver
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+} // end of class _13.RenderToTexture.Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

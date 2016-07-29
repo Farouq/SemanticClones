@@ -1,0 +1,871 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly '04.Movement'
+{
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0B 30 34 2E 4D 6F 76 65 6D 65 6E 74 00 00 ) // ...04.Movement..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0B 30 34 2E 4D 6F 76 65 6D 65 6E 74 00 00 ) // ...04.Movement..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 30 00 00 )                            //  2010..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 33 65 33 39 35 33 33 61 2D 35 64 61 32   // ..$3e39533a-5da2
+                                                                                                  2D 34 66 35 32 2D 39 30 32 31 2D 31 34 64 35 37   // -4f52-9021-14d57
+                                                                                                  33 35 38 66 35 31 62 00 00 )                      // 358f51b..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public _04.Movement.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.module '04.Movement.exe'
+// MVID: {AAA6A0A4-AD06-4142-88AF-C408D23E669B}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x00630000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit _04.Movement.Program
+       extends [mscorlib]System.Object
+{
+  .field private static class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> KeyIsDown
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       930 (0x3a2)
+    .maxstack  7
+    .locals init ([0] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType,
+             [1] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [2] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [3] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+             [4] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode node,
+             [5] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode n,
+             [6] class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator anim,
+             [7] class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode anms,
+             [8] int32 lastFPS,
+             [9] uint32 then,
+             [10] uint32 now,
+             [11] float32 frameDeltaTime,
+             [12] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df nodePosition,
+             [13] int32 fps,
+             [14] bool CS$4$0000)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\04.Movement\Program.cs' 
+//000017: 		{
+    IL_0000:  nop
+//000018: 			DriverType driverType;
+//000019: 			if (!AskUserForDriver(out driverType))
+    IL_0001:  ldloca.s   driverType
+    IL_0003:  call       bool _04.Movement.Program::AskUserForDriver(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType&)
+    IL_0008:  stloc.s    CS$4$0000
+    IL_000a:  ldloc.s    CS$4$0000
+    IL_000c:  brtrue.s   IL_0013
+
+//000020: 				return;
+    IL_000e:  br         IL_03a1
+
+//000021: 
+//000022: 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(driverType, new Dimension2Di(640, 480));
+    IL_0013:  ldloc.0
+    IL_0014:  ldc.i4     0x280
+    IL_0019:  ldc.i4     0x1e0
+    IL_001e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_0023:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+    IL_0028:  stloc.1
+//000023: 			if (device == null)
+    IL_0029:  ldloc.1
+    IL_002a:  ldnull
+    IL_002b:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0030:  ldc.i4.0
+    IL_0031:  ceq
+    IL_0033:  stloc.s    CS$4$0000
+    IL_0035:  ldloc.s    CS$4$0000
+    IL_0037:  brtrue.s   IL_003e
+
+//000024: 				return;
+    IL_0039:  br         IL_03a1
+
+//000025: 
+//000026: 			device.OnEvent += new IrrlichtDevice.EventHandler(device_OnEvent);
+    IL_003e:  ldloc.1
+    IL_003f:  ldnull
+    IL_0040:  ldftn      bool _04.Movement.Program::device_OnEvent(class [IrrlichtLime]IrrlichtLime.Event)
+    IL_0046:  newobj     instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler::.ctor(object,
+                                                                                                     native int)
+    IL_004b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::add_OnEvent(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler)
+    IL_0050:  nop
+//000027: 
+//000028: 			VideoDriver driver = device.VideoDriver;
+    IL_0051:  ldloc.1
+    IL_0052:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0057:  stloc.2
+//000029: 			SceneManager smgr = device.SceneManager;
+    IL_0058:  ldloc.1
+    IL_0059:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_005e:  stloc.3
+//000030: 
+//000031: 			SceneNode node = smgr.AddSphereSceneNode();
+    IL_005f:  ldloc.3
+    IL_0060:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddSphereSceneNode()
+    IL_0065:  stloc.s    node
+//000032: 			if (node != null)
+    IL_0067:  ldloc.s    node
+    IL_0069:  ldnull
+    IL_006a:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_006f:  ldc.i4.0
+    IL_0070:  ceq
+    IL_0072:  stloc.s    CS$4$0000
+    IL_0074:  ldloc.s    CS$4$0000
+    IL_0076:  brtrue.s   IL_00b4
+
+//000033: 			{
+    IL_0078:  nop
+//000034: 				node.Position = new Vector3Df(0, 0, 30);
+    IL_0079:  ldloc.s    node
+    IL_007b:  ldc.r4     0.0
+    IL_0080:  ldc.r4     0.0
+    IL_0085:  ldc.r4     30.
+    IL_008a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_008f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0094:  nop
+//000035: 				node.SetMaterialTexture(0, driver.GetTexture("../../media/wall.bmp"));
+    IL_0095:  ldloc.s    node
+    IL_0097:  ldc.i4.0
+    IL_0098:  ldloc.2
+    IL_0099:  ldstr      "../../media/wall.bmp"
+    IL_009e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_00a3:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_00a8:  nop
+//000036: 				node.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_00a9:  ldloc.s    node
+    IL_00ab:  ldc.i4.8
+    IL_00ac:  ldc.i4.0
+    IL_00ad:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00b2:  nop
+//000037: 			}
+    IL_00b3:  nop
+//000038: 
+//000039: 			SceneNode n = smgr.AddCubeSceneNode();
+    IL_00b4:  ldloc.3
+    IL_00b5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCubeSceneNode()
+    IL_00ba:  stloc.s    n
+//000040: 			if (n != null)
+    IL_00bc:  ldloc.s    n
+    IL_00be:  ldnull
+    IL_00bf:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_00c4:  ldc.i4.0
+    IL_00c5:  ceq
+    IL_00c7:  stloc.s    CS$4$0000
+    IL_00c9:  ldloc.s    CS$4$0000
+    IL_00cb:  brtrue.s   IL_0133
+
+//000041: 			{
+    IL_00cd:  nop
+//000042: 				n.SetMaterialTexture(0, driver.GetTexture("../../media/t351sml.jpg"));
+    IL_00ce:  ldloc.s    n
+    IL_00d0:  ldc.i4.0
+    IL_00d1:  ldloc.2
+    IL_00d2:  ldstr      "../../media/t351sml.jpg"
+    IL_00d7:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_00dc:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_00e1:  nop
+//000043: 				n.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_00e2:  ldloc.s    n
+    IL_00e4:  ldc.i4.8
+    IL_00e5:  ldc.i4.0
+    IL_00e6:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00eb:  nop
+//000044: 
+//000045: 				SceneNodeAnimator anim = smgr.CreateFlyCircleAnimator(new Vector3Df(0, 0, 30), 20.0f);
+    IL_00ec:  ldloc.3
+    IL_00ed:  ldc.r4     0.0
+    IL_00f2:  ldc.r4     0.0
+    IL_00f7:  ldc.r4     30.
+    IL_00fc:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0101:  ldc.r4     20.
+    IL_0106:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateFlyCircleAnimator(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                                  float32)
+    IL_010b:  stloc.s    anim
+//000046: 				if (anim != null)
+    IL_010d:  ldloc.s    anim
+    IL_010f:  ldnull
+    IL_0110:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0115:  ldc.i4.0
+    IL_0116:  ceq
+    IL_0118:  stloc.s    CS$4$0000
+    IL_011a:  ldloc.s    CS$4$0000
+    IL_011c:  brtrue.s   IL_0132
+
+//000047: 				{
+    IL_011e:  nop
+//000048: 					n.AddAnimator(anim);
+    IL_011f:  ldloc.s    n
+    IL_0121:  ldloc.s    anim
+    IL_0123:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::AddAnimator(class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator)
+    IL_0128:  nop
+//000049: 					anim.Drop();
+    IL_0129:  ldloc.s    anim
+    IL_012b:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0130:  pop
+//000050: 				}
+    IL_0131:  nop
+//000051: 			}
+    IL_0132:  nop
+//000052: 
+//000053: 			AnimatedMeshSceneNode anms = smgr.AddAnimatedMeshSceneNode(smgr.GetMesh("../../media/ninja.b3d"));
+    IL_0133:  ldloc.3
+    IL_0134:  ldloc.3
+    IL_0135:  ldstr      "../../media/ninja.b3d"
+    IL_013a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh [IrrlichtLime]IrrlichtLime.Scene.SceneManager::GetMesh(string)
+    IL_013f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddAnimatedMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.AnimatedMesh)
+    IL_0144:  stloc.s    anms
+//000054: 			if (anms != null)
+    IL_0146:  ldloc.s    anms
+    IL_0148:  ldnull
+    IL_0149:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_014e:  ldc.i4.0
+    IL_014f:  ceq
+    IL_0151:  stloc.s    CS$4$0000
+    IL_0153:  ldloc.s    CS$4$0000
+    IL_0155:  brtrue     IL_0207
+
+//000055: 			{
+    IL_015a:  nop
+//000056: 				SceneNodeAnimator anim = smgr.CreateFlyStraightAnimator(
+    IL_015b:  ldloc.3
+    IL_015c:  ldc.r4     100.
+    IL_0161:  ldc.r4     0.0
+    IL_0166:  ldc.r4     60.
+    IL_016b:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0170:  ldc.r4     -100.
+    IL_0175:  ldc.r4     0.0
+    IL_017a:  ldc.r4     60.
+    IL_017f:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0184:  ldc.r4     3.5
+    IL_0189:  ldc.i4.1
+    IL_018a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateFlyStraightAnimator(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                                    class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                                    float32,
+                                                                                                                                                                    bool)
+    IL_018f:  stloc.s    anim
+//000057: 					new Vector3Df(100, 0, 60), new Vector3Df(-100, 0, 60), 3.5f, true);
+//000058: 				if (anim != null)
+    IL_0191:  ldloc.s    anim
+    IL_0193:  ldnull
+    IL_0194:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Inequality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                         class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0199:  ldc.i4.0
+    IL_019a:  ceq
+    IL_019c:  stloc.s    CS$4$0000
+    IL_019e:  ldloc.s    CS$4$0000
+    IL_01a0:  brtrue.s   IL_01b6
+
+//000059: 				{
+    IL_01a2:  nop
+//000060: 					anms.AddAnimator(anim);
+    IL_01a3:  ldloc.s    anms
+    IL_01a5:  ldloc.s    anim
+    IL_01a7:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::AddAnimator(class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator)
+    IL_01ac:  nop
+//000061: 					anim.Drop();
+    IL_01ad:  ldloc.s    anim
+    IL_01af:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_01b4:  pop
+//000062: 				}
+    IL_01b5:  nop
+//000063: 
+//000064: 				anms.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_01b6:  ldloc.s    anms
+    IL_01b8:  ldc.i4.8
+    IL_01b9:  ldc.i4.0
+    IL_01ba:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_01bf:  nop
+//000065: 
+//000066: 				anms.SetFrameLoop(0, 13);
+    IL_01c0:  ldloc.s    anms
+    IL_01c2:  ldc.i4.0
+    IL_01c3:  ldc.i4.s   13
+    IL_01c5:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode::SetFrameLoop(int32,
+                                                                                                            int32)
+    IL_01ca:  pop
+//000067: 				anms.AnimationSpeed = 15;
+    IL_01cb:  ldloc.s    anms
+    IL_01cd:  ldc.r4     15.
+    IL_01d2:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.AnimatedMeshSceneNode::set_AnimationSpeed(float32)
+    IL_01d7:  nop
+//000068: 
+//000069: 				anms.Scale = new Vector3Df(2);
+    IL_01d8:  ldloc.s    anms
+    IL_01da:  ldc.r4     2.
+    IL_01df:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32)
+    IL_01e4:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Scale(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_01e9:  nop
+//000070: 				anms.Rotation = new Vector3Df(0, -90, 0);
+    IL_01ea:  ldloc.s    anms
+    IL_01ec:  ldc.r4     0.0
+    IL_01f1:  ldc.r4     -90.
+    IL_01f6:  ldc.r4     0.0
+    IL_01fb:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0200:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Rotation(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0205:  nop
+//000071: 			}
+    IL_0206:  nop
+//000072: 
+//000073: 			smgr.AddCameraSceneNodeFPS();
+    IL_0207:  ldloc.3
+    IL_0208:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNodeFPS()
+    IL_020d:  pop
+//000074: 			device.CursorControl.Visible = false;
+    IL_020e:  ldloc.1
+    IL_020f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.CursorControl [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_CursorControl()
+    IL_0214:  ldc.i4.0
+    IL_0215:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.CursorControl::set_Visible(bool)
+    IL_021a:  nop
+//000075: 
+//000076: 			device.GUIEnvironment.AddImage(
+    IL_021b:  ldloc.1
+    IL_021c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0221:  ldloc.2
+    IL_0222:  ldstr      "../../media/irrlichtlogoalpha2.tga"
+    IL_0227:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_022c:  ldc.i4.s   10
+    IL_022e:  ldc.i4.s   20
+    IL_0230:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_0235:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIImage [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddImage(class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                        class [IrrlichtLime]IrrlichtLime.Core.Vector2Di)
+    IL_023a:  pop
+//000077: 				driver.GetTexture("../../media/irrlichtlogoalpha2.tga"),
+//000078: 				new Vector2Di(10, 20));
+//000079: 
+//000080: 			int lastFPS = -1;
+    IL_023b:  ldc.i4.m1
+    IL_023c:  stloc.s    lastFPS
+//000081: 
+//000082: 			uint then = device.Timer.Time;
+    IL_023e:  ldloc.1
+    IL_023f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Timer [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Timer()
+    IL_0244:  callvirt   instance uint32 [IrrlichtLime]IrrlichtLime.Timer::get_Time()
+    IL_0249:  stloc.s    then
+    IL_024b:  br         IL_038b
+
+//000083: 			
+//000084: 			const float MOVEMENT_SPEED = 5.0f;
+//000085: 
+//000086: 			while (device.Run())
+//000087: 			{
+    IL_0250:  nop
+//000088: 				uint now = device.Timer.Time;
+    IL_0251:  ldloc.1
+    IL_0252:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Timer [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Timer()
+    IL_0257:  callvirt   instance uint32 [IrrlichtLime]IrrlichtLime.Timer::get_Time()
+    IL_025c:  stloc.s    now
+//000089: 				float frameDeltaTime = (float)(now - then) / 1000.0f;
+    IL_025e:  ldloc.s    now
+    IL_0260:  ldloc.s    then
+    IL_0262:  sub
+    IL_0263:  conv.r.un
+    IL_0264:  conv.r4
+    IL_0265:  ldc.r4     1000.
+    IL_026a:  div
+    IL_026b:  stloc.s    frameDeltaTime
+//000090: 				then = now;
+    IL_026d:  ldloc.s    now
+    IL_026f:  stloc.s    then
+//000091: 
+//000092: 				Vector3Df nodePosition = node.Position;
+    IL_0271:  ldloc.s    node
+    IL_0273:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_Position()
+    IL_0278:  stloc.s    nodePosition
+//000093: 
+//000094: 				if (IsKeyDown(KeyCode.KeyW))
+    IL_027a:  ldc.i4.s   87
+    IL_027c:  call       bool _04.Movement.Program::IsKeyDown(valuetype [IrrlichtLime]IrrlichtLime.KeyCode)
+    IL_0281:  ldc.i4.0
+    IL_0282:  ceq
+    IL_0284:  stloc.s    CS$4$0000
+    IL_0286:  ldloc.s    CS$4$0000
+    IL_0288:  brtrue.s   IL_02a3
+
+//000095: 					nodePosition.Y += MOVEMENT_SPEED * frameDeltaTime;
+    IL_028a:  ldloc.s    nodePosition
+    IL_028c:  dup
+    IL_028d:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Y()
+    IL_0292:  ldc.r4     5.
+    IL_0297:  ldloc.s    frameDeltaTime
+    IL_0299:  mul
+    IL_029a:  add
+    IL_029b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::set_Y(float32)
+    IL_02a0:  nop
+    IL_02a1:  br.s       IL_02ca
+
+//000096: 				else if (IsKeyDown(KeyCode.KeyS))
+    IL_02a3:  ldc.i4.s   83
+    IL_02a5:  call       bool _04.Movement.Program::IsKeyDown(valuetype [IrrlichtLime]IrrlichtLime.KeyCode)
+    IL_02aa:  ldc.i4.0
+    IL_02ab:  ceq
+    IL_02ad:  stloc.s    CS$4$0000
+    IL_02af:  ldloc.s    CS$4$0000
+    IL_02b1:  brtrue.s   IL_02ca
+
+//000097: 					nodePosition.Y -= MOVEMENT_SPEED * frameDeltaTime;
+    IL_02b3:  ldloc.s    nodePosition
+    IL_02b5:  dup
+    IL_02b6:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Y()
+    IL_02bb:  ldc.r4     5.
+    IL_02c0:  ldloc.s    frameDeltaTime
+    IL_02c2:  mul
+    IL_02c3:  sub
+    IL_02c4:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::set_Y(float32)
+    IL_02c9:  nop
+//000098: 
+//000099: 				if (IsKeyDown(KeyCode.KeyA))
+    IL_02ca:  ldc.i4.s   65
+    IL_02cc:  call       bool _04.Movement.Program::IsKeyDown(valuetype [IrrlichtLime]IrrlichtLime.KeyCode)
+    IL_02d1:  ldc.i4.0
+    IL_02d2:  ceq
+    IL_02d4:  stloc.s    CS$4$0000
+    IL_02d6:  ldloc.s    CS$4$0000
+    IL_02d8:  brtrue.s   IL_02f3
+
+//000100: 					nodePosition.X -= MOVEMENT_SPEED * frameDeltaTime;
+    IL_02da:  ldloc.s    nodePosition
+    IL_02dc:  dup
+    IL_02dd:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_X()
+    IL_02e2:  ldc.r4     5.
+    IL_02e7:  ldloc.s    frameDeltaTime
+    IL_02e9:  mul
+    IL_02ea:  sub
+    IL_02eb:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::set_X(float32)
+    IL_02f0:  nop
+    IL_02f1:  br.s       IL_031a
+
+//000101: 				else if (IsKeyDown(KeyCode.KeyD))
+    IL_02f3:  ldc.i4.s   68
+    IL_02f5:  call       bool _04.Movement.Program::IsKeyDown(valuetype [IrrlichtLime]IrrlichtLime.KeyCode)
+    IL_02fa:  ldc.i4.0
+    IL_02fb:  ceq
+    IL_02fd:  stloc.s    CS$4$0000
+    IL_02ff:  ldloc.s    CS$4$0000
+    IL_0301:  brtrue.s   IL_031a
+
+//000102: 					nodePosition.X += MOVEMENT_SPEED * frameDeltaTime;
+    IL_0303:  ldloc.s    nodePosition
+    IL_0305:  dup
+    IL_0306:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_X()
+    IL_030b:  ldc.r4     5.
+    IL_0310:  ldloc.s    frameDeltaTime
+    IL_0312:  mul
+    IL_0313:  add
+    IL_0314:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::set_X(float32)
+    IL_0319:  nop
+//000103: 
+//000104: 				node.Position = nodePosition;
+    IL_031a:  ldloc.s    node
+    IL_031c:  ldloc.s    nodePosition
+    IL_031e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0323:  nop
+//000105: 
+//000106: 				driver.BeginScene(true, true, new Color(113, 113, 113));
+    IL_0324:  ldloc.2
+    IL_0325:  ldc.i4.1
+    IL_0326:  ldc.i4.1
+    IL_0327:  ldc.i4.s   113
+    IL_0329:  ldc.i4.s   113
+    IL_032b:  ldc.i4.s   113
+    IL_032d:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0332:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool,
+                                                                                                bool,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0337:  pop
+//000107: 				smgr.DrawAll();
+    IL_0338:  ldloc.3
+    IL_0339:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_033e:  nop
+//000108: 				device.GUIEnvironment.DrawAll();
+    IL_033f:  ldloc.1
+    IL_0340:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0345:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::DrawAll()
+    IL_034a:  nop
+//000109: 				driver.EndScene();
+    IL_034b:  ldloc.2
+    IL_034c:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_0351:  pop
+//000110: 
+//000111: 				int fps = driver.FPS;
+    IL_0352:  ldloc.2
+    IL_0353:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_0358:  stloc.s    fps
+//000112: 				if (lastFPS != fps)
+    IL_035a:  ldloc.s    lastFPS
+    IL_035c:  ldloc.s    fps
+    IL_035e:  ceq
+    IL_0360:  stloc.s    CS$4$0000
+    IL_0362:  ldloc.s    CS$4$0000
+    IL_0364:  brtrue.s   IL_038a
+
+//000113: 				{
+    IL_0366:  nop
+//000114: 					device.SetWindowCaption(String.Format(
+    IL_0367:  ldloc.1
+    IL_0368:  ldstr      "Movement example - Irrlicht Engine [{0}] fps: {1}"
+    IL_036d:  ldloc.2
+    IL_036e:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_0373:  ldloc.s    fps
+    IL_0375:  box        [mscorlib]System.Int32
+    IL_037a:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_037f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_0384:  nop
+//000115: 						"Movement example - Irrlicht Engine [{0}] fps: {1}",
+//000116: 						driver.Name, fps));
+//000117: 
+//000118: 					lastFPS = fps;
+    IL_0385:  ldloc.s    fps
+    IL_0387:  stloc.s    lastFPS
+//000119: 				}
+    IL_0389:  nop
+//000120: 			}
+    IL_038a:  nop
+//000086: 			while (device.Run())
+    IL_038b:  ldloc.1
+    IL_038c:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_0391:  stloc.s    CS$4$0000
+    IL_0393:  ldloc.s    CS$4$0000
+    IL_0395:  brtrue     IL_0250
+
+//000087: 			{
+//000088: 				uint now = device.Timer.Time;
+//000089: 				float frameDeltaTime = (float)(now - then) / 1000.0f;
+//000090: 				then = now;
+//000091: 
+//000092: 				Vector3Df nodePosition = node.Position;
+//000093: 
+//000094: 				if (IsKeyDown(KeyCode.KeyW))
+//000095: 					nodePosition.Y += MOVEMENT_SPEED * frameDeltaTime;
+//000096: 				else if (IsKeyDown(KeyCode.KeyS))
+//000097: 					nodePosition.Y -= MOVEMENT_SPEED * frameDeltaTime;
+//000098: 
+//000099: 				if (IsKeyDown(KeyCode.KeyA))
+//000100: 					nodePosition.X -= MOVEMENT_SPEED * frameDeltaTime;
+//000101: 				else if (IsKeyDown(KeyCode.KeyD))
+//000102: 					nodePosition.X += MOVEMENT_SPEED * frameDeltaTime;
+//000103: 
+//000104: 				node.Position = nodePosition;
+//000105: 
+//000106: 				driver.BeginScene(true, true, new Color(113, 113, 113));
+//000107: 				smgr.DrawAll();
+//000108: 				device.GUIEnvironment.DrawAll();
+//000109: 				driver.EndScene();
+//000110: 
+//000111: 				int fps = driver.FPS;
+//000112: 				if (lastFPS != fps)
+//000113: 				{
+//000114: 					device.SetWindowCaption(String.Format(
+//000115: 						"Movement example - Irrlicht Engine [{0}] fps: {1}",
+//000116: 						driver.Name, fps));
+//000117: 
+//000118: 					lastFPS = fps;
+//000119: 				}
+//000120: 			}
+//000121: 
+//000122: 			device.Drop();
+    IL_039a:  ldloc.1
+    IL_039b:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_03a0:  pop
+//000123: 		}
+    IL_03a1:  ret
+  } // end of method Program::Main
+
+  .method private hidebysig static bool  device_OnEvent(class [IrrlichtLime]IrrlichtLime.Event e) cil managed
+  {
+    // Code size       121 (0x79)
+    .maxstack  3
+    .locals init ([0] bool CS$1$0000,
+             [1] bool CS$4$0001)
+//000124: 
+//000125: 		static Dictionary<KeyCode, bool> KeyIsDown = new Dictionary<KeyCode, bool>();
+//000126: 
+//000127: 		static bool device_OnEvent(Event e)
+//000128: 		{
+    IL_0000:  nop
+//000129: 			if (e.Type == EventType.Key)
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.EventType [IrrlichtLime]IrrlichtLime.Event::get_Type()
+    IL_0007:  ldc.i4.2
+    IL_0008:  ceq
+    IL_000a:  ldc.i4.0
+    IL_000b:  ceq
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.1
+    IL_000f:  brtrue.s   IL_0073
+
+//000130: 			{
+    IL_0011:  nop
+//000131: 				if (KeyIsDown.ContainsKey(e.Key.Key))
+    IL_0012:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _04.Movement.Program::KeyIsDown
+    IL_0017:  ldarg.0
+    IL_0018:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_001d:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.KeyCode [IrrlichtLime]IrrlichtLime.Event/KeyEvent::Key
+    IL_0022:  callvirt   instance bool class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::ContainsKey(!0)
+    IL_0027:  ldc.i4.0
+    IL_0028:  ceq
+    IL_002a:  stloc.1
+    IL_002b:  ldloc.1
+    IL_002c:  brtrue.s   IL_0051
+
+//000132: 					KeyIsDown[e.Key.Key] = e.Key.PressedDown;
+    IL_002e:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _04.Movement.Program::KeyIsDown
+    IL_0033:  ldarg.0
+    IL_0034:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_0039:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.KeyCode [IrrlichtLime]IrrlichtLime.Event/KeyEvent::Key
+    IL_003e:  ldarg.0
+    IL_003f:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_0044:  ldfld      bool [IrrlichtLime]IrrlichtLime.Event/KeyEvent::PressedDown
+    IL_0049:  callvirt   instance void class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::set_Item(!0,
+                                                                                                                                                            !1)
+    IL_004e:  nop
+    IL_004f:  br.s       IL_0072
+
+//000133: 				else
+//000134: 					KeyIsDown.Add(e.Key.Key, e.Key.PressedDown);
+    IL_0051:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _04.Movement.Program::KeyIsDown
+    IL_0056:  ldarg.0
+    IL_0057:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_005c:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.KeyCode [IrrlichtLime]IrrlichtLime.Event/KeyEvent::Key
+    IL_0061:  ldarg.0
+    IL_0062:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_0067:  ldfld      bool [IrrlichtLime]IrrlichtLime.Event/KeyEvent::PressedDown
+    IL_006c:  callvirt   instance void class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::Add(!0,
+                                                                                                                                                       !1)
+    IL_0071:  nop
+//000135: 			}
+    IL_0072:  nop
+//000136: 
+//000137: 			return false;
+    IL_0073:  ldc.i4.0
+    IL_0074:  stloc.0
+    IL_0075:  br.s       IL_0077
+
+//000138: 		}
+    IL_0077:  ldloc.0
+    IL_0078:  ret
+  } // end of method Program::device_OnEvent
+
+  .method private hidebysig static bool  IsKeyDown(valuetype [IrrlichtLime]IrrlichtLime.KeyCode keyCode) cil managed
+  {
+    // Code size       33 (0x21)
+    .maxstack  3
+    .locals init ([0] bool CS$1$0000)
+//000139: 
+//000140: 		static bool IsKeyDown(KeyCode keyCode)
+//000141: 		{
+    IL_0000:  nop
+//000142: 			return KeyIsDown.ContainsKey(keyCode) ? KeyIsDown[keyCode] : false;
+    IL_0001:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _04.Movement.Program::KeyIsDown
+    IL_0006:  ldarg.0
+    IL_0007:  callvirt   instance bool class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::ContainsKey(!0)
+    IL_000c:  brtrue.s   IL_0011
+
+    IL_000e:  ldc.i4.0
+    IL_000f:  br.s       IL_001c
+
+    IL_0011:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _04.Movement.Program::KeyIsDown
+    IL_0016:  ldarg.0
+    IL_0017:  callvirt   instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::get_Item(!0)
+    IL_001c:  stloc.0
+    IL_001d:  br.s       IL_001f
+
+//000143: 		}
+    IL_001f:  ldloc.0
+    IL_0020:  ret
+  } // end of method Program::IsKeyDown
+
+  .method private hidebysig static bool  AskUserForDriver([out] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType& driverType) cil managed
+  {
+    // Code size       104 (0x68)
+    .maxstack  2
+    .locals init ([0] valuetype [mscorlib]System.ConsoleKeyInfo i,
+             [1] bool CS$1$0000,
+             [2] valuetype [mscorlib]System.ConsoleKey CS$4$0001)
+//000144: 
+//000145: 		static bool AskUserForDriver(out DriverType driverType)
+//000146: 		{
+    IL_0000:  nop
+//000147: 			driverType = DriverType.Null;
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  stind.i4
+//000148: 
+//000149: 			Console.Write("Please select the driver you want for this example:\n" +
+    IL_0004:  ldstr      "Please select the driver you want for this example"
+    + ":\n (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n (d) Burning's Softw"
+    + "are Renderer\n (e) Software Renderer\n (f) NullDevice\n (otherKey) exit\n\n"
+    IL_0009:  call       void [mscorlib]System.Console::Write(string)
+    IL_000e:  nop
+//000150: 						" (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n" +
+//000151: 						" (d) Burning's Software Renderer\n (e) Software Renderer\n" +
+//000152: 						" (f) NullDevice\n (otherKey) exit\n\n");
+//000153: 
+//000154: 			ConsoleKeyInfo i = Console.ReadKey();
+    IL_000f:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0014:  stloc.0
+//000155: 
+//000156: 			switch (i.Key)
+    IL_0015:  ldloca.s   i
+    IL_0017:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_001c:  stloc.2
+    IL_001d:  ldloc.2
+    IL_001e:  ldc.i4.s   65
+    IL_0020:  sub
+    IL_0021:  switch     ( 
+                          IL_0040,
+                          IL_0045,
+                          IL_004a,
+                          IL_004f,
+                          IL_0054,
+                          IL_0059)
+    IL_003e:  br.s       IL_005e
+
+//000157: 			{
+//000158: 				case ConsoleKey.A: driverType = DriverType.OpenGL; break;
+    IL_0040:  ldarg.0
+    IL_0041:  ldc.i4.5
+    IL_0042:  stind.i4
+    IL_0043:  br.s       IL_0062
+
+//000159: 				case ConsoleKey.B: driverType = DriverType.Direct3D9; break;
+    IL_0045:  ldarg.0
+    IL_0046:  ldc.i4.4
+    IL_0047:  stind.i4
+    IL_0048:  br.s       IL_0062
+
+//000160: 				case ConsoleKey.C: driverType = DriverType.Direct3D8; break;
+    IL_004a:  ldarg.0
+    IL_004b:  ldc.i4.3
+    IL_004c:  stind.i4
+    IL_004d:  br.s       IL_0062
+
+//000161: 				case ConsoleKey.D: driverType = DriverType.BurningsVideo; break;
+    IL_004f:  ldarg.0
+    IL_0050:  ldc.i4.2
+    IL_0051:  stind.i4
+    IL_0052:  br.s       IL_0062
+
+//000162: 				case ConsoleKey.E: driverType = DriverType.Software; break;
+    IL_0054:  ldarg.0
+    IL_0055:  ldc.i4.1
+    IL_0056:  stind.i4
+    IL_0057:  br.s       IL_0062
+
+//000163: 				case ConsoleKey.F: driverType = DriverType.Null; break;
+    IL_0059:  ldarg.0
+    IL_005a:  ldc.i4.0
+    IL_005b:  stind.i4
+    IL_005c:  br.s       IL_0062
+
+//000164: 				default:
+//000165: 					return false;
+    IL_005e:  ldc.i4.0
+    IL_005f:  stloc.1
+    IL_0060:  br.s       IL_0066
+
+//000166: 			}
+//000167: 
+//000168: 			return true;
+    IL_0062:  ldc.i4.1
+    IL_0063:  stloc.1
+    IL_0064:  br.s       IL_0066
+
+//000169: 		}
+    IL_0066:  ldloc.1
+    IL_0067:  ret
+  } // end of method Program::AskUserForDriver
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+  .method private hidebysig specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  8
+//000125: 		static Dictionary<KeyCode, bool> KeyIsDown = new Dictionary<KeyCode, bool>();
+    IL_0000:  newobj     instance void class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::.ctor()
+    IL_0005:  stsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _04.Movement.Program::KeyIsDown
+    IL_000a:  ret
+  } // end of method Program::.cctor
+
+} // end of class _04.Movement.Program
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

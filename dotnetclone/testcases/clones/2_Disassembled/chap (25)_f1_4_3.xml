@@ -1,0 +1,232 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  ldarg.0
+  ldfld      valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sphere::Center
+  ldarga.s   ray
+  ldfld      valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Ray::Start
+  call       valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector::Minus(valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector,
+                                                                                                                                                                                    valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector)
+  stloc
+  ldloc
+  ldarga.s   ray
+  ldfld      valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Ray::Direction
+  call       float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector::Dot(valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector,
+                                                                                                          valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector)
+  stloc
+  ldloc
+  ldc.r8     0.0
+  clt
+  stloc
+  ldloc
+brfalse.s
+  ldc.r8     0.0
+  stloc
+br.s
+  nop
+  ldarg.0
+  ldfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sphere::Radius
+  ldc.r8     2.
+  call       float64 [mscorlib]System.Math::Pow(float64,
+                                                          float64)
+  ldloc
+  ldloc
+  call       float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector::Dot(valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector,
+                                                                                                          valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector)
+  ldloc
+  ldc.r8     2.
+  call       float64 [mscorlib]System.Math::Pow(float64,
+                                                          float64)
+  sub
+  sub
+  stloc
+  ldloc
+  ldc.r8     0.0
+blt.s
+  ldloc
+  ldloc
+  call       float64 [mscorlib]System.Math::Sqrt(float64)
+  sub
+br.s
+  ldc.r8     0.0
+  stloc
+  nop
+  ldloc
+  ldc.r8     0.0
+  ceq
+  stloc
+  ldloc
+brfalse.s
+  ldnull
+  stloc
+br.s
+  ldarg.0
+  ldarg.1
+  ldloc
+  newobj     instance void Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.ISect::.ctor(class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.SceneObject,
+                                                                                                                 valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Ray,
+                                                                                                                 float64)
+  stloc
+br.s
+  ldloc
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldarg.0
+  ldfld      valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sphere::Center
+  ldarga.s   ray
+  ldfld      valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Ray::Start
+  call       valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector::Minus(valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector,
+                                                                                                                                                                                    valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector)
+  stloc
+  ldloc
+  ldarga.s   ray
+  ldfld      valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Ray::Dir
+  call       float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector::Dot(valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector,
+                                                                                                          valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector)
+  stloc
+  ldloc
+  ldc.r8     0.0
+  clt
+  ldc.i4
+  ceq
+  stloc
+  ldloc
+brtrue.s
+  nop
+  ldc.r8     0.0
+  stloc
+  nop
+br.s
+  nop
+  ldarg.0
+  ldfld      float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Sphere::Radius
+  ldc.r8     2.
+  call       float64 [mscorlib]System.Math::Pow(float64,
+                                                          float64)
+  ldloc
+  ldloc
+  call       float64 Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector::Dot(valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector,
+                                                                                                          valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Vector)
+  ldloc
+  ldc.r8     2.
+  call       float64 [mscorlib]System.Math::Pow(float64,
+                                                          float64)
+  sub
+  sub
+  stloc
+  ldloc
+  ldc.r8     0.0
+blt.s
+  ldloc
+  ldloc
+  call       float64 [mscorlib]System.Math::Sqrt(float64)
+  sub
+br.s
+  ldc.r8     0.0
+  stloc
+  nop
+  ldloc
+  ldc.r8     0.0
+  ceq
+  ldc.i4
+  ceq
+  stloc
+  ldloc
+brtrue.s
+  ldsfld     class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.ISect Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.ISect::Null
+  stloc
+br.s
+  ldarg.0
+  ldarg.1
+  ldloc
+  newobj     instance void Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.ISect::.ctor(class Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.SceneObject,
+                                                                                                                 valuetype Microsoft.ParallelComputingPlatform.ParallelExtensions.Samples.Ray,
+                                                                                                                 float64)
+  stloc
+br.s
+  ldloc
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldarg.0
+  ldfld      class Raytracer_FSharp/Vector Raytracer_FSharp/Sphere@90::center
+  stloc
+  ldarg.1
+  ldfld      class Raytracer_FSharp/Vector Raytracer_FSharp/Ray::Start@
+  stloc
+  ldloc
+  ldloc
+  call       class Raytracer_FSharp/Vector Raytracer_FSharp/Vector::op_Subtraction(class Raytracer_FSharp/Vector,
+                                                                                             class Raytracer_FSharp/Vector)
+  stloc
+  ldloc
+  ldarg.1
+  ldfld      class Raytracer_FSharp/Vector Raytracer_FSharp/Ray::Dir@
+  call       float64 Raytracer_FSharp/Vector::Dot(class Raytracer_FSharp/Vector,
+                                                            class Raytracer_FSharp/Vector)
+  stloc
+  nop
+  ldloc
+  ldc.r8     0.0
+  clt
+brfalse.s
+br.s
+br.s
+  ldc.r8     0.0
+  nop
+br.s
+  ldarg.0
+  ldfld      float64 Raytracer_FSharp/Sphere@90::radius2
+  ldloc
+  ldloc
+  call       float64 Raytracer_FSharp/Vector::Dot(class Raytracer_FSharp/Vector,
+                                                            class Raytracer_FSharp/Vector)
+  ldloc
+  ldloc
+  mul
+  sub
+  sub
+  stloc
+  ldloc
+  ldc.r8     0.0
+  clt
+brfalse.s
+br.s
+br.s
+  ldc.r8     0.0
+  nop
+br.s
+  ldloc
+  ldloc
+  stloc
+  ldloc
+  stloc
+  ldloc
+  call       float64 [mscorlib]System.Math::Sqrt(float64)
+  sub
+  nop
+  stloc
+  ldloc
+  ldc.r8     0.0
+  ceq
+brfalse.s
+br.s
+br.s
+  ldnull
+  ret
+  ldarg.0
+  ldarg.1
+  ldloc
+  newobj     instance void Raytracer_FSharp/Intersection::.ctor(class Raytracer_FSharp/SceneObject,
+                                                                          class Raytracer_FSharp/Ray,
+                                                                          float64)
+  call       class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<!0> class [FSharp.Core]Microsoft.FSharp.Core.FSharpOption`1<class Raytracer_FSharp/Intersection>::Some(!0)
+  ret
+
+]]></source>
+</source_elements></project>

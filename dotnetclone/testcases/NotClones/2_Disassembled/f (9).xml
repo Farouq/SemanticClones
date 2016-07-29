@@ -1,0 +1,326 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+ IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 1 example 11: pause() and resume()"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldloc.0
+  IL_0013:  ldstr      "Chap0111a.pdf"
+  IL_0018:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_001d:  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  IL_0022:  stloc.3
+  IL_0023:  ldloc.0
+  IL_0024:  ldstr      "Chap0111b.pdf"
+  IL_0029:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_002e:  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  IL_0033:  stloc.s    writerB
+  IL_0035:  ldloc.s    writerB
+  IL_0037:  callvirt   instance void [iText]com.lowagie.text.DocWriter::pause()
+  IL_003c:  nop
+  IL_003d:  nop
+  .try
+  {
+    IL_003e:  ldstr      "watermark.jpg"
+    IL_0043:  call       class [iText]com.lowagie.text.Image [iText]com.lowagie.text.Image::getInstance(string)
+    IL_0048:  ldc.r4     200.
+    IL_004d:  ldc.r4     420.
+    IL_0052:  newobj     instance void [iText]com.lowagie.text.Watermark::.ctor(class [iText]com.lowagie.text.Image,
+                                                                                float32,
+                                                                                float32)
+    IL_0057:  stloc.s    Watermark
+    IL_0059:  ldloc.0
+    IL_005a:  ldloc.s    Watermark
+    IL_005c:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Watermark)
+    IL_0061:  pop
+    IL_0062:  leave.s    IL_007f
+  }  // end .try
+  catch [mscorlib]System.Exception 
+  {
+    IL_0064:  dup
+    IL_0065:  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+    IL_006a:  stloc.s    e
+    IL_006c:  nop
+    IL_006d:  ldstr      "Are you sure you have the file 'watermark.jpg' in "
+    + "the right path\?"
+    IL_0072:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_0077:  nop
+    IL_0078:  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::ClearProjectError()
+    IL_007d:  leave.s    IL_007f
+  }  // end handler
+  IL_007f:  nop
+  IL_0080:  ldloc.s    writerB
+  IL_0082:  callvirt   instance void [iText]com.lowagie.text.DocWriter::resume()
+  IL_0087:  nop
+  IL_0088:  ldstr      "This is a header"
+  IL_008d:  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(string)
+  IL_0092:  ldc.i4.0
+  IL_0093:  newobj     instance void [iText]com.lowagie.text.HeaderFooter::.ctor(class [iText]com.lowagie.text.Phrase,
+                                                                                 bool)
+  IL_0098:  stloc.2
+  IL_0099:  ldloc.0
+  IL_009a:  ldloc.2
+  IL_009b:  callvirt   instance void [iText]com.lowagie.text.Document::setHeader(class [iText]com.lowagie.text.HeaderFooter)
+  IL_00a0:  nop
+  IL_00a1:  ldloc.0
+  IL_00a2:  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  IL_00a7:  nop
+  IL_00a8:  ldloc.0
+  IL_00a9:  ldsfld     class [iText]com.lowagie.text.Rectangle [iText]com.lowagie.text.PageSize::A4
+  IL_00ae:  callvirt   instance class [iText]com.lowagie.text.Rectangle [iText]com.lowagie.text.Rectangle::rotate()
+  IL_00b3:  callvirt   instance bool [iText]com.lowagie.text.Document::setPageSize(class [iText]com.lowagie.text.Rectangle)
+  IL_00b8:  pop
+  IL_00b9:  nop
+  .try
+  {
+    IL_00ba:  ldstr      "watermark.jpg"
+    IL_00bf:  call       class [iText]com.lowagie.text.Image [iText]com.lowagie.text.Image::getInstance(string)
+    IL_00c4:  ldc.r4     320.
+    IL_00c9:  ldc.r4     200.
+    IL_00ce:  newobj     instance void [iText]com.lowagie.text.Watermark::.ctor(class [iText]com.lowagie.text.Image,
+                                                                                float32,
+                                                                                float32)
+    IL_00d3:  stloc.s    V_7
+    IL_00d5:  ldloc.0
+    IL_00d6:  ldloc.s    V_7
+    IL_00d8:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Watermark)
+    IL_00dd:  pop
+    IL_00de:  leave.s    IL_00fb
+  }  // end .try
+  catch [mscorlib]System.Exception 
+  {
+    IL_00e0:  dup
+    IL_00e1:  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+    IL_00e6:  stloc.s    V_8
+    IL_00e8:  nop
+    IL_00e9:  ldstr      "Are you sure you have the file 'watermark.jpg' in "
+    + "the right path\?"
+    IL_00ee:  call       void [mscorlib]System.Console::WriteLine(string)
+    IL_00f3:  nop
+    IL_00f4:  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::ClearProjectError()
+    IL_00f9:  leave.s    IL_00fb
+  }  // end handler
+  IL_00fb:  nop
+  IL_00fc:  ldstr      "This is page: "
+  IL_0101:  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(string)
+  IL_0106:  ldc.i4.1
+  IL_0107:  newobj     instance void [iText]com.lowagie.text.HeaderFooter::.ctor(class [iText]com.lowagie.text.Phrase,
+                                                                                 bool)
+  IL_010c:  stloc.1
+  IL_010d:  ldloc.0
+  IL_010e:  ldloc.1
+  IL_010f:  callvirt   instance void [iText]com.lowagie.text.Document::setFooter(class [iText]com.lowagie.text.HeaderFooter)
+  IL_0114:  nop
+  IL_0115:  ldloc.0
+  IL_0116:  ldstr      "Hello World"
+  IL_011b:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0120:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_0125:  pop
+  IL_0126:  ldloc.0
+  IL_0127:  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  IL_012c:  pop
+  IL_012d:  ldloc.0
+  IL_012e:  ldstr      "Hello Earth"
+  IL_0133:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0138:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_013d:  pop
+  IL_013e:  ldloc.3
+  IL_013f:  callvirt   instance void [iText]com.lowagie.text.DocWriter::pause()
+  IL_0144:  nop
+  IL_0145:  ldloc.0
+  IL_0146:  callvirt   instance void [iText]com.lowagie.text.Document::resetHeader()
+  IL_014b:  nop
+  IL_014c:  ldloc.3
+  IL_014d:  callvirt   instance void [iText]com.lowagie.text.DocWriter::resume()
+  IL_0152:  nop
+  IL_0153:  ldloc.0
+  IL_0154:  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  IL_0159:  pop
+  IL_015a:  ldloc.0
+  IL_015b:  ldstr      "Hello Sun"
+  IL_0160:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0165:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_016a:  pop
+  IL_016b:  ldloc.3
+  IL_016c:  callvirt   instance void [iText]com.lowagie.text.DocWriter::pause()
+  IL_0171:  nop
+  IL_0172:  ldloc.0
+  IL_0173:  ldstr      "Remark: the header has vanished!"
+  IL_0178:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_017d:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_0182:  pop
+  IL_0183:  ldloc.3
+  IL_0184:  callvirt   instance void [iText]com.lowagie.text.DocWriter::resume()
+  IL_0189:  nop
+  IL_018a:  ldloc.s    writerB
+  IL_018c:  callvirt   instance void [iText]com.lowagie.text.DocWriter::pause()
+  IL_0191:  nop
+  IL_0192:  ldloc.0
+  IL_0193:  callvirt   instance void [iText]com.lowagie.text.Document::resetPageCount()
+  IL_0198:  nop
+  IL_0199:  ldloc.s    writerB
+  IL_019b:  callvirt   instance void [iText]com.lowagie.text.DocWriter::resume()
+  IL_01a0:  nop
+  IL_01a1:  ldloc.0
+  IL_01a2:  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  IL_01a7:  pop
+  IL_01a8:  ldloc.0
+  IL_01a9:  ldstr      "Hello Moon"
+  IL_01ae:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_01b3:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_01b8:  pop
+  IL_01b9:  ldloc.s    writerB
+  IL_01bb:  callvirt   instance void [iText]com.lowagie.text.DocWriter::pause()
+  IL_01c0:  nop
+  IL_01c1:  ldloc.0
+  IL_01c2:  ldstr      "Remark: the pagenumber has been reset!"
+  IL_01c7:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_01cc:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_01d1:  pop
+  IL_01d2:  ldloc.s    writerB
+  IL_01d4:  callvirt   instance void [iText]com.lowagie.text.DocWriter::resume()
+  IL_01d9:  nop
+  IL_01da:  ldloc.0
+  IL_01db:  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  IL_01e0:  nop
+  IL_01e1:  nop
+  IL_01e2:  ret
+
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 10 example 9: a PdfPTable at an absolute p"
+  + "osition"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  IL_0011:  ldc.r4     50.
+  IL_0016:  ldc.r4     50.
+  IL_001b:  ldc.r4     50.
+  IL_0020:  ldc.r4     50.
+  IL_0025:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  IL_002a:  stloc.0
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "Chap1009.pdf"
+  IL_0031:  ldc.i4.2
+  IL_0032:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_0037:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_003c:  stloc.1
+  IL_003d:  ldloc.0
+  IL_003e:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_0043:  nop
+  IL_0044:  ldc.i4.4
+  IL_0045:  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::.ctor(int32)
+  IL_004a:  stloc.2
+  IL_004b:  ldloc.2
+  IL_004c:  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfPCell [iTextdotNET]com.lowagie.text.pdf.PdfPTable::getDefaultCell()
+  IL_0051:  ldc.i4.s   12
+  IL_0053:  callvirt   instance void [iTextdotNET]com.lowagie.text.Rectangle::setBorder(int32)
+  IL_0058:  nop
+  IL_0059:  ldc.i4.0
+  IL_005a:  stloc.3
+  IL_005b:  br.s       IL_007a
+  IL_005d:  nop
+  IL_005e:  ldloc.2
+  IL_005f:  ldstr      "cell "
+  IL_0064:  ldloc.3
+  IL_0065:  box        [mscorlib]System.Int32
+  IL_006a:  call       string [mscorlib]System.String::Concat(object,
+                                                              object)
+  IL_006f:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::addCell(string)
+  IL_0074:  nop
+  IL_0075:  nop
+  IL_0076:  ldloc.3
+  IL_0077:  ldc.i4.1
+  IL_0078:  add
+  IL_0079:  stloc.3
+  IL_007a:  ldloc.3
+  IL_007b:  ldc.i4.s   24
+  IL_007d:  clt
+  IL_007f:  stloc.s    CS$4$0000
+  IL_0081:  ldloc.s    CS$4$0000
+  IL_0083:  brtrue.s   IL_005d
+  IL_0085:  ldloc.2
+  IL_0086:  ldc.r4     300.
+  IL_008b:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::setTotalWidth(float32)
+  IL_0090:  nop
+  IL_0091:  ldloc.2
+  IL_0092:  ldc.i4.0
+  IL_0093:  ldc.i4.m1
+  IL_0094:  ldc.r4     100.
+  IL_0099:  ldc.r4     600.
+  IL_009e:  ldloc.1
+  IL_009f:  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfContentByte [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getDirectContent()
+  IL_00a4:  callvirt   instance float32 [iTextdotNET]com.lowagie.text.pdf.PdfPTable::writeSelectedRows(int32,
+                                                                                                       int32,
+                                                                                                       float32,
+                                                                                                       float32,
+                                                                                                       class [iTextdotNET]com.lowagie.text.pdf.PdfContentByte)
+  IL_00a9:  pop
+  IL_00aa:  ldloc.0
+  IL_00ab:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_00b0:  nop
+  IL_00b1:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+ IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 5 example 18: PdfPTable"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  IL_0014:  callvirt   instance class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.Rectangle::rotate()
+  IL_0019:  ldc.r4     10.
+  IL_001e:  ldc.r4     10.
+  IL_0023:  ldc.r4     10.
+  IL_0028:  ldc.r4     10.
+  IL_002d:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  IL_0032:  stloc.0
+  IL_0033:  ldloc.0
+  IL_0034:  ldstr      "Chap0518.pdf"
+  IL_0039:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_003e:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [vjslib_7]java.io.OutputStream)
+  IL_0043:  pop
+  IL_0044:  ldloc.0
+  IL_0045:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_004a:  ldloc.0
+  IL_004b:  call       void Chap0518::loadDocument(class [iTextdotNET]com.lowagie.text.Document)
+  IL_0050:  leave.s    IL_0076
+  IL_0052:  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  IL_0057:  stloc.2
+  IL_0058:  ldloc.2
+  IL_0059:  brfalse.s  IL_005e
+  IL_005b:  ldc.i4.1
+  IL_005c:  br.s       IL_005f
+  IL_005e:  ldc.i4.0
+  IL_005f:  endfilter
+  IL_0061:  pop
+  IL_0062:  ldloc.2
+  IL_0063:  castclass  [vjslib]java.lang.Exception
+  IL_0068:  stloc.1
+  IL_0069:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_006e:  ldloc.1
+  IL_006f:  callvirt   instance void [vjslib]java.io.PrintStream::println(object)
+  IL_0074:  leave.s    IL_0076
+  IL_0076:  ldloc.0
+  .try IL_0033 to IL_0052 filter IL_0052 handler IL_0061 to IL_0076
+  IL_0077:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_007c:  br.s       IL_007e
+  IL_007e:  ret
+
+]]></source>
+</source_elements></project>

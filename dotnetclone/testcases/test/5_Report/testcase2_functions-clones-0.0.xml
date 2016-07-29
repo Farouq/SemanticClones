@@ -1,0 +1,31 @@
+<clones>
+<systeminfo processor="nicad3" system="testcase2" granularity="functions" threshold="0%" minlines="6" maxlines="2500"/>
+<cloneinfo npcs="66" npairs="5"/>
+<runinfo ncompares="26" cputime="40000"/>
+
+<clone nlines="38" similarity="100">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0101.java" startline="31" endline="60" pcid="45"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0801.java" startline="31" endline="60" pcid="64"></source>
+</clone>
+
+<clone nlines="25" similarity="100">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="25" similarity="100">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="25" similarity="100">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="24" similarity="100">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+</clones>

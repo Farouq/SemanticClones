@@ -1,0 +1,1526 @@
+<clones  >
+<clone_pair groupid="0" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="602" endline="610">
+<![CDATA[
+ 
+ 		protected override int GetRowSize(RowSizeCalc rsc)
+ 		{
+ 			return rsc
+ 				.AddFixed(2)
+ 				.WriteStringIndex()
+ 				.WriteBlobIndex()
+ 				.Value;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="1539" endline="1547">
+<![CDATA[
+ 
+ 		protected override int GetRowSize(RowSizeCalc rsc)
+ 		{
+ 			return rsc
+ 				.AddFixed(2)
+ 				.WriteStringIndex()
+ 				.WriteBlobIndex()
+ 				.Value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="547" endline="555">
+<![CDATA[
+ 	}
+ 
+ 	public class FlowBranchingBreakable 
+ 	{
+ 		UsageVector break_origins;
+ 
+ 		public FlowBranchingBreakable (FlowBranching parent, BranchingType type, SiblingType stype, Block block, Location loc)
+ 			
+ 		{ }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\flowanalysis.cs" startline="571" endline="579">
+<![CDATA[
+ 	}
+ 
+ 	public class FlowBranchingContinuable 
+ 	{
+ 		UsageVector continue_origins;
+ 
+ 		public FlowBranchingContinuable (FlowBranching parent, BranchingType type, SiblingType stype, Block block, Location loc)
+ 			
+ 		{ }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="87" endline="95">
+<![CDATA[
+ 	}
+ 
+ 	public class ParenthesizedExpression 
+ 	{
+ 		public ParenthesizedExpression (Expression expr)
+ 			
+ 		{
+ 			loc = expr.Location;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="4320" endline="4332">
+<![CDATA[
+ 	}
+ 
+ 	//
+ 	// A boolean-expression is an expression that yields a result
+ 	// of type bool
+ 	//
+ 	public class BooleanExpression 
+ 	{
+ 		public BooleanExpression (Expression expr)
+ 			
+ 		{
+ 			this.loc = expr.Location;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="3" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\ecore.cs" startline="1440" endline="1454">
+<![CDATA[
+ 	}
+ 
+ 	/// <summary>
+ 	///   This kind of cast is used to encapsulate Value Types in objects.
+ 	///
+ 	///   The effect of it is to box the value type emitted by the previous
+ 	///   operation.
+ 	/// </summary>
+ 	public class BoxedCast 
+ 
+ 		public BoxedCast (Expression expr, TypeSpec target_type)
+ 			
+ 		{
+ 			eclass = ExprClass.Value;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\nullable.cs" startline="291" endline="299">
+<![CDATA[
+ 	}
+ 
+ 	public class Wrap 
+ 	{
+ 		private Wrap (Expression expr, TypeSpec type)
+ 			
+ 		{
+ 			eclass = ExprClass.Value;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="4" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\MyBaseExpression.vb" startline="36" endline="43">
+<![CDATA[
+ 
+     Protected Overrides Function GenerateCodeInternal(ByVal Info As EmitInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         Emitter.EmitLoadMe(Info, ExpressionType)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\MyClassExpression.vb" startline="31" endline="39">
+<![CDATA[
+     End Property
+ 
+     Protected Overrides Function GenerateCodeInternal(ByVal Info As EmitInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         Emitter.EmitLoadMe(Info, ExpressionType)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="5" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Report.vb" startline="253" endline="260">
+<![CDATA[
+ 
+     ''' <summary>
+     ''' Shows the message with the specified location and parameters
+     ''' </summary>
+     <Diagnostics.DebuggerHidden()> _
+     Function ShowMessage(ByVal Message As Messages, ByVal Location As Span, ByVal ParamArray Parameters() As String) As Boolean
+         Return ShowMessage(False, New Message(Compiler, Message, Parameters, Location))
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Report.vb" startline="270" endline="277">
+<![CDATA[
+ 
+     ''' <summary>
+     ''' Shows the multiline message with the specified location and parameters.
+     ''' </summary>
+     <Diagnostics.DebuggerHidden()> _
+     Function ShowMessage(ByVal Message() As Messages, ByVal Location As Span, ByVal ParamArray Parameters()() As String) As Boolean
+         Return ShowMessage(False, New Message(Compiler, Message, Parameters, Location))
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="6" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\enum.cs" startline="169" endline="175">
+<![CDATA[
+ 		}
+ 
+ 		protected override TypeAttributes TypeAttr {
+ 			get {
+ 				return ModifiersExtensions.TypeAttr (ModFlags, IsTopLevel) |
+ 					TypeAttributes.Class | TypeAttributes.Sealed | base.TypeAttr;
+ 			}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\delegate.cs" startline="328" endline="334">
+<![CDATA[
+ 
+ 		protected override TypeAttributes TypeAttr {
+ 			get {
+ 				return ModifiersExtensions.TypeAttr (ModFlags, IsTopLevel) |
+ 					TypeAttributes.Class | TypeAttributes.Sealed |
+ 					base.TypeAttr;
+ 			}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="7" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\Mono.CompilerServices.SymbolWriter\MonoSymbolWriter.cs" startline="173" endline="180">
+<![CDATA[
+ 
+ 		public void CloseScope (int end_offset)
+ 		{
+ 			if (current_method == null)
+ 				return;
+ 
+ 			current_method.EndBlock (end_offset);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\Mono.CompilerServices.SymbolWriter\MonoSymbolWriter.cs" startline="190" endline="197">
+<![CDATA[
+ 
+ 		public void CloseCompilerGeneratedBlock (int end_offset)
+ 		{
+ 			if (current_method == null)
+ 				return;
+ 
+ 			current_method.EndBlock (end_offset);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="8" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="5470" endline="5480">
+<![CDATA[
+ 		
+ 		public override void EmitStatement (EmitContext ec)
+ 		{
+ 			Emit (ec);
+ 
+ 			// 
+ 			// Pop the return value if there is one
+ 			//
+ 			if (type != TypeManager.void_type)
+ 				ec.Emit (OpCodes.Pop);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\delegate.cs" startline="747" endline="756">
+<![CDATA[
+ 
+ 		public override void EmitStatement (EmitContext ec)
+ 		{
+ 			Emit (ec);
+ 			// 
+ 			// Pop the return value if there is one
+ 			//
+ 			if (type != TypeManager.void_type)
+ 				ec.Emit (OpCodes.Pop);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="9" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\OperatorExpression.vb" startline="37" endline="44">
+<![CDATA[
+ 
+     Shared Function IsUnaryMe(ByVal tm As tm) As Boolean
+         Dim result As Boolean = True
+ 
+         Return tm.Compiler.Report.ShowMessage(Messages.VBNC99997, tm.CurrentLocation)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\OperatorExpression.vb" startline="45" endline="52">
+<![CDATA[
+ 
+     Shared Function IsBinaryMe(ByVal tm As tm) As Boolean
+         Dim result As Boolean = True
+ 
+         Return tm.Compiler.Report.ShowMessage(Messages.VBNC99997, tm.CurrentLocation)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="10" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\OperatorExpression.vb" startline="37" endline="44">
+<![CDATA[
+ 
+     Shared Function IsUnaryMe(ByVal tm As tm) As Boolean
+         Dim result As Boolean = True
+ 
+         Return tm.Compiler.Report.ShowMessage(Messages.VBNC99997, tm.CurrentLocation)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Tokens\IdentifierOrKeywordWithTypeArguments.vb" startline="64" endline="71">
+<![CDATA[
+ 
+     Shared Function IsMe(ByVal tm As tm) As Boolean
+         Dim result As Boolean = True
+ 
+         Return tm.Compiler.Report.ShowMessage(Messages.VBNC99997, tm.CurrentLocation)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="11" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\CastExpression.vb" startline="41" endline="48">
+<![CDATA[
+ 
+     Protected Overrides Function ResolveExpressionInternal(ByVal Info As ResolveInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         Return Compiler.Report.ShowMessage(Messages.VBNC99997, Me.Location)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\LateBoundAccessToExpression.vb" startline="47" endline="54">
+<![CDATA[
+ 
+     Protected Overrides Function GenerateCodeInternal(ByVal Info As EmitInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         Return Compiler.Report.ShowMessage(Messages.VBNC99997, Me.Location)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="12" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\CastExpression.vb" startline="41" endline="48">
+<![CDATA[
+ 
+     Protected Overrides Function ResolveExpressionInternal(ByVal Info As ResolveInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         Return Compiler.Report.ShowMessage(Messages.VBNC99997, Me.Location)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\OperatorExpression.vb" startline="53" endline="60">
+<![CDATA[
+ 
+     Protected Overrides Function ResolveExpressionInternal(ByVal Info As ResolveInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         Return Compiler.Report.ShowMessage(Messages.VBNC99997, Location)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="13" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\CastExpression.vb" startline="41" endline="48">
+<![CDATA[
+ 
+     Protected Overrides Function ResolveExpressionInternal(ByVal Info As ResolveInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         Return Compiler.Report.ShowMessage(Messages.VBNC99997, Me.Location)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\SimpleExpression.vb" startline="43" endline="50">
+<![CDATA[
+ 
+     Protected Overrides Function ResolveExpressionInternal(ByVal Info As ResolveInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         Return Compiler.Report.ShowMessage(Messages.VBNC99997, Location)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="14" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\CastExpression.vb" startline="41" endline="48">
+<![CDATA[
+ 
+     Protected Overrides Function ResolveExpressionInternal(ByVal Info As ResolveInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         Return Compiler.Report.ShowMessage(Messages.VBNC99997, Me.Location)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Tokens\IdentifierOrKeywordWithTypeArguments.vb" startline="72" endline="79">
+<![CDATA[
+ 
+     Overrides Function ResolveCode(ByVal Info As ResolveInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         Return Compiler.Report.ShowMessage(Messages.VBNC99997, Location)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="15" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\BinaryExpressions\LShiftExpression.vb" startline="58" endline="66">
+<![CDATA[
+ 
+     Public Overrides ReadOnly Property RightOperandTypeCode() As System.TypeCode
+         Get
+             If MyBase.OperandTypeCode = TypeCode.Object Then
+                 Return TypeCode.Object
+             Else
+                 Return TypeCode.Int32
+             End If
+         End Get
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\BinaryExpressions\RShiftExpression.vb" startline="59" endline="67">
+<![CDATA[
+ 
+     Public Overrides ReadOnly Property RightOperandTypeCode() As System.TypeCode
+         Get
+             If MyBase.OperandTypeCode = TypeCode.Object Then
+                 Return TypeCode.Object
+             Else
+                 Return TypeCode.Int32
+             End If
+         End Get
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="16" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\assign.cs" startline="203" endline="209">
+<![CDATA[
+ 
+ 		public override Expression CreateExpressionTree (ResolveContext ec)
+ 		{
+ 			Arguments args = new Arguments (1);
+ 			args.Add (new Argument (this));
+ 			return CreateExpressionFactoryCall (ec, "Constant", args);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="6915" endline="6924">
+<![CDATA[
+ 
+ 		public override Expression CreateExpressionTree (ResolveContext ec)
+ 		{
+ 			Arguments args = new Arguments (1);
+ 			args.Add (new Argument (this));
+ 			
+ 			// Use typeless constant for ldarg.0 to save some
+ 			// space and avoid problems with anonymous stories
+ 			return CreateExpressionFactoryCall (ec, "Constant", args);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="17" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Members\ConstantDeclaration.vb" startline="281" endline="288">
+<![CDATA[
+ 
+     Public Overrides Function ResolveCode(ByVal Info As ResolveInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         result = MyBase.ResolveCode(Info) AndAlso result
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Members\EventDeclaration.vb" startline="188" endline="195">
+<![CDATA[
+ 
+     Public Overrides Function ResolveCode(ByVal Info As ResolveInfo) As Boolean
+         Dim result As Boolean = True
+ 
+         result = MyBase.ResolveCode(Info) AndAlso result
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="18" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\TypeDeclarations\ClassDeclaration.vb" startline="66" endline="78">
+<![CDATA[
+ 
+     ''' <summary>
+     ''' Returns the default constructor (non-private, non-shared, with no parameters) for the base type (if any).          ''' If no constructor found, returns nothing.
+     ''' </summary>
+     ''' <returns></returns>
+     ''' <remarks></remarks>
+     Function GetBaseDefaultConstructor() As Mono.Cecil.MethodReference
+         If CecilHelper.IsGenericType(Me.BaseType) Then
+             Return Helper.GetDefaultGenericConstructor(Me.BaseType)
+         Else
+             Return Helper.GetDefaultConstructor(Me.BaseType)
+         End If
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\TypeDeclarations\ClassDeclaration.vb" startline="79" endline="91">
+<![CDATA[
+ 
+     ''' <summary>
+     ''' Returns the default constructor (non-private, non-shared, with no parameters) for the base type (if any).          ''' If no constructor found, returns nothing.
+     ''' </summary>
+     ''' <returns></returns>
+     ''' <remarks></remarks>
+     Function GetBaseDefaultConstructorCecil() As Mono.Cecil.MethodReference
+         If CecilHelper.IsGenericType(Me.BaseType) Then
+             Return Helper.GetDefaultGenericConstructor(Me.BaseType)
+         Else
+             Return Helper.GetDefaultConstructor(Me.BaseType)
+         End If
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="19" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="1367" endline="1374">
+<![CDATA[
+ 
+ 		internal override void Write(MetadataWriter mw)
+ 		{
+ 			for (int i = 0; i < rowCount; i++)
+ 			{
+ 				mw.WriteBlobIndex(records[i]);
+ 			}
+ 			for (int i = 0; i < rowCount; i++)
+ 			{
+ 				mw.WriteBlobIndex(records[i]);
+ 			}
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="1799" endline="1806">
+<![CDATA[
+ 
+ 		internal override void Write(MetadataWriter mw)
+ 		{
+ 			for (int i = 0; i < rowCount; i++)
+ 			{
+ 				mw.WriteBlobIndex(records[i]);
+ 			}
+ 			for (int i = 0; i < rowCount; i++)
+ 			{
+ 				mw.WriteBlobIndex(records[i]);
+ 			}
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="20" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\method.cs" startline="97" endline="112">
+<![CDATA[
+ 		}
+ 
+ 		protected override bool CheckOverrideAgainstBase (MemberSpec base_member)
+ 		{
+ 			bool res = base.CheckOverrideAgainstBase (base_member);
+ 
+ 			//
+ 			// Check that the permissions are not being changed
+ 			//
+ 			if (!CheckAccessModifiers (this, base_member)) {
+ 				Error_CannotChangeAccessModifiers (this, base_member);
+ 				res = false;
+ 			}
+ 
+ 			return res;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\property.cs" startline="1255" endline="1266">
+<![CDATA[
+ 
+ 		protected override bool CheckOverrideAgainstBase (MemberSpec base_member)
+ 		{
+ 			var ok = base.CheckOverrideAgainstBase (base_member);
+ 
+ 			if (!CheckAccessModifiers (this, base_member)) {
+ 				Error_CannotChangeAccessModifiers (this, base_member);
+ 				ok = false;
+ 			}
+ 
+ 			return ok;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="21" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\method.cs" startline="1993" endline="2002">
+<![CDATA[
+ 
+ 		public override void ApplyAttributeBuilder (Attribute a, MethodSpec ctor, byte[] cdata, PredefinedAttributes pa)
+ 		{
+ 			if (a.Type == pa.Conditional) {
+ 				Error_ConditionalAttributeIsNotValid ();
+ 				return;
+ 			}
+ 
+ 			base.ApplyAttributeBuilder (a, ctor, cdata, pa);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\method.cs" startline="2336" endline="2345">
+<![CDATA[
+ 
+ 		public override void ApplyAttributeBuilder (Attribute a, MethodSpec ctor, byte[] cdata, PredefinedAttributes pa)
+ 		{
+ 			if (a.Type == pa.Conditional) {
+ 				Error_ConditionalAttributeIsNotValid ();
+ 				return;
+ 			}
+ 
+ 			base.ApplyAttributeBuilder (a, ctor, cdata, pa);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="22" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\MyGenerator.vb" startline="559" endline="583">
+<![CDATA[
+ 
+     Function GenerateMyRequest() As Boolean
+         Dim result As Boolean = True
+ 
+         If m_MyType <> MyTypes.Web Then Return True
+ 
+         Dim code As String
+         code = "" & _
+         "        <Global.System.ComponentModel.Design.HelpKeyword(""My.Request"")> _" & VB.vbNewLine & _
+         "        Friend Shared ReadOnly Property Request As Global.System.Web.HttpRequest" & VB.vbNewLine & _
+         "            Get" & VB.vbNewLine & _
+         "                Dim current As Global.System.Web.HttpContext" & VB.vbNewLine & _
+         "                current = Global.System.Web.HttpContext.Current" & VB.vbNewLine & _
+         "                If current IsNot Nothing Then" & VB.vbNewLine & _
+         "                    Return current.Request" & VB.vbNewLine & _
+         "                Else" & VB.vbNewLine & _
+         "                    Return Nothing" & VB.vbNewLine & _
+         "                End If" & VB.vbNewLine & _
+         "            End Get" & VB.vbNewLine & _
+         "        End Property" & VB.vbNewLine
+ 
+         ProjectCode.AppendLine(code)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\MyGenerator.vb" startline="590" endline="614">
+<![CDATA[
+ 
+     Function GenerateMyResponse() As Boolean
+         Dim result As Boolean = True
+ 
+         If m_MyType <> MyTypes.Web Then Return True
+ 
+         Dim code As String
+         code = "" & _
+         "        <Global.System.ComponentModel.Design.HelpKeyword(""My.Response"")> _" & VB.vbNewLine & _
+         "        Friend Shared ReadOnly Property Response As Global.System.Web.HttpResponse" & VB.vbNewLine & _
+         "            Get" & VB.vbNewLine & _
+         "                Dim current As Global.System.Web.HttpContext" & VB.vbNewLine & _
+         "                current = Global.System.Web.HttpContext.Current" & VB.vbNewLine & _
+         "                If current IsNot Nothing Then" & VB.vbNewLine & _
+         "                    Return current.Response    " & VB.vbNewLine & _
+         "                Else" & VB.vbNewLine & _
+         "                    Return Nothing" & VB.vbNewLine & _
+         "                End If" & VB.vbNewLine & _
+         "            End Get" & VB.vbNewLine & _
+         "        End Property" & VB.vbNewLine
+ 
+         ProjectCode.AppendLine(code)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="23" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="1354" endline="1366">
+<![CDATA[
+ 	}
+ 
+ 	sealed class StandAloneSigTable 
+ 	{
+ 		internal const int Index = 0x11;
+ 
+ 		internal override void Read(MetadataReader mr)
+ 		{
+ 			for (int i = 0; i < records.Length; i++)
+ 			{
+ 				records[i] = mr.ReadBlobIndex();
+ 			}
+ 			for (int i = 0; i < records.Length; i++)
+ 			{
+ 				records[i] = mr.ReadBlobIndex();
+ 			}
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="1786" endline="1798">
+<![CDATA[
+ 	}
+ 
+ 	sealed class TypeSpecTable 
+ 	{
+ 		internal const int Index = 0x1B;
+ 
+ 		internal override void Read(MetadataReader mr)
+ 		{
+ 			for (int i = 0; i < records.Length; i++)
+ 			{
+ 				records[i] = mr.ReadBlobIndex();
+ 			}
+ 			for (int i = 0; i < records.Length; i++)
+ 			{
+ 				records[i] = mr.ReadBlobIndex();
+ 			}
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="24" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\attribute.cs" startline="617" endline="632">
+<![CDATA[
+ 
+ 		/// <summary>
+ 		/// Returns custom name of indexer
+ 		/// </summary>
+ 		public string GetIndexerAttributeValue ()
+ 		{
+ 			if (!arg_resolved)
+ 				// TODO
+ 				// But because a lot of attribute class code must be rewritten will be better to wait...
+ 				Resolve ();
+ 
+ 			if (resolve_error)
+ 				return null;
+ 
+ 			return ((Constant) PosArguments [0].Expr).GetValue () as string;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\attribute.cs" startline="633" endline="648">
+<![CDATA[
+ 
+ 		/// <summary>
+ 		/// Returns condition of ConditionalAttribute
+ 		/// </summary>
+ 		public string GetConditionalAttributeValue ()
+ 		{
+ 			if (!arg_resolved)
+ 				// TODO
+ 				// But because a lot of attribute class code must be rewritten will be better to wait...
+ 				Resolve ();
+ 
+ 			if (resolve_error)
+ 				return null;
+ 
+ 			return ((Constant) PosArguments[0].Expr).GetValue () as string;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="25" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Types\NonArrayTypeName.vb" startline="96" endline="107">
+<![CDATA[
+     End Property
+ 
+     ReadOnly Property Name() As String
+         Get
+             If IsConstructedTypeName Then
+                 Return AsConstructedTypeName.Name
+             ElseIf Me.IsSimpleTypeName Then
+                 Return AsSimpleTypeName.Name
+             Else
+                 Throw New InternalException(Me)
+             End If
+         End Get
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Types\NonArrayTypeName.vb" startline="191" endline="200">
+<![CDATA[
+ 
+     Overrides Function ToString() As String
+         If IsConstructedTypeName Then
+             Return AsConstructedTypeName.Name
+         ElseIf IsSimpleTypeName Then
+             Return AsSimpleTypeName.Name
+         Else
+             Throw New InternalException(Me)
+         End If
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="26" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\constant.cs" startline="159" endline="167">
+<![CDATA[
+ 
+ 		public override Expression CreateExpressionTree (ResolveContext ec)
+ 		{
+ 			Arguments args = new Arguments (2);
+ 			args.Add (new Argument (this));
+ 			args.Add (new Argument (new TypeOf (new TypeExpression (type, loc), loc)));
+ 
+ 			return CreateExpressionFactoryCall (ec, "Constant", args);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="1655" endline="1662">
+<![CDATA[
+ 
+ 		public override Expression CreateExpressionTree (ResolveContext ec)
+ 		{
+ 			Arguments args = new Arguments (2);
+ 			args.Add (new Argument (this));
+ 			args.Add (new Argument (new TypeOf (new TypeExpression (type, loc), loc)));
+ 			return CreateExpressionFactoryCall (ec, "Constant", args);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="27" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\constant.cs" startline="159" endline="167">
+<![CDATA[
+ 
+ 		public override Expression CreateExpressionTree (ResolveContext ec)
+ 		{
+ 			Arguments args = new Arguments (2);
+ 			args.Add (new Argument (this));
+ 			args.Add (new Argument (new TypeOf (new TypeExpression (type, loc), loc)));
+ 
+ 			return CreateExpressionFactoryCall (ec, "Constant", args);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="7108" endline="7118">
+<![CDATA[
+ 		}
+ 
+ 		#endregion
+ 
+ 		public override Expression CreateExpressionTree (ResolveContext ec)
+ 		{
+ 			Arguments args = new Arguments (2);
+ 			args.Add (new Argument (this));
+ 			args.Add (new Argument (new TypeOf (new TypeExpression (type, loc), loc)));
+ 			return CreateExpressionFactoryCall (ec, "Constant", args);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="28" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\constant.cs" startline="159" endline="167">
+<![CDATA[
+ 
+ 		public override Expression CreateExpressionTree (ResolveContext ec)
+ 		{
+ 			Arguments args = new Arguments (2);
+ 			args.Add (new Argument (this));
+ 			args.Add (new Argument (new TypeOf (new TypeExpression (type, loc), loc)));
+ 
+ 			return CreateExpressionFactoryCall (ec, "Constant", args);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="7293" endline="7300">
+<![CDATA[
+ 
+ 		public override Expression CreateExpressionTree (ResolveContext ec)
+ 		{
+ 			Arguments args = new Arguments (2);
+ 			args.Add (new Argument (this));
+ 			args.Add (new Argument (new TypeOf (new TypeExpression (type, loc), loc)));
+ 			return CreateExpressionFactoryCall (ec, "Constant", args);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="29" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\BinaryExpressions\AndExpression.vb" startline="24" endline="38">
+<![CDATA[
+         Get
+             Dim result As Mono.Cecil.TypeReference
+             Dim lType, rType As Mono.Cecil.TypeReference
+ 
+             lType = Me.LeftType
+             rType = Me.RightType
+ 
+             If Helper.CompareType(lType, rType) AndAlso Helper.IsEnum(Compiler, lType) Then
+                 result = lType
+             Else
+                 result = MyBase.ExpressionType()
+             End If
+ 
+             Return result
+         End Get
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\BinaryExpressions\OrExpression.vb" startline="24" endline="38">
+<![CDATA[
+         Get
+             Dim result As Mono.Cecil.TypeReference
+             Dim lType, rType As Mono.Cecil.TypeReference
+ 
+             lType = Me.LeftType
+             rType = Me.RightType
+ 
+             If Helper.CompareType(lType, rType) AndAlso Helper.IsEnum(Compiler, lType) Then
+                 result = lType
+             Else
+                 result = MyBase.ExpressionType()
+             End If
+ 
+             Return result
+         End Get
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="30" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Classifications\MethodGroupClassification.vb" startline="192" endline="207">
+<![CDATA[
+     End Property
+ 
+     ''' <summary>
+     ''' Returns nothing if the resolved method isn't a methodinfo.
+     ''' </summary>
+     ''' <value></value>
+     ''' <remarks></remarks>
+     ReadOnly Property ResolvedMethodInfo() As Mono.Cecil.MethodReference
+         Get
+             If SuccessfullyResolved = False Then Throw New InternalException(Me)
+             If TypeOf m_Group(0) Is Mono.Cecil.MethodReference Then
+                 Return DirectCast(m_Group(0), Mono.Cecil.MethodReference)
+             Else
+                 Return Nothing
+             End If
+         End Get
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Classifications\MethodGroupClassification.vb" startline="208" endline="224">
+<![CDATA[
+     End Property
+ 
+     ''' <summary>
+     ''' Returns nothing if the resolved method isn't a constructorinfo.
+     ''' </summary>
+     ''' <value></value>
+     ''' <returns></returns>
+     ''' <remarks></remarks>
+     ReadOnly Property ResolvedConstructor() As Mono.Cecil.MethodReference
+         Get
+             If SuccessfullyResolved = False Then Throw New InternalException(Me)
+             If TypeOf m_Group(0) Is Mono.Cecil.MethodReference Then
+                 Return DirectCast(m_Group(0), Mono.Cecil.MethodReference)
+             Else
+                 Return Nothing
+             End If
+         End Get
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="31" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="1380" endline="1391">
+<![CDATA[
+ 
+ 		internal int FindOrAddRecord(int blob)
+ 		{
+ 			for (int i = 0; i < rowCount; i++)
+ 			{
+ 				if (records[i] == blob)
+ 				{
+ 					return i + 1;
+ 				}
+ 			}
+ 			for (int i = 0; i < rowCount; i++)
+ 			{
+ 				if (records[i] == blob)
+ 				{
+ 					return i + 1;
+ 				}
+ 			}
+ 			return AddRecord(blob);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Metadata\Tables.cs" startline="1774" endline="1785">
+<![CDATA[
+ 
+ 		internal int FindOrAddRecord(int str)
+ 		{
+ 			for (int i = 0; i < rowCount; i++)
+ 			{
+ 				if (records[i] == str)
+ 				{
+ 					return i + 1;
+ 				}
+ 			}
+ 			for (int i = 0; i < rowCount; i++)
+ 			{
+ 				if (records[i] == str)
+ 				{
+ 					return i + 1;
+ 				}
+ 			}
+ 			return AddRecord(str);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="32" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" startline="548" endline="560">
+<![CDATA[
+ 
+     Shared Function GetUnaryResultType(ByVal op As KS, ByVal op1 As TypeCode) As TypeCode
+         Select Case op
+             Case KS.Add
+                 Return GetUnaryPlusResultType(op1)
+             Case KS.Minus
+                 Return GetUnaryMinusResultType(op1)
+             Case KS.Not
+                 Return GetUnaryNotResultType(op1)
+             Case Else
+                 Throw New NotImplementedException()
+         End Select
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" startline="612" endline="624">
+<![CDATA[
+ 
+     Shared Function GetUnaryOperandType(ByVal op As KS, ByVal operand As TypeCode) As TypeCode
+         Select Case op
+             Case KS.Add
+                 Return GetUnaryPlusResultType(operand)
+             Case KS.Minus
+                 Return GetUnaryMinusResultType(operand)
+             Case KS.Not
+                 Return GetUnaryNotResultType(operand)
+             Case Else
+                 Throw New NotImplementedException
+         End Select
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="33" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="3139" endline="3158">
+<![CDATA[
+ 
+ 
+     Overloads Shared Function ToString(ByVal Accessibility As Mono.Cecil.FieldAttributes) As String
+         Select Case Accessibility
+             Case Mono.Cecil.FieldAttributes.FamANDAssem
+                 Return "Protected Friend"
+             Case Mono.Cecil.FieldAttributes.FamORAssem
+                 Return "Protected Friend"
+             Case Mono.Cecil.FieldAttributes.Family
+                 Return "Protected"
+             Case Mono.Cecil.FieldAttributes.Assembly
+                 Return "Friend"
+             Case Mono.Cecil.FieldAttributes.Public
+                 Return "Public"
+             Case Mono.Cecil.FieldAttributes.Private
+                 Return "Private"
+             Case Else
+                 Return "<unknown>"
+         End Select
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="3159" endline="3177">
+<![CDATA[
+ 
+     Overloads Shared Function ToString(ByVal Accessibility As Mono.Cecil.MethodAttributes) As String
+         Select Case Accessibility
+             Case Mono.Cecil.MethodAttributes.FamANDAssem
+                 Return "Protected Friend"
+             Case Mono.Cecil.MethodAttributes.FamORAssem
+                 Return "Protected Friend"
+             Case Mono.Cecil.MethodAttributes.Family
+                 Return "Protected"
+             Case Mono.Cecil.MethodAttributes.Assembly
+                 Return "Friend"
+             Case Mono.Cecil.MethodAttributes.Public
+                 Return "Public"
+             Case Mono.Cecil.MethodAttributes.Private
+                 Return "Private"
+             Case Else
+                 Return "<unknown>"
+         End Select
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="34" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" startline="44" endline="72">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CLngExpression.vb" startline="44" endline="73">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+ 
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="35" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" startline="44" endline="72">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CSByteExpression.vb" startline="44" endline="73">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+ 
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="36" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" startline="44" endline="72">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CShortExpression.vb" startline="44" endline="73">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+ 
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="37" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" startline="44" endline="72">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CUIntExpression.vb" startline="44" endline="74">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+ 
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="38" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" startline="44" endline="72">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CULngExpression.vb" startline="44" endline="73">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+ 
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="39" nfragments="2" Csharpe_files="0" vb_files="2" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CByteExpression.vb" startline="44" endline="72">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Conversions\CUShortExpression.vb" startline="44" endline="73">
+<![CDATA[
+     
+     Shared Function Validate(ByVal Info As ResolveInfo, ByVal Conversion As ConversionExpression) As Boolean
+         Dim result As Boolean = True
+ 
+         Dim expType As Mono.Cecil.TypeReference = Nothing
+         Dim expTypeCode As TypeCode
+         Dim Expression As Expression = Conversion.Expression
+         Dim ExpressionType As TypeReference = Conversion.ExpressionType
+ 
+         result = ValidateForNullable(Info, Conversion, expTypeCode, expType) AndAlso result
+ 
+         Select Case expTypeCode
+             Case TypeCode.Char
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC32006, Expression.Location, Helper.ToString(Expression, expType))
+                 result = False
+             Case TypeCode.DateTime
+                 Info.Compiler.Report.ShowMessage(Messages.VBNC30311, Expression.Location, Helper.ToString(Expression, expType), Helper.ToString(Expression, ExpressionType))
+                 result = False
+             Case TypeCode.Object
+                 If Helper.CompareType(expType, Info.Compiler.TypeCache.System_Object) Then
+                     'OK
+                 ElseIf Helper.CompareType(expType, Info.Compiler.TypeCache.Nothing) Then
+                     'OK
+                 Else
+                     result = Conversion.FindUserDefinedConversionOperator() AndAlso result
+                 End If
+         End Select
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

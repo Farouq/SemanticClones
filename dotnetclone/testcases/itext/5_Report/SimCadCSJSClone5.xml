@@ -1,0 +1,2330 @@
+<clones  >
+<clone_pair groupid="156" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\ColumnObjects.java" startline="58" endline="180">
+<![CDATA[
+ 		System.out.println("Columns and objects");
+             
+ 		// step 1
+ 		Document document = new Document(PageSize.LETTER, 90, 54, 72, 72);
+ 
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("columnobjects.pdf"));
+             
+ 		float gutter = 20;
+ 		int numColumns = 3;
+ 		float fullWidth = document.right() - document.left();
+ 		float columnWidth = (fullWidth - (numColumns - 1) * gutter) / numColumns;
+ 		float allColumns[] = new float[numColumns]; // left
+ 		for (int k = 0; k < numColumns; ++k) {
+ 			allColumns[k] = document.left() + (columnWidth + gutter) * k;
+ 		for (int k = 0; k < numColumns; ++k) {
+ 			allColumns[k] = document.left() + (columnWidth + gutter) * k;
+ 		}
+ 		// set the fonts
+ 		Font font24B = FontFactory.getFont(FontFactory.TIMES_ROMAN, 24, Font.BOLD);
+ 		Font font10B = FontFactory.getFont(FontFactory.TIMES_ROMAN, 10, Font.BOLD);
+ 		Font font14B = FontFactory.getFont(FontFactory.TIMES_ROMAN, 14, Font.BOLD, new Color(255, 0, 0));
+ 		Font font9 = FontFactory.getFont(FontFactory.TIMES_ROMAN, 9);
+ 		Font font11 = FontFactory.getFont(FontFactory.TIMES_ROMAN, 11);
+             
+ 		// step 3
+ 		document.open();            
+ 		// step 4
+ 		// get the stream content
+ 		PdfContentByte cb = writer.getDirectContent();
+ 		// headers
+ 		Phrase fullTitle = new Phrase("Full Title", font24B);
+ 		float currentY = document.top();
+ 		ColumnText ct = new ColumnText(cb);
+ 		ct.setSimpleColumn(fullTitle, document.left(), 0, document.right(), document.top(), 24, Element.ALIGN_JUSTIFIED);
+ 		ct.go();
+ 		currentY = ct.getYLine();
+ 		currentY -= 4;
+ 		cb.setLineWidth(1);
+ 		cb.moveTo(document.left(), currentY);
+ 		cb.lineTo(document.right(), currentY);
+ 		cb.stroke();
+ 		currentY -= 4;
+ 		ct.setYLine(currentY);
+ 		ct.addText(new Chunk("Author
+ 		ct.setLeading(10);
+ 		ct.go();
+ 		currentY = ct.getYLine();
+ 		currentY -= 15;
+ 		float topColumn = currentY;
+ 		for (int k = 1; k < numColumns; ++k) {
+ 			float x = allColumns[k] - gutter / 2;
+ 			cb.moveTo(x, topColumn);
+ 			cb.lineTo(x, document.bottom());
+ 		for (int k = 1; k < numColumns; ++k) {
+ 			float x = allColumns[k] - gutter / 2;
+ 			cb.moveTo(x, topColumn);
+ 			cb.lineTo(x, document.bottom());
+ 		}
+ 		cb.stroke();
+ 		Image img = Image.getInstance("cover.png");
+ 		cb.addImage(img, img.scaledWidth(), 0, 0, img.scaledHeight(), document.left(), currentY - img.scaledHeight());
+ 		currentY -= img.scaledHeight() + 10;
+ 		ct.setYLine(currentY);
+ 		ct.addText(new Chunk("Key Data
+ 		ct.go();
+ 		currentY = ct.getYLine();
+ 		currentY -= 4;
+ 		PdfPTable ptable = new PdfPTable(2);
+ 		ptable.getDefaultCell().setPaddingLeft(4);
+ 		ptable.getDefaultCell().setPaddingTop(0);
+ 		ptable.getDefaultCell().setPaddingBottom(4);
+ 		ptable.addCell(new Phrase("Imprint Name
+ 		ptable.addCell(new Phrase("Prentice Hall", font9));
+ 		ptable.addCell(new Phrase("Series Name
+ 		ptable.addCell(new Phrase("", font9));
+ 		ptable.addCell(new Phrase("ISBN
+ 		ptable.addCell(new Phrase("Hall", font9));
+ 		ptable.addCell(new Phrase("UPC Code
+ 		ptable.addCell(new Phrase("0789718103", font9));
+ 		ptable.addCell(new Phrase("EAN #", font9));
+ 		ptable.addCell(new Phrase("0786718103", font9));
+ 		ptable.addCell(new Phrase("Price
+ 		ptable.addCell(new Phrase("49.99", font9));
+ 		ptable.addCell(new Phrase("Page Count
+ 		ptable.addCell(new Phrase("500", font9));
+ 		ptable.addCell(new Phrase("Discount
+ 		ptable.addCell(new Phrase("10%", font9));
+ 		ptable.addCell(new Phrase("Trim Size
+ 		ptable.addCell(new Phrase("420x340", font9));
+ 		ptable.addCell(new Phrase("Cover
+ 		ptable.addCell(new Phrase("Hard", font9));
+ 		ptable.addCell(new Phrase("Interior Color
+ 		ptable.addCell(new Phrase("none", font9));
+ 		ptable.addCell(new Phrase("Media with book
+ 		ptable.addCell(new Phrase("CD", font9));
+ 		ptable.addCell(new Phrase("Author(s)
+ 		ptable.addCell(new Phrase("Ben Forta", font9));
+ 		ptable.addCell(new Phrase("Editor
+ 		ptable.addCell(new Phrase("Ben Forta", font9));
+ 		ptable.addCell(new Phrase("Pub Date
+ 		ptable.addCell(new Phrase("06/05/1998", font9));
+ 		ptable.setTotalWidth(columnWidth);
+ 
+ 		currentY = ptable.writeSelectedRows(0, -1, document.left(), currentY, cb) - 20;
+ 		for (int k = 0; k < headings.length; ++k) {
+ 			ct.addText(new Chunk(headings[k] + "\n", font14B));
+ 			ct.addText(new Chunk(texts[k] + "\n\n", font11));
+ 		for (int k = 0; k < headings.length; ++k) {
+ 			ct.addText(new Chunk(headings[k] + "\n", font14B));
+ 			ct.addText(new Chunk(texts[k] + "\n\n", font11));
+ 		}
+ 
+ 		int currentColumn = 0;
+ 		ct.setSimpleColumn(allColumns[currentColumn], document.bottom(),
+ 			allColumns[currentColumn] + columnWidth, currentY, 15, Element.ALIGN_JUSTIFIED);
+ 		ct.setLeading(2, 1);
+ 		for (;;) {
+ 			int rc = ct.go();
+ 			if ((rc & ColumnText.NO_MORE_TEXT) != 0)
+ 				break;
+ 			// we run out of column. Let's go to another one
+ 			++currentColumn;
+ 			if (currentColumn >= allColumns.length)
+ 				break;
+ 			ct.setSimpleColumn(allColumns[currentColumn], document.bottom(),
+ 				allColumns[currentColumn] + columnWidth, topColumn, 15, Element.ALIGN_JUSTIFIED);
+ 			ct.setLeading(2, 1);
+ 		}
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0201a.cs" startline="25" endline="116">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 2 example 1
+ 			
+ 		Document.compress = true;
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0201a.pdf", FileMode.Create));
+ 
+ 		// step 3
+ 		document.open();
+ 
+ 		// step 4
+ 		Font[] fonts = new Font[14];
+ 		int i = fonts.Length;
+ 		fonts[--i] = FontFactory.getFont(FontFactory.COURIER, 7, Font.NORMAL);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.COURIER, 14, Font.BOLD);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.COURIER, 8, Font.ITALIC);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.COURIER, 13, Font.BOLD | Font.ITALIC);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.HELVETICA, 9, Font.NORMAL);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.BOLD);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.ITALIC);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.HELVETICA, 11, Font.BOLD | Font.ITALIC);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.TIMES_ROMAN, 16, Font.BOLD);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.ITALIC);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.TIMES_ROMAN, 32, Font.BOLD | Font.ITALIC);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.SYMBOL, 5, Font.NORMAL);
+ 		fonts[--i] = FontFactory.getFont(FontFactory.ZAPFDINGBATS, 5, Font.NORMAL);
+ 		for (i = 0; i < fonts.Length; i++) 
+ 		{
+ 			Chunk chunk = new Chunk("This is some text in some", fonts[i]);
+ 			document.add(new Phrase(chunk));
+ 			document.add(new Phrase(new Chunk(" font. ",
+ 				fonts[i]).setTextRise((i % 2 == 0) ? -6 
+ 		}
+ 		for (i = 0; i < fonts.Length; i++) 
+ 		{
+ 			Chunk chunk = new Chunk("This is some text in some", fonts[i]);
+ 			document.add(new Phrase(chunk));
+ 			document.add(new Phrase(new Chunk(" font. ",
+ 				fonts[i]).setTextRise((i % 2 == 0) ? -6 
+ 		}
+ 		document.add(new Phrase(new Chunk("This text is underlined ",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 12, Font.UNDERLINE))));
+ 		document.add(new Phrase(new Chunk("This font is of type ITALIC | STRIKETHRU ",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 12, Font.ITALIC | Font.STRIKETHRU))));
+ 		Chunk ck = new Chunk(" This text has a yellow background color ", FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		ck.setBackground(GDI.Color.Yellow);
+ 		document.add(new Phrase(ck));
+ 
+ 		document.add(new Chunk("text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text"));
+ 
+ 
+ 		Image img = Image.getInstance("pngnow.png");
+ 		ck = new Chunk(img, 0, 0);
+ 		Phrase p1 = new Phrase("This is an image (not) hanging into the above text");
+ 		p1.add(ck);
+ 		p1.add(" just here.");
+ 		document.add(p1);
+ 
+ 		GDI.Color yellow = GDI.Color.Yellow;
+ 
+ 		p1 = new Phrase();
+ 		ck = new Chunk(" As we can see the clashing is fixed for Images and"); ck.setBackground(yellow);	p1.add(ck);
+ 		ck = new Chunk(" oversized font chunks", fonts[2]); ck.setBackground(yellow);	p1.add(ck);
+ 		ck = new Chunk(", but no change of leading is introduced by "); ck.setBackground(yellow);	p1.add(ck);
+ 		ck = new Chunk("risen ", fonts[7]);	ck.setBackground(yellow);	p1.add(ck);
+ 		ck = new Chunk("(i.e. ");ck.setBackground(yellow); p1.add(ck);
+ 		ck = new Chunk("subscript").setTextRise(-9);ck.setBackground(yellow); p1.add(ck);
+ 		ck = new Chunk(" or "); ck.setBackground(yellow); p1.add(ck);
+ 		ck = new Chunk("superscirpt").setTextRise(9); ck.setBackground(yellow); p1.add(ck);
+ 		ck = new Chunk(") text! "); ck.setBackground(yellow); p1.add(ck);
+ 		document.add(p1);
+ 
+ 		document.add(new Chunk(" text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text"));
+ 
+ 		ck = new Chunk(img, 0, -19);
+ 		p1 = new Phrase("This is an image (not) hanging in the subsequent text");
+ 		p1.add(ck);
+ 		p1.add(" just here.");
+ 		document.add(p1);
+ 
+ 		document.add(new Chunk("text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text"));
+ 
+ 		ck = new Chunk(img, 0, -7);
+ 		p1 = new Phrase("This is an image aligned to 'its' baseline ");
+ 		p1.add(ck);
+ 		p1.add(" just here.");
+ 		document.add(p1);
+ 
+ 		document.add(new Chunk("text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text"));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="185" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\DifferentFonts.java" startline="35" endline="49">
+<![CDATA[
+ 		Document document = new Document();
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("differentfonts.pdf"));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Paragraph p = new Paragraph();
+ 		p.add(new Chunk("This text is in Times Roman. This is ZapfDingbats
+ 		p.add(new Chunk("abcdefghijklmnopqrstuvwxyz", new Font(Font.ZAPFDINGBATS, 12)));
+ 		p.add(new Chunk(". This is font Symbol
+ 		p.add(new Chunk("abcdefghijklmnopqrstuvwxyz", new Font(Font.SYMBOL, 12)));
+ 		document.add(new Paragraph(p));
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1108.cs" startline="25" endline="67">
+<![CDATA[
+ 
+ 	// we override only the onParagraph method
+ 	public override void onParagraph(PdfWriter writer, Document document, float position) 
+ 	{
+ 		n++;
+ 		PdfContentByte cb = writer.getDirectContent();
+ 		PdfDestination destination = new PdfDestination(PdfDestination.FITH, position);
+ 		PdfOutline outline = new PdfOutline(cb.getRootOutline(), destination, "paragraph " + n);
+ 		cb.addOutline(outline, outline.getTitle());
+ 	}
+ }
+ 
+ public class Chap1108 
+ {
+ 	public static void Main(String[] args) 
+ 	{
+ 		Console.WriteLine("Chapter 11 example 8
+     
+ 		// step 1
+ 		Document document = new Document(PageSize.A6);
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1108.pdf", FileMode.Create));
+     
+ 		// step 3
+ 		document.open();
+     
+ 		// step 4
+ 		// we create an Event and add it to the writer
+ 		PageOutline pageEvent = new PageOutline();
+ 		writer.setPageEvent(pageEvent);
+     
+ 		document.add(new Paragraph("GALLIA est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("[Eorum una, pars, quam Gallos obtinere dictum est, initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et eam partem Oceani quae est ad Hispaniam pertinet; spectat inter occasum solis et septentriones.]", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupiditate inductus coniurationem nobilitatis fecit et civitati persuasit ut de finibus suis cum omnibus copiis exirent
+ ", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("His rebus adducti et auctoritate Orgetorigis permoti constituerunt ea quae ad proficiscendum pertinerent comparare, iumentorum et carrorum quam maximum numerum coemere, sementes quam maximas facere, ut in itinere copia frumenti suppeteret, cum proximis civitatibus pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi satis esse duxerunt; in tertium annum profectionem lege confirmant.  Ad eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civitates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio, Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a senatu populi Romani amicus appellatus erat, ut regnum in civitate sua occuparet, quod pater ante habuerit; itemque Dumnorigi Haeduo, fratri Diviciaci, qui eo tempore principatum in civitate obtinebat ac maxime plebi acceptus erat, ut idem conaretur persuadet eique filiam suam in matrimonium dat.  Perfacile factu esse illis probat conata perficere, propterea quod ipse suae
+  civitatis imperium obtenturus esset
+ 		document.add(new Paragraph("Ea res est Helvetiis per indicium enuntiata.  Moribus suis Orgetoricem ex vinculis causam dicere coegerunt; damnatum poenam sequi oportebat, ut igni cremaretur.  Die constituta causae dictionis Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, undique coegit, et omnes clientes obaeratosque suos, quorum magnum numerum habebat, eodem conduxit; per eos ne causam diceret se eripuit.  Cum civitas ob eam rem incitata armis ius suum exequi conaretur multitudinemque hominum ex agris magistratus cogerent, Orgetorix mortuus est; neque abest suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciverit.", new Font(Font.HELVETICA, 12)));
+     
+ 		// step 5
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="186" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\DifferentFonts.java" startline="35" endline="49">
+<![CDATA[
+ 		Document document = new Document();
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("differentfonts.pdf"));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Paragraph p = new Paragraph();
+ 		p.add(new Chunk("This text is in Times Roman. This is ZapfDingbats
+ 		p.add(new Chunk("abcdefghijklmnopqrstuvwxyz", new Font(Font.ZAPFDINGBATS, 12)));
+ 		p.add(new Chunk(". This is font Symbol
+ 		p.add(new Chunk("abcdefghijklmnopqrstuvwxyz", new Font(Font.SYMBOL, 12)));
+ 		document.add(new Paragraph(p));
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0803.cs" startline="24" endline="56">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 8 example 3
+ 
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		RtfWriter.getInstance(document, new FileStream("Chap0803.rtf", FileMode.Create));
+ 
+ 		// step 3
+ 		document.open();
+ 
+ 		// step 4
+ 
+ 		document.add(new Paragraph("some books I really like
+ 		ListItem listItem;
+ 		List list = new List(true, 15);
+ 		listItem = new ListItem("When Harlie was one", new Font(Font.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by David Gerrold", new Font(Font.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		listItem = new ListItem("The World according to Garp", new Font(Font.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by John Irving", new Font(Font.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		listItem = new ListItem("Decamerone", new Font(Font.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by Giovanni Boccaccio", new Font(Font.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		document.add(list);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="199" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\chunk\Width.java" startline="42" endline="73">
+<![CDATA[
+ 		System.out.println("Width");
+ 
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		PdfWriter.getInstance(document,
+ 			new FileOutputStream("Width.pdf"));
+ 
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Chunk c = new Chunk("quick brown fox jumps over the lazy dog");
+ 		float w = c.getWidthPoint();
+ 		Paragraph p = new Paragraph("The width of the chunk
+ 		p.add(c);
+ 		p.add("' is ");
+ 		p.add(String.valueOf(w));
+ 		p.add(" points or ");
+ 		p.add(String.valueOf(w / 72f));
+ 		p.add(" inches.");
+ 		document.add(p);
+ 		document.add(c);
+ 		document.add(Chunk.NEWLINE);
+ 		c.setHorizontalScaling(0.5f);
+ 		document.add(c);
+ 		document.add(c);
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0608.cs" startline="24" endline="75">
+<![CDATA[
+ 	{
+         
+ 		Console.WriteLine("Chapter 6 example 8
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+         
+ 		PdfWriter.getInstance(document, new FileStream("Chap0608.pdf", FileMode.Create));
+         
+ 		// step 3
+ 		document.open();
+         
+ 		// step 4
+ 		Image jpg = Image.getInstance("myKids.jpg");
+ 		jpg.setAlignment(Image.MIDDLE);
+         
+ 		jpg.setRotation((float)Math.PI / 6);
+ 		document.add(new Paragraph("rotate 30 degrees"));
+ 		document.add(jpg);
+ 		document.newPage();
+         
+ 		jpg.setRotation((float)Math.PI / 4);
+ 		document.add(new Paragraph("rotate 45 degrees"));
+ 		document.add(jpg);
+ 		document.newPage();
+         
+ 		jpg.setRotation((float)Math.PI / 2);
+ 		document.add(new Paragraph("rotate pi/2 radians"));
+ 		document.add(jpg);
+ 		document.newPage();
+         
+ 		jpg.setRotation((float)(Math.PI * 0.75));
+ 		document.add(new Paragraph("rotate 135 degrees"));
+ 		document.add(jpg);
+ 		document.newPage();
+         
+ 		jpg.setRotation((float)Math.PI);
+ 		document.add(new Paragraph("rotate pi radians"));
+ 		document.add(jpg);
+ 		document.newPage();
+         
+ 		jpg.setRotation((float)(2.0 * Math.PI));
+ 		document.add(new Paragraph("rotate 2 x pi radians"));
+ 		document.add(jpg);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="202" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\Paragraphs.java" startline="45" endline="79">
+<![CDATA[
+ 		System.out.println("the Paragraph object");
+ 
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		PdfWriter.getInstance(document, new FileOutputStream("Paragraphs.pdf"));
+ 
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Paragraph p1 = new Paragraph(new Chunk(
+ 			"This is my first paragraph. ",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 10)));
+ 		p1.add("The leading of this paragraph is calculated automagically. ");
+ 		p1.add("The default leading is 1.5 times the fontsize. ");
+ 		p1.add(new Chunk("You can add chunks "));
+ 		p1.add(new Phrase("or you can add phrases. "));
+ 		p1.add(new Phrase(
+ 			"Unless you change the leading with the method setLeading, the leading doesn't change if you add text with another leading. This can lead to some problems.",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 18)));
+ 		document.add(p1);
+ 		Paragraph p2 = new Paragraph(new Phrase(
+ 			"This is my second paragraph. ", FontFactory.getFont(
+ 			FontFactory.HELVETICA, 12)));
+ 		p2.add("As you can see, it started on a new line.");
+ 		document.add(p2);
+ 		Paragraph p3 = new Paragraph("This is my third paragraph.",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		document.add(p3);
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 2 example 5
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0205.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+ 		Paragraph p1 = new Paragraph(new Chunk("This is my first paragraph. ",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 10)));
+ 		p1.add("The leading of this paragraph is calculated automagically. ");
+ 		p1.add("The default leading is 1.5 times the fontsize. ");
+ 		p1.add(new Chunk("You can add chunks "));
+ 		p1.add(new Phrase("or you can add phrases. "));
+ 		p1.add(new Phrase("Unless you change the leading with the method setLeading, the leading doesn't change if you add text with another leading. This can lead to some problems.", FontFactory.getFont(FontFactory.HELVETICA, 18)));
+ 		document.add(p1);
+ 		Paragraph p2 = new Paragraph(new Phrase("This is my second paragraph. ",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 12)));
+ 		p2.add("As you can see, it started on a new line.");
+ 		document.add(p2);
+ 		Paragraph p3 = new Paragraph("This is my third paragraph.",
+ 			FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		document.add(p3);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="212" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0701.java" startline="33" endline="220">
+<![CDATA[
+         System.out.println("Chapter 7 example 1
+         
+         // step 1
+         Document document = new Document();
+         
+         try {
+             
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a XML-stream to a file
+             XmlWriter.getInstance(document, new FileOutputStream("Chap0701.xml"), "http
+             
+             // step 3
+             document.open();
+             
+             // step 4
+             Paragraph paragraph = new Paragraph("Please visit my ");
+             Anchor anchor1 = new Anchor("website (external reference)", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.UNDERLINE, new Color(0, 0, 255)));
+             anchor1.setReference("http
+             anchor1.setName("top");
+             paragraph.add(anchor1);
+             document.add(paragraph);
+             
+             Paragraph entities = new Paragraph("These are some special characters
+             document.add(entities);
+             
+             document.add(new Paragraph("some books I really like
+             List list;
+             ListItem listItem;
+             list = new List(true, 15);
+             listItem = new ListItem("When Harlie was one", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by David Gerrold", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)).setTextRise(8.0f));
+             list.add(listItem);
+             listItem = new ListItem("The World according to Garp", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by John Irving", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)).setTextRise(-8.0f));
+             list.add(listItem);
+             listItem = new ListItem("Decamerone", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by Giovanni Boccaccio", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             document.add(list);
+             
+             paragraph = new Paragraph("some movies I really like
+             list = new List(false, 10);
+             list.add("Wild At Heart");
+             list.add("Casablanca");
+             list.add("When Harry met Sally");
+             list.add("True Romance");
+             list.add("Le mari de la coiffeuse");
+             paragraph.add(list);
+             document.add(paragraph);
+             
+             document.add(new Paragraph("Some authors I really like
+             list = new List(false, 20);
+             list.setListSymbol(new Chunk("*", FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD)));
+             listItem = new ListItem("Isaac Asimov");
+             list.add(listItem);
+             List sublist;
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The Foundation Trilogy");
+             sublist.add("The Complete Robot");
+             sublist.add("Caves of Steel");
+             sublist.add("The Naked Sun");
+             list.add(sublist);
+             listItem = new ListItem("John Irving");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The World according to Garp");
+             sublist.add("Hotel New Hampshire");
+             sublist.add("A prayer for Owen Meany");
+             sublist.add("Widow for a year");
+             list.add(sublist);
+             listItem = new ListItem("Kurt Vonnegut");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("Slaughterhouse 5");
+             sublist.add("Welcome to the Monkey House");
+             sublist.add("The great pianola");
+             sublist.add("Galapagos");
+             list.add(sublist);
+             document.add(list);
+             
+             paragraph = new Paragraph("\n\n");
+             document.add(paragraph);
+             
+             Table table = new Table(3);
+             table.setBorderWidth(1);
+             table.setBorderColor(new Color(0, 0, 255));
+             table.setPadding(5);
+             table.setSpacing(5);
+             Cell cell = new Cell("header");
+             cell.setHeader(true);
+             cell.setColspan(3);
+             table.addCell(cell);
+             table.endHeaders();
+             cell = new Cell("example cell with colspan 1 and rowspan 2");
+             cell.setRowspan(2);
+             cell.setBorderColor(new Color(255, 0, 0));
+             table.addCell(cell);
+             table.addCell("1.1");
+             table.addCell("2.1");
+             table.addCell("1.2");
+             table.addCell("2.2");
+             table.addCell("cell test1");
+             cell = new Cell("big cell");
+             cell.setRowspan(2);
+             cell.setColspan(2);
+             table.addCell(cell);
+             table.addCell("cell test2");
+             document.add(table);
+             
+             Image jpeg = Image.getInstance("myKids.jpg");
+             document.add(jpeg);
+             Image png = Image.getInstance(new URL("http
+             document.add(png);
+             Anchor anchor2 = new Anchor("please jump to a local destination", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, new Color(0, 0, 255)));
+             anchor2.setReference("#top");
+             document.add(anchor2);
+             
+             document.add(paragraph);
+             
+             // we define some fonts
+             Font chapterFont = FontFactory.getFont(FontFactory.HELVETICA, 24, Font.NORMAL, new Color(255, 0, 0));
+             Font sectionFont = FontFactory.getFont(FontFactory.HELVETICA, 20, Font.NORMAL, new Color(0, 0, 255));
+             Font subsectionFont = FontFactory.getFont(FontFactory.HELVETICA, 18, Font.BOLD, new Color(0, 64, 64));
+             // we create some paragraphs
+             Paragraph blahblah = new Paragraph("blah blah blah blah blah blah blaah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah");
+             Paragraph blahblahblah = new Paragraph("blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blaah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah");
+             
+             // this loop will create 7 chapters
+             for (int i = 1; i < 8; i++) {
+                 Paragraph cTitle = new Paragraph("This is chapter " + i, chapterFont);
+                 Chapter chapter = new Chapter(cTitle, i);
+                 
+                 if (i == 4) {
+                     blahblahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(blahblah);
+                 }
+                 if (i == 5) {
+                     blahblahblah.setAlignment(Element.ALIGN_CENTER);
+                     blahblah.setAlignment(Element.ALIGN_RIGHT);
+                     chapter.add(blahblah);
+                 }
+                 // add a table in the 6th chapter
+                 if (i == 6) {
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(table);
+                 }
+                 // in every chapter 3 sections will be added
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                     }
+                 }
+                 document.add(chapter);
+             for (int i = 1; i < 8; i++) {
+                 Paragraph cTitle = new Paragraph("This is chapter " + i, chapterFont);
+                 Chapter chapter = new Chapter(cTitle, i);
+                 
+                 if (i == 4) {
+                     blahblahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(blahblah);
+                 }
+                 if (i == 5) {
+                     blahblahblah.setAlignment(Element.ALIGN_CENTER);
+                     blahblah.setAlignment(Element.ALIGN_RIGHT);
+                     chapter.add(blahblah);
+                 }
+                 // add a table in the 6th chapter
+                 if (i == 6) {
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(table);
+                 }
+                 // in every chapter 3 sections will be added
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                     }
+                 }
+                 document.add(chapter);
+             }
+             
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1102.cs" startline="26" endline="91">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 11 example 2
+     
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writerA = PdfWriter.getInstance(document, new FileStream("Chap1102a.pdf", FileMode.Create));
+ 		PdfWriter writerB = PdfWriter.getInstance(document, new FileStream("Chap1102b.pdf", FileMode.Create));
+     
+ 		// step 3
+ 		document.open();
+     
+ 		// step 4
+     
+ 		Paragraph p1 = new Paragraph("We discussed anchors in chapter 3, but you can add an URL to a chunk to to make it an ", FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		p1.add(new Chunk("anchor", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.UNDERLINE, GDI.Color.Blue)).setAnchor(new Uri("http
+ 		p1.add(" you will automatically jump to another location in this document.");
+ 		Paragraph p2 = new Paragraph("blah, blah, blah");
+ 		Paragraph p3a = new Paragraph("This paragraph contains a ");
+ 		p3a.add(new Chunk("local destination in document A", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, GDI.Color.FromArgb(0, 255, 0))).setLocalDestination("test"));
+ 		Paragraph p3b = new Paragraph("This paragraph contains a local ");
+ 		p3b.add(new Chunk("local destination in document B", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, GDI.Color.FromArgb(0, 255, 0))).setLocalDestination("test"));
+ 		Paragraph p4a = new Paragraph(new Chunk("Click this paragraph to go to a certain destination on document B").setRemoteGoto("Chap1102b.pdf", "test"));
+ 		Paragraph p4b = new Paragraph(new Chunk("Click this paragraph to go to a certain destination on document A").setRemoteGoto("Chap1102a.pdf", "test"));
+ 		Paragraph p5a = new Paragraph("you can also jump to a ");
+ 		p5a.add(new Chunk("specific page on another document", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.ITALIC)).setRemoteGoto("Chap1102b.pdf", 3));
+ 		document.add(p1);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		writerA.pause();
+ 		document.add(p4b);
+ 		writerA.resume();
+ 		writerB.pause();
+ 		document.add(p4a);
+ 		document.add(p5a);
+ 		writerB.resume();
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		writerA.pause();
+ 		document.add(p3b);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.newPage();
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.newPage();
+ 		writerA.resume();
+ 		writerB.pause();
+ 		document.add(p3a);
+ 		writerB.resume();
+ 		document.add(p2);
+ 		document.add(p2);
+     
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="215" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0701.java" startline="33" endline="220">
+<![CDATA[
+         System.out.println("Chapter 7 example 1
+         
+         // step 1
+         Document document = new Document();
+         
+         try {
+             
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a XML-stream to a file
+             XmlWriter.getInstance(document, new FileOutputStream("Chap0701.xml"), "http
+             
+             // step 3
+             document.open();
+             
+             // step 4
+             Paragraph paragraph = new Paragraph("Please visit my ");
+             Anchor anchor1 = new Anchor("website (external reference)", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.UNDERLINE, new Color(0, 0, 255)));
+             anchor1.setReference("http
+             anchor1.setName("top");
+             paragraph.add(anchor1);
+             document.add(paragraph);
+             
+             Paragraph entities = new Paragraph("These are some special characters
+             document.add(entities);
+             
+             document.add(new Paragraph("some books I really like
+             List list;
+             ListItem listItem;
+             list = new List(true, 15);
+             listItem = new ListItem("When Harlie was one", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by David Gerrold", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)).setTextRise(8.0f));
+             list.add(listItem);
+             listItem = new ListItem("The World according to Garp", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by John Irving", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)).setTextRise(-8.0f));
+             list.add(listItem);
+             listItem = new ListItem("Decamerone", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by Giovanni Boccaccio", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             document.add(list);
+             
+             paragraph = new Paragraph("some movies I really like
+             list = new List(false, 10);
+             list.add("Wild At Heart");
+             list.add("Casablanca");
+             list.add("When Harry met Sally");
+             list.add("True Romance");
+             list.add("Le mari de la coiffeuse");
+             paragraph.add(list);
+             document.add(paragraph);
+             
+             document.add(new Paragraph("Some authors I really like
+             list = new List(false, 20);
+             list.setListSymbol(new Chunk("*", FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD)));
+             listItem = new ListItem("Isaac Asimov");
+             list.add(listItem);
+             List sublist;
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The Foundation Trilogy");
+             sublist.add("The Complete Robot");
+             sublist.add("Caves of Steel");
+             sublist.add("The Naked Sun");
+             list.add(sublist);
+             listItem = new ListItem("John Irving");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The World according to Garp");
+             sublist.add("Hotel New Hampshire");
+             sublist.add("A prayer for Owen Meany");
+             sublist.add("Widow for a year");
+             list.add(sublist);
+             listItem = new ListItem("Kurt Vonnegut");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("Slaughterhouse 5");
+             sublist.add("Welcome to the Monkey House");
+             sublist.add("The great pianola");
+             sublist.add("Galapagos");
+             list.add(sublist);
+             document.add(list);
+             
+             paragraph = new Paragraph("\n\n");
+             document.add(paragraph);
+             
+             Table table = new Table(3);
+             table.setBorderWidth(1);
+             table.setBorderColor(new Color(0, 0, 255));
+             table.setPadding(5);
+             table.setSpacing(5);
+             Cell cell = new Cell("header");
+             cell.setHeader(true);
+             cell.setColspan(3);
+             table.addCell(cell);
+             table.endHeaders();
+             cell = new Cell("example cell with colspan 1 and rowspan 2");
+             cell.setRowspan(2);
+             cell.setBorderColor(new Color(255, 0, 0));
+             table.addCell(cell);
+             table.addCell("1.1");
+             table.addCell("2.1");
+             table.addCell("1.2");
+             table.addCell("2.2");
+             table.addCell("cell test1");
+             cell = new Cell("big cell");
+             cell.setRowspan(2);
+             cell.setColspan(2);
+             table.addCell(cell);
+             table.addCell("cell test2");
+             document.add(table);
+             
+             Image jpeg = Image.getInstance("myKids.jpg");
+             document.add(jpeg);
+             Image png = Image.getInstance(new URL("http
+             document.add(png);
+             Anchor anchor2 = new Anchor("please jump to a local destination", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, new Color(0, 0, 255)));
+             anchor2.setReference("#top");
+             document.add(anchor2);
+             
+             document.add(paragraph);
+             
+             // we define some fonts
+             Font chapterFont = FontFactory.getFont(FontFactory.HELVETICA, 24, Font.NORMAL, new Color(255, 0, 0));
+             Font sectionFont = FontFactory.getFont(FontFactory.HELVETICA, 20, Font.NORMAL, new Color(0, 0, 255));
+             Font subsectionFont = FontFactory.getFont(FontFactory.HELVETICA, 18, Font.BOLD, new Color(0, 64, 64));
+             // we create some paragraphs
+             Paragraph blahblah = new Paragraph("blah blah blah blah blah blah blaah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah");
+             Paragraph blahblahblah = new Paragraph("blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blaah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah");
+             
+             // this loop will create 7 chapters
+             for (int i = 1; i < 8; i++) {
+                 Paragraph cTitle = new Paragraph("This is chapter " + i, chapterFont);
+                 Chapter chapter = new Chapter(cTitle, i);
+                 
+                 if (i == 4) {
+                     blahblahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(blahblah);
+                 }
+                 if (i == 5) {
+                     blahblahblah.setAlignment(Element.ALIGN_CENTER);
+                     blahblah.setAlignment(Element.ALIGN_RIGHT);
+                     chapter.add(blahblah);
+                 }
+                 // add a table in the 6th chapter
+                 if (i == 6) {
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(table);
+                 }
+                 // in every chapter 3 sections will be added
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                     }
+                 }
+                 document.add(chapter);
+             for (int i = 1; i < 8; i++) {
+                 Paragraph cTitle = new Paragraph("This is chapter " + i, chapterFont);
+                 Chapter chapter = new Chapter(cTitle, i);
+                 
+                 if (i == 4) {
+                     blahblahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(blahblah);
+                 }
+                 if (i == 5) {
+                     blahblahblah.setAlignment(Element.ALIGN_CENTER);
+                     blahblah.setAlignment(Element.ALIGN_RIGHT);
+                     chapter.add(blahblah);
+                 }
+                 // add a table in the 6th chapter
+                 if (i == 6) {
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(table);
+                 }
+                 // in every chapter 3 sections will be added
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                     }
+                 }
+                 document.add(chapter);
+             }
+             
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1101.cs" startline="25" endline="59">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 11 example 1
+     
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1101.pdf", FileMode.Create));
+     
+ 		// step 3
+ 		document.open();
+     
+ 		// step 4
+     
+ 		Paragraph p1 = new Paragraph("We will do something special with this paragraph. If you click on ", FontFactory.getFont(FontFactory.HELVETICA, 12));
+ 		p1.add(new Chunk("this word", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, GDI.Color.Blue)).setLocalGoto("test"));
+ 		p1.add(" you will automatically jump to another location in this document.");
+ 		Paragraph p2 = new Paragraph("blah, blah, blah");
+ 		Paragraph p3 = new Paragraph("This paragraph contains a local ");
+ 		p3.add(new Chunk("local destination", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, GDI.Color.FromArgb(0, 255, 0))).setLocalDestination("test"));
+ 		document.add(p1);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p2);
+ 		document.add(p3);
+     
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="218" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0701.java" startline="33" endline="220">
+<![CDATA[
+         System.out.println("Chapter 7 example 1
+         
+         // step 1
+         Document document = new Document();
+         
+         try {
+             
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a XML-stream to a file
+             XmlWriter.getInstance(document, new FileOutputStream("Chap0701.xml"), "http
+             
+             // step 3
+             document.open();
+             
+             // step 4
+             Paragraph paragraph = new Paragraph("Please visit my ");
+             Anchor anchor1 = new Anchor("website (external reference)", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.UNDERLINE, new Color(0, 0, 255)));
+             anchor1.setReference("http
+             anchor1.setName("top");
+             paragraph.add(anchor1);
+             document.add(paragraph);
+             
+             Paragraph entities = new Paragraph("These are some special characters
+             document.add(entities);
+             
+             document.add(new Paragraph("some books I really like
+             List list;
+             ListItem listItem;
+             list = new List(true, 15);
+             listItem = new ListItem("When Harlie was one", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by David Gerrold", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)).setTextRise(8.0f));
+             list.add(listItem);
+             listItem = new ListItem("The World according to Garp", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by John Irving", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)).setTextRise(-8.0f));
+             list.add(listItem);
+             listItem = new ListItem("Decamerone", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by Giovanni Boccaccio", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             document.add(list);
+             
+             paragraph = new Paragraph("some movies I really like
+             list = new List(false, 10);
+             list.add("Wild At Heart");
+             list.add("Casablanca");
+             list.add("When Harry met Sally");
+             list.add("True Romance");
+             list.add("Le mari de la coiffeuse");
+             paragraph.add(list);
+             document.add(paragraph);
+             
+             document.add(new Paragraph("Some authors I really like
+             list = new List(false, 20);
+             list.setListSymbol(new Chunk("*", FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD)));
+             listItem = new ListItem("Isaac Asimov");
+             list.add(listItem);
+             List sublist;
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The Foundation Trilogy");
+             sublist.add("The Complete Robot");
+             sublist.add("Caves of Steel");
+             sublist.add("The Naked Sun");
+             list.add(sublist);
+             listItem = new ListItem("John Irving");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The World according to Garp");
+             sublist.add("Hotel New Hampshire");
+             sublist.add("A prayer for Owen Meany");
+             sublist.add("Widow for a year");
+             list.add(sublist);
+             listItem = new ListItem("Kurt Vonnegut");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("Slaughterhouse 5");
+             sublist.add("Welcome to the Monkey House");
+             sublist.add("The great pianola");
+             sublist.add("Galapagos");
+             list.add(sublist);
+             document.add(list);
+             
+             paragraph = new Paragraph("\n\n");
+             document.add(paragraph);
+             
+             Table table = new Table(3);
+             table.setBorderWidth(1);
+             table.setBorderColor(new Color(0, 0, 255));
+             table.setPadding(5);
+             table.setSpacing(5);
+             Cell cell = new Cell("header");
+             cell.setHeader(true);
+             cell.setColspan(3);
+             table.addCell(cell);
+             table.endHeaders();
+             cell = new Cell("example cell with colspan 1 and rowspan 2");
+             cell.setRowspan(2);
+             cell.setBorderColor(new Color(255, 0, 0));
+             table.addCell(cell);
+             table.addCell("1.1");
+             table.addCell("2.1");
+             table.addCell("1.2");
+             table.addCell("2.2");
+             table.addCell("cell test1");
+             cell = new Cell("big cell");
+             cell.setRowspan(2);
+             cell.setColspan(2);
+             table.addCell(cell);
+             table.addCell("cell test2");
+             document.add(table);
+             
+             Image jpeg = Image.getInstance("myKids.jpg");
+             document.add(jpeg);
+             Image png = Image.getInstance(new URL("http
+             document.add(png);
+             Anchor anchor2 = new Anchor("please jump to a local destination", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, new Color(0, 0, 255)));
+             anchor2.setReference("#top");
+             document.add(anchor2);
+             
+             document.add(paragraph);
+             
+             // we define some fonts
+             Font chapterFont = FontFactory.getFont(FontFactory.HELVETICA, 24, Font.NORMAL, new Color(255, 0, 0));
+             Font sectionFont = FontFactory.getFont(FontFactory.HELVETICA, 20, Font.NORMAL, new Color(0, 0, 255));
+             Font subsectionFont = FontFactory.getFont(FontFactory.HELVETICA, 18, Font.BOLD, new Color(0, 64, 64));
+             // we create some paragraphs
+             Paragraph blahblah = new Paragraph("blah blah blah blah blah blah blaah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah");
+             Paragraph blahblahblah = new Paragraph("blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blaah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah");
+             
+             // this loop will create 7 chapters
+             for (int i = 1; i < 8; i++) {
+                 Paragraph cTitle = new Paragraph("This is chapter " + i, chapterFont);
+                 Chapter chapter = new Chapter(cTitle, i);
+                 
+                 if (i == 4) {
+                     blahblahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(blahblah);
+                 }
+                 if (i == 5) {
+                     blahblahblah.setAlignment(Element.ALIGN_CENTER);
+                     blahblah.setAlignment(Element.ALIGN_RIGHT);
+                     chapter.add(blahblah);
+                 }
+                 // add a table in the 6th chapter
+                 if (i == 6) {
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(table);
+                 }
+                 // in every chapter 3 sections will be added
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                     }
+                 }
+                 document.add(chapter);
+             for (int i = 1; i < 8; i++) {
+                 Paragraph cTitle = new Paragraph("This is chapter " + i, chapterFont);
+                 Chapter chapter = new Chapter(cTitle, i);
+                 
+                 if (i == 4) {
+                     blahblahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(blahblah);
+                 }
+                 if (i == 5) {
+                     blahblahblah.setAlignment(Element.ALIGN_CENTER);
+                     blahblah.setAlignment(Element.ALIGN_RIGHT);
+                     chapter.add(blahblah);
+                 }
+                 // add a table in the 6th chapter
+                 if (i == 6) {
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(table);
+                 }
+                 // in every chapter 3 sections will be added
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                     }
+                 }
+                 document.add(chapter);
+             }
+             
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0303.cs" startline="24" endline="97">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 3 example 3
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0303.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+             
+ 		List list = new List(true, 20);
+ 		list.add(new ListItem("First line"));
+ 		list.add(new ListItem("The second line is longer to see what happens once the end of the line is reached. Will it start on a new line?"));
+ 		list.add(new ListItem("Third line"));
+ 		document.add(list);
+             
+ 		document.add(new Paragraph("some books I really like
+ 		document.add(new Annotation("books", "This is really a very short list, I like a lot of books."));
+ 		ListItem listItem;
+ 		list = new List(true, 15);
+ 		listItem = new ListItem("When Harlie was one", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by David Gerrold", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		listItem = new ListItem("The World according to Garp", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by John Irving", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		listItem = new ListItem("Decamerone", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by Giovanni Boccaccio", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		document.add(list);
+             
+ 		document.add(new Phrase("Some authors I really like
+ 		document.add(new Annotation("authors", "Maybe it's because I wanted to be an writer myself that I wrote iText."));
+ 		list = new List(false, 20);
+ 		list.setListSymbol(new Chunk("*", FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD)));
+ 		listItem = new ListItem("Isaac Asimov");
+ 		list.add(listItem);
+ 		List sublist;
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("The Foundation Trilogy");
+ 		sublist.add("The Complete Robot");
+ 		sublist.add("Caves of Steel");
+ 		sublist.add("The Naked Sun");
+ 		list.add(sublist);
+ 		listItem = new ListItem("John Irving");
+ 		list.add(listItem);
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("The World according to Garp");
+ 		sublist.add("Hotel New Hampshire");
+ 		sublist.add("A prayer for Owen Meany");
+ 		sublist.add("Widow for a year");
+ 		list.add(sublist);
+ 		listItem = new ListItem("Kurt Vonnegut");
+ 		list.add(listItem);
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("Slaughterhouse 5");
+ 		sublist.add("Welcome to the Monkey House");
+ 		sublist.add("The great pianola");
+ 		sublist.add("Galapagos");
+ 		list.add(sublist);
+ 		document.add(list);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="219" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0701.java" startline="33" endline="220">
+<![CDATA[
+         System.out.println("Chapter 7 example 1
+         
+         // step 1
+         Document document = new Document();
+         
+         try {
+             
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a XML-stream to a file
+             XmlWriter.getInstance(document, new FileOutputStream("Chap0701.xml"), "http
+             
+             // step 3
+             document.open();
+             
+             // step 4
+             Paragraph paragraph = new Paragraph("Please visit my ");
+             Anchor anchor1 = new Anchor("website (external reference)", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.UNDERLINE, new Color(0, 0, 255)));
+             anchor1.setReference("http
+             anchor1.setName("top");
+             paragraph.add(anchor1);
+             document.add(paragraph);
+             
+             Paragraph entities = new Paragraph("These are some special characters
+             document.add(entities);
+             
+             document.add(new Paragraph("some books I really like
+             List list;
+             ListItem listItem;
+             list = new List(true, 15);
+             listItem = new ListItem("When Harlie was one", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by David Gerrold", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)).setTextRise(8.0f));
+             list.add(listItem);
+             listItem = new ListItem("The World according to Garp", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by John Irving", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)).setTextRise(-8.0f));
+             list.add(listItem);
+             listItem = new ListItem("Decamerone", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by Giovanni Boccaccio", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             document.add(list);
+             
+             paragraph = new Paragraph("some movies I really like
+             list = new List(false, 10);
+             list.add("Wild At Heart");
+             list.add("Casablanca");
+             list.add("When Harry met Sally");
+             list.add("True Romance");
+             list.add("Le mari de la coiffeuse");
+             paragraph.add(list);
+             document.add(paragraph);
+             
+             document.add(new Paragraph("Some authors I really like
+             list = new List(false, 20);
+             list.setListSymbol(new Chunk("*", FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD)));
+             listItem = new ListItem("Isaac Asimov");
+             list.add(listItem);
+             List sublist;
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The Foundation Trilogy");
+             sublist.add("The Complete Robot");
+             sublist.add("Caves of Steel");
+             sublist.add("The Naked Sun");
+             list.add(sublist);
+             listItem = new ListItem("John Irving");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("The World according to Garp");
+             sublist.add("Hotel New Hampshire");
+             sublist.add("A prayer for Owen Meany");
+             sublist.add("Widow for a year");
+             list.add(sublist);
+             listItem = new ListItem("Kurt Vonnegut");
+             list.add(listItem);
+             sublist = new List(true, 10);
+             sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+             sublist.add("Slaughterhouse 5");
+             sublist.add("Welcome to the Monkey House");
+             sublist.add("The great pianola");
+             sublist.add("Galapagos");
+             list.add(sublist);
+             document.add(list);
+             
+             paragraph = new Paragraph("\n\n");
+             document.add(paragraph);
+             
+             Table table = new Table(3);
+             table.setBorderWidth(1);
+             table.setBorderColor(new Color(0, 0, 255));
+             table.setPadding(5);
+             table.setSpacing(5);
+             Cell cell = new Cell("header");
+             cell.setHeader(true);
+             cell.setColspan(3);
+             table.addCell(cell);
+             table.endHeaders();
+             cell = new Cell("example cell with colspan 1 and rowspan 2");
+             cell.setRowspan(2);
+             cell.setBorderColor(new Color(255, 0, 0));
+             table.addCell(cell);
+             table.addCell("1.1");
+             table.addCell("2.1");
+             table.addCell("1.2");
+             table.addCell("2.2");
+             table.addCell("cell test1");
+             cell = new Cell("big cell");
+             cell.setRowspan(2);
+             cell.setColspan(2);
+             table.addCell(cell);
+             table.addCell("cell test2");
+             document.add(table);
+             
+             Image jpeg = Image.getInstance("myKids.jpg");
+             document.add(jpeg);
+             Image png = Image.getInstance(new URL("http
+             document.add(png);
+             Anchor anchor2 = new Anchor("please jump to a local destination", FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL, new Color(0, 0, 255)));
+             anchor2.setReference("#top");
+             document.add(anchor2);
+             
+             document.add(paragraph);
+             
+             // we define some fonts
+             Font chapterFont = FontFactory.getFont(FontFactory.HELVETICA, 24, Font.NORMAL, new Color(255, 0, 0));
+             Font sectionFont = FontFactory.getFont(FontFactory.HELVETICA, 20, Font.NORMAL, new Color(0, 0, 255));
+             Font subsectionFont = FontFactory.getFont(FontFactory.HELVETICA, 18, Font.BOLD, new Color(0, 64, 64));
+             // we create some paragraphs
+             Paragraph blahblah = new Paragraph("blah blah blah blah blah blah blaah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah");
+             Paragraph blahblahblah = new Paragraph("blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blaah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah");
+             
+             // this loop will create 7 chapters
+             for (int i = 1; i < 8; i++) {
+                 Paragraph cTitle = new Paragraph("This is chapter " + i, chapterFont);
+                 Chapter chapter = new Chapter(cTitle, i);
+                 
+                 if (i == 4) {
+                     blahblahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(blahblah);
+                 }
+                 if (i == 5) {
+                     blahblahblah.setAlignment(Element.ALIGN_CENTER);
+                     blahblah.setAlignment(Element.ALIGN_RIGHT);
+                     chapter.add(blahblah);
+                 }
+                 // add a table in the 6th chapter
+                 if (i == 6) {
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(table);
+                 }
+                 // in every chapter 3 sections will be added
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                     }
+                 }
+                 document.add(chapter);
+             for (int i = 1; i < 8; i++) {
+                 Paragraph cTitle = new Paragraph("This is chapter " + i, chapterFont);
+                 Chapter chapter = new Chapter(cTitle, i);
+                 
+                 if (i == 4) {
+                     blahblahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(blahblah);
+                 }
+                 if (i == 5) {
+                     blahblahblah.setAlignment(Element.ALIGN_CENTER);
+                     blahblah.setAlignment(Element.ALIGN_RIGHT);
+                     chapter.add(blahblah);
+                 }
+                 // add a table in the 6th chapter
+                 if (i == 6) {
+                     blahblah.setAlignment(Element.ALIGN_JUSTIFIED);
+                     chapter.add(table);
+                 }
+                 // in every chapter 3 sections will be added
+                 for (int j = 1; j < 4; j++) {
+                     Paragraph sTitle = new Paragraph("This is section " + j + " in chapter " + i, sectionFont);
+                     Section section = chapter.addSection(sTitle, 1);
+                     // in all chapters except the 1st one, some extra text is added to section 3
+                     if (j == 3 && i > 1) {
+                         section.add(blahblah);
+                     }
+                     // in every section 3 subsections are added
+                     for (int k = 1; k < 4; k++) {
+                         Paragraph subTitle = new Paragraph("This is subsection " + k + " of section " + j, subsectionFont);
+                         Section subsection = section.addSection(subTitle, 3);
+                         if (k == 1 && j == 3) {
+                             subsection.add(blahblahblah);
+                             subsection.add(table);
+                         }
+                         subsection.add(blahblah);
+                     }
+                     if (j == 2 && i > 2) {
+                         section.add(blahblahblah);
+                         section.add(table);
+                     }
+                 }
+                 document.add(chapter);
+             }
+             
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0302.cs" startline="25" endline="107">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 3 example 2
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0302.pdf", FileMode.Create));
+ 		HtmlWriter.getInstance(document, new FileStream("Chap0302.html", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+             
+ 		List list = new List(true, 20);
+ 		list.add(new ListItem("First line"));
+ 		list.add(new ListItem("The second line is longer to see what happens once the end of the line is reached. Will it start on a new line?"));
+ 		list.add(new ListItem("Third line"));
+ 		document.add(list);
+             
+ 		document.add(new Paragraph("some books I really like
+ 		ListItem listItem;
+ 		list = new List(true, 15);
+ 		listItem = new ListItem("When Harlie was one", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by David Gerrold", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		listItem = new ListItem("The World according to Garp", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by John Irving", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		listItem = new ListItem("Decamerone", FontFactory.getFont(FontFactory.TIMES_ROMAN, 12));
+ 		listItem.add(new Chunk(" by Giovanni Boccaccio", FontFactory.getFont(FontFactory.TIMES_ROMAN, 11, Font.ITALIC)));
+ 		list.add(listItem);
+ 		document.add(list);
+             
+ 		Paragraph paragraph = new Paragraph("some movies I really like
+ 		list = new List(false, 10);
+ 		list.add("Wild At Heart");
+ 		list.add("Casablanca");
+ 		list.add("When Harry met Sally");
+ 		list.add("True Romance");
+ 		list.add("Le mari de la coiffeuse");
+ 		paragraph.add(list);
+ 		document.add(paragraph);
+             
+ 		document.add(new Paragraph("Some authors I really like
+ 		list = new List(false, 20);
+ 		list.setListSymbol(new Chunk("\u2022", FontFactory.getFont(FontFactory.HELVETICA, 20, Font.BOLD)));
+ 		listItem = new ListItem("Isaac Asimov");
+ 		list.add(listItem);
+ 		List sublist;
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("The Foundation Trilogy");
+ 		sublist.add("The Complete Robot");
+ 		sublist.add("Caves of Steel");
+ 		sublist.add("The Naked Sun");
+ 		list.add(sublist);
+ 		listItem = new ListItem("John Irving");
+ 		list.add(listItem);
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("The World according to Garp");
+ 		sublist.add("Hotel New Hampshire");
+ 		sublist.add("A prayer for Owen Meany");
+ 		sublist.add("Widow for a year");
+ 		list.add(sublist);
+ 		listItem = new ListItem("Kurt Vonnegut");
+ 		list.add(listItem);
+ 		sublist = new List(true, 10);
+ 		sublist.setListSymbol(new Chunk("", FontFactory.getFont(FontFactory.HELVETICA, 8)));
+ 		sublist.add("Slaughterhouse 5");
+ 		sublist.add("Welcome to the Monkey House");
+ 		sublist.add("The great pianola");
+ 		sublist.add("Galapagos");
+ 		list.add(sublist);
+ 		document.add(list);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="232" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1012.cs" startline="49" endline="176">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 10 example 12
+         
+ 		// step 1
+ 		Document document = new Document(PageSize.LETTER, 90, 54, 72, 72);
+ 
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1012.pdf", FileMode.Create));
+     
+ 		float gutter = 20;
+ 		int numColumns = 3;
+ 		float fullWidth = document.right() - document.left();
+ 		float columnWidth = (fullWidth - (numColumns - 1) * gutter) / numColumns;
+ 		float[] allColumns = new float[numColumns]; // left
+ 		for (int k = 0; k < numColumns; ++k) 
+ 		{
+ 			allColumns[k] = document.left() + (columnWidth + gutter) * k;
+ 		}
+ 		for (int k = 0; k < numColumns; ++k) 
+ 		{
+ 			allColumns[k] = document.left() + (columnWidth + gutter) * k;
+ 		}
+ 		// set the fonts
+ 		Font font24B = FontFactory.getFont(FontFactory.TIMES_ROMAN, 24, Font.BOLD);
+ 		Font font10B = FontFactory.getFont(FontFactory.TIMES_ROMAN, 10, Font.BOLD);
+ 		Font font14B = FontFactory.getFont(FontFactory.TIMES_ROMAN, 14, Font.BOLD, GDI.Color.Red);
+ 		Font font9 = FontFactory.getFont(FontFactory.TIMES_ROMAN, 9);
+ 		Font font11 = FontFactory.getFont(FontFactory.TIMES_ROMAN, 11);
+     
+ 		// step 3
+ 		document.open();            
+ 		// step 4
+ 		// get the stream content
+ 		PdfContentByte cb = writer.getDirectContent();
+ 		// headers
+ 		Phrase fullTitle = new Phrase("Full Title", font24B);
+ 		float currentY = document.top();
+ 		ColumnText ct = new ColumnText(cb);
+ 		ct.setSimpleColumn(fullTitle, document.left(), 0, document.right(), document.top(), 24, ElementConst.ALIGN_JUSTIFIED);
+ 		ct.go();
+ 		currentY = ct.getYLine();
+ 		currentY -= 4;
+ 		cb.setLineWidth(1);
+ 		cb.moveTo(document.left(), currentY);
+ 		cb.lineTo(document.right(), currentY);
+ 		cb.stroke();
+ 		currentY -= 4;
+ 		ct.setYLine(currentY);
+ 		ct.addText(new Chunk("Author
+ 		ct.setLeading(10);
+ 		ct.go();
+ 		currentY = ct.getYLine();
+ 		currentY -= 15;
+ 		float topColumn = currentY;
+ 		for (int k = 1; k < numColumns; ++k) 
+ 		{
+ 			float x = allColumns[k] - gutter / 2;
+ 			cb.moveTo(x, topColumn);
+ 			cb.lineTo(x, document.bottom());
+ 		}
+ 		for (int k = 1; k < numColumns; ++k) 
+ 		{
+ 			float x = allColumns[k] - gutter / 2;
+ 			cb.moveTo(x, topColumn);
+ 			cb.lineTo(x, document.bottom());
+ 		}
+ 		cb.stroke();
+ 		Image img = Image.getInstance("cover.png");
+ 		cb.addImage(img, img.scaledWidth(), 0, 0, img.scaledHeight(), document.left(), currentY - img.scaledHeight());
+ 		currentY -= img.scaledHeight() + 10;
+ 		ct.setYLine(currentY);
+ 		ct.addText(new Chunk("Key Data
+ 		ct.go();
+ 		currentY = ct.getYLine();
+ 		currentY -= 4;
+ 		PdfPTable ptable = new PdfPTable(2);
+ 		ptable.getDefaultCell().setPaddingLeft(4);
+ 		ptable.getDefaultCell().setPaddingTop(0);
+ 		ptable.getDefaultCell().setPaddingBottom(4);
+ 		ptable.addCell(new Phrase("Imprint Name
+ 		ptable.addCell(new Phrase("Prentice Hall", font9));
+ 		ptable.addCell(new Phrase("Series Name
+ 		ptable.addCell(new Phrase("", font9));
+ 		ptable.addCell(new Phrase("ISBN
+ 		ptable.addCell(new Phrase("Hall", font9));
+ 		ptable.addCell(new Phrase("UPC Code
+ 		ptable.addCell(new Phrase("0789718103", font9));
+ 		ptable.addCell(new Phrase("EAN #", font9));
+ 		ptable.addCell(new Phrase("0786718103", font9));
+ 		ptable.addCell(new Phrase("Price
+ 		ptable.addCell(new Phrase("49.99", font9));
+ 		ptable.addCell(new Phrase("Page Count
+ 		ptable.addCell(new Phrase("500", font9));
+ 		ptable.addCell(new Phrase("Discount
+ 		ptable.addCell(new Phrase("10%", font9));
+ 		ptable.addCell(new Phrase("Trim Size
+ 		ptable.addCell(new Phrase("420x340", font9));
+ 		ptable.addCell(new Phrase("Cover
+ 		ptable.addCell(new Phrase("Hard", font9));
+ 		ptable.addCell(new Phrase("Interior Color
+ 		ptable.addCell(new Phrase("none", font9));
+ 		ptable.addCell(new Phrase("Media with book
+ 		ptable.addCell(new Phrase("CD", font9));
+ 		ptable.addCell(new Phrase("Author(s)
+ 		ptable.addCell(new Phrase("Ben Forta", font9));
+ 		ptable.addCell(new Phrase("Editor
+ 		ptable.addCell(new Phrase("Ben Forta", font9));
+ 		ptable.addCell(new Phrase("Pub Date
+ 		ptable.addCell(new Phrase("06/05/1998", font9));
+ 		ptable.setTotalWidth(columnWidth);
+ 
+ 		currentY = ptable.writeSelectedRows(0, -1, document.left(), currentY, cb) - 20;
+ 		for (int k = 0; k < headings.Length; ++k) 
+ 		{
+ 			ct.addText(new Chunk(headings[k] + "\n", font14B));
+ 			ct.addText(new Chunk(texts[k] + "\n\n", font11));
+ 		}
+ 		for (int k = 0; k < headings.Length; ++k) 
+ 		{
+ 			ct.addText(new Chunk(headings[k] + "\n", font14B));
+ 			ct.addText(new Chunk(texts[k] + "\n\n", font11));
+ 		}
+ 
+ 		int currentColumn = 0;
+ 		ct.setSimpleColumn(allColumns[currentColumn], document.bottom(),
+ 			allColumns[currentColumn] + columnWidth, currentY, 15, ElementConst.ALIGN_JUSTIFIED);
+ 		ct.setLeading(2, 1);
+ 		for (;;) 
+ 		{
+ 			int rc = ct.go();
+ 			if ((rc & ColumnText.NO_MORE_TEXT) != 0)
+ 				break;
+ 			// we run out of column. Let's go to another one
+ 			++currentColumn;
+ 			if (currentColumn >= allColumns.Length)
+ 				break;
+ 			ct.setSimpleColumn(allColumns[currentColumn], document.bottom(),
+ 				allColumns[currentColumn] + columnWidth, topColumn, 15, ElementConst.ALIGN_JUSTIFIED);
+ 			ct.setLeading(2, 1);
+ 		}
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\MultiColumnIrregular.java" startline="40" endline="104">
+<![CDATA[
+ 		Document document = new Document();
+ 		OutputStream out = new FileOutputStream("multicolumnirregular.pdf");
+ 		PdfWriter writer = PdfWriter.getInstance(document, out);
+ 		document.open();
+ 
+ 		// calculate diamond shaped hole
+ 		float diamondHeight = 400;
+ 		float diamondWidth = 400;
+ 		float gutter = 10;
+ 		float bodyHeight = document.top() - document.bottom();
+ 		float colMaxWidth = (document.right() - document.left() - (gutter * 2)) / 2f;
+ 		float diamondTop = document.top() - ((bodyHeight - diamondHeight) / 2f);
+ 		float diamondInset = colMaxWidth - (diamondWidth / 2f);
+ 		float centerX = (document.right() - document.left()) / 2 + document.left();
+ 		// draw stuff
+ 		PdfContentByte cb = writer.getDirectContentUnder();
+             
+ 		MultiColumnText mct = new MultiColumnText(document.top() - document.bottom());
+ 
+ 		// setup column 1
+ 		float[] left = {document.left(), document.top(), document.left(), document.bottom()};
+ 		float[] right = {document.left() + colMaxWidth, document.top(),
+ 							document.left() + colMaxWidth, diamondTop,
+ 							document.left() + diamondInset, diamondTop - diamondHeight / 2,
+ 							document.left() + colMaxWidth, diamondTop - diamondHeight,
+ 							document.left() + colMaxWidth, document.bottom()
+ 						};
+ 		mct.addColumn(left, right);
+ 
+ 		// setup column 2
+ 		left = new float[] { document.right() - colMaxWidth, document.top(),
+ 							   document.right() - colMaxWidth, diamondTop,
+ 							   document.right() - diamondInset, diamondTop - diamondHeight / 2,
+ 							   document.right() - colMaxWidth, diamondTop - diamondHeight,
+ 							   document.right() - colMaxWidth, document.bottom()
+ 						   };
+ 		right = new float[] { document.right(), document.top(), document.right(), document.bottom() };
+ 		mct.addColumn(left, right);
+ 
+ 		// add text
+ 		for (int i=0; i<8; i++) {
+ 			mct.addElement(new Paragraph("GALLIA est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.\n", FontFactory.getFont(FontFactory.HELVETICA, 12)));
+ 			mct.addElement(new Paragraph("[Eorum una, pars, quam Gallos obtinere dictum est, initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et eam partem Oceani quae est ad Hispaniam pertinet; spectat inter occasum solis et septentriones.]\n", FontFactory.getFont(FontFactory.HELVETICA, 12)));
+ 			mct.addElement(new Paragraph("Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupiditate inductus coniurationem nobilitatis fecit et civitati persuasit ut de finibus suis cum omnibus copiis exirent
+ nt.\n", FontFactory.getFont(FontFactory.HELVETICA, 12)));
+ 			mct.addElement(new Paragraph("His rebus adducti et auctoritate Orgetorigis permoti constituerunt ea quae ad proficiscendum pertinerent comparare, iumentorum et carrorum quam maximum numerum coemere, sementes quam maximas facere, ut in itinere copia frumenti suppeteret, cum proximis civitatibus pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi satis esse duxerunt; in tertium annum profectionem lege confirmant.  Ad eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civitates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio, Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a senatu populi Romani amicus appellatus erat, ut regnum in civitate sua occuparet, quod pater ante habuerit; itemque Dumnorigi Haeduo, fratri Diviciaci, qui eo tempore principatum in civitate obtinebat ac maxime plebi acceptus erat, ut idem conaretur persuadet eique filiam suam in matrimonium dat.  Perfacile factu esse illis probat conata perficere, propterea quod ipse s
+ 		for (int i=0; i<8; i++) {
+ 			mct.addElement(new Paragraph("GALLIA est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.\n", FontFactory.getFont(FontFactory.HELVETICA, 12)));
+ 			mct.addElement(new Paragraph("[Eorum una, pars, quam Gallos obtinere dictum est, initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et eam partem Oceani quae est ad Hispaniam pertinet; spectat inter occasum solis et septentriones.]\n", FontFactory.getFont(FontFactory.HELVETICA, 12)));
+ 			mct.addElement(new Paragraph("Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupiditate inductus coniurationem nobilitatis fecit et civitati persuasit ut de finibus suis cum omnibus copiis exirent
+ nt.\n", FontFactory.getFont(FontFactory.HELVETICA, 12)));
+ 			mct.addElement(new Paragraph("His rebus adducti et auctoritate Orgetorigis permoti constituerunt ea quae ad proficiscendum pertinerent comparare, iumentorum et carrorum quam maximum numerum coemere, sementes quam maximas facere, ut in itinere copia frumenti suppeteret, cum proximis civitatibus pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi satis esse duxerunt; in tertium annum profectionem lege confirmant.  Ad eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civitates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio, Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a senatu populi Romani amicus appellatus erat, ut regnum in civitate sua occuparet, quod pater ante habuerit; itemque Dumnorigi Haeduo, fratri Diviciaci, qui eo tempore principatum in civitate obtinebat ac maxime plebi acceptus erat, ut idem conaretur persuadet eique filiam suam in matrimonium dat.  Perfacile factu esse illis probat conata perficere, propterea quod ipse s
+ uae civitatis imperium obtenturus esset
+ 			mct.addElement(new Paragraph("Ea res est Helvetiis per indicium enuntiata.  Moribus suis Orgetoricem ex vinculis causam dicere coegerunt; damnatum poenam sequi oportebat, ut igni cremaretur.  Die constituta causae dictionis Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, undique coegit, et omnes clientes obaeratosque suos, quorum magnum numerum habebat, eodem conduxit; per eos ne causam diceret se eripuit.  Cum civitas ob eam rem incitata armis ius suum exequi conaretur multitudinemque hominum ex agris magistratus cogerent, Orgetorix mortuus est; neque abest suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciverit.", FontFactory.getFont(FontFactory.HELVETICA, 12)));
+ 		}
+ 		do {
+ 			cb.setLineWidth(5);
+ 			cb.setColorStroke(Color.GRAY);
+ 			cb.moveTo(centerX , document.top());
+ 			cb.lineTo(centerX, document.bottom());
+ 			cb.stroke();
+ 			cb.moveTo(centerX, diamondTop);
+ 			cb.lineTo(centerX - (diamondWidth/2), diamondTop - (diamondHeight / 2));
+ 			cb.lineTo(centerX, diamondTop - diamondHeight);
+ 			cb.lineTo(centerX + (diamondWidth/2), diamondTop - (diamondHeight / 2));
+ 			cb.lineTo(centerX, diamondTop);
+ 			cb.setColorFill(Color.GRAY);
+ 			cb.fill();
+ 			document.add(mct);
+ 			mct.nextColumn();
+ 		} while (mct.isOverflow());
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="243" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1001.cs" startline="24" endline="75">
+<![CDATA[
+ 	{
+         
+ 		Console.WriteLine("Chapter 10 example 1
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1001.pdf", FileMode.Create));
+         
+ 		// step 3
+ 		document.open();
+         
+ 		// step 4
+ 		PdfContentByte cb = writer.getDirectContent();
+         
+ 		// an example of a rectangle with a diagonal in very thick lines
+ 		cb.setLineWidth(10f);
+ 		// draw a rectangle
+ 		cb.rectangle(100, 700, 100, 100);
+ 		// add the diagonal
+ 		cb.moveTo(100, 700);
+ 		cb.lineTo(200, 800);
+ 		// stroke the lines
+ 		cb.stroke();
+         
+ 		// an example of some circles
+ 		cb.setLineDash(3, 3, 0);
+ 		cb.setRGBColorStrokeF(0f, 255f, 0f);
+ 		cb.circle(150f, 500f, 100f);
+ 		cb.stroke();
+         
+ 		cb.setLineWidth(5f);
+ 		cb.resetRGBColorStroke();
+ 		cb.circle(150f, 500f, 50f);
+ 		cb.stroke();
+         
+ 		// example with colorfill
+ 		cb.setRGBColorFillF(0f, 255f, 0f);
+ 		cb.moveTo(100f, 200f);
+ 		cb.lineTo(200f, 250f);
+ 		cb.lineTo(400f, 150f);
+ 		// because we change the fill color BEFORE we stroke the triangle
+ 		// the color of the triangle will be red instead of green
+ 		cb.setRGBColorFillF(255f, 0f, 0f);
+ 		cb.closePathFillStroke();
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0304.java" startline="30" endline="80">
+<![CDATA[
+         System.out.println("Chapter 3 example 4
+         
+         // step 1
+         Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+         try {
+             // step 2
+             // we create a writer that listens to the document
+             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("Chap0304.pdf"));
+             // step 3
+             document.open();
+             // step 4
+             
+             PdfContentByte cb = writer.getDirectContent();
+             // draw a rectangle
+             cb.setRGBColorStroke(0x00, 0x00, 0xFF);
+             cb.rectangle(100, 700, 100, 100);
+             cb.stroke();
+             Annotation annot = new Annotation(100f, 700f, 200f, 800f, "http
+             document.add(annot);
+             cb.setRGBColorStroke(0xFF, 0x00, 0x00);
+             cb.rectangle(200, 700, 100, 100);
+             cb.stroke();
+             try {
+                 document.add(new Annotation(200f, 700f, 300f, 800f, new java.net.URL("http
+             }
+             catch(Exception e) {
+             }
+             cb.setRGBColorStroke(0x00, 0xFF, 0x00);
+             cb.rectangle(300, 700, 100, 100);
+             cb.stroke();
+             document.add(new Annotation(300f, 700f, 400f, 800f, "C
+             cb.setRGBColorStroke(0x00, 0x00, 0xFF);
+             cb.rectangle(100, 500, 100, 100);
+             cb.stroke();
+             document.add(new Annotation("annotation", "This annotation is placed on an absolute position", 100f, 500f, 200f, 600f));
+             cb.setRGBColorStroke(0xFF, 0x00, 0x00);
+             cb.rectangle(200, 500, 100, 100);
+             cb.stroke();
+             document.add(new Annotation(200f, 500f, 300f, 600f, "Chap1102a.pdf", "test"));
+             cb.setRGBColorStroke(0x00, 0xFF, 0x00);
+             cb.rectangle(300, 500, 100, 100);
+             cb.stroke();
+             document.add(new Annotation(300f, 500f, 400f, 600f, "Chap1102b.pdf", 3));
+         }
+         catch (Exception de) {
+             de.printStackTrace();
+         }
+         
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="252" nfragments="2" Csharpe_files="1" vb_files="0" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\images\RawData.java" startline="35" endline="76">
+<![CDATA[
+ 		System.out.println("bytes[] / raw image");
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+             
+ 		PdfWriter.getInstance(document, new FileOutputStream("rawdata.pdf"));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+             
+ 		// creation a jpeg passed as an array of bytes to the Image
+ 		RandomAccessFile rf = new RandomAccessFile("otsoe.jpg", "r");
+ 		int size = (int)rf.length();
+ 		byte imext[] = new byte[size];
+ 		rf.readFully(imext);
+ 		rf.close();
+ 		Image img1 = Image.getInstance(imext);
+ 		img1.setAbsolutePosition(50, 500);
+ 		document.add(img1);
+             
+ 		// creation of an image of 100 x 100 pixels (x 3 bytes for the Red, Green and Blue value)
+ 		byte data[] = new byte[100*100*3];
+ 		for (int k = 0; k < 100; ++k) {
+ 			for (int j = 0; j < 300; j += 3) {
+ 				data[k * 300 + j] = (byte)(255 * Math.sin(j * .5 * Math.PI / 300));
+ 				data[k * 300 + j + 1] = (byte)(256 - j * 256 / 300);
+ 				data[k * 300 + j + 2] = (byte)(255 * Math.cos(k * .5 * Math.PI / 100));
+ 			for (int j = 0; j < 300; j += 3) {
+ 		for (int k = 0; k < 100; ++k) {
+ 			for (int j = 0; j < 300; j += 3) {
+ 				data[k * 300 + j] = (byte)(255 * Math.sin(j * .5 * Math.PI / 300));
+ 				data[k * 300 + j + 1] = (byte)(256 - j * 256 / 300);
+ 				data[k * 300 + j + 2] = (byte)(255 * Math.cos(k * .5 * Math.PI / 100));
+ 			}
+ 		}
+ 		Image img2 = Image.getInstance(100, 100, 3, 8, data);
+ 		img2.setAbsolutePosition(200, 200);
+ 		document.add(img2);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0609.cs" startline="24" endline="67">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 6 example 9
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+         
+ 		PdfWriter.getInstance(document, new FileStream("Chap0609.pdf", FileMode.Create));
+         
+ 		// step 3
+ 		document.open();
+         
+ 		// step 4
+ 		// creation a jpeg passed as an array of bytes to the Image
+ 		FileStream fs = File.OpenRead("myKids.jpg");
+ 		int size = (int)fs.Length;
+ 		byte[] imext = new byte[size];
+ 		fs.Read(imext, 0, size);
+ 		fs.Close();
+ 		Image img1 = Image.getInstance(imext);
+ 		img1.setAbsolutePosition(50, 500);
+ 		document.add(img1);
+         
+ 		// creation of an image of 100 x 100 pixels (x 3 bytes for the Red, Green and Blue value)
+ 		byte[] data = new byte[100*100*3];
+ 		for (int k = 0; k < 100; ++k) 
+ 		{
+ 			for (int j = 0; j < 300; j += 3) 
+ 			{
+ 				data[k * 300 + j] = (byte)(255 * Math.Sin(j * .5 * Math.PI / 300));
+ 				data[k * 300 + j + 1] = (byte)(256 - j * 256 / 300);
+ 				data[k * 300 + j + 2] = (byte)(255 * Math.Cos(k * .5 * Math.PI / 100));
+ 			}
+ 			for (int j = 0; j < 300; j += 3) 
+ 			{
+ 				data[k * 300 + j] = (byte)(255 * Math.Sin(j * .5 * Math.PI / 300));
+ 				data[k * 300 + j + 1] = (byte)(256 - j * 256 / 300);
+ 				data[k * 300 + j + 2] = (byte)(255 * Math.Cos(k * .5 * Math.PI / 100));
+ 			}
+ 		}
+ 		for (int k = 0; k < 100; ++k) 
+ 		{
+ 			for (int j = 0; j < 300; j += 3) 
+ 			{
+ 				data[k * 300 + j] = (byte)(255 * Math.Sin(j * .5 * Math.PI / 300));
+ 				data[k * 300 + j + 1] = (byte)(256 - j * 256 / 300);
+ 				data[k * 300 + j + 2] = (byte)(255 * Math.Cos(k * .5 * Math.PI / 100));
+ 			}
+ 		}
+ 		Image img2 = Image.getInstance(100, 100, 3, 8, data);
+ 		img2.setAbsolutePosition(200, 200);
+ 		document.add(img2);
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

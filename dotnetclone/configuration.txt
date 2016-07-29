@@ -1,0 +1,11 @@
+Lev
+0.6
+F
+P
+
+
+
+Fisrt argument  - detection method{ Lev or Lcs}
+Second argument - threshold {0.0, 0.1, 0.2, ..., 1.0}
+Third argument  - Filter using{F, N} F (Filters used), N (No filter used)
+Fourth argument - Repoting { R, P} R (Reporting clones), P # of  Pairs only

@@ -1,0 +1,1176 @@
+<clones>
+<systeminfo processor="nicad3" system="testcase2" granularity="functions" threshold="40%" minlines="6" maxlines="2500"/>
+<cloneinfo npcs="66" npairs="234"/>
+<runinfo ncompares="741" cputime="80000"/>
+
+<clone nlines="411" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0209.cs" startline="27" endline="126" pcid="40"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0209.vb" startline="74" endline="155" pcid="18"></source>
+</clone>
+
+<clone nlines="411" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0209.cs" startline="27" endline="126" pcid="40"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0209.java" startline="35" endline="135" pcid="62"></source>
+</clone>
+
+<clone nlines="328" similarity="87">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0112.cs" startline="24" endline="100" pcid="32"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0112.vb" startline="59" endline="128" pcid="10"></source>
+</clone>
+
+<clone nlines="328" similarity="70">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0112.cs" startline="24" endline="100" pcid="32"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0112.java" startline="30" endline="104" pcid="54"></source>
+</clone>
+
+<clone nlines="308" similarity="75">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0112.vb" startline="59" endline="128" pcid="10"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0112.java" startline="30" endline="104" pcid="54"></source>
+</clone>
+
+<clone nlines="308" similarity="84">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0209.vb" startline="74" endline="155" pcid="18"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0209.java" startline="35" endline="135" pcid="62"></source>
+</clone>
+
+<clone nlines="176" similarity="89">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0111.java" startline="33" endline="150" pcid="53"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0108.java" startline="33" endline="133" pcid="50"></source>
+</clone>
+
+<clone nlines="176" similarity="75">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0111.java" startline="33" endline="150" pcid="53"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="59" endline="163" pcid="9"></source>
+</clone>
+
+<clone nlines="176" similarity="73">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0111.java" startline="33" endline="150" pcid="53"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0111.cs" startline="24" endline="119" pcid="31"></source>
+</clone>
+
+<clone nlines="176" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0111.java" startline="33" endline="150" pcid="53"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0207.java" startline="32" endline="82" pcid="59"></source>
+</clone>
+
+<clone nlines="176" similarity="64">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0111.java" startline="33" endline="150" pcid="53"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0108.vb" startline="59" endline="148" pcid="6"></source>
+</clone>
+
+<clone nlines="176" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0111.java" startline="33" endline="150" pcid="53"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0108.cs" startline="25" endline="120" pcid="28"></source>
+</clone>
+
+<clone nlines="176" similarity="85">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0111.java" startline="33" endline="150" pcid="53"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0107.java" startline="33" endline="128" pcid="49"></source>
+</clone>
+
+<clone nlines="176" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0111.java" startline="33" endline="150" pcid="53"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0107.vb" startline="59" endline="129" pcid="5"></source>
+</clone>
+
+<clone nlines="170" similarity="68">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0108.java" startline="33" endline="133" pcid="50"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="59" endline="163" pcid="9"></source>
+</clone>
+
+<clone nlines="170" similarity="67">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0108.java" startline="33" endline="133" pcid="50"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0111.cs" startline="24" endline="119" pcid="31"></source>
+</clone>
+
+<clone nlines="170" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0108.java" startline="33" endline="133" pcid="50"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0207.java" startline="32" endline="82" pcid="59"></source>
+</clone>
+
+<clone nlines="170" similarity="74">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0108.java" startline="33" endline="133" pcid="50"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0108.vb" startline="59" endline="148" pcid="6"></source>
+</clone>
+
+<clone nlines="170" similarity="72">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0108.java" startline="33" endline="133" pcid="50"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0108.cs" startline="25" endline="120" pcid="28"></source>
+</clone>
+
+<clone nlines="170" similarity="88">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0108.java" startline="33" endline="133" pcid="50"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0107.java" startline="33" endline="128" pcid="49"></source>
+</clone>
+
+<clone nlines="170" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0108.java" startline="33" endline="133" pcid="50"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0107.vb" startline="59" endline="129" pcid="5"></source>
+</clone>
+
+<clone nlines="170" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0108.java" startline="33" endline="133" pcid="50"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0107.cs" startline="24" endline="113" pcid="27"></source>
+</clone>
+
+<clone nlines="166" similarity="95">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="59" endline="163" pcid="9"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0111.cs" startline="24" endline="119" pcid="31"></source>
+</clone>
+
+<clone nlines="166" similarity="83">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="59" endline="163" pcid="9"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0108.vb" startline="59" endline="148" pcid="6"></source>
+</clone>
+
+<clone nlines="166" similarity="79">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="59" endline="163" pcid="9"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0108.cs" startline="25" endline="120" pcid="28"></source>
+</clone>
+
+<clone nlines="166" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="59" endline="163" pcid="9"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0107.java" startline="33" endline="128" pcid="49"></source>
+</clone>
+
+<clone nlines="166" similarity="78">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="59" endline="163" pcid="9"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0107.vb" startline="59" endline="129" pcid="5"></source>
+</clone>
+
+<clone nlines="166" similarity="72">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="59" endline="163" pcid="9"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0107.cs" startline="24" endline="113" pcid="27"></source>
+</clone>
+
+<clone nlines="165" similarity="81">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0111.cs" startline="24" endline="119" pcid="31"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0108.vb" startline="59" endline="148" pcid="6"></source>
+</clone>
+
+<clone nlines="165" similarity="83">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0111.cs" startline="24" endline="119" pcid="31"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0108.cs" startline="25" endline="120" pcid="28"></source>
+</clone>
+
+<clone nlines="165" similarity="64">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0111.cs" startline="24" endline="119" pcid="31"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0107.java" startline="33" endline="128" pcid="49"></source>
+</clone>
+
+<clone nlines="165" similarity="75">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0111.cs" startline="24" endline="119" pcid="31"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0107.vb" startline="59" endline="129" pcid="5"></source>
+</clone>
+
+<clone nlines="165" similarity="76">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0111.cs" startline="24" endline="119" pcid="31"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0107.cs" startline="24" endline="113" pcid="27"></source>
+</clone>
+
+<clone nlines="159" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0207.java" startline="32" endline="82" pcid="59"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0107.java" startline="33" endline="128" pcid="49"></source>
+</clone>
+
+<clone nlines="159" similarity="87">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0207.java" startline="32" endline="82" pcid="59"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0207.vb" startline="56" endline="100" pcid="15"></source>
+</clone>
+
+<clone nlines="159" similarity="87">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0207.java" startline="32" endline="82" pcid="59"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0207.cs" startline="24" endline="66" pcid="37"></source>
+</clone>
+
+<clone nlines="159" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0207.java" startline="32" endline="82" pcid="59"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0804.java" startline="28" endline="73" pcid="66"></source>
+</clone>
+
+<clone nlines="159" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0207.java" startline="32" endline="82" pcid="59"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0803.java" startline="32" endline="72" pcid="65"></source>
+</clone>
+
+<clone nlines="153" similarity="95">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0108.vb" startline="59" endline="148" pcid="6"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0108.cs" startline="25" endline="120" pcid="28"></source>
+</clone>
+
+<clone nlines="153" similarity="69">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0108.vb" startline="59" endline="148" pcid="6"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0107.java" startline="33" endline="128" pcid="49"></source>
+</clone>
+
+<clone nlines="153" similarity="84">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0108.vb" startline="59" endline="148" pcid="6"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0107.vb" startline="59" endline="129" pcid="5"></source>
+</clone>
+
+<clone nlines="153" similarity="79">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0108.vb" startline="59" endline="148" pcid="6"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0107.cs" startline="24" endline="113" pcid="27"></source>
+</clone>
+
+<clone nlines="153" similarity="68">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0108.cs" startline="25" endline="120" pcid="28"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0107.java" startline="33" endline="128" pcid="49"></source>
+</clone>
+
+<clone nlines="153" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0108.cs" startline="25" endline="120" pcid="28"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0207.cs" startline="24" endline="66" pcid="37"></source>
+</clone>
+
+<clone nlines="153" similarity="80">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0108.cs" startline="25" endline="120" pcid="28"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0107.vb" startline="59" endline="129" pcid="5"></source>
+</clone>
+
+<clone nlines="153" similarity="82">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0108.cs" startline="25" endline="120" pcid="28"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0107.cs" startline="24" endline="113" pcid="27"></source>
+</clone>
+
+<clone nlines="151" similarity="70">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0107.java" startline="33" endline="128" pcid="49"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0107.vb" startline="59" endline="129" pcid="5"></source>
+</clone>
+
+<clone nlines="151" similarity="69">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0107.java" startline="33" endline="128" pcid="49"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0107.cs" startline="24" endline="113" pcid="27"></source>
+</clone>
+
+<clone nlines="145" similarity="99">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0207.vb" startline="56" endline="100" pcid="15"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0207.cs" startline="24" endline="66" pcid="37"></source>
+</clone>
+
+<clone nlines="145" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0207.vb" startline="56" endline="100" pcid="15"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0803.vb" startline="45" endline="69" pcid="21"></source>
+</clone>
+
+<clone nlines="131" similarity="93">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0107.vb" startline="59" endline="129" pcid="5"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0107.cs" startline="24" endline="113" pcid="27"></source>
+</clone>
+
+<clone nlines="129" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0107.cs" startline="24" endline="113" pcid="27"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0804.cs" startline="25" endline="63" pcid="44"></source>
+</clone>
+
+<clone nlines="118" similarity="72">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80" pcid="22"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0804.java" startline="28" endline="73" pcid="66"></source>
+</clone>
+
+<clone nlines="118" similarity="85">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80" pcid="22"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0804.cs" startline="25" endline="63" pcid="44"></source>
+</clone>
+
+<clone nlines="118" similarity="72">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0804.java" startline="28" endline="73" pcid="66"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0804.cs" startline="25" endline="63" pcid="44"></source>
+</clone>
+
+<clone nlines="118" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0804.java" startline="28" endline="73" pcid="66"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0803.java" startline="32" endline="72" pcid="65"></source>
+</clone>
+
+<clone nlines="118" similarity="64">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0804.java" startline="28" endline="73" pcid="66"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0206.java" startline="32" endline="75" pcid="58"></source>
+</clone>
+
+<clone nlines="114" similarity="67">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0205.vb" startline="57" endline="87" pcid="13"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0205.java" startline="31" endline="72" pcid="57"></source>
+</clone>
+
+<clone nlines="114" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0205.vb" startline="57" endline="87" pcid="13"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="59" endline="92" pcid="14"></source>
+</clone>
+
+<clone nlines="114" similarity="69">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0205.vb" startline="57" endline="87" pcid="13"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+</clone>
+
+<clone nlines="103" similarity="70">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0803.java" startline="32" endline="72" pcid="65"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0206.java" startline="32" endline="75" pcid="58"></source>
+</clone>
+
+<clone nlines="103" similarity="79">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0803.java" startline="32" endline="72" pcid="65"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0803.vb" startline="45" endline="69" pcid="21"></source>
+</clone>
+
+<clone nlines="103" similarity="73">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0803.java" startline="32" endline="72" pcid="65"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0205.java" startline="31" endline="72" pcid="57"></source>
+</clone>
+
+<clone nlines="103" similarity="80">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0803.java" startline="32" endline="72" pcid="65"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0803.cs" startline="24" endline="56" pcid="43"></source>
+</clone>
+
+<clone nlines="103" similarity="66">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0803.java" startline="32" endline="72" pcid="65"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="35" endline="74" pcid="60"></source>
+</clone>
+
+<clone nlines="99" similarity="81">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0206.java" startline="32" endline="75" pcid="58"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0205.java" startline="31" endline="72" pcid="57"></source>
+</clone>
+
+<clone nlines="99" similarity="79">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0206.java" startline="32" endline="75" pcid="58"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="59" endline="92" pcid="14"></source>
+</clone>
+
+<clone nlines="99" similarity="79">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0206.java" startline="32" endline="75" pcid="58"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0206.cs" startline="24" endline="58" pcid="36"></source>
+</clone>
+
+<clone nlines="99" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0206.java" startline="32" endline="75" pcid="58"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+</clone>
+
+<clone nlines="99" similarity="70">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0206.java" startline="32" endline="75" pcid="58"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="35" endline="74" pcid="60"></source>
+</clone>
+
+<clone nlines="96" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0803.vb" startline="45" endline="69" pcid="21"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="59" endline="92" pcid="14"></source>
+</clone>
+
+<clone nlines="96" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0803.vb" startline="45" endline="69" pcid="21"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0206.cs" startline="24" endline="58" pcid="36"></source>
+</clone>
+
+<clone nlines="96" similarity="90">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0803.vb" startline="45" endline="69" pcid="21"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0803.cs" startline="24" endline="56" pcid="43"></source>
+</clone>
+
+<clone nlines="96" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0803.vb" startline="45" endline="69" pcid="21"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+</clone>
+
+<clone nlines="95" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0205.java" startline="31" endline="72" pcid="57"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="59" endline="92" pcid="14"></source>
+</clone>
+
+<clone nlines="95" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0205.java" startline="31" endline="72" pcid="57"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0206.cs" startline="24" endline="58" pcid="36"></source>
+</clone>
+
+<clone nlines="95" similarity="78">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0205.java" startline="31" endline="72" pcid="57"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+</clone>
+
+<clone nlines="95" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0205.java" startline="31" endline="72" pcid="57"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0203.java" startline="31" endline="62" pcid="55"></source>
+</clone>
+
+<clone nlines="95" similarity="70">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0205.java" startline="31" endline="72" pcid="57"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="35" endline="74" pcid="60"></source>
+</clone>
+
+<clone nlines="95" similarity="67">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0205.java" startline="31" endline="72" pcid="57"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0106.java" startline="33" endline="70" pcid="48"></source>
+</clone>
+
+<clone nlines="90" similarity="98">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="59" endline="92" pcid="14"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0206.cs" startline="24" endline="58" pcid="36"></source>
+</clone>
+
+<clone nlines="90" similarity="64">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="59" endline="92" pcid="14"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0803.cs" startline="24" endline="56" pcid="43"></source>
+</clone>
+
+<clone nlines="90" similarity="73">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="59" endline="92" pcid="14"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+</clone>
+
+<clone nlines="90" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="59" endline="92" pcid="14"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="60" endline="89" pcid="16"></source>
+</clone>
+
+<clone nlines="90" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="59" endline="92" pcid="14"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0208.cs" startline="24" endline="54" pcid="38"></source>
+</clone>
+
+<clone nlines="90" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0206.cs" startline="24" endline="58" pcid="36"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0803.cs" startline="24" endline="56" pcid="43"></source>
+</clone>
+
+<clone nlines="90" similarity="74">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0206.cs" startline="24" endline="58" pcid="36"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+</clone>
+
+<clone nlines="90" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0206.cs" startline="24" endline="58" pcid="36"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="60" endline="89" pcid="16"></source>
+</clone>
+
+<clone nlines="90" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0206.cs" startline="24" endline="58" pcid="36"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0208.cs" startline="24" endline="54" pcid="38"></source>
+</clone>
+
+<clone nlines="89" similarity="69">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0803.cs" startline="24" endline="56" pcid="43"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+</clone>
+
+<clone nlines="89" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0803.cs" startline="24" endline="56" pcid="43"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="60" endline="89" pcid="16"></source>
+</clone>
+
+<clone nlines="89" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0803.cs" startline="24" endline="56" pcid="43"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0208.cs" startline="24" endline="54" pcid="38"></source>
+</clone>
+
+<clone nlines="81" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="35" endline="74" pcid="60"></source>
+</clone>
+
+<clone nlines="81" similarity="64">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="60" endline="89" pcid="16"></source>
+</clone>
+
+<clone nlines="81" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0208.cs" startline="24" endline="54" pcid="38"></source>
+</clone>
+
+<clone nlines="81" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0106.vb" startline="23" endline="51" pcid="4"></source>
+</clone>
+
+<clone nlines="81" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0205.cs" startline="24" endline="57" pcid="35"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0106.cs" startline="25" endline="51" pcid="26"></source>
+</clone>
+
+<clone nlines="79" similarity="67">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0203.java" startline="31" endline="62" pcid="55"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="35" endline="74" pcid="60"></source>
+</clone>
+
+<clone nlines="79" similarity="67">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0203.java" startline="31" endline="62" pcid="55"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0106.java" startline="33" endline="70" pcid="48"></source>
+</clone>
+
+<clone nlines="79" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0203.java" startline="31" endline="62" pcid="55"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0104.java" startline="31" endline="65" pcid="47"></source>
+</clone>
+
+<clone nlines="79" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0203.java" startline="31" endline="62" pcid="55"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0103.java" startline="31" endline="62" pcid="46"></source>
+</clone>
+
+<clone nlines="79" similarity="67">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="35" endline="74" pcid="60"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0106.java" startline="33" endline="70" pcid="48"></source>
+</clone>
+
+<clone nlines="79" similarity="74">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="35" endline="74" pcid="60"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="60" endline="89" pcid="16"></source>
+</clone>
+
+<clone nlines="79" similarity="74">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="35" endline="74" pcid="60"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0208.cs" startline="24" endline="54" pcid="38"></source>
+</clone>
+
+<clone nlines="79" similarity="64">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="35" endline="74" pcid="60"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0104.java" startline="31" endline="65" pcid="47"></source>
+</clone>
+
+<clone nlines="67" similarity="67">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0106.java" startline="33" endline="70" pcid="48"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0104.java" startline="31" endline="65" pcid="47"></source>
+</clone>
+
+<clone nlines="67" similarity="68">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0106.java" startline="33" endline="70" pcid="48"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0106.vb" startline="23" endline="51" pcid="4"></source>
+</clone>
+
+<clone nlines="67" similarity="68">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0106.java" startline="33" endline="70" pcid="48"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0106.cs" startline="25" endline="51" pcid="26"></source>
+</clone>
+
+<clone nlines="67" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0106.java" startline="33" endline="70" pcid="48"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0204.java" startline="31" endline="60" pcid="56"></source>
+</clone>
+
+<clone nlines="65" similarity="98">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="60" endline="89" pcid="16"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0208.cs" startline="24" endline="54" pcid="38"></source>
+</clone>
+
+<clone nlines="65" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0208.cs" startline="24" endline="54" pcid="38"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0104.cs" startline="24" endline="50" pcid="25"></source>
+</clone>
+
+<clone nlines="61" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0104.java" startline="31" endline="65" pcid="47"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0104.cs" startline="24" endline="50" pcid="25"></source>
+</clone>
+
+<clone nlines="61" similarity="78">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0104.java" startline="31" endline="65" pcid="47"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0103.java" startline="31" endline="62" pcid="46"></source>
+</clone>
+
+<clone nlines="61" similarity="68">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0104.java" startline="31" endline="65" pcid="47"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0204.java" startline="31" endline="60" pcid="56"></source>
+</clone>
+
+<clone nlines="61" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0104.java" startline="31" endline="65" pcid="47"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0101.java" startline="31" endline="60" pcid="45"></source>
+</clone>
+
+<clone nlines="61" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0104.java" startline="31" endline="65" pcid="47"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0801.java" startline="31" endline="60" pcid="64"></source>
+</clone>
+
+<clone nlines="54" similarity="98">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0106.vb" startline="23" endline="51" pcid="4"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0106.cs" startline="25" endline="51" pcid="26"></source>
+</clone>
+
+<clone nlines="53" similarity="69">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0104.cs" startline="24" endline="50" pcid="25"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0103.cs" startline="24" endline="44" pcid="24"></source>
+</clone>
+
+<clone nlines="50" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0103.java" startline="31" endline="62" pcid="46"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0703.java" startline="35" endline="59" pcid="63"></source>
+</clone>
+
+<clone nlines="50" similarity="80">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0103.java" startline="31" endline="62" pcid="46"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0204.java" startline="31" endline="60" pcid="56"></source>
+</clone>
+
+<clone nlines="50" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0103.java" startline="31" endline="62" pcid="46"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0103.cs" startline="24" endline="44" pcid="24"></source>
+</clone>
+
+<clone nlines="50" similarity="76">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0103.java" startline="31" endline="62" pcid="46"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0101.java" startline="31" endline="60" pcid="45"></source>
+</clone>
+
+<clone nlines="50" similarity="76">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0103.java" startline="31" endline="62" pcid="46"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0801.java" startline="31" endline="60" pcid="64"></source>
+</clone>
+
+<clone nlines="50" similarity="94">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0109.java" startline="30" endline="46" pcid="51"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0110.java" startline="30" endline="45" pcid="52"></source>
+</clone>
+
+<clone nlines="50" similarity="78">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0109.java" startline="30" endline="46" pcid="51"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0703.java" startline="35" endline="59" pcid="63"></source>
+</clone>
+
+<clone nlines="48" similarity="81">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0110.java" startline="30" endline="45" pcid="52"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0703.java" startline="35" endline="59" pcid="63"></source>
+</clone>
+
+<clone nlines="48" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0110.java" startline="30" endline="45" pcid="52"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+</clone>
+
+<clone nlines="48" similarity="60">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0110.java" startline="30" endline="45" pcid="52"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+</clone>
+
+<clone nlines="47" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0703.java" startline="35" endline="59" pcid="63"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0204.java" startline="31" endline="60" pcid="56"></source>
+</clone>
+
+<clone nlines="45" similarity="84">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0204.java" startline="31" endline="60" pcid="56"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0101.java" startline="31" endline="60" pcid="45"></source>
+</clone>
+
+<clone nlines="45" similarity="84">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0204.java" startline="31" endline="60" pcid="56"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0801.java" startline="31" endline="60" pcid="64"></source>
+</clone>
+
+<clone nlines="39" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0103.cs" startline="24" endline="44" pcid="24"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+</clone>
+
+<clone nlines="39" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0103.cs" startline="24" endline="44" pcid="24"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+</clone>
+
+<clone nlines="39" similarity="66">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0103.cs" startline="24" endline="44" pcid="24"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+</clone>
+
+<clone nlines="39" similarity="64">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0103.cs" startline="24" endline="44" pcid="24"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+</clone>
+
+<clone nlines="39" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0103.cs" startline="24" endline="44" pcid="24"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+</clone>
+
+<clone nlines="39" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0103.cs" startline="24" endline="44" pcid="24"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="39" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0103.cs" startline="24" endline="44" pcid="24"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="39" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0103.cs" startline="24" endline="44" pcid="24"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="39" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0103.cs" startline="24" endline="44" pcid="24"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="38" similarity="100">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0101.java" startline="31" endline="60" pcid="45"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0801.java" startline="31" endline="60" pcid="64"></source>
+</clone>
+
+<clone nlines="38" similarity="81">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="90" endline="99" pcid="17"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0208.cs" startline="55" endline="64" pcid="39"></source>
+</clone>
+
+<clone nlines="38" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="90" endline="99" pcid="17"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="75" endline="83" pcid="61"></source>
+</clone>
+
+<clone nlines="36" similarity="97">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+</clone>
+
+<clone nlines="36" similarity="94">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+</clone>
+
+<clone nlines="36" similarity="91">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+</clone>
+
+<clone nlines="36" similarity="66">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+</clone>
+
+<clone nlines="36" similarity="69">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+</clone>
+
+<clone nlines="36" similarity="66">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="36" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="36" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68" pcid="7"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="36" similarity="91">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+</clone>
+
+<clone nlines="36" similarity="94">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+</clone>
+
+<clone nlines="36" similarity="69">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+</clone>
+
+<clone nlines="36" similarity="66">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+</clone>
+
+<clone nlines="36" similarity="66">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+</clone>
+
+<clone nlines="36" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33" pcid="29"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="36" similarity="97">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+</clone>
+
+<clone nlines="36" similarity="66">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+</clone>
+
+<clone nlines="36" similarity="69">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+</clone>
+
+<clone nlines="36" similarity="69">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+</clone>
+
+<clone nlines="36" similarity="66">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="36" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="36" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68" pcid="8"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="36" similarity="69">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+</clone>
+
+<clone nlines="36" similarity="66">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+</clone>
+
+<clone nlines="36" similarity="66">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+</clone>
+
+<clone nlines="36" similarity="69">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+</clone>
+
+<clone nlines="36" similarity="61">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="36" similarity="63">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0110.cs" startline="24" endline="33" pcid="30"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="35" similarity="74">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0208.cs" startline="55" endline="64" pcid="39"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="75" endline="83" pcid="61"></source>
+</clone>
+
+<clone nlines="31" similarity="96">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+</clone>
+
+<clone nlines="31" similarity="64">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+</clone>
+
+<clone nlines="31" similarity="67">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+</clone>
+
+<clone nlines="31" similarity="70">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+</clone>
+
+<clone nlines="31" similarity="77">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+</clone>
+
+<clone nlines="31" similarity="77">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="31" similarity="77">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="31" similarity="77">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="31" similarity="77">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44" pcid="34"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="31" similarity="67">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+</clone>
+
+<clone nlines="31" similarity="64">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+</clone>
+
+<clone nlines="31" similarity="74">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+</clone>
+
+<clone nlines="31" similarity="77">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+</clone>
+
+<clone nlines="31" similarity="77">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="31" similarity="77">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="31" similarity="74">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="31" similarity="74">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77" pcid="12"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="29" similarity="96">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+</clone>
+
+<clone nlines="29" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+</clone>
+
+<clone nlines="29" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+</clone>
+
+<clone nlines="29" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="29" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="29" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="29" similarity="62">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80" pcid="19"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="29" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+</clone>
+
+<clone nlines="29" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="29" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="29" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="29" similarity="65">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0703.cs" startline="26" endline="42" pcid="41"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="26" similarity="88">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+</clone>
+
+<clone nlines="26" similarity="88">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="26" similarity="88">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="26" similarity="84">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="26" similarity="84">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55" pcid="20"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="25" similarity="100">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+</clone>
+
+<clone nlines="25" similarity="100">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="25" similarity="96">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="25" similarity="96">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85" pcid="3"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="25" similarity="100">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+</clone>
+
+<clone nlines="25" similarity="96">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="25" similarity="96">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82" pcid="2"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="25" similarity="96">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+</clone>
+
+<clone nlines="25" similarity="96">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45" pcid="1"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+<clone nlines="24" similarity="100">
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45" pcid="42"></source>
+<source file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43" pcid="23"></source>
+</clone>
+
+</clones>

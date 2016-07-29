@@ -1,0 +1,1196 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="NULL" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="17d14f5c-a337-4978-8281-53493378c1071.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 1
+ 
+         ' step 1
+         Dim document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileStream("Chap0101.pdf", FileMode.Create))
+ 
+         ' step 3
+         document.open()
+ 
+         ' step 4
+         document.add(New Paragraph("Hello World"))
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="59" endline="82"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 3
+ 
+         ' step 1
+         Dim document As New Document(PageSize.A4.rotate())
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileOutputStream("Chap0103.pdf"))
+ 
+         ' step 3
+         document.open()
+ 
+         ' step 4
+         Dim i As Integer
+         For i = 0 To 20
+             document.add(New Phrase("Hello World, Hello Sun, Hello Moon, Hello Stars, Hello Sea, Hello Land, Hello People. "))
+         Next
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0103.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 4
+ 
+         ' step 1
+         Dim document As New Document(PageSize.A5, 36, 72, 108, 180)
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileOutputStream("Chap0104.pdf"))
+ 
+         ' step 3
+         document.open()
+ 
+         ' step 4
+         Dim paragraph As New Paragraph()
+         paragraph.setAlignment(Element.ALIGN_JUSTIFIED)
+         Dim i As Integer
+         For i = 0 To 20
+             paragraph.add("Hello World, Hello Sun, Hello Moon, Hello Stars, Hello Sea, Hello Land, Hello People. ")
+         Next
+         document.add(paragraph)
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0106.vb" startline="23" endline="51"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 6
+ 
+         ' step 1
+         Dim document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileStream("Chap0106.pdf", FileMode.Create))
+         HtmlWriter.getInstance(document, Console.OpenStandardOutput())
+ 
+         ' step 3
+ 
+         document.addTitle("Hello World example")
+         document.addSubject("This example explains step 3 in Chapter 1")
+         document.addKeywords("Metadata, iText, step 3, tutorial")
+         document.addCreator("My program using iText")
+         document.addAuthor("Bruno Lowagie")
+         document.addHeader("Expires", "0")
+         document.open()
+ 
+         ' step 4
+         document.add(New Paragraph("Hello World"))
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0106.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0107.vb" startline="59" endline="129"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 7
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the Document
+         ' and directs a PDF-stream to a file
+         PdfWriter.getInstance(Document, New FileOutputStream("Chap0107.pdf"))
+ 
+         ' step 3
+         ' we add a Watermark that will show up on PAGE 1
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("Watermark.jpg"), 200, 420)
+             Call Document.add(Watermark)
+         Catch ee As java.lang.Exception
+             Console.WriteLine("Are you sure you have the file 'Watermark.jpg' in the right path?")
+         End Try
+         ' we add a Header that will show up on PAGE 1
+         Dim Header As New HeaderFooter(New Phrase("This is a header"), False)
+         Document.setHeader(Header)
+ 
+         ' we open the Document
+         Document.open()
+         ' we rotate the page, starting from PAGE 2
+         Document.setPageSize(PageSize.A4.rotate())
+         ' we need to change the position of the Watermark
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("Watermark.jpg"), 320, 200)
+             Document.add(Watermark)
+         Catch ee As Exception
+             Console.WriteLine("Are you sure you have the file 'Watermark.jpg' in the right path?")
+         End Try
+ 
+         ' we add a Footer that will show up on PAGE 2
+         Dim footer As New HeaderFooter(New Phrase("This is page
+         Document.setFooter(footer)
+ 
+         ' step 4
+ 
+         ' PAGE 1
+         Document.add(New Paragraph("Hello World"))
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 2
+         ' we add some more content
+         Document.add(New Paragraph("Hello Earth"))
+         ' we remove the header starting from PAGE 3
+         Document.resetHeader()
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 3
+         ' we add some more content
+         Document.add(New Paragraph("Hello Sun"))
+         Document.add(New Paragraph("Remark
+         ' we reset the page numbering
+         Document.resetPageCount()
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 4
+         ' we add some more content
+         Document.add(New Paragraph("Hello Moon"))
+         Document.add(New Paragraph("Remark
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0107.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0108.vb" startline="59" endline="148"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 8
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         Dim writerA As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0108a.pdf"))
+         writerA.setViewerPreferences(PdfWriter.PageLayoutTwoColumnLeft)
+         Dim writerB As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0108b.pdf"))
+         writerB.setViewerPreferences(PdfWriter.HideMenubar Or PdfWriter.HideToolbar)
+         Dim writerC As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0108c.pdf"))
+         writerC.setViewerPreferences(PdfWriter.PageLayoutTwoColumnLeft Or PdfWriter.PageModeFullScreen Or PdfWriter.NonFullScreenPageModeUseThumbs)
+ 
+         ' step 3
+ 
+         ' we add a Watermark that will show up on PAGE 1
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 200, 420)
+             Document.add(Watermark)
+         Catch e As Exception
+             Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+         End Try
+ 
+         ' we add a Header that will show up on PAGE 1
+         Dim header As New HeaderFooter(New Phrase("This is a header"), False)
+         Document.setHeader(header)
+ 
+         ' we open the document
+         Document.open()
+ 
+         ' we rotate the page, starting from PAGE 2
+         Document.setPageSize(PageSize.A4.rotate())
+ 
+         ' we need to change the position of the Watermark
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 320, 200)
+             Document.add(Watermark)
+         Catch e As Exception
+             Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+         End Try
+ 
+         ' we add a Footer that will show up on PAGE 2
+         Dim footer As New HeaderFooter(New Phrase("This is page
+         Document.setFooter(footer)
+ 
+         ' step 4
+ 
+         ' PAGE 1
+ 
+         Document.add(New Paragraph("Hello World"))
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 2
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Earth"))
+ 
+         ' we remove the header starting from PAGE 3
+         Document.resetHeader()
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 3
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Sun"))
+         Document.add(New Paragraph("Remark
+ 
+         ' we reset the page numbering
+         Document.resetPageCount()
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 4
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Moon"))
+         Document.add(New Paragraph("Remark
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0108.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 9
+ 
+         Dim Document As New Document(PageSize.A4, 50, 50, 50, 50)
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0109.pdf"))
+         Writer.setEncryption(PdfWriter.STRENGTH40BITS, Nothing, Nothing, PdfWriter.AllowCopy)
+         Document.open()
+         Document.add(New Paragraph("This document is Top Secret!"))
+         Document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="59" endline="68"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 10
+ 
+         Dim Document As New Document(PageSize.A4, 50, 50, 50, 50)
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0110.pdf"))
+         Writer.setEncryption(PdfWriter.STRENGTH128BITS, "userpass", "ownerpass", PdfWriter.AllowCopy Or PdfWriter.AllowPrinting)
+         Document.open()
+         Document.add(New Paragraph("This document is Top Secret!"))
+         Document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0110.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="59" endline="163"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 11
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim writerA As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0111a.pdf"))
+         Dim writerB As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0111b.pdf"))
+ 
+         ' step 3
+ 
+         ' we add a Watermark that will show up on PAGE 1
+ 
+         writerB.pause()
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 200, 420)
+             Document.add(Watermark)
+         Catch e As Exception
+             Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+         End Try
+ 
+         writerB.resume()
+ 
+         ' we add a Header that will show up on PAGE 1
+         Dim Header As New HeaderFooter(New Phrase("This is a header"), False)
+         Document.setHeader(Header)
+ 
+         ' we open the document
+         Document.open()
+ 
+         ' we rotate the page, starting from PAGE 2
+         Document.setPageSize(PageSize.A4.rotate())
+ 
+         ' we need to change the position of the Watermark
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 320, 200)
+             Document.add(Watermark)
+         Catch e As Exception
+             Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+         End Try
+ 
+         ' we add a Footer that will show up on PAGE 2
+         Dim footer As New HeaderFooter(New Phrase("This is page
+         Document.setFooter(footer)
+ 
+         ' step 4
+ 
+         ' PAGE 1
+ 
+         Document.add(New Paragraph("Hello World"))
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 2
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Earth"))
+ 
+         ' we remove the header starting from PAGE 3
+ 
+         writerA.pause()
+         Document.resetHeader()
+ 
+         writerA.resume()
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 3
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Sun"))
+ 
+         writerA.pause()
+         Document.add(New Paragraph("Remark
+ 
+         writerA.resume()
+ 
+         ' we reset the page numbering
+ 
+         writerB.pause()
+         Document.resetPageCount()
+ 
+         writerB.resume()
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 4
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Moon"))
+ 
+         writerB.pause()
+         Document.add(New Paragraph("Remark
+ 
+         writerB.resume()
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0112.vb" startline="59" endline="128"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 12
+ 
+         ' we create a reader for a certain document
+         Dim Reader As New PdfReader("Chap0703.pdf")
+         ' we retrieve the total number of pages
+         Dim n As Integer = Reader.getNumberOfPages()
+         ' we retrieve the size of the first page
+         Dim psize As Rectangle = Reader.getPageSize(1)
+         Dim width As Single = psize.width()
+         Dim height As Single = psize.height()
+ 
+         ' step 1
+         Dim Document As New Document(psize, 50, 50, 50, 50)
+         ' step 2
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0112.pdf"))
+         ' step 3
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 200, 320)
+             Document.add(Watermark)
+         Catch e As Exception
+             Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+         End Try
+         Document.open()
+         ' step 4
+         Dim cb As PdfContentByte = Writer.getDirectContent()
+         Dim i As Integer = 0
+         Dim p As Integer = 0
+         Console.WriteLine("There are " & n & " pages in the document.")
+         While (i < n)
+             Document.newPage()
+             p = p + 1
+             i = i + 1
+             Dim page1 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+             cb.addTemplate(page1, 0.5F, 0, 0, 0.5F, 0, height / 2)
+             Console.WriteLine("processed page " & i)
+             If (i < n) Then
+                 i = i + 1
+                 Dim page2 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page2, 0.5F, 0, 0, 0.5F, width / 2, height / 2)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page3 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page3, 0.5F, 0, 0, 0.5F, 0, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page4 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page4, 0.5F, 0, 0, 0.5F, width / 2, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             cb.setRGBColorStroke(255, 0, 0)
+             cb.moveTo(0, height / 2)
+             cb.lineTo(width, height / 2)
+             cb.stroke()
+             cb.moveTo(width / 2, height)
+             cb.lineTo(width / 2, 0)
+             cb.stroke()
+             Dim bf As BaseFont = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED)
+             cb.beginText()
+             cb.setFontAndSize(bf, 14)
+             cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "page " & p & " of " & ((n / 4) + CInt(IIf(n Mod 4 > 0, 1, 0))), width / 2, 40, 0)
+             cb.endText()
+         End While
+         While (i < n)
+             Document.newPage()
+             p = p + 1
+             i = i + 1
+             Dim page1 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+             cb.addTemplate(page1, 0.5F, 0, 0, 0.5F, 0, height / 2)
+             Console.WriteLine("processed page " & i)
+             If (i < n) Then
+                 i = i + 1
+                 Dim page2 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page2, 0.5F, 0, 0, 0.5F, width / 2, height / 2)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page3 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page3, 0.5F, 0, 0, 0.5F, 0, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page4 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page4, 0.5F, 0, 0, 0.5F, width / 2, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             cb.setRGBColorStroke(255, 0, 0)
+             cb.moveTo(0, height / 2)
+             cb.lineTo(width, height / 2)
+             cb.stroke()
+             cb.moveTo(width / 2, height)
+             cb.lineTo(width / 2, 0)
+             cb.stroke()
+             Dim bf As BaseFont = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED)
+             cb.beginText()
+             cb.setFontAndSize(bf, 14)
+             cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "page " & p & " of " & ((n / 4) + CInt(IIf(n Mod 4 > 0, 1, 0))), width / 2, 40, 0)
+             cb.endText()
+         End While
+         ' step 5
+         Document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0112.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0203.vb" startline="59" endline="83"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 3
+ 
+         ' step 1
+         Dim Document = New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         PdfWriter.getInstance(Document, New FileOutputStream("Chap0203.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         Document.add(New Phrase("What is the " & ChrW(945) & "-coefficient of the " + ChrW(946) & "-factor in the " & ChrW(947) & "-equation?" & vbCrLf))
+         Dim i As Integer
+         For i = 913 To 969
+             Document.add(New Phrase(" " + i.ToString() + "
+ 
+         Next
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0203.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 4
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         PdfWriter.getInstance(Document, New FileOutputStream("Chap0204.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         Document.add(New Phrase(16, vbCrLf & vbCrLf & vbCrLf))
+         Document.add(New Phrase(-16, "Hello, this is a very long phrase to show you the somewhat odd effect of a negative leading. You can write from bottom to top. This is not fully supported. It's something between a feature and a bug."))
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0205.vb" startline="57" endline="87"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 5
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         PdfWriter.getInstance(Document, New FileOutputStream("Chap0205.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         Dim p1 As New Paragraph(New Chunk("This is my first paragraph. ", FontFactory.getFont(FontFactory.HELVETICA, 10)))
+         p1.add("The leading of this paragraph is calculated automagically. ")
+         p1.add("The default leading is 1.5 times the fontsize. ")
+         p1.add(New Chunk("You can add chunks "))
+         p1.add(New Phrase("or you can add phrases. "))
+         p1.add(New Phrase("Unless you change the leading with the method setLeading, the leading doesn't change if you add text with another leading. This can lead to some problems.", FontFactory.getFont(FontFactory.HELVETICA, 18)))
+         Document.add(p1)
+         Dim p2 As New Paragraph(New Phrase("This is my second paragraph. ", FontFactory.getFont(FontFactory.HELVETICA, 12)))
+         p2.add("As you can see, it started on a new line.")
+         Document.add(p2)
+         Dim p3 = New Paragraph("This is my third paragraph.", FontFactory.getFont(FontFactory.HELVETICA, 12))
+         Document.add(p3)
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0205.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="59" endline="92"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 6
+ 
+         ' step 1
+         Dim Document As New Document(PageSize.A6)
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0206.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         Dim p As Paragraph = New Paragraph("GALLIA est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.", FontFactory.getFont(FontFactory.HELVETICA, 12))
+         p.setKeepTogether(True)
+         Document.add(p)
+         p = New Paragraph("[Eorum una, pars, quam Gallos obtinere dictum est, initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et eam partem Oceani quae est ad Hispaniam pertinet spectat inter occasum solis et septentriones.]", FontFactory.getFont(FontFactory.HELVETICA, 12))
+         p.setKeepTogether(True)
+         Document.add(p)
+         p = New Paragraph("Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupiditate inductus coniurationem nobilitatis fecit et civitati persuasit ut de finibus suis cum omnibus copiis exirent
+ tFactory.getFont(FontFactory.HELVETICA, 12))
+         p.setKeepTogether(True)
+         Document.add(p)
+         p = New Paragraph("His rebus adducti et auctoritate Orgetorigis permoti constituerunt ea quae ad proficiscendum pertinerent comparare, iumentorum et carrorum quam maximum numerum coemere, sementes quam maximas facere, ut in itinere copia frumenti suppeteret, cum proximis civitatibus pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi satis esse duxerunt in tertium annum profectionem lege confirmant.  Ad eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civitates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio, Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a senatu populi Romani amicus appellatus erat, ut regnum in civitate sua occuparet, quod pater ante habuerit itemque Dumnorigi Haeduo, fratri Diviciaci, qui eo tempore principatum in civitate obtinebat ac maxime plebi acceptus erat, ut idem conaretur persuadet eique filiam suam in matrimonium dat.  Perfacile factu esse illis probat conata perficere, propterea quod ipse suae civi
+ tatis imperium obtenturus esset
+         p.setKeepTogether(True)
+         Document.add(p)
+         p = New Paragraph("Ea res est Helvetiis per indicium enuntiata.  Moribus suis Orgetoricem ex vinculis causam dicere coegerunt damnatum poenam sequi oportebat, ut igni cremaretur.  Die constituta causae dictionis Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, undique coegit, et omnes clientes obaeratosque suos, quorum magnum numerum habebat, eodem conduxit per eos ne causam diceret se eripuit.  Cum civitas ob eam rem incitata armis ius suum exequi conaretur multitudinemque hominum ex agris magistratus cogerent, Orgetorix mortuus est neque abest suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciverit.", FontFactory.getFont(FontFactory.HELVETICA, 12))
+         p.setKeepTogether(True)
+         Document.add(p)
+ 
+         ' step 5
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0206.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0207.vb" startline="56" endline="100"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+ 
+         Console.WriteLine("Chapter 2 example 7
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0207.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         ' we add some content
+         Dim myPhrase As New Phrase("Hello 1! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD))
+         myPhrase.add(New Phrase("some other font ", New Font(Font.HELVETICA, 8)))
+         myPhrase.add(New Phrase("This is the end of the sentence.\n", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myPhrase)
+ 
+         myPhrase = New Phrase("Hello 1bis! ", FontFactory.getFont(FontFactory.TIMES_ROMAN, 8, Font.BOLD))
+         myPhrase.add(New Phrase("some other font ", FontFactory.getFont(FontFactory.HELVETICA, 8)))
+         myPhrase.add(New Phrase("This is the end of the sentence.\n", FontFactory.getFont(FontFactory.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myPhrase)
+ 
+         Dim myParagraph As New Paragraph("Hello 2! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD))
+         myParagraph.add(New Paragraph("This is the end of the sentence.", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myParagraph)
+ 
+         myParagraph = New Paragraph(12)
+         myParagraph.add(New Paragraph("Hello 3! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD)))
+         myParagraph.add(New Paragraph("This is the end of the sentence.", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myParagraph)
+ 
+         myPhrase = New Phrase(12)
+         myPhrase.add(New Phrase("Hello 4! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD)))
+         myPhrase.add(New Phrase("This is the end of the sentence.\n", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myPhrase)
+ 
+         ' step 5
+         Document.close()
+ 
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0207.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="60" endline="89"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 8
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0208.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         ' we add some content
+         Dim text As String = "Some.text.to.show.the.splitting.action.of.the.interface."
+         Dim Split As New Chap0208()
+         Dim ck As New Chunk(text, FontFactory.getFont(FontFactory.HELVETICA, 24))
+         Dim p As New Paragraph(24, ck)
+         Document.add(New Paragraph("Normal split."))
+         Document.add(p)
+         ck = New Chunk(text, FontFactory.getFont(FontFactory.HELVETICA, 24))
+         ck.setSplitCharacter(Split)
+         p = New Paragraph(24, ck)
+         Document.add(New Paragraph("The dot '.' is the split character."))
+         Document.add(p)
+         ' step 5
+         Document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0208.vb" startline="90" endline="99"><![CDATA[
+ 
+     Public Overloads Function isSplitCharacter(ByVal start As Integer, ByVal current As Integer, ByVal ende As Integer, ByVal cc() As Char, ByVal ck() As PdfChunk) As Boolean Implements SplitCharacter.isSplitCharacter
+         Dim c As Char
+         If ck Is Nothing Then
+             c = cc(current)
+         Else
+             c = ck(Math.Min(current, ck.Length - 1)).getUnicodeEquivalent(cc(current))
+         End If
+         isSplitCharacter = (c = ".")
+     End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0209.vb" startline="63" endline="63"><![CDATA[
+     Dim glossary As New TreeMap()
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0209.vb" startline="64" endline="68"><![CDATA[
+ 
+     ' we override only the onGenericTag method
+     Public Overrides Sub onGenericTag(ByVal writer As PdfWriter, ByVal document As Document, ByVal rect As Rectangle, ByVal text As String)
+         glossary.put(text, writer.getPageNumber())
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0209.vb" startline="69" endline="73"><![CDATA[
+ 
+     ' we add a method to retrieve the glossary
+     Public Function getGlossary() As TreeMap
+         Return glossary
+     End Function
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0209.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0209.vb" startline="74" endline="155"><![CDATA[
+ End Class
+ 
+ Public Class Chap0209
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 9
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0209.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         ' we create an Event and add it to the writer
+         Dim pageEvent As New Glossary()
+         Writer.setPageEvent(pageEvent)
+ 
+         ' we add some content
+         Dim f(13) As String
+         f(0) = "Courier"
+         f(1) = "Courier Bold"
+         f(2) = "Courier Italic"
+         f(3) = "Courier Bold Italic"
+         f(4) = "Helvetica"
+         f(5) = "Helvetica bold"
+         f(6) = "Helvetica italic"
+         f(7) = "Helvetica bold italic"
+         f(8) = "Times New Roman"
+         f(9) = "Times New Roman bold"
+         f(10) = "Times New Roman italic"
+         f(11) = "Times New Roman bold italic"
+         f(12) = "Symbol"
+         f(13) = "Zapfdingbats"
+ 
+         Dim fonts(13) As Font
+         fonts(0) = FontFactory.getFont(FontFactory.COURIER, 12, Font.NORMAL)
+         fonts(1) = FontFactory.getFont(FontFactory.COURIER, 12, Font.BOLD)
+         fonts(2) = FontFactory.getFont(FontFactory.COURIER, 12, Font.ITALIC)
+         fonts(3) = FontFactory.getFont(FontFactory.COURIER, 12, Font.BOLD Or Font.ITALIC)
+         fonts(4) = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.NORMAL)
+         fonts(5) = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.BOLD)
+         fonts(6) = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.ITALIC)
+         fonts(7) = FontFactory.getFont(FontFactory.HELVETICA, 12, Font.BOLD Or Font.ITALIC)
+         fonts(8) = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.NORMAL)
+         fonts(9) = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD)
+         fonts(10) = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.ITALIC)
+         fonts(11) = FontFactory.getFont(FontFactory.TIMES_ROMAN, 12, Font.BOLD Or Font.ITALIC)
+         fonts(12) = FontFactory.getFont(FontFactory.SYMBOL, 12, Font.NORMAL)
+         fonts(13) = FontFactory.getFont(FontFactory.ZAPFDINGBATS, 12, Font.NORMAL)
+ 
+         Dim i As Integer
+         For i = 0 To 13
+             Dim chunk As New Chunk("This is font ", fonts(i))
+             Dim p As New Paragraph(chunk)
+             p.add(New Phrase(New Chunk(f(i), fonts(i)).setGenericTag(f(i))))
+             Document.add(p)
+             If i Mod 4 = 3 Then
+                 Document.newPage()
+             End If
+         Next
+ 
+         ' we add the glossary
+         Document.newPage()
+         Dim Glossary As TreeMap = pageEvent.getGlossary()
+         Dim it As Iterator = Glossary.keySet().iterator()
+         While it.hasNext()
+             Dim key As String = DirectCast(it.next(), String)
+             Dim page As Integer = DirectCast(Glossary.get(key), Integer)
+             Dim g As New Paragraph(key)
+             g.add(" 
+             g.add(CStr(page))
+             Document.add(g)
+         End While
+         While it.hasNext()
+             Dim key As String = DirectCast(it.next(), String)
+             Dim page As Integer = DirectCast(Glossary.get(key), Integer)
+             Dim g As New Paragraph(key)
+             g.add(" 
+             g.add(CStr(page))
+             Document.add(g)
+         End While
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0209.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="64" endline="80"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 7 example 3
+ 
+         ' step 1
+         Dim Document As New Document(PageSize.A4, 80, 50, 30, 65)
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a XML-stream to a file
+         PdfWriter.getInstance(Document, New FileOutputStream("Chap0703.pdf"))
+ 
+         ' step 3
+         Dim parser As SAXParser = SAXParserFactory.newInstance().newSAXParser()
+ 
+         ' step 4
+         parser.parse("Chap0703.xml", New SAXmyHandler(Document, New TagMap("tagmap0703.xml")))
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0703.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="45" endline="55"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 1
+ 
+         Dim document As New com.lowagie.text.Document()
+         Dim FileOutputStream As java.io.FileOutputStream
+         FileOutputStream = New java.io.FileOutputStream("Chap0801.rtf")
+         RtfWriter.getInstance(document, FileOutputStream)
+         document.open()
+         document.add(New Paragraph("Hello World"))
+         document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0801.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0803.vb" startline="45" endline="69"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 3
+ 
+         Dim document As New Document()
+         Dim FileOutputStream As FileOutputStream
+         FileOutputStream = New FileOutputStream("Chap0803.rtf")
+         Call RtfWriter.getInstance(document, FileOutputStream)
+         document.open()
+         document.add(New Paragraph("Hello World"))
+         document.add(New Paragraph("some books I really like
+         Dim listItem As ListItem
+         Dim list As List = New List(True, 15)
+         listItem = New ListItem("When Harlie was one", New Font(Font.TIMES_ROMAN, 12))
+         listItem.add(New Chunk(" by David Gerrold", New Font(Font.TIMES_ROMAN, 11, Font.ITALIC)))
+         list.add(listItem)
+         listItem = New ListItem("The World according to Garp", New Font(Font.TIMES_ROMAN, 12))
+         listItem.add(New Chunk(" by John Irving", New Font(Font.TIMES_ROMAN, 11, Font.ITALIC)))
+         list.add(listItem)
+         listItem = New ListItem("Decamerone", New Font(Font.TIMES_ROMAN, 12))
+         listItem.add(New Chunk(" by Giovanni Boccaccio", New Font(Font.TIMES_ROMAN, 11, Font.ITALIC)))
+         list.add(listItem)
+         document.add(list)
+         ' step 5
+         document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0803.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80"><![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 4
+ 
+         Dim document As New Document()
+         Try
+             Dim FileOutputStream As FileOutputStream
+             FileOutputStream = New FileOutputStream("Chap0804.rtf")
+             RtfWriter.getInstance(document, FileOutputStream)
+             document.open()
+             Dim table As Table = New Table(3)
+             table.setBorderWidth(1)
+             table.setPadding(5)
+             table.setSpacing(5)
+             Dim cell As Cell = New Cell("header")
+             cell.setHeader(True)
+             cell.setColspan(3)
+             table.addCell(cell)
+             cell = New Cell("example cell with colspan 1 and rowspan 2")
+             cell.setRowspan(2)
+             table.addCell(cell)
+             table.addCell("1.1")
+             table.addCell("2.1")
+             table.addCell("1.2")
+             table.addCell("2.2")
+             table.addCell("cell test1")
+             cell = New Cell("big cell")
+             cell.setRowspan(2)
+             cell.setColspan(2)
+             table.addCell(cell)
+             table.addCell("cell test2")
+             document.add(table)
+         Catch ee As Exception
+             Console.WriteLine(ee.ToString())
+         End Try
+         document.close()
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="45" endline="45"><![CDATA[
+     Private Shared StopOnError As Boolean = False
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="10" endline="15"><![CDATA[
+     Public Shared Sub DeleteFiles(ByVal filenames As String())
+         Dim i As Integer
+         For i = 0 To filenames.Length - 1
+             Call System.IO.File.Delete(filenames(i))
+         Next
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="16" endline="19"><![CDATA[
+ 
+     Private Shared Sub ExecuteExample(ByVal TypeName As String)
+         Call ExecuteExample(Type.GetType(TypeName))
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="20" endline="23"><![CDATA[
+ 
+     Private Shared Sub ExecuteExample(ByVal Typ As Type)
+         Call ExecuteExample(Typ, New Object(0) {Nothing})
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="24" endline="27"><![CDATA[
+ 
+     Private Shared Sub ExecuteExample(ByVal Typ As Type, ByVal Arguments As Object())
+         Call ExecuteExample(Typ, "Main", Arguments)
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="28" endline="31"><![CDATA[
+ 
+     Private Shared Sub ExecuteExample(ByVal Typ As Type, ByVal Name As String)
+         Call ExecuteExample(Typ, Name, New Object(0) {Nothing})
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="32" endline="43"><![CDATA[
+ 
+     Private Shared Sub ExecuteExample(ByVal Typ As Type, ByVal Name As String, ByVal Arguments As Object())
+         Try
+             Call Typ.InvokeMember(Name, BindingFlags.InvokeMethod, Nothing, Nothing, Arguments)
+         Catch ee As Exception
+             If StopOnError Then
+                 Throw ee
+             Else
+                 Console.WriteLine(ee.Message)
+             End If
+ 		end try
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="44" endline="81"><![CDATA[
+ 
+     Private Shared StopOnError As Boolean = False
+ 
+     Public Shared Sub Main(ByVal args As String())
+         Dim ClassName As String = Nothing
+         Dim aargs(args.Length) As String
+ 
+         Dim i As Integer
+ 
+         For i = 0 To args.Length - 1
+             aargs(i) = args(i)
+         Next
+         aargs(args.Length) = String.Empty
+         args = aargs
+ 
+         For i = 0 To args.Length - 1
+             Dim opt As String = args(i)
+             If opt = String.Empty Then GoTo 100
+             If Left$(opt, 1) = "/" Then
+                 Dim uopt As String = opt.ToUpper()
+                 If uopt = "/STOP-ON-ERROR" Then
+                     StopOnError = True
+                 Else
+                     Throw New ArgumentException("ArgumentException", opt)
+                 End If
+             Else
+                 ClassName = opt
+             End If
+ 100
+         Next
+         If ClassName = Nothing Then ClassName = "All"
+ 
+         If ClassName = "All" Then
+             Call ExecuteAllExamples()
+         Else
+             Call ExecuteExample(ClassName)
+         End If
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="82" endline="92"><![CDATA[
+ 
+     Public Const InputFilesDirectory As String = "Inputs"
+     Private Shared exeExts As ArrayList
+ 
+     Private Shared Sub deleteNonExecutables(ByVal dir As String)
+         For Each f As String In Directory.GetFiles(dir)
+             If Not exeExts.Contains(Path.GetExtension(f)) Then
+                 File.Delete(f)
+             End If
+         Next
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="93" endline="98"><![CDATA[
+ 
+     Private Shared Sub copyFiles(ByVal filenames As String(), ByVal destDir As String)
+         For Each filename As String In filenames
+             File.Copy(filename, Path.Combine(destDir, Path.GetFileName(filename)), True)
+         Next
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="99" endline="134"><![CDATA[
+ 
+     Private Shared Sub init()
+         exeExts = New ArrayList
+         exeExts.Add(".exe")
+         exeExts.Add(".bat")
+         exeExts.Add(".cmd")
+         exeExts.Add(".com")
+         exeExts.Add(".lnk")
+         exeExts.Add(".config")
+         exeExts.Add(".manifest")
+         exeExts.Add(".dll")
+         exeExts.Add(".pdb")
+ 
+         Dim dirApp As String = Path.GetFullPath(Environment.CurrentDirectory)
+         Dim dirInputs As String = Path.Combine(dirApp, MainModule.InputFilesDirectory)
+ 
+         If Not Directory.Exists(dirInputs) Then
+             ' If input directory doesn't exist in a current directory,
+             ' it may be executed from a project.
+             Try
+                 Dim dirSrc As String = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(dirApp)), MainModule.InputFilesDirectory)
+                 If Not Directory.Exists(dirSrc) Then
+                     Throw New Exception(dirSrc + " doesn't exist.")
+                 End If
+                 Directory.CreateDirectory(dirInputs)
+                 copyFiles(Directory.GetFiles(dirSrc, "*.*"), dirInputs)
+             Catch ex As Exception
+                 Directory.Delete(dirInputs, True)
+                 Throw ex
+             End Try
+         End If
+ 
+         deleteNonExecutables(dirApp)
+ 
+         copyFiles(Directory.GetFiles(dirInputs, "*.*"), dirApp)
+     End Sub
+]]></source>
+<source file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="135" endline="185"><![CDATA[
+ 
+     Public Shared Sub ExecuteAllExamples()
+         init()
+ 
+         Call ExecuteExample(GetType(Chap0703)) 'Create first for source file
+ 
+         Call ExecuteExample(GetType(Chap0101))
+         'Call ExecuteExample(GetType(Chap0102))
+         Call ExecuteExample(GetType(Chap0103))
+         Call ExecuteExample(GetType(Chap0104))
+         'Call ExecuteExample(GetType(Chap0105.main(nothing)	'servelet
+         Call ExecuteExample(GetType(Chap0106))
+         Call ExecuteExample(GetType(Chap0107))
+         Call ExecuteExample(GetType(Chap0108))
+         Call ExecuteExample(GetType(Chap0109))
+         Call ExecuteExample(GetType(Chap0110))
+         Call ExecuteExample(GetType(Chap0111))
+         Call ExecuteExample(GetType(Chap0112))
+         ' Call ExecuteExample(GetType(Chap0201))
+         ' Call ExecuteExample(GetType(Chap0201a))
+         'Call ExecuteExample(GetType(Chap0202))
+         Call ExecuteExample(GetType(Chap0203))
+         Call ExecuteExample(GetType(Chap0204))
+         Call ExecuteExample(GetType(Chap0205))
+         Call ExecuteExample(GetType(Chap0206))
+         Call ExecuteExample(GetType(Chap0207))
+         Call ExecuteExample(GetType(Chap0208))
+         Call ExecuteExample(GetType(Chap0209))
+ 
+         Call ExecuteExample(GetType(Chap0801))
+         'Call ExecuteExample(GetType(Chap0802))
+         Call ExecuteExample(GetType(Chap0803))
+         Call ExecuteExample(GetType(Chap0804))
+ 
+         If True Then
+             Dim a() As String = {"Chap0101.pdf", "Chap0102.pdf", "Chap0103.pdf", "concat.pdf"}
+             Call ExecuteExample(GetType(concat_pdf), "main", New Object() {a})
+         End If
+         If True Then
+             Dim a() As String = {"concat.pdf", "split1.pdf", "split2.pdf", "2"}
+             Call ExecuteExample(GetType(split_pdf), "main", New Object() {a})
+         End If
+         If True Then
+             Dim a() As String = {"concat.pdf", "handout.pdf", "2"}
+             Call ExecuteExample(GetType(handout_pdf), "main", New Object() {a})
+         End If
+         If True Then
+             Dim a() As String = {"Chap0101.pdf", "encrypted.pdf", "user", "master", "00000000", "128"}
+             Call ExecuteExample(GetType(encrypt_pdf), "main", New Object() {a})
+         End If
+     End Sub
+]]></source>
+</source_elements></project>

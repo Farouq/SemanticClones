@@ -1,0 +1,513 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\DriverSettingsForm.cs" startline="15" endline="15"><![CDATA[
+ 		public DriverType DriverType { get { return driverType; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\DriverSettingsForm.cs" startline="16" endline="16"><![CDATA[
+ 		public VideoMode VideoMode { get { return videoMode; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\DriverSettingsForm.cs" startline="17" endline="17"><![CDATA[
+ 		public bool Fullscreen { get { return fullscreen; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\DriverSettingsForm.cs" startline="18" endline="23"><![CDATA[
+ 
+ 		public DriverSettingsForm(string windowCaption, string aboutText)
+ 		{
+ 			this.windowCaption = windowCaption;
+ 			this.aboutText = aboutText;
+ 		}
+ 
+ 		public bool ShowDialog()
+ 		{
+ 			device = IrrlichtDevice.CreateDevice(DriverType.BurningsVideo, new Dimension2Di(320, 320));
+ 			device.FileSystem.AddFileArchive("../../media/");
+ 			device.OnEvent += new IrrlichtDevice.EventHandler(device_OnEvent);
+ 			device.SetWindowCaption(windowCaption);
+ 
+ 			initGUI();
+ 
+ 			while (device.Run())
+ 			{
+ 				device.VideoDriver.BeginScene(true, false, new Color(40, 180, 80));
+ 				device.GUIEnvironment.DrawAll();
+ 				device.VideoDriver.EndScene();
+ 			}
+ 
+ 			device.Drop();
+ 
+ 			return run;
+ 		}
+ 
+ 		private void initGUI()
+ 		{
+ 			GUIEnvironment gui = device.GUIEnvironment;
+ 			gui.Skin.SetFont(gui.GetFont("fontlucida.png"));
+ 			foreach (GUIDefaultColor c in Enum.GetValues(typeof(GUIDefaultColor)))
+ 			{
+ 				Color l = gui.Skin.GetColor(c);
+ 				l.Alpha = 255;
+ 				gui.Skin.SetColor(l, c);
+ 			}
+ 
+ 			Recti v = device.VideoDriver.ViewPort;
+ 
+ 			GUITabControl tc = gui.AddTabControl(new Recti(20, 20, v.Width - 20, v.Height - 70));
+ 
+ 			GUITab t1 = tc.AddTab("Setup");
+ 
+ 			gui.AddStaticText("Driver", new Recti(20, 20, v.Width - 60, 40), false, false, t1);
+ 			guiDriverType = gui.AddComboBox(new Recti(20, 40, v.Width - 60, 60), t1);
+ 			foreach (DriverType t in Enum.GetValues(typeof(DriverType)))
+ 			{
+ 				if (t == DriverType.Null)
+ 					continue;
+ 
+ 				int i = guiDriverType.AddItem(t.ToString(), (int)t);
+ 
+ 				if (t == driverType)
+ 					guiDriverType.SelectedIndex = i;
+ 			}
+ 
+ 			gui.AddStaticText("Resolution", new Recti(20, 70, v.Width - 60, 90), false, false, t1);
+ 			guiResolution = gui.AddComboBox(new Recti(20, 90, v.Width - 60, 110), t1);
+ 			foreach (VideoMode m in device.VideoModeList.ModeList)
+ 			{
+ 				int i = guiResolution.AddItem(m.ToString());
+ 
+ 				if (m.Resolution == videoMode.Resolution && m.Depth == videoMode.Depth)
+ 					guiResolution.SelectedIndex = i;
+ 			}
+ 
+ 			guiFullscreen = gui.AddCheckBox(fullscreen, new Recti(20, 130, v.Width - 60, 150), "Fullscreen", t1);
+ 
+ 			GUITab t2 = tc.AddTab("About");
+ 
+ 			gui.AddStaticText(aboutText, new Recti(20, 20, v.Width - 60, 180), false, true, t2);
+ 
+ 			guiButtonRun = gui.AddButton(new Recti(v.Width - 190, v.Height - 50, v.Width - 110, v.Height - 20), null, -1, "Run");
+ 			guiButtonExit = gui.AddButton(new Recti(v.Width - 100, v.Height - 50, v.Width - 20, v.Height - 20), null, -1, "Exit");
+ 		}
+ 
+ 		bool device_OnEvent(Event e)
+ 		{
+ 			if (e.Type == EventType.GUI)
+ 			{
+ 				if (e.GUI.Type == GUIEventType.ButtonClicked)
+ 				{
+ 					if (e.GUI.Caller == guiButtonRun)
+ 					{
+ 						driverType = (DriverType)guiDriverType.GetItemData(guiDriverType.SelectedIndex);
+ 						videoMode = device.VideoModeList.ModeList[guiResolution.SelectedIndex];
+ 						fullscreen = guiFullscreen.Checked;
+ 
+ 						run = true;
+ 						device.Close();
+ 						return true;
+ 					}
+ 
+ 					if (e.GUI.Caller == guiButtonExit)
+ 					{
+ 						run = false;
+ 						device.Close();
+ 						return true;
+ 					}
+ 				}
+ 			}
+ 
+ 			return false;
+ 		}
+ 
+ 		// default settings {
+ 		DriverType driverType = DriverType.Direct3D8;
+ 		VideoMode videoMode = new VideoMode(800, 600, 32);
+ 		bool fullscreen = false;
+ 		// }
+ 
+ 		bool run = false;
+ 		public DriverSettingsForm(string windowCaption, string aboutText)
+ 		{
+ 			this.windowCaption = windowCaption;
+ 			this.aboutText = aboutText;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\DriverSettingsForm.cs" startline="24" endline="44"><![CDATA[
+ 
+ 		public bool ShowDialog()
+ 		{
+ 			device = IrrlichtDevice.CreateDevice(DriverType.BurningsVideo, new Dimension2Di(320, 320));
+ 			device.FileSystem.AddFileArchive("../../media/");
+ 			device.OnEvent += new IrrlichtDevice.EventHandler(device_OnEvent);
+ 			device.SetWindowCaption(windowCaption);
+ 
+ 			initGUI();
+ 
+ 			while (device.Run())
+ 			{
+ 				device.VideoDriver.BeginScene(true, false, new Color(40, 180, 80));
+ 				device.GUIEnvironment.DrawAll();
+ 				device.VideoDriver.EndScene();
+ 			}
+ 			while (device.Run())
+ 			{
+ 				device.VideoDriver.BeginScene(true, false, new Color(40, 180, 80));
+ 				device.GUIEnvironment.DrawAll();
+ 				device.VideoDriver.EndScene();
+ 			}
+ 
+ 			device.Drop();
+ 
+ 			return run;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\DriverSettingsForm.cs" startline="45" endline="94"><![CDATA[
+ 
+ 		private void initGUI()
+ 		{
+ 			GUIEnvironment gui = device.GUIEnvironment;
+ 			gui.Skin.SetFont(gui.GetFont("fontlucida.png"));
+ 			foreach (GUIDefaultColor c in Enum.GetValues(typeof(GUIDefaultColor)))
+ 			{
+ 				Color l = gui.Skin.GetColor(c);
+ 				l.Alpha = 255;
+ 				gui.Skin.SetColor(l, c);
+ 			}
+ 			foreach (GUIDefaultColor c in Enum.GetValues(typeof(GUIDefaultColor)))
+ 			{
+ 				Color l = gui.Skin.GetColor(c);
+ 				l.Alpha = 255;
+ 				gui.Skin.SetColor(l, c);
+ 			}
+ 
+ 			Recti v = device.VideoDriver.ViewPort;
+ 
+ 			GUITabControl tc = gui.AddTabControl(new Recti(20, 20, v.Width - 20, v.Height - 70));
+ 
+ 			GUITab t1 = tc.AddTab("Setup");
+ 
+ 			gui.AddStaticText("Driver", new Recti(20, 20, v.Width - 60, 40), false, false, t1);
+ 			guiDriverType = gui.AddComboBox(new Recti(20, 40, v.Width - 60, 60), t1);
+ 			foreach (DriverType t in Enum.GetValues(typeof(DriverType)))
+ 			{
+ 				if (t == DriverType.Null)
+ 					continue;
+ 
+ 				int i = guiDriverType.AddItem(t.ToString(), (int)t);
+ 
+ 				if (t == driverType)
+ 					guiDriverType.SelectedIndex = i;
+ 			}
+ 			foreach (DriverType t in Enum.GetValues(typeof(DriverType)))
+ 			{
+ 				if (t == DriverType.Null)
+ 					continue;
+ 
+ 				int i = guiDriverType.AddItem(t.ToString(), (int)t);
+ 
+ 				if (t == driverType)
+ 					guiDriverType.SelectedIndex = i;
+ 			}
+ 
+ 			gui.AddStaticText("Resolution", new Recti(20, 70, v.Width - 60, 90), false, false, t1);
+ 			guiResolution = gui.AddComboBox(new Recti(20, 90, v.Width - 60, 110), t1);
+ 			foreach (VideoMode m in device.VideoModeList.ModeList)
+ 			{
+ 				int i = guiResolution.AddItem(m.ToString());
+ 
+ 				if (m.Resolution == videoMode.Resolution && m.Depth == videoMode.Depth)
+ 					guiResolution.SelectedIndex = i;
+ 			}
+ 			foreach (VideoMode m in device.VideoModeList.ModeList)
+ 			{
+ 				int i = guiResolution.AddItem(m.ToString());
+ 
+ 				if (m.Resolution == videoMode.Resolution && m.Depth == videoMode.Depth)
+ 					guiResolution.SelectedIndex = i;
+ 			}
+ 
+ 			guiFullscreen = gui.AddCheckBox(fullscreen, new Recti(20, 130, v.Width - 60, 150), "Fullscreen", t1);
+ 
+ 			GUITab t2 = tc.AddTab("About");
+ 
+ 			gui.AddStaticText(aboutText, new Recti(20, 20, v.Width - 60, 180), false, true, t2);
+ 
+ 			guiButtonRun = gui.AddButton(new Recti(v.Width - 190, v.Height - 50, v.Width - 110, v.Height - 20), null, -1, "Run");
+ 			guiButtonExit = gui.AddButton(new Recti(v.Width - 100, v.Height - 50, v.Width - 20, v.Height - 20), null, -1, "Exit");
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\DriverSettingsForm.cs" startline="95" endline="123"><![CDATA[
+ 
+ 		bool device_OnEvent(Event e)
+ 		{
+ 			if (e.Type == EventType.GUI)
+ 			{
+ 				if (e.GUI.Type == GUIEventType.ButtonClicked)
+ 				{
+ 					if (e.GUI.Caller == guiButtonRun)
+ 					{
+ 						driverType = (DriverType)guiDriverType.GetItemData(guiDriverType.SelectedIndex);
+ 						videoMode = device.VideoModeList.ModeList[guiResolution.SelectedIndex];
+ 						fullscreen = guiFullscreen.Checked;
+ 
+ 						run = true;
+ 						device.Close();
+ 						return true;
+ 					}
+ 
+ 					if (e.GUI.Caller == guiButtonExit)
+ 					{
+ 						run = false;
+ 						device.Close();
+ 						return true;
+ 					}
+ 				}
+ 			}
+ 
+ 			return false;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\Application.cs" startline="193" endline="24"><![CDATA[
+ 		int oldMouseX = 0;
+ 		int oldMouseY = 0;
+ 		public Application(IrrlichtDevice dev)
+ 		{
+ 			device = dev;
+ 			device.OnEvent += new IrrlichtDevice.EventHandler(OnEvent);
+ 
+ 			initScene();
+ 			initGUI(128);
+ 			createTexture(128);
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\Application.cs" startline="25" endline="39"><![CDATA[
+ 
+ 		public void Render()
+ 		{
+ 			VideoDriver drv = device.VideoDriver;
+ 
+ 			drv.SetRenderTarget(textureRTT, true, true, new Color(20, 80, 180));
+ 			sceneNodeRTT.Visible = false;
+ 			device.SceneManager.DrawAll();
+ 			device.GUIEnvironment.DrawAll();
+ 
+ 			drv.SetRenderTarget(RenderTarget.FrameBuffer, true, true, new Color(40, 180, 240));
+ 			sceneNodeRTT.Visible = true;
+ 			device.SceneManager.DrawAll();
+ 			device.GUIEnvironment.DrawAll();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\Application.cs" startline="40" endline="66"><![CDATA[
+ 
+ 		private void initScene()
+ 		{
+ 			SceneManager smgr = device.SceneManager;
+ 
+ 			AnimatedMesh m = smgr.AddHillPlaneMesh(null, new Dimension2Df(16), new Dimension2Di(16), null, 8);
+ 
+ 			sceneNodePainter = smgr.AddAnimatedMeshSceneNode(m);
+ 			sceneNodePainter.Scale = new Vector3Df(0.4f);
+ 			sceneNodePainter.SetMaterialTexture(0, texture);
+ 			sceneNodePainter.SetMaterialFlag(MaterialFlag.Lighting, false);
+ 			SceneNodeAnimator a = smgr.CreateRotationAnimator(new Vector3Df(0, 0.1f, 0));
+ 			sceneNodePainter.AddAnimator(a);
+ 			a.Drop();
+ 
+ 			sceneNodeRTT = smgr.AddWaterSurfaceSceneNode(m.GetMesh(0), 2, 100, 20);
+ 			sceneNodeRTT.SetMaterialFlag(MaterialFlag.Lighting, false);
+ 			sceneNodeRTT.SetMaterialType(MaterialType.Solid);
+ 			sceneNodeRTT.Scale = new Vector3Df(0.2f);
+ 			sceneNodeRTT.Position = new Vector3Df(60, 10, 40);
+ 			sceneNodeRTT.Rotation = new Vector3Df(-30, 20, 0);
+ 
+ 			textureRTT = smgr.VideoDriver.AddRenderTargetTexture(new Dimension2Di(512));
+ 			sceneNodeRTT.SetMaterialTexture(0, textureRTT);
+ 
+ 			smgr.AddCameraSceneNode(null, new Vector3Df(0, 40, -60), new Vector3Df(0, -15, 0));
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\Application.cs" startline="67" endline="87"><![CDATA[
+ 
+ 		private void initGUI(int size)
+ 		{
+ 			GUIEnvironment gui = device.GUIEnvironment;
+ 			VideoDriver drv = gui.VideoDriver;
+ 
+ 			gui.Clear();
+ 
+ 			gui.AddImage(
+ 				drv.GetTexture("../../media/lime_logo_alpha.png"),
+ 				new Vector2Di(30, 0));
+ 
+ 			guiWindow = gui.AddWindow(new Recti(20, 120, size + 20 + 20, size + 120 + 20 + 20 + 30), false, "Paint");
+ 
+ 			guiSize128 = gui.AddButton(new Recti(10, 30, 40, 30 + 20), guiWindow, -1, "128");
+ 			guiSize256 = gui.AddButton(new Recti(50, 30, 80, 30 + 20), guiWindow, -1, "256");
+ 			guiSize512 = gui.AddButton(new Recti(90, 30, 120, 30 + 20), guiWindow, -1, "512");
+ 
+ 			guiImage = gui.AddImage(new Recti(10, 30 + 30, size + 10 - 1, size + 30 - 1 + 30), guiWindow);
+ 			gui.Focus = guiImage;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\Application.cs" startline="88" endline="108"><![CDATA[
+ 
+ 		private void createTexture(int size)
+ 		{
+ 			VideoDriver drv = device.VideoDriver;
+ 
+ 			Texture o = texture;
+ 
+ 			texture = drv.AddTexture(new Dimension2Di(size), "tex");
+ 
+ 			TexturePainter p = texture.GetTexturePainter();
+ 			p.Lock(TextureLockMode.WriteOnly);
+ 			for (int i = 0; i < p.MipMapLevelHeight; i++)
+ 				p.SetLine(0, i, p.MipMapLevelWidth - 1, i, new Color(200, 200, 200));
+ 			for (int i = 0; i < p.MipMapLevelHeight; i++)
+ 				p.SetLine(0, i, p.MipMapLevelWidth - 1, i, new Color(200, 200, 200));
+ 			p.Unlock(true);
+ 
+ 			guiImage.Image = texture;
+ 			sceneNodePainter.SetMaterialTexture(0, texture);
+ 
+ 			if (o != null)
+ 				drv.RemoveTexture(o);
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\Application.cs" startline="109" endline="177"><![CDATA[
+ 
+ 		bool OnEvent(Event e)
+ 		{
+ 			if (e.Type == EventType.Mouse)
+ 			{
+ 				int x = e.Mouse.X;
+ 				int y = e.Mouse.Y;
+ 				bool l = e.Mouse.IsLeftPressed();
+ 
+ 				if (l && guiImage.AbsolutePosition.IsPointInside(new Vector2Di(x, y)))
+ 				{
+ 					Vector2Di p = new Vector2Di(x, y) - guiImage.AbsolutePosition.UpperLeftCorner;
+ 
+ 					if (e.Mouse.Type == MouseEventType.Move)
+ 					{
+ 						TexturePainter t = texture.GetTexturePainter();
+ 
+ 						if (p.X < texture.Size.Width &&
+ 							p.Y < texture.Size.Height &&
+ 							t.Lock(TextureLockMode.WriteOnly))
+ 						{
+ 							t.SetLine(oldMouseX, oldMouseY, p.X, p.Y, new Color(255, 0, 0));
+ 							t.Unlock(true);
+ 						}
+ 					}
+ 
+ 					oldMouseX = p.X;
+ 					oldMouseY = p.Y;
+ 
+ 					return true;
+ 				}
+ 			}
+ 
+ 			if (e.Type == EventType.GUI)
+ 			{
+ 				if (e.GUI.Type == GUIEventType.ElementClosed &&
+ 					e.GUI.Caller is GUIWindow)
+ 				{
+ 					device.Close();
+ 					return true;
+ 				}
+ 
+ 				if (e.GUI.Type == GUIEventType.ButtonClicked)
+ 				{
+ 					if (e.GUI.Caller == guiSize128)
+ 					{
+ 						initGUI(128);
+ 						createTexture(128);
+ 						return true;
+ 					}
+ 
+ 					if (e.GUI.Caller == guiSize256)
+ 					{
+ 						initGUI(256);
+ 						createTexture(256);
+ 						return true;
+ 					}
+ 
+ 					if (e.GUI.Caller == guiSize512)
+ 					{
+ 						initGUI(512);
+ 						createTexture(512);
+ 						return true;
+ 					}
+ 				}
+ 			}
+ 
+ 			return false;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\Program.cs" startline="17" endline="62"><![CDATA[
+ 		{
+ 			DriverSettingsForm driverSettings = new DriverSettingsForm(
+ 				"Texture paint example",
+ 				"This example shows how to use TexturePainter and render-to-texture (RTT) technique.\n\n" +
+ 				"Use mouse to draw on the 2D image (texture) and see changes on the mesh and on RTT target.");
+ 
+ 			if (!driverSettings.ShowDialog())
+ 				return;
+ 
+ 			device = IrrlichtDevice.CreateDevice(
+ 				driverSettings.DriverType,
+ 				driverSettings.VideoMode.Resolution,
+ 				driverSettings.VideoMode.Depth,
+ 				driverSettings.Fullscreen);
+ 
+ 			if (device == null)
+ 			{
+ 				Console.WriteLine("\nDevice creation failed!\n<Press any key to exit>");
+ 				Console.ReadKey();
+ 				return;
+ 			}
+ 
+ 			Application app = new Application(device);
+ 
+ 			int lastFPS = -1;
+ 			while (device.Run())
+ 			{
+ 				device.VideoDriver.BeginScene();
+ 
+ 				app.Render();
+ 
+ 				device.VideoDriver.EndScene();
+ 
+ 				int fps = device.VideoDriver.FPS;
+ 				if (fps != lastFPS)
+ 				{
+ 					device.SetWindowCaption(string.Format(
+ 						"Texture painting example - Irrlicht Lime [{0}] {1} fps",
+ 						device.VideoDriver.Name, fps));
+ 
+ 					lastFPS = fps;
+ 				}
+ 			}
+ 			while (device.Run())
+ 			{
+ 				device.VideoDriver.BeginScene();
+ 
+ 				app.Render();
+ 
+ 				device.VideoDriver.EndScene();
+ 
+ 				int fps = device.VideoDriver.FPS;
+ 				if (fps != lastFPS)
+ 				{
+ 					device.SetWindowCaption(string.Format(
+ 						"Texture painting example - Irrlicht Lime [{0}] {1} fps",
+ 						device.VideoDriver.Name, fps));
+ 
+ 					lastFPS = fps;
+ 				}
+ 			}
+ 
+ 			device.Drop();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L01.TexturePainting\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

@@ -1,0 +1,2027 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern System
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System.Windows.Forms
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern System.Drawing
+{
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
+  .ver 4:0:0:0
+}
+.assembly L02.WinFormsWindow
+{
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 12 4C 30 32 2E 57 69 6E 46 6F 72 6D 73 57   // ...L02.WinFormsW
+                                                                                              69 6E 64 6F 77 00 00 )                            // indow..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 12 4C 30 32 2E 57 69 6E 46 6F 72 6D 73 57   // ...L02.WinFormsW
+                                                                                                69 6E 64 6F 77 00 00 )                            // indow..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 30 00 00 )                            //  2010..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 37 63 66 33 35 36 65 31 2D 35 64 31 33   // ..$7cf356e1-5d13
+                                                                                                  2D 34 66 31 64 2D 62 61 33 33 2D 33 39 66 38 33   // -4f1d-ba33-39f83
+                                                                                                  64 62 38 38 35 61 63 00 00 )                      // db885ac..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public L02.WinFormsWindow.Properties.Resources.resources
+{
+  // Offset: 0x00000000 Length: 0x000000B4
+}
+.mresource public L02.WinFormsWindow.app.config
+{
+  // Offset: 0x000000B8 Length: 0x00000090
+}
+.mresource public L02.WinFormsWindow.Form1.resources
+{
+  // Offset: 0x00000150 Length: 0x000000B4
+}
+.module L02.WinFormsWindow.exe
+// MVID: {76DB5D5F-2DF8-429B-9D05-F212C84B9089}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0002       // WINDOWS_GUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x003D0000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi sealed beforefieldinit L02.WinFormsWindow.Properties.Settings
+       extends [System]System.Configuration.ApplicationSettingsBase
+{
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 4B 4D 69 63 72 6F 73 6F 66 74 2E 56 69 73   // ..KMicrosoft.Vis
+                                                                                                  75 61 6C 53 74 75 64 69 6F 2E 45 64 69 74 6F 72   // ualStudio.Editor
+                                                                                                  73 2E 53 65 74 74 69 6E 67 73 44 65 73 69 67 6E   // s.SettingsDesign
+                                                                                                  65 72 2E 53 65 74 74 69 6E 67 73 53 69 6E 67 6C   // er.SettingsSingl
+                                                                                                  65 46 69 6C 65 47 65 6E 65 72 61 74 6F 72 08 31   // eFileGenerator.1
+                                                                                                  30 2E 30 2E 30 2E 30 00 00 )                      // 0.0.0.0..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private static class L02.WinFormsWindow.Properties.Settings defaultInstance
+  .method public hidebysig specialname static 
+          class L02.WinFormsWindow.Properties.Settings 
+          get_Default() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class L02.WinFormsWindow.Properties.Settings CS$1$0000)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Properties\Settings.Designer.cs' 
+//000021:             get {
+    IL_0000:  nop
+//000022:                 return defaultInstance;
+    IL_0001:  ldsfld     class L02.WinFormsWindow.Properties.Settings L02.WinFormsWindow.Properties.Settings::defaultInstance
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000023:             }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Settings::get_Default
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [System]System.Configuration.ApplicationSettingsBase::.ctor()
+    IL_0006:  ret
+  } // end of method Settings::.ctor
+
+  .method private hidebysig specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       21 (0x15)
+    .maxstack  8
+//000018:         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+    IL_0000:  newobj     instance void L02.WinFormsWindow.Properties.Settings::.ctor()
+    IL_0005:  call       class [System]System.Configuration.SettingsBase [System]System.Configuration.SettingsBase::Synchronized(class [System]System.Configuration.SettingsBase)
+    IL_000a:  castclass  L02.WinFormsWindow.Properties.Settings
+    IL_000f:  stsfld     class L02.WinFormsWindow.Properties.Settings L02.WinFormsWindow.Properties.Settings::defaultInstance
+    IL_0014:  ret
+  } // end of method Settings::.cctor
+
+  .property class L02.WinFormsWindow.Properties.Settings
+          Default()
+  {
+    .get class L02.WinFormsWindow.Properties.Settings L02.WinFormsWindow.Properties.Settings::get_Default()
+  } // end of property Settings::Default
+} // end of class L02.WinFormsWindow.Properties.Settings
+
+.class public auto ansi beforefieldinit L02.WinFormsWindow.Form1
+       extends [System.Windows.Forms]System.Windows.Forms.Form
+{
+  .class auto ansi nested private beforefieldinit DeviceSettings
+         extends [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters
+  {
+    .field public class [IrrlichtLime]IrrlichtLime.Video.Color BackColor
+    .method public hidebysig specialname rtspecialname 
+            instance void  .ctor(native int hh,
+                                 valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType dt,
+                                 uint8 aa,
+                                 class [IrrlichtLime]IrrlichtLime.Video.Color bc,
+                                 bool vs) cil managed
+    {
+      // Code size       51 (0x33)
+      .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.cs' 
+//000025: 			public DeviceSettings(IntPtr hh, DriverType dt, byte aa, Color bc, bool vs)
+      IL_0000:  ldarg.0
+      IL_0001:  call       instance void [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters::.ctor()
+      IL_0006:  nop
+//000026: 			{
+      IL_0007:  nop
+//000027: 				WindowID = hh;
+      IL_0008:  ldarg.0
+      IL_0009:  ldarg.1
+      IL_000a:  call       instance void [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters::set_WindowID(native int)
+      IL_000f:  nop
+//000028: 				DriverType = dt;
+      IL_0010:  ldarg.0
+      IL_0011:  ldarg.2
+      IL_0012:  call       instance void [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters::set_DriverType(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType)
+      IL_0017:  nop
+//000029: 				AntiAliasing = aa;
+      IL_0018:  ldarg.0
+      IL_0019:  ldarg.3
+      IL_001a:  call       instance void [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters::set_AntiAliasing(uint8)
+      IL_001f:  nop
+//000030: 				BackColor = bc;
+      IL_0020:  ldarg.0
+      IL_0021:  ldarg.s    bc
+      IL_0023:  stfld      class [IrrlichtLime]IrrlichtLime.Video.Color L02.WinFormsWindow.Form1/DeviceSettings::BackColor
+//000031: 				VSync = vs;
+      IL_0028:  ldarg.0
+      IL_0029:  ldarg.s    vs
+      IL_002b:  call       instance void [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters::set_VSync(bool)
+      IL_0030:  nop
+//000032: 			}
+      IL_0031:  nop
+      IL_0032:  ret
+    } // end of method DeviceSettings::.ctor
+
+  } // end of class DeviceSettings
+
+  .field private bool userWantExit
+  .field private class [System]System.ComponentModel.IContainer components
+  .field private class [System.Windows.Forms]System.Windows.Forms.Panel panelRenderingWindow
+  .field private class [System.Windows.Forms]System.Windows.Forms.Label labelRenderingStatus
+  .field private class [System]System.ComponentModel.BackgroundWorker backgroundRendering
+  .field private class [System.Windows.Forms]System.Windows.Forms.ComboBox comboBoxVideoDriver
+  .field private class [System.Windows.Forms]System.Windows.Forms.CheckBox checkBoxUseSeparateWindow
+  .field private class [System.Windows.Forms]System.Windows.Forms.ComboBox comboBoxAntiAliasing
+  .field private class [System.Windows.Forms]System.Windows.Forms.Label label2
+  .field private class [System.Windows.Forms]System.Windows.Forms.Label label3
+  .field private class [System.Windows.Forms]System.Windows.Forms.ComboBox comboBoxBackground
+  .field private class [System.Windows.Forms]System.Windows.Forms.Label label4
+  .field private class [System.Windows.Forms]System.Windows.Forms.CheckBox checkBoxUseVSync
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       31 (0x1f)
+    .maxstack  8
+//000033: 		}
+//000034: 
+//000035: 		private bool userWantExit = false; // if "true", we shut down rendering thread and then exit app
+    IL_0000:  ldarg.0
+    IL_0001:  ldc.i4.0
+    IL_0002:  stfld      bool L02.WinFormsWindow.Form1::userWantExit
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.Designer.cs' 
+//000008: 		private System.ComponentModel.IContainer components = null;
+    IL_0007:  ldarg.0
+    IL_0008:  ldnull
+    IL_0009:  stfld      class [System]System.ComponentModel.IContainer L02.WinFormsWindow.Form1::components
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.cs' 
+//000037: 		public Form1()
+    IL_000e:  ldarg.0
+    IL_000f:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::.ctor()
+    IL_0014:  nop
+//000038: 		{
+    IL_0015:  nop
+//000039: 			InitializeComponent();
+    IL_0016:  ldarg.0
+    IL_0017:  call       instance void L02.WinFormsWindow.Form1::InitializeComponent()
+    IL_001c:  nop
+//000040: 		}
+    IL_001d:  nop
+    IL_001e:  ret
+  } // end of method Form1::.ctor
+
+  .method private hidebysig instance void 
+          Form1_Load(object sender,
+                     class [mscorlib]System.EventArgs e) cil managed
+  {
+    // Code size       131 (0x83)
+    .maxstack  2
+    .locals init ([0] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType v,
+             [1] class [mscorlib]System.Collections.IEnumerator CS$5$0000,
+             [2] bool CS$4$0001,
+             [3] class [mscorlib]System.IDisposable CS$0$0002)
+//000041: 
+//000042: 		private void Form1_Load(object sender, EventArgs e)
+//000043: 		{
+    IL_0000:  nop
+//000044: 			// select "No AntiAliasing"
+//000045: 			comboBoxAntiAliasing.SelectedIndex = 0;
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_0007:  ldc.i4.0
+    IL_0008:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListControl::set_SelectedIndex(int32)
+    IL_000d:  nop
+//000046: 
+//000047: 			// select "Skybox"
+//000048: 			comboBoxBackground.SelectedIndex = 0;
+    IL_000e:  ldarg.0
+    IL_000f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_0014:  ldc.i4.0
+    IL_0015:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListControl::set_SelectedIndex(int32)
+    IL_001a:  nop
+//000049: 
+//000050: 			// fill combobox with all available video drivers, except Null
+//000051: 			foreach (DriverType v in Enum.GetValues(typeof(DriverType)))
+    IL_001b:  nop
+    IL_001c:  ldtoken    [IrrlichtLime]IrrlichtLime.Video.DriverType
+    IL_0021:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_0026:  call       class [mscorlib]System.Array [mscorlib]System.Enum::GetValues(class [mscorlib]System.Type)
+    IL_002b:  callvirt   instance class [mscorlib]System.Collections.IEnumerator [mscorlib]System.Array::GetEnumerator()
+    IL_0030:  stloc.1
+    .try
+    {
+      IL_0031:  br.s       IL_005e
+
+      IL_0033:  ldloc.1
+      IL_0034:  callvirt   instance object [mscorlib]System.Collections.IEnumerator::get_Current()
+      IL_0039:  unbox.any  [IrrlichtLime]IrrlichtLime.Video.DriverType
+      IL_003e:  stloc.0
+//000052: 				if (v != DriverType.Null)
+      IL_003f:  ldloc.0
+      IL_0040:  ldc.i4.0
+      IL_0041:  ceq
+      IL_0043:  stloc.2
+      IL_0044:  ldloc.2
+      IL_0045:  brtrue.s   IL_005e
+
+//000053: 					comboBoxVideoDriver.Items.Add(v);
+      IL_0047:  ldarg.0
+      IL_0048:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+      IL_004d:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Items()
+      IL_0052:  ldloc.0
+      IL_0053:  box        [IrrlichtLime]IrrlichtLime.Video.DriverType
+      IL_0058:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection::Add(object)
+      IL_005d:  pop
+//000051: 			foreach (DriverType v in Enum.GetValues(typeof(DriverType)))
+      IL_005e:  ldloc.1
+      IL_005f:  callvirt   instance bool [mscorlib]System.Collections.IEnumerator::MoveNext()
+      IL_0064:  stloc.2
+      IL_0065:  ldloc.2
+      IL_0066:  brtrue.s   IL_0033
+
+      IL_0068:  leave.s    IL_0081
+
+    }  // end .try
+    finally
+    {
+      IL_006a:  ldloc.1
+      IL_006b:  isinst     [mscorlib]System.IDisposable
+      IL_0070:  stloc.3
+      IL_0071:  ldloc.3
+      IL_0072:  ldnull
+      IL_0073:  ceq
+      IL_0075:  stloc.2
+      IL_0076:  ldloc.2
+      IL_0077:  brtrue.s   IL_0080
+
+      IL_0079:  ldloc.3
+      IL_007a:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+      IL_007f:  nop
+      IL_0080:  endfinally
+    }  // end handler
+    IL_0081:  nop
+//000052: 				if (v != DriverType.Null)
+//000053: 					comboBoxVideoDriver.Items.Add(v);
+//000054: 		}
+    IL_0082:  ret
+  } // end of method Form1::Form1_Load
+
+  .method private hidebysig instance void 
+          initializeIrrlichtDevice(object sender,
+                                   class [mscorlib]System.EventArgs e) cil managed
+  {
+    // Code size       283 (0x11b)
+    .maxstack  6
+    .locals init ([0] class L02.WinFormsWindow.Form1/DeviceSettings s,
+             [1] bool CS$4$0000)
+//000055: 
+//000056: 		private void initializeIrrlichtDevice(object sender, EventArgs e)
+//000057: 		{
+    IL_0000:  nop
+//000058: 			if (comboBoxVideoDriver.SelectedItem == null)
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+    IL_0007:  callvirt   instance object [System.Windows.Forms]System.Windows.Forms.ComboBox::get_SelectedItem()
+    IL_000c:  ldnull
+    IL_000d:  ceq
+    IL_000f:  ldc.i4.0
+    IL_0010:  ceq
+    IL_0012:  stloc.1
+    IL_0013:  ldloc.1
+    IL_0014:  brtrue.s   IL_001b
+
+//000059: 				return;
+    IL_0016:  br         IL_011a
+
+//000060: 
+//000061: 			// if rendering in progress, we are sending cancel request and waiting for its finishing
+//000062: 			if (backgroundRendering.IsBusy)
+    IL_001b:  ldarg.0
+    IL_001c:  ldfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+    IL_0021:  callvirt   instance bool [System]System.ComponentModel.BackgroundWorker::get_IsBusy()
+    IL_0026:  ldc.i4.0
+    IL_0027:  ceq
+    IL_0029:  stloc.1
+    IL_002a:  ldloc.1
+    IL_002b:  brtrue.s   IL_005e
+
+//000063: 			{
+    IL_002d:  nop
+//000064: 				backgroundRendering.CancelAsync();
+    IL_002e:  ldarg.0
+    IL_002f:  ldfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+    IL_0034:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::CancelAsync()
+    IL_0039:  nop
+    IL_003a:  br.s       IL_0042
+
+//000065: 				while (backgroundRendering.IsBusy)
+//000066: 					Application.DoEvents(); // this is not very correct way, but its very short, so we use it
+    IL_003c:  call       void [System.Windows.Forms]System.Windows.Forms.Application::DoEvents()
+    IL_0041:  nop
+//000065: 				while (backgroundRendering.IsBusy)
+    IL_0042:  ldarg.0
+    IL_0043:  ldfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+    IL_0048:  callvirt   instance bool [System]System.ComponentModel.BackgroundWorker::get_IsBusy()
+    IL_004d:  stloc.1
+    IL_004e:  ldloc.1
+    IL_004f:  brtrue.s   IL_003c
+
+//000066: 					Application.DoEvents(); // this is not very correct way, but its very short, so we use it
+//000067: 
+//000068: 				// redraw the panel, otherwise last rendered frame will stay as garbage
+//000069: 				panelRenderingWindow.Invalidate();
+    IL_0051:  ldarg.0
+    IL_0052:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Panel L02.WinFormsWindow.Form1::panelRenderingWindow
+    IL_0057:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::Invalidate()
+    IL_005c:  nop
+//000070: 			}
+    IL_005d:  nop
+//000071: 
+//000072: 			// collect settings and start background worker with these settings
+//000073: 
+//000074: 			DeviceSettings s = new DeviceSettings(
+    IL_005e:  ldarg.0
+    IL_005f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseSeparateWindow
+    IL_0064:  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.CheckBox::get_Checked()
+    IL_0069:  brtrue.s   IL_0078
+
+    IL_006b:  ldarg.0
+    IL_006c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Panel L02.WinFormsWindow.Form1::panelRenderingWindow
+    IL_0071:  callvirt   instance native int [System.Windows.Forms]System.Windows.Forms.Control::get_Handle()
+    IL_0076:  br.s       IL_007d
+
+    IL_0078:  ldsfld     native int [mscorlib]System.IntPtr::Zero
+    IL_007d:  ldarg.0
+    IL_007e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+    IL_0083:  callvirt   instance object [System.Windows.Forms]System.Windows.Forms.ComboBox::get_SelectedItem()
+    IL_0088:  unbox.any  [IrrlichtLime]IrrlichtLime.Video.DriverType
+    IL_008d:  ldarg.0
+    IL_008e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_0093:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.ListControl::get_SelectedIndex()
+    IL_0098:  brfalse.s  IL_00b6
+
+    IL_009a:  ldc.r8     2.
+    IL_00a3:  ldarg.0
+    IL_00a4:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_00a9:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.ListControl::get_SelectedIndex()
+    IL_00ae:  conv.r8
+    IL_00af:  call       float64 [mscorlib]System.Math::Pow(float64,
+                                                            float64)
+    IL_00b4:  br.s       IL_00bf
+
+    IL_00b6:  ldc.r8     0.0
+    IL_00bf:  conv.u1
+    IL_00c0:  ldarg.0
+    IL_00c1:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_00c6:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.ListControl::get_SelectedIndex()
+    IL_00cb:  brfalse.s  IL_00ea
+
+    IL_00cd:  ldarg.0
+    IL_00ce:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_00d3:  callvirt   instance int32 [System.Windows.Forms]System.Windows.Forms.ListControl::get_SelectedIndex()
+    IL_00d8:  ldc.i4.1
+    IL_00d9:  beq.s      IL_00de
+
+    IL_00db:  ldc.i4.m1
+    IL_00dc:  br.s       IL_00e3
+
+    IL_00de:  ldc.i4     0xff000000
+    IL_00e3:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(uint32)
+    IL_00e8:  br.s       IL_00eb
+
+    IL_00ea:  ldnull
+    IL_00eb:  ldarg.0
+    IL_00ec:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseVSync
+    IL_00f1:  callvirt   instance bool [System.Windows.Forms]System.Windows.Forms.CheckBox::get_Checked()
+    IL_00f6:  newobj     instance void L02.WinFormsWindow.Form1/DeviceSettings::.ctor(native int,
+                                                                                      valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                      uint8,
+                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                      bool)
+    IL_00fb:  stloc.0
+//000075: 				checkBoxUseSeparateWindow.Checked ? IntPtr.Zero : panelRenderingWindow.Handle,
+//000076: 				(DriverType)comboBoxVideoDriver.SelectedItem,
+//000077: 				(byte)(comboBoxAntiAliasing.SelectedIndex == 0 ? 0 : Math.Pow(2, comboBoxAntiAliasing.SelectedIndex)),
+//000078: 				comboBoxBackground.SelectedIndex == 0 ? null : new Color(comboBoxBackground.SelectedIndex == 1 ? 0xFF000000 : 0xFFFFFFFF),
+//000079: 				checkBoxUseVSync.Checked
+//000080: 			);
+//000081: 
+//000082: 			backgroundRendering.RunWorkerAsync(s);
+    IL_00fc:  ldarg.0
+    IL_00fd:  ldfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+    IL_0102:  ldloc.0
+    IL_0103:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::RunWorkerAsync(object)
+    IL_0108:  nop
+//000083: 
+//000084: 			labelRenderingStatus.Text = "Starting rendering...";
+    IL_0109:  ldarg.0
+    IL_010a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+    IL_010f:  ldstr      "Starting rendering..."
+    IL_0114:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_0119:  nop
+//000085: 		}
+    IL_011a:  ret
+  } // end of method Form1::initializeIrrlichtDevice
+
+  .method private hidebysig instance void 
+          backgroundRendering_DoWork(object sender,
+                                     class [System]System.ComponentModel.DoWorkEventArgs e) cil managed
+  {
+    // Code size       483 (0x1e3)
+    .maxstack  7
+    .locals init ([0] class [System]System.ComponentModel.BackgroundWorker worker,
+             [1] class L02.WinFormsWindow.Form1/DeviceSettings settings,
+             [2] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice dev,
+             [3] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver drv,
+             [4] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+             [5] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode cam,
+             [6] class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator anim,
+             [7] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode cube,
+             [8] int32 lastFPS,
+             [9] int32 fps,
+             [10] bool CS$4$0000)
+//000086: 
+//000087: 		private void backgroundRendering_DoWork(object sender, DoWorkEventArgs e)
+//000088: 		{
+    IL_0000:  nop
+//000089: 			BackgroundWorker worker = sender as BackgroundWorker;
+    IL_0001:  ldarg.1
+    IL_0002:  isinst     [System]System.ComponentModel.BackgroundWorker
+    IL_0007:  stloc.0
+//000090: 			DeviceSettings settings = e.Argument as DeviceSettings;
+    IL_0008:  ldarg.2
+    IL_0009:  callvirt   instance object [System]System.ComponentModel.DoWorkEventArgs::get_Argument()
+    IL_000e:  isinst     L02.WinFormsWindow.Form1/DeviceSettings
+    IL_0013:  stloc.1
+//000091: 
+//000092: 			// create irrlicht device using provided settings
+//000093: 
+//000094: 			IrrlichtDevice dev = IrrlichtDevice.CreateDevice(settings);
+    IL_0014:  ldloc.1
+    IL_0015:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(class [IrrlichtLime]IrrlichtLime.IrrlichtCreationParameters)
+    IL_001a:  stloc.2
+//000095: 
+//000096: 			if (dev == null)
+    IL_001b:  ldloc.2
+    IL_001c:  ldnull
+    IL_001d:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0022:  ldc.i4.0
+    IL_0023:  ceq
+    IL_0025:  stloc.s    CS$4$0000
+    IL_0027:  ldloc.s    CS$4$0000
+    IL_0029:  brtrue.s   IL_0036
+
+//000097: 				throw new Exception("Failed to create Irrlicht device.");
+    IL_002b:  ldstr      "Failed to create Irrlicht device."
+    IL_0030:  newobj     instance void [mscorlib]System.Exception::.ctor(string)
+    IL_0035:  throw
+
+//000098: 
+//000099: 			VideoDriver drv = dev.VideoDriver;
+    IL_0036:  ldloc.2
+    IL_0037:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_003c:  stloc.3
+//000100: 			SceneManager smgr = dev.SceneManager;
+    IL_003d:  ldloc.2
+    IL_003e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0043:  stloc.s    smgr
+//000101: 
+//000102: 			// setup a simple 3d scene
+//000103: 
+//000104: 			CameraSceneNode cam = smgr.AddCameraSceneNode();
+    IL_0045:  ldloc.s    smgr
+    IL_0047:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNode()
+    IL_004c:  stloc.s    cam
+//000105: 			cam.Target = new Vector3Df(0);
+    IL_004e:  ldloc.s    cam
+    IL_0050:  ldc.r4     0.0
+    IL_0055:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32)
+    IL_005a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_Target(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_005f:  nop
+//000106: 
+//000107: 			SceneNodeAnimator anim = smgr.CreateFlyCircleAnimator(new Vector3Df(0, 15, 0), 30.0f);
+    IL_0060:  ldloc.s    smgr
+    IL_0062:  ldc.r4     0.0
+    IL_0067:  ldc.r4     15.
+    IL_006c:  ldc.r4     0.0
+    IL_0071:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0076:  ldc.r4     30.
+    IL_007b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateFlyCircleAnimator(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                                  float32)
+    IL_0080:  stloc.s    anim
+//000108: 			cam.AddAnimator(anim);
+    IL_0082:  ldloc.s    cam
+    IL_0084:  ldloc.s    anim
+    IL_0086:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::AddAnimator(class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator)
+    IL_008b:  nop
+//000109: 			anim.Drop();
+    IL_008c:  ldloc.s    anim
+    IL_008e:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0093:  pop
+//000110: 
+//000111: 			SceneNode cube = smgr.AddCubeSceneNode(20);
+    IL_0094:  ldloc.s    smgr
+    IL_0096:  ldc.r4     20.
+    IL_009b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCubeSceneNode(float32)
+    IL_00a0:  stloc.s    cube
+//000112: 			cube.SetMaterialTexture(0, drv.GetTexture("../../media/wall.bmp"));
+    IL_00a2:  ldloc.s    cube
+    IL_00a4:  ldc.i4.0
+    IL_00a5:  ldloc.3
+    IL_00a6:  ldstr      "../../media/wall.bmp"
+    IL_00ab:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_00b0:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_00b5:  nop
+//000113: 			cube.SetMaterialTexture(1, drv.GetTexture("../../media/water.jpg"));
+    IL_00b6:  ldloc.s    cube
+    IL_00b8:  ldc.i4.1
+    IL_00b9:  ldloc.3
+    IL_00ba:  ldstr      "../../media/water.jpg"
+    IL_00bf:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_00c4:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_00c9:  nop
+//000114: 			cube.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_00ca:  ldloc.s    cube
+    IL_00cc:  ldc.i4.8
+    IL_00cd:  ldc.i4.0
+    IL_00ce:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00d3:  nop
+//000115: 			cube.SetMaterialType(MaterialType.Reflection2Layer);
+    IL_00d4:  ldloc.s    cube
+    IL_00d6:  ldc.i4.s   11
+    IL_00d8:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialType(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_00dd:  nop
+//000116: 
+//000117: 			if (settings.BackColor == null)
+    IL_00de:  ldloc.1
+    IL_00df:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Color L02.WinFormsWindow.Form1/DeviceSettings::BackColor
+    IL_00e4:  ldnull
+    IL_00e5:  call       bool [IrrlichtLime]IrrlichtLime.Video.Color::op_Equality(class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                  class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_00ea:  ldc.i4.0
+    IL_00eb:  ceq
+    IL_00ed:  stloc.s    CS$4$0000
+    IL_00ef:  ldloc.s    CS$4$0000
+    IL_00f1:  brtrue.s   IL_011b
+
+//000118: 			{
+    IL_00f3:  nop
+//000119: 				smgr.AddSkyBoxSceneNode(
+    IL_00f4:  ldloc.s    smgr
+    IL_00f6:  ldstr      "../../media/irrlicht2_up.jpg"
+    IL_00fb:  ldstr      "../../media/irrlicht2_dn.jpg"
+    IL_0100:  ldstr      "../../media/irrlicht2_lf.jpg"
+    IL_0105:  ldstr      "../../media/irrlicht2_rt.jpg"
+    IL_010a:  ldstr      "../../media/irrlicht2_ft.jpg"
+    IL_010f:  ldstr      "../../media/irrlicht2_bk.jpg"
+    IL_0114:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddSkyBoxSceneNode(string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string)
+    IL_0119:  pop
+//000120: 					"../../media/irrlicht2_up.jpg",
+//000121: 					"../../media/irrlicht2_dn.jpg",
+//000122: 					"../../media/irrlicht2_lf.jpg",
+//000123: 					"../../media/irrlicht2_rt.jpg",
+//000124: 					"../../media/irrlicht2_ft.jpg",
+//000125: 					"../../media/irrlicht2_bk.jpg");
+//000126: 			}
+    IL_011a:  nop
+//000127: 
+//000128: 			dev.GUIEnvironment.AddImage(
+    IL_011b:  ldloc.2
+    IL_011c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0121:  ldloc.3
+    IL_0122:  ldstr      "../../media/lime_logo_alpha.png"
+    IL_0127:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_012c:  ldc.i4.s   30
+    IL_012e:  ldc.i4.0
+    IL_012f:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32,
+                                                                                        int32)
+    IL_0134:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIImage [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddImage(class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                        class [IrrlichtLime]IrrlichtLime.Core.Vector2Di)
+    IL_0139:  pop
+//000129: 				drv.GetTexture("../../media/lime_logo_alpha.png"),
+//000130: 				new Vector2Di(30, 0));
+//000131: 
+//000132: 			// draw all
+//000133: 
+//000134: 			int lastFPS = -1;
+    IL_013a:  ldc.i4.m1
+    IL_013b:  stloc.s    lastFPS
+    IL_013d:  br         IL_01cc
+
+//000135: 			while (dev.Run())
+//000136: 			{
+    IL_0142:  nop
+//000137: 				if (settings.BackColor == null)
+    IL_0143:  ldloc.1
+    IL_0144:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Color L02.WinFormsWindow.Form1/DeviceSettings::BackColor
+    IL_0149:  ldnull
+    IL_014a:  call       bool [IrrlichtLime]IrrlichtLime.Video.Color::op_Equality(class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                  class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_014f:  ldc.i4.0
+    IL_0150:  ceq
+    IL_0152:  stloc.s    CS$4$0000
+    IL_0154:  ldloc.s    CS$4$0000
+    IL_0156:  brtrue.s   IL_0162
+
+//000138: 					// indeed, we do not need to spend time on cleaning color buffer if we use skybox
+//000139: 					drv.BeginScene(false);
+    IL_0158:  ldloc.3
+    IL_0159:  ldc.i4.0
+    IL_015a:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool)
+    IL_015f:  pop
+    IL_0160:  br.s       IL_0171
+
+//000140: 				else
+//000141: 					drv.BeginScene(true, true, settings.BackColor);
+    IL_0162:  ldloc.3
+    IL_0163:  ldc.i4.1
+    IL_0164:  ldc.i4.1
+    IL_0165:  ldloc.1
+    IL_0166:  ldfld      class [IrrlichtLime]IrrlichtLime.Video.Color L02.WinFormsWindow.Form1/DeviceSettings::BackColor
+    IL_016b:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool,
+                                                                                                bool,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0170:  pop
+//000142: 
+//000143: 				smgr.DrawAll();
+    IL_0171:  ldloc.s    smgr
+    IL_0173:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_0178:  nop
+//000144: 				dev.GUIEnvironment.DrawAll();
+    IL_0179:  ldloc.2
+    IL_017a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_017f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::DrawAll()
+    IL_0184:  nop
+//000145: 				drv.EndScene();
+    IL_0185:  ldloc.3
+    IL_0186:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_018b:  pop
+//000146: 
+//000147: 				int fps = drv.FPS;
+    IL_018c:  ldloc.3
+    IL_018d:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_0192:  stloc.s    fps
+//000148: 				if (lastFPS != fps)
+    IL_0194:  ldloc.s    lastFPS
+    IL_0196:  ldloc.s    fps
+    IL_0198:  ceq
+    IL_019a:  stloc.s    CS$4$0000
+    IL_019c:  ldloc.s    CS$4$0000
+    IL_019e:  brtrue.s   IL_01b5
+
+//000149: 				{
+    IL_01a0:  nop
+//000150: 					// report progress using common BackgroundWorker' method
+//000151: 					// note: we cannot do just labelRenderingStatus.Text = "...",
+//000152: 					// because we are running another thread
+//000153: 					worker.ReportProgress(fps, drv.Name);
+    IL_01a1:  ldloc.0
+    IL_01a2:  ldloc.s    fps
+    IL_01a4:  ldloc.3
+    IL_01a5:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_01aa:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::ReportProgress(int32,
+                                                                                                      object)
+    IL_01af:  nop
+//000154: 					lastFPS = fps;
+    IL_01b0:  ldloc.s    fps
+    IL_01b2:  stloc.s    lastFPS
+//000155: 				}
+    IL_01b4:  nop
+//000156: 
+//000157: 				// if we requested to stop, we close the device
+//000158: 				if (worker.CancellationPending)
+    IL_01b5:  ldloc.0
+    IL_01b6:  callvirt   instance bool [System]System.ComponentModel.BackgroundWorker::get_CancellationPending()
+    IL_01bb:  ldc.i4.0
+    IL_01bc:  ceq
+    IL_01be:  stloc.s    CS$4$0000
+    IL_01c0:  ldloc.s    CS$4$0000
+    IL_01c2:  brtrue.s   IL_01cb
+
+//000159: 					dev.Close();
+    IL_01c4:  ldloc.2
+    IL_01c5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Close()
+    IL_01ca:  nop
+//000160: 			}
+    IL_01cb:  nop
+//000135: 			while (dev.Run())
+    IL_01cc:  ldloc.2
+    IL_01cd:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_01d2:  stloc.s    CS$4$0000
+    IL_01d4:  ldloc.s    CS$4$0000
+    IL_01d6:  brtrue     IL_0142
+
+//000136: 			{
+//000137: 				if (settings.BackColor == null)
+//000138: 					// indeed, we do not need to spend time on cleaning color buffer if we use skybox
+//000139: 					drv.BeginScene(false);
+//000140: 				else
+//000141: 					drv.BeginScene(true, true, settings.BackColor);
+//000142: 
+//000143: 				smgr.DrawAll();
+//000144: 				dev.GUIEnvironment.DrawAll();
+//000145: 				drv.EndScene();
+//000146: 
+//000147: 				int fps = drv.FPS;
+//000148: 				if (lastFPS != fps)
+//000149: 				{
+//000150: 					// report progress using common BackgroundWorker' method
+//000151: 					// note: we cannot do just labelRenderingStatus.Text = "...",
+//000152: 					// because we are running another thread
+//000153: 					worker.ReportProgress(fps, drv.Name);
+//000154: 					lastFPS = fps;
+//000155: 				}
+//000156: 
+//000157: 				// if we requested to stop, we close the device
+//000158: 				if (worker.CancellationPending)
+//000159: 					dev.Close();
+//000160: 			}
+//000161: 
+//000162: 			// drop device
+//000163: 			dev.Drop();
+    IL_01db:  ldloc.2
+    IL_01dc:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_01e1:  pop
+//000164: 		}
+    IL_01e2:  ret
+  } // end of method Form1::backgroundRendering_DoWork
+
+  .method private hidebysig instance void 
+          Form1_FormClosing(object sender,
+                            class [System.Windows.Forms]System.Windows.Forms.FormClosingEventArgs e) cil managed
+  {
+    // Code size       49 (0x31)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+//000165: 
+//000166: 		private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+//000167: 		{
+    IL_0000:  nop
+//000168: 			// if background worker still running, we send request to stop
+//000169: 			if (backgroundRendering.IsBusy)
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+    IL_0007:  callvirt   instance bool [System]System.ComponentModel.BackgroundWorker::get_IsBusy()
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.0
+    IL_0010:  ldloc.0
+    IL_0011:  brtrue.s   IL_0030
+
+//000170: 			{
+    IL_0013:  nop
+//000171: 				backgroundRendering.CancelAsync();
+    IL_0014:  ldarg.0
+    IL_0015:  ldfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+    IL_001a:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::CancelAsync()
+    IL_001f:  nop
+//000172: 				e.Cancel = true;
+    IL_0020:  ldarg.2
+    IL_0021:  ldc.i4.1
+    IL_0022:  callvirt   instance void [System]System.ComponentModel.CancelEventArgs::set_Cancel(bool)
+    IL_0027:  nop
+//000173: 				userWantExit = true;
+    IL_0028:  ldarg.0
+    IL_0029:  ldc.i4.1
+    IL_002a:  stfld      bool L02.WinFormsWindow.Form1::userWantExit
+//000174: 			}
+    IL_002f:  nop
+//000175: 		}
+    IL_0030:  ret
+  } // end of method Form1::Form1_FormClosing
+
+  .method private hidebysig instance void 
+          backgroundRendering_ProgressChanged(object sender,
+                                              class [System]System.ComponentModel.ProgressChangedEventArgs e) cil managed
+  {
+    // Code size       50 (0x32)
+    .maxstack  4
+    .locals init ([0] int32 f,
+             [1] string d)
+//000176: 
+//000177: 		private void backgroundRendering_ProgressChanged(object sender, ProgressChangedEventArgs e)
+//000178: 		{
+    IL_0000:  nop
+//000179: 			// process reported progress
+//000180: 
+//000181: 			int f = e.ProgressPercentage;
+    IL_0001:  ldarg.2
+    IL_0002:  callvirt   instance int32 [System]System.ComponentModel.ProgressChangedEventArgs::get_ProgressPercentage()
+    IL_0007:  stloc.0
+//000182: 			string d = e.UserState as string;
+    IL_0008:  ldarg.2
+    IL_0009:  callvirt   instance object [System]System.ComponentModel.ProgressChangedEventArgs::get_UserState()
+    IL_000e:  isinst     [mscorlib]System.String
+    IL_0013:  stloc.1
+//000183: 
+//000184: 			labelRenderingStatus.Text = string.Format(
+    IL_0014:  ldarg.0
+    IL_0015:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+    IL_001a:  ldstr      "Rendering {1} fps using {0} driver"
+    IL_001f:  ldloc.1
+    IL_0020:  ldloc.0
+    IL_0021:  box        [mscorlib]System.Int32
+    IL_0026:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object)
+    IL_002b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_0030:  nop
+//000185: 				"Rendering {1} fps using {0} driver",
+//000186: 				d, f);
+//000187: 		}
+    IL_0031:  ret
+  } // end of method Form1::backgroundRendering_ProgressChanged
+
+  .method private hidebysig instance void 
+          backgroundRendering_RunWorkerCompleted(object sender,
+                                                 class [System]System.ComponentModel.RunWorkerCompletedEventArgs e) cil managed
+  {
+    // Code size       77 (0x4d)
+    .maxstack  4
+    .locals init ([0] bool CS$4$0000)
+//000188: 
+//000189: 		private void backgroundRendering_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+//000190: 		{
+    IL_0000:  nop
+//000191: 			// if exception occured in rendering thread -- we display the message
+//000192: 			if (e.Error != null)
+    IL_0001:  ldarg.2
+    IL_0002:  callvirt   instance class [mscorlib]System.Exception [System]System.ComponentModel.AsyncCompletedEventArgs::get_Error()
+    IL_0007:  ldnull
+    IL_0008:  ceq
+    IL_000a:  stloc.0
+    IL_000b:  ldloc.0
+    IL_000c:  brtrue.s   IL_0027
+
+//000193: 				MessageBox.Show(e.Error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    IL_000e:  ldarg.2
+    IL_000f:  callvirt   instance class [mscorlib]System.Exception [System]System.ComponentModel.AsyncCompletedEventArgs::get_Error()
+    IL_0014:  callvirt   instance string [mscorlib]System.Exception::get_Message()
+    IL_0019:  ldstr      "Error"
+    IL_001e:  ldc.i4.0
+    IL_001f:  ldc.i4.s   16
+    IL_0021:  call       valuetype [System.Windows.Forms]System.Windows.Forms.DialogResult [System.Windows.Forms]System.Windows.Forms.MessageBox::Show(string,
+                                                                                                                                                       string,
+                                                                                                                                                       valuetype [System.Windows.Forms]System.Windows.Forms.MessageBoxButtons,
+                                                                                                                                                       valuetype [System.Windows.Forms]System.Windows.Forms.MessageBoxIcon)
+    IL_0026:  pop
+//000194: 
+//000195: 			// if user want exit - we close main form
+//000196: 			// note: it is the only way to close form correctly -- only when device dropped,
+//000197: 			// so background worker not running
+//000198: 			if (userWantExit)
+    IL_0027:  ldarg.0
+    IL_0028:  ldfld      bool L02.WinFormsWindow.Form1::userWantExit
+    IL_002d:  ldc.i4.0
+    IL_002e:  ceq
+    IL_0030:  stloc.0
+    IL_0031:  ldloc.0
+    IL_0032:  brtrue.s   IL_003b
+
+//000199: 				Close();
+    IL_0034:  ldarg.0
+    IL_0035:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::Close()
+    IL_003a:  nop
+//000200: 
+//000201: 			labelRenderingStatus.Text = "No rendering";
+    IL_003b:  ldarg.0
+    IL_003c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+    IL_0041:  ldstr      "No rendering"
+    IL_0046:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_004b:  nop
+//000202: 		}
+    IL_004c:  ret
+  } // end of method Form1::backgroundRendering_RunWorkerCompleted
+
+  .method family hidebysig virtual instance void 
+          Dispose(bool disposing) cil managed
+  {
+    // Code size       43 (0x2b)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Form1.Designer.cs' 
+//000015: 		{
+    IL_0000:  nop
+//000016: 			if (disposing && (components != null))
+    IL_0001:  ldarg.1
+    IL_0002:  brfalse.s  IL_000f
+
+    IL_0004:  ldarg.0
+    IL_0005:  ldfld      class [System]System.ComponentModel.IContainer L02.WinFormsWindow.Form1::components
+    IL_000a:  ldnull
+    IL_000b:  ceq
+    IL_000d:  br.s       IL_0010
+
+    IL_000f:  ldc.i4.1
+    IL_0010:  stloc.0
+    IL_0011:  ldloc.0
+    IL_0012:  brtrue.s   IL_0022
+
+//000017: 			{
+    IL_0014:  nop
+//000018: 				components.Dispose();
+    IL_0015:  ldarg.0
+    IL_0016:  ldfld      class [System]System.ComponentModel.IContainer L02.WinFormsWindow.Form1::components
+    IL_001b:  callvirt   instance void [mscorlib]System.IDisposable::Dispose()
+    IL_0020:  nop
+//000019: 			}
+    IL_0021:  nop
+//000020: 			base.Dispose(disposing);
+    IL_0022:  ldarg.0
+    IL_0023:  ldarg.1
+    IL_0024:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::Dispose(bool)
+    IL_0029:  nop
+//000021: 		}
+    IL_002a:  ret
+  } // end of method Form1::Dispose
+
+  .method private hidebysig instance void 
+          InitializeComponent() cil managed
+  {
+    // Code size       1858 (0x742)
+    .maxstack  7
+    .locals init ([0] object[] CS$0$0000)
+//000022: 
+//000023: 		#region Windows Form Designer generated code
+//000024: 
+//000025: 		/// <summary>
+//000026: 		/// Required method for Designer support - do not modify
+//000027: 		/// the contents of this method with the code editor.
+//000028: 		/// </summary>
+//000029: 		private void InitializeComponent()
+//000030: 		{
+    IL_0000:  nop
+//000031: 			this.panelRenderingWindow = new System.Windows.Forms.Panel();
+    IL_0001:  ldarg.0
+    IL_0002:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Panel::.ctor()
+    IL_0007:  stfld      class [System.Windows.Forms]System.Windows.Forms.Panel L02.WinFormsWindow.Form1::panelRenderingWindow
+//000032: 			this.labelRenderingStatus = new System.Windows.Forms.Label();
+    IL_000c:  ldarg.0
+    IL_000d:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_0012:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+//000033: 			this.backgroundRendering = new System.ComponentModel.BackgroundWorker();
+    IL_0017:  ldarg.0
+    IL_0018:  newobj     instance void [System]System.ComponentModel.BackgroundWorker::.ctor()
+    IL_001d:  stfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+//000034: 			this.comboBoxVideoDriver = new System.Windows.Forms.ComboBox();
+    IL_0022:  ldarg.0
+    IL_0023:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::.ctor()
+    IL_0028:  stfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+//000035: 			this.checkBoxUseSeparateWindow = new System.Windows.Forms.CheckBox();
+    IL_002d:  ldarg.0
+    IL_002e:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::.ctor()
+    IL_0033:  stfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseSeparateWindow
+//000036: 			this.comboBoxAntiAliasing = new System.Windows.Forms.ComboBox();
+    IL_0038:  ldarg.0
+    IL_0039:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::.ctor()
+    IL_003e:  stfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+//000037: 			this.label2 = new System.Windows.Forms.Label();
+    IL_0043:  ldarg.0
+    IL_0044:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_0049:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label2
+//000038: 			this.label3 = new System.Windows.Forms.Label();
+    IL_004e:  ldarg.0
+    IL_004f:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_0054:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label3
+//000039: 			this.comboBoxBackground = new System.Windows.Forms.ComboBox();
+    IL_0059:  ldarg.0
+    IL_005a:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::.ctor()
+    IL_005f:  stfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+//000040: 			this.label4 = new System.Windows.Forms.Label();
+    IL_0064:  ldarg.0
+    IL_0065:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.Label::.ctor()
+    IL_006a:  stfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label4
+//000041: 			this.checkBoxUseVSync = new System.Windows.Forms.CheckBox();
+    IL_006f:  ldarg.0
+    IL_0070:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::.ctor()
+    IL_0075:  stfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseVSync
+//000042: 			this.SuspendLayout();
+    IL_007a:  ldarg.0
+    IL_007b:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::SuspendLayout()
+    IL_0080:  nop
+//000043: 			// 
+//000044: 			// panelRenderingWindow
+//000045: 			// 
+//000046: 			this.panelRenderingWindow.Location = new System.Drawing.Point(12, 85);
+    IL_0081:  ldarg.0
+    IL_0082:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Panel L02.WinFormsWindow.Form1::panelRenderingWindow
+    IL_0087:  ldc.i4.s   12
+    IL_0089:  ldc.i4.s   85
+    IL_008b:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0090:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0095:  nop
+//000047: 			this.panelRenderingWindow.Name = "panelRenderingWindow";
+    IL_0096:  ldarg.0
+    IL_0097:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Panel L02.WinFormsWindow.Form1::panelRenderingWindow
+    IL_009c:  ldstr      "panelRenderingWindow"
+    IL_00a1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_00a6:  nop
+//000048: 			this.panelRenderingWindow.Size = new System.Drawing.Size(540, 400);
+    IL_00a7:  ldarg.0
+    IL_00a8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Panel L02.WinFormsWindow.Form1::panelRenderingWindow
+    IL_00ad:  ldc.i4     0x21c
+    IL_00b2:  ldc.i4     0x190
+    IL_00b7:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_00bc:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_00c1:  nop
+//000049: 			this.panelRenderingWindow.TabIndex = 0;
+    IL_00c2:  ldarg.0
+    IL_00c3:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Panel L02.WinFormsWindow.Form1::panelRenderingWindow
+    IL_00c8:  ldc.i4.0
+    IL_00c9:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_00ce:  nop
+//000050: 			// 
+//000051: 			// labelRenderingStatus
+//000052: 			// 
+//000053: 			this.labelRenderingStatus.AutoSize = true;
+    IL_00cf:  ldarg.0
+    IL_00d0:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+    IL_00d5:  ldc.i4.1
+    IL_00d6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_AutoSize(bool)
+    IL_00db:  nop
+//000054: 			this.labelRenderingStatus.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+    IL_00dc:  ldarg.0
+    IL_00dd:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+    IL_00e2:  ldstr      "Tahoma"
+    IL_00e7:  ldc.r4     11.25
+    IL_00ec:  ldc.i4.0
+    IL_00ed:  ldc.i4.3
+    IL_00ee:  ldc.i4     0xcc
+    IL_00f3:  newobj     instance void [System.Drawing]System.Drawing.Font::.ctor(string,
+                                                                                  float32,
+                                                                                  valuetype [System.Drawing]System.Drawing.FontStyle,
+                                                                                  valuetype [System.Drawing]System.Drawing.GraphicsUnit,
+                                                                                  uint8)
+    IL_00f8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Font(class [System.Drawing]System.Drawing.Font)
+    IL_00fd:  nop
+//000055: 			this.labelRenderingStatus.Location = new System.Drawing.Point(12, 64);
+    IL_00fe:  ldarg.0
+    IL_00ff:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+    IL_0104:  ldc.i4.s   12
+    IL_0106:  ldc.i4.s   64
+    IL_0108:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_010d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0112:  nop
+//000056: 			this.labelRenderingStatus.Name = "labelRenderingStatus";
+    IL_0113:  ldarg.0
+    IL_0114:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+    IL_0119:  ldstr      "labelRenderingStatus"
+    IL_011e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0123:  nop
+//000057: 			this.labelRenderingStatus.Size = new System.Drawing.Size(187, 18);
+    IL_0124:  ldarg.0
+    IL_0125:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+    IL_012a:  ldc.i4     0xbb
+    IL_012f:  ldc.i4.s   18
+    IL_0131:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0136:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_013b:  nop
+//000058: 			this.labelRenderingStatus.TabIndex = 1;
+    IL_013c:  ldarg.0
+    IL_013d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+    IL_0142:  ldc.i4.1
+    IL_0143:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0148:  nop
+//000059: 			this.labelRenderingStatus.Text = "Select video driver to use...";
+    IL_0149:  ldarg.0
+    IL_014a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+    IL_014f:  ldstr      "Select video driver to use..."
+    IL_0154:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_0159:  nop
+//000060: 			// 
+//000061: 			// backgroundRendering
+//000062: 			// 
+//000063: 			this.backgroundRendering.WorkerReportsProgress = true;
+    IL_015a:  ldarg.0
+    IL_015b:  ldfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+    IL_0160:  ldc.i4.1
+    IL_0161:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::set_WorkerReportsProgress(bool)
+    IL_0166:  nop
+//000064: 			this.backgroundRendering.WorkerSupportsCancellation = true;
+    IL_0167:  ldarg.0
+    IL_0168:  ldfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+    IL_016d:  ldc.i4.1
+    IL_016e:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::set_WorkerSupportsCancellation(bool)
+    IL_0173:  nop
+//000065: 			this.backgroundRendering.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundRendering_DoWork);
+    IL_0174:  ldarg.0
+    IL_0175:  ldfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+    IL_017a:  ldarg.0
+    IL_017b:  ldftn      instance void L02.WinFormsWindow.Form1::backgroundRendering_DoWork(object,
+                                                                                            class [System]System.ComponentModel.DoWorkEventArgs)
+    IL_0181:  newobj     instance void [System]System.ComponentModel.DoWorkEventHandler::.ctor(object,
+                                                                                               native int)
+    IL_0186:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::add_DoWork(class [System]System.ComponentModel.DoWorkEventHandler)
+    IL_018b:  nop
+//000066: 			this.backgroundRendering.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundRendering_RunWorkerCompleted);
+    IL_018c:  ldarg.0
+    IL_018d:  ldfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+    IL_0192:  ldarg.0
+    IL_0193:  ldftn      instance void L02.WinFormsWindow.Form1::backgroundRendering_RunWorkerCompleted(object,
+                                                                                                        class [System]System.ComponentModel.RunWorkerCompletedEventArgs)
+    IL_0199:  newobj     instance void [System]System.ComponentModel.RunWorkerCompletedEventHandler::.ctor(object,
+                                                                                                           native int)
+    IL_019e:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::add_RunWorkerCompleted(class [System]System.ComponentModel.RunWorkerCompletedEventHandler)
+    IL_01a3:  nop
+//000067: 			this.backgroundRendering.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundRendering_ProgressChanged);
+    IL_01a4:  ldarg.0
+    IL_01a5:  ldfld      class [System]System.ComponentModel.BackgroundWorker L02.WinFormsWindow.Form1::backgroundRendering
+    IL_01aa:  ldarg.0
+    IL_01ab:  ldftn      instance void L02.WinFormsWindow.Form1::backgroundRendering_ProgressChanged(object,
+                                                                                                     class [System]System.ComponentModel.ProgressChangedEventArgs)
+    IL_01b1:  newobj     instance void [System]System.ComponentModel.ProgressChangedEventHandler::.ctor(object,
+                                                                                                        native int)
+    IL_01b6:  callvirt   instance void [System]System.ComponentModel.BackgroundWorker::add_ProgressChanged(class [System]System.ComponentModel.ProgressChangedEventHandler)
+    IL_01bb:  nop
+//000068: 			// 
+//000069: 			// comboBoxVideoDriver
+//000070: 			// 
+//000071: 			this.comboBoxVideoDriver.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+    IL_01bc:  ldarg.0
+    IL_01bd:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+    IL_01c2:  ldc.i4.2
+    IL_01c3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_DropDownStyle(valuetype [System.Windows.Forms]System.Windows.Forms.ComboBoxStyle)
+    IL_01c8:  nop
+//000072: 			this.comboBoxVideoDriver.FormattingEnabled = true;
+    IL_01c9:  ldarg.0
+    IL_01ca:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+    IL_01cf:  ldc.i4.1
+    IL_01d0:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListControl::set_FormattingEnabled(bool)
+    IL_01d5:  nop
+//000073: 			this.comboBoxVideoDriver.Location = new System.Drawing.Point(12, 32);
+    IL_01d6:  ldarg.0
+    IL_01d7:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+    IL_01dc:  ldc.i4.s   12
+    IL_01de:  ldc.i4.s   32
+    IL_01e0:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_01e5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_01ea:  nop
+//000074: 			this.comboBoxVideoDriver.Name = "comboBoxVideoDriver";
+    IL_01eb:  ldarg.0
+    IL_01ec:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+    IL_01f1:  ldstr      "comboBoxVideoDriver"
+    IL_01f6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_01fb:  nop
+//000075: 			this.comboBoxVideoDriver.Size = new System.Drawing.Size(130, 21);
+    IL_01fc:  ldarg.0
+    IL_01fd:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+    IL_0202:  ldc.i4     0x82
+    IL_0207:  ldc.i4.s   21
+    IL_0209:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_020e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0213:  nop
+//000076: 			this.comboBoxVideoDriver.TabIndex = 2;
+    IL_0214:  ldarg.0
+    IL_0215:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+    IL_021a:  ldc.i4.2
+    IL_021b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0220:  nop
+//000077: 			this.comboBoxVideoDriver.SelectedIndexChanged += new System.EventHandler(this.initializeIrrlichtDevice);
+    IL_0221:  ldarg.0
+    IL_0222:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+    IL_0227:  ldarg.0
+    IL_0228:  ldftn      instance void L02.WinFormsWindow.Form1::initializeIrrlichtDevice(object,
+                                                                                          class [mscorlib]System.EventArgs)
+    IL_022e:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_0233:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::add_SelectedIndexChanged(class [mscorlib]System.EventHandler)
+    IL_0238:  nop
+//000078: 			// 
+//000079: 			// checkBoxUseSeparateWindow
+//000080: 			// 
+//000081: 			this.checkBoxUseSeparateWindow.AutoSize = true;
+    IL_0239:  ldarg.0
+    IL_023a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseSeparateWindow
+    IL_023f:  ldc.i4.1
+    IL_0240:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_AutoSize(bool)
+    IL_0245:  nop
+//000082: 			this.checkBoxUseSeparateWindow.Location = new System.Drawing.Point(349, 38);
+    IL_0246:  ldarg.0
+    IL_0247:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseSeparateWindow
+    IL_024c:  ldc.i4     0x15d
+    IL_0251:  ldc.i4.s   38
+    IL_0253:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0258:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_025d:  nop
+//000083: 			this.checkBoxUseSeparateWindow.Name = "checkBoxUseSeparateWindow";
+    IL_025e:  ldarg.0
+    IL_025f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseSeparateWindow
+    IL_0264:  ldstr      "checkBoxUseSeparateWindow"
+    IL_0269:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_026e:  nop
+//000084: 			this.checkBoxUseSeparateWindow.Size = new System.Drawing.Size(128, 17);
+    IL_026f:  ldarg.0
+    IL_0270:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseSeparateWindow
+    IL_0275:  ldc.i4     0x80
+    IL_027a:  ldc.i4.s   17
+    IL_027c:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0281:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0286:  nop
+//000085: 			this.checkBoxUseSeparateWindow.TabIndex = 3;
+    IL_0287:  ldarg.0
+    IL_0288:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseSeparateWindow
+    IL_028d:  ldc.i4.3
+    IL_028e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0293:  nop
+//000086: 			this.checkBoxUseSeparateWindow.Text = "Use separate window";
+    IL_0294:  ldarg.0
+    IL_0295:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseSeparateWindow
+    IL_029a:  ldstr      "Use separate window"
+    IL_029f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_02a4:  nop
+//000087: 			this.checkBoxUseSeparateWindow.UseVisualStyleBackColor = true;
+    IL_02a5:  ldarg.0
+    IL_02a6:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseSeparateWindow
+    IL_02ab:  ldc.i4.1
+    IL_02ac:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_02b1:  nop
+//000088: 			this.checkBoxUseSeparateWindow.CheckedChanged += new System.EventHandler(this.initializeIrrlichtDevice);
+    IL_02b2:  ldarg.0
+    IL_02b3:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseSeparateWindow
+    IL_02b8:  ldarg.0
+    IL_02b9:  ldftn      instance void L02.WinFormsWindow.Form1::initializeIrrlichtDevice(object,
+                                                                                          class [mscorlib]System.EventArgs)
+    IL_02bf:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_02c4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::add_CheckedChanged(class [mscorlib]System.EventHandler)
+    IL_02c9:  nop
+//000089: 			// 
+//000090: 			// comboBoxAntiAliasing
+//000091: 			// 
+//000092: 			this.comboBoxAntiAliasing.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+    IL_02ca:  ldarg.0
+    IL_02cb:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_02d0:  ldc.i4.2
+    IL_02d1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_DropDownStyle(valuetype [System.Windows.Forms]System.Windows.Forms.ComboBoxStyle)
+    IL_02d6:  nop
+//000093: 			this.comboBoxAntiAliasing.FormattingEnabled = true;
+    IL_02d7:  ldarg.0
+    IL_02d8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_02dd:  ldc.i4.1
+    IL_02de:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListControl::set_FormattingEnabled(bool)
+    IL_02e3:  nop
+//000094: 			this.comboBoxAntiAliasing.Items.AddRange(new object[] {
+    IL_02e4:  ldarg.0
+    IL_02e5:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_02ea:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Items()
+    IL_02ef:  ldc.i4.5
+    IL_02f0:  newarr     [mscorlib]System.Object
+    IL_02f5:  stloc.0
+    IL_02f6:  ldloc.0
+    IL_02f7:  ldc.i4.0
+    IL_02f8:  ldstr      "No"
+    IL_02fd:  stelem.ref
+    IL_02fe:  ldloc.0
+    IL_02ff:  ldc.i4.1
+    IL_0300:  ldstr      "2x"
+    IL_0305:  stelem.ref
+    IL_0306:  ldloc.0
+    IL_0307:  ldc.i4.2
+    IL_0308:  ldstr      "4x"
+    IL_030d:  stelem.ref
+    IL_030e:  ldloc.0
+    IL_030f:  ldc.i4.3
+    IL_0310:  ldstr      "8x"
+    IL_0315:  stelem.ref
+    IL_0316:  ldloc.0
+    IL_0317:  ldc.i4.4
+    IL_0318:  ldstr      "16x"
+    IL_031d:  stelem.ref
+    IL_031e:  ldloc.0
+    IL_031f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection::AddRange(object[])
+    IL_0324:  nop
+//000095:             "No",
+//000096:             "2x",
+//000097:             "4x",
+//000098:             "8x",
+//000099:             "16x"});
+//000100: 			this.comboBoxAntiAliasing.Location = new System.Drawing.Point(158, 32);
+    IL_0325:  ldarg.0
+    IL_0326:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_032b:  ldc.i4     0x9e
+    IL_0330:  ldc.i4.s   32
+    IL_0332:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0337:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_033c:  nop
+//000101: 			this.comboBoxAntiAliasing.Name = "comboBoxAntiAliasing";
+    IL_033d:  ldarg.0
+    IL_033e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_0343:  ldstr      "comboBoxAntiAliasing"
+    IL_0348:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_034d:  nop
+//000102: 			this.comboBoxAntiAliasing.Size = new System.Drawing.Size(80, 21);
+    IL_034e:  ldarg.0
+    IL_034f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_0354:  ldc.i4.s   80
+    IL_0356:  ldc.i4.s   21
+    IL_0358:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_035d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0362:  nop
+//000103: 			this.comboBoxAntiAliasing.TabIndex = 4;
+    IL_0363:  ldarg.0
+    IL_0364:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_0369:  ldc.i4.4
+    IL_036a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_036f:  nop
+//000104: 			this.comboBoxAntiAliasing.SelectedIndexChanged += new System.EventHandler(this.initializeIrrlichtDevice);
+    IL_0370:  ldarg.0
+    IL_0371:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_0376:  ldarg.0
+    IL_0377:  ldftn      instance void L02.WinFormsWindow.Form1::initializeIrrlichtDevice(object,
+                                                                                          class [mscorlib]System.EventArgs)
+    IL_037d:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_0382:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::add_SelectedIndexChanged(class [mscorlib]System.EventHandler)
+    IL_0387:  nop
+//000105: 			// 
+//000106: 			// label2
+//000107: 			// 
+//000108: 			this.label2.AutoSize = true;
+    IL_0388:  ldarg.0
+    IL_0389:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label2
+    IL_038e:  ldc.i4.1
+    IL_038f:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_AutoSize(bool)
+    IL_0394:  nop
+//000109: 			this.label2.Location = new System.Drawing.Point(12, 16);
+    IL_0395:  ldarg.0
+    IL_0396:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label2
+    IL_039b:  ldc.i4.s   12
+    IL_039d:  ldc.i4.s   16
+    IL_039f:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_03a4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_03a9:  nop
+//000110: 			this.label2.Name = "label2";
+    IL_03aa:  ldarg.0
+    IL_03ab:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label2
+    IL_03b0:  ldstr      "label2"
+    IL_03b5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_03ba:  nop
+//000111: 			this.label2.Size = new System.Drawing.Size(63, 13);
+    IL_03bb:  ldarg.0
+    IL_03bc:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label2
+    IL_03c1:  ldc.i4.s   63
+    IL_03c3:  ldc.i4.s   13
+    IL_03c5:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_03ca:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_03cf:  nop
+//000112: 			this.label2.TabIndex = 5;
+    IL_03d0:  ldarg.0
+    IL_03d1:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label2
+    IL_03d6:  ldc.i4.5
+    IL_03d7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_03dc:  nop
+//000113: 			this.label2.Text = "Video driver";
+    IL_03dd:  ldarg.0
+    IL_03de:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label2
+    IL_03e3:  ldstr      "Video driver"
+    IL_03e8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_03ed:  nop
+//000114: 			// 
+//000115: 			// label3
+//000116: 			// 
+//000117: 			this.label3.AutoSize = true;
+    IL_03ee:  ldarg.0
+    IL_03ef:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label3
+    IL_03f4:  ldc.i4.1
+    IL_03f5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_AutoSize(bool)
+    IL_03fa:  nop
+//000118: 			this.label3.Location = new System.Drawing.Point(155, 16);
+    IL_03fb:  ldarg.0
+    IL_03fc:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label3
+    IL_0401:  ldc.i4     0x9b
+    IL_0406:  ldc.i4.s   16
+    IL_0408:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_040d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0412:  nop
+//000119: 			this.label3.Name = "label3";
+    IL_0413:  ldarg.0
+    IL_0414:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label3
+    IL_0419:  ldstr      "label3"
+    IL_041e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_0423:  nop
+//000120: 			this.label3.Size = new System.Drawing.Size(61, 13);
+    IL_0424:  ldarg.0
+    IL_0425:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label3
+    IL_042a:  ldc.i4.s   61
+    IL_042c:  ldc.i4.s   13
+    IL_042e:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_0433:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_0438:  nop
+//000121: 			this.label3.TabIndex = 6;
+    IL_0439:  ldarg.0
+    IL_043a:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label3
+    IL_043f:  ldc.i4.6
+    IL_0440:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_0445:  nop
+//000122: 			this.label3.Text = "AntiAliasing";
+    IL_0446:  ldarg.0
+    IL_0447:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label3
+    IL_044c:  ldstr      "AntiAliasing"
+    IL_0451:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_0456:  nop
+//000123: 			// 
+//000124: 			// comboBoxBackground
+//000125: 			// 
+//000126: 			this.comboBoxBackground.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+    IL_0457:  ldarg.0
+    IL_0458:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_045d:  ldc.i4.2
+    IL_045e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::set_DropDownStyle(valuetype [System.Windows.Forms]System.Windows.Forms.ComboBoxStyle)
+    IL_0463:  nop
+//000127: 			this.comboBoxBackground.FormattingEnabled = true;
+    IL_0464:  ldarg.0
+    IL_0465:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_046a:  ldc.i4.1
+    IL_046b:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ListControl::set_FormattingEnabled(bool)
+    IL_0470:  nop
+//000128: 			this.comboBoxBackground.Items.AddRange(new object[] {
+    IL_0471:  ldarg.0
+    IL_0472:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_0477:  callvirt   instance class [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection [System.Windows.Forms]System.Windows.Forms.ComboBox::get_Items()
+    IL_047c:  ldc.i4.3
+    IL_047d:  newarr     [mscorlib]System.Object
+    IL_0482:  stloc.0
+    IL_0483:  ldloc.0
+    IL_0484:  ldc.i4.0
+    IL_0485:  ldstr      "Skybox"
+    IL_048a:  stelem.ref
+    IL_048b:  ldloc.0
+    IL_048c:  ldc.i4.1
+    IL_048d:  ldstr      "Black"
+    IL_0492:  stelem.ref
+    IL_0493:  ldloc.0
+    IL_0494:  ldc.i4.2
+    IL_0495:  ldstr      "White"
+    IL_049a:  stelem.ref
+    IL_049b:  ldloc.0
+    IL_049c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox/ObjectCollection::AddRange(object[])
+    IL_04a1:  nop
+//000129:             "Skybox",
+//000130:             "Black",
+//000131:             "White"});
+//000132: 			this.comboBoxBackground.Location = new System.Drawing.Point(253, 32);
+    IL_04a2:  ldarg.0
+    IL_04a3:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_04a8:  ldc.i4     0xfd
+    IL_04ad:  ldc.i4.s   32
+    IL_04af:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_04b4:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_04b9:  nop
+//000133: 			this.comboBoxBackground.Name = "comboBoxBackground";
+    IL_04ba:  ldarg.0
+    IL_04bb:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_04c0:  ldstr      "comboBoxBackground"
+    IL_04c5:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_04ca:  nop
+//000134: 			this.comboBoxBackground.Size = new System.Drawing.Size(80, 21);
+    IL_04cb:  ldarg.0
+    IL_04cc:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_04d1:  ldc.i4.s   80
+    IL_04d3:  ldc.i4.s   21
+    IL_04d5:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_04da:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_04df:  nop
+//000135: 			this.comboBoxBackground.TabIndex = 7;
+    IL_04e0:  ldarg.0
+    IL_04e1:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_04e6:  ldc.i4.7
+    IL_04e7:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_04ec:  nop
+//000136: 			this.comboBoxBackground.SelectedIndexChanged += new System.EventHandler(this.initializeIrrlichtDevice);
+    IL_04ed:  ldarg.0
+    IL_04ee:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_04f3:  ldarg.0
+    IL_04f4:  ldftn      instance void L02.WinFormsWindow.Form1::initializeIrrlichtDevice(object,
+                                                                                          class [mscorlib]System.EventArgs)
+    IL_04fa:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_04ff:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ComboBox::add_SelectedIndexChanged(class [mscorlib]System.EventHandler)
+    IL_0504:  nop
+//000137: 			// 
+//000138: 			// label4
+//000139: 			// 
+//000140: 			this.label4.AutoSize = true;
+    IL_0505:  ldarg.0
+    IL_0506:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label4
+    IL_050b:  ldc.i4.1
+    IL_050c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_AutoSize(bool)
+    IL_0511:  nop
+//000141: 			this.label4.Location = new System.Drawing.Point(250, 16);
+    IL_0512:  ldarg.0
+    IL_0513:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label4
+    IL_0518:  ldc.i4     0xfa
+    IL_051d:  ldc.i4.s   16
+    IL_051f:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_0524:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0529:  nop
+//000142: 			this.label4.Name = "label4";
+    IL_052a:  ldarg.0
+    IL_052b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label4
+    IL_0530:  ldstr      "label4"
+    IL_0535:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_053a:  nop
+//000143: 			this.label4.Size = new System.Drawing.Size(65, 13);
+    IL_053b:  ldarg.0
+    IL_053c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label4
+    IL_0541:  ldc.i4.s   65
+    IL_0543:  ldc.i4.s   13
+    IL_0545:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_054a:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_054f:  nop
+//000144: 			this.label4.TabIndex = 6;
+    IL_0550:  ldarg.0
+    IL_0551:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label4
+    IL_0556:  ldc.i4.6
+    IL_0557:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_055c:  nop
+//000145: 			this.label4.Text = "Background";
+    IL_055d:  ldarg.0
+    IL_055e:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label4
+    IL_0563:  ldstr      "Background"
+    IL_0568:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_056d:  nop
+//000146: 			// 
+//000147: 			// checkBoxUseVSync
+//000148: 			// 
+//000149: 			this.checkBoxUseVSync.AutoSize = true;
+    IL_056e:  ldarg.0
+    IL_056f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseVSync
+    IL_0574:  ldc.i4.1
+    IL_0575:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_AutoSize(bool)
+    IL_057a:  nop
+//000150: 			this.checkBoxUseVSync.Location = new System.Drawing.Point(349, 15);
+    IL_057b:  ldarg.0
+    IL_057c:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseVSync
+    IL_0581:  ldc.i4     0x15d
+    IL_0586:  ldc.i4.s   15
+    IL_0588:  newobj     instance void [System.Drawing]System.Drawing.Point::.ctor(int32,
+                                                                                   int32)
+    IL_058d:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Location(valuetype [System.Drawing]System.Drawing.Point)
+    IL_0592:  nop
+//000151: 			this.checkBoxUseVSync.Name = "checkBoxUseVSync";
+    IL_0593:  ldarg.0
+    IL_0594:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseVSync
+    IL_0599:  ldstr      "checkBoxUseVSync"
+    IL_059e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_05a3:  nop
+//000152: 			this.checkBoxUseVSync.Size = new System.Drawing.Size(79, 17);
+    IL_05a4:  ldarg.0
+    IL_05a5:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseVSync
+    IL_05aa:  ldc.i4.s   79
+    IL_05ac:  ldc.i4.s   17
+    IL_05ae:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_05b3:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Size(valuetype [System.Drawing]System.Drawing.Size)
+    IL_05b8:  nop
+//000153: 			this.checkBoxUseVSync.TabIndex = 8;
+    IL_05b9:  ldarg.0
+    IL_05ba:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseVSync
+    IL_05bf:  ldc.i4.8
+    IL_05c0:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_TabIndex(int32)
+    IL_05c5:  nop
+//000154: 			this.checkBoxUseVSync.Text = "Use VSync";
+    IL_05c6:  ldarg.0
+    IL_05c7:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseVSync
+    IL_05cc:  ldstr      "Use VSync"
+    IL_05d1:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_05d6:  nop
+//000155: 			this.checkBoxUseVSync.UseVisualStyleBackColor = true;
+    IL_05d7:  ldarg.0
+    IL_05d8:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseVSync
+    IL_05dd:  ldc.i4.1
+    IL_05de:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.ButtonBase::set_UseVisualStyleBackColor(bool)
+    IL_05e3:  nop
+//000156: 			this.checkBoxUseVSync.CheckedChanged += new System.EventHandler(this.initializeIrrlichtDevice);
+    IL_05e4:  ldarg.0
+    IL_05e5:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseVSync
+    IL_05ea:  ldarg.0
+    IL_05eb:  ldftn      instance void L02.WinFormsWindow.Form1::initializeIrrlichtDevice(object,
+                                                                                          class [mscorlib]System.EventArgs)
+    IL_05f1:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_05f6:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.CheckBox::add_CheckedChanged(class [mscorlib]System.EventHandler)
+    IL_05fb:  nop
+//000157: 			// 
+//000158: 			// Form1
+//000159: 			// 
+//000160: 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+    IL_05fc:  ldarg.0
+    IL_05fd:  ldc.r4     6.
+    IL_0602:  ldc.r4     13.
+    IL_0607:  newobj     instance void [System.Drawing]System.Drawing.SizeF::.ctor(float32,
+                                                                                   float32)
+    IL_060c:  call       instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleDimensions(valuetype [System.Drawing]System.Drawing.SizeF)
+    IL_0611:  nop
+//000161: 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+    IL_0612:  ldarg.0
+    IL_0613:  ldc.i4.1
+    IL_0614:  call       instance void [System.Windows.Forms]System.Windows.Forms.ContainerControl::set_AutoScaleMode(valuetype [System.Windows.Forms]System.Windows.Forms.AutoScaleMode)
+    IL_0619:  nop
+//000162: 			this.ClientSize = new System.Drawing.Size(564, 497);
+    IL_061a:  ldarg.0
+    IL_061b:  ldc.i4     0x234
+    IL_0620:  ldc.i4     0x1f1
+    IL_0625:  newobj     instance void [System.Drawing]System.Drawing.Size::.ctor(int32,
+                                                                                  int32)
+    IL_062a:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::set_ClientSize(valuetype [System.Drawing]System.Drawing.Size)
+    IL_062f:  nop
+//000163: 			this.Controls.Add(this.checkBoxUseVSync);
+    IL_0630:  ldarg.0
+    IL_0631:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0636:  ldarg.0
+    IL_0637:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseVSync
+    IL_063c:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0641:  nop
+//000164: 			this.Controls.Add(this.comboBoxBackground);
+    IL_0642:  ldarg.0
+    IL_0643:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0648:  ldarg.0
+    IL_0649:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxBackground
+    IL_064e:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0653:  nop
+//000165: 			this.Controls.Add(this.label4);
+    IL_0654:  ldarg.0
+    IL_0655:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_065a:  ldarg.0
+    IL_065b:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label4
+    IL_0660:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0665:  nop
+//000166: 			this.Controls.Add(this.label3);
+    IL_0666:  ldarg.0
+    IL_0667:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_066c:  ldarg.0
+    IL_066d:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label3
+    IL_0672:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0677:  nop
+//000167: 			this.Controls.Add(this.label2);
+    IL_0678:  ldarg.0
+    IL_0679:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_067e:  ldarg.0
+    IL_067f:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::label2
+    IL_0684:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_0689:  nop
+//000168: 			this.Controls.Add(this.comboBoxAntiAliasing);
+    IL_068a:  ldarg.0
+    IL_068b:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_0690:  ldarg.0
+    IL_0691:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxAntiAliasing
+    IL_0696:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_069b:  nop
+//000169: 			this.Controls.Add(this.checkBoxUseSeparateWindow);
+    IL_069c:  ldarg.0
+    IL_069d:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_06a2:  ldarg.0
+    IL_06a3:  ldfld      class [System.Windows.Forms]System.Windows.Forms.CheckBox L02.WinFormsWindow.Form1::checkBoxUseSeparateWindow
+    IL_06a8:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_06ad:  nop
+//000170: 			this.Controls.Add(this.comboBoxVideoDriver);
+    IL_06ae:  ldarg.0
+    IL_06af:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_06b4:  ldarg.0
+    IL_06b5:  ldfld      class [System.Windows.Forms]System.Windows.Forms.ComboBox L02.WinFormsWindow.Form1::comboBoxVideoDriver
+    IL_06ba:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_06bf:  nop
+//000171: 			this.Controls.Add(this.labelRenderingStatus);
+    IL_06c0:  ldarg.0
+    IL_06c1:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_06c6:  ldarg.0
+    IL_06c7:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Label L02.WinFormsWindow.Form1::labelRenderingStatus
+    IL_06cc:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_06d1:  nop
+//000172: 			this.Controls.Add(this.panelRenderingWindow);
+    IL_06d2:  ldarg.0
+    IL_06d3:  call       instance class [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection [System.Windows.Forms]System.Windows.Forms.Control::get_Controls()
+    IL_06d8:  ldarg.0
+    IL_06d9:  ldfld      class [System.Windows.Forms]System.Windows.Forms.Panel L02.WinFormsWindow.Form1::panelRenderingWindow
+    IL_06de:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control/ControlCollection::Add(class [System.Windows.Forms]System.Windows.Forms.Control)
+    IL_06e3:  nop
+//000173: 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+    IL_06e4:  ldarg.0
+    IL_06e5:  ldc.i4.1
+    IL_06e6:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::set_FormBorderStyle(valuetype [System.Windows.Forms]System.Windows.Forms.FormBorderStyle)
+    IL_06eb:  nop
+//000174: 			this.MaximizeBox = false;
+    IL_06ec:  ldarg.0
+    IL_06ed:  ldc.i4.0
+    IL_06ee:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::set_MaximizeBox(bool)
+    IL_06f3:  nop
+//000175: 			this.Name = "Form1";
+    IL_06f4:  ldarg.0
+    IL_06f5:  ldstr      "Form1"
+    IL_06fa:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Name(string)
+    IL_06ff:  nop
+//000176: 			this.Text = "WinForms window example - Irrlicht Engine";
+    IL_0700:  ldarg.0
+    IL_0701:  ldstr      "WinForms window example - Irrlicht Engine"
+    IL_0706:  callvirt   instance void [System.Windows.Forms]System.Windows.Forms.Control::set_Text(string)
+    IL_070b:  nop
+//000177: 			this.Load += new System.EventHandler(this.Form1_Load);
+    IL_070c:  ldarg.0
+    IL_070d:  ldarg.0
+    IL_070e:  ldftn      instance void L02.WinFormsWindow.Form1::Form1_Load(object,
+                                                                            class [mscorlib]System.EventArgs)
+    IL_0714:  newobj     instance void [mscorlib]System.EventHandler::.ctor(object,
+                                                                            native int)
+    IL_0719:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::add_Load(class [mscorlib]System.EventHandler)
+    IL_071e:  nop
+//000178: 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+    IL_071f:  ldarg.0
+    IL_0720:  ldarg.0
+    IL_0721:  ldftn      instance void L02.WinFormsWindow.Form1::Form1_FormClosing(object,
+                                                                                   class [System.Windows.Forms]System.Windows.Forms.FormClosingEventArgs)
+    IL_0727:  newobj     instance void [System.Windows.Forms]System.Windows.Forms.FormClosingEventHandler::.ctor(object,
+                                                                                                                 native int)
+    IL_072c:  call       instance void [System.Windows.Forms]System.Windows.Forms.Form::add_FormClosing(class [System.Windows.Forms]System.Windows.Forms.FormClosingEventHandler)
+    IL_0731:  nop
+//000179: 			this.ResumeLayout(false);
+    IL_0732:  ldarg.0
+    IL_0733:  ldc.i4.0
+    IL_0734:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::ResumeLayout(bool)
+    IL_0739:  nop
+//000180: 			this.PerformLayout();
+    IL_073a:  ldarg.0
+    IL_073b:  call       instance void [System.Windows.Forms]System.Windows.Forms.Control::PerformLayout()
+    IL_0740:  nop
+//000181: 
+//000182: 		}
+    IL_0741:  ret
+  } // end of method Form1::InitializeComponent
+
+} // end of class L02.WinFormsWindow.Form1
+
+.class private abstract auto ansi sealed beforefieldinit L02.WinFormsWindow.Program
+       extends [mscorlib]System.Object
+{
+  .method private hidebysig static void  Main() cil managed
+  {
+    .entrypoint
+    .custom instance void [mscorlib]System.STAThreadAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       26 (0x1a)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Program.cs' 
+//000015: 		{
+    IL_0000:  nop
+//000016: 			Application.EnableVisualStyles();
+    IL_0001:  call       void [System.Windows.Forms]System.Windows.Forms.Application::EnableVisualStyles()
+    IL_0006:  nop
+//000017: 			Application.SetCompatibleTextRenderingDefault(false);
+    IL_0007:  ldc.i4.0
+    IL_0008:  call       void [System.Windows.Forms]System.Windows.Forms.Application::SetCompatibleTextRenderingDefault(bool)
+    IL_000d:  nop
+//000018: 			Application.Run(new Form1());
+    IL_000e:  newobj     instance void L02.WinFormsWindow.Form1::.ctor()
+    IL_0013:  call       void [System.Windows.Forms]System.Windows.Forms.Application::Run(class [System.Windows.Forms]System.Windows.Forms.Form)
+    IL_0018:  nop
+//000019: 		}
+    IL_0019:  ret
+  } // end of method Program::Main
+
+} // end of class L02.WinFormsWindow.Program
+
+.class private auto ansi beforefieldinit L02.WinFormsWindow.Properties.Resources
+       extends [mscorlib]System.Object
+{
+  .custom instance void [mscorlib]System.Diagnostics.DebuggerNonUserCodeAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .custom instance void [System]System.CodeDom.Compiler.GeneratedCodeAttribute::.ctor(string,
+                                                                                      string) = ( 01 00 33 53 79 73 74 65 6D 2E 52 65 73 6F 75 72   // ..3System.Resour
+                                                                                                  63 65 73 2E 54 6F 6F 6C 73 2E 53 74 72 6F 6E 67   // ces.Tools.Strong
+                                                                                                  6C 79 54 79 70 65 64 52 65 73 6F 75 72 63 65 42   // lyTypedResourceB
+                                                                                                  75 69 6C 64 65 72 07 34 2E 30 2E 30 2E 30 00 00 ) // uilder.4.0.0.0..
+  .field private static class [mscorlib]System.Resources.ResourceManager resourceMan
+  .field private static class [mscorlib]System.Globalization.CultureInfo resourceCulture
+  .method assembly hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       10 (0xa)
+    .maxstack  8
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L02.WinFormsWindow\Properties\Resources.Designer.cs' 
+//000031:         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+//000032:         internal Resources() {
+    IL_0007:  nop
+//000033:         }
+    IL_0008:  nop
+    IL_0009:  ret
+  } // end of method Resources::.ctor
+
+  .method assembly hidebysig specialname static 
+          class [mscorlib]System.Resources.ResourceManager 
+          get_ResourceManager() cil managed
+  {
+    // Code size       63 (0x3f)
+    .maxstack  3
+    .locals init ([0] class [mscorlib]System.Resources.ResourceManager temp,
+             [1] class [mscorlib]System.Resources.ResourceManager CS$1$0000,
+             [2] bool CS$4$0001)
+//000034:         
+//000035:         /// <summary>
+//000036:         ///   Returns the cached ResourceManager instance used by this class.
+//000037:         /// </summary>
+//000038:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000039:         internal static global::System.Resources.ResourceManager ResourceManager {
+//000040:             get {
+    IL_0000:  nop
+//000041:                 if (object.ReferenceEquals(resourceMan, null)) {
+    IL_0001:  ldsfld     class [mscorlib]System.Resources.ResourceManager L02.WinFormsWindow.Properties.Resources::resourceMan
+    IL_0006:  ldnull
+    IL_0007:  call       bool [mscorlib]System.Object::ReferenceEquals(object,
+                                                                       object)
+    IL_000c:  ldc.i4.0
+    IL_000d:  ceq
+    IL_000f:  stloc.2
+    IL_0010:  ldloc.2
+    IL_0011:  brtrue.s   IL_0035
+
+    IL_0013:  nop
+//000042:                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("L02.WinFormsWindow.Properties.Resources", typeof(Resources).Assembly);
+    IL_0014:  ldstr      "L02.WinFormsWindow.Properties.Resources"
+    IL_0019:  ldtoken    L02.WinFormsWindow.Properties.Resources
+    IL_001e:  call       class [mscorlib]System.Type [mscorlib]System.Type::GetTypeFromHandle(valuetype [mscorlib]System.RuntimeTypeHandle)
+    IL_0023:  callvirt   instance class [mscorlib]System.Reflection.Assembly [mscorlib]System.Type::get_Assembly()
+    IL_0028:  newobj     instance void [mscorlib]System.Resources.ResourceManager::.ctor(string,
+                                                                                         class [mscorlib]System.Reflection.Assembly)
+    IL_002d:  stloc.0
+//000043:                     resourceMan = temp;
+    IL_002e:  ldloc.0
+    IL_002f:  stsfld     class [mscorlib]System.Resources.ResourceManager L02.WinFormsWindow.Properties.Resources::resourceMan
+//000044:                 }
+    IL_0034:  nop
+//000045:                 return resourceMan;
+    IL_0035:  ldsfld     class [mscorlib]System.Resources.ResourceManager L02.WinFormsWindow.Properties.Resources::resourceMan
+    IL_003a:  stloc.1
+    IL_003b:  br.s       IL_003d
+
+//000046:             }
+    IL_003d:  ldloc.1
+    IL_003e:  ret
+  } // end of method Resources::get_ResourceManager
+
+  .method assembly hidebysig specialname static 
+          class [mscorlib]System.Globalization.CultureInfo 
+          get_Culture() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init ([0] class [mscorlib]System.Globalization.CultureInfo CS$1$0000)
+//000047:         }
+//000048:         
+//000049:         /// <summary>
+//000050:         ///   Overrides the current thread's CurrentUICulture property for all
+//000051:         ///   resource lookups using this strongly typed resource class.
+//000052:         /// </summary>
+//000053:         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+//000054:         internal static global::System.Globalization.CultureInfo Culture {
+//000055:             get {
+    IL_0000:  nop
+//000056:                 return resourceCulture;
+    IL_0001:  ldsfld     class [mscorlib]System.Globalization.CultureInfo L02.WinFormsWindow.Properties.Resources::resourceCulture
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+//000057:             }
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method Resources::get_Culture
+
+  .method assembly hidebysig specialname static 
+          void  set_Culture(class [mscorlib]System.Globalization.CultureInfo 'value') cil managed
+  {
+    // Code size       8 (0x8)
+    .maxstack  8
+//000058:             set {
+    IL_0000:  nop
+//000059:                 resourceCulture = value;
+    IL_0001:  ldarg.0
+    IL_0002:  stsfld     class [mscorlib]System.Globalization.CultureInfo L02.WinFormsWindow.Properties.Resources::resourceCulture
+//000060:             }
+    IL_0007:  ret
+  } // end of method Resources::set_Culture
+
+  .property class [mscorlib]System.Resources.ResourceManager
+          ResourceManager()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Resources.ResourceManager L02.WinFormsWindow.Properties.Resources::get_ResourceManager()
+  } // end of property Resources::ResourceManager
+  .property class [mscorlib]System.Globalization.CultureInfo
+          Culture()
+  {
+    .custom instance void [System]System.ComponentModel.EditorBrowsableAttribute::.ctor(valuetype [System]System.ComponentModel.EditorBrowsableState) = ( 01 00 02 00 00 00 00 00 ) 
+    .get class [mscorlib]System.Globalization.CultureInfo L02.WinFormsWindow.Properties.Resources::get_Culture()
+    .set void L02.WinFormsWindow.Properties.Resources::set_Culture(class [mscorlib]System.Globalization.CultureInfo)
+  } // end of property Resources::Culture
+} // end of class L02.WinFormsWindow.Properties.Resources
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

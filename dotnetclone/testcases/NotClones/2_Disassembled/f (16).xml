@@ -1,0 +1,347 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+IL_0000:  nop
+  IL_0001:  newobj     instance void EditDistance.Program/_Closure$__1::.ctor()
+  IL_0006:  stloc.0
+  IL_0007:  ldloc.0
+  IL_0008:  ldarg.1
+  IL_0009:  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  IL_000e:  ldloc.0
+  IL_000f:  ldarg.0
+  IL_0010:  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  IL_0015:  ldloc.0
+  IL_0016:  ldloc.0
+  IL_0017:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  IL_001c:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_0021:  ldc.i4.1
+  IL_0022:  add.ovf
+  IL_0023:  ldloc.0
+  IL_0024:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  IL_0029:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_002e:  ldc.i4.1
+  IL_002f:  add.ovf
+  IL_0030:  newobj     instance void int32[0...,0...]::.ctor(int32,
+                                                             int32)
+  IL_0035:  stfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  IL_003a:  ldc.i4.0
+  IL_003b:  ldloc.0
+  IL_003c:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  IL_0041:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_0046:  stloc.s    VB$t_i4$L0
+  IL_0048:  stloc.3
+  IL_0049:  br.s       IL_005e
+  IL_004b:  ldloc.0
+  IL_004c:  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  IL_0051:  ldloc.3
+  IL_0052:  ldc.i4.0
+  IL_0053:  ldloc.3
+  IL_0054:  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  IL_0059:  nop
+  IL_005a:  ldloc.3
+  IL_005b:  ldc.i4.1
+  IL_005c:  add.ovf
+  IL_005d:  stloc.3
+  IL_005e:  ldloc.3
+  IL_005f:  ldloc.s    VB$t_i4$L0
+  IL_0061:  stloc.s    VB$CG$t_i4$S0
+  IL_0063:  ldloc.s    VB$CG$t_i4$S0
+  IL_0065:  ble.s      IL_004b
+  IL_0067:  ldc.i4.0
+  IL_0068:  ldloc.0
+  IL_0069:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  IL_006e:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_0073:  stloc.s    VB$t_i4$L1
+  IL_0075:  stloc.s    j
+  IL_0077:  br.s       IL_0090
+  IL_0079:  ldloc.0
+  IL_007a:  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  IL_007f:  ldc.i4.0
+  IL_0080:  ldloc.s    j
+  IL_0082:  ldloc.s    j
+  IL_0084:  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  IL_0089:  nop
+  IL_008a:  ldloc.s    j
+  IL_008c:  ldc.i4.1
+  IL_008d:  add.ovf
+  IL_008e:  stloc.s    j
+  IL_0090:  ldloc.s    j
+  IL_0092:  ldloc.s    VB$t_i4$L1
+  IL_0094:  stloc.s    VB$CG$t_i4$S0
+  IL_0096:  ldloc.s    VB$CG$t_i4$S0
+  IL_0098:  ble.s      IL_0079
+  IL_009a:  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+  IL_009f:  ldc.i4.4
+  IL_00a0:  mul.ovf
+  IL_00a1:  stloc.1
+  IL_00a2:  ldloc.0
+  IL_00a3:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  IL_00a8:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_00ad:  ldloc.0
+  IL_00ae:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  IL_00b3:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_00b8:  ldloc.1
+  IL_00b9:  ldloc.1
+  IL_00ba:  ldloc.0
+  IL_00bb:  dup
+  IL_00bc:  ldvirtftn  instance void EditDistance.Program/_Closure$__1::_Lambda$__1(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+  IL_00c2:  newobj     instance void class [mscorlib]System.Action`4<int32,int32,int32,int32>::.ctor(object,
+                                                                                                     native int)
+  IL_00c7:  call       void [ParallelExtensionsExtras]System.Threading.Algorithms.ParallelAlgorithms::Wavefront(int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                class [mscorlib]System.Action`4<int32,int32,int32,int32>)
+  IL_00cc:  nop
+  IL_00cd:  ldloc.0
+  IL_00ce:  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  IL_00d3:  ldloc.0
+  IL_00d4:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  IL_00d9:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_00de:  ldloc.0
+  IL_00df:  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  IL_00e4:  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  IL_00e9:  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                            int32)
+  IL_00ee:  stloc.2
+  IL_00ef:  br.s       IL_00f1
+  IL_00f1:  ldloc.2
+  IL_00f2:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 11 example 3: named actions"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  IL_0011:  ldc.r4     50.
+  IL_0016:  ldc.r4     50.
+  IL_001b:  ldc.r4     50.
+  IL_0020:  ldc.r4     50.
+  IL_0025:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  IL_002a:  stloc.0
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "Chap1103.pdf"
+  IL_0031:  ldc.i4.2
+  IL_0032:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_0037:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_003c:  stloc.1
+  IL_003d:  ldloc.0
+  IL_003e:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_0043:  nop
+  IL_0044:  ldstr      "c:/winnt/notepad.exe"
+  IL_0049:  stloc.2
+  IL_004a:  ldstr      "Click to open "
+  IL_004f:  ldloc.2
+  IL_0050:  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  IL_0055:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+  IL_005a:  ldloc.2
+  IL_005b:  ldnull
+  IL_005c:  ldnull
+  IL_005d:  ldnull
+  IL_005e:  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfAction::.ctor(string,
+                                                                                        string,
+                                                                                        string,
+                                                                                        string)
+  IL_0063:  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setAction(class [iTextdotNET]com.lowagie.text.pdf.PdfAction)
+  IL_0068:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  IL_006d:  stloc.3
+  IL_006e:  ldc.i4.4
+  IL_006f:  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::.ctor(int32)
+  IL_0074:  stloc.s    table
+  IL_0076:  ldloc.s    table
+  IL_0078:  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfPCell [iTextdotNET]com.lowagie.text.pdf.PdfPTable::getDefaultCell()
+  IL_007d:  ldc.i4.1
+  IL_007e:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPCell::setHorizontalAlignment(int32)
+  IL_0083:  nop
+  IL_0084:  ldloc.s    table
+  IL_0086:  ldstr      "First Page"
+  IL_008b:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+  IL_0090:  ldc.i4.1
+  IL_0091:  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfAction::.ctor(int32)
+  IL_0096:  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setAction(class [iTextdotNET]com.lowagie.text.pdf.PdfAction)
+  IL_009b:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  IL_00a0:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::addCell(class [iTextdotNET]com.lowagie.text.Phrase)
+  IL_00a5:  nop
+  IL_00a6:  ldloc.s    table
+  IL_00a8:  ldstr      "Prev Page"
+  IL_00ad:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+  IL_00b2:  ldc.i4.2
+  IL_00b3:  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfAction::.ctor(int32)
+  IL_00b8:  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setAction(class [iTextdotNET]com.lowagie.text.pdf.PdfAction)
+  IL_00bd:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  IL_00c2:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::addCell(class [iTextdotNET]com.lowagie.text.Phrase)
+  IL_00c7:  nop
+  IL_00c8:  ldloc.s    table
+  IL_00ca:  ldstr      "Next Page"
+  IL_00cf:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+  IL_00d4:  ldc.i4.3
+  IL_00d5:  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfAction::.ctor(int32)
+  IL_00da:  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setAction(class [iTextdotNET]com.lowagie.text.pdf.PdfAction)
+  IL_00df:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  IL_00e4:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::addCell(class [iTextdotNET]com.lowagie.text.Phrase)
+  IL_00e9:  nop
+  IL_00ea:  ldloc.s    table
+  IL_00ec:  ldstr      "Last Page"
+  IL_00f1:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+  IL_00f6:  ldc.i4.4
+  IL_00f7:  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfAction::.ctor(int32)
+  IL_00fc:  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setAction(class [iTextdotNET]com.lowagie.text.pdf.PdfAction)
+  IL_0101:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  IL_0106:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::addCell(class [iTextdotNET]com.lowagie.text.Phrase)
+  IL_010b:  nop
+  IL_010c:  ldc.i4.1
+  IL_010d:  stloc.s    k
+  IL_010f:  br.s       IL_014e
+  IL_0111:  nop
+  IL_0112:  ldloc.0
+  IL_0113:  ldstr      "This is page "
+  IL_0118:  ldloc.s    k
+  IL_011a:  box        [mscorlib]System.Int32
+  IL_011f:  call       string [mscorlib]System.String::Concat(object,
+                                                              object)
+  IL_0124:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0129:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_012e:  pop
+  IL_012f:  ldloc.0
+  IL_0130:  ldloc.s    table
+  IL_0132:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0137:  pop
+  IL_0138:  ldloc.0
+  IL_0139:  ldloc.3
+  IL_013a:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_013f:  pop
+  IL_0140:  ldloc.0
+  IL_0141:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  IL_0146:  pop
+  IL_0147:  nop
+  IL_0148:  ldloc.s    k
+  IL_014a:  ldc.i4.1
+  IL_014b:  add
+  IL_014c:  stloc.s    k
+  IL_014e:  ldloc.s    k
+  IL_0150:  ldc.i4.s   10
+  IL_0152:  cgt
+  IL_0154:  ldc.i4.0
+  IL_0155:  ceq
+  IL_0157:  stloc.s    CS$4$0000
+  IL_0159:  ldloc.s    CS$4$0000
+  IL_015b:  brtrue.s   IL_0111
+  IL_015d:  ldloc.0
+  IL_015e:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_0163:  nop
+  IL_0164:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 6 example 10: Images using java.awt.image!"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0014:  stloc.0
+  .try
+  {
+    IL_0015:  ldloc.0
+    IL_0016:  ldstr      "Chap0610.pdf"
+    IL_001b:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+    IL_0020:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+    IL_0025:  stloc.1
+    IL_0026:  ldloc.0
+    IL_0027:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+    IL_002c:  ldc.i4.0
+    IL_002d:  stloc.2
+    IL_002e:  br.s       IL_0045
+    IL_0030:  ldloc.0
+    IL_0031:  ldstr      "Who is this\? "
+    IL_0036:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+    IL_003b:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_0040:  pop
+    IL_0041:  ldloc.2
+    IL_0042:  ldc.i4.1
+    IL_0043:  add
+    IL_0044:  stloc.2
+    IL_0045:  ldloc.2
+    IL_0046:  ldc.i4     0x12c
+    IL_004b:  blt.s      IL_0030
+    IL_004d:  ldloc.1
+    IL_004e:  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfContentByte [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getDirectContent()
+    IL_0053:  stloc.3
+    IL_0054:  call       class [vjslib]java.awt.Toolkit [vjslib]java.awt.Toolkit::getDefaultToolkit()
+    IL_0059:  ldstr      "H.gif"
+    IL_005e:  callvirt   instance class [vjslib]java.awt.Image [vjslib]java.awt.Toolkit::getImage(string)
+    IL_0063:  ldnull
+    IL_0064:  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(class [vjslib_7]java.awt.Image,
+                                                                                                                    class [vjslib_7]java.awt.Color)
+    IL_0069:  stloc.s    image
+    IL_006b:  ldloc.s    image
+    IL_006d:  ldc.r4     100.
+    IL_0072:  ldc.r4     200.
+    IL_0077:  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAbsolutePosition(float32,
+                                                                                                float32)
+    IL_007c:  ldloc.3
+    IL_007d:  ldloc.s    image
+    IL_007f:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::addImage(class [iTextdotNET]com.lowagie.text.Image)
+    IL_0084:  leave.s    IL_00e4
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+    IL_0086:  dup
+    IL_0087:  stloc.s    V_8
+    IL_0089:  stloc.s    de
+    IL_008b:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_0090:  ldloc.s    de
+    IL_0092:  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+    IL_0097:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_009c:  leave.s    IL_00e4
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+    IL_009e:  dup
+    IL_009f:  stloc.s    V_9
+    IL_00a1:  stloc.s    ioe
+    IL_00a3:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_00a8:  ldloc.s    ioe
+    IL_00aa:  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+    IL_00af:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_00b4:  leave.s    IL_00e4
+  }  // end handler
+  IL_00b6:  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  IL_00bb:  stloc.s    V_10
+  IL_00bd:  ldloc.s    V_10
+  IL_00bf:  brfalse.s  IL_00c4
+  IL_00c1:  ldc.i4.1
+  IL_00c2:  br.s       IL_00c5
+  IL_00c4:  ldc.i4.0
+  IL_00c5:  endfilter
+  IL_00c7:  pop
+  IL_00c8:  ldloc.s    V_10
+  IL_00ca:  castclass  [vjslib]java.lang.Exception
+  IL_00cf:  stloc.s    ee
+  IL_00d1:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_00d6:  ldloc.s    ee
+  IL_00d8:  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  IL_00dd:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_00e2:  leave.s    IL_00ec
+  IL_00e4:  ldloc.0
+  .try IL_0015 to IL_0086 filter IL_00b6 handler IL_00c7 to IL_00e4
+  IL_00e5:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_00ea:  br.s       IL_00ec
+  IL_00ec:  ret
+
+]]></source>
+</source_elements></project>

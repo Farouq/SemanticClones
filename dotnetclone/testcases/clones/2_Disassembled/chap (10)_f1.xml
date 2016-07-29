@@ -1,0 +1,1130 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  ldstr      "Chapter 1 example 12: reading an existing PDF file"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  ldstr      "Chap0703.pdf"
+  newobj     instance void [iText]com.lowagie.text.pdf.PdfReader::.ctor(string)
+  stloc.s    Reader
+  ldloc.s    Reader
+  callvirt   instance int32 [iText]com.lowagie.text.pdf.PdfReader::getNumberOfPages()
+  stloc.s    n
+  ldloc.s    Reader
+  ldc.i4.1
+  callvirt   instance class [iText]com.lowagie.text.Rectangle [iText]com.lowagie.text.pdf.PdfReader::getPageSize(int32)
+  stloc.s    psize
+  ldloc.s    psize
+  callvirt   instance float32 [iText]com.lowagie.text.Rectangle::width()
+  stloc.s    width
+  ldloc.s    psize
+  callvirt   instance float32 [iText]com.lowagie.text.Rectangle::height()
+  stloc.2
+  ldloc.s    psize
+  ldc.r4     50.
+  ldc.r4     50.
+  ldc.r4     50.
+  ldc.r4     50.
+  newobj     instance void [iText]com.lowagie.text.Document::.ctor(class [iText]com.lowagie.text.Rectangle,
+                                                                             float32,
+                                                                             float32,
+                                                                             float32,
+                                                                             float32)
+  stloc.1
+  ldloc.1
+  ldstr      "Chap0112.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  stloc.s    Writer
+  nop
+  .try
+  {
+  ldstr      "watermark.jpg"
+  call       class [iText]com.lowagie.text.Image [iText]com.lowagie.text.Image::getInstance(string)
+  ldc.r4     200.
+  ldc.r4     320.
+  newobj     instance void [iText]com.lowagie.text.Watermark::.ctor(class [iText]com.lowagie.text.Image,
+                                                                                float32,
+                                                                                float32)
+  stloc.s    Watermark
+  ldloc.1
+  ldloc.s    Watermark
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Watermark)
+  pop
+  leave.s    IL_00ac
+  }  // end .try
+  catch [mscorlib]System.Exception 
+  {
+  dup
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+  stloc.s    e
+  nop
+  ldstr      "Are you sure you have the file 'watermark.jpg' in "
+    + "the right path\?"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::ClearProjectError()
+  leave.s    IL_00ac
+  }  // end handler
+  nop
+  ldloc.1
+  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  nop
+  ldloc.s    Writer
+  callvirt   instance class [iText]com.lowagie.text.pdf.PdfContentByte [iText]com.lowagie.text.pdf.PdfWriter::getDirectContent()
+  stloc.0
+  ldc.i4.0
+  stloc.3
+  ldc.i4.0
+  stloc.s    p
+  ldstr      "There are "
+  ldloc.s    n
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+  ldstr      " pages in the document."
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string,
+                                                              string)
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  br         IL_0344
+  ldloc.1
+  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.s    p
+  ldc.i4.1
+  add.ovf
+  stloc.s    p
+  ldloc.3
+  ldc.i4.1
+  add.ovf
+  stloc.3
+  ldloc.s    Writer
+  ldloc.s    Reader
+  ldloc.3
+  callvirt   instance class [iText]com.lowagie.text.pdf.PdfImportedPage [iText]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iText]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                         int32)
+  stloc.s    page1
+  ldloc.0
+  ldloc.s    page1
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldloc.2
+  ldc.r4     2.
+  div
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iText]com.lowagie.text.pdf.PdfTemplate,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32)
+  nop
+  ldstr      "processed page "
+  ldloc.3
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  ldloc.3
+  ldloc.s    n
+  clt
+  stloc.s    VB$CG$t_bool$S0
+  ldloc.s    VB$CG$t_bool$S0
+  brfalse.s  IL_019b
+  ldloc.3
+  ldc.i4.1
+  add.ovf
+  stloc.3
+  ldloc.s    Writer
+  ldloc.s    Reader
+  ldloc.3
+  callvirt   instance class [iText]com.lowagie.text.pdf.PdfImportedPage [iText]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iText]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                         int32)
+  stloc.s    page2
+  ldloc.0
+  ldloc.s    page2
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldloc.s    width
+  ldc.r4     2.
+  div
+  ldloc.2
+  ldc.r4     2.
+  div
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iText]com.lowagie.text.pdf.PdfTemplate,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32)
+  nop
+  ldstr      "processed page "
+  ldloc.3
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  nop
+  ldloc.3
+  ldloc.s    n
+  clt
+  stloc.s    VB$CG$t_bool$S0
+  ldloc.s    VB$CG$t_bool$S0
+  brfalse.s  IL_01f4
+  ldloc.3
+  ldc.i4.1
+  add.ovf
+  stloc.3
+  ldloc.s    Writer
+  ldloc.s    Reader
+  ldloc.3
+  callvirt   instance class [iText]com.lowagie.text.pdf.PdfImportedPage [iText]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iText]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                         int32)
+  stloc.s    page3
+  ldloc.0
+  ldloc.s    page3
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iText]com.lowagie.text.pdf.PdfTemplate,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32)
+  nop
+  ldstr      "processed page "
+  ldloc.3
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  nop
+  ldloc.3
+  ldloc.s    n
+  clt
+  stloc.s    VB$CG$t_bool$S0
+  ldloc.s    VB$CG$t_bool$S0
+  brfalse.s  IL_0250
+  ldloc.3
+  ldc.i4.1
+  add.ovf
+  stloc.3
+  ldloc.s    Writer
+  ldloc.s    Reader
+  ldloc.3
+  callvirt   instance class [iText]com.lowagie.text.pdf.PdfImportedPage [iText]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iText]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                         int32)
+  stloc.s    page4
+  ldloc.0
+  ldloc.s    page4
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldloc.s    width
+  ldc.r4     2.
+  div
+  ldc.r4     0.0
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iText]com.lowagie.text.pdf.PdfTemplate,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32,
+                                                                                             float32)
+  nop
+  ldstr      "processed page "
+  ldloc.3
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  nop
+  ldloc.0
+  ldc.i4     0xff
+  ldc.i4.0
+  ldc.i4.0
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::setRGBColorStroke(int32,
+                                                                                                   int32,
+                                                                                                   int32)
+  nop
+  ldloc.0
+  ldc.r4     0.0
+  ldloc.2
+  ldc.r4     2.
+  div
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::moveTo(float32,
+                                                                                        float32)
+  nop
+  ldloc.0
+  ldloc.s    width
+  ldloc.2
+  ldc.r4     2.
+  div
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                        float32)
+  nop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::stroke()
+  nop
+  ldloc.0
+  ldloc.s    width
+  ldc.r4     2.
+  div
+  ldloc.2
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::moveTo(float32,
+                                                                                        float32)
+  nop
+  ldloc.0
+  ldloc.s    width
+  ldc.r4     2.
+  div
+  ldc.r4     0.0
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                        float32)
+  nop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::stroke()
+  nop
+  ldstr      "Helvetica"
+  ldstr      "Cp1252"
+  ldc.i4.0
+  call       class [iText]com.lowagie.text.pdf.BaseFont [iText]com.lowagie.text.pdf.BaseFont::createFont(string,
+                                                                                                                   string,
+                                                                                                                   bool)
+  stloc.s    bf
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::beginText()
+  nop
+  ldloc.0
+  ldloc.s    bf
+  ldc.r4     14.
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::setFontAndSize(class [iText]com.lowagie.text.pdf.BaseFont,
+                                                                                                float32)
+  nop
+  ldloc.0
+  ldc.i4.1
+  ldstr      "page "
+  ldloc.s    p
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(int32)
+  ldstr      " of "
+  ldloc.s    n
+  conv.r8
+  ldc.r8     4.
+  div
+  ldloc.s    n
+  ldc.i4.4
+  rem
+  ldc.i4.0
+  cgt
+  ldc.i4.1
+  box        [mscorlib]System.Int32
+  ldc.i4.0
+  box        [mscorlib]System.Int32
+  call       object [Microsoft.VisualBasic]Microsoft.VisualBasic.Interaction::IIf(bool,
+                                                                                            object,
+                                                                                            object)
+  call       int32 [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToInteger(object)
+  conv.r8
+  add
+  call       string [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.Conversions::ToString(float64)
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string,
+                                                              string,
+                                                              string)
+  ldloc.s    width
+  ldc.r4     2.
+  div
+  ldc.r4     40.
+  ldc.r4     0.0
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::showTextAligned(int32,
+                                                                                                 string,
+                                                                                                 float32,
+                                                                                                 float32,
+                                                                                                 float32)
+  nop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfContentByte::endText()
+  nop
+  nop
+  ldloc.3
+  ldloc.s    n
+  clt
+  stloc.s    VB$CG$t_bool$S0
+  ldloc.s    VB$CG$t_bool$S0
+  brtrue     IL_00e2
+  ldloc.1
+  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  nop
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[IL_0000:  nop
+  ldstr      "Chapter 1 example 12: reading an existing PDF file"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  ldstr      "Chap0703.pdf"
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfReader::.ctor(string)
+  stloc.0
+  ldloc.0
+  callvirt   instance int32 [iTextdotNET]com.lowagie.text.pdf.PdfReader::getNumberOfPages()
+  stloc.1
+  ldloc.0
+  ldc.i4.1
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.pdf.PdfReader::getPageSize(int32)
+  stloc.2
+  ldloc.2
+  callvirt   instance float32 [iTextdotNET]com.lowagie.text.Rectangle::width()
+  stloc.3
+  ldloc.2
+  callvirt   instance float32 [iTextdotNET]com.lowagie.text.Rectangle::height()
+  stloc.s    height
+  ldloc.2
+  ldc.r4     50.
+  ldc.r4     50.
+  ldc.r4     50.
+  ldc.r4     50.
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  stloc.s    document
+  ldloc.s    document
+  ldstr      "Chap0112.pdf"
+  ldc.i4.2
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  stloc.s    writer
+  .try
+  {
+  nop
+  ldstr      "watermark.jpg"
+  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(string)
+  ldc.r4     200.
+  ldc.r4     320.
+  newobj     instance void [iTextdotNET]com.lowagie.text.Watermark::.ctor(class [iTextdotNET]com.lowagie.text.Image,
+                                                                                      float32,
+                                                                                      float32)
+  stloc.s    watermark
+  ldloc.s    document
+  ldloc.s    watermark
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Watermark)
+  pop
+  nop
+  leave.s    IL_009f
+  }  // end .try
+  catch [mscorlib]System.Exception 
+  {
+  stloc.s    e
+  nop
+  ldstr      "Are you sure you have the file 'watermark.jpg' in "
+    + "the right path\?"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  nop
+  leave.s    IL_009f
+  }  // end handler
+  nop
+  ldloc.s    document
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  nop
+  ldloc.s    writer
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfContentByte [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getDirectContent()
+  stloc.s    cb
+  ldc.i4.0
+  stloc.s    i
+  ldc.i4.0
+  stloc.s    p
+  ldstr      "There are "
+  ldloc.1
+  box        [mscorlib]System.Int32
+  ldstr      " pages in the document."
+  call       string [mscorlib]System.String::Concat(object,
+                                                              object,
+                                                              object)
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  br         IL_035d
+  nop
+  ldloc.s    document
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.s    p
+  ldc.i4.1
+  add
+  stloc.s    p
+  ldloc.s    i
+  ldc.i4.1
+  add
+  stloc.s    i
+  ldloc.s    writer
+  ldloc.0
+  ldloc.s    i
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfImportedPage [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iTextdotNET]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                                     int32)
+  stloc.s    page1
+  ldloc.s    cb
+  ldloc.s    page1
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldloc.s    height
+  ldc.r4     2.
+  div
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iTextdotNET]com.lowagie.text.pdf.PdfTemplate,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32)
+  nop
+  ldstr      "processed page "
+  ldloc.s    i
+  box        [mscorlib]System.Int32
+  call       string [mscorlib]System.String::Concat(object,
+                                                              object)
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  ldloc.s    i
+  ldloc.1
+  clt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0000
+  ldloc.s    CS$4$0000
+  brtrue.s   IL_01a0
+  nop
+  ldloc.s    i
+  ldc.i4.1
+  add
+  stloc.s    i
+  ldloc.s    writer
+  ldloc.0
+  ldloc.s    i
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfImportedPage [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iTextdotNET]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                                     int32)
+  stloc.s    page2
+  ldloc.s    cb
+  ldloc.s    page2
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldloc.3
+  ldc.r4     2.
+  div
+  ldloc.s    height
+  ldc.r4     2.
+  div
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iTextdotNET]com.lowagie.text.pdf.PdfTemplate,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32)
+  nop
+  ldstr      "processed page "
+  ldloc.s    i
+  box        [mscorlib]System.Int32
+  call       string [mscorlib]System.String::Concat(object,
+                                                              object)
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  nop
+  ldloc.s    i
+  ldloc.1
+  clt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0000
+  ldloc.s    CS$4$0000
+  brtrue.s   IL_0201
+  nop
+  ldloc.s    i
+  ldc.i4.1
+  add
+  stloc.s    i
+  ldloc.s    writer
+  ldloc.0
+  ldloc.s    i
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfImportedPage [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iTextdotNET]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                                     int32)
+  stloc.s    page3
+  ldloc.s    cb
+  ldloc.s    page3
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iTextdotNET]com.lowagie.text.pdf.PdfTemplate,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32)
+  nop
+  ldstr      "processed page "
+  ldloc.s    i
+  box        [mscorlib]System.Int32
+  call       string [mscorlib]System.String::Concat(object,
+                                                              object)
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  nop
+  ldloc.s    i
+  ldloc.1
+  clt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0000
+  ldloc.s    CS$4$0000
+  brtrue.s   IL_0264
+  nop
+  ldloc.s    i
+  ldc.i4.1
+  add
+  stloc.s    i
+  ldloc.s    writer
+  ldloc.0
+  ldloc.s    i
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfImportedPage [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iTextdotNET]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                                     int32)
+  stloc.s    page4
+  ldloc.s    cb
+  ldloc.s    page4
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldloc.3
+  ldc.r4     2.
+  div
+  ldc.r4     0.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iTextdotNET]com.lowagie.text.pdf.PdfTemplate,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32)
+  nop
+  ldstr      "processed page "
+  ldloc.s    i
+  box        [mscorlib]System.Int32
+  call       string [mscorlib]System.String::Concat(object,
+                                                              object)
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  nop
+  ldloc.s    cb
+  ldc.i4     0xff
+  ldc.i4.0
+  ldc.i4.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setRGBColorStroke(int32,
+                                                                                                         int32,
+                                                                                                         int32)
+  nop
+  ldloc.s    cb
+  ldc.r4     0.0
+  ldloc.s    height
+  ldc.r4     2.
+  div
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::moveTo(float32,
+                                                                                              float32)
+  nop
+  ldloc.s    cb
+  ldloc.3
+  ldloc.s    height
+  ldc.r4     2.
+  div
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                              float32)
+  nop
+  ldloc.s    cb
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  nop
+  ldloc.s    cb
+  ldloc.3
+  ldc.r4     2.
+  div
+  ldloc.s    height
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::moveTo(float32,
+                                                                                              float32)
+  nop
+  ldloc.s    cb
+  ldloc.3
+  ldc.r4     2.
+  div
+  ldc.r4     0.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                              float32)
+  nop
+  ldloc.s    cb
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  nop
+  ldstr      "Helvetica"
+  ldstr      "Cp1252"
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.pdf.BaseFont [iTextdotNET]com.lowagie.text.pdf.BaseFont::createFont(string,
+                                                                                                                               string,
+                                                                                                                               bool)
+  stloc.s    bf
+  ldloc.s    cb
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::beginText()
+  nop
+  ldloc.s    cb
+  ldloc.s    bf
+  ldc.r4     14.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setFontAndSize(class [iTextdotNET]com.lowagie.text.pdf.BaseFont,
+                                                                                                      float32)
+  nop
+  ldloc.s    cb
+  ldc.i4.1
+  ldc.i4.4
+  newarr     [mscorlib]System.Object
+  stloc.s    CS$0$0001
+  ldloc.s    CS$0$0001
+  ldc.i4.0
+  ldstr      "page "
+  stelem.ref
+  ldloc.s    CS$0$0001
+  ldc.i4.1
+  ldloc.s    p
+  box        [mscorlib]System.Int32
+  stelem.ref
+  ldloc.s    CS$0$0001
+  ldc.i4.2
+  ldstr      " of "
+  stelem.ref
+  ldloc.s    CS$0$0001
+  ldc.i4.3
+  ldloc.1
+  ldc.i4.4
+  div
+  ldloc.1
+  ldc.i4.4
+  rem
+  ldc.i4.0
+  bgt.s      IL_032e
+  ldc.i4.0
+  br.s       IL_032f
+  ldc.i4.1
+  add
+  box        [mscorlib]System.Int32
+  stelem.ref
+  ldloc.s    CS$0$0001
+  call       string [mscorlib]System.String::Concat(object[])
+  ldloc.3
+  ldc.r4     2.
+  div
+  ldc.r4     40.
+  ldc.r4     0.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::showTextAligned(int32,
+                                                                                                       string,
+                                                                                                       float32,
+                                                                                                       float32,
+                                                                                                       float32)
+  nop
+  ldloc.s    cb
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::endText()
+  nop
+  nop
+  ldloc.s    i
+  ldloc.1
+  clt
+  stloc.s    CS$4$0000
+  ldloc.s    CS$4$0000
+  brtrue     IL_00d7
+  ldloc.s    document
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 1 example 12: reading an existing PDF file"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  ldstr      "Chap0703.pdf"
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfReader::.ctor(string)
+  stloc.0
+  ldloc.0
+  callvirt   instance int32 [iTextdotNET]com.lowagie.text.pdf.PdfReader::getNumberOfPages()
+  stloc.1
+  ldloc.0
+  ldc.i4.1
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.pdf.PdfReader::getPageSize(int32)
+  stloc.2
+  ldloc.2
+  callvirt   instance float32 [iTextdotNET]com.lowagie.text.Rectangle::width()
+  stloc.3
+  ldloc.2
+  callvirt   instance float32 [iTextdotNET]com.lowagie.text.Rectangle::height()
+  stloc.s    height
+  ldloc.2
+  ldc.r4     50.
+  ldc.r4     50.
+  ldc.r4     50.
+  ldc.r4     50.
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  stloc.s    document
+  ldloc.s    document
+  ldstr      "Chap0112.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [vjslib_7]java.io.OutputStream)
+  stloc.s    writer
+  ldstr      "watermark.jpg"
+  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(string)
+  ldc.r4     200.
+  ldc.r4     320.
+  newobj     instance void [iTextdotNET]com.lowagie.text.Watermark::.ctor(class [iTextdotNET]com.lowagie.text.Image,
+                                                                                    float32,
+                                                                                    float32)
+  stloc.s    watermark
+  ldloc.s    document
+  ldloc.s    watermark
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Watermark)
+  pop
+  leave.s    IL_00ba
+  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  stloc.s    V_18
+  ldloc.s    V_18
+  brfalse.s  IL_009c
+  ldc.i4.1
+  br.s       IL_009d
+  ldc.i4.0
+  endfilter
+  pop
+  ldloc.s    V_18
+  castclass  [vjslib]java.lang.Exception
+  stloc.s    e
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Are you sure you have the file 'watermark.jpg' in "
+  + "the right path\?"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  leave.s    IL_00ba
+  ldloc.s    document
+  .try IL_0067 to IL_008e filter IL_008e handler IL_009f to IL_00ba
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  ldloc.s    writer
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfContentByte [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getDirectContent()
+  stloc.s    cb
+  ldc.i4.0
+  stloc.s    i
+  ldc.i4.0
+  stloc.s    p
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  ldstr      "There are "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc.1
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(int32)
+  ldstr      " pages in the document."
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  br         IL_0385
+  ldloc.s    document
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.s    p
+  ldc.i4.1
+  add
+  stloc.s    p
+  ldloc.s    i
+  ldc.i4.1
+  add
+  stloc.s    i
+  ldloc.s    writer
+  ldloc.0
+  ldloc.s    i
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfImportedPage [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iTextdotNET]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                                     int32)
+  stloc.s    page1
+  ldloc.s    cb
+  ldloc.s    page1
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldloc.s    height
+  ldc.r4     2.
+  div
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iTextdotNET]com.lowagie.text.pdf.PdfTemplate,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32)
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  ldstr      "processed page "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc.s    i
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(int32)
+  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  ldloc.s    i
+  ldloc.1
+  bge.s      IL_01da
+  ldloc.s    i
+  ldc.i4.1
+  add
+  stloc.s    i
+  ldloc.s    writer
+  ldloc.0
+  ldloc.s    i
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfImportedPage [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iTextdotNET]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                                     int32)
+  stloc.s    page2
+  ldloc.s    cb
+  ldloc.s    page2
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldloc.3
+  ldc.r4     2.
+  div
+  ldloc.s    height
+  ldc.r4     2.
+  div
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iTextdotNET]com.lowagie.text.pdf.PdfTemplate,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32)
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  ldstr      "processed page "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc.s    i
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(int32)
+  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  ldloc.s    i
+  ldloc.1
+  bge.s      IL_023d
+  ldloc.s    i
+  ldc.i4.1
+  add
+  stloc.s    i
+  ldloc.s    writer
+  ldloc.0
+  ldloc.s    i
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfImportedPage [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iTextdotNET]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                                     int32)
+  stloc.s    page3
+  ldloc.s    cb
+  ldloc.s    page3
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iTextdotNET]com.lowagie.text.pdf.PdfTemplate,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32)
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  ldstr      "processed page "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc.s    i
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(int32)
+  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  ldloc.s    i
+  ldloc.1
+  bge.s      IL_02a2
+  ldloc.s    i
+  ldc.i4.1
+  add
+  stloc.s    i
+  ldloc.s    writer
+  ldloc.0
+  ldloc.s    i
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfImportedPage [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getImportedPage(class [iTextdotNET]com.lowagie.text.pdf.PdfReader,
+                                                                                                                                                     int32)
+  stloc.s    page4
+  ldloc.s    cb
+  ldloc.s    page4
+  ldc.r4     0.5
+  ldc.r4     0.0
+  ldc.r4     0.0
+  ldc.r4     0.5
+  ldloc.3
+  ldc.r4     2.
+  div
+  ldc.r4     0.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::addTemplate(class [iTextdotNET]com.lowagie.text.pdf.PdfTemplate,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32,
+                                                                                                   float32)
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  ldstr      "processed page "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc.s    i
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(int32)
+  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  ldloc.s    cb
+  ldc.i4     0xff
+  ldc.i4.0
+  ldc.i4.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setRGBColorStroke(int32,
+                                                                                                         int32,
+                                                                                                         int32)
+  ldloc.s    cb
+  ldc.r4     0.0
+  ldloc.s    height
+  ldc.r4     2.
+  div
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::moveTo(float32,
+                                                                                              float32)
+  ldloc.s    cb
+  ldloc.3
+  ldloc.s    height
+  ldc.r4     2.
+  div
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                              float32)
+  ldloc.s    cb
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  ldloc.s    cb
+  ldloc.3
+  ldc.r4     2.
+  div
+  ldloc.s    height
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::moveTo(float32,
+                                                                                              float32)
+  ldloc.s    cb
+  ldloc.3
+  ldc.r4     2.
+  div
+  ldc.r4     0.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                              float32)
+  ldloc.s    cb
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  ldstr      "Helvetica"
+  ldstr      "Cp1252"
+  ldc.i4.0
+  call       class [iTextdotNET]com.lowagie.text.pdf.BaseFont [iTextdotNET]com.lowagie.text.pdf.BaseFont::createFont(string,
+                                                                                                                               string,
+                                                                                                                               bool)
+  stloc.s    bf
+  ldloc.s    cb
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::beginText()
+  ldloc.s    cb
+  ldloc.s    bf
+  ldc.r4     14.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setFontAndSize(class [iTextdotNET]com.lowagie.text.pdf.BaseFont,
+                                                                                                      float32)
+  ldloc.s    cb
+  ldc.i4.1
+  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  ldstr      "page "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc.s    p
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(int32)
+  ldstr      " of "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc.1
+  ldc.i4.4
+  div
+  ldloc.1
+  ldc.i4.4
+  rem
+  ldc.i4.0
+  ble.s      IL_035b
+  ldc.i4.1
+  br.s       IL_035c
+  ldc.i4.0
+  conv.i4
+  add
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(int32)
+  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  ldloc.3
+  ldc.r4     2.
+  div
+  ldc.r4     40.
+  ldc.r4     0.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::showTextAligned(int32,
+                                                                                                       string,
+                                                                                                       float32,
+                                                                                                       float32,
+                                                                                                       float32)
+  ldloc.s    cb
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::endText()
+  ldloc.s    i
+  ldloc.1
+  blt        IL_0103
+  ldloc.s    document
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  leave.s    IL_03ba
+  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  stloc.s    V_19
+  ldloc.s    V_19
+  brfalse.s  IL_03a4
+  ldc.i4.1
+  br.s       IL_03a5
+  ldc.i4.0
+  endfilter
+  pop
+  ldloc.s    V_19
+  castclass  [vjslib]java.lang.Exception
+  stloc.s    de
+  ldloc.s    de
+  callvirt   instance void [vjslib]java.lang.Throwable::printStackTrace()
+  leave.s    IL_03ba
+  br.s       IL_03bc
+  .try IL_000f to IL_0396 filter IL_0396 handler IL_03a7 to IL_03ba
+  ret
+
+]]></source>
+</source_elements></project>

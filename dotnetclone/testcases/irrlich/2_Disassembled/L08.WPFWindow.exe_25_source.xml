@@ -1,0 +1,406 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\Properties\Resources.Designer.cs" startline="31" endline="33"><![CDATA[
+         [global
+         internal Resources() {
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\Properties\Resources.Designer.cs" startline="34" endline="46"><![CDATA[
+         
+         /// <summary>
+         ///   Returns the cached ResourceManager instance used by this class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 if (object.ReferenceEquals(resourceMan, null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\Properties\Resources.Designer.cs" startline="47" endline="57"><![CDATA[
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\Properties\Resources.Designer.cs" startline="58" endline="60"><![CDATA[
+             set {
+                 resourceCulture = value;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\Properties\Settings.Designer.cs" startline="21" endline="23"><![CDATA[
+             get {
+                 return defaultInstance;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\Properties\Settings.Designer.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\Properties\Settings.Designer.cs" startline="18" endline="18"><![CDATA[
+         private static Settings defaultInstance = ((Settings)(global
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\MainWindow.xaml.cs" startline="21" endline="24"><![CDATA[
+ 		public MainWindow()
+ 		{
+ 			InitializeComponent();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\MainWindow.xaml.cs" startline="25" endline="30"><![CDATA[
+ 
+ 		private void Window_Loaded(object sender, RoutedEventArgs e)
+ 		{
+ 			userControl = new WinFormsUserControl();
+ 			wfHost.Child = userControl;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\MainWindow.xaml.cs" startline="31" endline="36"><![CDATA[
+ 
+ 		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+ 		{
+ 			if (userControl.IsRendering)
+ 				userControl.Shutdown();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\MainWindow.xaml.cs" startline="37" endline="41"><![CDATA[
+ 
+ 		private void buttonClose_Click(object sender, RoutedEventArgs e)
+ 		{
+ 			Close();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\MainWindow.xaml.cs" startline="42" endline="47"><![CDATA[
+ 
+ 		private void checkboxNotifyResizes_Checked(object sender, RoutedEventArgs e)
+ 		{
+ 			if (userControl != null)
+ 				userControl.IsNotifyResizes = checkboxNotifyResizes.IsChecked ?? false;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\MainWindow.xaml.cs" startline="48" endline="56"><![CDATA[
+ 
+ 		private void checkboxDockViewport_Checked(object sender, RoutedEventArgs e)
+ 		{
+ 			if (wfHost != null)
+ 			{
+ 				wfHost.Width = (bool)checkboxDockViewport.IsChecked ? double.NaN 
+ 				wfHost.Height = (bool)checkboxDockViewport.IsChecked ? double.NaN 
+ 			}
+ 		}
+]]></source>
+<source file="c:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\MainWindow.xaml" startline="1" endline="1"><![CDATA[
+ ?<Window x
+]]></source>
+<source file="c:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\MainWindow.xaml" startline="2" endline="58"><![CDATA[
+     xmlns="http
+     xmlns
+ 	xmlns
+     Title="WPF window example - Irrlicht Engine"
+ 	Width="440"
+ 	Height="400"
+ 	Loaded="Window_Loaded"
+ 	Closing="Window_Closing">
+ 	
+ 	<Window.Background>
+ 		<RadialGradientBrush GradientOrigin="0,0">
+ 			<GradientStop Color="Lime" Offset="0" />
+ 			<GradientStop Color="White" Offset="1" />
+ 		</RadialGradientBrush>
+ 	</Window.Background>
+ 	
+     <Grid Margin="12,8">
+ 		
+ 		<Grid.RowDefinitions>
+ 			<RowDefinition Height="Auto" />
+ 			<RowDefinition />
+ 			<RowDefinition Height="Auto" />
+ 		</Grid.RowDefinitions>
+ 		
+ 		<StackPanel Grid.Row="0">
+ 			
+ 			<Label
+ 				Content="This is simple WPF application"
+ 				FontFamily="Times New Roman"
+ 				FontSize="18" />
+ 			
+ 			<CheckBox
+ 				x
+ 				Checked="checkboxDockViewport_Checked"
+ 				Unchecked="checkboxDockViewport_Checked"
+ 				Content="Dock viewport"
+ 				IsChecked="True"
+ 				Margin="4,0,4,4" />
+ 			
+ 			<CheckBox
+ 				x
+ 				Checked="checkboxNotifyResizes_Checked"
+ 				Unchecked="checkboxNotifyResizes_Checked"
+ 				Content="Notify resizes"
+ 				IsChecked="True"
+ 				Margin="4,0,4,4" />
+ 			
+ 		</StackPanel>
+ 		
+ 		<WindowsFormsHost
+ 			Grid.Row="1"
+ 			x
+ 
+ 		<Button
+ 			Grid.Row="2"
+ 			x
+ 			Click="buttonClose_Click"
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.designer.cs" startline="15" endline="21"><![CDATA[
+ 		{
+ 			if (disposing && (components != null))
+ 			{
+ 				components.Dispose();
+ 			}
+ 			base.Dispose(disposing);
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.designer.cs" startline="22" endline="33"><![CDATA[
+ 
+ 		#region Component Designer generated code
+ 
+ 		/// <summary> 
+ 		/// Required method for Designer support - do not modify 
+ 		/// the contents of this method with the code editor.
+ 		/// </summary>
+ 		private void InitializeComponent()
+ 		{
+ 			components = new System.ComponentModel.Container();
+ 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.cs" startline="8" endline="55"><![CDATA[
+ 		private System.ComponentModel.IContainer components = null;
+ 		public WinFormsUserControl()
+ 		{
+ 			InitializeComponent();
+ 
+ 			backgroundCommand = new Command();
+ 
+ 			backgroundWorker = new BackgroundWorker();
+ 			backgroundWorker.WorkerSupportsCancellation = true;
+ 			backgroundWorker.DoWork += new DoWorkEventHandler(backgroundWorker_DoWork);
+ 			backgroundWorker.RunWorkerAsync(Handle);
+ 			components.Add(backgroundWorker);
+ 
+ 			IsNotifyResizes = true;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.cs" startline="56" endline="60"><![CDATA[
+ 
+ 		/// <summary>
+ 		/// Indicates that rendering thread is working.
+ 		/// </summary>
+ 		public bool IsRendering { get { return backgroundWorker.IsBusy; } }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.cs" startline="61" endline="80"><![CDATA[
+ 
+ 		/// <summary>
+ 		/// Indicates that Irrlicht will be notifyed (or not) about resize of client area of this control.
+ 		/// </summary>
+ 		public bool IsNotifyResizes { get; set; }
+ 
+ 		/// <summary>
+ 		/// Shuts down rendering thread.
+ 		/// This method must be called before this controls is going to be released.
+ 		/// </summary>
+ 		public void Shutdown()
+ 		{
+ 			if (backgroundWorker.IsBusy)
+ 			{
+ 				backgroundWorker.CancelAsync();
+ 
+ 				while (backgroundWorker.IsBusy)
+ 					Application.DoEvents();
+ 				while (backgroundWorker.IsBusy)
+ 					Application.DoEvents();
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.cs" startline="81" endline="95"><![CDATA[
+ 
+ 		protected override void OnResize(EventArgs e)
+ 		{
+ 			base.OnResize(e);
+ 
+ 			if (!IsNotifyResizes)
+ 				return;
+ 
+ 			lock (backgroundCommand)
+ 			{
+ 				Dimension2Di newSize = new Dimension2Di(this.Width, this.Height);
+ 				if (newSize.Area > 0)
+ 					backgroundCommand.SetCommand(Command.Kind.Resized, newSize);
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\WinFormsUserControl.cs" startline="96" endline="193"><![CDATA[
+ 
+ 		void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+ 		{
+ 			BackgroundWorker worker = sender as BackgroundWorker;
+ 			IrrlichtCreationParameters p = new IrrlichtCreationParameters();
+ 			p.DriverType = DriverType.Direct3D9;
+ 			p.WindowID = (IntPtr)e.Argument;
+ 
+ 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(p);
+ 			if (device == null)
+ 				// if device cannot be created by any reason - we just leave this thread,
+ 				// after all IsRedering will report false, so it is all OK.
+ 				return;
+ 
+ 			VideoDriver driver = device.VideoDriver;
+ 			SceneManager smgr = device.SceneManager;
+ 			GUIEnvironment gui = device.GUIEnvironment;
+ 
+ 			// setup a simple 3d scene
+ 
+ 			CameraSceneNode cam = smgr.AddCameraSceneNode();
+ 			cam.Target = new Vector3Df(0);
+ 
+ 			SceneNodeAnimator anim = smgr.CreateFlyCircleAnimator(new Vector3Df(0, 15, 0), 30.0f);
+ 			cam.AddAnimator(anim);
+ 			anim.Drop();
+ 
+ 			SceneNode cube = smgr.AddCubeSceneNode(20);
+ 			cube.SetMaterialTexture(0, driver.GetTexture("../../media/wall.bmp"));
+ 			cube.SetMaterialTexture(1, driver.GetTexture("../../media/water.jpg"));
+ 			cube.SetMaterialFlag(MaterialFlag.Lighting, false);
+ 			cube.SetMaterialType(MaterialType.Reflection2Layer);
+ 
+ 			smgr.AddSkyBoxSceneNode(
+ 				"../../media/irrlicht2_up.jpg",
+ 				"../../media/irrlicht2_dn.jpg",
+ 				"../../media/irrlicht2_lf.jpg",
+ 				"../../media/irrlicht2_rt.jpg",
+ 				"../../media/irrlicht2_ft.jpg",
+ 				"../../media/irrlicht2_bk.jpg");
+ 
+ 			gui.AddImage(
+ 				driver.GetTexture("../../media/lime_logo_alpha.png"),
+ 				new Vector2Di(30, 0));
+ 
+ 			// draw all
+ 
+ 			while (device.Run())
+ 			{
+ 				driver.BeginScene(false);
+ 				
+ 				smgr.DrawAll();
+ 				gui.DrawAll();
+ 
+ 				// draw stats
+ 
+ 				int x = 20;
+ 				int y = driver.ScreenSize.Height - 50;
+ 
+ 				driver.Draw2DRectangle(
+ 					new Recti(x, y, x + driver.ScreenSize.Width - 2 * x, y + 30),
+ 					new IrrlichtLime.Video.Color(0, 0, 0, 128));
+ 
+ 				device.GUIEnvironment.BuiltInFont.Draw(
+ 					"Driver
+ 					new Vector2Di(x + 5, y + 5),
+ 					new IrrlichtLime.Video.Color(255, 255, 255));
+ 
+ 				device.GUIEnvironment.BuiltInFont.Draw(
+ 					"FPS
+ 					new Vector2Di(x + 5, y + 15),
+ 					new IrrlichtLime.Video.Color(255, 255, 255));
+ 
+ 				driver.EndScene();
+ 
+ 				// check for cancellation
+ 
+ 				if (worker.CancellationPending)
+ 					device.Close();
+ 
+ 				// check for new command
+ 
+ 				lock (backgroundCommand)
+ 				{
+ 					switch (backgroundCommand.Type)
+ 					{
+ 						case Command.Kind.Resized
+ 							driver.ResizeNotify(backgroundCommand.Value as Dimension2Di);
+ 							backgroundCommand.Clear();
+ 							break;
+ 					}
+ 				}
+ 			}
+ 			while (device.Run())
+ 			{
+ 				driver.BeginScene(false);
+ 				
+ 				smgr.DrawAll();
+ 				gui.DrawAll();
+ 
+ 				// draw stats
+ 
+ 				int x = 20;
+ 				int y = driver.ScreenSize.Height - 50;
+ 
+ 				driver.Draw2DRectangle(
+ 					new Recti(x, y, x + driver.ScreenSize.Width - 2 * x, y + 30),
+ 					new IrrlichtLime.Video.Color(0, 0, 0, 128));
+ 
+ 				device.GUIEnvironment.BuiltInFont.Draw(
+ 					"Driver
+ 					new Vector2Di(x + 5, y + 5),
+ 					new IrrlichtLime.Video.Color(255, 255, 255));
+ 
+ 				device.GUIEnvironment.BuiltInFont.Draw(
+ 					"FPS
+ 					new Vector2Di(x + 5, y + 15),
+ 					new IrrlichtLime.Video.Color(255, 255, 255));
+ 
+ 				driver.EndScene();
+ 
+ 				// check for cancellation
+ 
+ 				if (worker.CancellationPending)
+ 					device.Close();
+ 
+ 				// check for new command
+ 
+ 				lock (backgroundCommand)
+ 				{
+ 					switch (backgroundCommand.Type)
+ 					{
+ 						case Command.Kind.Resized
+ 							driver.ResizeNotify(backgroundCommand.Value as Dimension2Di);
+ 							backgroundCommand.Clear();
+ 							break;
+ 					}
+ 				}
+ 			}
+ 
+ 			// drop the device
+ 
+ 			device.Drop();
+ 		}
+]]></source>
+<source file="c:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\App.xaml" startline="48" endline="4"><![CDATA[
+         public void InitializeComponent() {
+     StartupUri="MainWindow.xaml">
+]]></source>
+<source file="c:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\App.xaml" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="c:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L08.WPFWindow\App.xaml" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+</source_elements></project>

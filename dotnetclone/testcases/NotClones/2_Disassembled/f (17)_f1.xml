@@ -1,0 +1,457 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  newobj     instance void EditDistance.Program/_Closure$__1::.ctor()
+  stloc.0
+  ldloc.0
+  ldarg.1
+  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  ldloc.0
+  ldarg.0
+  stfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  ldloc.0
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldc.i4.1
+  add.ovf
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldc.i4.1
+  add.ovf
+  newobj     instance void int32[0...,0...]::.ctor(int32,
+                                                             int32)
+  stfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldc.i4.0
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  stloc.s    VB$t_i4$L0
+  stloc.3
+  br.s       IL_005e
+  ldloc.0
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldloc.3
+  ldc.i4.0
+  ldloc.3
+  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  nop
+  ldloc.3
+  ldc.i4.1
+  add.ovf
+  stloc.3
+  ldloc.3
+  ldloc.s    VB$t_i4$L0
+  stloc.s    VB$CG$t_i4$S0
+  ldloc.s    VB$CG$t_i4$S0
+  ble.s      IL_004b
+  ldc.i4.0
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  stloc.s    VB$t_i4$L1
+  stloc.s    j
+  br.s       IL_0090
+  ldloc.0
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldc.i4.0
+  ldloc.s    j
+  ldloc.s    j
+  callvirt   instance void int32[0...,0...]::Set(int32,
+                                                           int32,
+                                                           int32)
+  nop
+  ldloc.s    j
+  ldc.i4.1
+  add.ovf
+  stloc.s    j
+  ldloc.s    j
+  ldloc.s    VB$t_i4$L1
+  stloc.s    VB$CG$t_i4$S0
+  ldloc.s    VB$CG$t_i4$S0
+  ble.s      IL_0079
+  call       int32 [mscorlib]System.Environment::get_ProcessorCount()
+  ldc.i4.4
+  mul.ovf
+  stloc.1
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc.1
+  ldloc.1
+  ldloc.0
+  dup
+  ldvirtftn  instance void EditDistance.Program/_Closure$__1::_Lambda$__1(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+  newobj     instance void class [mscorlib]System.Action`4<int32,int32,int32,int32>::.ctor(object,
+                                                                                                     native int)
+  call       void [ParallelExtensionsExtras]System.Threading.Algorithms.ParallelAlgorithms::Wavefront(int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                int32,
+                                                                                                                class [mscorlib]System.Action`4<int32,int32,int32,int32>)
+  nop
+  ldloc.0
+  ldfld      int32[0...,0...] EditDistance.Program/_Closure$__1::$VB$Local_dist
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s1
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  ldloc.0
+  ldfld      string EditDistance.Program/_Closure$__1::$VB$Local_s2
+  callvirt   instance int32 [mscorlib]System.String::get_Length()
+  callvirt   instance int32 int32[0...,0...]::Get(int32,
+                                                            int32)
+  stloc.2
+  br.s       IL_00f1
+  ldloc.2
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldstr      "Chapter 11 example 3: named actions"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  ldc.r4     50.
+  ldc.r4     50.
+  ldc.r4     50.
+  ldc.r4     50.
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  stloc.0
+  ldloc.0
+  ldstr      "Chap1103.pdf"
+  ldc.i4.2
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  stloc.1
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  nop
+  ldstr      "c:/winnt/notepad.exe"
+  stloc.2
+  ldstr      "Click to open "
+  ldloc.2
+  call       string [mscorlib]System.String::Concat(string,
+                                                              string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+  ldloc.2
+  ldnull
+  ldnull
+  ldnull
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfAction::.ctor(string,
+                                                                                        string,
+                                                                                        string,
+                                                                                        string)
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setAction(class [iTextdotNET]com.lowagie.text.pdf.PdfAction)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  stloc.3
+  ldc.i4.4
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::.ctor(int32)
+  stloc.s    table
+  ldloc.s    table
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfPCell [iTextdotNET]com.lowagie.text.pdf.PdfPTable::getDefaultCell()
+  ldc.i4.1
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPCell::setHorizontalAlignment(int32)
+  nop
+  ldloc.s    table
+  ldstr      "First Page"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+  ldc.i4.1
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfAction::.ctor(int32)
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setAction(class [iTextdotNET]com.lowagie.text.pdf.PdfAction)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::addCell(class [iTextdotNET]com.lowagie.text.Phrase)
+  nop
+  ldloc.s    table
+  ldstr      "Prev Page"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+  ldc.i4.2
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfAction::.ctor(int32)
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setAction(class [iTextdotNET]com.lowagie.text.pdf.PdfAction)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::addCell(class [iTextdotNET]com.lowagie.text.Phrase)
+  nop
+  ldloc.s    table
+  ldstr      "Next Page"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+  ldc.i4.3
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfAction::.ctor(int32)
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setAction(class [iTextdotNET]com.lowagie.text.pdf.PdfAction)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::addCell(class [iTextdotNET]com.lowagie.text.Phrase)
+  nop
+  ldloc.s    table
+  ldstr      "Last Page"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string)
+  ldc.i4.4
+  newobj     instance void [iTextdotNET]com.lowagie.text.pdf.PdfAction::.ctor(int32)
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setAction(class [iTextdotNET]com.lowagie.text.pdf.PdfAction)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(class [iTextdotNET]com.lowagie.text.Chunk)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfPTable::addCell(class [iTextdotNET]com.lowagie.text.Phrase)
+  nop
+  ldc.i4.1
+  stloc.s    k
+  br.s       IL_014e
+  nop
+  ldloc.0
+  ldstr      "This is page "
+  ldloc.s    k
+  box        [mscorlib]System.Int32
+  call       string [mscorlib]System.String::Concat(object,
+                                                              object)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldloc.s    table
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  ldloc.3
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  nop
+  ldloc.s    k
+  ldc.i4.1
+  add
+  stloc.s    k
+  ldloc.s    k
+  ldc.i4.s   10
+  cgt
+  ldc.i4.0
+  ceq
+  stloc.s    CS$4$0000
+  ldloc.s    CS$4$0000
+  brtrue.s   IL_0111
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 6 example 12: Convert TIFF CCITT image int"
+  + "o PDF !"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  ldc.r4     50.
+  ldc.r4     50.
+  ldc.r4     50.
+  ldc.r4     50.
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  stloc.0
+  ldloc.0
+  ldstr      "Chap0612.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [vjslib_7]java.io.OutputStream)
+  stloc.1
+  ldstr      "12.tif"
+  newobj     instance void [vjslib]java.io.File::.ctor(string)
+  stloc.2
+  ldloc.2
+  newobj     instance void com.sun.media.jai.codec.FileSeekableStream::.ctor(class [vjslib]java.io.File)
+  stloc.3
+  ldloc.3
+  ldc.i4.0
+  newobj     instance void com.sun.media.jai.codec.TIFFDirectory::.ctor(class [vjslib]java.io.RandomAccessFile,
+                                                                                  int32)
+  stloc.s    dir
+  ldloc.s    dir
+  callvirt   instance int64 com.sun.media.jai.codec.TIFFDirectory::getIFDOffset()
+  stloc.s    IFDOffset
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  ldloc.1
+  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfContentByte [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getDirectContent()
+  stloc.s    cb
+  br         IL_01e5
+  ldloc.3
+  ldloc.s    IFDOffset
+  ldc.i4.0
+  newobj     instance void com.sun.media.jai.codec.TIFFDirectory::.ctor(class [vjslib]java.io.RandomAccessFile,
+                                                                                  int64,
+                                                                                  int32)
+  stloc.s    dir
+  ldloc.s    dir
+  callvirt   instance int64 com.sun.media.jai.codec.TIFFDirectory::getNextIFDOffset()
+  stloc.s    IFDOffset
+  ldloc.s    dir
+  ldc.i4     0x101
+  callvirt   instance int64 com.sun.media.jai.codec.TIFFDirectory::getFieldAsLong(int32)
+  stloc.s    h
+  ldloc.s    dir
+  ldc.i4     0x100
+  callvirt   instance int64 com.sun.media.jai.codec.TIFFDirectory::getFieldAsLong(int32)
+  stloc.s    w
+  ldloc.s    dir
+  ldc.i4     0x111
+  callvirt   instance int64 com.sun.media.jai.codec.TIFFDirectory::getFieldAsLong(int32)
+  stloc.s    offset
+  ldloc.s    dir
+  ldc.i4     0x117
+  callvirt   instance int64 com.sun.media.jai.codec.TIFFDirectory::getFieldAsLong(int32)
+  stloc.s    size
+  ldc.i4.0
+  stloc.s    reverse
+  ldloc.s    dir
+  ldc.i4     0x10a
+  callvirt   instance bool com.sun.media.jai.codec.TIFFDirectory::isTagPresent(int32)
+  brfalse.s  IL_00e9
+  ldloc.s    dir
+  ldc.i4     0x10a
+  callvirt   instance int64 com.sun.media.jai.codec.TIFFDirectory::getFieldAsLong(int32)
+  ldc.i4.2
+  conv.i8
+  beq.s      IL_00e6
+  ldc.i4.0
+  br.s       IL_00e7
+  ldc.i4.1
+  stloc.s    reverse
+  ldloc.s    dir
+  ldc.i4     0x103
+  callvirt   instance int64 com.sun.media.jai.codec.TIFFDirectory::getFieldAsLong(int32)
+  conv.i4
+  stloc.s    compression
+  ldloc.s    compression
+  stloc.s    V_16
+  ldloc.s    V_16
+  ldc.i4.2
+  beq.s      IL_010d
+  ldloc.s    V_16
+  ldc.i4.3
+  beq.s      IL_0116
+  ldloc.s    V_16
+  ldc.i4.4
+  beq.s      IL_0145
+  br.s       IL_014e
+  ldc.i4     0x101
+  stloc.s    compression
+  br.s       IL_0179
+  ldc.i4     0x101
+  stloc.s    compression
+  ldloc.s    dir
+  ldc.i4     0x124
+  callvirt   instance bool com.sun.media.jai.codec.TIFFDirectory::isTagPresent(int32)
+  brfalse.s  IL_0143
+  ldloc.s    dir
+  ldc.i4     0x124
+  callvirt   instance int64 com.sun.media.jai.codec.TIFFDirectory::getFieldAsLong(int32)
+  conv.i4
+  ldc.i4.1
+  and
+  brfalse.s  IL_0143
+  ldc.i4     0x102
+  stloc.s    compression
+  br.s       IL_0179
+  ldc.i4     0x100
+  stloc.s    compression
+  br.s       IL_0179
+  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  ldstr      "Compression type "
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  ldloc.s    compression
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(int32)
+  ldstr      " not supported"
+  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  newobj     instance void [vjslib]java.lang.Exception::.ctor(string)
+  throw
+  ldloc.s    size
+  conv.i4
+  stloc.s    V_17
+  ldloc.s    V_17
+  ldc.i4.0
+  blt.s      IL_0185
+  br.s       IL_018b
+  newobj     instance void [vjslib]java.lang.NegativeArraySizeException::.ctor()
+  throw
+  ldloc.s    V_17
+  newarr     [mscorlib]System.SByte
+  stloc.s    im
+  ldloc.3
+  ldloc.s    offset
+  callvirt   instance void [vjslib]java.io.RandomAccessFile::seek(int64)
+  ldloc.3
+  ldloc.s    im
+  callvirt   instance void [vjslib]java.io.RandomAccessFile::readFully(int8[])
+  ldloc.s    w
+  conv.i4
+  ldloc.s    h
+  conv.i4
+  ldloc.s    reverse
+  ldloc.s    compression
+  ldc.i4.0
+  ldloc.s    im
+  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(int32,
+                                                                                                                  int32,
+                                                                                                                  bool,
+                                                                                                                  int32,
+                                                                                                                  int32,
+                                                                                                                  int8[])
+  stloc.s    img
+  ldloc.s    img
+  ldc.r4     36.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::scalePercent(float32)
+  ldloc.s    img
+  ldc.r4     0.0
+  ldc.r4     0.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Image::setAbsolutePosition(float32,
+                                                                                              float32)
+  ldloc.s    cb
+  ldloc.s    img
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::addImage(class [iTextdotNET]com.lowagie.text.Image)
+  ldloc.0
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc.s    IFDOffset
+  ldc.i4.0
+  conv.i8
+  bne.un     IL_0076
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  leave.s    IL_021a
+  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  stloc.s    V_18
+  ldloc.s    V_18
+  brfalse.s  IL_0204
+  ldc.i4.1
+  br.s       IL_0205
+  ldc.i4.0
+  endfilter
+  pop
+  ldloc.s    V_18
+  castclass  [vjslib]java.lang.Exception
+  stloc.s    de
+  ldloc.s    de
+  callvirt   instance void [vjslib]java.lang.Throwable::printStackTrace()
+  leave.s    IL_021a
+  br.s       IL_021c
+  .try IL_002e to IL_01f6 filter IL_01f6 handler IL_0207 to IL_021a
+  ret
+
+]]></source>
+</source_elements></project>

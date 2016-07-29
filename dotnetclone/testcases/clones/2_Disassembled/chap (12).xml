@@ -1,0 +1,146 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 2 example 4: Negative leading"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldloc.0
+  IL_0013:  ldstr      "Chap0204.pdf"
+  IL_0018:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_001d:  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  IL_0022:  pop
+  IL_0023:  ldloc.0
+  IL_0024:  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  IL_0029:  nop
+  IL_002a:  ldloc.0
+  IL_002b:  ldc.r4     16.
+  IL_0030:  ldstr      "\r\n\r\n\r\n"
+  IL_0035:  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(float32,
+                                                                           string)
+  IL_003a:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_003f:  pop
+  IL_0040:  ldloc.0
+  IL_0041:  ldc.r4     -16.
+  IL_0046:  ldstr      "Hello, this is a very long phrase to show you the "
+  + "somewhat odd effect of a negative leading. You can write from bottom to"
+  + " top. This is not fully supported. It's something between a feature and"
+  + " a bug."
+  IL_004b:  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(float32,
+                                                                           string)
+  IL_0050:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_0055:  pop
+  IL_0056:  ldloc.0
+  IL_0057:  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  IL_005c:  nop
+  IL_005d:  nop
+  IL_005e:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+ IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 2 example 4: Negative leading"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldloc.0
+  IL_0013:  ldstr      "Chap0204.pdf"
+  IL_0018:  ldc.i4.2
+  IL_0019:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_001e:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_0023:  pop
+  IL_0024:  ldloc.0
+  IL_0025:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_002a:  nop
+  IL_002b:  ldloc.0
+  IL_002c:  ldc.r4     16.
+  IL_0031:  ldstr      "\n\n\n"
+  IL_0036:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(float32,
+                                                                                 string)
+  IL_003b:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0040:  pop
+  IL_0041:  ldloc.0
+  IL_0042:  ldc.r4     -16.
+  IL_0047:  ldstr      "Hello, this is a very long phrase to show you the "
+  + "somewhat odd effect of a negative leading. You can write from bottom to"
+  + " top. This is not fully supported. It's something between a feature and"
+  + " a bug."
+  IL_004c:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(float32,
+                                                                                 string)
+  IL_0051:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0056:  pop
+  IL_0057:  ldloc.0
+  IL_0058:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_005d:  nop
+  IL_005e:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 2 example 4: Negative leading"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0014:  stloc.0
+  .try
+  {
+    IL_0015:  ldloc.0
+    IL_0016:  ldstr      "Chap0204.pdf"
+    IL_001b:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+    IL_0020:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+    IL_0025:  pop
+    IL_0026:  ldloc.0
+    IL_0027:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+    IL_002c:  ldloc.0
+    IL_002d:  ldc.r4     16.
+    IL_0032:  ldstr      "\n\n\n"
+    IL_0037:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(float32,
+                                                                                   string)
+    IL_003c:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_0041:  pop
+    IL_0042:  ldloc.0
+    IL_0043:  ldc.r4     -16.
+    IL_0048:  ldstr      "Hello, this is a very long phrase to show you the "
+    + "somewhat odd effect of a negative leading. You can write from bottom to"
+    + " top. This is not fully supported. It's something between a feature and"
+    + " a bug."
+    IL_004d:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(float32,
+                                                                                   string)
+    IL_0052:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_0057:  pop
+    IL_0058:  leave.s    IL_0085
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+    IL_005a:  dup
+    IL_005b:  stloc.3
+    IL_005c:  stloc.1
+    IL_005d:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_0062:  ldloc.1
+    IL_0063:  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+    IL_0068:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_006d:  leave.s    IL_0085
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+    IL_006f:  dup
+    IL_0070:  stloc.s    V_4
+    IL_0072:  stloc.2
+    IL_0073:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_0078:  ldloc.2
+    IL_0079:  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+    IL_007e:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_0083:  leave.s    IL_0085
+  }  // end handler
+  IL_0085:  ldloc.0
+  IL_0086:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_008b:  br.s       IL_008d
+  IL_008d:  ret
+
+]]></source>
+</source_elements></project>

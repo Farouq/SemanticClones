@@ -1,0 +1,239 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  Console.WriteLine("Chapter 1 example 7: newPage()")
+
+        ' step 1: creation of a Document-object
+        Dim Document As New Document()
+
+        ' step 2:
+        ' we create a writer that listens to the Document
+        ' and directs a PDF-stream to a file
+        PdfWriter.getInstance(Document, New FileOutputStream("Chap0107.pdf"))
+
+        ' step 3:
+        ' we add a Watermark that will show up on PAGE 1
+        Try
+            Dim Watermark As New Watermark(Image.getInstance("Watermark.jpg"), 200, 420)
+            Call Document.add(Watermark)
+        Catch ee As java.lang.Exception
+            Console.WriteLine("Are you sure you have the file 'Watermark.jpg' in the right path?")
+        End Try
+        ' we add a Header that will show up on PAGE 1
+        Dim Header As New HeaderFooter(New Phrase("This is a header"), False)
+        Document.setHeader(Header)
+
+        ' we open the Document
+        Document.open()
+        ' we rotate the page, starting from PAGE 2
+        Document.setPageSize(PageSize.A4.rotate())
+        ' we need to change the position of the Watermark
+        Try
+            Dim Watermark As New Watermark(Image.getInstance("Watermark.jpg"), 320, 200)
+            Document.add(Watermark)
+        Catch ee As Exception
+            Console.WriteLine("Are you sure you have the file 'Watermark.jpg' in the right path?")
+        End Try
+
+        ' we add a Footer that will show up on PAGE 2
+        Dim footer As New HeaderFooter(New Phrase("This is page: "), True)
+        Document.setFooter(footer)
+
+        ' step 4: we add content to the Document
+
+        ' PAGE 1
+        Document.add(New Paragraph("Hello World"))
+        ' we trigger a page break
+        Document.newPage()
+
+        ' PAGE 2
+        ' we add some more content
+        Document.add(New Paragraph("Hello Earth"))
+        ' we remove the header starting from PAGE 3
+        Document.resetHeader()
+        ' we trigger a page break
+        Document.newPage()
+
+        ' PAGE 3
+        ' we add some more content
+        Document.add(New Paragraph("Hello Sun"))
+        Document.add(New Paragraph("Remark: the header has vanished!"))
+        ' we reset the page numbering
+        Document.resetPageCount()
+        ' we trigger a page break
+        Document.newPage()
+
+        ' PAGE 4
+        ' we add some more content
+        Document.add(New Paragraph("Hello Moon"))
+        Document.add(New Paragraph("Remark: the pagenumber has been reset!"))
+
+        ' step 5: we close the Document
+        Document.close()
+
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+Console.WriteLine("Chapter 10 example 5: Simple Columns");
+    
+		// step 1: creation of a document-object
+		Document document = new Document();
+    
+		// step 2:
+		// we create a writer that listens to the document
+		// and directs a PDF-stream to a file
+		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1005.pdf", FileMode.Create));
+    
+		// step 3: we open the document
+		document.open();
+    
+		// step 4:
+    
+		// we create some content
+		BaseFont bf = BaseFont.createFont(BaseFont.COURIER, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+		Font font = new Font(bf, 11, Font.NORMAL);
+    
+		Phrase unicodes = new Phrase(15, "UNI\n", font);
+		Phrase characters = new Phrase(15, "\n", font);
+		Phrase names = new Phrase(15, "NAME\n", font);
+    
+		for (int i = 0; i < 27; i++) 
+		{
+			unicodes.add(uni[i] + "\n");
+			characters.add(code[i] + "\n");
+			names.add(name[i] + "\n");
+		}
+    
+		// we grab the ContentByte and do some stuff with it
+		PdfContentByte cb = writer.getDirectContent();
+    
+		ColumnText ct = new ColumnText(cb);
+		ct.setSimpleColumn(unicodes, 60, 300, 100, 300 + 28 * 15, 15, ElementConst.ALIGN_CENTER);
+		ct.go();
+		cb.rectangle(103, 295, 52, 8 + 28 * 15);
+		cb.stroke();
+		ct.setSimpleColumn(characters, 105, 300, 150, 300 + 28 * 15, 15, ElementConst.ALIGN_RIGHT);
+		ct.go();
+		ct.setSimpleColumn(names, 160, 300, 500, 300 + 28 * 15, 15, ElementConst.ALIGN_LEFT);
+		ct.go();
+
+		// step 5: we close the document
+		document.close();
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+ System.out.println("Chapter 5 example 14: nested tables");
+        // step 1: creation of a document-object
+        Document document = new Document();
+        try {
+            // step 2:
+            // we create a writer that listens to the document
+            // and directs a PDF-stream to a file
+            PdfWriter.getInstance(document, new FileOutputStream("Chap0514.pdf"));
+            // step 3: we open the document
+            document.open();
+            // step 4: we create a table and add it to the document
+            
+            // simple example
+            
+            Table secondTable = new Table(2);
+            secondTable.addCell("2nd table 0.0");
+            secondTable.addCell("2nd table 0.1");
+            secondTable.addCell("2nd table 1.0");
+            secondTable.addCell("2nd table 1.1");
+            
+            Table aTable = new Table(4,4);    // 4 rows, 4 columns
+            aTable.setAutoFillEmptyCells(true);
+            aTable.addCell("2.2", new Point(2,2));
+            aTable.addCell("3.3", new Point(3,3));
+            aTable.addCell("2.1", new Point(2,1));
+            aTable.insertTable(secondTable, new Point(1,3));
+            document.add(aTable);
+            
+            // example with 2 nested tables
+            
+            Table thirdTable = new Table(2);
+            thirdTable.addCell("3rd table 0.0");
+            thirdTable.addCell("3rd table 0.1");
+            thirdTable.addCell("3rd table 1.0");
+            thirdTable.addCell("3rd table 1.1");
+            
+            aTable = new Table(5,5);
+            aTable.setAutoFillEmptyCells(true);
+            aTable.addCell("2.2", new Point(2,2));
+            aTable.addCell("3.3", new Point(3,3));
+            aTable.addCell("2.1", new Point(2,1));
+            aTable.insertTable(secondTable, new Point(1,3));
+            aTable.insertTable(thirdTable, new Point(6,2));
+            document.add(aTable);        
+            
+            // relative column widths are preserved
+            
+            Table a = new Table( 2 );
+            a.setWidths( new float[] { 85, 15 } );
+            a.addCell("a-1");
+            a.addCell("a-2");
+            
+            Table b = new Table(5);
+            b.setWidths( new float[] { 15, 7, 7, 7, 7 } );
+            b.addCell("b-1");
+            b.addCell("b-2");
+            b.addCell("b-3");
+            b.addCell("b-4");
+            b.addCell("b-5");
+            
+            // now, insert these 2 tables into a third for layout purposes
+            Table c = new Table( 3, 1 );
+            c.setWidth( 100.0f );
+            c.setWidths( new float[] { 20, 2, 78 } );
+            c.insertTable(a, new Point(0,0) );
+            c.insertTable(b, new Point(0,2) );
+
+            document.add(c);
+            
+            // adding extra cells after adding a table
+            
+            Table t1 = new Table(3);
+            t1.addCell("1.1");
+            t1.addCell("1.2");
+            t1.addCell("1.3");
+            // nested
+            Table t2 = new Table(2);
+            t2.addCell("2.1");
+            t2.addCell("2.2");
+            
+            // now insert the nested
+            t1.insertTable(t2);
+            t1.addCell("new cell");    // correct row/column ?
+            document.add(t1);       
+            
+            // deep nesting
+            
+            t1=new Table(2,2); 
+            for (int i = 0; i < 4; i++) {
+                t1.addCell("t1");
+            }
+            
+            t2=new Table(3,3);
+            for (int i = 0; i < 9; i++) {
+                if (i == 4) t2.insertTable(t1);
+                else t2.addCell("t2"); 
+            }
+            
+            Table t3=new Table(4,4);
+            for (int i = 0; i < 16; i++) {
+                if (i == 10) t3.insertTable(t2);
+                else t3.addCell("t3"); 
+            }
+
+            document.add(t3); 
+        }
+        catch(DocumentException de) {
+            System.out.println(de.getMessage());
+        }
+        catch(IOException ioe) {
+            System.out.println(ioe.getMessage());
+        }
+        // step 5: we close the document
+        document.close();
+]]></source>
+</source_elements></project>

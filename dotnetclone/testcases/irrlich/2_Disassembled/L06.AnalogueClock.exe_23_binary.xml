@@ -1,0 +1,1074 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L06.AnalogueClock\Program.cs" startline="16" endline="48"><![CDATA[
+  {
+    .entrypoint
+    // Code size       349 (0x15d)
+    .maxstack  8
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [1] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode camera,
+             [2] string s,
+             [3] object[] CS$0$0000,
+             [4] bool CS$4$0001)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+    IL_0000:  nop
+    IL_0001:  ldc.i4.4
+    IL_0002:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType)
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldstr      "Analogue Clock - Irrlicht Lime"
+    IL_000e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_0013:  nop
+    IL_0014:  ldloc.0
+    IL_0015:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.CursorControl [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_CursorControl()
+    IL_001a:  ldc.i4.0
+    IL_001b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.CursorControl::set_Visible(bool)
+    IL_0020:  nop
+    IL_0021:  ldloc.0
+    IL_0022:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0027:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_RootNode()
+    IL_002c:  call       class L06.AnalogueClock.ClockNode L06.AnalogueClock.ClockNode::AddClockNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_0031:  pop
+    IL_0032:  ldloc.0
+    IL_0033:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0038:  ldnull
+    IL_0039:  ldc.r4     100.
+    IL_003e:  ldc.r4     0.1
+    IL_0043:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNodeFPS(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                              float32,
+                                                                                                                                                              float32)
+    IL_0048:  stloc.1
+    IL_0049:  ldloc.1
+    IL_004a:  ldc.r4     40.
+    IL_004f:  ldc.r4     -20.
+    IL_0054:  ldc.r4     -100.
+    IL_0059:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_005e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0063:  nop
+    IL_0064:  ldloc.1
+    IL_0065:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor()
+    IL_006a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_Target(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_006f:  nop
+    IL_0070:  br         IL_0146
+
+    IL_0075:  nop
+    IL_0076:  ldloc.0
+    IL_0077:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_007c:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene()
+    IL_0081:  pop
+    IL_0082:  ldloc.0
+    IL_0083:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_0088:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_008d:  nop
+    IL_008e:  ldstr      "{0}\n{1}\n{2}\n{3} tris\n{4} fps"
+    IL_0093:  ldc.i4.5
+    IL_0094:  newarr     [mscorlib]System.Object
+    IL_0099:  stloc.3
+    IL_009a:  ldloc.3
+    IL_009b:  ldc.i4.0
+    IL_009c:  ldloc.0
+    IL_009d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Timer [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_Timer()
+    IL_00a2:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Timer/RealTimeDate [IrrlichtLime]IrrlichtLime.Timer::get_RealTimeAndDate()
+    IL_00a7:  stelem.ref
+    IL_00a8:  ldloc.3
+    IL_00a9:  ldc.i4.1
+    IL_00aa:  ldloc.0
+    IL_00ab:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00b0:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_VendorInfo()
+    IL_00b5:  stelem.ref
+    IL_00b6:  ldloc.3
+    IL_00b7:  ldc.i4.2
+    IL_00b8:  ldloc.0
+    IL_00b9:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00be:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_00c3:  stelem.ref
+    IL_00c4:  ldloc.3
+    IL_00c5:  ldc.i4.3
+    IL_00c6:  ldloc.0
+    IL_00c7:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00cc:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_PrimitiveCountDrawn()
+    IL_00d1:  box        [mscorlib]System.Int32
+    IL_00d6:  stelem.ref
+    IL_00d7:  ldloc.3
+    IL_00d8:  ldc.i4.4
+    IL_00d9:  ldloc.0
+    IL_00da:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_00df:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_00e4:  box        [mscorlib]System.Int32
+    IL_00e9:  stelem.ref
+    IL_00ea:  ldloc.3
+    IL_00eb:  call       string [mscorlib]System.String::Format(string,
+                                                                object[])
+    IL_00f0:  stloc.2
+    IL_00f1:  ldloc.0
+    IL_00f2:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_00f7:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_BuiltInFont()
+    IL_00fc:  ldloc.2
+    IL_00fd:  ldc.i4.s   11
+    IL_00ff:  ldc.i4.s   11
+    IL_0101:  ldc.i4.0
+    IL_0102:  ldc.i4.0
+    IL_0103:  ldc.i4.0
+    IL_0104:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0109:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIFont::Draw(string,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_010e:  nop
+    IL_010f:  ldloc.0
+    IL_0110:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0115:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_BuiltInFont()
+    IL_011a:  ldloc.2
+    IL_011b:  ldc.i4.s   10
+    IL_011d:  ldc.i4.s   10
+    IL_011f:  ldc.i4     0xff
+    IL_0124:  ldc.i4     0xff
+    IL_0129:  ldc.i4     0xff
+    IL_012e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0133:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIFont::Draw(string,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0138:  nop
+    IL_0139:  ldloc.0
+    IL_013a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_013f:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_0144:  pop
+    IL_0145:  nop
+    IL_0146:  ldloc.0
+    IL_0147:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_014c:  stloc.s    CS$4$0001
+    IL_014e:  ldloc.s    CS$4$0001
+    IL_0150:  brtrue     IL_0075
+
+    IL_0155:  ldloc.0
+    IL_0156:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_015b:  pop
+    IL_015c:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L06.AnalogueClock\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L06.AnalogueClock\ClockNode.cs" startline="16" endline="21"><![CDATA[
+  {
+    // Code size       27 (0x1b)
+    .maxstack  3
+    .locals init ([0] class L06.AnalogueClock.ClockNode n,
+             [1] class L06.AnalogueClock.ClockNode CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.0
+    IL_0003:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_0008:  newobj     instance void L06.AnalogueClock.ClockNode::.ctor(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                          class [IrrlichtLime]IrrlichtLime.Scene.SceneManager)
+    IL_000d:  stloc.0
+    IL_000e:  ldloc.0
+    IL_000f:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0014:  pop
+    IL_0015:  ldloc.0
+    IL_0016:  stloc.1
+    IL_0017:  br.s       IL_0019
+
+    IL_0019:  ldloc.1
+    IL_001a:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L06.AnalogueClock\ClockNode.cs" startline="22" endline="128"><![CDATA[
+  {
+    // Code size       1858 (0x742)
+    .maxstack  12
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Scene.Mesh mesh,
+             [1] class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode clockFace,
+             [2] int32 i,
+             [3] class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode clockCenter,
+             [4] int32 j,
+             [5] class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode clockTick,
+             [6] float32 s,
+             [7] float32 c,
+             [8] bool CS$4$0000)
+    IL_0000:  ldarg.0
+    IL_0001:  newobj     instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material>::.ctor()
+    IL_0006:  stfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material> L06.AnalogueClock.ClockNode::materialList
+    IL_000b:  ldarg.0
+    IL_000c:  ldarg.1
+    IL_000d:  ldarg.2
+    IL_000e:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::.ctor(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                         class [IrrlichtLime]IrrlichtLime.Scene.SceneManager)
+    IL_0013:  nop
+    IL_0014:  nop
+    IL_0015:  ldarg.0
+    IL_0016:  ldarg.0
+    IL_0017:  ldftn      instance class [IrrlichtLime]IrrlichtLime.Core.AABBox L06.AnalogueClock.ClockNode::ClockNode_OnGetBoundingBox()
+    IL_001d:  newobj     instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetBoundingBoxEventHandler::.ctor(object,
+                                                                                                                    native int)
+    IL_0022:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::add_OnGetBoundingBox(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetBoundingBoxEventHandler)
+    IL_0027:  nop
+    IL_0028:  ldarg.0
+    IL_0029:  ldarg.0
+    IL_002a:  ldftn      instance int32 L06.AnalogueClock.ClockNode::ClockNode_OnGetMaterialCount()
+    IL_0030:  newobj     instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetMaterialCountEventHandler::.ctor(object,
+                                                                                                                      native int)
+    IL_0035:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::add_OnGetMaterialCount(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetMaterialCountEventHandler)
+    IL_003a:  nop
+    IL_003b:  ldarg.0
+    IL_003c:  ldarg.0
+    IL_003d:  ldftn      instance class [IrrlichtLime]IrrlichtLime.Video.Material L06.AnalogueClock.ClockNode::ClockNode_OnGetMaterial(int32)
+    IL_0043:  newobj     instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetMaterialEventHandler::.ctor(object,
+                                                                                                                 native int)
+    IL_0048:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::add_OnGetMaterial(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode/GetMaterialEventHandler)
+    IL_004d:  nop
+    IL_004e:  ldarg.0
+    IL_004f:  ldarg.0
+    IL_0050:  ldftn      instance void L06.AnalogueClock.ClockNode::ClockNode_OnRegisterSceneNode()
+    IL_0056:  newobj     instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode/RegisterSceneNodeEventHandler::.ctor(object,
+                                                                                                                       native int)
+    IL_005b:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::add_OnRegisterSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode/RegisterSceneNodeEventHandler)
+    IL_0060:  nop
+    IL_0061:  ldarg.0
+    IL_0062:  ldarg.0
+    IL_0063:  ldftn      instance void L06.AnalogueClock.ClockNode::ClockNode_OnRender()
+    IL_0069:  newobj     instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode/RenderEventHandler::.ctor(object,
+                                                                                                            native int)
+    IL_006e:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::add_OnRender(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode/RenderEventHandler)
+    IL_0073:  nop
+    IL_0074:  ldarg.0
+    IL_0075:  ldarg.0
+    IL_0076:  ldftn      instance void L06.AnalogueClock.ClockNode::ClockNode_OnAnimate(uint32)
+    IL_007c:  newobj     instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode/AnimateEventHandler::.ctor(object,
+                                                                                                             native int)
+    IL_0081:  call       instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::add_OnAnimate(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode/AnimateEventHandler)
+    IL_0086:  nop
+    IL_0087:  ldarg.0
+    IL_0088:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_008d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_GeometryCreator()
+    IL_0092:  ldc.r4     100.
+    IL_0097:  ldc.r4     32.
+    IL_009c:  ldc.i4.6
+    IL_009d:  ldc.i4     0xb4
+    IL_00a2:  ldc.i4     0xb4
+    IL_00a7:  ldc.i4     0xb4
+    IL_00ac:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_00b1:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator::CreateCylinderMesh(float32,
+                                                                                                                                                   float32,
+                                                                                                                                                   int32,
+                                                                                                                                                   class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_00b6:  stloc.0
+    IL_00b7:  ldarg.0
+    IL_00b8:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_00bd:  ldloc.0
+    IL_00be:  ldarg.0
+    IL_00bf:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.Mesh,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_00c4:  stloc.1
+    IL_00c5:  ldloc.1
+    IL_00c6:  ldc.r4     90.
+    IL_00cb:  ldc.r4     0.0
+    IL_00d0:  ldc.r4     0.0
+    IL_00d5:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00da:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Rotation(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_00df:  nop
+    IL_00e0:  ldloc.1
+    IL_00e1:  ldc.r4     0.0
+    IL_00e6:  ldc.r4     0.0
+    IL_00eb:  ldc.r4     10.
+    IL_00f0:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00f5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_00fa:  nop
+    IL_00fb:  ldloc.0
+    IL_00fc:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0101:  pop
+    IL_0102:  ldloc.1
+    IL_0103:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::UpdateAbsolutePosition()
+    IL_0108:  nop
+    IL_0109:  ldarg.0
+    IL_010a:  ldloc.1
+    IL_010b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.AABBox [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_BoundingBoxTransformed()
+    IL_0110:  stfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox L06.AnalogueClock.ClockNode::boundingBox
+    IL_0115:  ldc.i4.0
+    IL_0116:  stloc.2
+    IL_0117:  br.s       IL_0130
+
+    IL_0119:  ldarg.0
+    IL_011a:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material> L06.AnalogueClock.ClockNode::materialList
+    IL_011f:  ldloc.1
+    IL_0120:  ldloc.2
+    IL_0121:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_0126:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material>::Add(!0)
+    IL_012b:  nop
+    IL_012c:  ldloc.2
+    IL_012d:  ldc.i4.1
+    IL_012e:  add
+    IL_012f:  stloc.2
+    IL_0130:  ldloc.2
+    IL_0131:  ldloc.1
+    IL_0132:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_MaterialCount()
+    IL_0137:  clt
+    IL_0139:  stloc.s    CS$4$0000
+    IL_013b:  ldloc.s    CS$4$0000
+    IL_013d:  brtrue.s   IL_0119
+
+    IL_013f:  ldarg.0
+    IL_0140:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_0145:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_GeometryCreator()
+    IL_014a:  ldc.r4     10.
+    IL_014f:  ldc.r4     24.
+    IL_0154:  ldc.i4.s   16
+    IL_0156:  ldc.i4     0xff
+    IL_015b:  ldc.i4     0xff
+    IL_0160:  ldc.i4     0xff
+    IL_0165:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_016a:  ldc.i4.0
+    IL_016b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator::CreateCylinderMesh(float32,
+                                                                                                                                                   float32,
+                                                                                                                                                   int32,
+                                                                                                                                                   class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                                                                                   bool)
+    IL_0170:  stloc.0
+    IL_0171:  ldarg.0
+    IL_0172:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_0177:  ldloc.0
+    IL_0178:  ldarg.0
+    IL_0179:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.Mesh,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_017e:  stloc.3
+    IL_017f:  ldloc.3
+    IL_0180:  ldc.r4     90.
+    IL_0185:  ldc.r4     0.0
+    IL_018a:  ldc.r4     0.0
+    IL_018f:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0194:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Rotation(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0199:  nop
+    IL_019a:  ldloc.3
+    IL_019b:  ldc.r4     0.0
+    IL_01a0:  ldc.r4     0.0
+    IL_01a5:  ldc.r4     -14.
+    IL_01aa:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_01af:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_01b4:  nop
+    IL_01b5:  ldloc.0
+    IL_01b6:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_01bb:  pop
+    IL_01bc:  ldloc.3
+    IL_01bd:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::UpdateAbsolutePosition()
+    IL_01c2:  nop
+    IL_01c3:  ldarg.0
+    IL_01c4:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox L06.AnalogueClock.ClockNode::boundingBox
+    IL_01c9:  ldloc.3
+    IL_01ca:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.AABBox [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_BoundingBoxTransformed()
+    IL_01cf:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.AABBox::AddInternalBox(class [IrrlichtLime]IrrlichtLime.Core.AABBox)
+    IL_01d4:  nop
+    IL_01d5:  ldc.i4.0
+    IL_01d6:  stloc.2
+    IL_01d7:  br.s       IL_01f0
+
+    IL_01d9:  ldarg.0
+    IL_01da:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material> L06.AnalogueClock.ClockNode::materialList
+    IL_01df:  ldloc.3
+    IL_01e0:  ldloc.2
+    IL_01e1:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_01e6:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material>::Add(!0)
+    IL_01eb:  nop
+    IL_01ec:  ldloc.2
+    IL_01ed:  ldc.i4.1
+    IL_01ee:  add
+    IL_01ef:  stloc.2
+    IL_01f0:  ldloc.2
+    IL_01f1:  ldloc.3
+    IL_01f2:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_MaterialCount()
+    IL_01f7:  clt
+    IL_01f9:  stloc.s    CS$4$0000
+    IL_01fb:  ldloc.s    CS$4$0000
+    IL_01fd:  brtrue.s   IL_01d9
+
+    IL_01ff:  ldc.i4.0
+    IL_0200:  stloc.s    j
+    IL_0202:  br         IL_0338
+
+    IL_0207:  nop
+    IL_0208:  ldarg.0
+    IL_0209:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_020e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_GeometryCreator()
+    IL_0213:  ldc.r4     5.
+    IL_0218:  ldc.r4     10.
+    IL_021d:  ldc.i4.s   16
+    IL_021f:  ldc.i4     0xff
+    IL_0224:  ldc.i4     0xff
+    IL_0229:  ldc.i4     0xff
+    IL_022e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0233:  ldc.i4.0
+    IL_0234:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator::CreateCylinderMesh(float32,
+                                                                                                                                                   float32,
+                                                                                                                                                   int32,
+                                                                                                                                                   class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                                                                                   bool)
+    IL_0239:  stloc.0
+    IL_023a:  ldarg.0
+    IL_023b:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_0240:  ldloc.0
+    IL_0241:  ldarg.0
+    IL_0242:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.Mesh,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_0247:  stloc.s    clockTick
+    IL_0249:  ldloc.s    clockTick
+    IL_024b:  ldc.r4     90.
+    IL_0250:  ldc.r4     0.0
+    IL_0255:  ldc.r4     0.0
+    IL_025a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_025f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Rotation(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0264:  nop
+    IL_0265:  ldloc.s    j
+    IL_0267:  ldc.i4.s   30
+    IL_0269:  mul
+    IL_026a:  conv.r8
+    IL_026b:  ldc.r8     57.295779513082323
+    IL_0274:  div
+    IL_0275:  call       float64 [mscorlib]System.Math::Sin(float64)
+    IL_027a:  conv.r4
+    IL_027b:  stloc.s    s
+    IL_027d:  ldloc.s    j
+    IL_027f:  ldc.i4.s   30
+    IL_0281:  mul
+    IL_0282:  conv.r8
+    IL_0283:  ldc.r8     57.295779513082323
+    IL_028c:  div
+    IL_028d:  call       float64 [mscorlib]System.Math::Cos(float64)
+    IL_0292:  conv.r4
+    IL_0293:  stloc.s    c
+    IL_0295:  ldloc.s    clockTick
+    IL_0297:  ldloc.s    s
+    IL_0299:  ldc.r4     80.
+    IL_029e:  mul
+    IL_029f:  ldloc.s    c
+    IL_02a1:  ldc.r4     80.
+    IL_02a6:  mul
+    IL_02a7:  ldc.r4     0.0
+    IL_02ac:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_02b1:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_02b6:  nop
+    IL_02b7:  ldloc.s    j
+    IL_02b9:  ldc.i4.3
+    IL_02ba:  rem
+    IL_02bb:  ldc.i4.0
+    IL_02bc:  ceq
+    IL_02be:  ldc.i4.0
+    IL_02bf:  ceq
+    IL_02c1:  stloc.s    CS$4$0000
+    IL_02c3:  ldloc.s    CS$4$0000
+    IL_02c5:  brtrue.s   IL_02e3
+
+    IL_02c7:  ldloc.s    clockTick
+    IL_02c9:  ldc.r4     2.
+    IL_02ce:  ldc.r4     1.
+    IL_02d3:  ldc.r4     2.
+    IL_02d8:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_02dd:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Scale(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_02e2:  nop
+    IL_02e3:  ldloc.0
+    IL_02e4:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_02e9:  pop
+    IL_02ea:  ldloc.s    clockTick
+    IL_02ec:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::UpdateAbsolutePosition()
+    IL_02f1:  nop
+    IL_02f2:  ldarg.0
+    IL_02f3:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox L06.AnalogueClock.ClockNode::boundingBox
+    IL_02f8:  ldloc.s    clockTick
+    IL_02fa:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.AABBox [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_BoundingBoxTransformed()
+    IL_02ff:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.AABBox::AddInternalBox(class [IrrlichtLime]IrrlichtLime.Core.AABBox)
+    IL_0304:  nop
+    IL_0305:  ldc.i4.0
+    IL_0306:  stloc.2
+    IL_0307:  br.s       IL_0321
+
+    IL_0309:  ldarg.0
+    IL_030a:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material> L06.AnalogueClock.ClockNode::materialList
+    IL_030f:  ldloc.s    clockTick
+    IL_0311:  ldloc.2
+    IL_0312:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_0317:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material>::Add(!0)
+    IL_031c:  nop
+    IL_031d:  ldloc.2
+    IL_031e:  ldc.i4.1
+    IL_031f:  add
+    IL_0320:  stloc.2
+    IL_0321:  ldloc.2
+    IL_0322:  ldloc.s    clockTick
+    IL_0324:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_MaterialCount()
+    IL_0329:  clt
+    IL_032b:  stloc.s    CS$4$0000
+    IL_032d:  ldloc.s    CS$4$0000
+    IL_032f:  brtrue.s   IL_0309
+
+    IL_0331:  nop
+    IL_0332:  ldloc.s    j
+    IL_0334:  ldc.i4.1
+    IL_0335:  add
+    IL_0336:  stloc.s    j
+    IL_0338:  ldloc.s    j
+    IL_033a:  ldc.i4.s   12
+    IL_033c:  clt
+    IL_033e:  stloc.s    CS$4$0000
+    IL_0340:  ldloc.s    CS$4$0000
+    IL_0342:  brtrue     IL_0207
+
+    IL_0347:  ldarg.0
+    IL_0348:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_034d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_GeometryCreator()
+    IL_0352:  ldc.i4.s   12
+    IL_0354:  ldc.i4.s   12
+    IL_0356:  ldc.r4     40.
+    IL_035b:  ldc.r4     35.
+    IL_0360:  ldc.r4     4.
+    IL_0365:  ldc.r4     4.
+    IL_036a:  ldc.i4.s   40
+    IL_036c:  ldc.i4.s   40
+    IL_036e:  ldc.i4     0xff
+    IL_0373:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0378:  ldc.i4.s   40
+    IL_037a:  ldc.i4.s   40
+    IL_037c:  ldc.i4     0xff
+    IL_0381:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0386:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator::CreateArrowMesh(int32,
+                                                                                                                                                int32,
+                                                                                                                                                float32,
+                                                                                                                                                float32,
+                                                                                                                                                float32,
+                                                                                                                                                float32,
+                                                                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_038b:  stloc.0
+    IL_038c:  ldarg.0
+    IL_038d:  ldarg.0
+    IL_038e:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_0393:  ldloc.0
+    IL_0394:  ldarg.0
+    IL_0395:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.Mesh,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_039a:  stfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowHours
+    IL_039f:  ldarg.0
+    IL_03a0:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowHours
+    IL_03a5:  ldc.i4.0
+    IL_03a6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_03ab:  ldc.i4.0
+    IL_03ac:  ldc.i4.0
+    IL_03ad:  ldc.i4     0xff
+    IL_03b2:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_03b7:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_EmissiveColor(class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_03bc:  nop
+    IL_03bd:  ldarg.0
+    IL_03be:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowHours
+    IL_03c3:  ldc.i4.1
+    IL_03c4:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_03c9:  ldc.i4.0
+    IL_03ca:  ldc.i4.0
+    IL_03cb:  ldc.i4     0xff
+    IL_03d0:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_03d5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_EmissiveColor(class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_03da:  nop
+    IL_03db:  ldarg.0
+    IL_03dc:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowHours
+    IL_03e1:  ldc.r4     0.0
+    IL_03e6:  ldc.r4     0.0
+    IL_03eb:  ldc.r4     3.
+    IL_03f0:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_03f5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_03fa:  nop
+    IL_03fb:  ldloc.0
+    IL_03fc:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0401:  pop
+    IL_0402:  ldarg.0
+    IL_0403:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowHours
+    IL_0408:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::UpdateAbsolutePosition()
+    IL_040d:  nop
+    IL_040e:  ldarg.0
+    IL_040f:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox L06.AnalogueClock.ClockNode::boundingBox
+    IL_0414:  ldarg.0
+    IL_0415:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowHours
+    IL_041a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.AABBox [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_BoundingBoxTransformed()
+    IL_041f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.AABBox::AddInternalBox(class [IrrlichtLime]IrrlichtLime.Core.AABBox)
+    IL_0424:  nop
+    IL_0425:  ldc.i4.0
+    IL_0426:  stloc.2
+    IL_0427:  br.s       IL_0445
+
+    IL_0429:  ldarg.0
+    IL_042a:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material> L06.AnalogueClock.ClockNode::materialList
+    IL_042f:  ldarg.0
+    IL_0430:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowHours
+    IL_0435:  ldloc.2
+    IL_0436:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_043b:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material>::Add(!0)
+    IL_0440:  nop
+    IL_0441:  ldloc.2
+    IL_0442:  ldc.i4.1
+    IL_0443:  add
+    IL_0444:  stloc.2
+    IL_0445:  ldloc.2
+    IL_0446:  ldarg.0
+    IL_0447:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowHours
+    IL_044c:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_MaterialCount()
+    IL_0451:  clt
+    IL_0453:  stloc.s    CS$4$0000
+    IL_0455:  ldloc.s    CS$4$0000
+    IL_0457:  brtrue.s   IL_0429
+
+    IL_0459:  ldarg.0
+    IL_045a:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_045f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_GeometryCreator()
+    IL_0464:  ldc.i4.s   12
+    IL_0466:  ldc.i4.s   12
+    IL_0468:  ldc.r4     60.
+    IL_046d:  ldc.r4     50.
+    IL_0472:  ldc.r4     4.
+    IL_0477:  ldc.r4     4.
+    IL_047c:  ldc.i4.s   40
+    IL_047e:  ldc.i4     0xff
+    IL_0483:  ldc.i4.s   40
+    IL_0485:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_048a:  ldc.i4.s   40
+    IL_048c:  ldc.i4     0xff
+    IL_0491:  ldc.i4.s   40
+    IL_0493:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0498:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator::CreateArrowMesh(int32,
+                                                                                                                                                int32,
+                                                                                                                                                float32,
+                                                                                                                                                float32,
+                                                                                                                                                float32,
+                                                                                                                                                float32,
+                                                                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_049d:  stloc.0
+    IL_049e:  ldarg.0
+    IL_049f:  ldarg.0
+    IL_04a0:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_04a5:  ldloc.0
+    IL_04a6:  ldarg.0
+    IL_04a7:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.Mesh,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_04ac:  stfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowMinutes
+    IL_04b1:  ldarg.0
+    IL_04b2:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowMinutes
+    IL_04b7:  ldc.i4.0
+    IL_04b8:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_04bd:  ldc.i4.0
+    IL_04be:  ldc.i4     0xff
+    IL_04c3:  ldc.i4.0
+    IL_04c4:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_04c9:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_EmissiveColor(class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_04ce:  nop
+    IL_04cf:  ldarg.0
+    IL_04d0:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowMinutes
+    IL_04d5:  ldc.i4.1
+    IL_04d6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_04db:  ldc.i4.0
+    IL_04dc:  ldc.i4     0xff
+    IL_04e1:  ldc.i4.0
+    IL_04e2:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_04e7:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_EmissiveColor(class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_04ec:  nop
+    IL_04ed:  ldarg.0
+    IL_04ee:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowMinutes
+    IL_04f3:  ldc.r4     0.0
+    IL_04f8:  ldc.r4     0.0
+    IL_04fd:  ldc.r4     -5.
+    IL_0502:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0507:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_050c:  nop
+    IL_050d:  ldloc.0
+    IL_050e:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0513:  pop
+    IL_0514:  ldarg.0
+    IL_0515:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowMinutes
+    IL_051a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::UpdateAbsolutePosition()
+    IL_051f:  nop
+    IL_0520:  ldarg.0
+    IL_0521:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox L06.AnalogueClock.ClockNode::boundingBox
+    IL_0526:  ldarg.0
+    IL_0527:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowMinutes
+    IL_052c:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.AABBox [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_BoundingBoxTransformed()
+    IL_0531:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.AABBox::AddInternalBox(class [IrrlichtLime]IrrlichtLime.Core.AABBox)
+    IL_0536:  nop
+    IL_0537:  ldc.i4.0
+    IL_0538:  stloc.2
+    IL_0539:  br.s       IL_0557
+
+    IL_053b:  ldarg.0
+    IL_053c:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material> L06.AnalogueClock.ClockNode::materialList
+    IL_0541:  ldarg.0
+    IL_0542:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowMinutes
+    IL_0547:  ldloc.2
+    IL_0548:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_054d:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material>::Add(!0)
+    IL_0552:  nop
+    IL_0553:  ldloc.2
+    IL_0554:  ldc.i4.1
+    IL_0555:  add
+    IL_0556:  stloc.2
+    IL_0557:  ldloc.2
+    IL_0558:  ldarg.0
+    IL_0559:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowMinutes
+    IL_055e:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_MaterialCount()
+    IL_0563:  clt
+    IL_0565:  stloc.s    CS$4$0000
+    IL_0567:  ldloc.s    CS$4$0000
+    IL_0569:  brtrue.s   IL_053b
+
+    IL_056b:  ldarg.0
+    IL_056c:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_0571:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::get_GeometryCreator()
+    IL_0576:  ldc.i4.s   12
+    IL_0578:  ldc.i4.s   12
+    IL_057a:  ldc.r4     70.
+    IL_057f:  ldc.r4     60.
+    IL_0584:  ldc.r4     2.
+    IL_0589:  ldc.r4     2.
+    IL_058e:  ldc.i4     0xff
+    IL_0593:  ldc.i4.s   40
+    IL_0595:  ldc.i4.s   40
+    IL_0597:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_059c:  ldc.i4     0xff
+    IL_05a1:  ldc.i4.s   40
+    IL_05a3:  ldc.i4.s   40
+    IL_05a5:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_05aa:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.GeometryCreator::CreateArrowMesh(int32,
+                                                                                                                                                int32,
+                                                                                                                                                float32,
+                                                                                                                                                float32,
+                                                                                                                                                float32,
+                                                                                                                                                float32,
+                                                                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_05af:  stloc.0
+    IL_05b0:  ldarg.0
+    IL_05b1:  ldarg.0
+    IL_05b2:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_05b7:  ldloc.0
+    IL_05b8:  ldarg.0
+    IL_05b9:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.Mesh,
+                                                                                                                                                       class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_05be:  stfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowSeconds
+    IL_05c3:  ldarg.0
+    IL_05c4:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowSeconds
+    IL_05c9:  ldc.i4.0
+    IL_05ca:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_05cf:  ldc.i4     0xff
+    IL_05d4:  ldc.i4.0
+    IL_05d5:  ldc.i4.0
+    IL_05d6:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_05db:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_EmissiveColor(class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_05e0:  nop
+    IL_05e1:  ldarg.0
+    IL_05e2:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowSeconds
+    IL_05e7:  ldc.i4.1
+    IL_05e8:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_05ed:  ldc.i4     0xff
+    IL_05f2:  ldc.i4.0
+    IL_05f3:  ldc.i4.0
+    IL_05f4:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_05f9:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.Material::set_EmissiveColor(class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_05fe:  nop
+    IL_05ff:  ldarg.0
+    IL_0600:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowSeconds
+    IL_0605:  ldc.r4     0.0
+    IL_060a:  ldc.r4     0.0
+    IL_060f:  ldc.r4     -11.
+    IL_0614:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0619:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_061e:  nop
+    IL_061f:  ldloc.0
+    IL_0620:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0625:  pop
+    IL_0626:  ldarg.0
+    IL_0627:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowSeconds
+    IL_062c:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::UpdateAbsolutePosition()
+    IL_0631:  nop
+    IL_0632:  ldarg.0
+    IL_0633:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox L06.AnalogueClock.ClockNode::boundingBox
+    IL_0638:  ldarg.0
+    IL_0639:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowSeconds
+    IL_063e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.AABBox [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_BoundingBoxTransformed()
+    IL_0643:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Core.AABBox::AddInternalBox(class [IrrlichtLime]IrrlichtLime.Core.AABBox)
+    IL_0648:  nop
+    IL_0649:  ldc.i4.0
+    IL_064a:  stloc.2
+    IL_064b:  br.s       IL_0669
+
+    IL_064d:  ldarg.0
+    IL_064e:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material> L06.AnalogueClock.ClockNode::materialList
+    IL_0653:  ldarg.0
+    IL_0654:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowSeconds
+    IL_0659:  ldloc.2
+    IL_065a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_065f:  callvirt   instance void class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material>::Add(!0)
+    IL_0664:  nop
+    IL_0665:  ldloc.2
+    IL_0666:  ldc.i4.1
+    IL_0667:  add
+    IL_0668:  stloc.2
+    IL_0669:  ldloc.2
+    IL_066a:  ldarg.0
+    IL_066b:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowSeconds
+    IL_0670:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_MaterialCount()
+    IL_0675:  clt
+    IL_0677:  stloc.s    CS$4$0000
+    IL_0679:  ldloc.s    CS$4$0000
+    IL_067b:  brtrue.s   IL_064d
+
+    IL_067d:  ldarg.0
+    IL_067e:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_0683:  ldarg.0
+    IL_0684:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowSeconds
+    IL_0689:  ldc.r4     0.0
+    IL_068e:  ldc.r4     70.
+    IL_0693:  ldc.r4     0.0
+    IL_0698:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_069d:  ldarg.0
+    IL_069e:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowSeconds
+    IL_06a3:  ldc.i4.0
+    IL_06a4:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_06a9:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Color [IrrlichtLime]IrrlichtLime.Video.Material::get_EmissiveColor()
+    IL_06ae:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Colorf::.ctor(class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_06b3:  ldc.r4     80.
+    IL_06b8:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.LightSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddLightSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Video.Colorf,
+                                                                                                                                                         float32)
+    IL_06bd:  pop
+    IL_06be:  ldarg.0
+    IL_06bf:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_06c4:  ldarg.0
+    IL_06c5:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowMinutes
+    IL_06ca:  ldc.r4     0.0
+    IL_06cf:  ldc.r4     60.
+    IL_06d4:  ldc.r4     0.0
+    IL_06d9:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_06de:  ldarg.0
+    IL_06df:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowMinutes
+    IL_06e4:  ldc.i4.0
+    IL_06e5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_06ea:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Color [IrrlichtLime]IrrlichtLime.Video.Material::get_EmissiveColor()
+    IL_06ef:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Colorf::.ctor(class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_06f4:  ldc.r4     60.
+    IL_06f9:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.LightSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddLightSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Video.Colorf,
+                                                                                                                                                         float32)
+    IL_06fe:  pop
+    IL_06ff:  ldarg.0
+    IL_0700:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_0705:  ldarg.0
+    IL_0706:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowHours
+    IL_070b:  ldc.r4     0.0
+    IL_0710:  ldc.r4     40.
+    IL_0715:  ldc.r4     0.0
+    IL_071a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_071f:  ldarg.0
+    IL_0720:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowHours
+    IL_0725:  ldc.i4.0
+    IL_0726:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_072b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Color [IrrlichtLime]IrrlichtLime.Video.Material::get_EmissiveColor()
+    IL_0730:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Colorf::.ctor(class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_0735:  ldc.r4     40.
+    IL_073a:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.LightSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddLightSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Video.Colorf,
+                                                                                                                                                         float32)
+    IL_073f:  pop
+    IL_0740:  nop
+    IL_0741:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L06.AnalogueClock\ClockNode.cs" startline="129" endline="133"><![CDATA[
+  {
+    // Code size       12 (0xc)
+    .maxstack  1
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Core.AABBox CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [IrrlichtLime]IrrlichtLime.Core.AABBox L06.AnalogueClock.ClockNode::boundingBox
+    IL_0007:  stloc.0
+    IL_0008:  br.s       IL_000a
+
+    IL_000a:  ldloc.0
+    IL_000b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L06.AnalogueClock\ClockNode.cs" startline="134" endline="138"><![CDATA[
+  {
+    // Code size       17 (0x11)
+    .maxstack  1
+    .locals init ([0] int32 CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material> L06.AnalogueClock.ClockNode::materialList
+    IL_0007:  callvirt   instance int32 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material>::get_Count()
+    IL_000c:  stloc.0
+    IL_000d:  br.s       IL_000f
+
+    IL_000f:  ldloc.0
+    IL_0010:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L06.AnalogueClock\ClockNode.cs" startline="139" endline="143"><![CDATA[
+  {
+    // Code size       18 (0x12)
+    .maxstack  2
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Video.Material CS$1$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  ldfld      class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material> L06.AnalogueClock.ClockNode::materialList
+    IL_0007:  ldarg.1
+    IL_0008:  callvirt   instance !0 class [mscorlib]System.Collections.Generic.List`1<class [IrrlichtLime]IrrlichtLime.Video.Material>::get_Item(int32)
+    IL_000d:  stloc.0
+    IL_000e:  br.s       IL_0010
+
+    IL_0010:  ldloc.0
+    IL_0011:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L06.AnalogueClock\ClockNode.cs" startline="144" endline="149"><![CDATA[
+  {
+    // Code size       28 (0x1c)
+    .maxstack  2
+    .locals init ([0] bool CS$4$0000)
+    IL_0000:  nop
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance bool [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_Visible()
+    IL_0007:  ldc.i4.0
+    IL_0008:  ceq
+    IL_000a:  stloc.0
+    IL_000b:  ldloc.0
+    IL_000c:  brtrue.s   IL_001b
+
+    IL_000e:  ldarg.0
+    IL_000f:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_SceneManager()
+    IL_0014:  ldarg.0
+    IL_0015:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Scene.SceneManager::RegisterNodeForRendering(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_001a:  pop
+    IL_001b:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L06.AnalogueClock\ClockNode.cs" startline="150" endline="155"><![CDATA[
+  {
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  nop
+    IL_0001:  ret
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\L06.AnalogueClock\ClockNode.cs" startline="156" endline="164"><![CDATA[
+  {
+    // Code size       126 (0x7e)
+    .maxstack  5
+    .locals init ([0] valuetype [mscorlib]System.DateTime t)
+    IL_0000:  nop
+    IL_0001:  call       valuetype [mscorlib]System.DateTime [mscorlib]System.DateTime::get_Now()
+    IL_0006:  stloc.0
+    IL_0007:  ldarg.0
+    IL_0008:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowSeconds
+    IL_000d:  ldc.r4     0.0
+    IL_0012:  ldc.r4     0.0
+    IL_0017:  ldloca.s   t
+    IL_0019:  call       instance int32 [mscorlib]System.DateTime::get_Second()
+    IL_001e:  neg
+    IL_001f:  ldc.i4.6
+    IL_0020:  mul
+    IL_0021:  conv.r4
+    IL_0022:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0027:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Rotation(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_002c:  nop
+    IL_002d:  ldarg.0
+    IL_002e:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowMinutes
+    IL_0033:  ldc.r4     0.0
+    IL_0038:  ldc.r4     0.0
+    IL_003d:  ldloca.s   t
+    IL_003f:  call       instance int32 [mscorlib]System.DateTime::get_Minute()
+    IL_0044:  neg
+    IL_0045:  ldc.i4.6
+    IL_0046:  mul
+    IL_0047:  conv.r4
+    IL_0048:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_004d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Rotation(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0052:  nop
+    IL_0053:  ldarg.0
+    IL_0054:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode L06.AnalogueClock.ClockNode::arrowHours
+    IL_0059:  ldc.r4     0.0
+    IL_005e:  ldc.r4     0.0
+    IL_0063:  ldloca.s   t
+    IL_0065:  call       instance int32 [mscorlib]System.DateTime::get_Hour()
+    IL_006a:  ldc.i4.s   12
+    IL_006c:  rem
+    IL_006d:  neg
+    IL_006e:  ldc.i4.s   30
+    IL_0070:  mul
+    IL_0071:  conv.r4
+    IL_0072:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0077:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Rotation(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_007c:  nop
+    IL_007d:  ret
+]]></source>
+</source_elements></project>

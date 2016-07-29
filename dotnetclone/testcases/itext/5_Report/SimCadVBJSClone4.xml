@@ -1,0 +1,148 @@
+<clones  >
+<clone_pair groupid="98" nfragments="2" Csharpe_files="0" vb_files="1" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\DifferentFonts.java" startline="35" endline="49">
+<![CDATA[
+ 		Document document = new Document();
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("differentfonts.pdf"));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Paragraph p = new Paragraph();
+ 		p.add(new Chunk("This text is in Times Roman. This is ZapfDingbats
+ 		p.add(new Chunk("abcdefghijklmnopqrstuvwxyz", new Font(Font.ZAPFDINGBATS, 12)));
+ 		p.add(new Chunk(". This is font Symbol
+ 		p.add(new Chunk("abcdefghijklmnopqrstuvwxyz", new Font(Font.SYMBOL, 12)));
+ 		document.add(new Paragraph(p));
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0803.vb" startline="45" endline="69">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 3
+ 
+         Dim document As New Document()
+         Dim FileOutputStream As FileOutputStream
+         FileOutputStream = New FileOutputStream("Chap0803.rtf")
+         Call RtfWriter.getInstance(document, FileOutputStream)
+         document.open()
+         document.add(New Paragraph("Hello World"))
+         document.add(New Paragraph("some books I really like
+         Dim listItem As ListItem
+         Dim list As List = New List(True, 15)
+         listItem = New ListItem("When Harlie was one", New Font(Font.TIMES_ROMAN, 12))
+         listItem.add(New Chunk(" by David Gerrold", New Font(Font.TIMES_ROMAN, 11, Font.ITALIC)))
+         list.add(listItem)
+         listItem = New ListItem("The World according to Garp", New Font(Font.TIMES_ROMAN, 12))
+         listItem.add(New Chunk(" by John Irving", New Font(Font.TIMES_ROMAN, 11, Font.ITALIC)))
+         list.add(listItem)
+         listItem = New ListItem("Decamerone", New Font(Font.TIMES_ROMAN, 12))
+         listItem.add(New Chunk(" by Giovanni Boccaccio", New Font(Font.TIMES_ROMAN, 11, Font.ITALIC)))
+         list.add(listItem)
+         document.add(list)
+         ' step 5
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="173" nfragments="2" Csharpe_files="0" vb_files="1" Jsharpe_files="1" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0803.java" startline="32" endline="72">
+<![CDATA[
+         System.out.println("Chapter 8 example 3
+ 
+         // step 1
+         Document document = new Document();
+ 
+         try {
+ 
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a PDF-stream to a file
+             RtfWriter.getInstance(document, new FileOutputStream("Chap0803.rtf"));
+ 
+             // step 3
+             document.open();
+ 
+             // step 4
+ 
+             document.add(new Paragraph("some books I really like
+             ListItem listItem;
+             List list = new List(true, 15);
+             listItem = new ListItem("When Harlie was one", new Font(Font.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by David Gerrold", new Font(Font.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             listItem = new ListItem("The World according to Garp", new Font(Font.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by John Irving", new Font(Font.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             listItem = new ListItem("Decamerone", new Font(Font.TIMES_ROMAN, 12));
+             listItem.add(new Chunk(" by Giovanni Boccaccio", new Font(Font.TIMES_ROMAN, 11, Font.ITALIC)));
+             list.add(listItem);
+             document.add(list);
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0207.vb" startline="56" endline="100">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+ 
+         Console.WriteLine("Chapter 2 example 7
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0207.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         ' we add some content
+         Dim myPhrase As New Phrase("Hello 1! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD))
+         myPhrase.add(New Phrase("some other font ", New Font(Font.HELVETICA, 8)))
+         myPhrase.add(New Phrase("This is the end of the sentence.\n", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myPhrase)
+ 
+         myPhrase = New Phrase("Hello 1bis! ", FontFactory.getFont(FontFactory.TIMES_ROMAN, 8, Font.BOLD))
+         myPhrase.add(New Phrase("some other font ", FontFactory.getFont(FontFactory.HELVETICA, 8)))
+         myPhrase.add(New Phrase("This is the end of the sentence.\n", FontFactory.getFont(FontFactory.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myPhrase)
+ 
+         Dim myParagraph As New Paragraph("Hello 2! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD))
+         myParagraph.add(New Paragraph("This is the end of the sentence.", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myParagraph)
+ 
+         myParagraph = New Paragraph(12)
+         myParagraph.add(New Paragraph("Hello 3! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD)))
+         myParagraph.add(New Paragraph("This is the end of the sentence.", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myParagraph)
+ 
+         myPhrase = New Phrase(12)
+         myPhrase.add(New Phrase("Hello 4! ", New Font(Font.TIMES_ROMAN, 8, Font.BOLD)))
+         myPhrase.add(New Phrase("This is the end of the sentence.\n", New Font(Font.TIMES_ROMAN, 8, Font.ITALIC)))
+         Document.add(myPhrase)
+ 
+         ' step 5
+         Document.close()
+ 
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

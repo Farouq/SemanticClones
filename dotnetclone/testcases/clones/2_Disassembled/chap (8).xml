@@ -1,0 +1,157 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 1 example 10: encryption 128 bits"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  ldsfld     class [iText]com.lowagie.text.Rectangle [iText]com.lowagie.text.PageSize::A4
+  IL_0011:  ldc.r4     50.
+  IL_0016:  ldc.r4     50.
+  IL_001b:  ldc.r4     50.
+  IL_0020:  ldc.r4     50.
+  IL_0025:  newobj     instance void [iText]com.lowagie.text.Document::.ctor(class [iText]com.lowagie.text.Rectangle,
+                                                                             float32,
+                                                                             float32,
+                                                                             float32,
+                                                                             float32)
+  IL_002a:  stloc.0
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "Chap0110.pdf"
+  IL_0031:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_0036:  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  IL_003b:  stloc.1
+  IL_003c:  ldloc.1
+  IL_003d:  ldc.i4.1
+  IL_003e:  ldstr      "userpass"
+  IL_0043:  ldstr      "ownerpass"
+  IL_0048:  ldc.i4     0x814
+  IL_004d:  callvirt   instance void [iText]com.lowagie.text.pdf.PdfWriter::setEncryption(bool,
+                                                                                          string,
+                                                                                          string,
+                                                                                          int32)
+  IL_0052:  nop
+  IL_0053:  ldloc.0
+  IL_0054:  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  IL_0059:  nop
+  IL_005a:  ldloc.0
+  IL_005b:  ldstr      "This document is Top Secret!"
+  IL_0060:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0065:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_006a:  pop
+  IL_006b:  ldloc.0
+  IL_006c:  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  IL_0071:  nop
+  IL_0072:  nop
+  IL_0073:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 1 example 10: encryption 128 bits"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  IL_0011:  ldc.r4     50.
+  IL_0016:  ldc.r4     50.
+  IL_001b:  ldc.r4     50.
+  IL_0020:  ldc.r4     50.
+  IL_0025:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  IL_002a:  stloc.0
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "Chap0110.pdf"
+  IL_0031:  ldc.i4.2
+  IL_0032:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_0037:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_003c:  stloc.1
+  IL_003d:  ldloc.1
+  IL_003e:  ldc.i4.1
+  IL_003f:  ldstr      "userpass"
+  IL_0044:  ldstr      "ownerpass"
+  IL_0049:  ldc.i4     0x814
+  IL_004e:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setEncryption(bool,
+                                                                                                string,
+                                                                                                string,
+                                                                                                int32)
+  IL_0053:  nop
+  IL_0054:  ldloc.0
+  IL_0055:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_005a:  nop
+  IL_005b:  ldloc.0
+  IL_005c:  ldstr      "This document is Top Secret!"
+  IL_0061:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0066:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_006b:  pop
+  IL_006c:  ldloc.0
+  IL_006d:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_0072:  nop
+  IL_0073:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 1 example 10: encryption 128 bits"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  IL_0014:  ldc.r4     50.
+  IL_0019:  ldc.r4     50.
+  IL_001e:  ldc.r4     50.
+  IL_0023:  ldc.r4     50.
+  IL_0028:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  IL_002d:  stloc.0
+  IL_002e:  ldloc.0
+  IL_002f:  ldstr      "Chap0110.pdf"
+  IL_0034:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_0039:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [vjslib_7]java.io.OutputStream)
+  IL_003e:  stloc.1
+  IL_003f:  ldloc.1
+  IL_0040:  ldc.i4.1
+  IL_0041:  ldstr      "userpass"
+  IL_0046:  ldstr      "ownerpass"
+  IL_004b:  ldc.i4     0x814
+  IL_0050:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setEncryption(bool,
+                                                                                                string,
+                                                                                                string,
+                                                                                                int32)
+  IL_0055:  ldloc.0
+  IL_0056:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_005b:  ldloc.0
+  IL_005c:  ldstr      "This document is Top Secret!"
+  IL_0061:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0066:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_006b:  pop
+  IL_006c:  ldloc.0
+  IL_006d:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_0072:  leave.s    IL_0093
+  IL_0074:  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  IL_0079:  stloc.3
+  IL_007a:  ldloc.3
+  IL_007b:  brfalse.s  IL_0080
+  IL_007d:  ldc.i4.1
+  IL_007e:  br.s       IL_0081
+  IL_0080:  ldc.i4.0
+  IL_0081:  endfilter
+  IL_0083:  pop
+  IL_0084:  ldloc.3
+  IL_0085:  castclass  [vjslib]java.lang.Exception
+  IL_008a:  stloc.2
+  IL_008b:  ldloc.2
+  IL_008c:  callvirt   instance void [vjslib]java.lang.Throwable::printStackTrace()
+  IL_0091:  leave.s    IL_0093
+  IL_0093:  br.s       IL_0095
+  .try IL_002e to IL_0074 filter IL_0074 handler IL_0083 to IL_0093
+  IL_0095:  ret
+
+]]></source>
+</source_elements></project>

@@ -1,0 +1,2938 @@
+<clones  >
+<clone_pair groupid="0" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\jp\ujihara\itext\test\DirectContentCoordinatesTest.java" startline="12" endline="19">
+<![CDATA[
+ 
+ 	public void testExample() throws Exception {
+ 		XandYcoordinates.main(null);
+ 		UpsideDown.main(null);
+ 		AffineTransformation.main(null);
+ 		Transformations.main(null);
+ 		TransformImage.main(null);
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\jp\ujihara\itext\test\DirectContentGraphicsTest.java" startline="12" endline="19">
+<![CDATA[
+ 
+ 	public void testExample() throws Exception {
+ 		Literal.main(null);
+ 		State.main(null);
+ 		GState.main(null);
+ 		Circles.main(null);
+ 		Shapes.main(null);
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="1" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\jp\ujihara\itext\test\ObjectsBookmarksTest.java" startline="13" endline="22">
+<![CDATA[
+ 
+ 	public void testExample() throws Exception {
+ 		ViewerPreferences.main(null);
+ 		PageLabels.main(null);
+ 		Layers.main(null);
+ 		Bookmarks.main(null);
+ 		Destinations.main(null);
+ 		OutlineActions.main(null);
+ 		ChapterSection.main(null);
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\jp\ujihara\itext\test\ObjectsColumnsTest.java" startline="12" endline="21">
+<![CDATA[
+ 
+ 	public void testExample() throws Exception {
+ 		Column.main(null);
+ 		ColumnSimple.main(null);
+ 		ColumnObjects.main(null);
+ 		ColumnIrregular.main(null);
+ 		MultiColumnSimple.main(null);
+ 		MultiColumnR2L.main(null);
+ 		MultiColumnIrregular.main(null);
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFField.java" startline="44" endline="70">
+<![CDATA[
+ 	
+ 	// ?t?B?[???h
+ 	public static final int TIFF_BYTE = 1;
+ 	public static final int TIFF_ASCII = 2;
+ 	public static final int TIFF_SHORT = 3;
+ 	public static final int TIFF_LONG = 4;
+ 	public static final int TIFF_RATIONAL = 5;
+ 	public static final int TIFF_SBYTE = 6;
+ 	public static final int TIFF_UNDEFINED = 7;
+ 	public static final int TIFF_SSHORT = 8;
+ 	public static final int TIFF_SLONG = 9;
+ 	public static final int TIFF_SRATIONAL = 10;
+ 	public static final int TIFF_FLOAT = 11;
+ 	public static final int TIFF_DOUBLE = 12;
+ 	
+ 	int tag;
+ 	int type;
+ 	int count;
+ 	TIFFValueProxy data;
+ 	
+ 	public TIFFField(int tag, int type, int count, TIFFValueProxy data)
+ 	{
+ 		this.tag = tag;
+ 		this.type = type;
+ 		this.count = count;
+ 		this.data = data;
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFValueProxy.java" startline="21" endline="27">
+<![CDATA[
+ 	public TIFFValueProxy(StreamReader s, long pos, int size, boolean isBigEndian) 
+ 	{
+ 		this.stream = s;
+ 		this.position = pos;
+ 		this.size = size;
+ 		this.isBigEndian = isBigEndian;
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="3" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\jp\ujihara\itext\test\DirectContentColorsTest.java" startline="12" endline="22">
+<![CDATA[
+ 
+ 	public void testExample() throws Exception {
+ 		SpotColors.main(null);
+ 		Pattern.main(null);
+ 		Patterns.main(null);
+ 		Shading.main(null);
+ 		ShadingPattern.main(null);
+ 		Transparency.main(null);
+ 		Groups.main(null);
+ 		SoftMask.main(null);
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\jp\ujihara\itext\test\FontsStylesTest.java" startline="12" endline="22">
+<![CDATA[
+ 
+ 	public void testExample() throws Exception {
+ 		WidthHeight.main(null);
+ 		FixedFontWidth.main(null);
+ 		FontStylePropagation.main(null);
+ 		ExtraStyles.main(null);
+ 		FontColor.main(null);
+ 		RightToLeft.main(null);
+ 		ComplexText.main(null);
+ 		Vertical.main(null);
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="4" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\jp\ujihara\itext\test\DirectContentColorsTest.java" startline="12" endline="22">
+<![CDATA[
+ 
+ 	public void testExample() throws Exception {
+ 		SpotColors.main(null);
+ 		Pattern.main(null);
+ 		Patterns.main(null);
+ 		Shading.main(null);
+ 		ShadingPattern.main(null);
+ 		Transparency.main(null);
+ 		Groups.main(null);
+ 		SoftMask.main(null);
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\jp\ujihara\itext\test\FontsTest.java" startline="12" endline="23">
+<![CDATA[
+ 
+ 	public void testExample() throws Exception {
+ 		StandardType1Fonts.main(null);
+ 		FontFactoryType1Fonts.main(null);
+ 		TrueType.main(null);
+ 		FullFontNames.main(null);
+ 		ListEncodings.main(null);
+ 		FontEncoding.main(null);
+ 		UnicodeExample.main(null);
+ 		EncodingFont.main(null);
+ 		//TODO
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="5" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\general\HelloWorld.java" startline="44" endline="62">
+<![CDATA[
+ 		System.out.println("Hello World");
+ 
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document,
+ 			new FileOutputStream("HelloWorld.pdf"));
+ 
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		document.add(new Paragraph("Hello World"));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\html\HelloHtml.java" startline="40" endline="57">
+<![CDATA[
+ 		System.out.println("Hello World");
+ 
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a HTML-stream to a file
+ 		HtmlWriter.getInstance(document,
+ 			new FileOutputStream("HelloWorld.html"));
+ 
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		document.add(new Paragraph("Hello World"));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="6" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\MultiColumnR2L.java" startline="67" endline="74">
+<![CDATA[
+ 
+ 	private static Element newPara(String text, int alignment, int type) {
+ 		Font font = FontFactory.getFont("Helvetica", 10, type, Color.BLACK);
+ 		Paragraph p = new Paragraph(text, font);
+ 		p.setAlignment(alignment);
+ 		p.setLeading(font.size() * 1.2f);
+ 		return p;
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\MultiColumnSimple.java" startline="65" endline="72">
+<![CDATA[
+ 
+ 	private static Element newPara(String text, int alignment, int type) {
+ 		Font font = FontFactory.getFont("Helvetica", 10, type, Color.BLACK);
+ 		Paragraph p = new Paragraph(text, font);
+ 		p.setAlignment(alignment);
+ 		p.setLeading(font.size() * 1.2f);
+ 		return p;
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="7" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 1 example 1
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0101.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+ 
+ 		// step 4
+ 		document.add(new Paragraph("Hello World"));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 8 example 1
+ 
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 
+ 		RtfWriter.getInstance(document, new FileStream("Chap0801.rtf", FileMode.Create));
+         
+ 		// step 3
+ 		document.open();
+         
+ 		// step 4
+ 		document.add(new Paragraph("Hello World"));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="8" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\directcontent\colors\Groups.java" startline="42" endline="49">
+<![CDATA[
+ 		cb.setColorStroke(Color.black);
+ 		cb.setColorFill(Color.red);
+ 		cb.rectangle(x, y, 100, 200);
+ 		cb.fill();
+ 		cb.setLineWidth(2);
+ 		cb.rectangle(x, y, 200, 200);
+ 		cb.stroke();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\directcontent\colors\Transparency.java" startline="45" endline="52">
+<![CDATA[
+ 		cb.setColorStroke(Color.black);
+ 		cb.setColorFill(Color.gray);
+ 		cb.rectangle(x, y, 100, 200);
+ 		cb.fill();
+ 		cb.setLineWidth(2);
+ 		cb.rectangle(x, y, 200, 200);
+ 		cb.stroke();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="9" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\StreamReader.java" startline="107" endline="116">
+<![CDATA[
+ 	
+ 	public int[] readInts(int length)  throws IOException 
+ 	{
+ 		int[] a = new int[length];
+ 		for (int i = 0; i < length; i++)
+ 		{
+ 			a[i] = readInt();
+ 		for (int i = 0; i < length; i++)
+ 		{
+ 			a[i] = readInt();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\StreamReader.java" startline="117" endline="126">
+<![CDATA[
+ 
+ 	public long[] readUnsignedInts(int length)  throws IOException 
+ 	{
+ 		long[] a = new long[length];
+ 		for (int i = 0; i < length; i++)
+ 		{
+ 			a[i] = readUnsignedInt();
+ 		for (int i = 0; i < length; i++)
+ 		{
+ 			a[i] = readUnsignedInt();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="10" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\chunk\SplitChar.java" startline="78" endline="89">
+<![CDATA[
+ 
+ 	/**
+ 	 * @see com.lowagie.text.SplitCharacter#isSplitCharacter(int, int, int, char[], com.lowagie.text.pdf.PdfChunk[])
+ 	 */
+ 	public boolean isSplitCharacter(int start, int current, int end, char[] cc, PdfChunk[] ck) {
+ 		char c;
+ 		if (ck == null)
+ 			c = cc[current];
+ 		else
+ 			c = ck[Math.min(current, ck.length - 1)].getUnicodeEquivalent(cc[current]);
+ 		return (c == '.');
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0208.java" startline="75" endline="83">
+<![CDATA[
+     
+     public boolean isSplitCharacter(int start, int current, int end, char[] cc, PdfChunk[] ck) {
+         char c;
+         if (ck == null)
+             c = cc[current];
+         else
+             c = ck[Math.min(current, ck.length - 1)].getUnicodeEquivalent(cc[current]);
+         return (c == '.');
+     }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="11" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0101.java" startline="31" endline="60">
+<![CDATA[
+         System.out.println("Chapter 1 example 1
+         
+         // step 1
+         Document document = new Document();
+         
+         try {
+             
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a PDF-stream to a file
+             
+             PdfWriter.getInstance(document, new FileOutputStream("Chap0101.pdf"));
+             
+             // step 3
+             document.open();
+             
+             // step 4
+             document.add(new Paragraph("Hello World"));
+             
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0801.java" startline="31" endline="60">
+<![CDATA[
+         System.out.println("Chapter 8 example 1
+ 
+         // step 1
+         Document document = new Document();
+ 
+         try {
+ 
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a PDF-stream to a file
+ 
+             RtfWriter.getInstance(document, new FileOutputStream("Chap0801.rtf"));
+             
+             // step 3
+             document.open();
+             
+             // step 4
+             document.add(new Paragraph("Hello World"));
+             
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="12" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFField.java" startline="91" endline="99">
+<![CDATA[
+ 	public char[] getAsChars()  throws IOException
+ 	{ 
+ 		data.stream.seek(data.position);
+ 		char[] a = new char[data.size];
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readChar();
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readChar();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFField.java" startline="100" endline="108">
+<![CDATA[
+ 	public short[] getAsShorts()  throws IOException
+ 	{ 
+ 		data.stream.seek(data.position);
+ 		short[] a = new short[data.size];
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readShort();
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readShort();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="13" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFField.java" startline="91" endline="99">
+<![CDATA[
+ 	public char[] getAsChars()  throws IOException
+ 	{ 
+ 		data.stream.seek(data.position);
+ 		char[] a = new char[data.size];
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readChar();
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readChar();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFField.java" startline="109" endline="117">
+<![CDATA[
+ 	public int[] getAsInts() throws IOException 
+ 	{
+ 		data.stream.seek(data.position);
+ 		int[] a = new int[data.size];
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readInt();
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readInt();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="14" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFField.java" startline="91" endline="99">
+<![CDATA[
+ 	public char[] getAsChars()  throws IOException
+ 	{ 
+ 		data.stream.seek(data.position);
+ 		char[] a = new char[data.size];
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readChar();
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readChar();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFField.java" startline="118" endline="126">
+<![CDATA[
+ 	public long[] getAsLongs() throws IOException
+ 	{ 
+ 		data.stream.seek(data.position);
+ 		long[] a = new long[data.size];
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readUnsignedInt();
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readUnsignedInt();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="15" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFField.java" startline="91" endline="99">
+<![CDATA[
+ 	public char[] getAsChars()  throws IOException
+ 	{ 
+ 		data.stream.seek(data.position);
+ 		char[] a = new char[data.size];
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readChar();
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readChar();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFField.java" startline="127" endline="135">
+<![CDATA[
+ 	public float[] getAsFloats() throws IOException
+ 	{
+ 		data.stream.seek(data.position);
+ 		float[] a = new float[data.size];
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readFloat();
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readFloat();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="16" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFField.java" startline="91" endline="99">
+<![CDATA[
+ 	public char[] getAsChars()  throws IOException
+ 	{ 
+ 		data.stream.seek(data.position);
+ 		char[] a = new char[data.size];
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readChar();
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readChar();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\stuff\TIFFField.java" startline="136" endline="144">
+<![CDATA[
+ 	public double[] getAsDoubles() throws IOException
+ 	{
+ 		data.stream.seek(data.position);
+ 		double[] a = new double[data.size];
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readDouble();
+ 		for (int i = 0; i < a.length; i++) {
+ 			a[i] = data.stream.readDouble();
+ 		}
+ 		return a;
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="17" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\MultiColumnR2L.java" startline="109" endline="125">
+<![CDATA[
+ 
+ 	/**
+ 	 * Generates a random poem line.
+ 	 * @return a poem that is generated with some keywords.
+ 	 */
+ 	public static String poemLine() {
+ 		StringBuffer results = new StringBuffer(150);
+ 		results.append(randomWord(adjective));
+ 		results.append(" ");
+ 		results.append(randomWord(noun));
+ 		results.append(" ");
+ 		results.append(randomWord(verb));
+ 		results.append(" ");
+ 		results.append(randomWord(adverb));
+ 		results.append(", ");
+ 		return results.toString();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\MultiColumnSimple.java" startline="107" endline="123">
+<![CDATA[
+ 
+ 	/**
+ 	 * Generates a random poem line.
+ 	 * @return a poem that is generated with some keywords.
+ 	 */
+ 	public static String poemLine() {
+ 		StringBuffer results = new StringBuffer(150);
+ 		results.append(randomWord(adjective));
+ 		results.append(" ");
+ 		results.append(randomWord(noun));
+ 		results.append(" ");
+ 		results.append(randomWord(verb));
+ 		results.append(" ");
+ 		results.append(randomWord(adverb));
+ 		results.append(", ");
+ 		return results.toString();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="18" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\fonts\getting\TrueType.java" startline="37" endline="62">
+<![CDATA[
+ 		System.out.println("True Types (embedded)");
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileOutputStream("truetype.pdf"));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+ 		BaseFont bfComic = BaseFont.createFont(Configuration.fontsDirectory + File.separator + "comic.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+ 		Font font = new Font(bfComic, 12);
+ 		String text1 = "This is the quite popular True Type font 'Comic'.";
+ 		String text2 = "Some greek characters
+ 		String text3 = "Some cyrillic characters
+ 		document.add(new Paragraph(text1, font));
+ 		document.add(new Paragraph(text2, font));
+ 		document.add(new Paragraph(text3, font));
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\fonts\UnicodeExample.java" startline="37" endline="60">
+<![CDATA[
+ 		System.out.println("True Types (embedded)");
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		PdfWriter.getInstance(document, new FileOutputStream("unicode.pdf"));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+ 		BaseFont bfComic = BaseFont.createFont(Configuration.fontsDirectory + File.separator + "comic.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+ 		Font font = new Font(bfComic, 12);
+ 		String text1 = "This is the quite popular True Type font 'Comic'.";
+ 		String text2 = "Some greek characters
+ 		String text3 = "Some cyrillic characters
+ 		document.add(new Paragraph(text1, font));
+ 		document.add(new Paragraph(text2, font));
+ 		document.add(new Paragraph(text3, font));
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="19" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\directcontent\pageevents\Bookmarks.java" startline="53" endline="82">
+<![CDATA[
+ 
+ 	/**
+ 	 * Creates a document with outlines.
+ 	 * 
+ 	 * @param args
+ 	 *            no arguments needed
+ 	 */
+ 	public static void main(String[] args) throws Exception {
+ 
+ 		System.out.println("Bookmarks");
+ 
+ 		// step 1
+ 		Document document = new Document(PageSize.A6);
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("bookmarks.pdf"));
+ 		// step 3
+ 		writer.setViewerPreferences(PdfWriter.PageModeUseOutlines);
+ 		document.open();
+ 		// step 4
+ 		writer.setPageEvent(new Bookmarks());
+             
+ 		document.add(new Paragraph("GALLIA est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("[Eorum una, pars, quam Gallos obtinere dictum est, initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et eam partem Oceani quae est ad Hispaniam pertinet; spectat inter occasum solis et septentriones.]", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupiditate inductus coniurationem nobilitatis fecit et civitati persuasit ut de finibus suis cum omnibus copiis exirent
+ ", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("His rebus adducti et auctoritate Orgetorigis permoti constituerunt ea quae ad proficiscendum pertinerent comparare, iumentorum et carrorum quam maximum numerum coemere, sementes quam maximas facere, ut in itinere copia frumenti suppeteret, cum proximis civitatibus pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi satis esse duxerunt; in tertium annum profectionem lege confirmant.  Ad eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civitates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio, Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a senatu populi Romani amicus appellatus erat, ut regnum in civitate sua occuparet, quod pater ante habuerit; itemque Dumnorigi Haeduo, fratri Diviciaci, qui eo tempore principatum in civitate obtinebat ac maxime plebi acceptus erat, ut idem conaretur persuadet eique filiam suam in matrimonium dat.  Perfacile factu esse illis probat conata perficere, propterea quod ipse suae
+  civitatis imperium obtenturus esset
+ 		document.add(new Paragraph("Ea res est Helvetiis per indicium enuntiata.  Moribus suis Orgetoricem ex vinculis causam dicere coegerunt; damnatum poenam sequi oportebat, ut igni cremaretur.  Die constituta causae dictionis Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, undique coegit, et omnes clientes obaeratosque suos, quorum magnum numerum habebat, eodem conduxit; per eos ne causam diceret se eripuit.  Cum civitas ob eam rem incitata armis ius suum exequi conaretur multitudinemque hominum ex agris magistratus cogerent, Orgetorix mortuus est; neque abest suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciverit.", new Font(Font.HELVETICA, 12)));
+ 
+ 		// step 5
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\bookmarks\Bookmarks.java" startline="53" endline="81">
+<![CDATA[
+ 
+ 	/**
+ 	 * Creates a document with outlines.
+ 	 * 
+ 	 * @param args
+ 	 *            no arguments needed
+ 	 */
+ 	public static void main(String[] args) throws Exception {
+ 
+ 		System.out.println("Bookmarks");
+ 
+ 		// step 1
+ 		Document document = new Document(PageSize.A6);
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("Bookmarks.pdf"));
+ 		// step 3
+ 		writer.setViewerPreferences(PdfWriter.PageModeUseOutlines);
+ 		document.open();
+ 		// step 4
+ 		writer.setPageEvent(new Bookmarks());
+             
+ 		document.add(new Paragraph("GALLIA est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur.  Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt.  Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("[Eorum una, pars, quam Gallos obtinere dictum est, initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et eam partem Oceani quae est ad Hispaniam pertinet; spectat inter occasum solis et septentriones.]", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix.  Is M. Messala, [et P.] M.  Pisone consulibus regni cupiditate inductus coniurationem nobilitatis fecit et civitati persuasit ut de finibus suis cum omnibus copiis exirent
+ ", new Font(Font.HELVETICA, 12)));
+ 		document.add(new Paragraph("His rebus adducti et auctoritate Orgetorigis permoti constituerunt ea quae ad proficiscendum pertinerent comparare, iumentorum et carrorum quam maximum numerum coemere, sementes quam maximas facere, ut in itinere copia frumenti suppeteret, cum proximis civitatibus pacem et amicitiam confirmare.  Ad eas res conficiendas biennium sibi satis esse duxerunt; in tertium annum profectionem lege confirmant.  Ad eas res conficiendas Orgetorix deligitur.  Is sibi legationem ad civitates suscipit.  In eo itinere persuadet Castico, Catamantaloedis filio, Sequano, cuius pater regnum in Sequanis multos annos obtinuerat et a senatu populi Romani amicus appellatus erat, ut regnum in civitate sua occuparet, quod pater ante habuerit; itemque Dumnorigi Haeduo, fratri Diviciaci, qui eo tempore principatum in civitate obtinebat ac maxime plebi acceptus erat, ut idem conaretur persuadet eique filiam suam in matrimonium dat.  Perfacile factu esse illis probat conata perficere, propterea quod ipse suae
+  civitatis imperium obtenturus esset
+ 		document.add(new Paragraph("Ea res est Helvetiis per indicium enuntiata.  Moribus suis Orgetoricem ex vinculis causam dicere coegerunt; damnatum poenam sequi oportebat, ut igni cremaretur.  Die constituta causae dictionis Orgetorix ad iudicium omnem suam familiam, ad hominum milia decem, undique coegit, et omnes clientes obaeratosque suos, quorum magnum numerum habebat, eodem conduxit; per eos ne causam diceret se eripuit.  Cum civitas ob eam rem incitata armis ius suum exequi conaretur multitudinemque hominum ex agris magistratus cogerent, Orgetorix mortuus est; neque abest suspicio, ut Helvetii arbitrantur, quin ipse sibi mortem consciverit.", new Font(Font.HELVETICA, 12)));
+ 		// step 5
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="20" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\fonts\styles\FontColor.java" startline="42" endline="74">
+<![CDATA[
+ 		System.out.println("ChunkColor");
+ 
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		PdfWriter writer = PdfWriter.getInstance(document,
+ 			new FileOutputStream("FontColor.pdf"));
+ 
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Font red = FontFactory.getFont(FontFactory.HELVETICA, Font.DEFAULTSIZE, Font.BOLD, new Color(0xFF, 0x00, 0x00));
+ 		Font blue = FontFactory.getFont(FontFactory.HELVETICA, Font.DEFAULTSIZE, Font.ITALIC, new Color(0x00, 0x00, 0xFF));
+ 		Paragraph p;
+ 		p = new Paragraph("Roses are ");
+ 		p.add(new Chunk("red", red));
+ 		document.add(p);
+ 		p = new Paragraph("Violets are ");
+ 		p.add(new Chunk("blue", blue));
+ 		document.add(p);
+ 		BaseFont bf = FontFactory.getFont(FontFactory.COURIER).getCalculatedBaseFont(false);
+ 		PdfContentByte cb = writer.getDirectContent();
+ 		cb.beginText();
+ 		cb.setColorFill(new Color(0x00, 0xFF, 0x00));
+ 		cb.setFontAndSize(bf, 12);
+ 		cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "Grass is green", 250, 700, 0);
+ 		cb.endText();
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\chunk\ChunkColor.java" startline="42" endline="72">
+<![CDATA[
+ 		System.out.println("FontColor");
+ 
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		PdfWriter writer = PdfWriter.getInstance(document,
+ 			new FileOutputStream("ChunkColor.pdf"));
+ 
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Font red = FontFactory.getFont(FontFactory.HELVETICA, Font.DEFAULTSIZE, Font.BOLD, new Color(0xFF, 0x00, 0x00));
+ 		Font blue = FontFactory.getFont(FontFactory.HELVETICA, Font.DEFAULTSIZE, Font.ITALIC, new Color(0x00, 0x00, 0xFF));
+ 		Paragraph p;
+ 		p = new Paragraph("Roses are ");
+ 		p.add(new Chunk("red", red));
+ 		document.add(p);
+ 		p = new Paragraph("Violets are ");
+ 		p.add(new Chunk("blue", blue));
+ 		document.add(p);
+ 		BaseFont bf = FontFactory.getFont(FontFactory.COURIER).getCalculatedBaseFont(false);
+ 		PdfContentByte cb = writer.getDirectContent();
+ 		cb.beginText();
+ 		cb.setColorFill(new Color(0x00, 0xFF, 0x00));
+ 		cb.setFontAndSize(bf, 12);
+ 		cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "Grass is green", 250, 700, 0);
+ 		cb.endText();
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="21" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\ColumnObjects.java" startline="26" endline="40">
+<![CDATA[
+ 	/** Some data we want to output. */
+ 	static public String headings[] = {
+ 										  "Book/Product Model
+ 										  "Sales Handle
+ 										  "Why We Published this Book/Product Model
+ 										  "Key benefits
+ 										  "About the Author(s)
+ 										  "Technology/Topic Overview
+ 										  "Book/Product Content Summary
+ 										  "Audience
+ 										  "What's on the CD/DVD/Web
+ 									  };
+ 
+ 	/** Some text we want to output. */
+ 	static public String texts[] = {
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap1012.java" startline="27" endline="39">
+<![CDATA[
+     static public String headings[] = {
+         "Book/Product Model
+         "Sales Handle
+         "Why We Published this Book/Product Model
+         "Key benefits
+         "About the Author(s)
+         "Technology/Topic Overview
+         "Book/Product Content Summary
+         "Audience
+         "What's on the CD/DVD/Web
+     };
+ 
+     static public String texts[] = {
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="22" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0505.java" startline="30" endline="78">
+<![CDATA[
+ 		System.out.println("Chapter 5 example 5
+ 		// step 1
+ 		Document document = new Document();
+ 		try 
+ 		{
+ 			// step 2
+ 			// we create a writer that listens to the document
+ 			// and directs a PDF-stream to a file
+ 			PdfWriter.getInstance(document, new FileOutputStream("Chap0505.pdf"));
+ 			// step 3
+ 			document.open();
+ 			// step 4
+ 			Table table = new Table(3);
+ 			table.setBorderWidth(1);
+ 			table.setBorderColor(new Color(0, 0, 255));
+ 			table.setPadding(5);
+ 			table.setSpacing(5);
+ 			Cell cell = new Cell("header");
+ 			cell.setHeader(true);
+ 			cell.setColspan(3);
+ 			table.addCell(cell);
+ 			cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 			cell.setRowspan(2);
+ 			cell.setBorderColor(new Color(255, 0, 0));
+ 			table.addCell(cell);
+ 			table.addCell("1.1");
+ 			table.addCell("2.1");
+ 			table.addCell("1.2");
+ 			table.addCell("2.2");
+ 			table.addCell("cell test1");
+ 			cell = new Cell("big cell");
+ 			cell.setRowspan(2);
+ 			cell.setColspan(2);
+ 			cell.setBackgroundColor(new Color(0xC0, 0xC0, 0xC0));
+ 			table.addCell(cell);
+ 			table.addCell("cell test2");
+ 			document.add(table);
+ 		}
+ 		catch(DocumentException de) 
+ 		{
+ 			System.out.println(de.getMessage());
+ 		}
+ 		catch(IOException ioe) 
+ 		{
+ 			System.out.println(ioe.getMessage());
+ 		}
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap0804.java" startline="28" endline="73">
+<![CDATA[
+         System.out.println("Chapter 8 example 4
+         // step 1
+         Document document = new Document();
+         try {
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a PDF-stream to a file
+             RtfWriter.getInstance(document, new FileOutputStream("Chap0804.rtf"));
+             // step 3
+             document.open();
+             // step 4
+             Table table = new Table(3);
+             table.setBorderWidth(1);
+             table.setBorderColor(new Color(0, 0, 255));
+             table.setPadding(5);
+             table.setSpacing(5);
+             Cell cell = new Cell("header");
+             cell.setHeader(true);
+             cell.setColspan(3);
+             table.addCell(cell);
+             cell = new Cell("example cell with colspan 1 and rowspan 2");
+             cell.setRowspan(2);
+             cell.setBorderColor(new Color(255, 0, 0));
+             table.addCell(cell);
+             table.addCell("1.1");
+             table.addCell("2.1");
+             table.addCell("1.2");
+             table.addCell("2.2");
+             table.addCell("cell test1");
+             cell = new Cell("big cell");
+             cell.setRowspan(2);
+             cell.setColspan(2);
+             cell.setBackgroundColor(new Color(0xC0, 0xC0, 0xC0));
+             table.addCell(cell);
+             table.addCell("cell test2");
+             document.add(table);
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         // step 5
+         document.close();
+     }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="23" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0804.cs" startline="25" endline="63">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 8 example 4
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		RtfWriter.getInstance(document, new FileStream("Chap0804.rtf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Table table = new Table(3);
+ 		table.setBorderWidth(1);
+ 		table.setBorderColor(GDI.Color.Blue);
+ 		table.setPadding(5);
+ 		table.setSpacing(5);
+ 		Cell cell = new Cell("header");
+ 		cell.setHeader(true);
+ 		cell.setColspan(3);
+ 		table.addCell(cell);
+ 		cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 		cell.setRowspan(2);
+ 		cell.setBorderColor(GDI.Color.Red);
+ 		table.addCell(cell);
+ 		table.addCell("1.1");
+ 		table.addCell("2.1");
+ 		table.addCell("1.2");
+ 		table.addCell("2.2");
+ 		table.addCell("cell test1");
+ 		cell = new Cell("big cell");
+ 		cell.setRowspan(2);
+ 		cell.setColspan(2);
+ 		cell.setBackgroundColor(GDI.Color.LightGray);
+ 		table.addCell(cell);
+ 		table.addCell("cell test2");
+ 		document.add(table);
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0505.cs" startline="25" endline="63">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 5 example 5
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0505.pdf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Table table = new Table(3);
+ 		table.setBorderWidth(1);
+ 		table.setBorderColor(GDI.Color.Blue);
+ 		table.setPadding(5);
+ 		table.setSpacing(5);
+ 		Cell cell = new Cell("header");
+ 		cell.setHeader(true);
+ 		cell.setColspan(3);
+ 		table.addCell(cell);
+ 		cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 		cell.setRowspan(2);
+ 		cell.setBorderColor(GDI.Color.Red);
+ 		table.addCell(cell);
+ 		table.addCell("1.1");
+ 		table.addCell("2.1");
+ 		table.addCell("1.2");
+ 		table.addCell("2.2");
+ 		table.addCell("cell test1");
+ 		cell = new Cell("big cell");
+ 		cell.setRowspan(2);
+ 		cell.setColspan(2);
+ 		cell.setBackgroundColor(GDI.Color.LightGray);
+ 		table.addCell(cell);
+ 		table.addCell("cell test2");
+ 		document.add(table);
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="24" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\tables\pdfptable\TableEvents2.java" startline="42" endline="88">
+<![CDATA[
+ 		float widths[] = width[0];
+         
+ 		PdfContentByte cb = canvases[PdfPTable.TEXTCANVAS];
+ 		cb.saveState();
+ 		// border for the complete table
+ 		cb.setLineWidth(2);
+ 		cb.setRGBColorStroke(255, 0, 0);
+ 		cb.rectangle(widths[0], heights[heights.length - 1], widths[widths.length - 1] - widths[0], heights[0] - heights[heights.length - 1]);
+ 		cb.stroke();
+         
+ 		// border for the header rows
+ 		if (headerRows > 0) {
+ 			float headerHeight = heights[0];
+ 			for (int k = 0; k < headerRows; ++k)
+ 				headerHeight += heights[k];
+ 			for (int k = 0; k < headerRows; ++k)
+ 				headerHeight += heights[k];
+ 			cb.setRGBColorStroke(0, 0, 255);
+ 			cb.rectangle(widths[0], heights[headerRows], widths[widths.length - 1] - widths[0], heights[0] - heights[headerRows]);
+ 			cb.stroke();
+ 		}
+ 		cb.restoreState();
+         
+ 		cb = canvases[PdfPTable.BASECANVAS];
+ 		cb.saveState();
+ 		// border for the cells
+ 		cb.setLineWidth(.5f);
+ 		// loop over the rows
+ 		for (int line = 0; line < heights.length - 1; ++line) {
+ 			widths = width[line];
+ 			// loop over the columns
+ 			for (int col = 0; col < widths.length - 1; ++col) {
+ 				if (line == 0 && col == 0)
+ 					cb.setAction(new PdfAction("http
+ 						widths[col], heights[line + 1], widths[col + 1], heights[line]);
+ 				cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+ 				// horizontal borderline
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col + 1], heights[line]);
+ 				cb.stroke();
+ 				// vertical borderline
+ 				cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col], heights[line + 1]);
+ 				cb.stroke();
+ 			for (int col = 0; col < widths.length - 1; ++col) {
+ 		for (int line = 0; line < heights.length - 1; ++line) {
+ 			widths = width[line];
+ 			// loop over the columns
+ 			for (int col = 0; col < widths.length - 1; ++col) {
+ 				if (line == 0 && col == 0)
+ 					cb.setAction(new PdfAction("http
+ 						widths[col], heights[line + 1], widths[col + 1], heights[line]);
+ 				cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+ 				// horizontal borderline
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col + 1], heights[line]);
+ 				cb.stroke();
+ 				// vertical borderline
+ 				cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col], heights[line + 1]);
+ 				cb.stroke();
+ 			}
+ 		}
+ 		cb.restoreState();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap1202.java" startline="30" endline="66">
+<![CDATA[
+         float widths[] = width[0];
+         PdfContentByte cb = canvases[PdfPTable.TEXTCANVAS];
+         cb.saveState();
+         cb.setLineWidth(2);
+         cb.setRGBColorStroke(255, 0, 0);
+         cb.rectangle(widths[0], heights[heights.length - 1], widths[widths.length - 1] - widths[0], heights[0] - heights[heights.length - 1]);
+         cb.stroke();
+         if (headerRows > 0) {
+             float headerHeight = heights[0];
+             for (int k = 0; k < headerRows; ++k)
+                 headerHeight += heights[k];
+             for (int k = 0; k < headerRows; ++k)
+                 headerHeight += heights[k];
+             cb.setRGBColorStroke(0, 0, 255);
+             cb.rectangle(widths[0], heights[headerRows], widths[widths.length - 1] - widths[0], heights[0] - heights[headerRows]);
+             cb.stroke();
+         }
+         cb.restoreState();
+         cb = canvases[PdfPTable.BASECANVAS];
+         cb.saveState();
+         cb.setLineWidth(.5f);
+         for (int line = 0; line < heights.length - 1; ++line) {
+             widths = width[line];
+             for (int col = 0; col < widths.length - 1; ++col) {
+                 if (line == 0 && col == 0)
+                     cb.setAction(new PdfAction("http
+                         widths[col], heights[line + 1], widths[col + 1], heights[line]);
+                 cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+                 cb.moveTo(widths[col], heights[line]);
+                 cb.lineTo(widths[col + 1], heights[line]);
+                 cb.stroke();
+                 cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+                 cb.moveTo(widths[col], heights[line]);
+                 cb.lineTo(widths[col], heights[line + 1]);
+                 cb.stroke();
+             for (int col = 0; col < widths.length - 1; ++col) {
+         for (int line = 0; line < heights.length - 1; ++line) {
+             widths = width[line];
+             for (int col = 0; col < widths.length - 1; ++col) {
+                 if (line == 0 && col == 0)
+                     cb.setAction(new PdfAction("http
+                         widths[col], heights[line + 1], widths[col + 1], heights[line]);
+                 cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+                 cb.moveTo(widths[col], heights[line]);
+                 cb.lineTo(widths[col + 1], heights[line]);
+                 cb.stroke();
+                 cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+                 cb.moveTo(widths[col], heights[line]);
+                 cb.lineTo(widths[col], heights[line + 1]);
+                 cb.stroke();
+             }
+         }
+         cb.restoreState();
+     }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="25" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\tables\pdfptable\TableEvents2.java" startline="42" endline="88">
+<![CDATA[
+ 		float widths[] = width[0];
+         
+ 		PdfContentByte cb = canvases[PdfPTable.TEXTCANVAS];
+ 		cb.saveState();
+ 		// border for the complete table
+ 		cb.setLineWidth(2);
+ 		cb.setRGBColorStroke(255, 0, 0);
+ 		cb.rectangle(widths[0], heights[heights.length - 1], widths[widths.length - 1] - widths[0], heights[0] - heights[heights.length - 1]);
+ 		cb.stroke();
+         
+ 		// border for the header rows
+ 		if (headerRows > 0) {
+ 			float headerHeight = heights[0];
+ 			for (int k = 0; k < headerRows; ++k)
+ 				headerHeight += heights[k];
+ 			for (int k = 0; k < headerRows; ++k)
+ 				headerHeight += heights[k];
+ 			cb.setRGBColorStroke(0, 0, 255);
+ 			cb.rectangle(widths[0], heights[headerRows], widths[widths.length - 1] - widths[0], heights[0] - heights[headerRows]);
+ 			cb.stroke();
+ 		}
+ 		cb.restoreState();
+         
+ 		cb = canvases[PdfPTable.BASECANVAS];
+ 		cb.saveState();
+ 		// border for the cells
+ 		cb.setLineWidth(.5f);
+ 		// loop over the rows
+ 		for (int line = 0; line < heights.length - 1; ++line) {
+ 			widths = width[line];
+ 			// loop over the columns
+ 			for (int col = 0; col < widths.length - 1; ++col) {
+ 				if (line == 0 && col == 0)
+ 					cb.setAction(new PdfAction("http
+ 						widths[col], heights[line + 1], widths[col + 1], heights[line]);
+ 				cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+ 				// horizontal borderline
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col + 1], heights[line]);
+ 				cb.stroke();
+ 				// vertical borderline
+ 				cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col], heights[line + 1]);
+ 				cb.stroke();
+ 			for (int col = 0; col < widths.length - 1; ++col) {
+ 		for (int line = 0; line < heights.length - 1; ++line) {
+ 			widths = width[line];
+ 			// loop over the columns
+ 			for (int col = 0; col < widths.length - 1; ++col) {
+ 				if (line == 0 && col == 0)
+ 					cb.setAction(new PdfAction("http
+ 						widths[col], heights[line + 1], widths[col + 1], heights[line]);
+ 				cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+ 				// horizontal borderline
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col + 1], heights[line]);
+ 				cb.stroke();
+ 				// vertical borderline
+ 				cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col], heights[line + 1]);
+ 				cb.stroke();
+ 			}
+ 		}
+ 		cb.restoreState();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap1203.java" startline="30" endline="66">
+<![CDATA[
+         float widths[] = width[0];
+         PdfContentByte cb = canvases[PdfPTable.TEXTCANVAS];
+         cb.saveState();
+         cb.setLineWidth(2);
+         cb.setRGBColorStroke(255, 0, 0);
+         cb.rectangle(widths[0], heights[heights.length - 1], widths[widths.length - 1] - widths[0], heights[0] - heights[heights.length - 1]);
+         cb.stroke();
+         if (headerRows > 0) {
+             float headerHeight = heights[0];
+             for (int k = 0; k < headerRows; ++k)
+                 headerHeight += heights[k];
+             for (int k = 0; k < headerRows; ++k)
+                 headerHeight += heights[k];
+             cb.setRGBColorStroke(0, 0, 255);
+             cb.rectangle(widths[0], heights[headerRows], widths[widths.length - 1] - widths[0], heights[0] - heights[headerRows]);
+             cb.stroke();
+         }
+         cb.restoreState();
+         cb = canvases[PdfPTable.BASECANVAS];
+         cb.saveState();
+         cb.setLineWidth(.5f);
+         for (int line = 0; line < heights.length - 1; ++line) {
+             widths = width[line];
+             for (int col = 0; col < widths.length - 1; ++col) {
+                 if (line == 0 && col == 0)
+                     cb.setAction(new PdfAction("http
+                     widths[col], heights[line + 1], widths[col + 1], heights[line]);
+                 cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+                 cb.moveTo(widths[col], heights[line]);
+                 cb.lineTo(widths[col + 1], heights[line]);
+                 cb.stroke();
+                 cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+                 cb.moveTo(widths[col], heights[line]);
+                 cb.lineTo(widths[col], heights[line + 1]);
+                 cb.stroke();
+             for (int col = 0; col < widths.length - 1; ++col) {
+         for (int line = 0; line < heights.length - 1; ++line) {
+             widths = width[line];
+             for (int col = 0; col < widths.length - 1; ++col) {
+                 if (line == 0 && col == 0)
+                     cb.setAction(new PdfAction("http
+                     widths[col], heights[line + 1], widths[col + 1], heights[line]);
+                 cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+                 cb.moveTo(widths[col], heights[line]);
+                 cb.lineTo(widths[col + 1], heights[line]);
+                 cb.stroke();
+                 cb.setRGBColorStrokeF((float)Math.random(), (float)Math.random(), (float)Math.random());
+                 cb.moveTo(widths[col], heights[line]);
+                 cb.lineTo(widths[col], heights[line + 1]);
+                 cb.stroke();
+             }
+         }
+         cb.restoreState();
+     }
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="26" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1202.cs" startline="26" endline="67">
+<![CDATA[
+ 	{
+ 		float[] widths = width[0];
+ 		PdfContentByte cb = canvases[PdfPTable.TEXTCANVAS];
+ 		cb.saveState();
+ 		cb.setLineWidth(2);
+ 		cb.setRGBColorStroke(255, 0, 0);
+ 		cb.rectangle(widths[0], heights[heights.Length - 1], widths[widths.Length - 1] - widths[0], heights[0] - heights[heights.Length - 1]);
+ 		cb.stroke();
+ 		if (headerRows > 0) 
+ 		{
+ 			float headerHeight = heights[0];
+ 			for (int k = 0; k < headerRows; ++k)
+ 				headerHeight += heights[k];
+ 			for (int k = 0; k < headerRows; ++k)
+ 				headerHeight += heights[k];
+ 			cb.setRGBColorStroke(0, 0, 255);
+ 			cb.rectangle(widths[0], heights[headerRows], widths[widths.Length - 1] - widths[0], heights[0] - heights[headerRows]);
+ 			cb.stroke();
+ 		}
+ 		cb.restoreState();
+ 		cb = canvases[PdfPTable.BASECANVAS];
+ 		cb.saveState();
+ 		cb.setLineWidth(.5f);
+ 		for (int line = 0; line < heights.Length - 1; ++line) 
+ 		{
+ 
+ 			widths = width[line];
+ 			for (int col = 0; col < widths.Length - 1; ++col) 
+ 			{
+ 				if (line == 0 && col == 0)
+ 					cb.setAction(new PdfAction("http
+ 						widths[col], heights[line + 1], widths[col + 1], heights[line]);
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col + 1], heights[line]);
+ 				cb.stroke();
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col], heights[line + 1]);
+ 				cb.stroke();
+ 			}
+ 			for (int col = 0; col < widths.Length - 1; ++col) 
+ 			{
+ 				if (line == 0 && col == 0)
+ 					cb.setAction(new PdfAction("http
+ 						widths[col], heights[line + 1], widths[col + 1], heights[line]);
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col + 1], heights[line]);
+ 				cb.stroke();
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col], heights[line + 1]);
+ 				cb.stroke();
+ 			}
+ 		}
+ 		for (int line = 0; line < heights.Length - 1; ++line) 
+ 		{
+ 
+ 			widths = width[line];
+ 			for (int col = 0; col < widths.Length - 1; ++col) 
+ 			{
+ 				if (line == 0 && col == 0)
+ 					cb.setAction(new PdfAction("http
+ 						widths[col], heights[line + 1], widths[col + 1], heights[line]);
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col + 1], heights[line]);
+ 				cb.stroke();
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col], heights[line + 1]);
+ 				cb.stroke();
+ 			}
+ 		}
+ 		cb.restoreState();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1203.cs" startline="26" endline="66">
+<![CDATA[
+ 	{
+ 		float[] widths = width[0];
+ 		PdfContentByte cb = canvases[PdfPTable.TEXTCANVAS];
+ 		cb.saveState();
+ 		cb.setLineWidth(2);
+ 		cb.setRGBColorStroke(255, 0, 0);
+ 		cb.rectangle(widths[0], heights[heights.Length - 1], widths[widths.Length - 1] - widths[0], heights[0] - heights[heights.Length - 1]);
+ 		cb.stroke();
+ 		if (headerRows > 0) 
+ 		{
+ 			float headerHeight = heights[0];
+ 			for (int k = 0; k < headerRows; ++k)
+ 				headerHeight += heights[k];
+ 			for (int k = 0; k < headerRows; ++k)
+ 				headerHeight += heights[k];
+ 			cb.setRGBColorStroke(0, 0, 255);
+ 			cb.rectangle(widths[0], heights[headerRows], widths[widths.Length - 1] - widths[0], heights[0] - heights[headerRows]);
+ 			cb.stroke();
+ 		}
+ 		cb.restoreState();
+ 		cb = canvases[PdfPTable.BASECANVAS];
+ 		cb.saveState();
+ 		cb.setLineWidth(.5f);
+ 		for (int line = 0; line < heights.Length - 1; ++line) 
+ 		{
+ 			widths = width[line];
+ 			for (int col = 0; col < widths.Length - 1; ++col) 
+ 			{
+ 				if (line == 0 && col == 0)
+ 					cb.setAction(new PdfAction("http
+ 						widths[col], heights[line + 1], widths[col + 1], heights[line]);
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col + 1], heights[line]);
+ 				cb.stroke();
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col], heights[line + 1]);
+ 				cb.stroke();
+ 			}
+ 			for (int col = 0; col < widths.Length - 1; ++col) 
+ 			{
+ 				if (line == 0 && col == 0)
+ 					cb.setAction(new PdfAction("http
+ 						widths[col], heights[line + 1], widths[col + 1], heights[line]);
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col + 1], heights[line]);
+ 				cb.stroke();
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col], heights[line + 1]);
+ 				cb.stroke();
+ 			}
+ 		}
+ 		for (int line = 0; line < heights.Length - 1; ++line) 
+ 		{
+ 			widths = width[line];
+ 			for (int col = 0; col < widths.Length - 1; ++col) 
+ 			{
+ 				if (line == 0 && col == 0)
+ 					cb.setAction(new PdfAction("http
+ 						widths[col], heights[line + 1], widths[col + 1], heights[line]);
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col + 1], heights[line]);
+ 				cb.stroke();
+ 				cb.setRGBColorStrokeF((float)rnd.NextDouble(), (float)rnd.NextDouble(), (float)rnd.NextDouble());
+ 				cb.moveTo(widths[col], heights[line]);
+ 				cb.lineTo(widths[col], heights[line + 1]);
+ 				cb.stroke();
+ 			}
+ 		}
+ 		cb.restoreState();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="27" nfragments="2" Csharpe_files="2" vb_files="0" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1006.cs" startline="74" endline="188">
+<![CDATA[
+ 
+ 	public static String[] uni = new String[27];
+ 	public static String[] code = new String[27];
+ 	public static String[] name = new String[27];
+ 
+ 	static Chap1006()
+ 	{
+ 		uni[0]="\\u0152";
+ 		code[0]="\u0152";
+ 		name[0]="LATIN CAPITAL LIGATURE OE";
+     
+ 		uni[1]="\\u0153";
+ 		code[1]="\u0153";
+ 		name[1]="LATIN SMALL LIGATURE OE";
+     
+ 		uni[2]="\\u0160";
+ 		code[2]="\u0160";
+ 		name[2]="LATIN CAPITAL LETTER S WITH CARON";
+     
+ 		uni[3]="\\u0161";
+ 		code[3]="\u0161";
+ 		name[3]="LATIN SMALL LETTER S WITH CARON";
+     
+ 		uni[4]="\\u0178";
+ 		code[4]="\u0178";
+ 		name[4]="LATIN CAPITAL LETTER Y WITH DIAERESIS";
+     
+ 		uni[5]="\\u017D";
+ 		code[5]="\u017D";
+ 		name[5]="LATIN CAPITAL LETTER Z WITH CARON";
+     
+ 		uni[6]="\\u017E";
+ 		code[6]="\u017E";
+ 		name[6]="LATIN SMALL LETTER Z WITH CARON";
+     
+ 		uni[7]="\\u0192";
+ 		code[7]="\u0192";
+ 		name[7]="LATIN SMALL LETTER F WITH HOOK";
+     
+ 		uni[8]="\\u02C6";
+ 		code[8]="\u02C6";
+ 		name[8]="MODIFIER LETTER CIRCUMFLEX ACCENT";
+     
+ 		uni[9]="\\u02DC";
+ 		code[9]="\u02DC";
+ 		name[9]="SMALL TILDE";
+     
+ 		uni[10]="\\u2013";
+ 		code[10]="\u2013";
+ 		name[10]="EN DASH";
+     
+ 		uni[11]="\\u2014";
+ 		code[11]="\u2014";
+ 		name[11]="EM DASH";
+     
+ 		uni[12]="\\u2018";
+ 		code[12]="\u2018";
+ 		name[12]="LEFT SINGLE QUOTATION MARK";
+     
+ 		uni[13]="\\u2019";
+ 		code[13]="\u2019";
+ 		name[13]="RIGHT SINGLE QUOTATION MARK";
+     
+ 		uni[14]="\\u201A";
+ 		code[14]="\u201A";
+ 		name[14]="SINGLE LOW-9 QUOTATION MARK";
+     
+ 		uni[15]="\\u201C";
+ 		code[15]="\u201C";
+ 		name[15]="LEFT DOUBLE QUOTATION MARK";
+     
+ 		uni[16]="\\u201D";
+ 		code[16]="\u201D";
+ 		name[16]="RIGHT DOUBLE QUOTATION MARK";
+     
+ 		uni[17]="\\u201E";
+ 		code[17]="\u201E";
+ 		name[17]="DOUBLE LOW-9 QUOTATION MARK";
+     
+ 		uni[18]="\\u2020";
+ 		code[18]="\u2020";
+ 		name[18]="DAGGER";
+     
+ 		uni[19]="\\u2021";
+ 		code[19]="\u2021";
+ 		name[19]="DOUBLE DAGGER";
+     
+ 		uni[20]="\\u2022";
+ 		code[20]="\u2022";
+ 		name[20]="BULLET";
+     
+ 		uni[21]="\\u2026";
+ 		code[21]="\u2026";
+ 		name[21]="HORIZONTAL ELLIPSIS";
+     
+ 		uni[22]="\\u2030";
+ 		code[22]="\u2030";
+ 		name[22]="PER MILLE SIGN";
+     
+ 		uni[23]="\\u2039";
+ 		code[23]="\u2039";
+ 		name[23]="SINGLE LEFT-POINTING ANGLE QUOTATION MARK";
+     
+ 		uni[24]="\\u203A";
+ 		code[24]="\u203A";
+ 		name[24]="SINGLE RIGHT-POINTING ANGLE QUOTATION MARK";
+     
+ 		uni[25]="\\u20AC";
+ 		code[25]="\u20AC";
+ 		name[25]="EURO SIGN";
+     
+ 		uni[26]="\\u2122";
+ 		code[26]="\u2122";
+ 		name[26]="TRADE MARK SIGN";
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1005.cs" startline="71" endline="185">
+<![CDATA[
+ 
+ 	public static String[] uni = new String[27];
+ 	public static String[] code = new String[27];
+ 	public static String[] name = new String[27];
+ 
+ 	static Chap1005()
+ 	{
+ 		uni[0]="\\u0152";
+ 		code[0]="\u0152";
+ 		name[0]="LATIN CAPITAL LIGATURE OE";
+     
+ 		uni[1]="\\u0153";
+ 		code[1]="\u0153";
+ 		name[1]="LATIN SMALL LIGATURE OE";
+     
+ 		uni[2]="\\u0160";
+ 		code[2]="\u0160";
+ 		name[2]="LATIN CAPITAL LETTER S WITH CARON";
+     
+ 		uni[3]="\\u0161";
+ 		code[3]="\u0161";
+ 		name[3]="LATIN SMALL LETTER S WITH CARON";
+     
+ 		uni[4]="\\u0178";
+ 		code[4]="\u0178";
+ 		name[4]="LATIN CAPITAL LETTER Y WITH DIAERESIS";
+     
+ 		uni[5]="\\u017D";
+ 		code[5]="\u017D";
+ 		name[5]="LATIN CAPITAL LETTER Z WITH CARON";
+     
+ 		uni[6]="\\u017E";
+ 		code[6]="\u017E";
+ 		name[6]="LATIN SMALL LETTER Z WITH CARON";
+     
+ 		uni[7]="\\u0192";
+ 		code[7]="\u0192";
+ 		name[7]="LATIN SMALL LETTER F WITH HOOK";
+     
+ 		uni[8]="\\u02C6";
+ 		code[8]="\u02C6";
+ 		name[8]="MODIFIER LETTER CIRCUMFLEX ACCENT";
+     
+ 		uni[9]="\\u02DC";
+ 		code[9]="\u02DC";
+ 		name[9]="SMALL TILDE";
+     
+ 		uni[10]="\\u2013";
+ 		code[10]="\u2013";
+ 		name[10]="EN DASH";
+     
+ 		uni[11]="\\u2014";
+ 		code[11]="\u2014";
+ 		name[11]="EM DASH";
+     
+ 		uni[12]="\\u2018";
+ 		code[12]="\u2018";
+ 		name[12]="LEFT SINGLE QUOTATION MARK";
+     
+ 		uni[13]="\\u2019";
+ 		code[13]="\u2019";
+ 		name[13]="RIGHT SINGLE QUOTATION MARK";
+     
+ 		uni[14]="\\u201A";
+ 		code[14]="\u201A";
+ 		name[14]="SINGLE LOW-9 QUOTATION MARK";
+     
+ 		uni[15]="\\u201C";
+ 		code[15]="\u201C";
+ 		name[15]="LEFT DOUBLE QUOTATION MARK";
+     
+ 		uni[16]="\\u201D";
+ 		code[16]="\u201D";
+ 		name[16]="RIGHT DOUBLE QUOTATION MARK";
+     
+ 		uni[17]="\\u201E";
+ 		code[17]="\u201E";
+ 		name[17]="DOUBLE LOW-9 QUOTATION MARK";
+     
+ 		uni[18]="\\u2020";
+ 		code[18]="\u2020";
+ 		name[18]="DAGGER";
+     
+ 		uni[19]="\\u2021";
+ 		code[19]="\u2021";
+ 		name[19]="DOUBLE DAGGER";
+     
+ 		uni[20]="\\u2022";
+ 		code[20]="\u2022";
+ 		name[20]="BULLET";
+     
+ 		uni[21]="\\u2026";
+ 		code[21]="\u2026";
+ 		name[21]="HORIZONTAL ELLIPSIS";
+     
+ 		uni[22]="\\u2030";
+ 		code[22]="\u2030";
+ 		name[22]="PER MILLE SIGN";
+     
+ 		uni[23]="\\u2039";
+ 		code[23]="\u2039";
+ 		name[23]="SINGLE LEFT-POINTING ANGLE QUOTATION MARK";
+     
+ 		uni[24]="\\u203A";
+ 		code[24]="\u203A";
+ 		name[24]="SINGLE RIGHT-POINTING ANGLE QUOTATION MARK";
+     
+ 		uni[25]="\\u20AC";
+ 		code[25]="\u20AC";
+ 		name[25]="EURO SIGN";
+     
+ 		uni[26]="\\u2122";
+ 		code[26]="\u2122";
+ 		name[26]="TRADE MARK SIGN";
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="28" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\Column.java" startline="30" endline="195">
+<![CDATA[
+     
+ 	/**
+ 	 * Demonstrating the use of ColumnText
+ 	 * @param args no arguments needed
+ 	 */
+ 	public static void main(String[] args) throws Exception {
+         
+ 		System.out.println("Simple single object columns");
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("column.pdf"));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+             
+ 		// we create some content
+ 		BaseFont bf = BaseFont.createFont(BaseFont.COURIER, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+ 		Font font = new Font(bf, 11, Font.NORMAL);
+             
+ 		Phrase unicodes = new Phrase(15, "UNI\n", font);
+ 		Phrase characters = new Phrase(15, "\n", font);
+ 		Phrase names = new Phrase(15, "NAME\n", font);
+             
+ 		for (int i = 0; i < 27; i++) {
+ 			unicodes.add(uni[i] + "\n");
+ 			characters.add(code[i] + "\n");
+ 			names.add(name[i] + "\n");
+ 		}
+             
+ 		// we grab the ContentByte and do some stuff with it
+ 		PdfContentByte cb = writer.getDirectContent();
+             
+ 		ColumnText ct = new ColumnText(cb);
+ 		ct.setSimpleColumn(unicodes, 60, 300, 100, 300 + 28 * 15, 15, Element.ALIGN_CENTER);
+ 		ct.go();
+ 		cb.rectangle(103, 295, 52, 8 + 28 * 15);
+ 		cb.stroke();
+ 		ct.setSimpleColumn(characters, 105, 300, 150, 300 + 28 * 15, 15, Element.ALIGN_RIGHT);
+ 		ct.go();
+ 		ct.setSimpleColumn(names, 160, 300, 500, 300 + 28 * 15, 15, Element.ALIGN_LEFT);
+ 		ct.go();
+         
+ 		// step 5
+ 		document.close();
+ 	}
+     
+ 	/** a string array we want to output. */
+ 	public static String[] uni = new String[27];
+ 	/** a string array we want to output. */
+ 	public static String[] code = new String[27];
+ 	/** a string array we want to output. */
+ 	public static String[] name = new String[27];
+     
+ 	static {
+ 		uni[0]="\\u0152";
+ 		code[0]="\u0152";
+ 		name[0]="LATIN CAPITAL LIGATURE OE";
+         
+ 		uni[1]="\\u0153";
+ 		code[1]="\u0153";
+ 		name[1]="LATIN SMALL LIGATURE OE";
+         
+ 		uni[2]="\\u0160";
+ 		code[2]="\u0160";
+ 		name[2]="LATIN CAPITAL LETTER S WITH CARON";
+         
+ 		uni[3]="\\u0161";
+ 		code[3]="\u0161";
+ 		name[3]="LATIN SMALL LETTER S WITH CARON";
+         
+ 		uni[4]="\\u0178";
+ 		code[4]="\u0178";
+ 		name[4]="LATIN CAPITAL LETTER Y WITH DIAERESIS";
+         
+ 		uni[5]="\\u017D";
+ 		code[5]="\u017D";
+ 		name[5]="LATIN CAPITAL LETTER Z WITH CARON";
+         
+ 		uni[6]="\\u017E";
+ 		code[6]="\u017E";
+ 		name[6]="LATIN SMALL LETTER Z WITH CARON";
+         
+ 		uni[7]="\\u0192";
+ 		code[7]="\u0192";
+ 		name[7]="LATIN SMALL LETTER F WITH HOOK";
+         
+ 		uni[8]="\\u02C6";
+ 		code[8]="\u02C6";
+ 		name[8]="MODIFIER LETTER CIRCUMFLEX ACCENT";
+         
+ 		uni[9]="\\u02DC";
+ 		code[9]="\u02DC";
+ 		name[9]="SMALL TILDE";
+         
+ 		uni[10]="\\u2013";
+ 		code[10]="\u2013";
+ 		name[10]="EN DASH";
+         
+ 		uni[11]="\\u2014";
+ 		code[11]="\u2014";
+ 		name[11]="EM DASH";
+         
+ 		uni[12]="\\u2018";
+ 		code[12]="\u2018";
+ 		name[12]="LEFT SINGLE QUOTATION MARK";
+         
+ 		uni[13]="\\u2019";
+ 		code[13]="\u2019";
+ 		name[13]="RIGHT SINGLE QUOTATION MARK";
+         
+ 		uni[14]="\\u201A";
+ 		code[14]="\u201A";
+ 		name[14]="SINGLE LOW-9 QUOTATION MARK";
+         
+ 		uni[15]="\\u201C";
+ 		code[15]="\u201C";
+ 		name[15]="LEFT DOUBLE QUOTATION MARK";
+         
+ 		uni[16]="\\u201D";
+ 		code[16]="\u201D";
+ 		name[16]="RIGHT DOUBLE QUOTATION MARK";
+         
+ 		uni[17]="\\u201E";
+ 		code[17]="\u201E";
+ 		name[17]="DOUBLE LOW-9 QUOTATION MARK";
+         
+ 		uni[18]="\\u2020";
+ 		code[18]="\u2020";
+ 		name[18]="DAGGER";
+         
+ 		uni[19]="\\u2021";
+ 		code[19]="\u2021";
+ 		name[19]="DOUBLE DAGGER";
+         
+ 		uni[20]="\\u2022";
+ 		code[20]="\u2022";
+ 		name[20]="BULLET";
+         
+ 		uni[21]="\\u2026";
+ 		code[21]="\u2026";
+ 		name[21]="HORIZONTAL ELLIPSIS";
+         
+ 		uni[22]="\\u2030";
+ 		code[22]="\u2030";
+ 		name[22]="PER MILLE SIGN";
+         
+ 		uni[23]="\\u2039";
+ 		code[23]="\u2039";
+ 		name[23]="SINGLE LEFT-POINTING ANGLE QUOTATION MARK";
+         
+ 		uni[24]="\\u203A";
+ 		code[24]="\u203A";
+ 		name[24]="SINGLE RIGHT-POINTING ANGLE QUOTATION MARK";
+         
+ 		uni[25]="\\u20AC";
+ 		code[25]="\u20AC";
+ 		name[25]="EURO SIGN";
+         
+ 		uni[26]="\\u2122";
+ 		code[26]="\u2122";
+ 		name[26]="TRADE MARK SIGN";
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\ColumnSimple.java" startline="29" endline="197">
+<![CDATA[
+     
+ 	/**
+ 	 * Demonstrating the use of ColumnText
+ 	 * @param args no arguments needed
+ 	 */
+ 	public static void main(String[] args) throws Exception {
+         
+ 		System.out.println("Simple Column");
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("columnsimple.pdf"));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+             
+ 		// we grab the ContentByte and do some stuff with it
+ 		PdfContentByte cb = writer.getDirectContent();
+             
+ 		BaseFont bf = BaseFont.createFont(BaseFont.COURIER, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+ 		Font font = new Font(bf, 11, Font.NORMAL);
+             
+ 		ColumnText ct = new ColumnText(cb);
+ 		ct.setSimpleColumn(60, 300, 100, 300 + 28 * 15, 15, Element.ALIGN_CENTER);
+ 		ct.addText(new Phrase(15, "UNI\n", font));
+ 		for (int i = 0; i < 27; i++) {
+ 			ct.addText(new Phrase(15, uni[i] + "\n", font));
+ 		}
+ 		ct.go();
+ 		cb.rectangle(103, 295, 52, 8 + 28 * 15);
+ 		cb.stroke();
+ 		ct.setSimpleColumn(105, 300, 150, 300 + 28 * 15, 15, Element.ALIGN_RIGHT);
+ 		ct.addText(new Phrase(15, "char\n", font));
+ 		for (int i = 0; i < 27; i++) {
+ 			ct.addText(new Phrase(15, code[i] + "\n", font));
+ 		}
+ 		ct.go();
+ 		ct.setSimpleColumn(160, 300, 500, 300 + 28 * 15, 15, Element.ALIGN_LEFT);
+ 		ct.addText(new Phrase(15, "NAME" + "\n", font));
+ 		for (int i = 0; i < 27; i++) {
+ 			ct.addText(new Phrase(15, name[i] + "\n", font));
+ 		}
+ 		ct.go();
+             
+ 		// step 5
+ 		document.close();
+ 	}
+ 
+ 	/** a string array we want to output. */
+ 	public static String[] uni = new String[27];
+ 	/** a string array we want to output. */
+ 	public static String[] code = new String[27];
+ 	/** a string array we want to output. */
+ 	public static String[] name = new String[27];
+     
+ 	static {
+ 		uni[0]="\\u0152";
+ 		code[0]="\u0152";
+ 		name[0]="LATIN CAPITAL LIGATURE OE";
+         
+ 		uni[1]="\\u0153";
+ 		code[1]="\u0153";
+ 		name[1]="LATIN SMALL LIGATURE OE";
+         
+ 		uni[2]="\\u0160";
+ 		code[2]="\u0160";
+ 		name[2]="LATIN CAPITAL LETTER S WITH CARON";
+         
+ 		uni[3]="\\u0161";
+ 		code[3]="\u0161";
+ 		name[3]="LATIN SMALL LETTER S WITH CARON";
+         
+ 		uni[4]="\\u0178";
+ 		code[4]="\u0178";
+ 		name[4]="LATIN CAPITAL LETTER Y WITH DIAERESIS";
+         
+ 		uni[5]="\\u017D";
+ 		code[5]="\u017D";
+ 		name[5]="LATIN CAPITAL LETTER Z WITH CARON";
+         
+ 		uni[6]="\\u017E";
+ 		code[6]="\u017E";
+ 		name[6]="LATIN SMALL LETTER Z WITH CARON";
+         
+ 		uni[7]="\\u0192";
+ 		code[7]="\u0192";
+ 		name[7]="LATIN SMALL LETTER F WITH HOOK";
+         
+ 		uni[8]="\\u02C6";
+ 		code[8]="\u02C6";
+ 		name[8]="MODIFIER LETTER CIRCUMFLEX ACCENT";
+         
+ 		uni[9]="\\u02DC";
+ 		code[9]="\u02DC";
+ 		name[9]="SMALL TILDE";
+         
+ 		uni[10]="\\u2013";
+ 		code[10]="\u2013";
+ 		name[10]="EN DASH";
+         
+ 		uni[11]="\\u2014";
+ 		code[11]="\u2014";
+ 		name[11]="EM DASH";
+         
+ 		uni[12]="\\u2018";
+ 		code[12]="\u2018";
+ 		name[12]="LEFT SINGLE QUOTATION MARK";
+         
+ 		uni[13]="\\u2019";
+ 		code[13]="\u2019";
+ 		name[13]="RIGHT SINGLE QUOTATION MARK";
+         
+ 		uni[14]="\\u201A";
+ 		code[14]="\u201A";
+ 		name[14]="SINGLE LOW-9 QUOTATION MARK";
+         
+ 		uni[15]="\\u201C";
+ 		code[15]="\u201C";
+ 		name[15]="LEFT DOUBLE QUOTATION MARK";
+         
+ 		uni[16]="\\u201D";
+ 		code[16]="\u201D";
+ 		name[16]="RIGHT DOUBLE QUOTATION MARK";
+         
+ 		uni[17]="\\u201E";
+ 		code[17]="\u201E";
+ 		name[17]="DOUBLE LOW-9 QUOTATION MARK";
+         
+ 		uni[18]="\\u2020";
+ 		code[18]="\u2020";
+ 		name[18]="DAGGER";
+         
+ 		uni[19]="\\u2021";
+ 		code[19]="\u2021";
+ 		name[19]="DOUBLE DAGGER";
+         
+ 		uni[20]="\\u2022";
+ 		code[20]="\u2022";
+ 		name[20]="BULLET";
+         
+ 		uni[21]="\\u2026";
+ 		code[21]="\u2026";
+ 		name[21]="HORIZONTAL ELLIPSIS";
+         
+ 		uni[22]="\\u2030";
+ 		code[22]="\u2030";
+ 		name[22]="PER MILLE SIGN";
+         
+ 		uni[23]="\\u2039";
+ 		code[23]="\u2039";
+ 		name[23]="SINGLE LEFT-POINTING ANGLE QUOTATION MARK";
+         
+ 		uni[24]="\\u203A";
+ 		code[24]="\u203A";
+ 		name[24]="SINGLE RIGHT-POINTING ANGLE QUOTATION MARK";
+         
+ 		uni[25]="\\u20AC";
+ 		code[25]="\u20AC";
+ 		name[25]="EURO SIGN";
+         
+ 		uni[26]="\\u2122";
+ 		code[26]="\u2122";
+ 		name[26]="TRADE MARK SIGN";
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="29" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\Column.java" startline="30" endline="195">
+<![CDATA[
+     
+ 	/**
+ 	 * Demonstrating the use of ColumnText
+ 	 * @param args no arguments needed
+ 	 */
+ 	public static void main(String[] args) throws Exception {
+         
+ 		System.out.println("Simple single object columns");
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("column.pdf"));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+             
+ 		// we create some content
+ 		BaseFont bf = BaseFont.createFont(BaseFont.COURIER, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+ 		Font font = new Font(bf, 11, Font.NORMAL);
+             
+ 		Phrase unicodes = new Phrase(15, "UNI\n", font);
+ 		Phrase characters = new Phrase(15, "\n", font);
+ 		Phrase names = new Phrase(15, "NAME\n", font);
+             
+ 		for (int i = 0; i < 27; i++) {
+ 			unicodes.add(uni[i] + "\n");
+ 			characters.add(code[i] + "\n");
+ 			names.add(name[i] + "\n");
+ 		}
+             
+ 		// we grab the ContentByte and do some stuff with it
+ 		PdfContentByte cb = writer.getDirectContent();
+             
+ 		ColumnText ct = new ColumnText(cb);
+ 		ct.setSimpleColumn(unicodes, 60, 300, 100, 300 + 28 * 15, 15, Element.ALIGN_CENTER);
+ 		ct.go();
+ 		cb.rectangle(103, 295, 52, 8 + 28 * 15);
+ 		cb.stroke();
+ 		ct.setSimpleColumn(characters, 105, 300, 150, 300 + 28 * 15, 15, Element.ALIGN_RIGHT);
+ 		ct.go();
+ 		ct.setSimpleColumn(names, 160, 300, 500, 300 + 28 * 15, 15, Element.ALIGN_LEFT);
+ 		ct.go();
+         
+ 		// step 5
+ 		document.close();
+ 	}
+     
+ 	/** a string array we want to output. */
+ 	public static String[] uni = new String[27];
+ 	/** a string array we want to output. */
+ 	public static String[] code = new String[27];
+ 	/** a string array we want to output. */
+ 	public static String[] name = new String[27];
+     
+ 	static {
+ 		uni[0]="\\u0152";
+ 		code[0]="\u0152";
+ 		name[0]="LATIN CAPITAL LIGATURE OE";
+         
+ 		uni[1]="\\u0153";
+ 		code[1]="\u0153";
+ 		name[1]="LATIN SMALL LIGATURE OE";
+         
+ 		uni[2]="\\u0160";
+ 		code[2]="\u0160";
+ 		name[2]="LATIN CAPITAL LETTER S WITH CARON";
+         
+ 		uni[3]="\\u0161";
+ 		code[3]="\u0161";
+ 		name[3]="LATIN SMALL LETTER S WITH CARON";
+         
+ 		uni[4]="\\u0178";
+ 		code[4]="\u0178";
+ 		name[4]="LATIN CAPITAL LETTER Y WITH DIAERESIS";
+         
+ 		uni[5]="\\u017D";
+ 		code[5]="\u017D";
+ 		name[5]="LATIN CAPITAL LETTER Z WITH CARON";
+         
+ 		uni[6]="\\u017E";
+ 		code[6]="\u017E";
+ 		name[6]="LATIN SMALL LETTER Z WITH CARON";
+         
+ 		uni[7]="\\u0192";
+ 		code[7]="\u0192";
+ 		name[7]="LATIN SMALL LETTER F WITH HOOK";
+         
+ 		uni[8]="\\u02C6";
+ 		code[8]="\u02C6";
+ 		name[8]="MODIFIER LETTER CIRCUMFLEX ACCENT";
+         
+ 		uni[9]="\\u02DC";
+ 		code[9]="\u02DC";
+ 		name[9]="SMALL TILDE";
+         
+ 		uni[10]="\\u2013";
+ 		code[10]="\u2013";
+ 		name[10]="EN DASH";
+         
+ 		uni[11]="\\u2014";
+ 		code[11]="\u2014";
+ 		name[11]="EM DASH";
+         
+ 		uni[12]="\\u2018";
+ 		code[12]="\u2018";
+ 		name[12]="LEFT SINGLE QUOTATION MARK";
+         
+ 		uni[13]="\\u2019";
+ 		code[13]="\u2019";
+ 		name[13]="RIGHT SINGLE QUOTATION MARK";
+         
+ 		uni[14]="\\u201A";
+ 		code[14]="\u201A";
+ 		name[14]="SINGLE LOW-9 QUOTATION MARK";
+         
+ 		uni[15]="\\u201C";
+ 		code[15]="\u201C";
+ 		name[15]="LEFT DOUBLE QUOTATION MARK";
+         
+ 		uni[16]="\\u201D";
+ 		code[16]="\u201D";
+ 		name[16]="RIGHT DOUBLE QUOTATION MARK";
+         
+ 		uni[17]="\\u201E";
+ 		code[17]="\u201E";
+ 		name[17]="DOUBLE LOW-9 QUOTATION MARK";
+         
+ 		uni[18]="\\u2020";
+ 		code[18]="\u2020";
+ 		name[18]="DAGGER";
+         
+ 		uni[19]="\\u2021";
+ 		code[19]="\u2021";
+ 		name[19]="DOUBLE DAGGER";
+         
+ 		uni[20]="\\u2022";
+ 		code[20]="\u2022";
+ 		name[20]="BULLET";
+         
+ 		uni[21]="\\u2026";
+ 		code[21]="\u2026";
+ 		name[21]="HORIZONTAL ELLIPSIS";
+         
+ 		uni[22]="\\u2030";
+ 		code[22]="\u2030";
+ 		name[22]="PER MILLE SIGN";
+         
+ 		uni[23]="\\u2039";
+ 		code[23]="\u2039";
+ 		name[23]="SINGLE LEFT-POINTING ANGLE QUOTATION MARK";
+         
+ 		uni[24]="\\u203A";
+ 		code[24]="\u203A";
+ 		name[24]="SINGLE RIGHT-POINTING ANGLE QUOTATION MARK";
+         
+ 		uni[25]="\\u20AC";
+ 		code[25]="\u20AC";
+ 		name[25]="EURO SIGN";
+         
+ 		uni[26]="\\u2122";
+ 		code[26]="\u2122";
+ 		name[26]="TRADE MARK SIGN";
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap1005.java" startline="31" endline="201">
+<![CDATA[
+     
+     public static void main(String[] args) throws Exception {
+         
+         System.out.println("Chapter 10 example 5
+         
+         // step 1
+         Document document = new Document();
+         
+         try {
+             
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a PDF-stream to a file
+             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("Chap1005.pdf"));
+             
+             // step 3
+             document.open();
+             
+             // step 4
+             
+             // we create some content
+             BaseFont bf = BaseFont.createFont(BaseFont.COURIER, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+             Font font = new Font(bf, 11, Font.NORMAL);
+             
+             Phrase unicodes = new Phrase(15, "UNI\n", font);
+             Phrase characters = new Phrase(15, "\n", font);
+             Phrase names = new Phrase(15, "NAME\n", font);
+             
+             for (int i = 0; i < 27; i++) {
+                 unicodes.add(uni[i] + "\n");
+                 characters.add(code[i] + "\n");
+                 names.add(name[i] + "\n");
+             }
+             
+             // we grab the ContentByte and do some stuff with it
+             PdfContentByte cb = writer.getDirectContent();
+             
+             ColumnText ct = new ColumnText(cb);
+             ct.setSimpleColumn(unicodes, 60, 300, 100, 300 + 28 * 15, 15, Element.ALIGN_CENTER);
+             ct.go();
+             cb.rectangle(103, 295, 52, 8 + 28 * 15);
+             cb.stroke();
+             ct.setSimpleColumn(characters, 105, 300, 150, 300 + 28 * 15, 15, Element.ALIGN_RIGHT);
+             ct.go();
+             ct.setSimpleColumn(names, 160, 300, 500, 300 + 28 * 15, 15, Element.ALIGN_LEFT);
+             ct.go();
+             
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+     
+     public static String[] uni = new String[27];
+     public static String[] code = new String[27];
+     public static String[] name = new String[27];
+     
+     static {
+         uni[0]="\u0152";
+         code[0]="\u0152";
+         name[0]="LATIN CAPITAL LIGATURE OE";
+         
+         uni[1]="\u0153";
+         code[1]="\u0153";
+         name[1]="LATIN SMALL LIGATURE OE";
+         
+         uni[2]="\u0160";
+         code[2]="\u0160";
+         name[2]="LATIN CAPITAL LETTER S WITH CARON";
+         
+         uni[3]="\u0161";
+         code[3]="\u0161";
+         name[3]="LATIN SMALL LETTER S WITH CARON";
+         
+         uni[4]="\u0178";
+         code[4]="\u0178";
+         name[4]="LATIN CAPITAL LETTER Y WITH DIAERESIS";
+         
+         uni[5]="\u017D";
+         code[5]="\u017D";
+         name[5]="LATIN CAPITAL LETTER Z WITH CARON";
+         
+         uni[6]="\u017E";
+         code[6]="\u017E";
+         name[6]="LATIN SMALL LETTER Z WITH CARON";
+         
+         uni[7]="\u0192";
+         code[7]="\u0192";
+         name[7]="LATIN SMALL LETTER F WITH HOOK";
+         
+         uni[8]="\u02C6";
+         code[8]="\u02C6";
+         name[8]="MODIFIER LETTER CIRCUMFLEX ACCENT";
+         
+         uni[9]="\u02DC";
+         code[9]="\u02DC";
+         name[9]="SMALL TILDE";
+         
+         uni[10]="\u2013";
+         code[10]="\u2013";
+         name[10]="EN DASH";
+         
+         uni[11]="\u2014";
+         code[11]="\u2014";
+         name[11]="EM DASH";
+         
+         uni[12]="\u2018";
+         code[12]="\u2018";
+         name[12]="LEFT SINGLE QUOTATION MARK";
+         
+         uni[13]="\u2019";
+         code[13]="\u2019";
+         name[13]="RIGHT SINGLE QUOTATION MARK";
+         
+         uni[14]="\u201A";
+         code[14]="\u201A";
+         name[14]="SINGLE LOW-9 QUOTATION MARK";
+         
+         uni[15]="\u201C";
+         code[15]="\u201C";
+         name[15]="LEFT DOUBLE QUOTATION MARK";
+         
+         uni[16]="\u201D";
+         code[16]="\u201D";
+         name[16]="RIGHT DOUBLE QUOTATION MARK";
+         
+         uni[17]="\u201E";
+         code[17]="\u201E";
+         name[17]="DOUBLE LOW-9 QUOTATION MARK";
+         
+         uni[18]="\u2020";
+         code[18]="\u2020";
+         name[18]="DAGGER";
+         
+         uni[19]="\u2021";
+         code[19]="\u2021";
+         name[19]="DOUBLE DAGGER";
+         
+         uni[20]="\u2022";
+         code[20]="\u2022";
+         name[20]="BULLET";
+         
+         uni[21]="\u2026";
+         code[21]="\u2026";
+         name[21]="HORIZONTAL ELLIPSIS";
+         
+         uni[22]="\u2030";
+         code[22]="\u2030";
+         name[22]="PER MILLE SIGN";
+         
+         uni[23]="\u2039";
+         code[23]="\u2039";
+         name[23]="SINGLE LEFT-POINTING ANGLE QUOTATION MARK";
+         
+         uni[24]="\u203A";
+         code[24]="\u203A";
+         name[24]="SINGLE RIGHT-POINTING ANGLE QUOTATION MARK";
+         
+         uni[25]="\u20AC";
+         code[25]="\u20AC";
+         name[25]="EURO SIGN";
+         
+         uni[26]="\u2122";
+         code[26]="\u2122";
+         name[26]="TRADE MARK SIGN";
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="30" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\Column.java" startline="30" endline="195">
+<![CDATA[
+     
+ 	/**
+ 	 * Demonstrating the use of ColumnText
+ 	 * @param args no arguments needed
+ 	 */
+ 	public static void main(String[] args) throws Exception {
+         
+ 		System.out.println("Simple single object columns");
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("column.pdf"));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+             
+ 		// we create some content
+ 		BaseFont bf = BaseFont.createFont(BaseFont.COURIER, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+ 		Font font = new Font(bf, 11, Font.NORMAL);
+             
+ 		Phrase unicodes = new Phrase(15, "UNI\n", font);
+ 		Phrase characters = new Phrase(15, "\n", font);
+ 		Phrase names = new Phrase(15, "NAME\n", font);
+             
+ 		for (int i = 0; i < 27; i++) {
+ 			unicodes.add(uni[i] + "\n");
+ 			characters.add(code[i] + "\n");
+ 			names.add(name[i] + "\n");
+ 		}
+             
+ 		// we grab the ContentByte and do some stuff with it
+ 		PdfContentByte cb = writer.getDirectContent();
+             
+ 		ColumnText ct = new ColumnText(cb);
+ 		ct.setSimpleColumn(unicodes, 60, 300, 100, 300 + 28 * 15, 15, Element.ALIGN_CENTER);
+ 		ct.go();
+ 		cb.rectangle(103, 295, 52, 8 + 28 * 15);
+ 		cb.stroke();
+ 		ct.setSimpleColumn(characters, 105, 300, 150, 300 + 28 * 15, 15, Element.ALIGN_RIGHT);
+ 		ct.go();
+ 		ct.setSimpleColumn(names, 160, 300, 500, 300 + 28 * 15, 15, Element.ALIGN_LEFT);
+ 		ct.go();
+         
+ 		// step 5
+ 		document.close();
+ 	}
+     
+ 	/** a string array we want to output. */
+ 	public static String[] uni = new String[27];
+ 	/** a string array we want to output. */
+ 	public static String[] code = new String[27];
+ 	/** a string array we want to output. */
+ 	public static String[] name = new String[27];
+     
+ 	static {
+ 		uni[0]="\\u0152";
+ 		code[0]="\u0152";
+ 		name[0]="LATIN CAPITAL LIGATURE OE";
+         
+ 		uni[1]="\\u0153";
+ 		code[1]="\u0153";
+ 		name[1]="LATIN SMALL LIGATURE OE";
+         
+ 		uni[2]="\\u0160";
+ 		code[2]="\u0160";
+ 		name[2]="LATIN CAPITAL LETTER S WITH CARON";
+         
+ 		uni[3]="\\u0161";
+ 		code[3]="\u0161";
+ 		name[3]="LATIN SMALL LETTER S WITH CARON";
+         
+ 		uni[4]="\\u0178";
+ 		code[4]="\u0178";
+ 		name[4]="LATIN CAPITAL LETTER Y WITH DIAERESIS";
+         
+ 		uni[5]="\\u017D";
+ 		code[5]="\u017D";
+ 		name[5]="LATIN CAPITAL LETTER Z WITH CARON";
+         
+ 		uni[6]="\\u017E";
+ 		code[6]="\u017E";
+ 		name[6]="LATIN SMALL LETTER Z WITH CARON";
+         
+ 		uni[7]="\\u0192";
+ 		code[7]="\u0192";
+ 		name[7]="LATIN SMALL LETTER F WITH HOOK";
+         
+ 		uni[8]="\\u02C6";
+ 		code[8]="\u02C6";
+ 		name[8]="MODIFIER LETTER CIRCUMFLEX ACCENT";
+         
+ 		uni[9]="\\u02DC";
+ 		code[9]="\u02DC";
+ 		name[9]="SMALL TILDE";
+         
+ 		uni[10]="\\u2013";
+ 		code[10]="\u2013";
+ 		name[10]="EN DASH";
+         
+ 		uni[11]="\\u2014";
+ 		code[11]="\u2014";
+ 		name[11]="EM DASH";
+         
+ 		uni[12]="\\u2018";
+ 		code[12]="\u2018";
+ 		name[12]="LEFT SINGLE QUOTATION MARK";
+         
+ 		uni[13]="\\u2019";
+ 		code[13]="\u2019";
+ 		name[13]="RIGHT SINGLE QUOTATION MARK";
+         
+ 		uni[14]="\\u201A";
+ 		code[14]="\u201A";
+ 		name[14]="SINGLE LOW-9 QUOTATION MARK";
+         
+ 		uni[15]="\\u201C";
+ 		code[15]="\u201C";
+ 		name[15]="LEFT DOUBLE QUOTATION MARK";
+         
+ 		uni[16]="\\u201D";
+ 		code[16]="\u201D";
+ 		name[16]="RIGHT DOUBLE QUOTATION MARK";
+         
+ 		uni[17]="\\u201E";
+ 		code[17]="\u201E";
+ 		name[17]="DOUBLE LOW-9 QUOTATION MARK";
+         
+ 		uni[18]="\\u2020";
+ 		code[18]="\u2020";
+ 		name[18]="DAGGER";
+         
+ 		uni[19]="\\u2021";
+ 		code[19]="\u2021";
+ 		name[19]="DOUBLE DAGGER";
+         
+ 		uni[20]="\\u2022";
+ 		code[20]="\u2022";
+ 		name[20]="BULLET";
+         
+ 		uni[21]="\\u2026";
+ 		code[21]="\u2026";
+ 		name[21]="HORIZONTAL ELLIPSIS";
+         
+ 		uni[22]="\\u2030";
+ 		code[22]="\u2030";
+ 		name[22]="PER MILLE SIGN";
+         
+ 		uni[23]="\\u2039";
+ 		code[23]="\u2039";
+ 		name[23]="SINGLE LEFT-POINTING ANGLE QUOTATION MARK";
+         
+ 		uni[24]="\\u203A";
+ 		code[24]="\u203A";
+ 		name[24]="SINGLE RIGHT-POINTING ANGLE QUOTATION MARK";
+         
+ 		uni[25]="\\u20AC";
+ 		code[25]="\u20AC";
+ 		name[25]="EURO SIGN";
+         
+ 		uni[26]="\\u2122";
+ 		code[26]="\u2122";
+ 		name[26]="TRADE MARK SIGN";
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\old\Chap1006.java" startline="31" endline="202">
+<![CDATA[
+     
+     public static void main(String[] args) throws Exception {
+         
+         System.out.println("Chapter 10 example 6
+         
+         // step 1
+         Document document = new Document();
+         
+         try {
+             
+             // step 2
+             // we create a writer that listens to the document
+             // and directs a PDF-stream to a file
+             PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("Chap1006.pdf"));
+             
+             // step 3
+             document.open();
+             
+             // step 4
+             
+             // we grab the ContentByte and do some stuff with it
+             PdfContentByte cb = writer.getDirectContent();
+             
+             BaseFont bf = BaseFont.createFont(BaseFont.COURIER, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+             Font font = new Font(bf, 11, Font.NORMAL);
+             
+             ColumnText ct = new ColumnText(cb);
+             ct.setSimpleColumn(60, 300, 100, 300 + 28 * 15, 15, Element.ALIGN_CENTER);
+             ct.addText(new Phrase(15, "UNI\n", font));
+             for (int i = 0; i < 27; i++) {
+                 ct.addText(new Phrase(15, uni[i] + "\n", font));
+             }
+             ct.go();
+             cb.rectangle(103, 295, 52, 8 + 28 * 15);
+             cb.stroke();
+             ct.setSimpleColumn(105, 300, 150, 300 + 28 * 15, 15, Element.ALIGN_RIGHT);
+             ct.addText(new Phrase(15, "char\n", font));
+             for (int i = 0; i < 27; i++) {
+                 ct.addText(new Phrase(15, code[i] + "\n", font));
+             }
+             ct.go();
+             ct.setSimpleColumn(160, 300, 500, 300 + 28 * 15, 15, Element.ALIGN_LEFT);
+             ct.addText(new Phrase(15, "NAME\n", font));
+             for (int i = 0; i < 27; i++) {
+                 ct.addText(new Phrase(15, name[i] + "\n", font));
+             }
+             ct.go();
+             
+         }
+         catch(DocumentException de) {
+             System.out.println(de.getMessage());
+         }
+         catch(IOException ioe) {
+             System.out.println(ioe.getMessage());
+         }
+         
+         // step 5
+         document.close();
+     }
+     
+     public static String[] uni = new String[27];
+     public static String[] code = new String[27];
+     public static String[] name = new String[27];
+     
+     static {
+         uni[0]="\u0152";
+         code[0]="\u0152";
+         name[0]="LATIN CAPITAL LIGATURE OE";
+         
+         uni[1]="\u0153";
+         code[1]="\u0153";
+         name[1]="LATIN SMALL LIGATURE OE";
+         
+         uni[2]="\u0160";
+         code[2]="\u0160";
+         name[2]="LATIN CAPITAL LETTER S WITH CARON";
+         
+         uni[3]="\u0161";
+         code[3]="\u0161";
+         name[3]="LATIN SMALL LETTER S WITH CARON";
+         
+         uni[4]="\u0178";
+         code[4]="\u0178";
+         name[4]="LATIN CAPITAL LETTER Y WITH DIAERESIS";
+         
+         uni[5]="\u017D";
+         code[5]="\u017D";
+         name[5]="LATIN CAPITAL LETTER Z WITH CARON";
+         
+         uni[6]="\u017E";
+         code[6]="\u017E";
+         name[6]="LATIN SMALL LETTER Z WITH CARON";
+         
+         uni[7]="\u0192";
+         code[7]="\u0192";
+         name[7]="LATIN SMALL LETTER F WITH HOOK";
+         
+         uni[8]="\u02C6";
+         code[8]="\u02C6";
+         name[8]="MODIFIER LETTER CIRCUMFLEX ACCENT";
+         
+         uni[9]="\u02DC";
+         code[9]="\u02DC";
+         name[9]="SMALL TILDE";
+         
+         uni[10]="\u2013";
+         code[10]="\u2013";
+         name[10]="EN DASH";
+         
+         uni[11]="\u2014";
+         code[11]="\u2014";
+         name[11]="EM DASH";
+         
+         uni[12]="\u2018";
+         code[12]="\u2018";
+         name[12]="LEFT SINGLE QUOTATION MARK";
+         
+         uni[13]="\u2019";
+         code[13]="\u2019";
+         name[13]="RIGHT SINGLE QUOTATION MARK";
+         
+         uni[14]="\u201A";
+         code[14]="\u201A";
+         name[14]="SINGLE LOW-9 QUOTATION MARK";
+         
+         uni[15]="\u201C";
+         code[15]="\u201C";
+         name[15]="LEFT DOUBLE QUOTATION MARK";
+         
+         uni[16]="\u201D";
+         code[16]="\u201D";
+         name[16]="RIGHT DOUBLE QUOTATION MARK";
+         
+         uni[17]="\u201E";
+         code[17]="\u201E";
+         name[17]="DOUBLE LOW-9 QUOTATION MARK";
+         
+         uni[18]="\u2020";
+         code[18]="\u2020";
+         name[18]="DAGGER";
+         
+         uni[19]="\u2021";
+         code[19]="\u2021";
+         name[19]="DOUBLE DAGGER";
+         
+         uni[20]="\u2022";
+         code[20]="\u2022";
+         name[20]="BULLET";
+         
+         uni[21]="\u2026";
+         code[21]="\u2026";
+         name[21]="HORIZONTAL ELLIPSIS";
+         
+         uni[22]="\u2030";
+         code[22]="\u2030";
+         name[22]="PER MILLE SIGN";
+         
+         uni[23]="\u2039";
+         code[23]="\u2039";
+         name[23]="SINGLE LEFT-POINTING ANGLE QUOTATION MARK";
+         
+         uni[24]="\u203A";
+         code[24]="\u203A";
+         name[24]="SINGLE RIGHT-POINTING ANGLE QUOTATION MARK";
+         
+         uni[25]="\u20AC";
+         code[25]="\u20AC";
+         name[25]="EURO SIGN";
+         
+         uni[26]="\u2122";
+         code[26]="\u2122";
+         name[26]="TRADE MARK SIGN";
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="31" nfragments="2" Csharpe_files="0" vb_files="0" Jsharpe_files="2" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\MultiColumnR2L.java" startline="32" endline="98">
+<![CDATA[
+ 
+ 	/**
+ 	 * An example using MultiColumnText with irregular columns.
+ 	 * @param args no arguments needed
+ 	 */
+ 	public static void main(String[] args) throws Exception {
+         
+ 		System.out.println("MultiColumnText Right to Left");
+ 
+ 		Document document = new Document();
+ 		OutputStream out = new FileOutputStream("multicolumnR2L.pdf");
+ 		PdfWriter.getInstance(document, out);
+ 		document.open();
+ 
+ 
+ 		MultiColumnText mct = new MultiColumnText();
+ 		mct.setColumnsRightToLeft(true);
+ 
+ 		// set up 3 even columns with 10pt space between
+ 		mct.addRegularColumns(document.left(), document.right(), 10f, 3);
+ 
+ 		// Write some iText poems
+ 		for (int i = 0; i < 30; i++) {
+ 			mct.addElement(new Paragraph(String.valueOf(i + 1)));
+ 			mct.addElement(newPara(randomWord(noun), Element.ALIGN_CENTER, Font.BOLDITALIC));
+ 			for (int j = 0; j < 4; j++) {
+ 				mct.addElement(newPara(poemLine(), Element.ALIGN_LEFT, Font.NORMAL));
+ 			}
+ 			mct.addElement(newPara(randomWord(adverb), Element.ALIGN_LEFT, Font.NORMAL));
+ 			mct.addElement(newPara("\n\n", Element.ALIGN_LEFT, Font.NORMAL));
+ 		}
+ 
+ 		document.add(mct);
+ 		document.close();
+ 	}
+ 
+ 	private static Element newPara(String text, int alignment, int type) {
+ 		Font font = FontFactory.getFont("Helvetica", 10, type, Color.BLACK);
+ 		Paragraph p = new Paragraph(text, font);
+ 		p.setAlignment(alignment);
+ 		p.setLeading(font.size() * 1.2f);
+ 		return p;
+ 	}
+ 
+ 	static Random rand = new Random();
+ 
+ 
+ 	static String[] verb = {"flows", "draws", "renders", "throws exception", "runs",
+ 							   "crashes", "downloads", "usurps", "vexes", "whispers", "boils",
+ 							   "capitulates", "crashes", "craves", "looks", "defies", "defers",
+ 							   "defines", "envelops", "entombs", "falls", "fails", "halts",
+ 							   "appears", "nags", "overflows", "burns", "dies", "writes",
+ 							   "flushes"};
+ 
+ 	static String[] noun = {"ColumnText", "paragraph", "phrase", "chunk", "PdfContentByte",
+ 							   "PdfPTable", "iText", "color", "vertical alignment", "horizontal alignment", "PdfWriter",
+ 							   "ListItem", "PdfStamper", "PDF", "HTML", "XML", "column", "font",
+ 							   "table", "FDF", "field", "NullPointerException", "CJK font"};
+ 
+ 	static String[] adjective = {"foul", "broken", "gray", "slow", "beautiful",
+ 									"throbbing", "sharp", "stout", "soundless", "neat",
+ 									"swift", "uniform", "upright", "vibrant", "dingy",
+ 									"vestigal", "messy", "sloppy", "baleful", "boastful",
+ 									"dark", "capricious", "concrete", "deliberate", "sharp",
+ 									"drunken", "undisciplined", "perfect", "bloated"};
+ 
+ 	static String[] adverb = {"randomly", "quickly", "triumphantly", "suggestively",
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\JSharp\com\lowagie\examples\objects\columns\MultiColumnSimple.java" startline="32" endline="96">
+<![CDATA[
+ 
+ 	/**
+ 	 * An example using MultiColumnText with irregular columns.
+ 	 * @param args no arguments needed
+ 	 */
+ 	public static void main(String[] args) throws Exception {
+         
+ 		System.out.println("Simple MultiColumnText");
+ 
+ 		Document document = new Document();
+ 		OutputStream out = new FileOutputStream("multicolumnsimple.pdf");
+ 		PdfWriter.getInstance(document, out);
+ 		document.open();
+ 
+ 		MultiColumnText mct = new MultiColumnText();
+ 
+ 		// set up 3 even columns with 10pt space between
+ 		mct.addRegularColumns(document.left(), document.right(), 10f, 3);
+ 
+ 		// Write some iText poems
+ 		for (int i = 0; i < 30; i++) {
+ 			mct.addElement(new Paragraph(String.valueOf(i + 1)));
+ 			mct.addElement(newPara(randomWord(noun), Element.ALIGN_CENTER, Font.BOLDITALIC));
+ 			for (int j = 0; j < 4; j++) {
+ 				mct.addElement(newPara(poemLine(), Element.ALIGN_LEFT, Font.NORMAL));
+ 			}
+ 			mct.addElement(newPara(randomWord(adverb), Element.ALIGN_LEFT, Font.NORMAL));
+ 			mct.addElement(newPara("\n\n", Element.ALIGN_LEFT, Font.NORMAL));
+ 		}
+ 
+ 		document.add(mct);
+ 		document.close();
+ 	}
+ 
+ 	private static Element newPara(String text, int alignment, int type) {
+ 		Font font = FontFactory.getFont("Helvetica", 10, type, Color.BLACK);
+ 		Paragraph p = new Paragraph(text, font);
+ 		p.setAlignment(alignment);
+ 		p.setLeading(font.size() * 1.2f);
+ 		return p;
+ 	}
+ 
+ 	static Random rand = new Random();
+ 
+ 
+ 	static String[] verb = {"flows", "draws", "renders", "throws exception", "runs",
+ 							   "crashes", "downloads", "usurps", "vexes", "whispers", "boils",
+ 							   "capitulates", "crashes", "craves", "looks", "defies", "defers",
+ 							   "defines", "envelops", "entombs", "falls", "fails", "halts",
+ 							   "appears", "nags", "overflows", "burns", "dies", "writes",
+ 							   "flushes"};
+ 
+ 	static String[] noun = {"ColumnText", "paragraph", "phrase", "chunk", "PdfContentByte",
+ 							   "PdfPTable", "iText", "color", "vertical alignment", "horizontal alignment", "PdfWriter",
+ 							   "ListItem", "PdfStamper", "PDF", "HTML", "XML", "column", "font",
+ 							   "table", "FDF", "field", "NullPointerException", "CJK font"};
+ 
+ 	static String[] adjective = {"foul", "broken", "gray", "slow", "beautiful",
+ 									"throbbing", "sharp", "stout", "soundless", "neat",
+ 									"swift", "uniform", "upright", "vibrant", "dingy",
+ 									"vestigal", "messy", "sloppy", "baleful", "boastful",
+ 									"dark", "capricious", "concrete", "deliberate", "sharp",
+ 									"drunken", "undisciplined", "perfect", "bloated"};
+ 
+ 	static String[] adverb = {"randomly", "quickly", "triumphantly", "suggestively",
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

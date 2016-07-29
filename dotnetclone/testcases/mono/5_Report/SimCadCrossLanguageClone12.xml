@@ -1,0 +1,2229 @@
+<clones  >
+<clone_pair groupid="2" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\convert.cs" startline="1230" endline="1246">
+<![CDATA[
+ 
+ 
+ 		/// <summary>
+ 		///   Attempts to apply the `Standard Implicit
+ 		///   Conversion' rules to the expression `expr' into
+ 		///   the `target_type'.  It returns a new expression
+ 		///   that can be used in a context that expects a
+ 		///   `target_type'.
+ 		///
+ 		///   This is different from `ImplicitConversion' in that the
+ 		///   user defined implicit conversions are excluded.
+ 		/// </summary>
+ 		static public Expression ImplicitConversionStandard (ResolveContext ec, Expression expr,
+ 								     TypeSpec target_type, Location loc)
+ 		{
+ 			return ImplicitConversionStandard (ec, expr, target_type, loc, false);
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Types\TokenManager.vb" startline="331" endline="340">
+<![CDATA[
+     ''' <summary>
+     ''' GotoNewline defaults to false for this overload.
+     ''' </summary>
+     ''' <param name="Special"></param>
+     ''' <param name="Message"></param>
+     ''' <returns></returns>
+     ''' <remarks></remarks>
+     Function AcceptIfNotError(ByVal Special As KS, ByVal Message As Messages, ByVal ParamArray MessageParameters() As String) As Boolean
+         Return AcceptIfNotError(Special, Message, False, MessageParameters)
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2216" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\UnaryExpressions\UnaryExpression.vb" startline="53" endline="61">
+<![CDATA[
+ 
+ #If DEBUG Then
+     Protected MustOverride Overrides Function GenerateCodeInternal(ByVal Info As EmitInfo) As Boolean
+ #End If
+     MustOverride ReadOnly Property Keyword() As KS
+ 
+     Shared Function IsMe(ByVal tm As tm) As Boolean
+         Return tm.CurrentToken.Equals(Enums.UnaryOperators)
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\typespec.cs" startline="349" endline="379">
+<![CDATA[
+ 
+ 		//
+ 		// Is @baseClass base implementation of @type. With enabled @dynamicIsEqual the slower
+ 		// comparison is used to hide differences between `object' and `dynamic' for generic
+ 		// types. Should not be used for comparisons where G<object> != G<dynamic>
+ 		//
+ 		public static bool IsBaseClass (TypeSpec type, TypeSpec baseClass, bool dynamicIsObject)
+ 		{
+ 			if (dynamicIsObject && baseClass.IsGeneric) {
+ 				//
+ 				// Returns true for a hierarchies like this when passing baseClass of A<dynamic>
+ 				//
+ 				// class B 
+ 				//
+ 				while (type != null) {
+ 					type = type.BaseType;
+ 					if (TypeSpecComparer.IsEqual (type, baseClass))
+ 						return true;
+ 				}
+ 				while (type != null) {
+ 					type = type.BaseType;
+ 					if (TypeSpecComparer.IsEqual (type, baseClass))
+ 						return true;
+ 				}
+ 
+ 				return false;
+ 			}
+ 
+ 			while (type != null) {
+ 				type = type.BaseType;
+ 				if (type == baseClass)
+ 					return true;
+ 			}
+ 			while (type != null) {
+ 				type = type.BaseType;
+ 				if (type == baseClass)
+ 					return true;
+ 			}
+ 
+ 			return false;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2239" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\UnaryExpressions\UnaryExpression.vb" startline="53" endline="61">
+<![CDATA[
+ 
+ #If DEBUG Then
+     Protected MustOverride Overrides Function GenerateCodeInternal(ByVal Info As EmitInfo) As Boolean
+ #End If
+     MustOverride ReadOnly Property Keyword() As KS
+ 
+     Shared Function IsMe(ByVal tm As tm) As Boolean
+         Return tm.CurrentToken.Equals(Enums.UnaryOperators)
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\tools\monop\outline.cs" startline="793" endline="812">
+<![CDATA[
+ 
+ 	bool MethodIsExplicitIfaceImpl (MethodBase mb)
+ 	{
+ 		if (!(mb.IsFinal && mb.IsVirtual && mb.IsPrivate))
+ 			return false;
+ 		
+ 		// UGH msft has no way to get the info about what method is
+ 		// getting overriden. Another reason to use cecil 
+ 		//
+ 		//MethodInfo mi = mb as MethodInfo;
+ 		//if (mi == null)
+ 		//	return false;
+ 		//
+ 		//Console.WriteLine (mi.GetBaseDefinition ().DeclaringType);
+ 		//return mi.GetBaseDefinition ().DeclaringType.IsInterface;
+ 		
+ 		// So, we guess that virtual final private methods only come
+ 		// from ifaces 
+ 		return true;
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2247" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\UnaryExpressions\UnaryExpression.vb" startline="53" endline="61">
+<![CDATA[
+ 
+ #If DEBUG Then
+     Protected MustOverride Overrides Function GenerateCodeInternal(ByVal Info As EmitInfo) As Boolean
+ #End If
+     MustOverride ReadOnly Property Keyword() As KS
+ 
+     Shared Function IsMe(ByVal tm As tm) As Boolean
+         Return tm.CurrentToken.Equals(Enums.UnaryOperators)
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\expression.cs" startline="6959" endline="6968">
+<![CDATA[
+ 		}
+ 
+ 		public override bool Equals (object obj)
+ 		{
+ 			This t = obj as This;
+ 			if (t == null)
+ 				return false;
+ 
+ 			return true;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2255" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\UnaryExpressions\UnaryExpression.vb" startline="53" endline="61">
+<![CDATA[
+ 
+ #If DEBUG Then
+     Protected MustOverride Overrides Function GenerateCodeInternal(ByVal Info As EmitInfo) As Boolean
+ #End If
+     MustOverride ReadOnly Property Keyword() As KS
+ 
+     Shared Function IsMe(ByVal tm As tm) As Boolean
+         Return tm.CurrentToken.Equals(Enums.UnaryOperators)
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\cs-tokenizer.cs" startline="2210" endline="2219">
+<![CDATA[
+ 
+ 		bool eval_val (string s)
+ 		{
+ 			if (s == "true")
+ 				return true;
+ 			if (s == "false")
+ 				return false;
+ 
+ 			return file_name.IsConditionalDefined (s);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2258" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\UnaryExpressions\UnaryExpression.vb" startline="53" endline="61">
+<![CDATA[
+ 
+ #If DEBUG Then
+     Protected MustOverride Overrides Function GenerateCodeInternal(ByVal Info As EmitInfo) As Boolean
+ #End If
+     MustOverride ReadOnly Property Keyword() As KS
+ 
+     Shared Function IsMe(ByVal tm As tm) As Boolean
+         Return tm.CurrentToken.Equals(Enums.UnaryOperators)
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\cs-tokenizer.cs" startline="2061" endline="2070">
+<![CDATA[
+ 
+ 		bool IsTokenIdentifierEqual (char[] identifier)
+ 		{
+ 			for (int i = 0; i < identifier.Length; ++i) {
+ 				if (identifier[i] != id_builder[i])
+ 					return false;
+ 			}
+ 			for (int i = 0; i < identifier.Length; ++i) {
+ 				if (identifier[i] != id_builder[i])
+ 					return false;
+ 			}
+ 
+ 			return true;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2264" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\UnaryExpressions\UnaryExpression.vb" startline="53" endline="61">
+<![CDATA[
+ 
+ #If DEBUG Then
+     Protected MustOverride Overrides Function GenerateCodeInternal(ByVal Info As EmitInfo) As Boolean
+ #End If
+     MustOverride ReadOnly Property Keyword() As KS
+ 
+     Shared Function IsMe(ByVal tm As tm) As Boolean
+         Return tm.CurrentToken.Equals(Enums.UnaryOperators)
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\support.cs" startline="72" endline="90">
+<![CDATA[
+ 	}
+ 
+ 	static class ArrayComparer
+ 	{
+ 		public static bool IsEqual<T> (T[] array1, T[] array2)
+ 		{
+ 			if (array1 == null || array2 == null)
+ 				return array1 == array2;
+ 
+ 			var eq = EqualityComparer<T>.Default;
+ 
+ 			for (int i = 0; i < array1.Length; ++i) {
+ 				if (!eq.Equals (array1[i], array2[i])) {
+ 					return false;
+ 				}
+ 			}
+ 			for (int i = 0; i < array1.Length; ++i) {
+ 				if (!eq.Equals (array1[i], array2[i])) {
+ 					return false;
+ 				}
+ 			}
+ 
+ 			return true;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2401" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\Expression.vb" startline="481" endline="487">
+<![CDATA[
+ 
+ #End Region
+ 
+     Overridable ReadOnly Property AsString() As String
+         Get
+             Return "<String representation of " & Me.GetType.FullName & " not implemented>"
+         End Get
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\constant.cs" startline="31" endline="45">
+<![CDATA[
+ 
+ 		/// <remarks>
+ 		///   This is different from ToString in that ToString
+ 		///   is supposed to be there for debugging purposes,
+ 		///   and is not guaranteed to be useful for anything else,
+ 		///   AsString() will provide something that can be used
+ 		///   for round-tripping C# code.  Maybe it can be used
+ 		///   for IL assembly as well.
+ 		/// </remarks>
+ 		public abstract string AsString ();
+ 
+ 		override public string ToString ()
+ 		{
+ 			return this.GetType ().Name + " (" + AsString () + ")";
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2467" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\UnaryExpressions\Expressions.vb" startline="34" endline="41">
+<![CDATA[
+     End Property
+ 
+     Shadows Function ToArray() As Expression()
+         Dim result As Expression()
+         ReDim result(Count - 1)
+         Array.Copy(MyBase.ToArray, result, Count)
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Emit\ModuleBuilder.cs" startline="870" endline="876">
+<![CDATA[
+ 
+ 		private static byte[] StringToPaddedUTF8(string str)
+ 		{
+ 			byte[] buf = new byte[(System.Text.Encoding.UTF8.GetByteCount(str) + 4) & ~3];
+ 			System.Text.Encoding.UTF8.GetBytes(str, 0, str.Length, buf, 0);
+ 			return buf;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2468" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\UnaryExpressions\Expressions.vb" startline="34" endline="41">
+<![CDATA[
+     End Property
+ 
+     Shadows Function ToArray() As Expression()
+         Dim result As Expression()
+         ReDim result(Count - 1)
+         Array.Copy(MyBase.ToArray, result, Count)
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\Mono.CompilerServices.SymbolWriter\MonoSymbolFile.cs" startline="85" endline="130">
+<![CDATA[
+ 	}
+ 
+ 	public interface ISourceFile
+ 	{
+ 		SourceFileEntry Entry {
+ 			get;
+ 		}
+ 	}
+ 
+ 	public interface ICompileUnit
+ 	{
+ 		CompileUnitEntry Entry {
+ 			get;
+ 		}
+ 	}
+ 
+ 	public interface IMethodDef
+ 	{
+ 		string Name {
+ 			get;
+ 		}
+ 
+ 		int Token {
+ 			get;
+ 		}
+ 	}
+ 
+ #if !CECIL
+ 	// TODO
+ 	internal class MonoDebuggerSupport
+ 	{
+ 		static GetMethodTokenFunc get_method_token;
+ 		static GetGuidFunc get_guid;
+ 
+ 		delegate int GetMethodTokenFunc (MethodBase method);
+ 		delegate Guid GetGuidFunc (Module module);
+ 
+ 		static Delegate create_delegate (Type type, Type delegate_type, string name)
+ 		{
+ 			MethodInfo mi = type.GetMethod (name, BindingFlags.Static |
+ 							BindingFlags.NonPublic);
+ 			if (mi == null)
+ 				throw new Exception ("Can't find " + name);
+ 
+ 			return Delegate.CreateDelegate (delegate_type, mi);
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2479" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Reader\MetadataReader.cs" startline="56" endline="67">
+<![CDATA[
+ 
+ 		internal int ReadStringIndex()
+ 		{
+ 			if (bigStrings)
+ 			{
+ 				return br.ReadInt32();
+ 			}
+ 			else
+ 			{
+ 				return br.ReadUInt16();
+ 			}
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Expressions\ArrayCreationExpression.vb" startline="111" endline="129">
+<![CDATA[
+ 
+ 
+     ''' <summary>
+     ''' Creates an array of the specified type and number of elements (and ranks)
+     ''' </summary>
+     ''' <param name="Info"></param>
+     ''' <param name="arraytype"></param>
+     ''' <param name="Elements"></param>
+     ''' <remarks></remarks>
+     Public Shared Sub EmitArrayCreation(ByVal Info As EmitInfo, ByVal ArrayType As Mono.Cecil.TypeReference, ByVal Elements As Generic.List(Of Integer))
+         If Elements.Count = 0 Then
+             Emitter.EmitLoadI4Value(Info, 0)
+         Else
+             For i As Integer = 0 To Elements.Count - 1
+                 Emitter.EmitLoadI4Value(Info, Elements(i))
+             Next
+         End If
+         EmitArrayConstructor(Info, ArrayType, Elements.Count)
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2513" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Assembly.cs" startline="143" endline="154">
+<![CDATA[
+ 
+ 		public string CodeBase
+ 		{
+ 			get
+ 			{
+ 				string path = this.Location.Replace(System.IO.Path.DirectorySeparatorChar, '/');
+ 				if (!path.StartsWith("/"))
+ 				{
+ 					path = "/" + path;
+ 				}
+ 				return "file
+ 			}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="2427" endline="2439">
+<![CDATA[
+ 
+     Shared Function IntToBin(ByVal Int As ULong) As String
+         If Int = 0 Then Return "0"
+         IntToBin = ""
+         Do Until Int = 0
+             If CBool(Int And 1UL) Then
+                 IntToBin = "1" & IntToBin
+             Else
+                 IntToBin = "0" & IntToBin
+             End If
+             Int >>= 1
+         Loop
+         Do Until Int = 0
+             If CBool(Int And 1UL) Then
+                 IntToBin = "1" & IntToBin
+             Else
+                 IntToBin = "0" & IntToBin
+             End If
+             Int >>= 1
+         Loop
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2524" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Assembly.cs" startline="143" endline="154">
+<![CDATA[
+ 
+ 		public string CodeBase
+ 		{
+ 			get
+ 			{
+ 				string path = this.Location.Replace(System.IO.Path.DirectorySeparatorChar, '/');
+ 				if (!path.StartsWith("/"))
+ 				{
+ 					path = "/" + path;
+ 				}
+ 				return "file
+ 			}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="1720" endline="1747">
+<![CDATA[
+ 
+     ''' <summary>
+     ''' Finds the parent namespace of the specified namespace.
+     ''' "NS1.NS2" => "NS1"
+     ''' "NS1" => ""
+     ''' "" => Nothing
+     ''' Nothing =>InternalException()
+     ''' </summary>
+     ''' <param name="Namespace"></param>
+     ''' <returns></returns>
+     ''' <remarks></remarks>
+     Shared Function GetNamespaceParent(ByVal [Namespace] As String) As String
+         If [Namespace] Is Nothing Then
+             Throw New InternalException("")
+         ElseIf [Namespace] = String.Empty Then
+             Return Nothing
+         Else
+             Dim dotIdx As Integer
+             dotIdx = [Namespace].LastIndexOf("."c)
+             If dotIdx > 0 Then
+                 Return [Namespace].Substring(0, dotIdx)
+             ElseIf dotIdx = 0 Then
+                 Throw New InternalException("A namespace starting with a dot??")
+             Else
+                 Return String.Empty
+             End If
+         End If
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2532" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Emit\ModuleBuilder.cs" startline="728" endline="737">
+<![CDATA[
+ 
+ 		internal void RegisterTokenFixup(int pseudoToken, int realToken)
+ 		{
+ 			int index = -(pseudoToken + 1);
+ 			while (resolvedTokens.Count <= index)
+ 			{
+ 				resolvedTokens.Add(0);
+ 			}
+ 			while (resolvedTokens.Count <= index)
+ 			{
+ 				resolvedTokens.Add(0);
+ 			}
+ 			resolvedTokens[index] = realToken;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Scanner.vb" startline="1290" endline="1297">
+<![CDATA[
+ 
+     Private Function PeekChars(ByVal Chars As Integer) As Char
+         Do Until m_PeekedChars.Count >= Chars
+             If m_Reader.EndOfStream Then Return nlA
+             m_PeekedChars.Enqueue(Convert.ToChar(m_Reader.Read))
+         Loop
+         Do Until m_PeekedChars.Count >= Chars
+             If m_Reader.EndOfStream Then Return nlA
+             m_PeekedChars.Enqueue(Convert.ToChar(m_Reader.Read))
+         Loop
+         Return m_PeekedChars.ToArray()(Chars - 1)
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2533" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Emit\ModuleBuilder.cs" startline="728" endline="737">
+<![CDATA[
+ 
+ 		internal void RegisterTokenFixup(int pseudoToken, int realToken)
+ 		{
+ 			int index = -(pseudoToken + 1);
+ 			while (resolvedTokens.Count <= index)
+ 			{
+ 				resolvedTokens.Add(0);
+ 			}
+ 			while (resolvedTokens.Count <= index)
+ 			{
+ 				resolvedTokens.Add(0);
+ 			}
+ 			resolvedTokens[index] = realToken;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Scanner.vb" startline="1281" endline="1289">
+<![CDATA[
+     End Property
+ 
+     Private Function PeekChar() As Char
+         If m_PeekedChars.Count = 0 Then
+             If m_Reader.EndOfStream Then Return nl0
+             m_PeekedChars.Enqueue(Convert.ToChar(m_Reader.Read))
+         End If
+         Return m_PeekedChars.Peek()
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2556" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Writer\Heaps.cs" startline="290" endline="297">
+<![CDATA[
+ 
+ 		protected override void WriteImpl(MetadataWriter mw)
+ 		{
+ 			foreach (Guid guid in list)
+ 			{
+ 				mw.Write(guid.ToByteArray());
+ 			}
+ 			foreach (Guid guid in list)
+ 			{
+ 				mw.Write(guid.ToByteArray());
+ 			}
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Report.vb" startline="108" endline="114">
+<![CDATA[
+ 
+     Sub Write(Optional ByVal Value As String = "")
+         For Each d As Diagnostics.TraceListener In m_Listeners
+             d.Write(Value)
+         Next
+         Console.Write(Value)
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2557" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Writer\Heaps.cs" startline="290" endline="297">
+<![CDATA[
+ 
+ 		protected override void WriteImpl(MetadataWriter mw)
+ 		{
+ 			foreach (Guid guid in list)
+ 			{
+ 				mw.Write(guid.ToByteArray());
+ 			}
+ 			foreach (Guid guid in list)
+ 			{
+ 				mw.Write(guid.ToByteArray());
+ 			}
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="798" endline="807">
+<![CDATA[
+ 
+     Shared Function FilterByName(ByVal collection As Generic.List(Of Type), ByVal Name As String) As Generic.List(Of Type)
+         Dim result As New Generic.List(Of Type)
+         Dim tmpname As String = ""
+         For Each obj As Type In collection
+             If Helper.CompareName(Name, obj.Name) Then result.Add(obj)
+         Next
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2558" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Writer\Heaps.cs" startline="290" endline="297">
+<![CDATA[
+ 
+ 		protected override void WriteImpl(MetadataWriter mw)
+ 		{
+ 			foreach (Guid guid in list)
+ 			{
+ 				mw.Write(guid.ToByteArray());
+ 			}
+ 			foreach (Guid guid in list)
+ 			{
+ 				mw.Write(guid.ToByteArray());
+ 			}
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Code\CodeBlock.vb" startline="100" endline="110">
+<![CDATA[
+         Get
+             If m_BlockStatements Is Nothing Then
+                 m_BlockStatements = New Generic.List(Of BlockStatement)
+                 For Each stmt As Statement In m_Statements
+                     Dim blockStmt As BlockStatement
+                     blockStmt = TryCast(stmt, BlockStatement)
+                     If blockStmt IsNot Nothing Then m_BlockStatements.Add(blockStmt)
+                 Next
+             End If
+             Return m_BlockStatements
+         End Get
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2572" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Namespaces.vb" startline="55" endline="62">
+<![CDATA[
+     End Property
+ 
+     Function FindNamespace(ByVal A As String, ByVal B As String) As [Namespace]
+         For i As Integer = 0 To Count - 1
+             If Item(i).Equals(A, B) Then Return Item(i)
+         Next
+         Return Nothing
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\complete.cs" startline="28" endline="44">
+<![CDATA[
+ 		{
+ 			foreach (string name in names) {
+ 				if (name == null)
+ 					continue;
+ 
+ 				if (prefix != null && !name.StartsWith (prefix))
+ 					continue;
+ 
+ 				if (results.Contains (name))
+ 					continue;
+ 
+ 				if (prefix != null)
+ 					results.Add (name.Substring (prefix.Length));
+ 				else
+ 					results.Add (name);
+ 			}
+ 			foreach (string name in names) {
+ 				if (name == null)
+ 					continue;
+ 
+ 				if (prefix != null && !name.StartsWith (prefix))
+ 					continue;
+ 
+ 				if (results.Contains (name))
+ 					continue;
+ 
+ 				if (prefix != null)
+ 					results.Add (name.Substring (prefix.Length));
+ 				else
+ 					results.Add (name);
+ 			}
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2575" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\TypeDeclarations\AssemblyDeclaration.vb" startline="968" endline="974">
+<![CDATA[
+ 
+     Function FindType(ByVal FullName As String) As TypeDeclaration
+         For Each type As TypeDeclaration In Me.Types
+             If Helper.CompareName(type.FullName, FullName) Then Return type
+         Next
+         Return Nothing
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\Mono.CompilerServices.SymbolWriter\MonoSymbolTable.cs" startline="765" endline="780">
+<![CDATA[
+ 
+ 		public bool CheckChecksum ()
+ 		{
+ 			try {
+ 				using (FileStream fs = new FileStream (file_name, FileMode.Open)) {
+ 					MD5 md5 = MD5.Create ();
+ 					byte[] data = md5.ComputeHash (fs);
+ 					for (int i = 0; i < 16; i++)
+ 						if (data [i] != hash [i])
+ 							return false;
+ 					for (int i = 0; i < 16; i++)
+ 						if (data [i] != hash [i])
+ 							return false;
+ 					return true;
+ 				}
+ 			} catch {
+ 				return false;
+ 			}
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2582" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Writer\ModuleWriter.cs" startline="301" endline="319">
+<![CDATA[
+ 
+ 		private static int ComputeStrongNameSignatureLength(byte[] publicKey)
+ 		{
+ 			if (publicKey == null)
+ 			{
+ 				return 0;
+ 			}
+ 			else if (publicKey.Length == 16)
+ 			{
+ 				// it must be the ECMA pseudo public key, we don't know the key size of the real key, but currently both Mono and Microsoft use a 1024 bit key size
+ 				return 128;
+ 			}
+ 			else
+ 			{
+ 				// for the supported strong naming algorithms, the signature size is the same as the key size
+ 				// (we have to subtract 32 for the header)
+ 				return publicKey.Length - 32;
+ 			}
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Types\Constraint.vb" startline="59" endline="75">
+<![CDATA[
+     End Property
+ 
+     ReadOnly Property SpecialConstraintAttribute() As Mono.Cecil.GenericParameterAttributes
+         Get
+             Select Case m_Special
+                 Case KS.[New]
+                     Return Mono.Cecil.GenericParameterAttributes.DefaultConstructorConstraint
+                 Case KS.Class
+                     Return Mono.Cecil.GenericParameterAttributes.ReferenceTypeConstraint
+                 Case KS.Structure
+                     Return Mono.Cecil.GenericParameterAttributes.NotNullableValueTypeConstraint
+                 Case KS.None
+                     Return Mono.Cecil.GenericParameterAttributes.NonVariant
+                 Case Else
+                     Throw New InternalException(Me)
+             End Select
+         End Get
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2584" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\parameter.cs" startline="515" endline="530">
+<![CDATA[
+ 
+ 		public static string GetModifierSignature (Modifier mod)
+ 		{
+ 			switch (mod) {
+ 			case Modifier.OUT
+ 				return "out";
+ 			case Modifier.PARAMS
+ 				return "params";
+ 			case Modifier.REF
+ 				return "ref";
+ 			case Modifier.This
+ 				return "this";
+ 			default
+ 				return "";
+ 			}
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Scanner.vb" startline="621" endline="633">
+<![CDATA[
+ 
+     Private Function IsSeparatorCharacter(ByVal chr As Char) As Boolean
+         'Separator 
+         Return chr = "("c OrElse _
+                 chr = ")"c OrElse _
+                 chr = "{"c OrElse _
+                 chr = "}"c OrElse _
+                 chr = "!"c OrElse _
+                 chr = "#"c OrElse _
+                 chr = ","c OrElse _
+                 chr = "."c OrElse _
+                 chr = "
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2589" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Writer\Heaps.cs" startline="174" endline="187">
+<![CDATA[
+ 
+ 		internal int Add(string str)
+ 		{
+ 			Debug.Assert(!frozen);
+ 			int offset;
+ 			if (!strings.TryGetValue(str, out offset))
+ 			{
+ 				offset = nextOffset;
+ 				nextOffset += System.Text.Encoding.UTF8.GetByteCount(str) + 1;
+ 				list.Add(str);
+ 				strings.Add(str, offset);
+ 			}
+ 			return offset;
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Scanner.vb" startline="1252" endline="1275">
+<![CDATA[
+     End Property
+ 
+     Private Function NextChar() As Char
+         If m_CurrentColumn < 255 Then m_CurrentColumn += CByte(1)
+         m_TotalCharCount += 1
+ 
+         m_PreviousChar = m_CurrentChar
+         If m_PeekedChars.Count > 0 Then
+             m_CurrentChar = m_PeekedChars.Dequeue
+         Else
+             If m_Reader.EndOfStream Then
+                 m_CurrentChar = nl0
+             Else
+                 If m_Reader.EndOfStream Then
+                     m_EndOfFile = True
+                     m_CurrentChar = nl0
+                 Else
+                     m_CurrentChar = Convert.ToChar(m_Reader.Read())
+                 End If
+             End If
+         End If
+ 
+         Return m_CurrentChar
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="2602" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Impl\CryptoHack.cs" startline="35" endline="54">
+<![CDATA[
+ 		{
+ 			// HACK use serialization to get at the private key or key container name,
+ 			// this should be more future proof than using reflection to access the fields directly.
+ 			SerializationInfo ser = new SerializationInfo(typeof(StrongNameKeyPair), new FormatterConverter());
+ 			((ISerializable)keyPair.keyPair).GetObjectData(ser, new StreamingContext());
+ 			byte[] key = (byte[])ser.GetValue("_keyPairArray", typeof(byte[]));
+ 			string keycontainer = ser.GetString("_keyPairContainer");
+ 			if (keycontainer != null)
+ 			{
+ 				CspParameters parm = new CspParameters();
+ 				parm.Flags = CspProviderFlags.UseMachineKeyStore;
+ 				parm.KeyContainerName = keycontainer;
+ 				parm.KeyNumber = 2;	// Signature
+ 				return new RSACryptoServiceProvider(parm);
+ 			}
+ 			else
+ 			{
+ 				return Mono.Security.Cryptography.CryptoConvert.FromCapiKeyBlob(key);
+ 			}
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="2485" endline="2505">
+<![CDATA[
+ 
+     ''' <summary>
+     ''' Converts the value into how it would look in a source file. 
+     ''' I.E
+     ''' </summary>
+     ''' <param name="Value"></param>
+     ''' <returns></returns>
+     ''' <remarks></remarks>
+     Shared Function ValueToCodeConstant(ByVal Value As Object) As String
+         If TypeOf Value Is String Then
+             Return """" & Value.ToString.Replace("""", """""") & """"
+         ElseIf TypeOf Value Is Char Then
+             Return """" & Value.ToString.Replace("""", """""") & """c"
+         ElseIf TypeOf Value Is Date Then
+             Return "#" & Value.ToString & "#"
+         ElseIf Value Is Nothing Then
+             Return KS.Nothing.ToString
+         Else
+             Return Value.ToString
+         End If
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="3063" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Parser\Parser.vb" startline="5840" endline="5879">
+<![CDATA[
+ 
+     ''' <summary>
+     ''' CaseStatement  
+     '''	   "Case" CaseClauses  StatementTerminator
+     '''	        [  Block  ]
+     ''' CaseElseStatement  
+     '''	   "Case" "Else" StatementTerminator
+     '''	   [  Block  ]
+     ''' </summary>
+     ''' <remarks></remarks>
+     Private Function ParseCaseStatement(ByVal Parent As ParsedObject, ByVal IsOneLiner As Boolean) As CaseStatement
+         Dim result As New CaseStatement(Parent)
+ 
+         Dim m_IsElse As Boolean
+         Dim m_Clauses As CaseClauses
+         Dim m_Block As CodeBlock
+ 
+         tm.AcceptIfNotInternalError(KS.Case)
+         If tm.Accept(KS.Else) Then
+             m_IsElse = True
+             m_Clauses = Nothing
+         Else
+             m_Clauses = New CaseClauses(result)
+             If ParseList(Of CaseClause)(m_Clauses, New ParseDelegate_Parent(Of CaseClause)(AddressOf ParseCaseClause), result) = False Then
+                 Helper.ErrorRecoveryNotImplemented(tm.CurrentLocation)
+             End If
+         End If
+         If tm.AcceptEndOfStatement(IsOneLiner, True) = False Then
+             Compiler.Report.ShowMessage(Messages.VBNC99997, tm.CurrentLocation)
+         End If
+ 
+         m_Block = ParseCodeBlock(result, IsOneLiner)
+         If m_Block Is Nothing Then
+             Compiler.Report.ShowMessage(Messages.VBNC99997, tm.CurrentLocation)
+         End If
+ 
+         result.Init(m_IsElse, m_Clauses, m_Block)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\modifiers.cs" startline="192" endline="236">
+<![CDATA[
+ 
+ 		public static MethodAttributes MethodAttr (Modifiers mod_flags)
+ 		{
+ 			MethodAttributes ma = MethodAttributes.HideBySig;
+ 
+ 			switch (mod_flags & Modifiers.AccessibilityMask) {
+ 			case Modifiers.PUBLIC
+ 				ma |= MethodAttributes.Public;
+ 				break;
+ 			case Modifiers.PRIVATE
+ 				ma |= MethodAttributes.Private;
+ 				break;
+ 			case Modifiers.PROTECTED | Modifiers.INTERNAL
+ 				ma |= MethodAttributes.FamORAssem;
+ 				break;
+ 			case Modifiers.PROTECTED
+ 				ma |= MethodAttributes.Family;
+ 				break;
+ 			case Modifiers.INTERNAL
+ 				ma |= MethodAttributes.Assembly;
+ 				break;
+ 			default
+ 				throw new NotImplementedException (mod_flags.ToString ());
+ 			}
+ 
+ 			if ((mod_flags & Modifiers.STATIC) != 0)
+ 				ma |= MethodAttributes.Static;
+ 			if ((mod_flags & Modifiers.ABSTRACT) != 0) {
+ 				ma |= MethodAttributes.Abstract | MethodAttributes.Virtual;
+ 			}
+ 			if ((mod_flags & Modifiers.SEALED) != 0)
+ 				ma |= MethodAttributes.Final;
+ 
+ 			if ((mod_flags & Modifiers.VIRTUAL) != 0)
+ 				ma |= MethodAttributes.Virtual;
+ 
+ 			if ((mod_flags & Modifiers.OVERRIDE) != 0) {
+ 				ma |= MethodAttributes.Virtual;
+ 			} else {
+ 				if ((ma & MethodAttributes.Virtual) != 0)
+ 					ma |= MethodAttributes.NewSlot;
+ 			}
+ 			
+ 			return ma;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="3082" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Parser\Parser.vb" startline="5840" endline="5879">
+<![CDATA[
+ 
+     ''' <summary>
+     ''' CaseStatement  
+     '''	   "Case" CaseClauses  StatementTerminator
+     '''	        [  Block  ]
+     ''' CaseElseStatement  
+     '''	   "Case" "Else" StatementTerminator
+     '''	   [  Block  ]
+     ''' </summary>
+     ''' <remarks></remarks>
+     Private Function ParseCaseStatement(ByVal Parent As ParsedObject, ByVal IsOneLiner As Boolean) As CaseStatement
+         Dim result As New CaseStatement(Parent)
+ 
+         Dim m_IsElse As Boolean
+         Dim m_Clauses As CaseClauses
+         Dim m_Block As CodeBlock
+ 
+         tm.AcceptIfNotInternalError(KS.Case)
+         If tm.Accept(KS.Else) Then
+             m_IsElse = True
+             m_Clauses = Nothing
+         Else
+             m_Clauses = New CaseClauses(result)
+             If ParseList(Of CaseClause)(m_Clauses, New ParseDelegate_Parent(Of CaseClause)(AddressOf ParseCaseClause), result) = False Then
+                 Helper.ErrorRecoveryNotImplemented(tm.CurrentLocation)
+             End If
+         End If
+         If tm.AcceptEndOfStatement(IsOneLiner, True) = False Then
+             Compiler.Report.ShowMessage(Messages.VBNC99997, tm.CurrentLocation)
+         End If
+ 
+         m_Block = ParseCodeBlock(result, IsOneLiner)
+         If m_Block Is Nothing Then
+             Compiler.Report.ShowMessage(Messages.VBNC99997, tm.CurrentLocation)
+         End If
+ 
+         result.Init(m_IsElse, m_Clauses, m_Block)
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\cs-tokenizer.cs" startline="1041" endline="1103">
+<![CDATA[
+ 
+ 		bool parse_less_than ()
+ 		{
+ 		start
+ 			int the_token = token ();
+ 			if (the_token == Token.OPEN_BRACKET) {
+ 				do {
+ 					the_token = token ();
+ 				} while (the_token != Token.CLOSE_BRACKET);
+ 				the_token = token ();
+ 			} else if (the_token == Token.IN || the_token == Token.OUT) {
+ 				the_token = token ();
+ 			}
+ 			switch (the_token) {
+ 			case Token.IDENTIFIER
+ 			case Token.OBJECT
+ 			case Token.STRING
+ 			case Token.BOOL
+ 			case Token.DECIMAL
+ 			case Token.FLOAT
+ 			case Token.DOUBLE
+ 			case Token.SBYTE
+ 			case Token.BYTE
+ 			case Token.SHORT
+ 			case Token.USHORT
+ 			case Token.INT
+ 			case Token.UINT
+ 			case Token.LONG
+ 			case Token.ULONG
+ 			case Token.CHAR
+ 			case Token.VOID
+ 				break;
+ 			case Token.OP_GENERICS_GT
+ 				return true;
+ 
+ 			default
+ 				return false;
+ 			}
+ 		again
+ 			the_token = token ();
+ 
+ 			if (the_token == Token.OP_GENERICS_GT)
+ 				return true;
+ 			else if (the_token == Token.COMMA || the_token == Token.DOT || the_token == Token.DOUBLE_COLON)
+ 				goto start;
+ 			else if (the_token == Token.INTERR_NULLABLE || the_token == Token.STAR)
+ 				goto again;
+ 			else if (the_token == Token.OP_GENERICS_LT) {
+ 				if (!parse_less_than ())
+ 					return false;
+ 				goto again;
+ 			} else if (the_token == Token.OPEN_BRACKET) {
+ 			rank_specifiers
+ 				the_token = token ();
+ 				if (the_token == Token.CLOSE_BRACKET)
+ 					goto again;
+ 				else if (the_token == Token.COMMA)
+ 					goto rank_specifiers;
+ 				return false;
+ 			}
+ 
+ 			return false;
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="3372" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\class\IKVM.Reflection\Reader\ModuleReader.cs" startline="291" endline="311">
+<![CDATA[
+ 
+ 		private static int ReadCompressedInt(byte[] buffer, ref int offset)
+ 		{
+ 			byte b1 = buffer[offset++];
+ 			if (b1 <= 0x7F)
+ 			{
+ 				return b1;
+ 			}
+ 			else if ((b1 & 0xC0) == 0x80)
+ 			{
+ 				byte b2 = buffer[offset++];
+ 				return ((b1 & 0x3F) << 8) | b2;
+ 			}
+ 			else
+ 			{
+ 				byte b2 = buffer[offset++];
+ 				byte b3 = buffer[offset++];
+ 				byte b4 = buffer[offset++];
+ 				return ((b1 & 0x3F) << 24) + (b2 << 16) + (b3 << 8) + b4;
+ 			}
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\Emit\Emitter.vb" startline="1275" endline="1300">
+<![CDATA[
+ 
+     Overloads Shared Function EmitLoadValue(ByVal Info As EmitInfo, ByVal Value As Decimal) As Boolean
+         Dim DesiredTypeCode As TypeCode = Helper.GetTypeCode(Info.Compiler, Info.DesiredType)
+         Helper.Assert(Info.DesiredType IsNot Nothing)
+         If Math.Truncate(Value) = Value Then
+             If Value <= Integer.MaxValue AndAlso Value >= Integer.MinValue Then
+                 Return EmitLoadValue(Info, CInt(Value))
+             ElseIf Value <= Long.MaxValue AndAlso Value >= Long.MinValue Then
+                 Return EmitLoadValue(Info, CLng(Value))
+             ElseIf Value <= ULong.MaxValue AndAlso Value >= Long.MinValue Then
+                 Return EmitLoadValue(Info, CULng(Value))
+             End If
+         End If
+ 
+         Dim tmp As EmitInfo = Info.Clone(Info.Context, CType(Nothing, Mono.Cecil.TypeReference))
+ 
+         Select Case DesiredTypeCode
+             Case TypeCode.Single
+                 EmitLoadValue(tmp, CSng(Value))
+                 Return True
+             Case TypeCode.Double
+                 EmitLoadValue(tmp, CDbl(Value))
+                 Return True
+         End Select
+         Return False
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="3373" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\cs-parser.cs" startline="10949" endline="10963">
+<![CDATA[
+ 		 
+ 		 public void shift (int from, int to, int errorFlag) {
+ 			 switch (errorFlag) {
+ 			 default
+ 				 println("shift\tfrom state "+from+" to "+to);
+ 				 break;
+ 			 case 0
+ 				 println("shift\tfrom state "+from+" to "+to
+ 					     +"\t"+errorFlag+" left to recover");
+ 				 break;
+ 			 case 3
+ 				 println("shift\tfrom state "+from+" to "+to+"\ton error");
+ 				 break;
+ 			 }
+ 		 }
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="225" endline="265">
+<![CDATA[
+ 
+ 
+     Public Shared Function GetAttributes(ByVal Compiler As Compiler, ByVal m_Declaration As IFieldMember) As Mono.Cecil.FieldAttributes
+         Dim result As Mono.Cecil.FieldAttributes
+ 
+         If m_Declaration.Modifiers.Is(ModifierMasks.WithEvents) Then
+             result = Mono.Cecil.FieldAttributes.Private
+         Else
+             result = m_Declaration.Modifiers.GetFieldAttributeScope(DirectCast(m_Declaration, BaseObject).FindFirstParent(Of TypeDeclaration))
+         End If
+ 
+         If m_Declaration.Modifiers.Is(ModifierMasks.Static) Then
+             result = result Or Mono.Cecil.FieldAttributes.SpecialName
+             If DirectCast(m_Declaration, BaseObject).FindFirstParent(Of IMethod).IsShared Then
+                 result = result Or Mono.Cecil.FieldAttributes.Static
+             End If
+         End If
+         If m_Declaration.Modifiers.Is(ModifierMasks.Shared) OrElse m_Declaration.IsShared Then
+             result = result Or Mono.Cecil.FieldAttributes.Static
+         End If
+         If TypeOf m_Declaration Is EnumMemberDeclaration Then
+             result = result Or Mono.Cecil.FieldAttributes.Static Or Mono.Cecil.FieldAttributes.Literal
+         End If
+         If TypeOf m_Declaration Is ConstantDeclaration Then
+             result = result Or Mono.Cecil.FieldAttributes.Static
+             If m_Declaration.FieldType IsNot Nothing Then
+                 If Helper.CompareType(m_Declaration.FieldType, Compiler.TypeCache.System_Decimal) Then
+                     result = result Or Mono.Cecil.FieldAttributes.InitOnly
+                 ElseIf Helper.CompareType(m_Declaration.FieldType, Compiler.TypeCache.System_DateTime) Then
+                     result = result Or Mono.Cecil.FieldAttributes.InitOnly
+                 Else
+                     result = result Or Mono.Cecil.FieldAttributes.Literal Or Mono.Cecil.FieldAttributes.HasDefault
+                 End If
+             End If
+         End If
+         If m_Declaration.Modifiers.Is(ModifierMasks.ReadOnly) Then
+             result = result Or Mono.Cecil.FieldAttributes.InitOnly
+         End If
+ 
+         Return result
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="3384" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeResolution.vb" startline="633" endline="928">
+<![CDATA[
+ 
+     ''' <summary>
+     ''' Tries to convert the value into the desired type. Returns true if successful, 
+     ''' returns false otherwise. 
+     ''' </summary>
+     ''' <param name="value"></param>
+     ''' <param name="result"></param>
+     ''' <param name="desiredType"></param>
+     ''' <returns></returns>
+     ''' <remarks></remarks>
+     Public Function CheckNumericRange(ByVal value As Object, ByRef result As Object, ByVal desiredType As Mono.Cecil.TypeReference) As Boolean
+         Dim builtInType As BuiltInDataTypes = TypeResolution.TypeCodeToBuiltInType(Helper.GetTypeCode(Compiler, desiredType))
+ 
+         If value Is Nothing Then 'Nothing can be converted into anything.
+             result = Nothing
+             Return True
+         End If
+ 
+         If IsNumericType(desiredType) = False Then Return False
+ 
+         If IsIntegralType(builtInType) AndAlso IsIntegralType(Helper.GetTypeCode(Compiler, CecilHelper.GetType(Compiler, value))) Then
+             Return CheckIntegralRange(value, result, builtInType)
+         Else
+             Dim tpValue As TypeCode = Helper.GetTypeCode(Compiler, CecilHelper.GetType(Compiler, value))
+             Dim desiredCode As TypeCode = Helper.GetTypeCode(Compiler, desiredType)
+ 
+             If Helper.CompareType(CecilHelper.GetType(Compiler, value), desiredType) Then
+                 result = value
+                 Return True
+             End If
+ 
+             If tpValue = TypeCode.DBNull Then
+                 Select Case desiredCode
+                     Case TypeCode.Boolean
+                         result = CBool(Nothing)
+                     Case TypeCode.Byte
+                         result = CByte(Nothing)
+                     Case TypeCode.Char
+                         result = CChar(Nothing)
+                     Case TypeCode.DateTime
+                         result = CDate(Nothing)
+                     Case TypeCode.Decimal
+                         result = CDec(Nothing)
+                     Case TypeCode.Double
+                         result = CDbl(Nothing)
+                     Case TypeCode.Int16
+                         result = CShort(Nothing)
+                     Case TypeCode.Int32
+                         result = CInt(Nothing)
+                     Case TypeCode.Int64
+                         result = CLng(Nothing)
+                     Case TypeCode.SByte
+                         result = CSByte(Nothing)
+                     Case TypeCode.Single
+                         result = CSng(Nothing)
+                     Case TypeCode.String
+                         result = Nothing
+                     Case TypeCode.UInt16
+                         result = CUShort(Nothing)
+                     Case TypeCode.UInt32
+                         result = CUInt(Nothing)
+                     Case TypeCode.UInt64
+                         result = CULng(Nothing)
+                     Case Else
+                         Helper.Stop()
+                         Throw New InternalException("")
+                 End Select
+                 Return True
+             End If
+ 
+             If IsNumericType(CecilHelper.GetType(Compiler, value)) = False Then Return False
+ 
+             Select Case desiredCode
+                 Case TypeCode.Double
+                     Select Case tpValue
+                         Case TypeCode.Byte, TypeCode.SByte, TypeCode.Int16, TypeCode.UInt16, TypeCode.Int32, TypeCode.UInt32, TypeCode.Int64, TypeCode.UInt64, TypeCode.Single, TypeCode.Double, TypeCode.Decimal
+                             result = CDbl(value)
+                             Return True
+                     End Select
+                 Case TypeCode.Decimal
+                     Select Case tpValue
+                         Case TypeCode.Byte, TypeCode.SByte, TypeCode.Int16, TypeCode.UInt16, TypeCode.Int32, TypeCode.UInt32, TypeCode.Int64, TypeCode.UInt64, TypeCode.Decimal
+                             result = CDec(value)
+                             Return True
+                         Case TypeCode.Single, TypeCode.Double
+                             Dim tmp As Double = CDbl(value)
+                             If tmp <= Decimal.MaxValue AndAlso tmp >= Decimal.MinValue Then
+                                 result = CDec(tmp) 'This should be CDec(value), but vbc.exe seems to do it like this.
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                     End Select
+                 Case TypeCode.Single
+                     Select Case tpValue
+                         Case TypeCode.Byte, TypeCode.SByte, TypeCode.Int16, TypeCode.UInt16, TypeCode.Int32, TypeCode.UInt32, TypeCode.Int64, TypeCode.UInt64, TypeCode.Single, TypeCode.Decimal
+                             result = CSng(value)
+                             Return True
+                         Case TypeCode.Double
+                             If CDbl(value) >= Single.MinValue AndAlso CDbl(value) <= Single.MaxValue Then
+                                 result = CSng(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                     End Select
+                 Case TypeCode.Byte
+                     Select Case tpValue
+                         Case TypeCode.Single, TypeCode.Double
+                             Dim tmp As Double = CDbl(value)
+                             If tmp <= Byte.MaxValue AndAlso tmp >= Byte.MinValue Then
+                                 result = CByte(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                         Case TypeCode.Decimal
+                             Dim tmp As Decimal = CDec(value)
+                             If tmp <= Byte.MaxValue AndAlso tmp >= Byte.MinValue Then
+                                 result = CByte(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                     End Select
+                 Case TypeCode.SByte
+                     Select Case tpValue
+                         Case TypeCode.Single, TypeCode.Double
+                             Dim tmp As Double = CDbl(value)
+                             If tmp <= SByte.MaxValue AndAlso tmp >= SByte.MinValue Then
+                                 result = CSByte(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                         Case TypeCode.Decimal
+                             Dim tmp As Decimal = CDec(value)
+                             If tmp <= SByte.MaxValue AndAlso tmp >= SByte.MinValue Then
+                                 result = CSByte(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                     End Select
+                 Case TypeCode.Int16
+                     Select Case tpValue
+                         Case TypeCode.Single, TypeCode.Double
+                             Dim tmp As Double = CDbl(value)
+                             If tmp <= Int16.MaxValue AndAlso tmp >= Int16.MinValue Then
+                                 result = CShort(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                         Case TypeCode.Decimal
+                             Dim tmp As Decimal = CDec(value)
+                             If tmp <= Int16.MaxValue AndAlso tmp >= Int16.MinValue Then
+                                 result = CShort(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                     End Select
+                 Case TypeCode.UInt16
+                     Select Case tpValue
+                         Case TypeCode.Single, TypeCode.Double
+                             Dim tmp As Double = CDbl(value)
+                             If tmp <= UInt16.MaxValue AndAlso tmp >= UInt16.MinValue Then
+                                 result = CUShort(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                         Case TypeCode.Decimal
+                             Dim tmp As Decimal = CDec(value)
+                             If tmp <= UInt16.MaxValue AndAlso tmp >= UInt16.MinValue Then
+                                 result = CUShort(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                     End Select
+                 Case TypeCode.Int32
+                     Select Case tpValue
+                         Case TypeCode.Byte, TypeCode.SByte, TypeCode.Int16, TypeCode.UInt16, TypeCode.Int32, TypeCode.Boolean
+                             result = CInt(value)
+                             Return True
+                         Case TypeCode.Single, TypeCode.Double
+                             Dim tmp As Double = CDbl(value)
+                             If tmp <= Int32.MaxValue AndAlso tmp >= Int32.MinValue Then
+                                 result = CInt(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                         Case TypeCode.Decimal
+                             Dim tmp As Decimal = CDec(value)
+                             If tmp <= Int32.MaxValue AndAlso tmp >= Int32.MinValue Then
+                                 result = CInt(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                     End Select
+                 Case TypeCode.UInt32
+                     Select Case tpValue
+                         Case TypeCode.Single, TypeCode.Double
+                             Dim tmp As Double = CDbl(value)
+                             If tmp <= UInt32.MaxValue AndAlso tmp >= UInt32.MinValue Then
+                                 result = CUInt(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                         Case TypeCode.Decimal
+                             Dim tmp As Decimal = CDec(value)
+                             If tmp <= UInt32.MaxValue AndAlso tmp >= UInt32.MinValue Then
+                                 result = CUInt(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                     End Select
+                 Case TypeCode.Int64
+                     Select Case tpValue
+                         Case TypeCode.Byte, TypeCode.SByte, TypeCode.Int16, TypeCode.UInt16, TypeCode.Int32, TypeCode.Boolean
+                             result = CInt(value)
+                             Return True
+                         Case TypeCode.Single, TypeCode.Double
+                             Dim tmp As Double = CDbl(value)
+                             If tmp <= Int64.MaxValue AndAlso tmp >= Int64.MinValue Then
+                                 result = CLng(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                         Case TypeCode.Decimal
+                             Dim tmp As Decimal = CDec(value)
+                             If tmp <= Int64.MaxValue AndAlso tmp >= Int64.MinValue Then
+                                 result = CLng(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                     End Select
+                 Case TypeCode.UInt64
+                     Select Case tpValue
+                         Case TypeCode.Single, TypeCode.Double
+                             Dim tmp As Double = CDbl(value)
+                             If tmp <= UInt64.MaxValue AndAlso tmp >= UInt64.MinValue Then
+                                 result = CULng(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                         Case TypeCode.Decimal
+                             Dim tmp As Decimal = CDec(value)
+                             If tmp <= UInt64.MaxValue AndAlso tmp >= UInt64.MinValue Then
+                                 result = CULng(value)
+                                 Return True
+                             Else
+                                 Return False
+                             End If
+                     End Select
+             End Select
+ 
+             Select Case tpValue
+                 Case TypeCode.Byte, TypeCode.UInt16, TypeCode.UInt32, TypeCode.UInt64
+                     Dim tmpValue As ULong = CULng(value)
+                     Helper.Stop()
+                 Case TypeCode.SByte, TypeCode.Int16, TypeCode.Int32, TypeCode.Int64
+                     Dim tmpValue As Long = CLng(value)
+                     'Dim t As Type
+                     Helper.Stop()
+                 Case TypeCode.Char
+                     Helper.Stop()
+                 Case TypeCode.Boolean
+                     Helper.Stop()
+                 Case TypeCode.DateTime
+                     Helper.Stop()
+                 Case TypeCode.Decimal
+                     Helper.Stop()
+                 Case TypeCode.Double
+                     Helper.Stop()
+                 Case TypeCode.Single
+                     Helper.Stop()
+                 Case TypeCode.String
+                     Helper.Stop()
+                 Case Else
+                     Helper.Stop()
+             End Select
+             Helper.Stop()
+         End If
+ 
+         Return False
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\cs-tokenizer.cs" startline="865" endline="1025">
+<![CDATA[
+ 
+ 		//
+ 		// Open parens micro parser. Detects both lambda and cast ambiguity.
+ 		//	
+ 		int TokenizeOpenParens ()
+ 		{
+ 			int ptoken;
+ 			current_token = -1;
+ 
+ 			int bracket_level = 0;
+ 			bool is_type = false;
+ 			bool can_be_type = false;
+ 			
+ 			while (true) {
+ 				ptoken = current_token;
+ 				token ();
+ 
+ 				switch (current_token) {
+ 				case Token.CLOSE_PARENS
+ 					token ();
+ 					
+ 					//
+ 					// Expression inside parens is lambda, (int i) => 
+ 					//
+ 					if (current_token == Token.ARROW)
+ 						return Token.OPEN_PARENS_LAMBDA;
+ 
+ 					//
+ 					// Expression inside parens is single type, (int[])
+ 					//
+ 					if (is_type)
+ 						return Token.OPEN_PARENS_CAST;
+ 
+ 					//
+ 					// Expression is possible cast, look at next token, (T)null
+ 					//
+ 					if (can_be_type) {
+ 						switch (current_token) {
+ 						case Token.OPEN_PARENS
+ 						case Token.BANG
+ 						case Token.TILDE
+ 						case Token.IDENTIFIER
+ 						case Token.LITERAL
+ 						case Token.BASE
+ 						case Token.CHECKED
+ 						case Token.DELEGATE
+ 						case Token.FALSE
+ 						case Token.FIXED
+ 						case Token.NEW
+ 						case Token.NULL
+ 						case Token.SIZEOF
+ 						case Token.THIS
+ 						case Token.THROW
+ 						case Token.TRUE
+ 						case Token.TYPEOF
+ 						case Token.UNCHECKED
+ 						case Token.UNSAFE
+ 						case Token.DEFAULT
+ 
+ 						//
+ 						// These can be part of a member access
+ 						//
+ 						case Token.INT
+ 						case Token.UINT
+ 						case Token.SHORT
+ 						case Token.USHORT
+ 						case Token.LONG
+ 						case Token.ULONG
+ 						case Token.DOUBLE
+ 						case Token.FLOAT
+ 						case Token.CHAR
+ 						case Token.BYTE
+ 						case Token.DECIMAL
+ 						case Token.BOOL
+ 							return Token.OPEN_PARENS_CAST;
+ 						}
+ 					}
+ 					return Token.OPEN_PARENS;
+ 					
+ 				case Token.DOT
+ 				case Token.DOUBLE_COLON
+ 					if (ptoken != Token.IDENTIFIER && ptoken != Token.OP_GENERICS_GT)
+ 						goto default;
+ 
+ 					continue;
+ 
+ 				case Token.IDENTIFIER
+ 					switch (ptoken) {
+ 					case Token.DOT
+ 						if (bracket_level == 0) {
+ 							is_type = false;
+ 							can_be_type = true;
+ 						}
+ 
+ 						continue;
+ 					case Token.OP_GENERICS_LT
+ 					case Token.COMMA
+ 					case Token.DOUBLE_COLON
+ 					case -1
+ 						if (bracket_level == 0)
+ 							can_be_type = true;
+ 						continue;
+ 					default
+ 						can_be_type = is_type = false;
+ 						continue;
+ 					}
+ 
+ 				case Token.OBJECT
+ 				case Token.STRING
+ 				case Token.BOOL
+ 				case Token.DECIMAL
+ 				case Token.FLOAT
+ 				case Token.DOUBLE
+ 				case Token.SBYTE
+ 				case Token.BYTE
+ 				case Token.SHORT
+ 				case Token.USHORT
+ 				case Token.INT
+ 				case Token.UINT
+ 				case Token.LONG
+ 				case Token.ULONG
+ 				case Token.CHAR
+ 				case Token.VOID
+ 					if (bracket_level == 0)
+ 						is_type = true;
+ 					continue;
+ 
+ 				case Token.COMMA
+ 					if (bracket_level == 0) {
+ 						bracket_level = 100;
+ 						can_be_type = is_type = false;
+ 					}
+ 					continue;
+ 
+ 				case Token.OP_GENERICS_LT
+ 				case Token.OPEN_BRACKET
+ 					if (bracket_level++ == 0)
+ 						is_type = true;
+ 					continue;
+ 
+ 				case Token.OP_GENERICS_GT
+ 				case Token.CLOSE_BRACKET
+ 					--bracket_level;
+ 					continue;
+ 
+ 				case Token.INTERR_NULLABLE
+ 				case Token.STAR
+ 					if (bracket_level == 0)
+ 						is_type = true;
+ 					continue;
+ 
+ 				case Token.REF
+ 				case Token.OUT
+ 					can_be_type = is_type = false;
+ 					continue;
+ 
+ 				default
+ 					return Token.OPEN_PARENS;
+ 			while (true) {
+ 				ptoken = current_token;
+ 				token ();
+ 
+ 				switch (current_token) {
+ 				case Token.CLOSE_PARENS
+ 					token ();
+ 					
+ 					//
+ 					// Expression inside parens is lambda, (int i) => 
+ 					//
+ 					if (current_token == Token.ARROW)
+ 						return Token.OPEN_PARENS_LAMBDA;
+ 
+ 					//
+ 					// Expression inside parens is single type, (int[])
+ 					//
+ 					if (is_type)
+ 						return Token.OPEN_PARENS_CAST;
+ 
+ 					//
+ 					// Expression is possible cast, look at next token, (T)null
+ 					//
+ 					if (can_be_type) {
+ 						switch (current_token) {
+ 						case Token.OPEN_PARENS
+ 						case Token.BANG
+ 						case Token.TILDE
+ 						case Token.IDENTIFIER
+ 						case Token.LITERAL
+ 						case Token.BASE
+ 						case Token.CHECKED
+ 						case Token.DELEGATE
+ 						case Token.FALSE
+ 						case Token.FIXED
+ 						case Token.NEW
+ 						case Token.NULL
+ 						case Token.SIZEOF
+ 						case Token.THIS
+ 						case Token.THROW
+ 						case Token.TRUE
+ 						case Token.TYPEOF
+ 						case Token.UNCHECKED
+ 						case Token.UNSAFE
+ 						case Token.DEFAULT
+ 
+ 						//
+ 						// These can be part of a member access
+ 						//
+ 						case Token.INT
+ 						case Token.UINT
+ 						case Token.SHORT
+ 						case Token.USHORT
+ 						case Token.LONG
+ 						case Token.ULONG
+ 						case Token.DOUBLE
+ 						case Token.FLOAT
+ 						case Token.CHAR
+ 						case Token.BYTE
+ 						case Token.DECIMAL
+ 						case Token.BOOL
+ 							return Token.OPEN_PARENS_CAST;
+ 						}
+ 					}
+ 					return Token.OPEN_PARENS;
+ 					
+ 				case Token.DOT
+ 				case Token.DOUBLE_COLON
+ 					if (ptoken != Token.IDENTIFIER && ptoken != Token.OP_GENERICS_GT)
+ 						goto default;
+ 
+ 					continue;
+ 
+ 				case Token.IDENTIFIER
+ 					switch (ptoken) {
+ 					case Token.DOT
+ 						if (bracket_level == 0) {
+ 							is_type = false;
+ 							can_be_type = true;
+ 						}
+ 
+ 						continue;
+ 					case Token.OP_GENERICS_LT
+ 					case Token.COMMA
+ 					case Token.DOUBLE_COLON
+ 					case -1
+ 						if (bracket_level == 0)
+ 							can_be_type = true;
+ 						continue;
+ 					default
+ 						can_be_type = is_type = false;
+ 						continue;
+ 					}
+ 
+ 				case Token.OBJECT
+ 				case Token.STRING
+ 				case Token.BOOL
+ 				case Token.DECIMAL
+ 				case Token.FLOAT
+ 				case Token.DOUBLE
+ 				case Token.SBYTE
+ 				case Token.BYTE
+ 				case Token.SHORT
+ 				case Token.USHORT
+ 				case Token.INT
+ 				case Token.UINT
+ 				case Token.LONG
+ 				case Token.ULONG
+ 				case Token.CHAR
+ 				case Token.VOID
+ 					if (bracket_level == 0)
+ 						is_type = true;
+ 					continue;
+ 
+ 				case Token.COMMA
+ 					if (bracket_level == 0) {
+ 						bracket_level = 100;
+ 						can_be_type = is_type = false;
+ 					}
+ 					continue;
+ 
+ 				case Token.OP_GENERICS_LT
+ 				case Token.OPEN_BRACKET
+ 					if (bracket_level++ == 0)
+ 						is_type = true;
+ 					continue;
+ 
+ 				case Token.OP_GENERICS_GT
+ 				case Token.CLOSE_BRACKET
+ 					--bracket_level;
+ 					continue;
+ 
+ 				case Token.INTERR_NULLABLE
+ 				case Token.STAR
+ 					if (bracket_level == 0)
+ 						is_type = true;
+ 					continue;
+ 
+ 				case Token.REF
+ 				case Token.OUT
+ 					can_be_type = is_type = false;
+ 					continue;
+ 
+ 				default
+ 					return Token.OPEN_PARENS;
+ 				}
+ 			}
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="3390" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\driver.cs" startline="257" endline="302">
+<![CDATA[
+ 
+ 		static string [] LoadArgs (string file)
+ 		{
+ 			StreamReader f;
+ 			var args = new List<string> ();
+ 			string line;
+ 			try {
+ 				f = new StreamReader (file);
+ 			} catch {
+ 				return null;
+ 			}
+ 
+ 			StringBuilder sb = new StringBuilder ();
+ 			
+ 			while ((line = f.ReadLine ()) != null){
+ 				int t = line.Length;
+ 
+ 				for (int i = 0; i < t; i++){
+ 					char c = line [i];
+ 					
+ 					if (c == '"' || c == '\''){
+ 						char end = c;
+ 						
+ 						for (i++; i < t; i++){
+ 							c = line [i];
+ 
+ 							if (c == end)
+ 								break;
+ 							sb.Append (c);
+ 						}
+ 						for (i++; i < t; i++){
+ 							c = line [i];
+ 
+ 							if (c == end)
+ 								break;
+ 							sb.Append (c);
+ 						}
+ 					} else if (c == ' '){
+ 						if (sb.Length > 0){
+ 							args.Add (sb.ToString ());
+ 							sb.Length = 0;
+ 						}
+ 					} else
+ 						sb.Append (c);
+ 				}
+ 				for (int i = 0; i < t; i++){
+ 					char c = line [i];
+ 					
+ 					if (c == '"' || c == '\''){
+ 						char end = c;
+ 						
+ 						for (i++; i < t; i++){
+ 							c = line [i];
+ 
+ 							if (c == end)
+ 								break;
+ 							sb.Append (c);
+ 						}
+ 					} else if (c == ' '){
+ 						if (sb.Length > 0){
+ 							args.Add (sb.ToString ());
+ 							sb.Length = 0;
+ 						}
+ 					} else
+ 						sb.Append (c);
+ 				}
+ 				if (sb.Length > 0){
+ 					args.Add (sb.ToString ());
+ 					sb.Length = 0;
+ 				}
+ 			}
+ 			while ((line = f.ReadLine ()) != null){
+ 				int t = line.Length;
+ 
+ 				for (int i = 0; i < t; i++){
+ 					char c = line [i];
+ 					
+ 					if (c == '"' || c == '\''){
+ 						char end = c;
+ 						
+ 						for (i++; i < t; i++){
+ 							c = line [i];
+ 
+ 							if (c == end)
+ 								break;
+ 							sb.Append (c);
+ 						}
+ 					} else if (c == ' '){
+ 						if (sb.Length > 0){
+ 							args.Add (sb.ToString ());
+ 							sb.Length = 0;
+ 						}
+ 					} else
+ 						sb.Append (c);
+ 				}
+ 				if (sb.Length > 0){
+ 					args.Add (sb.ToString ());
+ 					sb.Length = 0;
+ 				}
+ 			}
+ 
+ 			return args.ToArray ();
+ 		}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\TypeConverter.vb" startline="1260" endline="1304">
+<![CDATA[
+ 
+     Public Shared Function ConvertToInt64(ByVal Context As ParsedObject, ByVal Source As Object, ByVal SourceTypeCode As TypeCode, ByRef result As Object) As Boolean
+         Const DEST As String = "Long"
+ 
+         Select Case SourceTypeCode
+             Case TypeCode.Boolean
+                 Dim i As Boolean = DirectCast(Source, Boolean)
+                 result = CLng(i)
+                 Return True
+             Case TypeCode.Decimal
+                 Dim i As Decimal = CDec(Source)
+                 If i >= Long.MinValue AndAlso i <= Long.MaxValue Then
+                     result = CLng(i)
+                     Return True
+                 End If
+             Case TypeCode.SByte, TypeCode.Int16, TypeCode.Int32, TypeCode.Int64
+                 Dim i As Long = CLng(Source)
+                 If i >= Long.MinValue AndAlso i <= Long.MaxValue Then
+                     result = CLng(i)
+                     Return True
+                 End If
+             Case TypeCode.Double, TypeCode.Single
+                 Dim i As Double = CDbl(Source)
+                 If i >= Long.MinValue AndAlso i <= Long.MaxValue Then
+                     result = CLng(i)
+                     Return True
+                 End If
+             Case TypeCode.Byte, TypeCode.UInt16, TypeCode.UInt32, TypeCode.UInt64
+                 Dim i As ULong = CULng(Source)
+                 If i >= Long.MinValue AndAlso i <= Long.MaxValue Then
+                     result = CLng(i)
+                     Return True
+                 End If
+             Case TypeCode.Char
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC32006, Context.Location, DEST)
+             Case TypeCode.DateTime
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30311, Context.Location, "Date", DEST)
+             Case TypeCode.String
+                 Return Context.Compiler.Report.ShowMessage(Messages.VBNC30060, Context.Location, DEST, "String")
+             Case TypeCode.DBNull
+                 result = 0L
+                 Return True
+         End Select
+         Return Context.Compiler.Report.ShowMessage(Messages.VBNC30439, Context.Location, DEST)
+     End Function
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="3399" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-basic-2.10\vbnc\vbnc\source\General\Helper.vb" startline="2376" endline="2422">
+<![CDATA[
+ 
+     'TODO
+     Shared Function HexToInt(ByVal str As String) As ULong
+         Dim i, n As Integer
+         Dim l As Integer = str.Length
+         HexToInt = 0
+         For i = l To 1 Step -1
+             Select Case str.Chars(i - 1)
+                 Case "0"c
+                     n = 0
+                 Case "1"c
+                     n = 1
+                 Case "2"c
+                     n = 2
+                 Case "3"c
+                     n = 3
+                 Case "4"c
+                     n = 4
+                 Case "5"c
+                     n = 5
+                 Case "6"c
+                     n = 6
+                 Case "7"c
+                     n = 7
+                 Case "8"c
+                     n = 8
+                 Case "9"c
+                     n = 9
+                 Case "a"c, "A"c
+                     n = 10
+                 Case "b"c, "B"c
+                     n = 11
+                 Case "c"c, "C"c
+                     n = 12
+                 Case "d"c, "D"c
+                     n = 13
+                 Case "e"c, "E"c
+                     n = 14
+                 Case "f"c, "F"c
+                     n = 15
+                 Case Else
+                     Throw New ArgumentOutOfRangeException("str", str, "Invalid hex number
+             End Select
+ 
+             HexToInt += CULng(n * (16 ^ (l - i)))
+         Next
+     End Function
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\mono\mono-2.10\mcs\mcs\eval.cs" startline="508" endline="618">
+<![CDATA[
+ 
+ 		enum InputKind {
+ 			EOF,
+ 			StatementOrExpression,
+ 			CompilationUnit,
+ 			Error
+ 		}
+ 
+ 		//
+ 		// Deambiguates the input string to determine if we
+ 		// want to process a statement or if we want to
+ 		// process a compilation unit.
+ 		//
+ 		// This is done using a top-down predictive parser,
+ 		// since the yacc/jay parser can not deambiguage this
+ 		// without more than one lookahead token.   There are very
+ 		// few ambiguities.
+ 		//
+ 		static InputKind ToplevelOrStatement (SeekableStreamReader seekable)
+ 		{
+ 			Tokenizer tokenizer = new Tokenizer (seekable, (CompilationUnit) Location.SourceFiles [0], ctx);
+ 			
+ 			int t = tokenizer.token ();
+ 			switch (t){
+ 			case Token.EOF
+ 				return InputKind.EOF;
+ 				
+ 			// These are toplevels
+ 			case Token.EXTERN
+ 			case Token.OPEN_BRACKET
+ 			case Token.ABSTRACT
+ 			case Token.CLASS
+ 			case Token.ENUM
+ 			case Token.INTERFACE
+ 			case Token.INTERNAL
+ 			case Token.NAMESPACE
+ 			case Token.PRIVATE
+ 			case Token.PROTECTED
+ 			case Token.PUBLIC
+ 			case Token.SEALED
+ 			case Token.STATIC
+ 			case Token.STRUCT
+ 				return InputKind.CompilationUnit;
+ 				
+ 			// Definitely expression
+ 			case Token.FIXED
+ 			case Token.BOOL
+ 			case Token.BYTE
+ 			case Token.CHAR
+ 			case Token.DECIMAL
+ 			case Token.DOUBLE
+ 			case Token.FLOAT
+ 			case Token.INT
+ 			case Token.LONG
+ 			case Token.NEW
+ 			case Token.OBJECT
+ 			case Token.SBYTE
+ 			case Token.SHORT
+ 			case Token.STRING
+ 			case Token.UINT
+ 			case Token.ULONG
+ 				return InputKind.StatementOrExpression;
+ 
+ 			// These need deambiguation help
+ 			case Token.USING
+ 				t = tokenizer.token ();
+ 				if (t == Token.EOF)
+ 					return InputKind.EOF;
+ 
+ 				if (t == Token.IDENTIFIER)
+ 					return InputKind.CompilationUnit;
+ 				return InputKind.StatementOrExpression;
+ 
+ 
+ 			// Distinguish between
+ 			//    delegate opt_anonymous_method_signature block
+ 			//    delegate type 
+ 			case Token.DELEGATE
+ 				t = tokenizer.token ();
+ 				if (t == Token.EOF)
+ 					return InputKind.EOF;
+ 				if (t == Token.OPEN_PARENS || t == Token.OPEN_BRACE)
+ 					return InputKind.StatementOrExpression;
+ 				return InputKind.CompilationUnit;
+ 
+ 			// Distinguih between
+ 			//    unsafe block
+ 			//    unsafe as modifier of a type declaration
+ 			case Token.UNSAFE
+ 				t = tokenizer.token ();
+ 				if (t == Token.EOF)
+ 					return InputKind.EOF;
+ 				if (t == Token.OPEN_PARENS)
+ 					return InputKind.StatementOrExpression;
+ 				return InputKind.CompilationUnit;
+ 				
+ 		        // These are errors
+ 			// from the grammar, ERROR and then everything else
+ 
+ 			case Token.READONLY
+ 			case Token.OVERRIDE
+ 			case Token.ERROR
+ 				return InputKind.Error;
+ 
+ 			// This catches everything else allowed by
+ 			// expressions.  We could add one-by-one use cases
+ 			// if needed.
+ 			default
+ 				return InputKind.StatementOrExpression;
+ 			}
+ 		}
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

@@ -1,0 +1,481 @@
+<clones>
+<systeminfo processor="nicad3" system="Monoo-2.10" granularity="functions" threshold="30%" minlines="3" maxlines="2500"/>
+<cloneinfo npcs="1382" npairs="466"/>
+<runinfo ncompares="331511" cputime="49658"/>
+<classinfo nclasses="80"/>
+
+<class classid="1" nclones="2" nlines="41" similarity="75">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/corlib/Mono.Security.Cryptography/CryptoConvert.cs.ifdefed" startline="354" endline="406" pcid="10"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/corlib/Mono.Security.Cryptography/CryptoConvert.cs.ifdefed" startline="571" endline="625" pcid="16"></source>
+</class>
+
+<class classid="2" nclones="3" nlines="9" similarity="77">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Assembly.cs.ifdefed" startline="75" endline="86" pcid="30"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Module.cs.ifdefed" startline="335" endline="346" pcid="772"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="926" endline="937" pcid="1123"></source>
+</class>
+
+<class classid="3" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Assembly.cs.ifdefed" startline="124" endline="127" pcid="35"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Module.cs.ifdefed" startline="373" endline="376" pcid="778"></source>
+</class>
+
+<class classid="4" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Assembly.cs.ifdefed" startline="129" endline="132" pcid="36"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Module.cs.ifdefed" startline="378" endline="381" pcid="779"></source>
+</class>
+
+<class classid="5" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/ConstructorInfo.cs.ifdefed" startline="164" endline="167" pcid="57"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/GenericWrappers.cs.ifdefed" startline="96" endline="99" pcid="475"></source>
+</class>
+
+<class classid="6" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/ConstructorInfo.cs.ifdefed" startline="204" endline="207" pcid="60"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/GenericWrappers.cs.ifdefed" startline="217" endline="220" pcid="482"></source>
+</class>
+
+<class classid="7" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/ConstructorInfo.cs.ifdefed" startline="209" endline="212" pcid="61"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/GenericWrappers.cs.ifdefed" startline="222" endline="225" pcid="483"></source>
+</class>
+
+<class classid="8" nclones="9" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/AssemblyBuilder.cs.ifdefed" startline="225" endline="228" pcid="99"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/EventBuilder.cs.ifdefed" startline="76" endline="79" pcid="168"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/FieldBuilder.cs.ifdefed" startline="81" endline="84" pcid="181"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/MethodBuilder.cs.ifdefed" startline="87" endline="90" pcid="190"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/TypeBuilder.cs.ifdefed" startline="194" endline="197" pcid="366"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/PropertyBuilder.cs.ifdefed" startline="88" endline="91" pcid="329"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/ParameterBuilder.cs.ifdefed" startline="91" endline="94" pcid="320"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/ModuleBuilder.cs.ifdefed" startline="334" endline="337" pcid="254"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/TypeBuilder.cs.ifdefed" startline="557" endline="560" pcid="399"></source>
+</class>
+
+<class classid="9" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/AssemblyBuilder.cs.ifdefed" startline="647" endline="650" pcid="127"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/ResourceModule.cs.ifdefed" startline="113" endline="116" pcid="1002"></source>
+</class>
+
+<class classid="10" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/AssemblyBuilder.cs.ifdefed" startline="706" endline="709" pcid="135"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/GenericTypeParameter.cs.ifdefed" startline="194" endline="197" pcid="866"></source>
+</class>
+
+<class classid="11" nclones="3" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/AssemblyBuilder.cs.ifdefed" startline="711" endline="714" pcid="136"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/ResourceModule.cs.ifdefed" startline="122" endline="125" pcid="1004"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/GenericTypeParameter.cs.ifdefed" startline="199" endline="202" pcid="867"></source>
+</class>
+
+<class classid="12" nclones="2" nlines="7" similarity="85">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/EventBuilder.cs.ifdefed" startline="67" endline="74" pcid="167"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/PropertyBuilder.cs.ifdefed" startline="78" endline="86" pcid="328"></source>
+</class>
+
+<class classid="13" nclones="2" nlines="11" similarity="90">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/EventBuilder.cs.ifdefed" startline="81" endline="96" pcid="169"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/PropertyBuilder.cs.ifdefed" startline="93" endline="108" pcid="330"></source>
+</class>
+
+<class classid="14" nclones="2" nlines="7" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/EventBuilder.cs.ifdefed" startline="197" endline="204" pcid="176"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/PropertyBuilder.cs.ifdefed" startline="222" endline="229" pcid="338"></source>
+</class>
+
+<class classid="15" nclones="2" nlines="9" similarity="77">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/FieldBuilder.cs.ifdefed" startline="168" endline="182" pcid="187"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/MethodBuilder.cs.ifdefed" startline="672" endline="686" pcid="221"></source>
+</class>
+
+<class classid="16" nclones="2" nlines="7" similarity="85">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/MethodBuilder.cs.ifdefed" startline="268" endline="276" pcid="195"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/TypeBuilder.cs.ifdefed" startline="592" endline="600" pcid="401"></source>
+</class>
+
+<class classid="17" nclones="2" nlines="8" similarity="75">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/MethodBuilder.cs.ifdefed" startline="335" endline="343" pcid="202"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/TypeBuilder.cs.ifdefed" startline="608" endline="617" pcid="403"></source>
+</class>
+
+<class classid="18" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/MethodBuilder.cs.ifdefed" startline="359" endline="362" pcid="205"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/TypeBuilder.cs.ifdefed" startline="619" endline="622" pcid="404"></source>
+</class>
+
+<class classid="19" nclones="3" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/MethodBuilder.cs.ifdefed" startline="512" endline="520" pcid="213"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/GenericWrappers.cs.ifdefed" startline="71" endline="79" pcid="474"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/PropertyInfo.cs.ifdefed" startline="108" endline="116" pcid="789"></source>
+</class>
+
+<class classid="20" nclones="2" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/ModuleBuilder.cs.ifdefed" startline="192" endline="200" pcid="237"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/TypeBuilder.cs.ifdefed" startline="433" endline="441" pcid="392"></source>
+</class>
+
+<class classid="21" nclones="2" nlines="8" similarity="75">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/ModuleBuilder.cs.ifdefed" startline="442" endline="451" pcid="262"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/ModuleReader.cs.ifdefed" startline="229" endline="239" pcid="934"></source>
+</class>
+
+<class classid="22" nclones="2" nlines="8" similarity="87">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/ModuleBuilder.cs.ifdefed" startline="564" endline="573" pcid="272"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/ModuleBuilder.cs.ifdefed" startline="575" endline="584" pcid="273"></source>
+</class>
+
+<class classid="23" nclones="2" nlines="4" similarity="75">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Emit/ModuleBuilder.cs.ifdefed" startline="1150" endline="1153" pcid="307"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/ModuleReader.cs.ifdefed" startline="932" endline="936" pcid="971"></source>
+</class>
+
+<class classid="24" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/FieldSignature.cs.ifdefed" startline="71" endline="74" pcid="456"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/PropertySignature.cs.ifdefed" startline="99" endline="102" pcid="799"></source>
+</class>
+
+<class classid="25" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/FieldSignature.cs.ifdefed" startline="76" endline="79" pcid="457"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/PropertySignature.cs.ifdefed" startline="104" endline="107" pcid="800"></source>
+</class>
+
+<class classid="26" nclones="2" nlines="6" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/GenericWrappers.cs.ifdefed" startline="445" endline="452" pcid="497"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/GenericWrappers.cs.ifdefed" startline="552" endline="559" pcid="506"></source>
+</class>
+
+<class classid="27" nclones="21" nlines="8" similarity="75">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="68" endline="79" pcid="526"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="159" endline="170" pcid="533"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="146" endline="157" pcid="532"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="172" endline="183" pcid="534"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="133" endline="144" pcid="531"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="198" endline="209" pcid="536"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="107" endline="118" pcid="529"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="367" endline="378" pcid="549"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="94" endline="105" pcid="528"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="354" endline="365" pcid="548"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="276" endline="287" pcid="542"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="341" endline="352" pcid="547"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="81" endline="92" pcid="527"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="328" endline="339" pcid="546"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="224" endline="235" pcid="538"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="315" endline="326" pcid="545"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="237" endline="248" pcid="539"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="302" endline="313" pcid="544"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="250" endline="261" pcid="540"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="289" endline="300" pcid="543"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="263" endline="274" pcid="541"></source>
+</class>
+
+<class classid="28" nclones="3" nlines="8" similarity="75">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="120" endline="131" pcid="530"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="185" endline="196" pcid="535"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="211" endline="222" pcid="537"></source>
+</class>
+
+<class classid="29" nclones="2" nlines="10" similarity="70">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="541" endline="552" pcid="561"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2127" endline="2137" pcid="674"></source>
+</class>
+
+<class classid="30" nclones="9" nlines="7" similarity="70">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="588" endline="596" pcid="565"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1442" endline="1450" pcid="624"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="628" endline="639" pcid="568"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2084" endline="2092" pcid="671"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="780" endline="788" pcid="580"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="673" endline="681" pcid="572"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1520" endline="1528" pcid="630"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2284" endline="2293" pcid="685"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2188" endline="2197" pcid="678"></source>
+</class>
+
+<class classid="31" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="603" endline="610" pcid="567"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1540" endline="1547" pcid="632"></source>
+</class>
+
+<class classid="32" nclones="2" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="707" endline="714" pcid="575"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1697" endline="1705" pcid="642"></source>
+</class>
+
+<class classid="33" nclones="2" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="716" endline="723" pcid="576"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1707" endline="1715" pcid="643"></source>
+</class>
+
+<class classid="34" nclones="3" nlines="22" similarity="77">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="733" endline="757" pcid="578"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="187" endline="213" pcid="1326"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="472" endline="498" pcid="1343"></source>
+</class>
+
+<class classid="35" nclones="6" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="790" endline="798" pcid="581"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2094" endline="2102" pcid="672"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1530" endline="1538" pcid="631"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1452" endline="1460" pcid="625"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2199" endline="2208" pcid="679"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2295" endline="2304" pcid="686"></source>
+</class>
+
+<class classid="36" nclones="2" nlines="8" similarity="87">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="809" endline="821" pcid="583"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2420" endline="2431" pcid="697"></source>
+</class>
+
+<class classid="37" nclones="2" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="823" endline="832" pcid="584"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2433" endline="2442" pcid="698"></source>
+</class>
+
+<class classid="38" nclones="2" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="846" endline="854" pcid="585"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="978" endline="986" pcid="591"></source>
+</class>
+
+<class classid="39" nclones="2" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="856" endline="864" pcid="586"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="988" endline="996" pcid="592"></source>
+</class>
+
+<class classid="40" nclones="5" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="903" endline="906" pcid="589"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1089" endline="1092" pcid="595"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1227" endline="1230" pcid="605"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1286" endline="1289" pcid="610"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1152" endline="1155" pcid="600"></source>
+</class>
+
+<class classid="41" nclones="3" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1257" endline="1265" pcid="607"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1482" endline="1489" pcid="627"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1404" endline="1411" pcid="621"></source>
+</class>
+
+<class classid="42" nclones="2" nlines="6" similarity="83">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1315" endline="1322" pcid="612"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1886" endline="1893" pcid="659"></source>
+</class>
+
+<class classid="43" nclones="2" nlines="6" similarity="83">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1324" endline="1331" pcid="613"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1895" endline="1902" pcid="660"></source>
+</class>
+
+<class classid="44" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1333" endline="1339" pcid="614"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1904" endline="1910" pcid="661"></source>
+</class>
+
+<class classid="45" nclones="2" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1341" endline="1348" pcid="615"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2481" endline="2489" pcid="702"></source>
+</class>
+
+<class classid="46" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1350" endline="1353" pcid="616"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1925" endline="1928" pcid="663"></source>
+</class>
+
+<class classid="47" nclones="3" nlines="5" similarity="80">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1360" endline="1366" pcid="617"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1752" endline="1758" pcid="647"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1792" endline="1798" pcid="651"></source>
+</class>
+
+<class classid="48" nclones="3" nlines="5" similarity="80">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1368" endline="1374" pcid="618"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1760" endline="1766" pcid="648"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1800" endline="1806" pcid="652"></source>
+</class>
+
+<class classid="49" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1376" endline="1379" pcid="619"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1808" endline="1811" pcid="653"></source>
+</class>
+
+<class classid="50" nclones="2" nlines="6" similarity="83">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1413" endline="1420" pcid="622"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1491" endline="1498" pcid="628"></source>
+</class>
+
+<class classid="51" nclones="2" nlines="13" similarity="84">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1948" endline="1962" pcid="664"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2029" endline="2043" pcid="668"></source>
+</class>
+
+<class classid="52" nclones="2" nlines="13" similarity="84">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="1964" endline="1978" pcid="665"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2045" endline="2059" pcid="669"></source>
+</class>
+
+<class classid="53" nclones="2" nlines="9" similarity="77">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2008" endline="2027" pcid="667"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Metadata/Tables.cs.ifdefed" startline="2161" endline="2173" pcid="677"></source>
+</class>
+
+<class classid="54" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/MethodBase.cs.ifdefed" startline="111" endline="114" pcid="704"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="232" endline="235" pcid="1065"></source>
+</class>
+
+<class classid="55" nclones="2" nlines="4" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/EventInfoImpl.cs.ifdefed" startline="132" endline="136" pcid="847"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/PropertyInfoImpl.cs.ifdefed" startline="150" endline="154" pcid="993"></source>
+</class>
+
+<class classid="56" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/Field.cs.ifdefed" startline="76" endline="79" pcid="849"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/PropertyInfoImpl.cs.ifdefed" startline="76" endline="79" pcid="989"></source>
+</class>
+
+<class classid="57" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/GenericTypeParameter.cs.ifdefed" startline="204" endline="207" pcid="868"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/ResourceModule.cs.ifdefed" startline="127" endline="130" pcid="1005"></source>
+</class>
+
+<class classid="58" nclones="8" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="57" endline="67" pcid="881"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="459" endline="469" pcid="899"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="495" endline="505" pcid="902"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="69" endline="79" pcid="882"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="447" endline="457" pcid="898"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="471" endline="481" pcid="900"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="81" endline="91" pcid="883"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="483" endline="493" pcid="901"></source>
+</class>
+
+<class classid="59" nclones="4" nlines="18" similarity="72">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="119" endline="141" pcid="885"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="409" endline="431" pcid="896"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="273" endline="295" pcid="890"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="341" endline="363" pcid="893"></source>
+</class>
+
+<class classid="60" nclones="5" nlines="16" similarity="75">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="251" endline="271" pcid="889"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="319" endline="339" pcid="892"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="297" endline="317" pcid="891"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="365" endline="385" pcid="894"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/MetadataReader.cs.ifdefed" startline="387" endline="407" pcid="895"></source>
+</class>
+
+<class classid="61" nclones="2" nlines="4" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/Method.cs.ifdefed" startline="170" endline="174" pcid="911"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/TypeDefImpl.cs.ifdefed" startline="215" endline="219" pcid="1013"></source>
+</class>
+
+<class classid="62" nclones="2" nlines="16" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/Method.cs.ifdefed" startline="176" endline="197" pcid="912"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/TypeDefImpl.cs.ifdefed" startline="221" endline="242" pcid="1014"></source>
+</class>
+
+<class classid="63" nclones="2" nlines="4" similarity="75">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/Method.cs.ifdefed" startline="199" endline="203" pcid="913"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/TypeDefImpl.cs.ifdefed" startline="244" endline="248" pcid="1015"></source>
+</class>
+
+<class classid="64" nclones="2" nlines="4" similarity="75">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/TypeDefImpl.cs.ifdefed" startline="250" endline="254" pcid="1016"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Reader/TypeDefImpl.cs.ifdefed" startline="256" endline="260" pcid="1017"></source>
+</class>
+
+<class classid="65" nclones="2" nlines="10" similarity="80">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Signature.cs.ifdefed" startline="761" endline="773" pcid="1047"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Signature.cs.ifdefed" startline="775" endline="787" pcid="1048"></source>
+</class>
+
+<class classid="66" nclones="2" nlines="21" similarity="76">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="480" endline="509" pcid="1086"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="780" endline="809" pcid="1112"></source>
+</class>
+
+<class classid="67" nclones="2" nlines="12" similarity="83">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="644" endline="659" pcid="1097"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="671" endline="686" pcid="1100"></source>
+</class>
+
+<class classid="68" nclones="3" nlines="12" similarity="75">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="828" endline="843" pcid="1115"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="888" endline="903" pcid="1120"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="845" endline="860" pcid="1116"></source>
+</class>
+
+<class classid="69" nclones="3" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="1753" endline="1756" pcid="1167"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="1995" endline="1998" pcid="1184"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Type.cs.ifdefed" startline="2043" endline="2046" pcid="1189"></source>
+</class>
+
+<class classid="70" nclones="3" nlines="19" similarity="89">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Util.cs.ifdefed" startline="127" endline="153" pcid="1256"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Util.cs.ifdefed" startline="155" endline="181" pcid="1257"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Util.cs.ifdefed" startline="183" endline="209" pcid="1258"></source>
+</class>
+
+<class classid="71" nclones="2" nlines="9" similarity="77">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Util.cs.ifdefed" startline="242" endline="253" pcid="1261"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Util.cs.ifdefed" startline="255" endline="266" pcid="1262"></source>
+</class>
+
+<class classid="72" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/ByteBuffer.cs.ifdefed" startline="107" endline="110" pcid="1271"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="71" endline="74" pcid="1315"></source>
+</class>
+
+<class classid="73" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/ByteBuffer.cs.ifdefed" startline="120" endline="123" pcid="1273"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="83" endline="86" pcid="1317"></source>
+</class>
+
+<class classid="74" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/ByteBuffer.cs.ifdefed" startline="135" endline="138" pcid="1275"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="97" endline="100" pcid="1319"></source>
+</class>
+
+<class classid="75" nclones="2" nlines="13" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/ByteBuffer.cs.ifdefed" startline="178" endline="196" pcid="1280"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="115" endline="133" pcid="1321"></source>
+</class>
+
+<class classid="76" nclones="2" nlines="3" similarity="100">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/Heaps.cs.ifdefed" startline="189" endline="192" pcid="1300"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/Heaps.cs.ifdefed" startline="239" endline="242" pcid="1303"></source>
+</class>
+
+<class classid="77" nclones="3" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="151" endline="161" pcid="1323"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="175" endline="185" pcid="1325"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="163" endline="173" pcid="1324"></source>
+</class>
+
+<class classid="78" nclones="6" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="215" endline="225" pcid="1327"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="444" endline="456" pcid="1341"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="227" endline="239" pcid="1328"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="514" endline="526" pcid="1345"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="500" endline="512" pcid="1344"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="458" endline="470" pcid="1342"></source>
+</class>
+
+<class classid="79" nclones="3" nlines="17" similarity="76">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="241" endline="262" pcid="1329"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="421" endline="442" pcid="1340"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="528" endline="549" pcid="1346"></source>
+</class>
+
+<class classid="80" nclones="8" nlines="7" similarity="71">
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="264" endline="274" pcid="1330"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="300" endline="310" pcid="1333"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="336" endline="346" pcid="1336"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="324" endline="334" pcid="1335"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="288" endline="298" pcid="1332"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="312" endline="322" pcid="1334"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="276" endline="286" pcid="1331"></source>
+<source file="/Users/farouq/Desktop/semantic/Monoo-2.10/mcs/class/IKVM.Reflection/Writer/MetadataWriter.cs.ifdefed" startline="348" endline="358" pcid="1337"></source>
+</class>
+
+</clones>

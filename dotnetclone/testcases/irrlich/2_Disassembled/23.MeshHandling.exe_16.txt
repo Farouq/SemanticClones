@@ -1,0 +1,2321 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly '23.MeshHandling'
+{
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 0F 32 33 2E 4D 65 73 68 48 61 6E 64 6C 69   // ...23.MeshHandli
+                                                                                                6E 67 00 00 )                                     // ng..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 31 00 00 )                            //  2011..
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 0F 32 33 2E 4D 65 73 68 48 61 6E 64 6C 69   // ...23.MeshHandli
+                                                                                              6E 67 00 00 )                                     // ng..
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 36 30 65 38 34 36 30 38 2D 39 36 34 35   // ..$60e84608-9645
+                                                                                                  2D 34 32 38 37 2D 61 39 62 39 2D 63 31 64 30 36   // -4287-a9b9-c1d06
+                                                                                                  62 34 65 39 32 63 61 00 00 )                      // b4e92ca..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public _23.MeshHandling.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.module '23.MeshHandling.exe'
+// MVID: {9B2360A3-3D4F-49B2-98C8-1589CECBC4F6}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x00210000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit _23.MeshHandling.Program
+       extends [mscorlib]System.Object
+{
+  .field private static class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> KeyIsDown
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       635 (0x27b)
+    .maxstack  7
+    .locals init ([0] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType,
+             [1] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [2] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [3] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager scene,
+             [4] class _23.MeshHandling.HeightMap map,
+             [5] class _23.MeshHandling.HeightMesh mesh,
+             [6] class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode meshnode,
+             [7] class [IrrlichtLime]IrrlichtLime.Scene.LightSceneNode lightnode,
+             [8] class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator anim,
+             [9] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode camera,
+             [10] bool CS$4$0000)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\23.MeshHandling\Program.cs' 
+//000016: 		{
+    IL_0000:  nop
+//000017: 			DriverType driverType;
+//000018: 			if (!AskUserForDriver(out driverType))
+    IL_0001:  ldloca.s   driverType
+    IL_0003:  call       bool _23.MeshHandling.Program::AskUserForDriver(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType&)
+    IL_0008:  stloc.s    CS$4$0000
+    IL_000a:  ldloc.s    CS$4$0000
+    IL_000c:  brtrue.s   IL_0013
+
+//000019: 				return;
+    IL_000e:  br         IL_027a
+
+//000020: 
+//000021: 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(driverType, new Dimension2Di(800, 600));
+    IL_0013:  ldloc.0
+    IL_0014:  ldc.i4     0x320
+    IL_0019:  ldc.i4     0x258
+    IL_001e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_0023:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+    IL_0028:  stloc.1
+//000022: 			if (device == null)
+    IL_0029:  ldloc.1
+    IL_002a:  ldnull
+    IL_002b:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0030:  ldc.i4.0
+    IL_0031:  ceq
+    IL_0033:  stloc.s    CS$4$0000
+    IL_0035:  ldloc.s    CS$4$0000
+    IL_0037:  brtrue.s   IL_003e
+
+//000023: 				return;
+    IL_0039:  br         IL_027a
+
+//000024: 
+//000025: 			device.OnEvent += new IrrlichtDevice.EventHandler(device_OnEvent);
+    IL_003e:  ldloc.1
+    IL_003f:  ldnull
+    IL_0040:  ldftn      bool _23.MeshHandling.Program::device_OnEvent(class [IrrlichtLime]IrrlichtLime.Event)
+    IL_0046:  newobj     instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler::.ctor(object,
+                                                                                                     native int)
+    IL_004b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::add_OnEvent(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler)
+    IL_0050:  nop
+//000026: 			device.SetWindowCaption("Mesh handling - Irrlicht Lime");
+    IL_0051:  ldloc.1
+    IL_0052:  ldstr      "Mesh handling - Irrlicht Lime"
+    IL_0057:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_005c:  nop
+//000027: 			VideoDriver driver = device.VideoDriver;
+    IL_005d:  ldloc.1
+    IL_005e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0063:  stloc.2
+//000028: 			SceneManager scene = device.SceneManager;
+    IL_0064:  ldloc.1
+    IL_0065:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_006a:  stloc.3
+//000029: 
+//000030: 			// Generate starting height map and mesh
+//000031: 
+//000032: 			HeightMap map = new HeightMap(255, 255);
+    IL_006b:  ldc.i4     0xff
+    IL_0070:  ldc.i4     0xff
+    IL_0075:  newobj     instance void _23.MeshHandling.HeightMap::.ctor(uint16,
+                                                                         uint16)
+    IL_007a:  stloc.s    map
+//000033: 			map.Generate(HeightMap.HeightFunc.EggBox);
+    IL_007c:  ldloc.s    map
+    IL_007e:  ldc.i4.0
+    IL_007f:  callvirt   instance void _23.MeshHandling.HeightMap::Generate(valuetype _23.MeshHandling.HeightMap/HeightFunc)
+    IL_0084:  nop
+//000034: 
+//000035: 			HeightMesh mesh = new HeightMesh();
+    IL_0085:  newobj     instance void _23.MeshHandling.HeightMesh::.ctor()
+    IL_008a:  stloc.s    mesh
+//000036: 			mesh.Init(driver, map, 50.0f, HeightMesh.ColorFunc.GreyscaleBasedOnTheHeight);
+    IL_008c:  ldloc.s    mesh
+    IL_008e:  ldloc.2
+    IL_008f:  ldloc.s    map
+    IL_0091:  ldc.r4     50.
+    IL_0096:  ldc.i4.0
+    IL_0097:  callvirt   instance void _23.MeshHandling.HeightMesh::Init(class [IrrlichtLime]IrrlichtLime.Video.VideoDriver,
+                                                                         class _23.MeshHandling.HeightMap,
+                                                                         float32,
+                                                                         valuetype _23.MeshHandling.HeightMesh/ColorFunc)
+    IL_009c:  nop
+//000037: 
+//000038: 			// Add the mesh to the scene graph
+//000039: 
+//000040: 			MeshSceneNode meshnode = scene.AddMeshSceneNode(mesh.Mesh);
+    IL_009d:  ldloc.3
+    IL_009e:  ldloc.s    mesh
+    IL_00a0:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh _23.MeshHandling.HeightMesh::get_Mesh()
+    IL_00a5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.MeshSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddMeshSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.Mesh)
+    IL_00aa:  stloc.s    meshnode
+//000041: 			meshnode.SetMaterialFlag(MaterialFlag.BackFaceCulling, false);
+    IL_00ac:  ldloc.s    meshnode
+    IL_00ae:  ldc.i4.s   64
+    IL_00b0:  ldc.i4.0
+    IL_00b1:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00b6:  nop
+//000042: 
+//000043: 			// Add light (just for nice effects)
+//000044: 
+//000045: 			LightSceneNode lightnode = scene.AddLightSceneNode(null, new Vector3Df(0, 100, 0), new Colorf(1, 1, 1), 500.0f);
+    IL_00b7:  ldloc.3
+    IL_00b8:  ldnull
+    IL_00b9:  ldc.r4     0.0
+    IL_00be:  ldc.r4     100.
+    IL_00c3:  ldc.r4     0.0
+    IL_00c8:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00cd:  ldc.r4     1.
+    IL_00d2:  ldc.r4     1.
+    IL_00d7:  ldc.r4     1.
+    IL_00dc:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Colorf::.ctor(float32,
+                                                                                      float32,
+                                                                                      float32)
+    IL_00e1:  ldc.r4     500.
+    IL_00e6:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.LightSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddLightSceneNode(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                         class [IrrlichtLime]IrrlichtLime.Video.Colorf,
+                                                                                                                                                         float32)
+    IL_00eb:  stloc.s    lightnode
+//000046: 			SceneNodeAnimator anim = scene.CreateFlyCircleAnimator(new Vector3Df(0, 150, 0), 250.0f);
+    IL_00ed:  ldloc.3
+    IL_00ee:  ldc.r4     0.0
+    IL_00f3:  ldc.r4     150.
+    IL_00f8:  ldc.r4     0.0
+    IL_00fd:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0102:  ldc.r4     250.
+    IL_0107:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateFlyCircleAnimator(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                                  float32)
+    IL_010c:  stloc.s    anim
+//000047: 			lightnode.AddAnimator(anim);
+    IL_010e:  ldloc.s    lightnode
+    IL_0110:  ldloc.s    anim
+    IL_0112:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::AddAnimator(class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator)
+    IL_0117:  nop
+//000048: 			anim.Drop();
+    IL_0118:  ldloc.s    anim
+    IL_011a:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_011f:  pop
+//000049: 
+//000050: 			// Add camera
+//000051: 
+//000052: 			CameraSceneNode camera = scene.AddCameraSceneNodeFPS();
+    IL_0120:  ldloc.3
+    IL_0121:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNodeFPS()
+    IL_0126:  stloc.s    camera
+//000053: 			camera.Position = new Vector3Df(-20.0f, 100.0f, -20.0f);
+    IL_0128:  ldloc.s    camera
+    IL_012a:  ldc.r4     -20.
+    IL_012f:  ldc.r4     100.
+    IL_0134:  ldc.r4     -20.
+    IL_0139:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_013e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0143:  nop
+//000054: 			camera.Target = new Vector3Df(200.0f, -100.0f, 200.0f);
+    IL_0144:  ldloc.s    camera
+    IL_0146:  ldc.r4     200.
+    IL_014b:  ldc.r4     -100.
+    IL_0150:  ldc.r4     200.
+    IL_0155:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_015a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_Target(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_015f:  nop
+//000055: 			camera.FarValue = 20000.0f;
+    IL_0160:  ldloc.s    camera
+    IL_0162:  ldc.r4     20000.
+    IL_0167:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_FarValue(float32)
+    IL_016c:  nop
+    IL_016d:  br         IL_025c
+
+//000056: 
+//000057: 			// Main loop
+//000058: 
+//000059: 			while (device.Run())
+//000060: 			{
+    IL_0172:  nop
+//000061: 				if (!device.WindowActive)
+    IL_0173:  ldloc.1
+    IL_0174:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_WindowActive()
+    IL_0179:  stloc.s    CS$4$0000
+    IL_017b:  ldloc.s    CS$4$0000
+    IL_017d:  brtrue.s   IL_018e
+
+//000062: 				{
+    IL_017f:  nop
+//000063: 					device.Sleep(100);
+    IL_0180:  ldloc.1
+    IL_0181:  ldc.i4.s   100
+    IL_0183:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Sleep(int32)
+    IL_0188:  nop
+//000064: 					continue;
+    IL_0189:  br         IL_025c
+
+//000065: 				}
+//000066: 
+//000067: 				if (IsKeyDown(KeyCode.KeyW))
+    IL_018e:  ldc.i4.s   87
+    IL_0190:  call       bool _23.MeshHandling.Program::IsKeyDown(valuetype [IrrlichtLime]IrrlichtLime.KeyCode)
+    IL_0195:  ldc.i4.0
+    IL_0196:  ceq
+    IL_0198:  stloc.s    CS$4$0000
+    IL_019a:  ldloc.s    CS$4$0000
+    IL_019c:  brtrue.s   IL_01be
+
+//000068: 				{
+    IL_019e:  nop
+//000069: 					meshnode.SetMaterialFlag(MaterialFlag.Wireframe, !meshnode.GetMaterial(0).Wireframe);
+    IL_019f:  ldloc.s    meshnode
+    IL_01a1:  ldc.i4.1
+    IL_01a2:  ldloc.s    meshnode
+    IL_01a4:  ldc.i4.0
+    IL_01a5:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_01aa:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.Material::get_Wireframe()
+    IL_01af:  ldc.i4.0
+    IL_01b0:  ceq
+    IL_01b2:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_01b7:  nop
+//000070: 				}
+    IL_01b8:  nop
+    IL_01b9:  br         IL_0246
+
+//000071: 				else if (IsKeyDown(KeyCode.Key1))
+    IL_01be:  ldc.i4.s   49
+    IL_01c0:  call       bool _23.MeshHandling.Program::IsKeyDown(valuetype [IrrlichtLime]IrrlichtLime.KeyCode)
+    IL_01c5:  ldc.i4.0
+    IL_01c6:  ceq
+    IL_01c8:  stloc.s    CS$4$0000
+    IL_01ca:  ldloc.s    CS$4$0000
+    IL_01cc:  brtrue.s   IL_01ec
+
+//000072: 				{
+    IL_01ce:  nop
+//000073: 					map.Generate(HeightMap.HeightFunc.EggBox);
+    IL_01cf:  ldloc.s    map
+    IL_01d1:  ldc.i4.0
+    IL_01d2:  callvirt   instance void _23.MeshHandling.HeightMap::Generate(valuetype _23.MeshHandling.HeightMap/HeightFunc)
+    IL_01d7:  nop
+//000074: 					mesh.Init(driver, map, 50.0f, HeightMesh.ColorFunc.GreyscaleBasedOnTheHeight);
+    IL_01d8:  ldloc.s    mesh
+    IL_01da:  ldloc.2
+    IL_01db:  ldloc.s    map
+    IL_01dd:  ldc.r4     50.
+    IL_01e2:  ldc.i4.0
+    IL_01e3:  callvirt   instance void _23.MeshHandling.HeightMesh::Init(class [IrrlichtLime]IrrlichtLime.Video.VideoDriver,
+                                                                         class _23.MeshHandling.HeightMap,
+                                                                         float32,
+                                                                         valuetype _23.MeshHandling.HeightMesh/ColorFunc)
+    IL_01e8:  nop
+//000075: 				}
+    IL_01e9:  nop
+    IL_01ea:  br.s       IL_0246
+
+//000076: 				else if (IsKeyDown(KeyCode.Key2))
+    IL_01ec:  ldc.i4.s   50
+    IL_01ee:  call       bool _23.MeshHandling.Program::IsKeyDown(valuetype [IrrlichtLime]IrrlichtLime.KeyCode)
+    IL_01f3:  ldc.i4.0
+    IL_01f4:  ceq
+    IL_01f6:  stloc.s    CS$4$0000
+    IL_01f8:  ldloc.s    CS$4$0000
+    IL_01fa:  brtrue.s   IL_021a
+
+//000077: 				{
+    IL_01fc:  nop
+//000078: 					map.Generate(HeightMap.HeightFunc.MoreSine);
+    IL_01fd:  ldloc.s    map
+    IL_01ff:  ldc.i4.1
+    IL_0200:  callvirt   instance void _23.MeshHandling.HeightMap::Generate(valuetype _23.MeshHandling.HeightMap/HeightFunc)
+    IL_0205:  nop
+//000079: 					mesh.Init(driver, map, 50.0f, HeightMesh.ColorFunc.CoordinateInterpolation);
+    IL_0206:  ldloc.s    mesh
+    IL_0208:  ldloc.2
+    IL_0209:  ldloc.s    map
+    IL_020b:  ldc.r4     50.
+    IL_0210:  ldc.i4.1
+    IL_0211:  callvirt   instance void _23.MeshHandling.HeightMesh::Init(class [IrrlichtLime]IrrlichtLime.Video.VideoDriver,
+                                                                         class _23.MeshHandling.HeightMap,
+                                                                         float32,
+                                                                         valuetype _23.MeshHandling.HeightMesh/ColorFunc)
+    IL_0216:  nop
+//000080: 				}
+    IL_0217:  nop
+    IL_0218:  br.s       IL_0246
+
+//000081: 				else if (IsKeyDown(KeyCode.Key3))
+    IL_021a:  ldc.i4.s   51
+    IL_021c:  call       bool _23.MeshHandling.Program::IsKeyDown(valuetype [IrrlichtLime]IrrlichtLime.KeyCode)
+    IL_0221:  ldc.i4.0
+    IL_0222:  ceq
+    IL_0224:  stloc.s    CS$4$0000
+    IL_0226:  ldloc.s    CS$4$0000
+    IL_0228:  brtrue.s   IL_0246
+
+//000082: 				{
+    IL_022a:  nop
+//000083: 					map.Generate(HeightMap.HeightFunc.JustExp);
+    IL_022b:  ldloc.s    map
+    IL_022d:  ldc.i4.2
+    IL_022e:  callvirt   instance void _23.MeshHandling.HeightMap::Generate(valuetype _23.MeshHandling.HeightMap/HeightFunc)
+    IL_0233:  nop
+//000084: 					mesh.Init(driver, map, 50.0f, HeightMesh.ColorFunc.CoordinateInterpolation);
+    IL_0234:  ldloc.s    mesh
+    IL_0236:  ldloc.2
+    IL_0237:  ldloc.s    map
+    IL_0239:  ldc.r4     50.
+    IL_023e:  ldc.i4.1
+    IL_023f:  callvirt   instance void _23.MeshHandling.HeightMesh::Init(class [IrrlichtLime]IrrlichtLime.Video.VideoDriver,
+                                                                         class _23.MeshHandling.HeightMap,
+                                                                         float32,
+                                                                         valuetype _23.MeshHandling.HeightMesh/ColorFunc)
+    IL_0244:  nop
+//000085: 				}
+    IL_0245:  nop
+//000086: 
+//000087: 				driver.BeginScene();
+    IL_0246:  ldloc.2
+    IL_0247:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene()
+    IL_024c:  pop
+//000088: 				scene.DrawAll();
+    IL_024d:  ldloc.3
+    IL_024e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_0253:  nop
+//000089: 				driver.EndScene();
+    IL_0254:  ldloc.2
+    IL_0255:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_025a:  pop
+//000090: 			}
+    IL_025b:  nop
+//000059: 			while (device.Run())
+    IL_025c:  ldloc.1
+    IL_025d:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_0262:  stloc.s    CS$4$0000
+    IL_0264:  ldloc.s    CS$4$0000
+    IL_0266:  brtrue     IL_0172
+
+//000060: 			{
+//000061: 				if (!device.WindowActive)
+//000062: 				{
+//000063: 					device.Sleep(100);
+//000064: 					continue;
+//000065: 				}
+//000066: 
+//000067: 				if (IsKeyDown(KeyCode.KeyW))
+//000068: 				{
+//000069: 					meshnode.SetMaterialFlag(MaterialFlag.Wireframe, !meshnode.GetMaterial(0).Wireframe);
+//000070: 				}
+//000071: 				else if (IsKeyDown(KeyCode.Key1))
+//000072: 				{
+//000073: 					map.Generate(HeightMap.HeightFunc.EggBox);
+//000074: 					mesh.Init(driver, map, 50.0f, HeightMesh.ColorFunc.GreyscaleBasedOnTheHeight);
+//000075: 				}
+//000076: 				else if (IsKeyDown(KeyCode.Key2))
+//000077: 				{
+//000078: 					map.Generate(HeightMap.HeightFunc.MoreSine);
+//000079: 					mesh.Init(driver, map, 50.0f, HeightMesh.ColorFunc.CoordinateInterpolation);
+//000080: 				}
+//000081: 				else if (IsKeyDown(KeyCode.Key3))
+//000082: 				{
+//000083: 					map.Generate(HeightMap.HeightFunc.JustExp);
+//000084: 					mesh.Init(driver, map, 50.0f, HeightMesh.ColorFunc.CoordinateInterpolation);
+//000085: 				}
+//000086: 
+//000087: 				driver.BeginScene();
+//000088: 				scene.DrawAll();
+//000089: 				driver.EndScene();
+//000090: 			}
+//000091: 
+//000092: 			// Clean up
+//000093: 
+//000094: 			mesh.Drop();
+    IL_026b:  ldloc.s    mesh
+    IL_026d:  callvirt   instance void _23.MeshHandling.HeightMesh::Drop()
+    IL_0272:  nop
+//000095: 			device.Drop();
+    IL_0273:  ldloc.1
+    IL_0274:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0279:  pop
+//000096: 		}
+    IL_027a:  ret
+  } // end of method Program::Main
+
+  .method private hidebysig static bool  device_OnEvent(class [IrrlichtLime]IrrlichtLime.Event e) cil managed
+  {
+    // Code size       121 (0x79)
+    .maxstack  3
+    .locals init ([0] bool CS$1$0000,
+             [1] bool CS$4$0001)
+//000097: 
+//000098: 		static Dictionary<KeyCode, bool> KeyIsDown = new Dictionary<KeyCode, bool>();
+//000099: 
+//000100: 		static bool device_OnEvent(Event e)
+//000101: 		{
+    IL_0000:  nop
+//000102: 			if (e.Type == EventType.Key)
+    IL_0001:  ldarg.0
+    IL_0002:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.EventType [IrrlichtLime]IrrlichtLime.Event::get_Type()
+    IL_0007:  ldc.i4.2
+    IL_0008:  ceq
+    IL_000a:  ldc.i4.0
+    IL_000b:  ceq
+    IL_000d:  stloc.1
+    IL_000e:  ldloc.1
+    IL_000f:  brtrue.s   IL_0073
+
+//000103: 			{
+    IL_0011:  nop
+//000104: 				if (KeyIsDown.ContainsKey(e.Key.Key))
+    IL_0012:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _23.MeshHandling.Program::KeyIsDown
+    IL_0017:  ldarg.0
+    IL_0018:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_001d:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.KeyCode [IrrlichtLime]IrrlichtLime.Event/KeyEvent::Key
+    IL_0022:  callvirt   instance bool class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::ContainsKey(!0)
+    IL_0027:  ldc.i4.0
+    IL_0028:  ceq
+    IL_002a:  stloc.1
+    IL_002b:  ldloc.1
+    IL_002c:  brtrue.s   IL_0051
+
+//000105: 					KeyIsDown[e.Key.Key] = e.Key.PressedDown;
+    IL_002e:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _23.MeshHandling.Program::KeyIsDown
+    IL_0033:  ldarg.0
+    IL_0034:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_0039:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.KeyCode [IrrlichtLime]IrrlichtLime.Event/KeyEvent::Key
+    IL_003e:  ldarg.0
+    IL_003f:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_0044:  ldfld      bool [IrrlichtLime]IrrlichtLime.Event/KeyEvent::PressedDown
+    IL_0049:  callvirt   instance void class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::set_Item(!0,
+                                                                                                                                                            !1)
+    IL_004e:  nop
+    IL_004f:  br.s       IL_0072
+
+//000106: 				else
+//000107: 					KeyIsDown.Add(e.Key.Key, e.Key.PressedDown);
+    IL_0051:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _23.MeshHandling.Program::KeyIsDown
+    IL_0056:  ldarg.0
+    IL_0057:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_005c:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.KeyCode [IrrlichtLime]IrrlichtLime.Event/KeyEvent::Key
+    IL_0061:  ldarg.0
+    IL_0062:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_0067:  ldfld      bool [IrrlichtLime]IrrlichtLime.Event/KeyEvent::PressedDown
+    IL_006c:  callvirt   instance void class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::Add(!0,
+                                                                                                                                                       !1)
+    IL_0071:  nop
+//000108: 			}
+    IL_0072:  nop
+//000109: 
+//000110: 			return false;
+    IL_0073:  ldc.i4.0
+    IL_0074:  stloc.0
+    IL_0075:  br.s       IL_0077
+
+//000111: 		}
+    IL_0077:  ldloc.0
+    IL_0078:  ret
+  } // end of method Program::device_OnEvent
+
+  .method private hidebysig static bool  IsKeyDown(valuetype [IrrlichtLime]IrrlichtLime.KeyCode keyCode) cil managed
+  {
+    // Code size       33 (0x21)
+    .maxstack  3
+    .locals init ([0] bool CS$1$0000)
+//000112: 
+//000113: 		static bool IsKeyDown(KeyCode keyCode)
+//000114: 		{
+    IL_0000:  nop
+//000115: 			return KeyIsDown.ContainsKey(keyCode) ? KeyIsDown[keyCode] : false;
+    IL_0001:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _23.MeshHandling.Program::KeyIsDown
+    IL_0006:  ldarg.0
+    IL_0007:  callvirt   instance bool class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::ContainsKey(!0)
+    IL_000c:  brtrue.s   IL_0011
+
+    IL_000e:  ldc.i4.0
+    IL_000f:  br.s       IL_001c
+
+    IL_0011:  ldsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _23.MeshHandling.Program::KeyIsDown
+    IL_0016:  ldarg.0
+    IL_0017:  callvirt   instance !1 class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::get_Item(!0)
+    IL_001c:  stloc.0
+    IL_001d:  br.s       IL_001f
+
+//000116: 		}
+    IL_001f:  ldloc.0
+    IL_0020:  ret
+  } // end of method Program::IsKeyDown
+
+  .method private hidebysig static bool  AskUserForDriver([out] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType& driverType) cil managed
+  {
+    // Code size       104 (0x68)
+    .maxstack  2
+    .locals init ([0] valuetype [mscorlib]System.ConsoleKeyInfo i,
+             [1] bool CS$1$0000,
+             [2] valuetype [mscorlib]System.ConsoleKey CS$4$0001)
+//000117: 
+//000118: 		static bool AskUserForDriver(out DriverType driverType)
+//000119: 		{
+    IL_0000:  nop
+//000120: 			driverType = DriverType.Null;
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  stind.i4
+//000121: 
+//000122: 			Console.Write("Please select the driver you want for this example:\n" +
+    IL_0004:  ldstr      "Please select the driver you want for this example"
+    + ":\n (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n (d) Burning's Softw"
+    + "are Renderer\n (e) Software Renderer\n (f) NullDevice\n (otherKey) exit\n\n"
+    IL_0009:  call       void [mscorlib]System.Console::Write(string)
+    IL_000e:  nop
+//000123: 						" (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n" +
+//000124: 						" (d) Burning's Software Renderer\n (e) Software Renderer\n" +
+//000125: 						" (f) NullDevice\n (otherKey) exit\n\n");
+//000126: 
+//000127: 			ConsoleKeyInfo i = Console.ReadKey();
+    IL_000f:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0014:  stloc.0
+//000128: 
+//000129: 			switch (i.Key)
+    IL_0015:  ldloca.s   i
+    IL_0017:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_001c:  stloc.2
+    IL_001d:  ldloc.2
+    IL_001e:  ldc.i4.s   65
+    IL_0020:  sub
+    IL_0021:  switch     ( 
+                          IL_0040,
+                          IL_0045,
+                          IL_004a,
+                          IL_004f,
+                          IL_0054,
+                          IL_0059)
+    IL_003e:  br.s       IL_005e
+
+//000130: 			{
+//000131: 				case ConsoleKey.A: driverType = DriverType.OpenGL; break;
+    IL_0040:  ldarg.0
+    IL_0041:  ldc.i4.5
+    IL_0042:  stind.i4
+    IL_0043:  br.s       IL_0062
+
+//000132: 				case ConsoleKey.B: driverType = DriverType.Direct3D9; break;
+    IL_0045:  ldarg.0
+    IL_0046:  ldc.i4.4
+    IL_0047:  stind.i4
+    IL_0048:  br.s       IL_0062
+
+//000133: 				case ConsoleKey.C: driverType = DriverType.Direct3D8; break;
+    IL_004a:  ldarg.0
+    IL_004b:  ldc.i4.3
+    IL_004c:  stind.i4
+    IL_004d:  br.s       IL_0062
+
+//000134: 				case ConsoleKey.D: driverType = DriverType.BurningsVideo; break;
+    IL_004f:  ldarg.0
+    IL_0050:  ldc.i4.2
+    IL_0051:  stind.i4
+    IL_0052:  br.s       IL_0062
+
+//000135: 				case ConsoleKey.E: driverType = DriverType.Software; break;
+    IL_0054:  ldarg.0
+    IL_0055:  ldc.i4.1
+    IL_0056:  stind.i4
+    IL_0057:  br.s       IL_0062
+
+//000136: 				case ConsoleKey.F: driverType = DriverType.Null; break;
+    IL_0059:  ldarg.0
+    IL_005a:  ldc.i4.0
+    IL_005b:  stind.i4
+    IL_005c:  br.s       IL_0062
+
+//000137: 				default:
+//000138: 					return false;
+    IL_005e:  ldc.i4.0
+    IL_005f:  stloc.1
+    IL_0060:  br.s       IL_0066
+
+//000139: 			}
+//000140: 
+//000141: 			return true;
+    IL_0062:  ldc.i4.1
+    IL_0063:  stloc.1
+    IL_0064:  br.s       IL_0066
+
+//000142: 		}
+    IL_0066:  ldloc.1
+    IL_0067:  ret
+  } // end of method Program::AskUserForDriver
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+  .method private hidebysig specialname rtspecialname static 
+          void  .cctor() cil managed
+  {
+    // Code size       11 (0xb)
+    .maxstack  8
+//000098: 		static Dictionary<KeyCode, bool> KeyIsDown = new Dictionary<KeyCode, bool>();
+    IL_0000:  newobj     instance void class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool>::.ctor()
+    IL_0005:  stsfld     class [mscorlib]System.Collections.Generic.Dictionary`2<valuetype [IrrlichtLime]IrrlichtLime.KeyCode,bool> _23.MeshHandling.Program::KeyIsDown
+    IL_000a:  ret
+  } // end of method Program::.cctor
+
+} // end of class _23.MeshHandling.Program
+
+.class private auto ansi beforefieldinit _23.MeshHandling.HeightMap
+       extends [mscorlib]System.Object
+{
+  .class auto ansi sealed nested public HeightFunc
+         extends [mscorlib]System.Enum
+  {
+    .field public specialname rtspecialname int32 value__
+    .field public static literal valuetype _23.MeshHandling.HeightMap/HeightFunc EggBox = int32(0x00000000)
+    .field public static literal valuetype _23.MeshHandling.HeightMap/HeightFunc MoreSine = int32(0x00000001)
+    .field public static literal valuetype _23.MeshHandling.HeightMap/HeightFunc JustExp = int32(0x00000002)
+  } // end of class HeightFunc
+
+  .field private float32 scale
+  .field private float32[] data
+  .field private uint16 '<Width>k__BackingField'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .field private uint16 '<Height>k__BackingField'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method public hidebysig specialname instance uint16 
+          get_Width() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (uint16 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      uint16 _23.MeshHandling.HeightMap::'<Width>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method HeightMap::get_Width
+
+  .method private hidebysig specialname instance void 
+          set_Width(uint16 'value') cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      uint16 _23.MeshHandling.HeightMap::'<Width>k__BackingField'
+    IL_0007:  ret
+  } // end of method HeightMap::set_Width
+
+  .method public hidebysig specialname instance uint16 
+          get_Height() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (uint16 V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      uint16 _23.MeshHandling.HeightMap::'<Height>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method HeightMap::get_Height
+
+  .method private hidebysig specialname instance void 
+          set_Height(uint16 'value') cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      uint16 _23.MeshHandling.HeightMap::'<Height>k__BackingField'
+    IL_0007:  ret
+  } // end of method HeightMap::set_Height
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor(uint16 w,
+                               uint16 h) cil managed
+  {
+    // Code size       60 (0x3c)
+    .maxstack  8
+//000099: 
+//000100: 		static bool device_OnEvent(Event e)
+//000101: 		{
+//000102: 			if (e.Type == EventType.Key)
+//000103: 			{
+//000104: 				if (KeyIsDown.ContainsKey(e.Key.Key))
+//000105: 					KeyIsDown[e.Key.Key] = e.Key.PressedDown;
+//000106: 				else
+//000107: 					KeyIsDown.Add(e.Key.Key, e.Key.PressedDown);
+//000108: 			}
+//000109: 
+//000110: 			return false;
+//000111: 		}
+//000112: 
+//000113: 		static bool IsKeyDown(KeyCode keyCode)
+//000114: 		{
+//000115: 			return KeyIsDown.ContainsKey(keyCode) ? KeyIsDown[keyCode] : false;
+//000116: 		}
+//000117: 
+//000118: 		static bool AskUserForDriver(out DriverType driverType)
+//000119: 		{
+//000120: 			driverType = DriverType.Null;
+//000121: 
+//000122: 			Console.Write("Please select the driver you want for this example:\n" +
+//000123: 						" (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n" +
+//000124: 						" (d) Burning's Software Renderer\n (e) Software Renderer\n" +
+//000125: 						" (f) NullDevice\n (otherKey) exit\n\n");
+//000126: 
+//000127: 			ConsoleKeyInfo i = Console.ReadKey();
+//000128: 
+//000129: 			switch (i.Key)
+//000130: 			{
+//000131: 				case ConsoleKey.A: driverType = DriverType.OpenGL; break;
+//000132: 				case ConsoleKey.B: driverType = DriverType.Direct3D9; break;
+//000133: 				case ConsoleKey.C: driverType = DriverType.Direct3D8; break;
+//000134: 				case ConsoleKey.D: driverType = DriverType.BurningsVideo; break;
+//000135: 				case ConsoleKey.E: driverType = DriverType.Software; break;
+//000136: 				case ConsoleKey.F: driverType = DriverType.Null; break;
+//000137: 				default:
+//000138: 					return false;
+//000139: 			}
+//000140: 
+//000141: 			return true;
+//000142: 		}
+//000143: 	}
+//000144: 
+//000145: 	/// <summary>
+//000146: 	/// A simple class for representing heightmaps.
+//000147: 	/// </summary>
+//000148: 	class HeightMap
+//000149: 	{
+//000150: 		/// <summary>
+//000151: 		/// The type of the function which generate the heightmap.
+//000152: 		/// </summary>
+//000153: 		public enum HeightFunc
+//000154: 		{
+//000155: 			/// <summary>
+//000156: 			/// An interesting sample function :-)
+//000157: 			/// </summary>
+//000158: 			EggBox,
+//000159: 
+//000160: 			/// <summary>
+//000161: 			/// A rather dumb sine function :-/
+//000162: 			/// </summary>
+//000163: 			MoreSine,
+//000164: 
+//000165: 			/// <summary>
+//000166: 			/// A simple function
+//000167: 			/// </summary>
+//000168: 			JustExp
+//000169: 		}
+//000170: 
+//000171: 		float scale;
+//000172: 		float[] data;
+//000173: 
+//000174: 		public ushort Width { get; private set; }
+//000175: 		public ushort Height { get; private set; }
+//000176: 
+//000177: 		/// <summary>
+//000178: 		/// Creates new instance with given width and height. 
+//000179: 		/// </summary>
+//000180: 		public HeightMap(ushort w, ushort h)
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+//000181: 		{
+    IL_0007:  nop
+//000182: 			Width = w;
+    IL_0008:  ldarg.0
+    IL_0009:  ldarg.1
+    IL_000a:  call       instance void _23.MeshHandling.HeightMap::set_Width(uint16)
+    IL_000f:  nop
+//000183: 			Height = h;
+    IL_0010:  ldarg.0
+    IL_0011:  ldarg.2
+    IL_0012:  call       instance void _23.MeshHandling.HeightMap::set_Height(uint16)
+    IL_0017:  nop
+//000184: 			scale = (float)Math.Sqrt((double)(w * w + h * h));
+    IL_0018:  ldarg.0
+    IL_0019:  ldarg.1
+    IL_001a:  ldarg.1
+    IL_001b:  mul
+    IL_001c:  ldarg.2
+    IL_001d:  ldarg.2
+    IL_001e:  mul
+    IL_001f:  add
+    IL_0020:  conv.r8
+    IL_0021:  call       float64 [mscorlib]System.Math::Sqrt(float64)
+    IL_0026:  conv.r4
+    IL_0027:  stfld      float32 _23.MeshHandling.HeightMap::scale
+//000185: 			data = new float[w * h];
+    IL_002c:  ldarg.0
+    IL_002d:  ldarg.1
+    IL_002e:  ldarg.2
+    IL_002f:  mul
+    IL_0030:  newarr     [mscorlib]System.Single
+    IL_0035:  stfld      float32[] _23.MeshHandling.HeightMap::data
+//000186: 		}
+    IL_003a:  nop
+    IL_003b:  ret
+  } // end of method HeightMap::.ctor
+
+  .method public hidebysig instance float32 
+          GetHeight(int32 x,
+                    int32 y) cil managed
+  {
+    // Code size       65 (0x41)
+    .maxstack  4
+    .locals init ([0] float32 CS$1$0000,
+             [1] bool CS$4$0001)
+//000187: 
+//000188: 		/// <summary>
+//000189: 		/// Gets height value for specified coordinates.
+//000190: 		/// </summary>
+//000191: 		public float GetHeight(int x, int y)
+//000192: 		{
+    IL_0000:  nop
+//000193: 			if (x < 0 || x > Width || y < 0 || y > Height)
+    IL_0001:  ldarg.1
+    IL_0002:  ldc.i4.0
+    IL_0003:  blt.s      IL_0020
+
+    IL_0005:  ldarg.1
+    IL_0006:  ldarg.0
+    IL_0007:  call       instance uint16 _23.MeshHandling.HeightMap::get_Width()
+    IL_000c:  bgt.s      IL_0020
+
+    IL_000e:  ldarg.2
+    IL_000f:  ldc.i4.0
+    IL_0010:  blt.s      IL_0020
+
+    IL_0012:  ldarg.2
+    IL_0013:  ldarg.0
+    IL_0014:  call       instance uint16 _23.MeshHandling.HeightMap::get_Height()
+    IL_0019:  cgt
+    IL_001b:  ldc.i4.0
+    IL_001c:  ceq
+    IL_001e:  br.s       IL_0021
+
+    IL_0020:  ldc.i4.0
+    IL_0021:  stloc.1
+    IL_0022:  ldloc.1
+    IL_0023:  brtrue.s   IL_002b
+
+//000194: 				throw new ArgumentOutOfRangeException();
+    IL_0025:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor()
+    IL_002a:  throw
+
+//000195: 
+//000196: 			return data[x + Width * y];
+    IL_002b:  ldarg.0
+    IL_002c:  ldfld      float32[] _23.MeshHandling.HeightMap::data
+    IL_0031:  ldarg.1
+    IL_0032:  ldarg.0
+    IL_0033:  call       instance uint16 _23.MeshHandling.HeightMap::get_Width()
+    IL_0038:  ldarg.2
+    IL_0039:  mul
+    IL_003a:  add
+    IL_003b:  ldelem.r4
+    IL_003c:  stloc.0
+    IL_003d:  br.s       IL_003f
+
+//000197: 		}
+    IL_003f:  ldloc.0
+    IL_0040:  ret
+  } // end of method HeightMap::GetHeight
+
+  .method public hidebysig instance void 
+          Generate(valuetype _23.MeshHandling.HeightMap/HeightFunc func) cil managed
+  {
+    // Code size       67 (0x43)
+    .maxstack  6
+    .locals init ([0] int32 i,
+             [1] int32 y,
+             [2] int32 x,
+             [3] bool CS$4$0000)
+//000198: 
+//000199: 		/// <summary>
+//000200: 		/// Fills the heightmap with values generated from given function.
+//000201: 		/// </summary>
+//000202: 		public void Generate(HeightFunc func)
+//000203: 		{
+    IL_0000:  nop
+//000204: 			int i = 0;
+    IL_0001:  ldc.i4.0
+    IL_0002:  stloc.0
+//000205: 			for (int y = 0; y < Height; y++)
+    IL_0003:  ldc.i4.0
+    IL_0004:  stloc.1
+    IL_0005:  br.s       IL_0035
+
+//000206: 				for (int x = 0; x < Width; x++)
+    IL_0007:  ldc.i4.0
+    IL_0008:  stloc.2
+    IL_0009:  br.s       IL_0024
+
+//000207: 					data[i++] = calculate(func, x, y);
+    IL_000b:  ldarg.0
+    IL_000c:  ldfld      float32[] _23.MeshHandling.HeightMap::data
+    IL_0011:  ldloc.0
+    IL_0012:  dup
+    IL_0013:  ldc.i4.1
+    IL_0014:  add
+    IL_0015:  stloc.0
+    IL_0016:  ldarg.0
+    IL_0017:  ldarg.1
+    IL_0018:  ldloc.2
+    IL_0019:  ldloc.1
+    IL_001a:  call       instance float32 _23.MeshHandling.HeightMap::calculate(valuetype _23.MeshHandling.HeightMap/HeightFunc,
+                                                                                int32,
+                                                                                int32)
+    IL_001f:  stelem.r4
+//000206: 				for (int x = 0; x < Width; x++)
+    IL_0020:  ldloc.2
+    IL_0021:  ldc.i4.1
+    IL_0022:  add
+    IL_0023:  stloc.2
+    IL_0024:  ldloc.2
+    IL_0025:  ldarg.0
+    IL_0026:  call       instance uint16 _23.MeshHandling.HeightMap::get_Width()
+    IL_002b:  clt
+    IL_002d:  stloc.3
+    IL_002e:  ldloc.3
+    IL_002f:  brtrue.s   IL_000b
+
+//000205: 			for (int y = 0; y < Height; y++)
+    IL_0031:  ldloc.1
+    IL_0032:  ldc.i4.1
+    IL_0033:  add
+    IL_0034:  stloc.1
+    IL_0035:  ldloc.1
+    IL_0036:  ldarg.0
+    IL_0037:  call       instance uint16 _23.MeshHandling.HeightMap::get_Height()
+    IL_003c:  clt
+    IL_003e:  stloc.3
+    IL_003f:  ldloc.3
+    IL_0040:  brtrue.s   IL_0007
+
+//000206: 				for (int x = 0; x < Width; x++)
+//000207: 					data[i++] = calculate(func, x, y);
+//000208: 		}
+    IL_0042:  ret
+  } // end of method HeightMap::Generate
+
+  .method public hidebysig instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df 
+          GetNormal(int32 x,
+                    int32 y,
+                    float32 s) cil managed
+  {
+    // Code size       311 (0x137)
+    .maxstack  5
+    .locals init ([0] float32 zc,
+             [1] float32 zl,
+             [2] float32 zr,
+             [3] float32 zu,
+             [4] float32 zd,
+             [5] class [IrrlichtLime]IrrlichtLime.Core.Vector3Df CS$1$0000,
+             [6] bool CS$4$0001)
+//000209: 
+//000210: 		/// <summary>
+//000211: 		/// Gets the normal vector at (x, y) to be the cross product of the vectors between the adjacent
+//000212: 		/// points in the horizontal and vertical directions.
+//000213: 		/// </summary>
+//000214: 		public Vector3Df GetNormal(int x, int y, float s)
+//000215: 		{
+    IL_0000:  nop
+//000216: 			if (x < 0 || x > Width || y < 0 || y > Height)
+    IL_0001:  ldarg.1
+    IL_0002:  ldc.i4.0
+    IL_0003:  blt.s      IL_0020
+
+    IL_0005:  ldarg.1
+    IL_0006:  ldarg.0
+    IL_0007:  call       instance uint16 _23.MeshHandling.HeightMap::get_Width()
+    IL_000c:  bgt.s      IL_0020
+
+    IL_000e:  ldarg.2
+    IL_000f:  ldc.i4.0
+    IL_0010:  blt.s      IL_0020
+
+    IL_0012:  ldarg.2
+    IL_0013:  ldarg.0
+    IL_0014:  call       instance uint16 _23.MeshHandling.HeightMap::get_Height()
+    IL_0019:  cgt
+    IL_001b:  ldc.i4.0
+    IL_001c:  ceq
+    IL_001e:  br.s       IL_0021
+
+    IL_0020:  ldc.i4.0
+    IL_0021:  stloc.s    CS$4$0001
+    IL_0023:  ldloc.s    CS$4$0001
+    IL_0025:  brtrue.s   IL_002d
+
+//000217: 				throw new ArgumentOutOfRangeException();
+    IL_0027:  newobj     instance void [mscorlib]System.ArgumentOutOfRangeException::.ctor()
+    IL_002c:  throw
+
+//000218: 
+//000219: 			float zc = GetHeight(x, y);
+    IL_002d:  ldarg.0
+    IL_002e:  ldarg.1
+    IL_002f:  ldarg.2
+    IL_0030:  call       instance float32 _23.MeshHandling.HeightMap::GetHeight(int32,
+                                                                                int32)
+    IL_0035:  stloc.0
+//000220: 			float zl, zr, zu, zd;
+//000221: 
+//000222: 			if (x == 0)
+    IL_0036:  ldarg.1
+    IL_0037:  ldc.i4.0
+    IL_0038:  ceq
+    IL_003a:  ldc.i4.0
+    IL_003b:  ceq
+    IL_003d:  stloc.s    CS$4$0001
+    IL_003f:  ldloc.s    CS$4$0001
+    IL_0041:  brtrue.s   IL_0058
+
+//000223: 			{
+    IL_0043:  nop
+//000224: 				zr = GetHeight(x + 1, y);
+    IL_0044:  ldarg.0
+    IL_0045:  ldarg.1
+    IL_0046:  ldc.i4.1
+    IL_0047:  add
+    IL_0048:  ldarg.2
+    IL_0049:  call       instance float32 _23.MeshHandling.HeightMap::GetHeight(int32,
+                                                                                int32)
+    IL_004e:  stloc.2
+//000225: 				zl = zc + zc - zr;
+    IL_004f:  ldloc.0
+    IL_0050:  ldloc.0
+    IL_0051:  add
+    IL_0052:  ldloc.2
+    IL_0053:  sub
+    IL_0054:  stloc.1
+//000226: 			}
+    IL_0055:  nop
+    IL_0056:  br.s       IL_0099
+
+//000227: 			else if (x == Width - 1)
+    IL_0058:  ldarg.1
+    IL_0059:  ldarg.0
+    IL_005a:  call       instance uint16 _23.MeshHandling.HeightMap::get_Width()
+    IL_005f:  ldc.i4.1
+    IL_0060:  sub
+    IL_0061:  ceq
+    IL_0063:  ldc.i4.0
+    IL_0064:  ceq
+    IL_0066:  stloc.s    CS$4$0001
+    IL_0068:  ldloc.s    CS$4$0001
+    IL_006a:  brtrue.s   IL_0081
+
+//000228: 			{
+    IL_006c:  nop
+//000229: 				zl = GetHeight(x - 1, y);
+    IL_006d:  ldarg.0
+    IL_006e:  ldarg.1
+    IL_006f:  ldc.i4.1
+    IL_0070:  sub
+    IL_0071:  ldarg.2
+    IL_0072:  call       instance float32 _23.MeshHandling.HeightMap::GetHeight(int32,
+                                                                                int32)
+    IL_0077:  stloc.1
+//000230: 				zr = zc + zc - zl;
+    IL_0078:  ldloc.0
+    IL_0079:  ldloc.0
+    IL_007a:  add
+    IL_007b:  ldloc.1
+    IL_007c:  sub
+    IL_007d:  stloc.2
+//000231: 			}
+    IL_007e:  nop
+    IL_007f:  br.s       IL_0099
+
+//000232: 			else
+//000233: 			{
+    IL_0081:  nop
+//000234: 				zr = GetHeight(x + 1, y);
+    IL_0082:  ldarg.0
+    IL_0083:  ldarg.1
+    IL_0084:  ldc.i4.1
+    IL_0085:  add
+    IL_0086:  ldarg.2
+    IL_0087:  call       instance float32 _23.MeshHandling.HeightMap::GetHeight(int32,
+                                                                                int32)
+    IL_008c:  stloc.2
+//000235: 				zl = GetHeight(x - 1, y);
+    IL_008d:  ldarg.0
+    IL_008e:  ldarg.1
+    IL_008f:  ldc.i4.1
+    IL_0090:  sub
+    IL_0091:  ldarg.2
+    IL_0092:  call       instance float32 _23.MeshHandling.HeightMap::GetHeight(int32,
+                                                                                int32)
+    IL_0097:  stloc.1
+//000236: 			}
+    IL_0098:  nop
+//000237: 
+//000238: 			if (y == 0)
+    IL_0099:  ldarg.2
+    IL_009a:  ldc.i4.0
+    IL_009b:  ceq
+    IL_009d:  ldc.i4.0
+    IL_009e:  ceq
+    IL_00a0:  stloc.s    CS$4$0001
+    IL_00a2:  ldloc.s    CS$4$0001
+    IL_00a4:  brtrue.s   IL_00bd
+
+//000239: 			{
+    IL_00a6:  nop
+//000240: 				zd = GetHeight(x, y + 1);
+    IL_00a7:  ldarg.0
+    IL_00a8:  ldarg.1
+    IL_00a9:  ldarg.2
+    IL_00aa:  ldc.i4.1
+    IL_00ab:  add
+    IL_00ac:  call       instance float32 _23.MeshHandling.HeightMap::GetHeight(int32,
+                                                                                int32)
+    IL_00b1:  stloc.s    zd
+//000241: 				zu = zc + zc - zd;
+    IL_00b3:  ldloc.0
+    IL_00b4:  ldloc.0
+    IL_00b5:  add
+    IL_00b6:  ldloc.s    zd
+    IL_00b8:  sub
+    IL_00b9:  stloc.3
+//000242: 			}
+    IL_00ba:  nop
+    IL_00bb:  br.s       IL_0100
+
+//000243: 			else if (y == Height - 1)
+    IL_00bd:  ldarg.2
+    IL_00be:  ldarg.0
+    IL_00bf:  call       instance uint16 _23.MeshHandling.HeightMap::get_Height()
+    IL_00c4:  ldc.i4.1
+    IL_00c5:  sub
+    IL_00c6:  ceq
+    IL_00c8:  ldc.i4.0
+    IL_00c9:  ceq
+    IL_00cb:  stloc.s    CS$4$0001
+    IL_00cd:  ldloc.s    CS$4$0001
+    IL_00cf:  brtrue.s   IL_00e7
+
+//000244: 			{
+    IL_00d1:  nop
+//000245: 				zu = GetHeight(x, y - 1);
+    IL_00d2:  ldarg.0
+    IL_00d3:  ldarg.1
+    IL_00d4:  ldarg.2
+    IL_00d5:  ldc.i4.1
+    IL_00d6:  sub
+    IL_00d7:  call       instance float32 _23.MeshHandling.HeightMap::GetHeight(int32,
+                                                                                int32)
+    IL_00dc:  stloc.3
+//000246: 				zd = zc + zc - zu;
+    IL_00dd:  ldloc.0
+    IL_00de:  ldloc.0
+    IL_00df:  add
+    IL_00e0:  ldloc.3
+    IL_00e1:  sub
+    IL_00e2:  stloc.s    zd
+//000247: 			}
+    IL_00e4:  nop
+    IL_00e5:  br.s       IL_0100
+
+//000248: 			else
+//000249: 			{
+    IL_00e7:  nop
+//000250: 				zd = GetHeight(x, y + 1);
+    IL_00e8:  ldarg.0
+    IL_00e9:  ldarg.1
+    IL_00ea:  ldarg.2
+    IL_00eb:  ldc.i4.1
+    IL_00ec:  add
+    IL_00ed:  call       instance float32 _23.MeshHandling.HeightMap::GetHeight(int32,
+                                                                                int32)
+    IL_00f2:  stloc.s    zd
+//000251: 				zu = GetHeight(x, y - 1);
+    IL_00f4:  ldarg.0
+    IL_00f5:  ldarg.1
+    IL_00f6:  ldarg.2
+    IL_00f7:  ldc.i4.1
+    IL_00f8:  sub
+    IL_00f9:  call       instance float32 _23.MeshHandling.HeightMap::GetHeight(int32,
+                                                                                int32)
+    IL_00fe:  stloc.3
+//000252: 			}
+    IL_00ff:  nop
+//000253: 
+//000254: 			return new Vector3Df(scale * 2 * (zl - zr), 4, scale * 2 * (zd - zu)).Normalize();
+    IL_0100:  ldarg.0
+    IL_0101:  ldfld      float32 _23.MeshHandling.HeightMap::scale
+    IL_0106:  ldc.r4     2.
+    IL_010b:  mul
+    IL_010c:  ldloc.1
+    IL_010d:  ldloc.2
+    IL_010e:  sub
+    IL_010f:  mul
+    IL_0110:  ldc.r4     4.
+    IL_0115:  ldarg.0
+    IL_0116:  ldfld      float32 _23.MeshHandling.HeightMap::scale
+    IL_011b:  ldc.r4     2.
+    IL_0120:  mul
+    IL_0121:  ldloc.s    zd
+    IL_0123:  ldloc.3
+    IL_0124:  sub
+    IL_0125:  mul
+    IL_0126:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_012b:  call       instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Core.Vector3Df::Normalize()
+    IL_0130:  stloc.s    CS$1$0000
+    IL_0132:  br.s       IL_0134
+
+//000255: 		}
+    IL_0134:  ldloc.s    CS$1$0000
+    IL_0136:  ret
+  } // end of method HeightMap::GetNormal
+
+  .method private hidebysig instance float32 
+          calculate(valuetype _23.MeshHandling.HeightMap/HeightFunc func,
+                    int32 x,
+                    int32 y) cil managed
+  {
+    // Code size       373 (0x175)
+    .maxstack  4
+    .locals init ([0] float32 xu,
+             [1] float32 yu,
+             [2] float64 r,
+             [3] float64 z,
+             [4] float32 o,
+             [5] float64 xf,
+             [6] float64 yf,
+             [7] float32 V_7,
+             [8] float32 V_8,
+             [9] float32 V_9,
+             [10] float32 CS$1$0000,
+             [11] valuetype _23.MeshHandling.HeightMap/HeightFunc CS$4$0001)
+//000256: 
+//000257: 		/// <summary>
+//000258: 		/// Calculates single height value for specified function and coordinates.
+//000259: 		/// </summary>
+//000260: 		float calculate(HeightFunc func, int x, int y)
+//000261: 		{
+    IL_0000:  nop
+//000262: 			float xu = x - Width / 2.0f;
+    IL_0001:  ldarg.2
+    IL_0002:  conv.r4
+    IL_0003:  ldarg.0
+    IL_0004:  call       instance uint16 _23.MeshHandling.HeightMap::get_Width()
+    IL_0009:  conv.r4
+    IL_000a:  ldc.r4     2.
+    IL_000f:  div
+    IL_0010:  sub
+    IL_0011:  stloc.0
+//000263: 			float yu = y - Height / 2.0f;
+    IL_0012:  ldarg.3
+    IL_0013:  conv.r4
+    IL_0014:  ldarg.0
+    IL_0015:  call       instance uint16 _23.MeshHandling.HeightMap::get_Height()
+    IL_001a:  conv.r4
+    IL_001b:  ldc.r4     2.
+    IL_0020:  div
+    IL_0021:  sub
+    IL_0022:  stloc.1
+//000264: 
+//000265: 			switch (func)
+    IL_0023:  ldarg.1
+    IL_0024:  stloc.s    CS$4$0001
+    IL_0026:  ldloc.s    CS$4$0001
+    IL_0028:  switch     ( 
+                          IL_003e,
+                          IL_00ae,
+                          IL_010b)
+    IL_0039:  br         IL_0157
+
+//000266: 			{
+//000267: 				case HeightFunc.EggBox:
+//000268: 					{
+    IL_003e:  nop
+//000269: 						double r = 4.0f * Math.Sqrt((double)(xu * xu + yu * yu)) / scale;
+    IL_003f:  ldc.r8     4.
+    IL_0048:  ldloc.0
+    IL_0049:  ldloc.0
+    IL_004a:  mul
+    IL_004b:  ldloc.1
+    IL_004c:  ldloc.1
+    IL_004d:  mul
+    IL_004e:  add
+    IL_004f:  conv.r8
+    IL_0050:  call       float64 [mscorlib]System.Math::Sqrt(float64)
+    IL_0055:  mul
+    IL_0056:  ldarg.0
+    IL_0057:  ldfld      float32 _23.MeshHandling.HeightMap::scale
+    IL_005c:  conv.r8
+    IL_005d:  div
+    IL_005e:  stloc.2
+//000270: 						double z = Math.Exp(-r * 2) * (Math.Cos(0.2f * xu) + Math.Cos(0.2f * yu));
+    IL_005f:  ldloc.2
+    IL_0060:  neg
+    IL_0061:  ldc.r8     2.
+    IL_006a:  mul
+    IL_006b:  call       float64 [mscorlib]System.Math::Exp(float64)
+    IL_0070:  ldc.r4     0.2
+    IL_0075:  ldloc.0
+    IL_0076:  mul
+    IL_0077:  conv.r8
+    IL_0078:  call       float64 [mscorlib]System.Math::Cos(float64)
+    IL_007d:  ldc.r4     0.2
+    IL_0082:  ldloc.1
+    IL_0083:  mul
+    IL_0084:  conv.r8
+    IL_0085:  call       float64 [mscorlib]System.Math::Cos(float64)
+    IL_008a:  add
+    IL_008b:  mul
+    IL_008c:  stloc.3
+//000271: 						float o = (float)(0.32f + 0.25f * z);
+    IL_008d:  ldc.r8     0.31999999284744263
+    IL_0096:  ldc.r8     0.25
+    IL_009f:  ldloc.3
+    IL_00a0:  mul
+    IL_00a1:  add
+    IL_00a2:  conv.r4
+    IL_00a3:  stloc.s    o
+//000272: 						return o;
+    IL_00a5:  ldloc.s    o
+    IL_00a7:  stloc.s    CS$1$0000
+    IL_00a9:  br         IL_0172
+
+//000273: 					}
+//000274: 
+//000275: 				case HeightFunc.MoreSine:
+//000276: 					{
+    IL_00ae:  nop
+//000277: 						double xf = 0.3f * xu / scale;
+    IL_00af:  ldc.r4     0.30000001
+    IL_00b4:  ldloc.0
+    IL_00b5:  mul
+    IL_00b6:  ldarg.0
+    IL_00b7:  ldfld      float32 _23.MeshHandling.HeightMap::scale
+    IL_00bc:  div
+    IL_00bd:  conv.r8
+    IL_00be:  stloc.s    xf
+//000278: 						double yf = 12.0f * yu / scale;
+    IL_00c0:  ldc.r4     12.
+    IL_00c5:  ldloc.1
+    IL_00c6:  mul
+    IL_00c7:  ldarg.0
+    IL_00c8:  ldfld      float32 _23.MeshHandling.HeightMap::scale
+    IL_00cd:  div
+    IL_00ce:  conv.r8
+    IL_00cf:  stloc.s    yf
+//000279: 						double z = Math.Sin(xf * xf + yf) * Math.Sin(xf + yf * yf);
+    IL_00d1:  ldloc.s    xf
+    IL_00d3:  ldloc.s    xf
+    IL_00d5:  mul
+    IL_00d6:  ldloc.s    yf
+    IL_00d8:  add
+    IL_00d9:  call       float64 [mscorlib]System.Math::Sin(float64)
+    IL_00de:  ldloc.s    xf
+    IL_00e0:  ldloc.s    yf
+    IL_00e2:  ldloc.s    yf
+    IL_00e4:  mul
+    IL_00e5:  add
+    IL_00e6:  call       float64 [mscorlib]System.Math::Sin(float64)
+    IL_00eb:  mul
+    IL_00ec:  stloc.3
+//000280: 						float o = (float)(0.25f + 0.25f * z);
+    IL_00ed:  ldc.r8     0.25
+    IL_00f6:  ldc.r8     0.25
+    IL_00ff:  ldloc.3
+    IL_0100:  mul
+    IL_0101:  add
+    IL_0102:  conv.r4
+    IL_0103:  stloc.s    o
+//000281: 						return o;
+    IL_0105:  ldloc.s    o
+    IL_0107:  stloc.s    CS$1$0000
+    IL_0109:  br.s       IL_0172
+
+//000282: 					}
+//000283: 
+//000284: 				case HeightFunc.JustExp:
+//000285: 					{
+    IL_010b:  nop
+//000286: 						float xf = 6 * xu / scale;
+    IL_010c:  ldc.r4     6.
+    IL_0111:  ldloc.0
+    IL_0112:  mul
+    IL_0113:  ldarg.0
+    IL_0114:  ldfld      float32 _23.MeshHandling.HeightMap::scale
+    IL_0119:  div
+    IL_011a:  stloc.s    V_7
+//000287: 						float yf = 6 * yu / scale;
+    IL_011c:  ldc.r4     6.
+    IL_0121:  ldloc.1
+    IL_0122:  mul
+    IL_0123:  ldarg.0
+    IL_0124:  ldfld      float32 _23.MeshHandling.HeightMap::scale
+    IL_0129:  div
+    IL_012a:  stloc.s    V_8
+//000288: 						float z = xf * xf + yf * yf;
+    IL_012c:  ldloc.s    V_7
+    IL_012e:  ldloc.s    V_7
+    IL_0130:  mul
+    IL_0131:  ldloc.s    V_8
+    IL_0133:  ldloc.s    V_8
+    IL_0135:  mul
+    IL_0136:  add
+    IL_0137:  stloc.s    V_9
+//000289: 						float o = (float)(0.3f * z * Math.Cos(xf * yf));
+    IL_0139:  ldc.r4     0.30000001
+    IL_013e:  ldloc.s    V_9
+    IL_0140:  mul
+    IL_0141:  conv.r8
+    IL_0142:  ldloc.s    V_7
+    IL_0144:  ldloc.s    V_8
+    IL_0146:  mul
+    IL_0147:  conv.r8
+    IL_0148:  call       float64 [mscorlib]System.Math::Cos(float64)
+    IL_014d:  mul
+    IL_014e:  conv.r4
+    IL_014f:  stloc.s    o
+//000290: 						return o;
+    IL_0151:  ldloc.s    o
+    IL_0153:  stloc.s    CS$1$0000
+    IL_0155:  br.s       IL_0172
+
+//000291: 					}
+//000292: 
+//000293: 				default:
+//000294: 					throw new ArgumentException("Unexpected height function value: " + func.ToString());
+    IL_0157:  ldstr      "Unexpected height function value: "
+    IL_015c:  ldarg.1
+    IL_015d:  box        _23.MeshHandling.HeightMap/HeightFunc
+    IL_0162:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_0167:  call       string [mscorlib]System.String::Concat(string,
+                                                                string)
+    IL_016c:  newobj     instance void [mscorlib]System.ArgumentException::.ctor(string)
+    IL_0171:  throw
+
+//000295: 			}
+//000296: 		}
+    IL_0172:  ldloc.s    CS$1$0000
+    IL_0174:  ret
+  } // end of method HeightMap::calculate
+
+  .property instance uint16 Width()
+  {
+    .get instance uint16 _23.MeshHandling.HeightMap::get_Width()
+    .set instance void _23.MeshHandling.HeightMap::set_Width(uint16)
+  } // end of property HeightMap::Width
+  .property instance uint16 Height()
+  {
+    .get instance uint16 _23.MeshHandling.HeightMap::get_Height()
+    .set instance void _23.MeshHandling.HeightMap::set_Height(uint16)
+  } // end of property HeightMap::Height
+} // end of class _23.MeshHandling.HeightMap
+
+.class private auto ansi beforefieldinit _23.MeshHandling.HeightMesh
+       extends [mscorlib]System.Object
+{
+  .class auto ansi sealed nested public ColorFunc
+         extends [mscorlib]System.Enum
+  {
+    .field public specialname rtspecialname int32 value__
+    .field public static literal valuetype _23.MeshHandling.HeightMesh/ColorFunc GreyscaleBasedOnTheHeight = int32(0x00000000)
+    .field public static literal valuetype _23.MeshHandling.HeightMesh/ColorFunc CoordinateInterpolation = int32(0x00000001)
+    .field public static literal valuetype _23.MeshHandling.HeightMesh/ColorFunc PureWhite = int32(0x00000002)
+  } // end of class ColorFunc
+
+  .field private int32 width
+  .field private int32 height
+  .field private float32 scale
+  .field private class [IrrlichtLime]IrrlichtLime.Scene.Mesh '<Mesh>k__BackingField'
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+  .method public hidebysig specialname instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh 
+          get_Mesh() cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       11 (0xb)
+    .maxstack  1
+    .locals init (class [IrrlichtLime]IrrlichtLime.Scene.Mesh V_0)
+    IL_0000:  ldarg.0
+    IL_0001:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.Mesh _23.MeshHandling.HeightMesh::'<Mesh>k__BackingField'
+    IL_0006:  stloc.0
+    IL_0007:  br.s       IL_0009
+
+    IL_0009:  ldloc.0
+    IL_000a:  ret
+  } // end of method HeightMesh::get_Mesh
+
+  .method private hidebysig specialname instance void 
+          set_Mesh(class [IrrlichtLime]IrrlichtLime.Scene.Mesh 'value') cil managed
+  {
+    .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
+    // Code size       8 (0x8)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  stfld      class [IrrlichtLime]IrrlichtLime.Scene.Mesh _23.MeshHandling.HeightMesh::'<Mesh>k__BackingField'
+    IL_0007:  ret
+  } // end of method HeightMesh::set_Mesh
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       47 (0x2f)
+    .maxstack  8
+//000297: 	}
+//000298: 
+//000299: 	/// <summary>
+//000300: 	/// Generates a mesh from a heightmap.
+//000301: 	/// </summary>
+//000302: 	class HeightMesh
+//000303: 	{
+//000304: 		/// <summary>
+//000305: 		/// Set of functions which can be used for coloring the nodes while creating the mesh.
+//000306: 		/// </summary>
+//000307: 		public enum ColorFunc
+//000308: 		{
+//000309: 			GreyscaleBasedOnTheHeight,
+//000310: 			CoordinateInterpolation,
+//000311: 			PureWhite
+//000312: 		}
+//000313: 
+//000314: 		int width;
+//000315: 		int height;
+//000316: 		float scale;
+//000317: 
+//000318: 		public Mesh Mesh { get; private set; }
+//000319: 
+//000320: 		public HeightMesh()
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+//000321: 		{
+    IL_0007:  nop
+//000322: 			width = 0;
+    IL_0008:  ldarg.0
+    IL_0009:  ldc.i4.0
+    IL_000a:  stfld      int32 _23.MeshHandling.HeightMesh::width
+//000323: 			height = 0;
+    IL_000f:  ldarg.0
+    IL_0010:  ldc.i4.0
+    IL_0011:  stfld      int32 _23.MeshHandling.HeightMesh::height
+//000324: 			scale = 1.0f;
+    IL_0016:  ldarg.0
+    IL_0017:  ldc.r4     1.
+    IL_001c:  stfld      float32 _23.MeshHandling.HeightMesh::scale
+//000325: 			Mesh = Mesh.Create();
+    IL_0021:  ldarg.0
+    IL_0022:  call       class [IrrlichtLime]IrrlichtLime.Scene.Mesh [IrrlichtLime]IrrlichtLime.Scene.Mesh::Create()
+    IL_0027:  call       instance void _23.MeshHandling.HeightMesh::set_Mesh(class [IrrlichtLime]IrrlichtLime.Scene.Mesh)
+    IL_002c:  nop
+//000326: 		}
+    IL_002d:  nop
+    IL_002e:  ret
+  } // end of method HeightMesh::.ctor
+
+  .method public hidebysig instance void 
+          Drop() cil managed
+  {
+    // Code size       14 (0xe)
+    .maxstack  8
+//000327: 
+//000328: 		public void Drop()
+//000329: 		{
+    IL_0000:  nop
+//000330: 			Mesh.Drop();
+    IL_0001:  ldarg.0
+    IL_0002:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh _23.MeshHandling.HeightMesh::get_Mesh()
+    IL_0007:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_000c:  pop
+//000331: 		}
+    IL_000d:  ret
+  } // end of method HeightMesh::Drop
+
+  .method public hidebysig instance void 
+          Init(class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+               class _23.MeshHandling.HeightMap map,
+               float32 s,
+               valuetype _23.MeshHandling.HeightMesh/ColorFunc 'cf') cil managed
+  {
+    // Code size       166 (0xa6)
+    .maxstack  5
+    .locals init ([0] int32 sw,
+             [1] int32 y0,
+             [2] int32 y1,
+             [3] bool CS$4$0000)
+//000332: 
+//000333: 		/// <summary>
+//000334: 		/// Initializes mesh with new value.
+//000335: 		/// Unless the heightmap is small, it won't all fit into a single MeshBuffer.
+//000336: 		/// This function chops it into pieces and generates a buffer from each one.
+//000337: 		/// </summary>
+//000338: 		public void Init(VideoDriver driver, HeightMap map, float s, ColorFunc cf)
+//000339: 		{
+    IL_0000:  nop
+//000340: 			width = map.Width;
+    IL_0001:  ldarg.0
+    IL_0002:  ldarg.2
+    IL_0003:  callvirt   instance uint16 _23.MeshHandling.HeightMap::get_Width()
+    IL_0008:  stfld      int32 _23.MeshHandling.HeightMesh::width
+//000341: 			height = map.Height;
+    IL_000d:  ldarg.0
+    IL_000e:  ldarg.2
+    IL_000f:  callvirt   instance uint16 _23.MeshHandling.HeightMap::get_Height()
+    IL_0014:  stfld      int32 _23.MeshHandling.HeightMesh::height
+//000342: 			scale = s;
+    IL_0019:  ldarg.0
+    IL_001a:  ldarg.3
+    IL_001b:  stfld      float32 _23.MeshHandling.HeightMesh::scale
+//000343: 
+//000344: 			if (Mesh.MeshBufferCount > 0)
+    IL_0020:  ldarg.0
+    IL_0021:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh _23.MeshHandling.HeightMesh::get_Mesh()
+    IL_0026:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Scene.Mesh::get_MeshBufferCount()
+    IL_002b:  ldc.i4.0
+    IL_002c:  cgt
+    IL_002e:  ldc.i4.0
+    IL_002f:  ceq
+    IL_0031:  stloc.3
+    IL_0032:  ldloc.3
+    IL_0033:  brtrue.s   IL_004d
+
+//000345: 				Mesh.RemoveMeshBuffer(0, Mesh.MeshBufferCount);
+    IL_0035:  ldarg.0
+    IL_0036:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh _23.MeshHandling.HeightMesh::get_Mesh()
+    IL_003b:  ldc.i4.0
+    IL_003c:  ldarg.0
+    IL_003d:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh _23.MeshHandling.HeightMesh::get_Mesh()
+    IL_0042:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Scene.Mesh::get_MeshBufferCount()
+    IL_0047:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.Mesh::RemoveMeshBuffer(int32,
+                                                                                               int32)
+    IL_004c:  nop
+//000346: 
+//000347: 			int sw = 0xffff / (height + 1); // maximum vertices per meshbuffer
+    IL_004d:  ldc.i4     0xffff
+    IL_0052:  ldarg.0
+    IL_0053:  ldfld      int32 _23.MeshHandling.HeightMesh::height
+    IL_0058:  ldc.i4.1
+    IL_0059:  add
+    IL_005a:  div
+    IL_005b:  stloc.0
+//000348: 
+//000349: 			for (int y0 = 0; y0 < height; y0 += sw)
+    IL_005c:  ldc.i4.0
+    IL_005d:  stloc.1
+    IL_005e:  br.s       IL_008c
+
+//000350: 			{
+    IL_0060:  nop
+//000351: 				int y1 = y0 + sw;
+    IL_0061:  ldloc.1
+    IL_0062:  ldloc.0
+    IL_0063:  add
+    IL_0064:  stloc.2
+//000352: 				if (y1 >= height)
+    IL_0065:  ldloc.2
+    IL_0066:  ldarg.0
+    IL_0067:  ldfld      int32 _23.MeshHandling.HeightMesh::height
+    IL_006c:  clt
+    IL_006e:  stloc.3
+    IL_006f:  ldloc.3
+    IL_0070:  brtrue.s   IL_007b
+
+//000353: 					y1 = height - 1; // the last one might be narrower
+    IL_0072:  ldarg.0
+    IL_0073:  ldfld      int32 _23.MeshHandling.HeightMesh::height
+    IL_0078:  ldc.i4.1
+    IL_0079:  sub
+    IL_007a:  stloc.2
+//000354: 				addStrip(map, cf, y0, y1);
+    IL_007b:  ldarg.0
+    IL_007c:  ldarg.2
+    IL_007d:  ldarg.s    'cf'
+    IL_007f:  ldloc.1
+    IL_0080:  ldloc.2
+    IL_0081:  call       instance void _23.MeshHandling.HeightMesh::addStrip(class _23.MeshHandling.HeightMap,
+                                                                             valuetype _23.MeshHandling.HeightMesh/ColorFunc,
+                                                                             int32,
+                                                                             int32)
+    IL_0086:  nop
+//000355: 			}
+    IL_0087:  nop
+//000349: 			for (int y0 = 0; y0 < height; y0 += sw)
+    IL_0088:  ldloc.1
+    IL_0089:  ldloc.0
+    IL_008a:  add
+    IL_008b:  stloc.1
+    IL_008c:  ldloc.1
+    IL_008d:  ldarg.0
+    IL_008e:  ldfld      int32 _23.MeshHandling.HeightMesh::height
+    IL_0093:  clt
+    IL_0095:  stloc.3
+    IL_0096:  ldloc.3
+    IL_0097:  brtrue.s   IL_0060
+
+//000350: 			{
+//000351: 				int y1 = y0 + sw;
+//000352: 				if (y1 >= height)
+//000353: 					y1 = height - 1; // the last one might be narrower
+//000354: 				addStrip(map, cf, y0, y1);
+//000355: 			}
+//000356: 
+//000357: 			Mesh.RecalculateBoundingBox();
+    IL_0099:  ldarg.0
+    IL_009a:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh _23.MeshHandling.HeightMesh::get_Mesh()
+    IL_009f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.Mesh::RecalculateBoundingBox()
+    IL_00a4:  nop
+//000358: 		}
+    IL_00a5:  ret
+  } // end of method HeightMesh::Init
+
+  .method private hidebysig instance void 
+          addStrip(class _23.MeshHandling.HeightMap map,
+                   valuetype _23.MeshHandling.HeightMesh/ColorFunc 'cf',
+                   int32 y0,
+                   int32 y1) cil managed
+  {
+    // Code size       418 (0x1a2)
+    .maxstack  9
+    .locals init ([0] class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[] vertices,
+             [1] uint16[] indices,
+             [2] int32 i,
+             [3] int32 y,
+             [4] int32 x,
+             [5] float32 z,
+             [6] float32 xf,
+             [7] float32 yf,
+             [8] int32 n,
+             [9] class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer buf,
+             [10] bool CS$4$0000)
+//000359: 
+//000360: 		/// <summary>
+//000361: 		/// Generates a MeshBuffer which represents all the vertices and indices for values of y
+//000362: 		/// between y0 and y1, and add it to the mesh.
+//000363: 		/// </summary>
+//000364: 		void addStrip(HeightMap map, ColorFunc cf, int y0, int y1)
+//000365: 		{
+    IL_0000:  nop
+//000366: 			Vertex3D[] vertices = new Vertex3D[(y1 - y0 + 1) * width];
+    IL_0001:  ldarg.s    y1
+    IL_0003:  ldarg.3
+    IL_0004:  sub
+    IL_0005:  ldc.i4.1
+    IL_0006:  add
+    IL_0007:  ldarg.0
+    IL_0008:  ldfld      int32 _23.MeshHandling.HeightMesh::width
+    IL_000d:  mul
+    IL_000e:  newarr     [IrrlichtLime]IrrlichtLime.Video.Vertex3D
+    IL_0013:  stloc.0
+//000367: 			ushort[] indices = new ushort[(y1 - y0) * (width - 1) * 6]; // "6" is a number of indices in 2 triangles (which forms a quad)
+    IL_0014:  ldarg.s    y1
+    IL_0016:  ldarg.3
+    IL_0017:  sub
+    IL_0018:  ldarg.0
+    IL_0019:  ldfld      int32 _23.MeshHandling.HeightMesh::width
+    IL_001e:  ldc.i4.1
+    IL_001f:  sub
+    IL_0020:  mul
+    IL_0021:  ldc.i4.6
+    IL_0022:  mul
+    IL_0023:  newarr     [mscorlib]System.UInt16
+    IL_0028:  stloc.1
+//000368: 
+//000369: 			// calculate vertices
+//000370: 
+//000371: 			int i = 0;
+    IL_0029:  ldc.i4.0
+    IL_002a:  stloc.2
+//000372: 			for (int y = y0; y <= y1; ++y)
+    IL_002b:  ldarg.3
+    IL_002c:  stloc.3
+    IL_002d:  br         IL_00bd
+
+//000373: 			{
+    IL_0032:  nop
+//000374: 				for (int x = 0; x < width; ++x)
+    IL_0033:  ldc.i4.0
+    IL_0034:  stloc.s    x
+    IL_0036:  br.s       IL_00a8
+
+//000375: 				{
+    IL_0038:  nop
+//000376: 					float z = map.GetHeight(x, y);
+    IL_0039:  ldarg.1
+    IL_003a:  ldloc.s    x
+    IL_003c:  ldloc.3
+    IL_003d:  callvirt   instance float32 _23.MeshHandling.HeightMap::GetHeight(int32,
+                                                                                int32)
+    IL_0042:  stloc.s    z
+//000377: 					float xf = (float)x / (float)width;
+    IL_0044:  ldloc.s    x
+    IL_0046:  conv.r4
+    IL_0047:  ldarg.0
+    IL_0048:  ldfld      int32 _23.MeshHandling.HeightMesh::width
+    IL_004d:  conv.r4
+    IL_004e:  div
+    IL_004f:  stloc.s    xf
+//000378: 					float yf = (float)y / (float)height;
+    IL_0051:  ldloc.3
+    IL_0052:  conv.r4
+    IL_0053:  ldarg.0
+    IL_0054:  ldfld      int32 _23.MeshHandling.HeightMesh::height
+    IL_0059:  conv.r4
+    IL_005a:  div
+    IL_005b:  stloc.s    yf
+//000379: 
+//000380: 					vertices[i++] = new Vertex3D(
+    IL_005d:  ldloc.0
+    IL_005e:  ldloc.2
+    IL_005f:  dup
+    IL_0060:  ldc.i4.1
+    IL_0061:  add
+    IL_0062:  stloc.2
+    IL_0063:  ldloc.s    x
+    IL_0065:  conv.r4
+    IL_0066:  ldarg.0
+    IL_0067:  ldfld      float32 _23.MeshHandling.HeightMesh::scale
+    IL_006c:  ldloc.s    z
+    IL_006e:  mul
+    IL_006f:  ldloc.3
+    IL_0070:  conv.r4
+    IL_0071:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0076:  ldarg.1
+    IL_0077:  ldloc.s    x
+    IL_0079:  ldloc.3
+    IL_007a:  ldarg.0
+    IL_007b:  ldfld      float32 _23.MeshHandling.HeightMesh::scale
+    IL_0080:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df _23.MeshHandling.HeightMap::GetNormal(int32,
+                                                                                                                        int32,
+                                                                                                                        float32)
+    IL_0085:  ldarg.0
+    IL_0086:  ldarg.2
+    IL_0087:  ldloc.s    xf
+    IL_0089:  ldloc.s    yf
+    IL_008b:  ldloc.s    z
+    IL_008d:  call       instance class [IrrlichtLime]IrrlichtLime.Video.Color _23.MeshHandling.HeightMesh::calculate(valuetype _23.MeshHandling.HeightMesh/ColorFunc,
+                                                                                                                      float32,
+                                                                                                                      float32,
+                                                                                                                      float32)
+    IL_0092:  ldloc.s    xf
+    IL_0094:  ldloc.s    yf
+    IL_0096:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Df::.ctor(float32,
+                                                                                        float32)
+    IL_009b:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Vertex3D::.ctor(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                        class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                        class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                        class [IrrlichtLime]IrrlichtLime.Core.Vector2Df)
+    IL_00a0:  stelem.ref
+//000381: 						new Vector3Df(x, scale * z, y), // position
+//000382: 						map.GetNormal(x, y, scale), // normal
+//000383: 						calculate(cf, xf, yf, z), // color
+//000384: 						new Vector2Df(xf, yf) // tcoords
+//000385: 					);
+//000386: 				}
+    IL_00a1:  nop
+//000374: 				for (int x = 0; x < width; ++x)
+    IL_00a2:  ldloc.s    x
+    IL_00a4:  ldc.i4.1
+    IL_00a5:  add
+    IL_00a6:  stloc.s    x
+    IL_00a8:  ldloc.s    x
+    IL_00aa:  ldarg.0
+    IL_00ab:  ldfld      int32 _23.MeshHandling.HeightMesh::width
+    IL_00b0:  clt
+    IL_00b2:  stloc.s    CS$4$0000
+    IL_00b4:  ldloc.s    CS$4$0000
+    IL_00b6:  brtrue.s   IL_0038
+
+//000375: 				{
+//000376: 					float z = map.GetHeight(x, y);
+//000377: 					float xf = (float)x / (float)width;
+//000378: 					float yf = (float)y / (float)height;
+//000379: 
+//000380: 					vertices[i++] = new Vertex3D(
+//000381: 						new Vector3Df(x, scale * z, y), // position
+//000382: 						map.GetNormal(x, y, scale), // normal
+//000383: 						calculate(cf, xf, yf, z), // color
+//000384: 						new Vector2Df(xf, yf) // tcoords
+//000385: 					);
+//000386: 				}
+//000387: 			}
+    IL_00b8:  nop
+//000372: 			for (int y = y0; y <= y1; ++y)
+    IL_00b9:  ldloc.3
+    IL_00ba:  ldc.i4.1
+    IL_00bb:  add
+    IL_00bc:  stloc.3
+    IL_00bd:  ldloc.3
+    IL_00be:  ldarg.s    y1
+    IL_00c0:  cgt
+    IL_00c2:  ldc.i4.0
+    IL_00c3:  ceq
+    IL_00c5:  stloc.s    CS$4$0000
+    IL_00c7:  ldloc.s    CS$4$0000
+    IL_00c9:  brtrue     IL_0032
+
+//000373: 			{
+//000374: 				for (int x = 0; x < width; ++x)
+//000375: 				{
+//000376: 					float z = map.GetHeight(x, y);
+//000377: 					float xf = (float)x / (float)width;
+//000378: 					float yf = (float)y / (float)height;
+//000379: 
+//000380: 					vertices[i++] = new Vertex3D(
+//000381: 						new Vector3Df(x, scale * z, y), // position
+//000382: 						map.GetNormal(x, y, scale), // normal
+//000383: 						calculate(cf, xf, yf, z), // color
+//000384: 						new Vector2Df(xf, yf) // tcoords
+//000385: 					);
+//000386: 				}
+//000387: 			}
+//000388: 
+//000389: 			// calculate indices
+//000390: 
+//000391: 			i = 0;
+    IL_00ce:  ldc.i4.0
+    IL_00cf:  stloc.2
+//000392: 			for (int y = y0; y < y1; ++y)
+    IL_00d0:  ldarg.3
+    IL_00d1:  stloc.3
+    IL_00d2:  br         IL_0162
+
+//000393: 			{
+    IL_00d7:  nop
+//000394: 				for (int x = 0; x < width - 1; ++x)
+    IL_00d8:  ldc.i4.0
+    IL_00d9:  stloc.s    x
+    IL_00db:  br.s       IL_014b
+
+//000395: 				{
+    IL_00dd:  nop
+//000396: 					int n = (y - y0) * width + x;
+    IL_00de:  ldloc.3
+    IL_00df:  ldarg.3
+    IL_00e0:  sub
+    IL_00e1:  ldarg.0
+    IL_00e2:  ldfld      int32 _23.MeshHandling.HeightMesh::width
+    IL_00e7:  mul
+    IL_00e8:  ldloc.s    x
+    IL_00ea:  add
+    IL_00eb:  stloc.s    n
+//000397: 					indices[i++] = (ushort)n;
+    IL_00ed:  ldloc.1
+    IL_00ee:  ldloc.2
+    IL_00ef:  dup
+    IL_00f0:  ldc.i4.1
+    IL_00f1:  add
+    IL_00f2:  stloc.2
+    IL_00f3:  ldloc.s    n
+    IL_00f5:  conv.u2
+    IL_00f6:  stelem.i2
+//000398: 					indices[i++] = (ushort)(n + height);
+    IL_00f7:  ldloc.1
+    IL_00f8:  ldloc.2
+    IL_00f9:  dup
+    IL_00fa:  ldc.i4.1
+    IL_00fb:  add
+    IL_00fc:  stloc.2
+    IL_00fd:  ldloc.s    n
+    IL_00ff:  ldarg.0
+    IL_0100:  ldfld      int32 _23.MeshHandling.HeightMesh::height
+    IL_0105:  add
+    IL_0106:  conv.u2
+    IL_0107:  stelem.i2
+//000399: 					indices[i++] = (ushort)(n + height + 1);
+    IL_0108:  ldloc.1
+    IL_0109:  ldloc.2
+    IL_010a:  dup
+    IL_010b:  ldc.i4.1
+    IL_010c:  add
+    IL_010d:  stloc.2
+    IL_010e:  ldloc.s    n
+    IL_0110:  ldarg.0
+    IL_0111:  ldfld      int32 _23.MeshHandling.HeightMesh::height
+    IL_0116:  add
+    IL_0117:  ldc.i4.1
+    IL_0118:  add
+    IL_0119:  conv.u2
+    IL_011a:  stelem.i2
+//000400: 					indices[i++] = (ushort)(n + height + 1);
+    IL_011b:  ldloc.1
+    IL_011c:  ldloc.2
+    IL_011d:  dup
+    IL_011e:  ldc.i4.1
+    IL_011f:  add
+    IL_0120:  stloc.2
+    IL_0121:  ldloc.s    n
+    IL_0123:  ldarg.0
+    IL_0124:  ldfld      int32 _23.MeshHandling.HeightMesh::height
+    IL_0129:  add
+    IL_012a:  ldc.i4.1
+    IL_012b:  add
+    IL_012c:  conv.u2
+    IL_012d:  stelem.i2
+//000401: 					indices[i++] = (ushort)(n + 1);
+    IL_012e:  ldloc.1
+    IL_012f:  ldloc.2
+    IL_0130:  dup
+    IL_0131:  ldc.i4.1
+    IL_0132:  add
+    IL_0133:  stloc.2
+    IL_0134:  ldloc.s    n
+    IL_0136:  ldc.i4.1
+    IL_0137:  add
+    IL_0138:  conv.u2
+    IL_0139:  stelem.i2
+//000402: 					indices[i++] = (ushort)n;
+    IL_013a:  ldloc.1
+    IL_013b:  ldloc.2
+    IL_013c:  dup
+    IL_013d:  ldc.i4.1
+    IL_013e:  add
+    IL_013f:  stloc.2
+    IL_0140:  ldloc.s    n
+    IL_0142:  conv.u2
+    IL_0143:  stelem.i2
+//000403: 				}
+    IL_0144:  nop
+//000394: 				for (int x = 0; x < width - 1; ++x)
+    IL_0145:  ldloc.s    x
+    IL_0147:  ldc.i4.1
+    IL_0148:  add
+    IL_0149:  stloc.s    x
+    IL_014b:  ldloc.s    x
+    IL_014d:  ldarg.0
+    IL_014e:  ldfld      int32 _23.MeshHandling.HeightMesh::width
+    IL_0153:  ldc.i4.1
+    IL_0154:  sub
+    IL_0155:  clt
+    IL_0157:  stloc.s    CS$4$0000
+    IL_0159:  ldloc.s    CS$4$0000
+    IL_015b:  brtrue.s   IL_00dd
+
+//000395: 				{
+//000396: 					int n = (y - y0) * width + x;
+//000397: 					indices[i++] = (ushort)n;
+//000398: 					indices[i++] = (ushort)(n + height);
+//000399: 					indices[i++] = (ushort)(n + height + 1);
+//000400: 					indices[i++] = (ushort)(n + height + 1);
+//000401: 					indices[i++] = (ushort)(n + 1);
+//000402: 					indices[i++] = (ushort)n;
+//000403: 				}
+//000404: 			}
+    IL_015d:  nop
+//000392: 			for (int y = y0; y < y1; ++y)
+    IL_015e:  ldloc.3
+    IL_015f:  ldc.i4.1
+    IL_0160:  add
+    IL_0161:  stloc.3
+    IL_0162:  ldloc.3
+    IL_0163:  ldarg.s    y1
+    IL_0165:  clt
+    IL_0167:  stloc.s    CS$4$0000
+    IL_0169:  ldloc.s    CS$4$0000
+    IL_016b:  brtrue     IL_00d7
+
+//000393: 			{
+//000394: 				for (int x = 0; x < width - 1; ++x)
+//000395: 				{
+//000396: 					int n = (y - y0) * width + x;
+//000397: 					indices[i++] = (ushort)n;
+//000398: 					indices[i++] = (ushort)(n + height);
+//000399: 					indices[i++] = (ushort)(n + height + 1);
+//000400: 					indices[i++] = (ushort)(n + height + 1);
+//000401: 					indices[i++] = (ushort)(n + 1);
+//000402: 					indices[i++] = (ushort)n;
+//000403: 				}
+//000404: 			}
+//000405: 
+//000406: 			// append calculated verices and indices to mesh buffer
+//000407: 
+//000408: 			MeshBuffer buf = MeshBuffer.Create(VertexType.Standard, IndexType._16Bit); // create new buffer
+    IL_0170:  ldc.i4.0
+    IL_0171:  ldc.i4.0
+    IL_0172:  call       class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::Create(valuetype [IrrlichtLime]IrrlichtLime.Video.VertexType,
+                                                                                                                               valuetype [IrrlichtLime]IrrlichtLime.Video.IndexType)
+    IL_0177:  stloc.s    buf
+//000409: 			Mesh.AddMeshBuffer(buf);
+    IL_0179:  ldarg.0
+    IL_017a:  call       instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh _23.MeshHandling.HeightMesh::get_Mesh()
+    IL_017f:  ldloc.s    buf
+    IL_0181:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.Mesh::AddMeshBuffer(class [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer)
+    IL_0186:  nop
+//000410: 			buf.Append(vertices, indices);
+    IL_0187:  ldloc.s    buf
+    IL_0189:  ldloc.0
+    IL_018a:  ldloc.1
+    IL_018b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::Append(class [IrrlichtLime]IrrlichtLime.Video.Vertex3D[],
+                                                                                           uint16[])
+    IL_0190:  nop
+//000411: 			buf.RecalculateBoundingBox();
+    IL_0191:  ldloc.s    buf
+    IL_0193:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.MeshBuffer::RecalculateBoundingBox()
+    IL_0198:  nop
+//000412: 			buf.Drop();
+    IL_0199:  ldloc.s    buf
+    IL_019b:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_01a0:  pop
+//000413: 		}
+    IL_01a1:  ret
+  } // end of method HeightMesh::addStrip
+
+  .method private hidebysig instance class [IrrlichtLime]IrrlichtLime.Video.Color 
+          calculate(valuetype _23.MeshHandling.HeightMesh/ColorFunc 'cf',
+                    float32 x,
+                    float32 y,
+                    float32 z) cil managed
+  {
+    // Code size       122 (0x7a)
+    .maxstack  4
+    .locals init ([0] int32 n,
+             [1] class [IrrlichtLime]IrrlichtLime.Video.Color CS$1$0000,
+             [2] valuetype _23.MeshHandling.HeightMesh/ColorFunc CS$4$0001)
+//000414: 
+//000415: 		/// <summary>
+//000416: 		/// Calculates single color value for given coordinates.
+//000417: 		/// </summary>
+//000418: 		Color calculate(ColorFunc cf, float x, float y, float z)
+//000419: 		{
+    IL_0000:  nop
+//000420: 			switch (cf)
+    IL_0001:  ldarg.1
+    IL_0002:  stloc.2
+    IL_0003:  ldloc.2
+    IL_0004:  switch     ( 
+                          IL_0017,
+                          IL_002c,
+                          IL_0055)
+    IL_0015:  br.s       IL_005d
+
+//000421: 			{
+//000422: 				case ColorFunc.GreyscaleBasedOnTheHeight:
+//000423: 					int n = (int)(255.0f * z);
+    IL_0017:  ldc.r4     255.
+    IL_001c:  ldarg.s    z
+    IL_001e:  mul
+    IL_001f:  conv.i4
+    IL_0020:  stloc.0
+//000424: 					return new Color(n, n, n);
+    IL_0021:  ldloc.0
+    IL_0022:  ldloc.0
+    IL_0023:  ldloc.0
+    IL_0024:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0029:  stloc.1
+    IL_002a:  br.s       IL_0078
+
+//000425: 
+//000426: 				case ColorFunc.CoordinateInterpolation:
+//000427: 					return new Color(128 + (int)(127.0f * x), 128 + (int)(127.0f * y), 255);
+    IL_002c:  ldc.i4     0x80
+    IL_0031:  ldc.r4     127.
+    IL_0036:  ldarg.2
+    IL_0037:  mul
+    IL_0038:  conv.i4
+    IL_0039:  add
+    IL_003a:  ldc.i4     0x80
+    IL_003f:  ldc.r4     127.
+    IL_0044:  ldarg.3
+    IL_0045:  mul
+    IL_0046:  conv.i4
+    IL_0047:  add
+    IL_0048:  ldc.i4     0xff
+    IL_004d:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0052:  stloc.1
+    IL_0053:  br.s       IL_0078
+
+//000428: 
+//000429: 				case ColorFunc.PureWhite:
+//000430: 					return Color.OpaqueWhite;
+    IL_0055:  call       class [IrrlichtLime]IrrlichtLime.Video.Color [IrrlichtLime]IrrlichtLime.Video.Color::get_OpaqueWhite()
+    IL_005a:  stloc.1
+    IL_005b:  br.s       IL_0078
+
+//000431: 
+//000432: 				default:
+//000433: 					throw new ArgumentException("Unexpected color function value: " + cf.ToString());
+    IL_005d:  ldstr      "Unexpected color function value: "
+    IL_0062:  ldarg.1
+    IL_0063:  box        _23.MeshHandling.HeightMesh/ColorFunc
+    IL_0068:  callvirt   instance string [mscorlib]System.Object::ToString()
+    IL_006d:  call       string [mscorlib]System.String::Concat(string,
+                                                                string)
+    IL_0072:  newobj     instance void [mscorlib]System.ArgumentException::.ctor(string)
+    IL_0077:  throw
+
+//000434: 			}
+//000435: 		}
+    IL_0078:  ldloc.1
+    IL_0079:  ret
+  } // end of method HeightMesh::calculate
+
+  .property instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh
+          Mesh()
+  {
+    .get instance class [IrrlichtLime]IrrlichtLime.Scene.Mesh _23.MeshHandling.HeightMesh::get_Mesh()
+    .set instance void _23.MeshHandling.HeightMesh::set_Mesh(class [IrrlichtLime]IrrlichtLime.Scene.Mesh)
+  } // end of property HeightMesh::Mesh
+} // end of class _23.MeshHandling.HeightMesh
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

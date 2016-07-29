@@ -1,0 +1,557 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  ldstr      "Chapter 1 example 8: Viewerpreferences"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  stloc
+  ldloc
+  ldstr      "Chap0108a.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  stloc
+  ldloc
+  ldc.i4
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfWriter::setViewerPreferences(int32)
+  nop
+  ldloc
+  ldstr      "Chap0108b.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  stloc
+  ldloc
+  ldc.i4     0x300
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfWriter::setViewerPreferences(int32)
+  nop
+  ldloc
+  ldstr      "Chap0108c.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  stloc
+  ldloc
+  ldc.i4     0x8084
+  callvirt   instance void [iText]com.lowagie.text.pdf.PdfWriter::setViewerPreferences(int32)
+  nop
+  nop
+  .try
+  {
+  ldstr      "watermark.jpg"
+  call       class [iText]com.lowagie.text.Image [iText]com.lowagie.text.Image::getInstance(string)
+  ldc.r4     200.
+  ldc.r4     420.
+  newobj     instance void [iText]com.lowagie.text.Watermark::.ctor(class [iText]com.lowagie.text.Image,
+                                                                                float32,
+                                                                                float32)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Watermark)
+  pop
+leave.s
+  }  // end .try
+  catch [mscorlib]System.Exception 
+  {
+  dup
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+  stloc
+  nop
+  ldstr      "Are you sure you have the file 'watermark.jpg' in "
+    + "the right path\?"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::ClearProjectError()
+leave.s
+  }  // end handler
+  nop
+  ldstr      "This is a header"
+  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(string)
+  ldc.i4
+  newobj     instance void [iText]com.lowagie.text.HeaderFooter::.ctor(class [iText]com.lowagie.text.Phrase,
+                                                                                 bool)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance void [iText]com.lowagie.text.Document::setHeader(class [iText]com.lowagie.text.HeaderFooter)
+  nop
+  ldloc
+  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  nop
+  ldloc
+  ldsfld     class [iText]com.lowagie.text.Rectangle [iText]com.lowagie.text.PageSize::A4
+  callvirt   instance class [iText]com.lowagie.text.Rectangle [iText]com.lowagie.text.Rectangle::rotate()
+  callvirt   instance bool [iText]com.lowagie.text.Document::setPageSize(class [iText]com.lowagie.text.Rectangle)
+  pop
+  nop
+  .try
+  {
+  ldstr      "watermark.jpg"
+  call       class [iText]com.lowagie.text.Image [iText]com.lowagie.text.Image::getInstance(string)
+  ldc.r4     320.
+  ldc.r4     200.
+  newobj     instance void [iText]com.lowagie.text.Watermark::.ctor(class [iText]com.lowagie.text.Image,
+                                                                                float32,
+                                                                                float32)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Watermark)
+  pop
+leave.s
+  }  // end .try
+  catch [mscorlib]System.Exception 
+  {
+  dup
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+  stloc
+  nop
+  ldstr      "Are you sure you have the file 'watermark.jpg' in "
+    + "the right path\?"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::ClearProjectError()
+leave.s
+  }  // end handler
+  nop
+  ldstr      "This is page: "
+  newobj     instance void [iText]com.lowagie.text.Phrase::.ctor(string)
+  ldc.i4
+  newobj     instance void [iText]com.lowagie.text.HeaderFooter::.ctor(class [iText]com.lowagie.text.Phrase,
+                                                                                 bool)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance void [iText]com.lowagie.text.Document::setFooter(class [iText]com.lowagie.text.HeaderFooter)
+  nop
+  ldloc
+  ldstr      "Hello World"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc
+  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  pop
+  ldloc
+  ldstr      "Hello Earth"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc
+  callvirt   instance void [iText]com.lowagie.text.Document::resetHeader()
+  nop
+  ldloc
+  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  pop
+  ldloc
+  ldstr      "Hello Sun"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc
+  ldstr      "Remark: the header has vanished!"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc
+  callvirt   instance void [iText]com.lowagie.text.Document::resetPageCount()
+  nop
+  ldloc
+  callvirt   instance bool [iText]com.lowagie.text.Document::newPage()
+  pop
+  ldloc
+  ldstr      "Hello Moon"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc
+  ldstr      "Remark: the pagenumber has been reset!"
+  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  ldloc
+  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  nop
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldstr      "Chapter 1 example 8: Viewerpreferences"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc
+  ldloc
+  ldstr      "Chap0108a.pdf"
+  ldc.i4
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  stloc
+  ldloc
+  ldc.i4
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setViewerPreferences(int32)
+  nop
+  ldloc
+  ldstr      "Chap0108b.pdf"
+  ldc.i4
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  stloc
+  ldloc
+  ldc.i4     0x300
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setViewerPreferences(int32)
+  nop
+  ldloc
+  ldstr      "Chap0108c.pdf"
+  ldc.i4
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  stloc
+  ldloc
+  ldc.i4     0x8084
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setViewerPreferences(int32)
+  nop
+  .try
+  {
+  nop
+  ldstr      "watermark.jpg"
+  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(string)
+  ldc.r4     200.
+  ldc.r4     420.
+  newobj     instance void [iTextdotNET]com.lowagie.text.Watermark::.ctor(class [iTextdotNET]com.lowagie.text.Image,
+                                                                                      float32,
+                                                                                      float32)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Watermark)
+  pop
+  nop
+leave.s
+  }  // end .try
+  catch [mscorlib]System.Exception 
+  {
+  stloc
+  nop
+  ldstr      "Are you sure you have the file 'watermark.jpg' in "
+    + "the right path\?"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  nop
+leave.s
+  }  // end handler
+  nop
+  ldstr      "This is a header"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+  ldc.i4
+  newobj     instance void [iTextdotNET]com.lowagie.text.HeaderFooter::.ctor(class [iTextdotNET]com.lowagie.text.Phrase,
+                                                                                       bool)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::setHeader(class [iTextdotNET]com.lowagie.text.HeaderFooter)
+  nop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  nop
+  ldloc
+  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.Rectangle::rotate()
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::setPageSize(class [iTextdotNET]com.lowagie.text.Rectangle)
+  pop
+  .try
+  {
+  nop
+  ldstr      "watermark.jpg"
+  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(string)
+  ldc.r4     320.
+  ldc.r4     200.
+  newobj     instance void [iTextdotNET]com.lowagie.text.Watermark::.ctor(class [iTextdotNET]com.lowagie.text.Image,
+                                                                                      float32,
+                                                                                      float32)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Watermark)
+  pop
+  nop
+leave.s
+  }  // end .try
+  catch [mscorlib]System.Exception 
+  {
+  stloc
+  nop
+  ldstr      "Are you sure you have the file 'watermark.jpg' in "
+    + "the right path\?"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  nop
+leave.s
+  }  // end handler
+  nop
+  ldstr      "This is page: "
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+  ldc.i4
+  newobj     instance void [iTextdotNET]com.lowagie.text.HeaderFooter::.ctor(class [iTextdotNET]com.lowagie.text.Phrase,
+                                                                                       bool)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::setFooter(class [iTextdotNET]com.lowagie.text.HeaderFooter)
+  nop
+  ldloc
+  ldstr      "Hello World"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc
+  ldstr      "Hello Earth"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::resetHeader()
+  nop
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc
+  ldstr      "Hello Sun"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  ldstr      "Remark: the header has vanished!"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::resetPageCount()
+  nop
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc
+  ldstr      "Hello Moon"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  ldstr      "Remark: the pagenumber has been reset!"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 1 example 8: Viewerpreferences"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc
+  .try
+  {
+  ldloc
+  ldstr      "Chap0108a.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+  stloc
+  ldloc
+  ldc.i4
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setViewerPreferences(int32)
+  ldloc
+  ldstr      "Chap0108b.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+  stloc
+  ldloc
+  ldc.i4     0x300
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setViewerPreferences(int32)
+  ldloc
+  ldstr      "Chap0108c.pdf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+  stloc
+  ldloc
+  ldc.i4     0x8084
+  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfWriter::setViewerPreferences(int32)
+  ldstr      "watermark.jpg"
+  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(string)
+  ldc.r4     200.
+  ldc.r4     420.
+  newobj     instance void [iTextdotNET]com.lowagie.text.Watermark::.ctor(class [iTextdotNET]com.lowagie.text.Image,
+                                                                                      float32,
+                                                                                      float32)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Watermark)
+  pop
+leave.s
+  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  stloc
+  ldloc
+brfalse.s
+  ldc.i4
+br.s
+  ldc.i4
+  endfilter
+  pop
+  ldloc
+  castclass  [vjslib]java.lang.Exception
+  stloc
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Are you sure you have the file 'watermark.jpg' in "
+    + "the right path\?"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  ldstr      "This is a header"
+    .try IL_0065 to IL_008b filter IL_008b handler IL_009c to IL_00b7
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+  ldc.i4
+  newobj     instance void [iTextdotNET]com.lowagie.text.HeaderFooter::.ctor(class [iTextdotNET]com.lowagie.text.Phrase,
+                                                                                         bool)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::setHeader(class [iTextdotNET]com.lowagie.text.HeaderFooter)
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  ldloc
+  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  callvirt   instance class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.Rectangle::rotate()
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::setPageSize(class [iTextdotNET]com.lowagie.text.Rectangle)
+  pop
+  ldstr      "watermark.jpg"
+  call       class [iTextdotNET]com.lowagie.text.Image [iTextdotNET]com.lowagie.text.Image::getInstance(string)
+  ldc.r4     320.
+  ldc.r4     200.
+  newobj     instance void [iTextdotNET]com.lowagie.text.Watermark::.ctor(class [iTextdotNET]com.lowagie.text.Image,
+                                                                                      float32,
+                                                                                      float32)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Watermark)
+  pop
+leave.s
+  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  stloc
+  ldloc
+brfalse.s
+  ldc.i4
+br.s
+  ldc.i4
+  endfilter
+  pop
+  ldloc
+  castclass  [vjslib]java.lang.Exception
+  stloc
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Are you sure you have the file 'watermark.jpg' in "
+    + "the right path\?"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  ldstr      "This is page: "
+    .try IL_00e8 to IL_010e filter IL_010e handler IL_011f to IL_013a
+  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string)
+  ldc.i4
+  newobj     instance void [iTextdotNET]com.lowagie.text.HeaderFooter::.ctor(class [iTextdotNET]com.lowagie.text.Phrase,
+                                                                                         bool)
+  stloc
+  ldloc
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::setFooter(class [iTextdotNET]com.lowagie.text.HeaderFooter)
+  ldloc
+  ldstr      "Hello World"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc
+  ldstr      "Hello Earth"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::resetHeader()
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc
+  ldstr      "Hello Sun"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  ldstr      "Remark: the header has vanished!"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::resetPageCount()
+  ldloc
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::newPage()
+  pop
+  ldloc
+  ldstr      "Hello Moon"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc
+  ldstr      "Remark: the pagenumber has been reset!"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+leave.s
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+  dup
+  stloc
+  stloc
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc
+  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+  dup
+  stloc
+  stloc
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc
+  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+leave.s
+  }  // end handler
+  ldloc
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+br.s
+  ret
+
+]]></source>
+</source_elements></project>

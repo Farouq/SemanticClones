@@ -1,0 +1,170 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\05.UserInterface\Program.cs" startline="25" endline="73"><![CDATA[
+ 		{
+ 			DriverType driverType;
+ 			if (!AskUserForDriver(out driverType))
+ 				return;
+ 
+ 			device = IrrlichtDevice.CreateDevice(driverType, new Dimension2Di(640, 480));
+ 			if (device == null)
+ 				return;
+ 
+ 			device.SetWindowCaption("Irrlicht Engine - User Interface Demo");
+ 			device.SetWindowResizable(true);
+ 
+ 			VideoDriver driver = device.VideoDriver;
+ 			GUIEnvironment env = device.GUIEnvironment;
+ 
+ 			GUISkin skin = env.Skin;
+ 			GUIFont font = env.GetFont("../../media/fonthaettenschweiler.bmp");
+ 			if (font != null)
+ 				skin.SetFont(font);
+ 
+ 			skin.SetFont(env.BuiltInFont, GUIDefaultFont.Tooltip);
+ 
+ 			env.AddButton(new Recti(10, 240, 110, 240 + 32), null, GUI_ID_ButtonQuit, "Quit", "Exits Program");
+ 			env.AddButton(new Recti(10, 280, 110, 280 + 32), null, GUI_ID_ButtonWindowNew, "New Window", "Launches a new Window");
+ 			env.AddButton(new Recti(10, 320, 110, 320 + 32), null, GUI_ID_ButtonFileOpen, "File Open", "Opens a file");
+ 
+ 			env.AddStaticText("Transparent Control
+ 			GUIScrollBar scrollbar = env.AddScrollBar(true, new Recti(150, 45, 350, 60), null, GUI_ID_ScrollbarTransparency);
+ 			scrollbar.MaxValue = 255;
+ 			scrollbar.Position = (int)env.Skin.GetColor(GUIDefaultColor.WindowBackground).Alpha;
+ 
+ 			GUIStaticText trq = env.AddStaticText("Logging ListBox
+ 			listbox = env.AddListBox(new Recti(50, 140, 250, 210));
+ 			env.AddEditBox("Editable Text", new Recti(350, 80, 550, 100));
+ 
+ 			device.OnEvent += new IrrlichtDevice.EventHandler(device_OnEvent);
+ 
+ 			env.AddImage(driver.GetTexture("../../media/irrlichtlogoalpha2.tga"), new Vector2Di(10, 10));
+ 
+ 			while (device.Run())
+ 			if (device.WindowActive)
+ 			{
+ 				driver.BeginScene(true, true, new Color(200, 200, 200));
+ 				env.DrawAll();
+ 				driver.EndScene();
+ 			}
+ 			while (device.Run())
+ 			if (device.WindowActive)
+ 			{
+ 				driver.BeginScene(true, true, new Color(200, 200, 200));
+ 				env.DrawAll();
+ 				driver.EndScene();
+ 			}
+ 
+ 			device.Drop();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\05.UserInterface\Program.cs" startline="74" endline="142"><![CDATA[
+ 
+ 		static bool device_OnEvent(Event e)
+ 		{
+ 			if (e.Type == EventType.GUI)
+ 			{
+ 				int id = e.GUI.Caller.ID;
+ 				GUIEnvironment env = device.GUIEnvironment;
+ 
+ 				switch (e.GUI.Type)
+ 				{
+ 					case GUIEventType.ScrollBarChanged
+ 						if (id == GUI_ID_ScrollbarTransparency)
+ 						{
+ 							int pos = ((GUIScrollBar)e.GUI.Caller).Position;
+ 							foreach (GUIDefaultColor which in Enum.GetValues(typeof(GUIDefaultColor)))
+ 							{
+ 								Color color = env.Skin.GetColor(which);
+ 								color.Alpha = pos;
+ 								env.Skin.SetColor(color, which);
+ 							}
+ 							foreach (GUIDefaultColor which in Enum.GetValues(typeof(GUIDefaultColor)))
+ 							{
+ 								Color color = env.Skin.GetColor(which);
+ 								color.Alpha = pos;
+ 								env.Skin.SetColor(color, which);
+ 							}
+ 						}
+ 						break;
+ 
+ 					case GUIEventType.ButtonClicked
+ 						switch (id)
+ 						{
+ 							case GUI_ID_ButtonQuit
+ 								device.Close();
+ 								return true;
+ 
+ 							case GUI_ID_ButtonWindowNew
+ 								listbox.AddItem("Window created");
+ 								winPosCounter += 30;
+ 								if (winPosCounter > 200)
+ 									winPosCounter = 0;
+ 
+ 								int c = winPosCounter;
+ 								GUIWindow window = env.AddWindow(new Recti(100 + c, 100 + c, 300 + c, 200 + c), false, "Test window");
+ 								env.AddStaticText("Please close me", new Recti(35, 35, 140, 50), true, false, window);
+ 								return true;
+ 
+ 							case GUI_ID_ButtonFileOpen
+ 								listbox.AddItem("File open");
+ 								// There are some options for the file open dialog
+ 								// We set the title, make it a modal window, and make sure
+ 								// that the working directory is restored after the dialog
+ 								// is finished.
+ 								env.AddFileOpenDialog("Please choose a file", true, null, -1, true);
+ 								return true;
+ 
+ 							default
+ 								return false;
+ 						}
+ 
+ 					case GUIEventType.FileDialogFileSelected
+ 						{
+ 							// show the filename, selected in the file dialog
+ 							GUIFileOpenDialog d = e.GUI.Caller as GUIFileOpenDialog;
+ 							listbox.AddItem(d.FileName);
+ 							break;
+ 						}
+ 
+ 					default
+ 						break;
+ 				}
+ 			}
+ 
+ 			return false;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\05.UserInterface\Program.cs" startline="143" endline="168"><![CDATA[
+ 
+ 		static bool AskUserForDriver(out DriverType driverType)
+ 		{
+ 			driverType = DriverType.Null;
+ 
+ 			Console.Write("Please select the driver you want for this example
+ 						" (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n" +
+ 						" (d) Burning's Software Renderer\n (e) Software Renderer\n" +
+ 						" (f) NullDevice\n (otherKey) exit\n\n");
+ 
+ 			ConsoleKeyInfo i = Console.ReadKey();
+ 
+ 			switch (i.Key)
+ 			{
+ 				case ConsoleKey.A
+ 				case ConsoleKey.B
+ 				case ConsoleKey.C
+ 				case ConsoleKey.D
+ 				case ConsoleKey.E
+ 				case ConsoleKey.F
+ 				default
+ 					return false;
+ 			}
+ 
+ 			return true;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\05.UserInterface\Program.cs" startline="2147483647" endline="2147483647"><![CDATA[
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\05.UserInterface\Program.cs" startline="17" endline="17"><![CDATA[
+ 		static int winPosCounter = 0;
+]]></source>
+</source_elements></project>

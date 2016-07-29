@@ -1,0 +1,387 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+  nop
+  ldstr      "Chapter 8 example 4: Tables and RTF"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  stloc.0
+  nop
+  .try
+  {
+  ldstr      "Chap0804.rtf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  stloc.2
+  ldloc.0
+  ldloc.2
+  call       class [iText]com.lowagie.text.rtf.RtfWriter [iText]com.lowagie.text.rtf.RtfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                        class [vjslib]java.io.OutputStream)
+  pop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  nop
+  ldc.i4.3
+  newobj     instance void [iText]com.lowagie.text.Table::.ctor(int32)
+  stloc.3
+  ldloc.3
+  ldc.r4     1.
+  callvirt   instance void [iText]com.lowagie.text.Rectangle::setBorderWidth(float32)
+  nop
+  ldloc.3
+  ldc.r4     5.
+  callvirt   instance void [iText]com.lowagie.text.Table::setPadding(float32)
+  nop
+  ldloc.3
+  ldc.r4     5.
+  callvirt   instance void [iText]com.lowagie.text.Table::setSpacing(float32)
+  nop
+  ldstr      "header"
+  newobj     instance void [iText]com.lowagie.text.Cell::.ctor(string)
+  stloc.1
+  ldloc.1
+  ldc.i4.1
+  callvirt   instance void [iText]com.lowagie.text.Cell::setHeader(bool)
+  nop
+  ldloc.1
+  ldc.i4.3
+  callvirt   instance void [iText]com.lowagie.text.Cell::setColspan(int32)
+  nop
+  ldloc.3
+  ldloc.1
+  callvirt   instance void [iText]com.lowagie.text.Table::addCell(class [iText]com.lowagie.text.Cell)
+  nop
+  ldstr      "example cell with colspan 1 and rowspan 2"
+  newobj     instance void [iText]com.lowagie.text.Cell::.ctor(string)
+  stloc.1
+  ldloc.1
+  ldc.i4.2
+  callvirt   instance void [iText]com.lowagie.text.Cell::setRowspan(int32)
+  nop
+  ldloc.3
+  ldloc.1
+  callvirt   instance void [iText]com.lowagie.text.Table::addCell(class [iText]com.lowagie.text.Cell)
+  nop
+  ldloc.3
+  ldstr      "1.1"
+  callvirt   instance void [iText]com.lowagie.text.Table::addCell(string)
+  nop
+  ldloc.3
+  ldstr      "2.1"
+  callvirt   instance void [iText]com.lowagie.text.Table::addCell(string)
+  nop
+  ldloc.3
+  ldstr      "1.2"
+  callvirt   instance void [iText]com.lowagie.text.Table::addCell(string)
+  nop
+  ldloc.3
+  ldstr      "2.2"
+  callvirt   instance void [iText]com.lowagie.text.Table::addCell(string)
+  nop
+  ldloc.3
+  ldstr      "cell test1"
+  callvirt   instance void [iText]com.lowagie.text.Table::addCell(string)
+  nop
+  ldstr      "big cell"
+  newobj     instance void [iText]com.lowagie.text.Cell::.ctor(string)
+  stloc.1
+  ldloc.1
+  ldc.i4.2
+  callvirt   instance void [iText]com.lowagie.text.Cell::setRowspan(int32)
+  nop
+  ldloc.1
+  ldc.i4.2
+  callvirt   instance void [iText]com.lowagie.text.Cell::setColspan(int32)
+  nop
+  ldloc.3
+  ldloc.1
+  callvirt   instance void [iText]com.lowagie.text.Table::addCell(class [iText]com.lowagie.text.Cell)
+  nop
+  ldloc.3
+  ldstr      "cell test2"
+  callvirt   instance void [iText]com.lowagie.text.Table::addCell(string)
+  nop
+  ldloc.0
+  ldloc.3
+  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  pop
+  leave.s    IL_0128
+  }  // end .try
+  catch [mscorlib]System.Exception 
+  {
+  dup
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::SetProjectError(class [mscorlib]System.Exception)
+  stloc.s    ee
+  nop
+  ldloc.s    ee
+  callvirt   instance string [mscorlib]System.Exception::ToString()
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  call       void [Microsoft.VisualBasic]Microsoft.VisualBasic.CompilerServices.ProjectData::ClearProjectError()
+  leave.s    IL_0128
+  }  // end handler
+  nop
+  ldloc.0
+  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  nop
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+  nop
+  ldstr      "Chapter 8 example 4: Tables and RTF"
+  call       void [mscorlib]System.Console::WriteLine(string)
+  nop
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  ldloc.0
+  ldstr      "Chap0804.rtf"
+  ldc.i4.2
+  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  call       class [iTextdotNET]com.lowagie.text.rtf.RtfWriter [iTextdotNET]com.lowagie.text.rtf.RtfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  nop
+  ldc.i4.3
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32)
+  stloc.1
+  ldloc.1
+  ldc.r4     1.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Rectangle::setBorderWidth(float32)
+  nop
+  ldloc.1
+  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_Blue()
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Rectangle::setBorderColor(valuetype [System.Drawing_5]System.Drawing.Color)
+  nop
+  ldloc.1
+  ldc.r4     5.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setPadding(float32)
+  nop
+  ldloc.1
+  ldc.r4     5.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setSpacing(float32)
+  nop
+  ldstr      "header"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Cell::.ctor(string)
+  stloc.2
+  ldloc.2
+  ldc.i4.1
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setHeader(bool)
+  nop
+  ldloc.2
+  ldc.i4.3
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setColspan(int32)
+  nop
+  ldloc.1
+  ldloc.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(class [iTextdotNET]com.lowagie.text.Cell)
+  nop
+  ldstr      "example cell with colspan 1 and rowspan 2"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Cell::.ctor(string)
+  stloc.2
+  ldloc.2
+  ldc.i4.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setRowspan(int32)
+  nop
+  ldloc.2
+  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_Red()
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Rectangle::setBorderColor(valuetype [System.Drawing_5]System.Drawing.Color)
+  nop
+  ldloc.1
+  ldloc.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(class [iTextdotNET]com.lowagie.text.Cell)
+  nop
+  ldloc.1
+  ldstr      "1.1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  nop
+  ldloc.1
+  ldstr      "2.1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  nop
+  ldloc.1
+  ldstr      "1.2"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  nop
+  ldloc.1
+  ldstr      "2.2"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  nop
+  ldloc.1
+  ldstr      "cell test1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  nop
+  ldstr      "big cell"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Cell::.ctor(string)
+  stloc.2
+  ldloc.2
+  ldc.i4.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setRowspan(int32)
+  nop
+  ldloc.2
+  ldc.i4.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setColspan(int32)
+  nop
+  ldloc.2
+  call       valuetype [System.Drawing]System.Drawing.Color [System.Drawing]System.Drawing.Color::get_LightGray()
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Rectangle::setBackgroundColor(valuetype [System.Drawing_5]System.Drawing.Color)
+  nop
+  ldloc.1
+  ldloc.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(class [iTextdotNET]com.lowagie.text.Cell)
+  nop
+  ldloc.1
+  ldstr      "cell test2"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  nop
+  ldloc.0
+  ldloc.1
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  nop
+  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldstr      "Chapter 8 example 4: Tables and RTF"
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  stloc.0
+  .try
+  {
+  ldloc.0
+  ldstr      "Chap0804.rtf"
+  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  call       class [iTextdotNET]com.lowagie.text.rtf.RtfWriter [iTextdotNET]com.lowagie.text.rtf.RtfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+  pop
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  ldc.i4.3
+  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32)
+  stloc.1
+  ldloc.1
+  ldc.r4     1.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Rectangle::setBorderWidth(float32)
+  ldloc.1
+  ldc.i4.0
+  ldc.i4.0
+  ldc.i4     0xff
+  newobj     instance void [vjslib]java.awt.Color::.ctor(int32,
+                                                                     int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Rectangle::setBorderColor(class [vjslib_7]java.awt.Color)
+  ldloc.1
+  ldc.r4     5.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setPadding(float32)
+  ldloc.1
+  ldc.r4     5.
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setSpacing(float32)
+  ldstr      "header"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Cell::.ctor(string)
+  stloc.2
+  ldloc.2
+  ldc.i4.1
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setHeader(bool)
+  ldloc.2
+  ldc.i4.3
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setColspan(int32)
+  ldloc.1
+  ldloc.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(class [iTextdotNET]com.lowagie.text.Cell)
+  ldstr      "example cell with colspan 1 and rowspan 2"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Cell::.ctor(string)
+  stloc.2
+  ldloc.2
+  ldc.i4.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setRowspan(int32)
+  ldloc.2
+  ldc.i4     0xff
+  ldc.i4.0
+  ldc.i4.0
+  newobj     instance void [vjslib]java.awt.Color::.ctor(int32,
+                                                                     int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Rectangle::setBorderColor(class [vjslib_7]java.awt.Color)
+  ldloc.1
+  ldloc.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(class [iTextdotNET]com.lowagie.text.Cell)
+  ldloc.1
+  ldstr      "1.1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.1
+  ldstr      "2.1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.1
+  ldstr      "1.2"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.1
+  ldstr      "2.2"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.1
+  ldstr      "cell test1"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldstr      "big cell"
+  newobj     instance void [iTextdotNET]com.lowagie.text.Cell::.ctor(string)
+  stloc.2
+  ldloc.2
+  ldc.i4.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setRowspan(int32)
+  ldloc.2
+  ldc.i4.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setColspan(int32)
+  ldloc.2
+  ldc.i4     0xc0
+  ldc.i4     0xc0
+  ldc.i4     0xc0
+  newobj     instance void [vjslib]java.awt.Color::.ctor(int32,
+                                                                     int32,
+                                                                     int32)
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Rectangle::setBackgroundColor(class [vjslib_7]java.awt.Color)
+  ldloc.1
+  ldloc.2
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(class [iTextdotNET]com.lowagie.text.Cell)
+  ldloc.1
+  ldstr      "cell test2"
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  ldloc.0
+  ldloc.1
+  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  pop
+  leave.s    IL_0165
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+  dup
+  stloc.s    V_5
+  stloc.3
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.3
+  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  leave.s    IL_0165
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+  dup
+  stloc.s    V_6
+  stloc.s    ioe
+  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  ldloc.s    ioe
+  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  leave.s    IL_0165
+  }  // end handler
+  ldloc.0
+  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  br.s       IL_016d
+  ret
+
+]]></source>
+</source_elements></project>

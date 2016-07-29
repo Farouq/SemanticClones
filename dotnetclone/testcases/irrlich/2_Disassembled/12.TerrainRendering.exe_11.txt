@@ -1,0 +1,1002 @@
+
+//  Microsoft (R) .NET Framework IL Disassembler.  Version 3.5.30729.1
+//  Copyright (c) Microsoft Corporation.  All rights reserved.
+
+
+
+// Metadata version: v4.0.30319
+.assembly extern mscorlib
+{
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89 )                         // .z\V.4..
+  .ver 4:0:0:0
+}
+.assembly extern IrrlichtLime
+{
+  .ver 1:1:0:0
+}
+.assembly '12.TerrainRendering'
+{
+  .custom instance void [mscorlib]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 1A 2E 4E 45 54 46 72 61 6D 65 77 6F 72 6B   // ....NETFramework
+                                                                                                        2C 56 65 72 73 69 6F 6E 3D 76 34 2E 30 01 00 54   // ,Version=v4.0..T
+                                                                                                        0E 14 46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C   // ..FrameworkDispl
+                                                                                                        61 79 4E 61 6D 65 10 2E 4E 45 54 20 46 72 61 6D   // ayName..NET Fram
+                                                                                                        65 77 6F 72 6B 20 34 )                            // ework 4
+  .custom instance void [mscorlib]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 13 31 32 2E 54 65 72 72 61 69 6E 52 65 6E   // ...12.TerrainRen
+                                                                                              64 65 72 69 6E 67 00 00 )                         // dering..
+  .custom instance void [mscorlib]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyConfigurationAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 13 31 32 2E 54 65 72 72 61 69 6E 52 65 6E   // ...12.TerrainRen
+                                                                                                64 65 72 69 6E 67 00 00 )                         // dering..
+  .custom instance void [mscorlib]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 12 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
+                                                                                                  20 32 30 31 30 00 00 )                            //  2010..
+  .custom instance void [mscorlib]System.Reflection.AssemblyTrademarkAttribute::.ctor(string) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 63 32 36 30 33 63 32 65 2D 62 63 34 33   // ..$c2603c2e-bc43
+                                                                                                  2D 34 38 30 39 2D 39 62 61 65 2D 35 64 38 64 62   // -4809-9bae-5d8db
+                                                                                                  65 34 62 66 64 38 62 00 00 )                      // e4bfd8b..
+  .custom instance void [mscorlib]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 31 2E 30 2E 30 2E 30 00 00 )             // ...1.0.0.0..
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom instance void [mscorlib]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [mscorlib]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 07 01 00 00 00 00 ) 
+
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [mscorlib]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                             63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+  .hash algorithm 0x00008004
+  .ver 1:0:0:0
+}
+.mresource public _12.TerrainRendering.app.config
+{
+  // Offset: 0x00000000 Length: 0x00000090
+}
+.module '12.TerrainRendering.exe'
+// MVID: {A584E62E-A732-429E-8996-93C0FA23E4B6}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000003    //  ILONLY 32BITREQUIRED
+// Image base: 0x00480000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class private auto ansi beforefieldinit _12.TerrainRendering.Program
+       extends [mscorlib]System.Object
+{
+  .method private hidebysig static void  Main(string[] args) cil managed
+  {
+    .entrypoint
+    // Code size       836 (0x344)
+    .maxstack  11
+    .locals init ([0] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType driverType,
+             [1] class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+             [2] class [IrrlichtLime]IrrlichtLime.Video.VideoDriver driver,
+             [3] class [IrrlichtLime]IrrlichtLime.Scene.SceneManager smgr,
+             [4] class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment env,
+             [5] class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode camera,
+             [6] class [IrrlichtLime]IrrlichtLime.Scene.TerrainSceneNode terrain,
+             [7] class [IrrlichtLime]IrrlichtLime.Scene.TriangleSelector selector,
+             [8] class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator anim,
+             [9] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode skybox,
+             [10] class [IrrlichtLime]IrrlichtLime.Scene.SceneNode skydome,
+             [11] int32 lastFPS,
+             [12] int32 fps,
+             [13] bool CS$4$0000)
+    .language '{3F5162F8-07C6-11D3-9053-00C04FA302A1}', '{994B45C4-E6E9-11D2-903F-00C04FA302A1}', '{5A869D0B-6611-11D3-BD2A-0000F80849BD}'
+// Source File 'C:\Users\faa634\Desktop\c vb\C++\IrrlichtLime-1.1\examples\12.TerrainRendering\Program.cs' 
+//000017: 		{
+    IL_0000:  nop
+//000018: 			DriverType driverType;
+//000019: 			if (!AskUserForDriver(out driverType))
+    IL_0001:  ldloca.s   driverType
+    IL_0003:  call       bool _12.TerrainRendering.Program::AskUserForDriver(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType&)
+    IL_0008:  stloc.s    CS$4$0000
+    IL_000a:  ldloc.s    CS$4$0000
+    IL_000c:  brtrue.s   IL_0013
+
+//000020: 				return;
+    IL_000e:  br         IL_0343
+
+//000021: 
+//000022: 			IrrlichtDevice device = IrrlichtDevice.CreateDevice(driverType, new Dimension2Di(640, 480));
+    IL_0013:  ldloc.0
+    IL_0014:  ldc.i4     0x280
+    IL_0019:  ldc.i4     0x1e0
+    IL_001e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Dimension2Di::.ctor(int32,
+                                                                                           int32)
+    IL_0023:  call       class [IrrlichtLime]IrrlichtLime.IrrlichtDevice [IrrlichtLime]IrrlichtLime.IrrlichtDevice::CreateDevice(valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType,
+                                                                                                                                 class [IrrlichtLime]IrrlichtLime.Core.Dimension2Di)
+    IL_0028:  stloc.1
+//000023: 			if (device == null)
+    IL_0029:  ldloc.1
+    IL_002a:  ldnull
+    IL_002b:  call       bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::op_Equality(class [IrrlichtLime]IrrlichtLime.ReferenceCounted,
+                                                                                       class [IrrlichtLime]IrrlichtLime.ReferenceCounted)
+    IL_0030:  ldc.i4.0
+    IL_0031:  ceq
+    IL_0033:  stloc.s    CS$4$0000
+    IL_0035:  ldloc.s    CS$4$0000
+    IL_0037:  brtrue.s   IL_003e
+
+//000024: 				return;
+    IL_0039:  br         IL_0343
+
+//000025: 
+//000026: 			VideoDriver driver = device.VideoDriver;
+    IL_003e:  ldloc.1
+    IL_003f:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.VideoDriver [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_VideoDriver()
+    IL_0044:  stloc.2
+//000027: 			SceneManager smgr = device.SceneManager;
+    IL_0045:  ldloc.1
+    IL_0046:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneManager [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_SceneManager()
+    IL_004b:  stloc.3
+//000028: 			GUIEnvironment env = device.GUIEnvironment;
+    IL_004c:  ldloc.1
+    IL_004d:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_GUIEnvironment()
+    IL_0052:  stloc.s    env
+//000029: 
+//000030: 			driver.SetTextureCreationFlag(TextureCreationFlag.Always32Bit, true);
+    IL_0054:  ldloc.2
+    IL_0055:  ldc.i4.2
+    IL_0056:  ldc.i4.1
+    IL_0057:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetTextureCreationFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.TextureCreationFlag,
+                                                                                                            bool)
+    IL_005c:  nop
+//000031: 
+//000032: 			// add irrlicht logo
+//000033: 			env.AddImage(driver.GetTexture("../../media/irrlichtlogoalpha2.tga"), new Vector2Di(10));
+    IL_005d:  ldloc.s    env
+    IL_005f:  ldloc.2
+    IL_0060:  ldstr      "../../media/irrlichtlogoalpha2.tga"
+    IL_0065:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_006a:  ldc.i4.s   10
+    IL_006c:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector2Di::.ctor(int32)
+    IL_0071:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIImage [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddImage(class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                        class [IrrlichtLime]IrrlichtLime.Core.Vector2Di)
+    IL_0076:  pop
+//000034: 
+//000035: 			// set gui font
+//000036: 			env.Skin.SetFont(env.GetFont("../../media/fontlucida.png"));
+    IL_0077:  ldloc.s    env
+    IL_0079:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUISkin [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::get_Skin()
+    IL_007e:  ldloc.s    env
+    IL_0080:  ldstr      "../../media/fontlucida.png"
+    IL_0085:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIFont [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::GetFont(string)
+    IL_008a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUISkin::SetFont(class [IrrlichtLime]IrrlichtLime.GUI.GUIFont)
+    IL_008f:  nop
+//000037: 
+//000038: 			// add some help text
+//000039: 			env.AddStaticText(
+    IL_0090:  ldloc.s    env
+    IL_0092:  ldstr      "Press 'W' to change wireframe mode\nPress 'D' to to"
+    + "ggle detail map\nPress 'S' to toggle skybox/skydome"
+    IL_0097:  ldc.i4.s   10
+    IL_0099:  ldc.i4     0x1a5
+    IL_009e:  ldc.i4     0xfa
+    IL_00a3:  ldc.i4     0x1db
+    IL_00a8:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Recti::.ctor(int32,
+                                                                                    int32,
+                                                                                    int32,
+                                                                                    int32)
+    IL_00ad:  ldc.i4.1
+    IL_00ae:  ldc.i4.1
+    IL_00af:  ldnull
+    IL_00b0:  ldc.i4.m1
+    IL_00b1:  ldc.i4.1
+    IL_00b2:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.GUIStaticText [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::AddStaticText(string,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.Core.Recti,
+                                                                                                                                                  bool,
+                                                                                                                                                  bool,
+                                                                                                                                                  class [IrrlichtLime]IrrlichtLime.GUI.GUIElement,
+                                                                                                                                                  int32,
+                                                                                                                                                  bool)
+    IL_00b7:  pop
+//000040: 				"Press 'W' to change wireframe mode\nPress 'D' to toggle detail map\nPress 'S' to toggle skybox/skydome",
+//000041: 				new Recti(10, 421, 250, 475), true, true, null, -1, true);
+//000042: 
+//000043: 			// add camera
+//000044: 			CameraSceneNode camera = smgr.AddCameraSceneNodeFPS(null, 100.0f, 1.2f);
+    IL_00b8:  ldloc.3
+    IL_00b9:  ldnull
+    IL_00ba:  ldc.r4     100.
+    IL_00bf:  ldc.r4     1.2
+    IL_00c4:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddCameraSceneNodeFPS(class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                              float32,
+                                                                                                                                                              float32)
+    IL_00c9:  stloc.s    camera
+//000045: 			camera.Position = new Vector3Df(2700 * 2, 255 * 2, 2600 * 2);
+    IL_00cb:  ldloc.s    camera
+    IL_00cd:  ldc.r4     5400.
+    IL_00d2:  ldc.r4     510.
+    IL_00d7:  ldc.r4     5200.
+    IL_00dc:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00e1:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Position(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_00e6:  nop
+//000046: 			camera.Target = new Vector3Df(2397 * 2, 343 * 2, 2700 * 2);
+    IL_00e7:  ldloc.s    camera
+    IL_00e9:  ldc.r4     4794.
+    IL_00ee:  ldc.r4     686.
+    IL_00f3:  ldc.r4     5400.
+    IL_00f8:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_00fd:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_Target(class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_0102:  nop
+//000047: 			camera.FarValue = 42000.0f;
+    IL_0103:  ldloc.s    camera
+    IL_0105:  ldc.r4     42000.
+    IL_010a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.CameraSceneNode::set_FarValue(float32)
+    IL_010f:  nop
+//000048: 
+//000049: 			// disable mouse cursor
+//000050: 			device.CursorControl.Visible = false;
+    IL_0110:  ldloc.1
+    IL_0111:  callvirt   instance class [IrrlichtLime]IrrlichtLime.GUI.CursorControl [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_CursorControl()
+    IL_0116:  ldc.i4.0
+    IL_0117:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.CursorControl::set_Visible(bool)
+    IL_011c:  nop
+//000051: 
+//000052: 			// add terrain scene node
+//000053: 			TerrainSceneNode terrain = smgr.AddTerrainSceneNode(
+    IL_011d:  ldloc.3
+    IL_011e:  ldstr      "../../media/terrain-heightmap.bmp"
+    IL_0123:  ldnull
+    IL_0124:  ldc.i4.m1
+    IL_0125:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor()
+    IL_012a:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor()
+    IL_012f:  ldc.r4     40.
+    IL_0134:  ldc.r4     4.4000001
+    IL_0139:  ldc.r4     40.
+    IL_013e:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0143:  ldc.i4     0xff
+    IL_0148:  ldc.i4     0xff
+    IL_014d:  ldc.i4     0xff
+    IL_0152:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(int32,
+                                                                                     int32,
+                                                                                     int32)
+    IL_0157:  ldc.i4.5
+    IL_0158:  ldc.i4.s   17
+    IL_015a:  ldc.i4.4
+    IL_015b:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.TerrainSceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddTerrainSceneNode(string,
+                                                                                                                                                             class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                             int32,
+                                                                                                                                                             class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                             class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                             class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                             class [IrrlichtLime]IrrlichtLime.Video.Color,
+                                                                                                                                                             int32,
+                                                                                                                                                             valuetype [IrrlichtLime]IrrlichtLime.Scene.TerrainPatchSize,
+                                                                                                                                                             int32)
+    IL_0160:  stloc.s    terrain
+//000054: 				"../../media/terrain-heightmap.bmp",	// heightmap
+//000055: 				null,								// parent node
+//000056: 				-1,									// node id
+//000057: 				new Vector3Df(),					// position
+//000058: 				new Vector3Df(),					// rotation
+//000059: 				new Vector3Df(40, 4.4f, 40),		// scale
+//000060: 				new Color(255, 255, 255),			// vertex color
+//000061: 				5,									// max LOD
+//000062: 				TerrainPatchSize._17,				// patch size
+//000063: 				4);									// smooth factor
+//000064: 
+//000065: 			terrain.SetMaterialFlag(MaterialFlag.Lighting, false);
+    IL_0162:  ldloc.s    terrain
+    IL_0164:  ldc.i4.8
+    IL_0165:  ldc.i4.0
+    IL_0166:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_016b:  nop
+//000066: 			terrain.SetMaterialTexture(0, driver.GetTexture("../../media/terrain-texture.jpg"));
+    IL_016c:  ldloc.s    terrain
+    IL_016e:  ldc.i4.0
+    IL_016f:  ldloc.2
+    IL_0170:  ldstr      "../../media/terrain-texture.jpg"
+    IL_0175:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_017a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_017f:  nop
+//000067: 			terrain.SetMaterialTexture(1, driver.GetTexture("../../media/detailmap3.jpg"));
+    IL_0180:  ldloc.s    terrain
+    IL_0182:  ldc.i4.1
+    IL_0183:  ldloc.2
+    IL_0184:  ldstr      "../../media/detailmap3.jpg"
+    IL_0189:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_018e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialTexture(int32,
+                                                                                                      class [IrrlichtLime]IrrlichtLime.Video.Texture)
+    IL_0193:  nop
+//000068: 			terrain.SetMaterialType(MaterialType.DetailMap);
+    IL_0194:  ldloc.s    terrain
+    IL_0196:  ldc.i4.s   9
+    IL_0198:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialType(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_019d:  nop
+//000069: 
+//000070: 			terrain.ScaleTexture(1, 20);
+    IL_019e:  ldloc.s    terrain
+    IL_01a0:  ldc.r4     1.
+    IL_01a5:  ldc.r4     20.
+    IL_01aa:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.TerrainSceneNode::ScaleTexture(float32,
+                                                                                                       float32)
+    IL_01af:  nop
+//000071: 
+//000072: 			// create triangle selector for the terrain
+//000073: 			TriangleSelector selector = smgr.CreateTerrainTriangleSelector(terrain, 0);
+    IL_01b0:  ldloc.3
+    IL_01b1:  ldloc.s    terrain
+    IL_01b3:  ldc.i4.0
+    IL_01b4:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.TriangleSelector [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateTerrainTriangleSelector(class [IrrlichtLime]IrrlichtLime.Scene.TerrainSceneNode,
+                                                                                                                                                                       int32)
+    IL_01b9:  stloc.s    selector
+//000074: 			terrain.TriangleSelector = selector;
+    IL_01bb:  ldloc.s    terrain
+    IL_01bd:  ldloc.s    selector
+    IL_01bf:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_TriangleSelector(class [IrrlichtLime]IrrlichtLime.Scene.TriangleSelector)
+    IL_01c4:  nop
+//000075: 
+//000076: 			// create collision response animator and attach it to the camera
+//000077: 			SceneNodeAnimator anim = smgr.CreateCollisionResponseAnimator(
+    IL_01c5:  ldloc.3
+    IL_01c6:  ldloc.s    selector
+    IL_01c8:  ldloc.s    camera
+    IL_01ca:  ldc.r4     60.
+    IL_01cf:  ldc.r4     100.
+    IL_01d4:  ldc.r4     60.
+    IL_01d9:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_01de:  ldc.r4     0.0
+    IL_01e3:  ldc.r4     0.0
+    IL_01e8:  ldc.r4     0.0
+    IL_01ed:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_01f2:  ldc.r4     0.0
+    IL_01f7:  ldc.r4     50.
+    IL_01fc:  ldc.r4     0.0
+    IL_0201:  newobj     instance void [IrrlichtLime]IrrlichtLime.Core.Vector3Df::.ctor(float32,
+                                                                                        float32,
+                                                                                        float32)
+    IL_0206:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.CollisionResponseSceneNodeAnimator [IrrlichtLime]IrrlichtLime.Scene.SceneManager::CreateCollisionResponseAnimator(class [IrrlichtLime]IrrlichtLime.Scene.TriangleSelector,
+                                                                                                                                                                                           class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                                                                                                                           class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                                                           class [IrrlichtLime]IrrlichtLime.Core.Vector3Df,
+                                                                                                                                                                                           class [IrrlichtLime]IrrlichtLime.Core.Vector3Df)
+    IL_020b:  stloc.s    anim
+//000078: 				selector, camera,
+//000079: 				new Vector3Df(60, 100, 60),
+//000080: 				new Vector3Df(0, 0, 0),
+//000081: 				new Vector3Df(0, 50, 0));
+//000082: 
+//000083: 			selector.Drop();
+    IL_020d:  ldloc.s    selector
+    IL_020f:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0214:  pop
+//000084: 			camera.AddAnimator(anim);
+    IL_0215:  ldloc.s    camera
+    IL_0217:  ldloc.s    anim
+    IL_0219:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::AddAnimator(class [IrrlichtLime]IrrlichtLime.Scene.SceneNodeAnimator)
+    IL_021e:  nop
+//000085: 			anim.Drop();
+    IL_021f:  ldloc.s    anim
+    IL_0221:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0226:  pop
+//000086: 
+//000087: 			// create skybox and skydome
+//000088: 			driver.SetTextureCreationFlag(TextureCreationFlag.CreateMipMaps, false);
+    IL_0227:  ldloc.2
+    IL_0228:  ldc.i4.s   16
+    IL_022a:  ldc.i4.0
+    IL_022b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetTextureCreationFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.TextureCreationFlag,
+                                                                                                            bool)
+    IL_0230:  nop
+//000089: 
+//000090: 			SceneNode skybox = smgr.AddSkyBoxSceneNode(
+    IL_0231:  ldloc.3
+    IL_0232:  ldstr      "../../media/irrlicht2_up.jpg"
+    IL_0237:  ldstr      "../../media/irrlicht2_dn.jpg"
+    IL_023c:  ldstr      "../../media/irrlicht2_lf.jpg"
+    IL_0241:  ldstr      "../../media/irrlicht2_rt.jpg"
+    IL_0246:  ldstr      "../../media/irrlicht2_ft.jpg"
+    IL_024b:  ldstr      "../../media/irrlicht2_bk.jpg"
+    IL_0250:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddSkyBoxSceneNode(string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string,
+                                                                                                                                                     string)
+    IL_0255:  stloc.s    skybox
+//000091: 				"../../media/irrlicht2_up.jpg",
+//000092: 				"../../media/irrlicht2_dn.jpg",
+//000093: 				"../../media/irrlicht2_lf.jpg",
+//000094: 				"../../media/irrlicht2_rt.jpg",
+//000095: 				"../../media/irrlicht2_ft.jpg",
+//000096: 				"../../media/irrlicht2_bk.jpg");
+//000097: 
+//000098: 			SceneNode skydome = smgr.AddSkyDomeSceneNode(driver.GetTexture("../../media/skydome.jpg"), 16, 8, 0.95f, 2);
+    IL_0257:  ldloc.3
+    IL_0258:  ldloc.2
+    IL_0259:  ldstr      "../../media/skydome.jpg"
+    IL_025e:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Texture [IrrlichtLime]IrrlichtLime.Video.VideoDriver::GetTexture(string)
+    IL_0263:  ldc.i4.s   16
+    IL_0265:  ldc.i4.8
+    IL_0266:  ldc.r4     0.94999999
+    IL_026b:  ldc.r4     2.
+    IL_0270:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Scene.SceneNode [IrrlichtLime]IrrlichtLime.Scene.SceneManager::AddSkyDomeSceneNode(class [IrrlichtLime]IrrlichtLime.Video.Texture,
+                                                                                                                                                      int32,
+                                                                                                                                                      int32,
+                                                                                                                                                      float32,
+                                                                                                                                                      float32)
+    IL_0275:  stloc.s    skydome
+//000099: 
+//000100: 			driver.SetTextureCreationFlag(TextureCreationFlag.CreateMipMaps, true);
+    IL_0277:  ldloc.2
+    IL_0278:  ldc.i4.s   16
+    IL_027a:  ldc.i4.1
+    IL_027b:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Video.VideoDriver::SetTextureCreationFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.TextureCreationFlag,
+                                                                                                            bool)
+    IL_0280:  nop
+//000101: 
+//000102: 			// create event receiver
+//000103: 			new MyEventReceiver(device, terrain, skybox, skydome);
+    IL_0281:  ldloc.1
+    IL_0282:  ldloc.s    terrain
+    IL_0284:  ldloc.s    skybox
+    IL_0286:  ldloc.s    skydome
+    IL_0288:  newobj     instance void _12.TerrainRendering.MyEventReceiver::.ctor(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice,
+                                                                                   class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                   class [IrrlichtLime]IrrlichtLime.Scene.SceneNode,
+                                                                                   class [IrrlichtLime]IrrlichtLime.Scene.SceneNode)
+    IL_028d:  pop
+//000104: 
+//000105: 			int lastFPS = -1;
+    IL_028e:  ldc.i4.m1
+    IL_028f:  stloc.s    lastFPS
+    IL_0291:  br         IL_032d
+
+//000106: 
+//000107: 			while (device.Run())
+//000108: 			{
+    IL_0296:  nop
+//000109: 				if (device.WindowActive)
+    IL_0297:  ldloc.1
+    IL_0298:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::get_WindowActive()
+    IL_029d:  ldc.i4.0
+    IL_029e:  ceq
+    IL_02a0:  stloc.s    CS$4$0000
+    IL_02a2:  ldloc.s    CS$4$0000
+    IL_02a4:  brtrue     IL_032c
+
+//000110: 				{
+    IL_02a9:  nop
+//000111: 					driver.BeginScene(true, true, new Color(0));
+    IL_02aa:  ldloc.2
+    IL_02ab:  ldc.i4.1
+    IL_02ac:  ldc.i4.1
+    IL_02ad:  ldc.i4.0
+    IL_02ae:  newobj     instance void [IrrlichtLime]IrrlichtLime.Video.Color::.ctor(uint32)
+    IL_02b3:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::BeginScene(bool,
+                                                                                                bool,
+                                                                                                class [IrrlichtLime]IrrlichtLime.Video.Color)
+    IL_02b8:  pop
+//000112: 
+//000113: 					smgr.DrawAll();
+    IL_02b9:  ldloc.3
+    IL_02ba:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneManager::DrawAll()
+    IL_02bf:  nop
+//000114: 					env.DrawAll();
+    IL_02c0:  ldloc.s    env
+    IL_02c2:  callvirt   instance void [IrrlichtLime]IrrlichtLime.GUI.GUIEnvironment::DrawAll()
+    IL_02c7:  nop
+//000115: 
+//000116: 					driver.EndScene();
+    IL_02c8:  ldloc.2
+    IL_02c9:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.VideoDriver::EndScene()
+    IL_02ce:  pop
+//000117: 
+//000118: 					// display frames per second in window title
+//000119: 					int fps = driver.FPS;
+    IL_02cf:  ldloc.2
+    IL_02d0:  callvirt   instance int32 [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_FPS()
+    IL_02d5:  stloc.s    fps
+//000120: 					if (lastFPS != fps)
+    IL_02d7:  ldloc.s    lastFPS
+    IL_02d9:  ldloc.s    fps
+    IL_02db:  ceq
+    IL_02dd:  stloc.s    CS$4$0000
+    IL_02df:  ldloc.s    CS$4$0000
+    IL_02e1:  brtrue.s   IL_032b
+
+//000121: 					{
+    IL_02e3:  nop
+//000122: 						// also print terrain height of current camera position
+//000123: 						// we can use camera position because terrain is located at coordinate origin
+//000124: 
+//000125: 						device.SetWindowCaption(String.Format(
+    IL_02e4:  ldloc.1
+    IL_02e5:  ldstr      "Terrain rendering example - Irrlicht Engine [{0}] "
+    + "fps: {1} Height: {2}"
+    IL_02ea:  ldloc.2
+    IL_02eb:  callvirt   instance string [IrrlichtLime]IrrlichtLime.Video.VideoDriver::get_Name()
+    IL_02f0:  ldloc.s    fps
+    IL_02f2:  box        [mscorlib]System.Int32
+    IL_02f7:  ldloc.s    terrain
+    IL_02f9:  ldloc.s    camera
+    IL_02fb:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_AbsolutePosition()
+    IL_0300:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_X()
+    IL_0305:  ldloc.s    camera
+    IL_0307:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Core.Vector3Df [IrrlichtLime]IrrlichtLime.Scene.SceneNode::get_AbsolutePosition()
+    IL_030c:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Core.Vector3Df::get_Z()
+    IL_0311:  callvirt   instance float32 [IrrlichtLime]IrrlichtLime.Scene.TerrainSceneNode::GetHeight(float32,
+                                                                                                       float32)
+    IL_0316:  box        [mscorlib]System.Single
+    IL_031b:  call       string [mscorlib]System.String::Format(string,
+                                                                object,
+                                                                object,
+                                                                object)
+    IL_0320:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::SetWindowCaption(string)
+    IL_0325:  nop
+//000126: 							"Terrain rendering example - Irrlicht Engine [{0}] fps: {1} Height: {2}",
+//000127: 							driver.Name, fps, terrain.GetHeight(camera.AbsolutePosition.X, camera.AbsolutePosition.Z)));
+//000128: 
+//000129: 						lastFPS = fps;
+    IL_0326:  ldloc.s    fps
+    IL_0328:  stloc.s    lastFPS
+//000130: 					}
+    IL_032a:  nop
+//000131: 				}
+    IL_032b:  nop
+//000132: 			}
+    IL_032c:  nop
+//000107: 			while (device.Run())
+    IL_032d:  ldloc.1
+    IL_032e:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.IrrlichtDevice::Run()
+    IL_0333:  stloc.s    CS$4$0000
+    IL_0335:  ldloc.s    CS$4$0000
+    IL_0337:  brtrue     IL_0296
+
+//000108: 			{
+//000109: 				if (device.WindowActive)
+//000110: 				{
+//000111: 					driver.BeginScene(true, true, new Color(0));
+//000112: 
+//000113: 					smgr.DrawAll();
+//000114: 					env.DrawAll();
+//000115: 
+//000116: 					driver.EndScene();
+//000117: 
+//000118: 					// display frames per second in window title
+//000119: 					int fps = driver.FPS;
+//000120: 					if (lastFPS != fps)
+//000121: 					{
+//000122: 						// also print terrain height of current camera position
+//000123: 						// we can use camera position because terrain is located at coordinate origin
+//000124: 
+//000125: 						device.SetWindowCaption(String.Format(
+//000126: 							"Terrain rendering example - Irrlicht Engine [{0}] fps: {1} Height: {2}",
+//000127: 							driver.Name, fps, terrain.GetHeight(camera.AbsolutePosition.X, camera.AbsolutePosition.Z)));
+//000128: 
+//000129: 						lastFPS = fps;
+//000130: 					}
+//000131: 				}
+//000132: 			}
+//000133: 
+//000134: 			device.Drop();
+    IL_033c:  ldloc.1
+    IL_033d:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.ReferenceCounted::Drop()
+    IL_0342:  pop
+//000135: 		}
+    IL_0343:  ret
+  } // end of method Program::Main
+
+  .method private hidebysig static bool  AskUserForDriver([out] valuetype [IrrlichtLime]IrrlichtLime.Video.DriverType& driverType) cil managed
+  {
+    // Code size       104 (0x68)
+    .maxstack  2
+    .locals init ([0] valuetype [mscorlib]System.ConsoleKeyInfo i,
+             [1] bool CS$1$0000,
+             [2] valuetype [mscorlib]System.ConsoleKey CS$4$0001)
+//000136: 
+//000137: 		static bool AskUserForDriver(out DriverType driverType)
+//000138: 		{
+    IL_0000:  nop
+//000139: 			driverType = DriverType.Null;
+    IL_0001:  ldarg.0
+    IL_0002:  ldc.i4.0
+    IL_0003:  stind.i4
+//000140: 
+//000141: 			Console.Write("Please select the driver you want for this example:\n" +
+    IL_0004:  ldstr      "Please select the driver you want for this example"
+    + ":\n (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n (d) Burning's Softw"
+    + "are Renderer\n (e) Software Renderer\n (f) NullDevice\n (otherKey) exit\n\n"
+    IL_0009:  call       void [mscorlib]System.Console::Write(string)
+    IL_000e:  nop
+//000142: 						" (a) OpenGL\n (b) Direct3D 9.0c\n (c) Direct3D 8.1\n" +
+//000143: 						" (d) Burning's Software Renderer\n (e) Software Renderer\n" +
+//000144: 						" (f) NullDevice\n (otherKey) exit\n\n");
+//000145: 
+//000146: 			ConsoleKeyInfo i = Console.ReadKey();
+    IL_000f:  call       valuetype [mscorlib]System.ConsoleKeyInfo [mscorlib]System.Console::ReadKey()
+    IL_0014:  stloc.0
+//000147: 
+//000148: 			switch (i.Key)
+    IL_0015:  ldloca.s   i
+    IL_0017:  call       instance valuetype [mscorlib]System.ConsoleKey [mscorlib]System.ConsoleKeyInfo::get_Key()
+    IL_001c:  stloc.2
+    IL_001d:  ldloc.2
+    IL_001e:  ldc.i4.s   65
+    IL_0020:  sub
+    IL_0021:  switch     ( 
+                          IL_0040,
+                          IL_0045,
+                          IL_004a,
+                          IL_004f,
+                          IL_0054,
+                          IL_0059)
+    IL_003e:  br.s       IL_005e
+
+//000149: 			{
+//000150: 				case ConsoleKey.A: driverType = DriverType.OpenGL; break;
+    IL_0040:  ldarg.0
+    IL_0041:  ldc.i4.5
+    IL_0042:  stind.i4
+    IL_0043:  br.s       IL_0062
+
+//000151: 				case ConsoleKey.B: driverType = DriverType.Direct3D9; break;
+    IL_0045:  ldarg.0
+    IL_0046:  ldc.i4.4
+    IL_0047:  stind.i4
+    IL_0048:  br.s       IL_0062
+
+//000152: 				case ConsoleKey.C: driverType = DriverType.Direct3D8; break;
+    IL_004a:  ldarg.0
+    IL_004b:  ldc.i4.3
+    IL_004c:  stind.i4
+    IL_004d:  br.s       IL_0062
+
+//000153: 				case ConsoleKey.D: driverType = DriverType.BurningsVideo; break;
+    IL_004f:  ldarg.0
+    IL_0050:  ldc.i4.2
+    IL_0051:  stind.i4
+    IL_0052:  br.s       IL_0062
+
+//000154: 				case ConsoleKey.E: driverType = DriverType.Software; break;
+    IL_0054:  ldarg.0
+    IL_0055:  ldc.i4.1
+    IL_0056:  stind.i4
+    IL_0057:  br.s       IL_0062
+
+//000155: 				case ConsoleKey.F: driverType = DriverType.Null; break;
+    IL_0059:  ldarg.0
+    IL_005a:  ldc.i4.0
+    IL_005b:  stind.i4
+    IL_005c:  br.s       IL_0062
+
+//000156: 				default:
+//000157: 					return false;
+    IL_005e:  ldc.i4.0
+    IL_005f:  stloc.1
+    IL_0060:  br.s       IL_0066
+
+//000158: 			}
+//000159: 
+//000160: 			return true;
+    IL_0062:  ldc.i4.1
+    IL_0063:  stloc.1
+    IL_0064:  br.s       IL_0066
+
+//000161: 		}
+    IL_0066:  ldloc.1
+    IL_0067:  ret
+  } // end of method Program::AskUserForDriver
+
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  {
+    // Code size       7 (0x7)
+    .maxstack  8
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  ret
+  } // end of method Program::.ctor
+
+} // end of class _12.TerrainRendering.Program
+
+.class private auto ansi beforefieldinit _12.TerrainRendering.MyEventReceiver
+       extends [mscorlib]System.Object
+{
+  .field private class [IrrlichtLime]IrrlichtLime.Scene.SceneNode terrain
+  .field private class [IrrlichtLime]IrrlichtLime.Scene.SceneNode skybox
+  .field private class [IrrlichtLime]IrrlichtLime.Scene.SceneNode skydome
+  .field private bool showBox
+  .field private bool showDebug
+  .method public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice device,
+                               class [IrrlichtLime]IrrlichtLime.Scene.SceneNode terrain,
+                               class [IrrlichtLime]IrrlichtLime.Scene.SceneNode skybox,
+                               class [IrrlichtLime]IrrlichtLime.Scene.SceneNode skydome) cil managed
+  {
+    // Code size       82 (0x52)
+    .maxstack  4
+//000162: 	}
+//000163: 
+//000164: 	class MyEventReceiver
+//000165: 	{
+//000166: 		public MyEventReceiver(IrrlichtDevice device, SceneNode terrain, SceneNode skybox, SceneNode skydome)
+    IL_0000:  ldarg.0
+    IL_0001:  call       instance void [mscorlib]System.Object::.ctor()
+    IL_0006:  nop
+//000167: 		{
+    IL_0007:  nop
+//000168: 			this.terrain = terrain;
+    IL_0008:  ldarg.0
+    IL_0009:  ldarg.2
+    IL_000a:  stfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::terrain
+//000169: 			this.skybox = skybox;
+    IL_000f:  ldarg.0
+    IL_0010:  ldarg.3
+    IL_0011:  stfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::skybox
+//000170: 			this.skydome = skydome;
+    IL_0016:  ldarg.0
+    IL_0017:  ldarg.s    skydome
+    IL_0019:  stfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::skydome
+//000171: 			showBox = true;
+    IL_001e:  ldarg.0
+    IL_001f:  ldc.i4.1
+    IL_0020:  stfld      bool _12.TerrainRendering.MyEventReceiver::showBox
+//000172: 			showDebug = false;
+    IL_0025:  ldarg.0
+    IL_0026:  ldc.i4.0
+    IL_0027:  stfld      bool _12.TerrainRendering.MyEventReceiver::showDebug
+//000173: 
+//000174: 			skybox.Visible = true;
+    IL_002c:  ldarg.3
+    IL_002d:  ldc.i4.1
+    IL_002e:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Visible(bool)
+    IL_0033:  nop
+//000175: 			skydome.Visible = false;
+    IL_0034:  ldarg.s    skydome
+    IL_0036:  ldc.i4.0
+    IL_0037:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Visible(bool)
+    IL_003c:  nop
+//000176: 
+//000177: 			device.OnEvent += new IrrlichtDevice.EventHandler(device_OnEvent);
+    IL_003d:  ldarg.1
+    IL_003e:  ldarg.0
+    IL_003f:  ldftn      instance bool _12.TerrainRendering.MyEventReceiver::device_OnEvent(class [IrrlichtLime]IrrlichtLime.Event)
+    IL_0045:  newobj     instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler::.ctor(object,
+                                                                                                     native int)
+    IL_004a:  callvirt   instance void [IrrlichtLime]IrrlichtLime.IrrlichtDevice::add_OnEvent(class [IrrlichtLime]IrrlichtLime.IrrlichtDevice/EventHandler)
+    IL_004f:  nop
+//000178: 		}
+    IL_0050:  nop
+    IL_0051:  ret
+  } // end of method MyEventReceiver::.ctor
+
+  .method private hidebysig instance bool 
+          device_OnEvent(class [IrrlichtLime]IrrlichtLime.Event e) cil managed
+  {
+    // Code size       357 (0x165)
+    .maxstack  4
+    .locals init ([0] bool CS$1$0000,
+             [1] bool CS$4$0001,
+             [2] valuetype [IrrlichtLime]IrrlichtLime.KeyCode CS$4$0002)
+//000179: 
+//000180: 		bool device_OnEvent(Event e)
+//000181: 		{
+    IL_0000:  nop
+//000182: 			// check if user presses the key 'W', 'P', 'D', 'S' or 'X'
+//000183: 			if (e.Type == EventType.Key && e.Key.PressedDown)
+    IL_0001:  ldarg.1
+    IL_0002:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.EventType [IrrlichtLime]IrrlichtLime.Event::get_Type()
+    IL_0007:  ldc.i4.2
+    IL_0008:  bne.un.s   IL_001a
+
+    IL_000a:  ldarg.1
+    IL_000b:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_0010:  ldfld      bool [IrrlichtLime]IrrlichtLime.Event/KeyEvent::PressedDown
+    IL_0015:  ldc.i4.0
+    IL_0016:  ceq
+    IL_0018:  br.s       IL_001b
+
+    IL_001a:  ldc.i4.1
+    IL_001b:  stloc.1
+    IL_001c:  ldloc.1
+    IL_001d:  brtrue     IL_015f
+
+//000184: 			{
+    IL_0022:  nop
+//000185: 				switch (e.Key.Key)
+    IL_0023:  ldarg.1
+    IL_0024:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Event/KeyEvent [IrrlichtLime]IrrlichtLime.Event::get_Key()
+    IL_0029:  ldfld      valuetype [IrrlichtLime]IrrlichtLime.KeyCode [IrrlichtLime]IrrlichtLime.Event/KeyEvent::Key
+    IL_002e:  stloc.2
+    IL_002f:  ldloc.2
+    IL_0030:  ldc.i4.s   80
+    IL_0032:  bgt.s      IL_0046
+
+    IL_0034:  ldloc.2
+    IL_0035:  ldc.i4.s   68
+    IL_0037:  beq        IL_00d0
+
+    IL_003c:  ldloc.2
+    IL_003d:  ldc.i4.s   80
+    IL_003f:  beq.s      IL_009a
+
+    IL_0041:  br         IL_015e
+
+    IL_0046:  ldloc.2
+    IL_0047:  ldc.i4.s   83
+    IL_0049:  beq        IL_00f8
+
+    IL_004e:  ldloc.2
+    IL_004f:  ldc.i4.s   87
+    IL_0051:  sub
+    IL_0052:  switch     ( 
+                          IL_0064,
+                          IL_0132)
+    IL_005f:  br         IL_015e
+
+//000186: 				{
+//000187: 					case KeyCode.KeyW: // switch wire frame mode
+//000188: 						terrain.SetMaterialFlag(MaterialFlag.Wireframe, !terrain.GetMaterial(0).Wireframe);
+    IL_0064:  ldarg.0
+    IL_0065:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::terrain
+    IL_006a:  ldc.i4.1
+    IL_006b:  ldarg.0
+    IL_006c:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::terrain
+    IL_0071:  ldc.i4.0
+    IL_0072:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_0077:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.Material::get_Wireframe()
+    IL_007c:  ldc.i4.0
+    IL_007d:  ceq
+    IL_007f:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0084:  nop
+//000189: 						terrain.SetMaterialFlag(MaterialFlag.PointCloud, false);
+    IL_0085:  ldarg.0
+    IL_0086:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::terrain
+    IL_008b:  ldc.i4.2
+    IL_008c:  ldc.i4.0
+    IL_008d:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_0092:  nop
+//000190: 						return true;
+    IL_0093:  ldc.i4.1
+    IL_0094:  stloc.0
+    IL_0095:  br         IL_0163
+
+//000191: 
+//000192: 					case KeyCode.KeyP: // switch point cloud mode
+//000193: 						terrain.SetMaterialFlag(MaterialFlag.PointCloud, !terrain.GetMaterial(0).PointCloud);
+    IL_009a:  ldarg.0
+    IL_009b:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::terrain
+    IL_00a0:  ldc.i4.2
+    IL_00a1:  ldarg.0
+    IL_00a2:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::terrain
+    IL_00a7:  ldc.i4.0
+    IL_00a8:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_00ad:  callvirt   instance bool [IrrlichtLime]IrrlichtLime.Video.Material::get_PointCloud()
+    IL_00b2:  ldc.i4.0
+    IL_00b3:  ceq
+    IL_00b5:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00ba:  nop
+//000194: 						terrain.SetMaterialFlag(MaterialFlag.Wireframe, false);
+    IL_00bb:  ldarg.0
+    IL_00bc:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::terrain
+    IL_00c1:  ldc.i4.1
+    IL_00c2:  ldc.i4.0
+    IL_00c3:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialFlag(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialFlag,
+                                                                                                   bool)
+    IL_00c8:  nop
+//000195: 						return true;
+    IL_00c9:  ldc.i4.1
+    IL_00ca:  stloc.0
+    IL_00cb:  br         IL_0163
+
+//000196: 
+//000197: 					case KeyCode.KeyD: // toggle detail map
+//000198: 						terrain.SetMaterialType(terrain.GetMaterial(0).Type == MaterialType.Solid ?
+    IL_00d0:  ldarg.0
+    IL_00d1:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::terrain
+    IL_00d6:  ldarg.0
+    IL_00d7:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::terrain
+    IL_00dc:  ldc.i4.0
+    IL_00dd:  callvirt   instance class [IrrlichtLime]IrrlichtLime.Video.Material [IrrlichtLime]IrrlichtLime.Scene.SceneNode::GetMaterial(int32)
+    IL_00e2:  callvirt   instance valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType [IrrlichtLime]IrrlichtLime.Video.Material::get_Type()
+    IL_00e7:  brfalse.s  IL_00ec
+
+    IL_00e9:  ldc.i4.0
+    IL_00ea:  br.s       IL_00ee
+
+    IL_00ec:  ldc.i4.s   9
+    IL_00ee:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::SetMaterialType(valuetype [IrrlichtLime]IrrlichtLime.Video.MaterialType)
+    IL_00f3:  nop
+//000199: 							MaterialType.DetailMap : MaterialType.Solid);
+//000200: 						return true;
+    IL_00f4:  ldc.i4.1
+    IL_00f5:  stloc.0
+    IL_00f6:  br.s       IL_0163
+
+//000201: 
+//000202: 					case KeyCode.KeyS: // toggle skies
+//000203: 						showBox = !showBox;
+    IL_00f8:  ldarg.0
+    IL_00f9:  ldarg.0
+    IL_00fa:  ldfld      bool _12.TerrainRendering.MyEventReceiver::showBox
+    IL_00ff:  ldc.i4.0
+    IL_0100:  ceq
+    IL_0102:  stfld      bool _12.TerrainRendering.MyEventReceiver::showBox
+//000204: 						skybox.Visible = showBox;
+    IL_0107:  ldarg.0
+    IL_0108:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::skybox
+    IL_010d:  ldarg.0
+    IL_010e:  ldfld      bool _12.TerrainRendering.MyEventReceiver::showBox
+    IL_0113:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Visible(bool)
+    IL_0118:  nop
+//000205: 						skydome.Visible = !showBox;
+    IL_0119:  ldarg.0
+    IL_011a:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::skydome
+    IL_011f:  ldarg.0
+    IL_0120:  ldfld      bool _12.TerrainRendering.MyEventReceiver::showBox
+    IL_0125:  ldc.i4.0
+    IL_0126:  ceq
+    IL_0128:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_Visible(bool)
+    IL_012d:  nop
+//000206: 						return true;
+    IL_012e:  ldc.i4.1
+    IL_012f:  stloc.0
+    IL_0130:  br.s       IL_0163
+
+//000207: 
+//000208: 					case KeyCode.KeyX: // toggle debug information
+//000209: 						showDebug = !showDebug;
+    IL_0132:  ldarg.0
+    IL_0133:  ldarg.0
+    IL_0134:  ldfld      bool _12.TerrainRendering.MyEventReceiver::showDebug
+    IL_0139:  ldc.i4.0
+    IL_013a:  ceq
+    IL_013c:  stfld      bool _12.TerrainRendering.MyEventReceiver::showDebug
+//000210: 						terrain.DebugDataVisible = showDebug ? DebugSceneType.BBoxAll : DebugSceneType.Off;
+    IL_0141:  ldarg.0
+    IL_0142:  ldfld      class [IrrlichtLime]IrrlichtLime.Scene.SceneNode _12.TerrainRendering.MyEventReceiver::terrain
+    IL_0147:  ldarg.0
+    IL_0148:  ldfld      bool _12.TerrainRendering.MyEventReceiver::showDebug
+    IL_014d:  brtrue.s   IL_0152
+
+    IL_014f:  ldc.i4.0
+    IL_0150:  br.s       IL_0154
+
+    IL_0152:  ldc.i4.s   33
+    IL_0154:  callvirt   instance void [IrrlichtLime]IrrlichtLime.Scene.SceneNode::set_DebugDataVisible(valuetype [IrrlichtLime]IrrlichtLime.Scene.DebugSceneType)
+    IL_0159:  nop
+//000211: 						return true;
+    IL_015a:  ldc.i4.1
+    IL_015b:  stloc.0
+    IL_015c:  br.s       IL_0163
+
+//000212: 				}
+//000213: 			}
+    IL_015e:  nop
+//000214: 
+//000215: 			return false;
+    IL_015f:  ldc.i4.0
+    IL_0160:  stloc.0
+    IL_0161:  br.s       IL_0163
+
+//000216: 		}
+    IL_0163:  ldloc.0
+    IL_0164:  ret
+  } // end of method MyEventReceiver::device_OnEvent
+
+} // end of class _12.TerrainRendering.MyEventReceiver
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************

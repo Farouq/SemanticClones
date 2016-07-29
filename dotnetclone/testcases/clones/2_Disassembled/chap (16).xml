@@ -1,0 +1,254 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+ IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 2 example 8: split character"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.1
+  IL_0012:  ldloc.1
+  IL_0013:  ldstr      "Chap0208.pdf"
+  IL_0018:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_001d:  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  IL_0022:  stloc.s    Writer
+  IL_0024:  ldloc.1
+  IL_0025:  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  IL_002a:  nop
+  IL_002b:  ldstr      "Some.text.to.show.the.splitting.action.of.the.inte"
+  + "rface."
+  IL_0030:  stloc.s    text
+  IL_0032:  newobj     instance void Chap0208::.ctor()
+  IL_0037:  stloc.3
+  IL_0038:  ldloc.s    text
+  IL_003a:  ldstr      "Helvetica"
+  IL_003f:  ldc.r4     24.
+  IL_0044:  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32)
+  IL_0049:  newobj     instance void [iText]com.lowagie.text.Chunk::.ctor(string,
+                                                                          class [iText]com.lowagie.text.Font)
+  IL_004e:  stloc.0
+  IL_004f:  ldc.r4     24.
+  IL_0054:  ldloc.0
+  IL_0055:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(float32,
+                                                                              class [iText]com.lowagie.text.Chunk)
+  IL_005a:  stloc.2
+  IL_005b:  ldloc.1
+  IL_005c:  ldstr      "Normal split."
+  IL_0061:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0066:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_006b:  pop
+  IL_006c:  ldloc.1
+  IL_006d:  ldloc.2
+  IL_006e:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_0073:  pop
+  IL_0074:  ldloc.s    text
+  IL_0076:  ldstr      "Helvetica"
+  IL_007b:  ldc.r4     24.
+  IL_0080:  call       class [iText]com.lowagie.text.Font [iText]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                       float32)
+  IL_0085:  newobj     instance void [iText]com.lowagie.text.Chunk::.ctor(string,
+                                                                          class [iText]com.lowagie.text.Font)
+  IL_008a:  stloc.0
+  IL_008b:  ldloc.0
+  IL_008c:  ldloc.3
+  IL_008d:  callvirt   instance class [iText]com.lowagie.text.Chunk [iText]com.lowagie.text.Chunk::setSplitCharacter(class [iText]com.lowagie.text.SplitCharacter)
+  IL_0092:  pop
+  IL_0093:  ldc.r4     24.
+  IL_0098:  ldloc.0
+  IL_0099:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(float32,
+                                                                              class [iText]com.lowagie.text.Chunk)
+  IL_009e:  stloc.2
+  IL_009f:  ldloc.1
+  IL_00a0:  ldstr      "The dot '.' is the split character."
+  IL_00a5:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_00aa:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_00af:  pop
+  IL_00b0:  ldloc.1
+  IL_00b1:  ldloc.2
+  IL_00b2:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_00b7:  pop
+  IL_00b8:  ldloc.1
+  IL_00b9:  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  IL_00be:  nop
+  IL_00bf:  nop
+  IL_00c0:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 2 example 8: split character"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldloc.0
+  IL_0013:  ldstr      "Chap0208.pdf"
+  IL_0018:  ldc.i4.2
+  IL_0019:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_001e:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_0023:  stloc.1
+  IL_0024:  ldloc.0
+  IL_0025:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_002a:  nop
+  IL_002b:  ldstr      "Some.text.to.show.the.splitting.action.of.the.inte"
+  + "rface."
+  IL_0030:  stloc.2
+  IL_0031:  newobj     instance void Chap0208::.ctor()
+  IL_0036:  stloc.3
+  IL_0037:  ldloc.2
+  IL_0038:  ldstr      "Helvetica"
+  IL_003d:  ldc.r4     24.
+  IL_0042:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  IL_0047:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                class [iTextdotNET]com.lowagie.text.Font)
+  IL_004c:  stloc.s    ck
+  IL_004e:  ldc.r4     24.
+  IL_0053:  ldloc.s    ck
+  IL_0055:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(float32,
+                                                                                    class [iTextdotNET]com.lowagie.text.Chunk)
+  IL_005a:  stloc.s    p
+  IL_005c:  ldloc.0
+  IL_005d:  ldstr      "Normal split."
+  IL_0062:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0067:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_006c:  pop
+  IL_006d:  ldloc.0
+  IL_006e:  ldloc.s    p
+  IL_0070:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0075:  pop
+  IL_0076:  ldloc.2
+  IL_0077:  ldstr      "Helvetica"
+  IL_007c:  ldc.r4     24.
+  IL_0081:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32)
+  IL_0086:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                class [iTextdotNET]com.lowagie.text.Font)
+  IL_008b:  stloc.s    ck
+  IL_008d:  ldloc.s    ck
+  IL_008f:  ldloc.3
+  IL_0090:  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setSplitCharacter(class [iTextdotNET]com.lowagie.text.SplitCharacter)
+  IL_0095:  pop
+  IL_0096:  ldc.r4     24.
+  IL_009b:  ldloc.s    ck
+  IL_009d:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(float32,
+                                                                                    class [iTextdotNET]com.lowagie.text.Chunk)
+  IL_00a2:  stloc.s    p
+  IL_00a4:  ldloc.0
+  IL_00a5:  ldstr      "The dot '.' is the split character."
+  IL_00aa:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  IL_00af:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_00b4:  pop
+  IL_00b5:  ldloc.0
+  IL_00b6:  ldloc.s    p
+  IL_00b8:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_00bd:  pop
+  IL_00be:  ldloc.0
+  IL_00bf:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_00c4:  nop
+  IL_00c5:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+ IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 2 example 8: split character"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0014:  stloc.0
+  .try
+  {
+    IL_0015:  ldloc.0
+    IL_0016:  ldstr      "Chap0208.pdf"
+    IL_001b:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+    IL_0020:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+    IL_0025:  stloc.1
+    IL_0026:  ldloc.0
+    IL_0027:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+    IL_002c:  ldstr      "Some.text.to.show.the.splitting.action.of.the.inte"
+    + "rface."
+    IL_0031:  stloc.2
+    IL_0032:  newobj     instance void Chap0208::.ctor()
+    IL_0037:  stloc.3
+    IL_0038:  ldloc.2
+    IL_0039:  ldstr      "Helvetica"
+    IL_003e:  ldc.r4     24.
+    IL_0043:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32)
+    IL_0048:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                  class [iTextdotNET]com.lowagie.text.Font)
+    IL_004d:  stloc.s    ck
+    IL_004f:  ldc.r4     24.
+    IL_0054:  ldloc.s    ck
+    IL_0056:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(float32,
+                                                                                      class [iTextdotNET]com.lowagie.text.Chunk)
+    IL_005b:  stloc.s    p
+    IL_005d:  ldloc.0
+    IL_005e:  ldstr      "Normal split."
+    IL_0063:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+    IL_0068:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_006d:  pop
+    IL_006e:  ldloc.0
+    IL_006f:  ldloc.s    p
+    IL_0071:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_0076:  pop
+    IL_0077:  ldloc.2
+    IL_0078:  ldstr      "Helvetica"
+    IL_007d:  ldc.r4     24.
+    IL_0082:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                     float32)
+    IL_0087:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                  class [iTextdotNET]com.lowagie.text.Font)
+    IL_008c:  stloc.s    ck
+    IL_008e:  ldloc.s    ck
+    IL_0090:  ldloc.3
+    IL_0091:  callvirt   instance class [iTextdotNET]com.lowagie.text.Chunk [iTextdotNET]com.lowagie.text.Chunk::setSplitCharacter(class [iTextdotNET]com.lowagie.text.SplitCharacter)
+    IL_0096:  pop
+    IL_0097:  ldc.r4     24.
+    IL_009c:  ldloc.s    ck
+    IL_009e:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(float32,
+                                                                                      class [iTextdotNET]com.lowagie.text.Chunk)
+    IL_00a3:  stloc.s    p
+    IL_00a5:  ldloc.0
+    IL_00a6:  ldstr      "The dot '.' is the split character."
+    IL_00ab:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+    IL_00b0:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_00b5:  pop
+    IL_00b6:  ldloc.0
+    IL_00b7:  ldloc.s    p
+    IL_00b9:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_00be:  pop
+    IL_00bf:  leave.s    IL_00f1
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+    IL_00c1:  dup
+    IL_00c2:  stloc.s    V_8
+    IL_00c4:  stloc.s    de
+    IL_00c6:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_00cb:  ldloc.s    de
+    IL_00cd:  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+    IL_00d2:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_00d7:  leave.s    IL_00f1
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+    IL_00d9:  dup
+    IL_00da:  stloc.s    V_9
+    IL_00dc:  stloc.s    ioe
+    IL_00de:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_00e3:  ldloc.s    ioe
+    IL_00e5:  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+    IL_00ea:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_00ef:  leave.s    IL_00f1
+  }  // end handler
+  IL_00f1:  ldloc.0
+  IL_00f2:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_00f7:  br.s       IL_00f9
+  IL_00f9:  ret
+
+]]></source>
+</source_elements></project>

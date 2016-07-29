@@ -1,0 +1,1122 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\Properties\Resources.Designer.cs" startline="36" endline="38"><![CDATA[
+         [global
+         internal Resources() {
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\Properties\Resources.Designer.cs" startline="39" endline="51"><![CDATA[
+         
+         /// <summary>
+         ///   Returns the cached ResourceManager instance used by this class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 if ((resourceMan == null)) {
+                     global
+                     resourceMan = temp;
+                 }
+                 return resourceMan;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\Properties\Resources.Designer.cs" startline="52" endline="62"><![CDATA[
+         }
+         
+         /// <summary>
+         ///   Overrides the current thread's CurrentUICulture property for all
+         ///   resource lookups using this strongly typed resource class.
+         /// </summary>
+         [global
+         internal static global
+             get {
+                 return resourceCulture;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\Properties\Resources.Designer.cs" startline="63" endline="65"><![CDATA[
+             set {
+                 resourceCulture = value;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="30" endline="51"><![CDATA[
+ 		private bool lockingEnabled = false;
+ 		private System.Windows.Forms.Button DoneButton;
+ 		private SettingsManager settings;
+ 		private PluginManager pluginManager;
+         private bool startupNoFobMessageShown = false;
+ 
+ 		private long lastHeartbeatIconChange = 0;
+ 
+ 		private System.Windows.Forms.NumericUpDown numericUpDown1;
+ 		private System.Windows.Forms.ListView pluginListView;
+ 		private System.Windows.Forms.ColumnHeader columnHeader7;
+         private NotifyIcon notifyIcon;
+         private ColumnHeader columnHeader4;
+ 		private System.Windows.Forms.Label label1;
+ 
+ 		public MainForm()
+ 		{
+ 			//
+ 			// Required for Windows Form Designer support
+ 			//
+ 			InitializeComponent();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="52" endline="66"><![CDATA[
+ 
+ 		/// <summary>
+ 		/// Clean up any resources being used.
+ 		/// </summary>
+ 		protected override void Dispose( bool disposing )
+ 		{
+ 			if( disposing )
+ 			{
+ 				if (components != null) 
+ 				{
+ 					components.Dispose();
+ 				}
+ 			}
+ 			base.Dispose( disposing );
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="67" endline="202"><![CDATA[
+ 
+ 		#region Windows Form Designer generated code
+ 		/// <summary>
+ 		/// Required method for Designer support - do not modify
+ 		/// the contents of this method with the code editor.
+ 		/// </summary>
+ 		private void InitializeComponent()
+ 		{
+             this.components = new System.ComponentModel.Container();
+             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+             this.keyFobView = new System.Windows.Forms.ListView();
+             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+             this.DoneButton = new System.Windows.Forms.Button();
+             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+             this.label1 = new System.Windows.Forms.Label();
+             this.pluginListView = new System.Windows.Forms.ListView();
+             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
+             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+             this.SuspendLayout();
+             // 
+             // keyFobView
+             // 
+             this.keyFobView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+             this.columnHeader1,
+             this.columnHeader2,
+             this.columnHeader3});
+             this.keyFobView.FullRowSelect = true;
+             this.keyFobView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+             this.keyFobView.Location = new System.Drawing.Point(13, 12);
+             this.keyFobView.Name = "keyFobView";
+             this.keyFobView.Size = new System.Drawing.Size(330, 123);
+             this.keyFobView.TabIndex = 0;
+             this.keyFobView.View = System.Windows.Forms.View.Details;
+             // 
+             // columnHeader1
+             // 
+             this.columnHeader1.Text = "KeyFob Id";
+             this.columnHeader1.Width = 70;
+             // 
+             // columnHeader2
+             // 
+             this.columnHeader2.Text = "Presence";
+             this.columnHeader2.Width = 121;
+             // 
+             // columnHeader3
+             // 
+             this.columnHeader3.Text = "Security Status";
+             this.columnHeader3.Width = 135;
+             // 
+             // DoneButton
+             // 
+             this.DoneButton.AccessibleDescription = "Closes this Form";
+             this.DoneButton.AccessibleName = "Done";
+             this.DoneButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+             this.DoneButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+             this.DoneButton.Location = new System.Drawing.Point(268, 360);
+             this.DoneButton.Name = "DoneButton";
+             this.DoneButton.Size = new System.Drawing.Size(75, 23);
+             this.DoneButton.TabIndex = 4;
+             this.DoneButton.Text = "&Done";
+             this.DoneButton.Click += new System.EventHandler(this.DoneButton_Click);
+             // 
+             // numericUpDown1
+             // 
+             this.numericUpDown1.Location = new System.Drawing.Point(108, 146);
+             this.numericUpDown1.Name = "numericUpDown1";
+             this.numericUpDown1.Size = new System.Drawing.Size(40, 20);
+             this.numericUpDown1.TabIndex = 2;
+             // 
+             // label1
+             // 
+             this.label1.AutoSize = true;
+             this.label1.Location = new System.Drawing.Point(12, 148);
+             this.label1.Name = "label1";
+             this.label1.Size = new System.Drawing.Size(90, 13);
+             this.label1.TabIndex = 1;
+             this.label1.Text = "Presence Window";
+             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+             // 
+             // pluginListView
+             // 
+             this.pluginListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+             this.columnHeader7,
+             this.columnHeader4});
+             this.pluginListView.FullRowSelect = true;
+             this.pluginListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+             this.pluginListView.Location = new System.Drawing.Point(13, 176);
+             this.pluginListView.Name = "pluginListView";
+             this.pluginListView.Size = new System.Drawing.Size(330, 178);
+             this.pluginListView.TabIndex = 3;
+             this.pluginListView.View = System.Windows.Forms.View.Details;
+             // 
+             // columnHeader7
+             // 
+             this.columnHeader7.Text = "Plugin Name";
+             this.columnHeader7.Width = 250;
+             // 
+             // notifyIcon
+             // 
+             this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+             this.notifyIcon.Text = "notifyIcon";
+             this.notifyIcon.Visible = true;
+             // 
+             // columnHeader4
+             // 
+             this.columnHeader4.Text = "Enabled";
+             this.columnHeader4.Width = 68;
+             // 
+             // MainForm
+             // 
+             this.ClientSize = new System.Drawing.Size(355, 392);
+             this.ControlBox = false;
+             this.Controls.Add(this.pluginListView);
+             this.Controls.Add(this.label1);
+             this.Controls.Add(this.numericUpDown1);
+             this.Controls.Add(this.DoneButton);
+             this.Controls.Add(this.keyFobView);
+             this.MaximizeBox = false;
+             this.MinimizeBox = false;
+             this.Name = "MainForm";
+             this.ShowInTaskbar = false;
+             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+             this.Text = "USB Wireless Security";
+             this.TopMost = true;
+             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+             this.Load += new System.EventHandler(this.Form1_Load);
+             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+             this.ResumeLayout(false);
+             this.PerformLayout();
+ 
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="203" endline="215"><![CDATA[
+ 		#endregion
+ 
+ 		
+ 
+ 		/// <summary>
+ 		/// The main entry point for the application.
+ 		/// </summary>
+ 		[STAThread]
+ 		static void Main() 
+ 		{
+             Application.EnableVisualStyles();
+ 			Application.Run(new MainForm());
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="216" endline="234"><![CDATA[
+ 
+         protected bool AtLeastOneAuthorizedFob
+         {
+             get
+             {
+                 bool rv = false;
+ 
+                 foreach (KeyFob fob in pm.KeyFobs)
+                 {
+                     if (fob.IsAuthorized &&
+                         fob.Status == KeyFobStatus.Present)
+                     {
+                         rv = true;
+                         break;
+                     }
+                 }
+                 foreach (KeyFob fob in pm.KeyFobs)
+                 {
+                     if (fob.IsAuthorized &&
+                         fob.Status == KeyFobStatus.Present)
+                     {
+                         rv = true;
+                         break;
+                     }
+                 }
+ 
+                 return rv;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="235" endline="269"><![CDATA[
+         }
+ 
+ 		private void SetupNotifyIcon()
+ 		{
+ 			appIcon = new Icon(typeof(MainForm), "usbwirelessecurity.ico");
+             heartbeatIcon = new Icon(typeof(MainForm), "usbwirelessecurity_hot.ico");
+ 			notifyIcon.Icon = appIcon;
+ 			notifyIcon.Visible = true;
+ 			notifyIcon.Text = this.Text;
+ 			this.Icon = appIcon;
+ 			
+ 			notifyIcon.Click += new EventHandler(notifyIcon_Click);
+ 			notifyIcon.DoubleClick += new EventHandler(notifyIcon_DoubleClick);
+ 
+ 			//context menu
+ 			MenuItem exitItem = new MenuItem();
+ 			exitItem.Text = "Exit";
+ 			exitItem.Click += new EventHandler(exitItem_Click);
+ 
+             MenuItem aboutItem = new MenuItem();
+             aboutItem.Text = "About...";
+             aboutItem.Click += new EventHandler(aboutItem_Click);
+ 
+             MenuItem restoreItem = new MenuItem();
+             restoreItem.Text = "Restore";
+             restoreItem.DefaultItem = true;
+             restoreItem.Click += new EventHandler(restoreItem_Click);
+ 
+             contextMenu = new ContextMenu();
+             contextMenu.MenuItems.Add(restoreItem);
+             contextMenu.MenuItems.Add(aboutItem);
+             contextMenu.MenuItems.Add(exitItem);
+ 
+ 			notifyIcon.ContextMenu = contextMenu;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="270" endline="274"><![CDATA[
+ 
+         void restoreItem_Click(object sender, EventArgs e)
+         {
+             this.notifyIcon_DoubleClick(sender, e);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="275" endline="280"><![CDATA[
+ 
+         void aboutItem_Click(object sender, EventArgs e)
+         {
+             AboutBox about = new AboutBox();
+             about.ShowDialog();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="281" endline="293"><![CDATA[
+ 
+ 		private void SetupContextMenu()
+ 		{
+ 			//view context menu
+ 			fobViewContextMenu = new ContextMenu();
+ 			MenuItem authorizeMenuItem = new MenuItem("Authorize Fob");
+ 			MenuItem unauthorizeFobMenuItem = new MenuItem("Unauthorize Fob");
+ 			authorizeMenuItem.Click += new EventHandler(authorizeMenuItem_Click);
+ 			unauthorizeFobMenuItem.Click += new EventHandler(unauthorizeFobMenuItem_Click);
+ 			fobViewContextMenu.MenuItems.Add(authorizeMenuItem);
+ 			fobViewContextMenu.MenuItems.Add(unauthorizeFobMenuItem);
+ 			keyFobView.ContextMenu = fobViewContextMenu;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="294" endline="309"><![CDATA[
+ 
+ 		private void SetupPluginContextMenu()
+ 		{
+ 			//view context menu
+ 			pluginListViewContextMenu = new ContextMenu();
+ 			configurePluginMenuItem = new MenuItem("Configure Plugin");
+ 			enablePluginMenuItem = new MenuItem("Enabled");
+ 			
+ 			configurePluginMenuItem.Click += new EventHandler(configurePluginMenuItem_Click);
+ 			enablePluginMenuItem.Click += new EventHandler(enablePluginMenuItem_Click);
+             pluginListViewContextMenu.Popup += new EventHandler(pluginListViewContextMenu_Popup);
+ 			
+ 			pluginListViewContextMenu.MenuItems.Add(configurePluginMenuItem);
+ 			pluginListViewContextMenu.MenuItems.Add(enablePluginMenuItem);
+ 			pluginListView.ContextMenu = pluginListViewContextMenu;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="310" endline="332"><![CDATA[
+ 
+         void pluginListViewContextMenu_Popup(object sender, EventArgs e)
+         {
+             if (pluginListView.SelectedItems.Count > 0)
+             {
+                 string pluginName = pluginListView.SelectedItems[0].Text;
+                 Plugin p = pluginManager.GetPluginByName(pluginName);
+ 
+                 if (p != null)
+                 {
+                     enablePluginMenuItem.Checked = p.Enabled;
+ 
+                     if (p.Configurator != null)
+                     {
+                         configurePluginMenuItem.Enabled = true;
+                     }
+                     else
+                     {
+                         configurePluginMenuItem.Enabled = false;
+                     }
+                 }
+             }
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="333" endline="379"><![CDATA[
+ 
+ 		private void Form1_Load(object sender, System.EventArgs e)
+ 		{
+ 			this.SetupNotifyIcon();
+ 			this.SetupContextMenu();
+ 			this.SetupPluginContextMenu();
+ 
+ 			settings = SettingsManager.Instance;
+ 			numericUpDown1.Value = settings.PresenceWindow;
+ 
+ 			pluginManager = new PluginManager();
+ 			UpdatePluginListView();
+ 
+ 			pm = new PresenceManager();
+ 			pm.PresenceNotification += new PresenceNotificationEventHandler(pm_PresenceNotification);
+ 			pm.PresenceManagerError += new PresenceManagerErrorEventHandler(pm_PresenceManagerError);
+ 			pm.MessageReceived += new MessageReceivedEventHandler(pm_MessageReceived);
+ 			
+ 			this.Closing += new CancelEventHandler(Form1_Closing);
+ 
+ 			securityCheckTimer = new Timer();
+ 			securityCheckTimer.Interval = 3000;
+ 			securityCheckTimer.Tick += new EventHandler(securityCheckTimer_Tick);
+ 			securityCheckTimer.Start();
+ 
+ 			//TODO
+             heartbeatChangeTimer = new Timer();
+ 			heartbeatChangeTimer.Interval = 100;
+ 			heartbeatChangeTimer.Tick += new EventHandler(heartbeatChangeTimer_Tick);
+ 			heartbeatChangeTimer.Start();
+ 
+ 			foreach(string s in settings.AuthorizedKeyFobSerialNumbers)
+ 			{
+ 				pm.AuthorizedSerialNumbers.Add(s);
+ 			}
+ 			foreach(string s in settings.AuthorizedKeyFobSerialNumbers)
+ 			{
+ 				pm.AuthorizedSerialNumbers.Add(s);
+ 			}
+ 
+ 			try
+ 			{
+ 				pm.InitReceiver();
+ 			}
+ 			catch(Exception exc)
+ 			{
+ 				notifyIcon.ShowBalloonTip(2,this.Text, exc.Message,ToolTipIcon.Info);
+ 			}
+ 
+ 			pm.Start();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="380" endline="417"><![CDATA[
+ 
+ 		private void pm_PresenceNotification(object sender, PresenceNotificationEventArgs e)
+ 		{
+ 			string authorizationStatus = "Unauthorized";
+ 			if(e.KeyFob.IsAuthorized) { authorizationStatus = "Authorized"; }
+ 
+ 			switch(e.NotificationType)
+ 			{
+ 				case PresenceNotificationType.Discovered
+                     notifyIcon.ShowBalloonTip(2,this.Text, String.Format("Discovered {0} KeyFob ({1}).", authorizationStatus, e.KeyFob.SerialNumber), ToolTipIcon.Info);
+ 					break;
+ 				case PresenceNotificationType.NotPresent
+                     notifyIcon.ShowBalloonTip(2,this.Text, String.Format("{0} KeyFob ({1}) is no longer detected.", authorizationStatus, e.KeyFob.SerialNumber), ToolTipIcon.Info);
+ 					break;
+ 				case PresenceNotificationType.Returned
+                     notifyIcon.ShowBalloonTip(2,this.Text, String.Format("{0} KeyFob ({1}) has returned.", authorizationStatus, e.KeyFob.SerialNumber), ToolTipIcon.Info);
+ 					break;
+ 				case PresenceNotificationType.Heartbeat
+ 					//TODO
+                     notifyIcon.Icon = heartbeatIcon;
+ 					lastHeartbeatIconChange = DateTime.Now.Ticks;
+ 					break;
+ 			}
+ 
+ 			if(e.NotificationType != PresenceNotificationType.Heartbeat)
+ 			{
+ 				UpdateFobView(this, null);
+ 			}
+ 
+ 			if(e.KeyFob.IsAuthorized &&
+ 				(e.NotificationType == PresenceNotificationType.Discovered ||
+ 				e.NotificationType == PresenceNotificationType.Returned))
+ 			{
+ 				this.lockingEnabled = true;
+ 			}
+ 
+ 			pluginManager.HandlePresenceNotification(e);
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="418" endline="435"><![CDATA[
+ 
+ 		protected void UpdatePluginListView()
+ 		{
+ 			pluginListView.Items.Clear();
+ 
+ 			foreach(Plugin plugin in pluginManager.Plugins)
+ 			{
+ 				ListViewItem row = new ListViewItem(plugin.Name);
+ 				ListViewItem.ListViewSubItem lvsi1 = new ListViewItem.ListViewSubItem(row, plugin.Enabled.ToString());
+ 				row.SubItems.Add(lvsi1);
+ 				pluginListView.Items.Add(row);
+ 
+ 				if(!plugin.Enabled)
+ 				{
+                     row.ForeColor = Color.Silver;
+ 				}
+ 			}
+ 			foreach(Plugin plugin in pluginManager.Plugins)
+ 			{
+ 				ListViewItem row = new ListViewItem(plugin.Name);
+ 				ListViewItem.ListViewSubItem lvsi1 = new ListViewItem.ListViewSubItem(row, plugin.Enabled.ToString());
+ 				row.SubItems.Add(lvsi1);
+ 				pluginListView.Items.Add(row);
+ 
+ 				if(!plugin.Enabled)
+ 				{
+                     row.ForeColor = Color.Silver;
+ 				}
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="436" endline="472"><![CDATA[
+ 
+ 		protected void UpdateFobView(object sender, EventArgs e)
+ 		{
+ 			if(keyFobView.InvokeRequired)
+ 			{
+ 				EventHandler UpdateFobViewHandler = new EventHandler(UpdateFobView);
+ 				keyFobView.Invoke(UpdateFobViewHandler, new object[] { this, null });
+ 			}
+ 			else
+ 			{
+ 				lock(keyFobView)
+ 				{
+ 					keyFobView.Items.Clear();
+ 					if(pm.KeyFobs.Count == 0)
+ 					{
+ 						MessageBox.Show("Wha happen!");
+ 					}
+ 
+ 					foreach(KeyFob fob in pm.KeyFobs)
+ 					{
+ 						string auth = "Not Authorized";
+ 						if(fob.IsAuthorized) { auth = "Authorized"; }
+ 						ListViewItem row = new ListViewItem(fob.SerialNumber);
+ 						ListViewItem.ListViewSubItem lvsi1 = new ListViewItem.ListViewSubItem(row, fob.Status.ToString());
+ 						ListViewItem.ListViewSubItem lvsi2 = new ListViewItem.ListViewSubItem(row, auth);
+ 						row.SubItems.Add(lvsi1);
+ 						row.SubItems.Add(lvsi2);
+ 						keyFobView.Items.Add(row);
+ 
+ 						if(fob.Status == KeyFobStatus.NotPresent)
+ 						{
+ 							row.ForeColor = Color.Silver;
+ 						}
+ 					}
+ 					foreach(KeyFob fob in pm.KeyFobs)
+ 					{
+ 						string auth = "Not Authorized";
+ 						if(fob.IsAuthorized) { auth = "Authorized"; }
+ 						ListViewItem row = new ListViewItem(fob.SerialNumber);
+ 						ListViewItem.ListViewSubItem lvsi1 = new ListViewItem.ListViewSubItem(row, fob.Status.ToString());
+ 						ListViewItem.ListViewSubItem lvsi2 = new ListViewItem.ListViewSubItem(row, auth);
+ 						row.SubItems.Add(lvsi1);
+ 						row.SubItems.Add(lvsi2);
+ 						keyFobView.Items.Add(row);
+ 
+ 						if(fob.Status == KeyFobStatus.NotPresent)
+ 						{
+ 							row.ForeColor = Color.Silver;
+ 						}
+ 					}
+ 				}
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="473" endline="479"><![CDATA[
+ 
+ 		private void Form1_Closing(object sender, CancelEventArgs e)
+ 		{
+ 			pm.Stop();
+ 			notifyIcon.Dispose();
+ 			notifyIcon = null;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="480" endline="484"><![CDATA[
+ 
+ 		private void exitItem_Click(object sender, EventArgs e)
+ 		{
+ 			Application.Exit();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="485" endline="488"><![CDATA[
+ 
+ 		private void notifyIcon_Click(object sender, EventArgs e)
+ 		{
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="489" endline="494"><![CDATA[
+ 
+ 		private void notifyIcon_DoubleClick(object sender, EventArgs e)
+ 		{
+             this.WindowState = FormWindowState.Normal;
+             this.Show();
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="495" endline="507"><![CDATA[
+ 
+ 		private void authorizeMenuItem_Click(object sender, EventArgs e)
+ 		{
+ 			lock(keyFobView)
+ 			{
+ 				foreach(ListViewItem lvi in keyFobView.SelectedItems)
+ 				{
+ 					pm.AuthorizeFob(pm.KeyFobs[lvi.Text]);
+ 					settings.AddAuthorizedKeyFob(pm.KeyFobs[lvi.Text].SerialNumber);
+                     lockingEnabled = true;
+ 				}
+ 				foreach(ListViewItem lvi in keyFobView.SelectedItems)
+ 				{
+ 					pm.AuthorizeFob(pm.KeyFobs[lvi.Text]);
+ 					settings.AddAuthorizedKeyFob(pm.KeyFobs[lvi.Text].SerialNumber);
+                     lockingEnabled = true;
+ 				}
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="508" endline="525"><![CDATA[
+ 
+ 		private void unauthorizeFobMenuItem_Click(object sender, EventArgs e)
+ 		{
+ 			lock(keyFobView)
+ 			{
+ 				foreach(ListViewItem lvi in keyFobView.SelectedItems)
+ 				{
+ 					pm.UnauthorizeFob(pm.KeyFobs[lvi.Text]);
+ 					settings.RemoveKeyFob(pm.KeyFobs[lvi.Text].SerialNumber);
+ 				}
+ 				foreach(ListViewItem lvi in keyFobView.SelectedItems)
+ 				{
+ 					pm.UnauthorizeFob(pm.KeyFobs[lvi.Text]);
+ 					settings.RemoveKeyFob(pm.KeyFobs[lvi.Text].SerialNumber);
+ 				}
+ 
+                 if (!this.AtLeastOneAuthorizedFob)
+                 {
+                     lockingEnabled = false;
+                     notifyIcon.ShowBalloonTip(2000, this.Text, "No authorized fobs detected, system is not protected by auto-locking until one is detected, and then leaves.", ToolTipIcon.Info);
+                 }
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="526" endline="573"><![CDATA[
+ 
+ 		private void securityCheckTimer_Tick(object sender, EventArgs e)
+ 		{
+ 			if(!pm.Initialized)
+ 			{
+ 				try
+ 				{
+ 					pm.InitReceiver();
+ 					pm.Start();
+ 				}
+ 				catch(Exception exc)
+ 				{
+ 					string err = exc.ToString();
+ 					int lerr = err.Length;
+ 					System.Threading.Thread.Sleep(150);
+ 				}
+ 			}
+ 
+ 			
+ 
+ 			if(!this.AtLeastOneAuthorizedFob &&
+ 				lockingEnabled &&
+ 				!locked)
+ 			{
+ 				try
+ 				{
+ 					LockStation();
+ 				}
+ 				catch
+ 				{
+ 				}
+ 			}
+             else if (!this.AtLeastOneAuthorizedFob &&
+                 !lockingEnabled &&
+                 !locked &&
+                 !startupNoFobMessageShown)
+             {
+                 notifyIcon.ShowBalloonTip(2000, this.Text, "No authorized fobs detected, system is not protected by auto-locking until one is detected, and then leaves.", ToolTipIcon.Info);
+                 startupNoFobMessageShown = true;
+             }
+             else if (this.AtLeastOneAuthorizedFob &&
+                 locked)
+             {
+                 UnlockStation();
+             }
+ 
+ 			securityCheckTimer.Interval = 500;
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="574" endline="580"><![CDATA[
+ 
+ 		private void LockStation()
+ 		{
+ 			lockingEnabled = false;
+ 			locked = true;
+ 			pluginManager.WorkstationLocked();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="581" endline="587"><![CDATA[
+ 
+ 		private void UnlockStation()
+ 		{
+ 			lockingEnabled = true;
+ 			locked = false;
+ 			pluginManager.WorkstationUnlocked();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="588" endline="593"><![CDATA[
+ 
+ 		private void DoneButton_Click(object sender, System.EventArgs e)
+ 		{
+ 			SettingsManager.Instance.PresenceWindow = Convert.ToInt32(numericUpDown1.Value);
+ 			this.Hide();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="594" endline="599"><![CDATA[
+ 
+ 		private void pm_PresenceManagerError(object sender, PresenceManagerErrorEventArgs e)
+ 		{
+ 			notifyIcon.ShowBalloonTip(2,this.Text, e.Exception.Message, ToolTipIcon.Info);
+ 			LockStation();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="600" endline="604"><![CDATA[
+ 
+ 		private void pm_MessageReceived(object sender, MessageReceivedEventArgs e)
+ 		{
+ 			pluginManager.HandleMessage(e.Message);
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="605" endline="632"><![CDATA[
+ 
+ 		#region Plugin Context Menu Handlers
+ 
+ 		private void configurePluginMenuItem_Click(object sender, EventArgs e)
+ 		{
+ 			foreach(ListViewItem lvi in pluginListView.SelectedItems)
+ 			{
+ 				string pluginName = lvi.Text;
+ 				Plugin selectedPlugin = null;
+ 				foreach(Plugin plugin in pluginManager.Plugins)
+ 				{
+ 					if(plugin.Name == pluginName)
+ 					{
+ 						selectedPlugin = plugin;
+ 						break;
+ 					}
+ 				}
+ 				foreach(Plugin plugin in pluginManager.Plugins)
+ 				{
+ 					if(plugin.Name == pluginName)
+ 					{
+ 						selectedPlugin = plugin;
+ 						break;
+ 					}
+ 				}
+ 
+ 				if(selectedPlugin.Configurator != null)
+ 				{
+ 					selectedPlugin.Configurator.Show();
+ 				}
+ 				else
+ 				{
+ 					MessageBox.Show(String.Format(@"{0} does not have a configurator.", selectedPlugin.Name));
+ 				}
+ 			}
+ 			foreach(ListViewItem lvi in pluginListView.SelectedItems)
+ 			{
+ 				string pluginName = lvi.Text;
+ 				Plugin selectedPlugin = null;
+ 				foreach(Plugin plugin in pluginManager.Plugins)
+ 				{
+ 					if(plugin.Name == pluginName)
+ 					{
+ 						selectedPlugin = plugin;
+ 						break;
+ 					}
+ 				}
+ 
+ 				if(selectedPlugin.Configurator != null)
+ 				{
+ 					selectedPlugin.Configurator.Show();
+ 				}
+ 				else
+ 				{
+ 					MessageBox.Show(String.Format(@"{0} does not have a configurator.", selectedPlugin.Name));
+ 				}
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="633" endline="655"><![CDATA[
+ 
+ 		private void enablePluginMenuItem_Click(object sender, EventArgs e)
+ 		{
+ 			foreach(ListViewItem lvi in pluginListView.SelectedItems)
+ 			{
+ 				string pluginName = lvi.Text;
+ 				Plugin selectedPlugin = null;
+ 				foreach(Plugin plugin in pluginManager.Plugins)
+ 				{
+ 					if(plugin.Name == pluginName)
+ 					{
+ 						selectedPlugin = plugin;
+ 						break;
+ 					}
+ 				}
+ 				foreach(Plugin plugin in pluginManager.Plugins)
+ 				{
+ 					if(plugin.Name == pluginName)
+ 					{
+ 						selectedPlugin = plugin;
+ 						break;
+ 					}
+ 				}
+ 
+                 //Toggle the enabled state
+                 selectedPlugin.Enabled = !selectedPlugin.Enabled;
+                 settings.SetPluginStatus(selectedPlugin.Name, selectedPlugin.Enabled);
+ 			}
+ 			foreach(ListViewItem lvi in pluginListView.SelectedItems)
+ 			{
+ 				string pluginName = lvi.Text;
+ 				Plugin selectedPlugin = null;
+ 				foreach(Plugin plugin in pluginManager.Plugins)
+ 				{
+ 					if(plugin.Name == pluginName)
+ 					{
+ 						selectedPlugin = plugin;
+ 						break;
+ 					}
+ 				}
+ 
+                 //Toggle the enabled state
+                 selectedPlugin.Enabled = !selectedPlugin.Enabled;
+                 settings.SetPluginStatus(selectedPlugin.Name, selectedPlugin.Enabled);
+ 			}
+ 
+ 			UpdatePluginListView();
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\MainForm.cs" startline="656" endline="666"><![CDATA[
+ 
+ 		#endregion
+ 
+ 		private void heartbeatChangeTimer_Tick(object sender, EventArgs e)
+ 		{
+ 			long nowTicks = DateTime.Now.Ticks;
+ 			if(nowTicks - lastHeartbeatIconChange >= 1500000)
+ 			{
+ 				notifyIcon.Icon = appIcon;
+ 			}
+ 		}
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\AboutBox.cs" startline="8" endline="26"><![CDATA[
+         private System.ComponentModel.IContainer components = null;
+         public AboutBox()
+         {
+             InitializeComponent();
+ 
+             //  Initialize the AboutBox to display the product information from the assembly information.
+             //  Change assembly information settings for your application through either
+             //  - Project->Properties->Application->Assembly Information
+             //  - AssemblyInfo.cs
+             this.Text = String.Format("About {0}", AssemblyTitle);
+             this.labelProductName.Text = AssemblyProduct;
+             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+             this.labelCopyright.Text = AssemblyCopyright;
+             this.labelCompanyName.Text = AssemblyCompany;
+             this.textBoxDescription.Text = AssemblyDescription;
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\AboutBox.cs" startline="27" endline="47"><![CDATA[
+ 
+         #region Assembly Attibute Accessors
+ 
+         public string AssemblyTitle
+         {
+             get
+             {
+                 // Get all Title attributes on this assembly
+                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
+                 // If there is at least one Title attribute
+                 if (attributes.Length > 0)
+                 {
+                     // Select the first one
+                     AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
+                     // If it is not an empty string, return it
+                     if (titleAttribute.Title != "")
+                         return titleAttribute.Title;
+                 }
+                 // If there was no Title attribute, or if the Title attribute was the empty string, return the .exe name
+                 return System.IO.Path.GetFileNameWithoutExtension(Assembly.GetExecutingAssembly().CodeBase);
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\AboutBox.cs" startline="48" endline="55"><![CDATA[
+         }
+ 
+         public string AssemblyVersion
+         {
+             get
+             {
+                 return Assembly.GetExecutingAssembly().GetName().Version.ToString();
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\AboutBox.cs" startline="56" endline="69"><![CDATA[
+         }
+ 
+         public string AssemblyDescription
+         {
+             get
+             {
+                 // Get all Description attributes on this assembly
+                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
+                 // If there aren't any Description attributes, return an empty string
+                 if (attributes.Length == 0)
+                     return "";
+                 // If there is a Description attribute, return its value
+                 return ((AssemblyDescriptionAttribute)attributes[0]).Description;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\AboutBox.cs" startline="70" endline="83"><![CDATA[
+         }
+ 
+         public string AssemblyProduct
+         {
+             get
+             {
+                 // Get all Product attributes on this assembly
+                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
+                 // If there aren't any Product attributes, return an empty string
+                 if (attributes.Length == 0)
+                     return "";
+                 // If there is a Product attribute, return its value
+                 return ((AssemblyProductAttribute)attributes[0]).Product;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\AboutBox.cs" startline="84" endline="97"><![CDATA[
+         }
+ 
+         public string AssemblyCopyright
+         {
+             get
+             {
+                 // Get all Copyright attributes on this assembly
+                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+                 // If there aren't any Copyright attributes, return an empty string
+                 if (attributes.Length == 0)
+                     return "";
+                 // If there is a Copyright attribute, return its value
+                 return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\AboutBox.cs" startline="98" endline="111"><![CDATA[
+         }
+ 
+         public string AssemblyCompany
+         {
+             get
+             {
+                 // Get all Company attributes on this assembly
+                 object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
+                 // If there aren't any Company attributes, return an empty string
+                 if (attributes.Length == 0)
+                     return "";
+                 // If there is a Company attribute, return its value
+                 return ((AssemblyCompanyAttribute)attributes[0]).Company;
+             }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\AboutBox.Designer.cs" startline="14" endline="20"><![CDATA[
+         {
+             if (disposing && (components != null))
+             {
+                 components.Dispose();
+             }
+             base.Dispose(disposing);
+         }
+]]></source>
+<source file="C:\Users\faa634\Desktop\c vb\web sec\UsbWiSec-2.1-source\AboutBox.Designer.cs" startline="21" endline="172"><![CDATA[
+ 
+         #region Windows Form Designer generated code
+ 
+         /// <summary>
+         /// Required method for Designer support - do not modify
+         /// the contents of this method with the code editor.
+         /// </summary>
+         private void InitializeComponent()
+         {
+             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
+             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+             this.logoPictureBox = new System.Windows.Forms.PictureBox();
+             this.labelProductName = new System.Windows.Forms.Label();
+             this.labelVersion = new System.Windows.Forms.Label();
+             this.labelCopyright = new System.Windows.Forms.Label();
+             this.labelCompanyName = new System.Windows.Forms.Label();
+             this.textBoxDescription = new System.Windows.Forms.TextBox();
+             this.okButton = new System.Windows.Forms.Button();
+             this.tableLayoutPanel.SuspendLayout();
+             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+             this.SuspendLayout();
+             // 
+             // tableLayoutPanel
+             // 
+             this.tableLayoutPanel.ColumnCount = 2;
+             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
+             this.tableLayoutPanel.Controls.Add(this.logoPictureBox, 0, 0);
+             this.tableLayoutPanel.Controls.Add(this.labelProductName, 1, 0);
+             this.tableLayoutPanel.Controls.Add(this.labelVersion, 1, 1);
+             this.tableLayoutPanel.Controls.Add(this.labelCopyright, 1, 2);
+             this.tableLayoutPanel.Controls.Add(this.labelCompanyName, 1, 3);
+             this.tableLayoutPanel.Controls.Add(this.textBoxDescription, 1, 4);
+             this.tableLayoutPanel.Controls.Add(this.okButton, 1, 5);
+             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.tableLayoutPanel.Location = new System.Drawing.Point(9, 9);
+             this.tableLayoutPanel.Name = "tableLayoutPanel";
+             this.tableLayoutPanel.RowCount = 6;
+             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.98113F));
+             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.77358F));
+             this.tableLayoutPanel.Size = new System.Drawing.Size(417, 265);
+             this.tableLayoutPanel.TabIndex = 0;
+             // 
+             // logoPictureBox
+             // 
+             this.logoPictureBox.BackColor = System.Drawing.Color.White;
+             this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
+             this.logoPictureBox.Location = new System.Drawing.Point(3, 3);
+             this.logoPictureBox.Name = "logoPictureBox";
+             this.tableLayoutPanel.SetRowSpan(this.logoPictureBox, 6);
+             this.logoPictureBox.Size = new System.Drawing.Size(131, 259);
+             this.logoPictureBox.TabIndex = 12;
+             this.logoPictureBox.TabStop = false;
+             // 
+             // labelProductName
+             // 
+             this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.labelProductName.Location = new System.Drawing.Point(143, 0);
+             this.labelProductName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+             this.labelProductName.MaximumSize = new System.Drawing.Size(0, 17);
+             this.labelProductName.Name = "labelProductName";
+             this.labelProductName.Size = new System.Drawing.Size(271, 17);
+             this.labelProductName.TabIndex = 19;
+             this.labelProductName.Text = "Product Name";
+             this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+             // 
+             // labelVersion
+             // 
+             this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.labelVersion.Location = new System.Drawing.Point(143, 26);
+             this.labelVersion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+             this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
+             this.labelVersion.Name = "labelVersion";
+             this.labelVersion.Size = new System.Drawing.Size(271, 17);
+             this.labelVersion.TabIndex = 0;
+             this.labelVersion.Text = "Version";
+             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+             // 
+             // labelCopyright
+             // 
+             this.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.labelCopyright.Location = new System.Drawing.Point(143, 52);
+             this.labelCopyright.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+             this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 17);
+             this.labelCopyright.Name = "labelCopyright";
+             this.labelCopyright.Size = new System.Drawing.Size(271, 17);
+             this.labelCopyright.TabIndex = 21;
+             this.labelCopyright.Text = "Copyright";
+             this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+             // 
+             // labelCompanyName
+             // 
+             this.labelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.labelCompanyName.Location = new System.Drawing.Point(143, 78);
+             this.labelCompanyName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+             this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
+             this.labelCompanyName.Name = "labelCompanyName";
+             this.labelCompanyName.Size = new System.Drawing.Size(271, 17);
+             this.labelCompanyName.TabIndex = 22;
+             this.labelCompanyName.Text = "Company Name";
+             this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+             // 
+             // textBoxDescription
+             // 
+             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+             this.textBoxDescription.Location = new System.Drawing.Point(143, 107);
+             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+             this.textBoxDescription.Multiline = true;
+             this.textBoxDescription.Name = "textBoxDescription";
+             this.textBoxDescription.ReadOnly = true;
+             this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+             this.textBoxDescription.Size = new System.Drawing.Size(271, 91);
+             this.textBoxDescription.TabIndex = 23;
+             this.textBoxDescription.TabStop = false;
+             this.textBoxDescription.Text = "Description";
+             // 
+             // okButton
+             // 
+             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+             this.okButton.Location = new System.Drawing.Point(339, 239);
+             this.okButton.Name = "okButton";
+             this.okButton.Size = new System.Drawing.Size(75, 23);
+             this.okButton.TabIndex = 24;
+             this.okButton.Text = "&OK";
+             // 
+             // AboutBox
+             // 
+             this.AcceptButton = this.okButton;
+             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+             this.ClientSize = new System.Drawing.Size(435, 283);
+             this.Controls.Add(this.tableLayoutPanel);
+             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+             this.MaximizeBox = false;
+             this.MinimizeBox = false;
+             this.Name = "AboutBox";
+             this.Padding = new System.Windows.Forms.Padding(9);
+             this.ShowIcon = false;
+             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+             this.Text = "AboutBox";
+             this.tableLayoutPanel.ResumeLayout(false);
+             this.tableLayoutPanel.PerformLayout();
+             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+             this.ResumeLayout(false);
+ 
+         }
+]]></source>
+</source_elements></project>

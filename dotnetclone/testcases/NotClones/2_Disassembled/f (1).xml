@@ -1,0 +1,452 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+ IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 1 example 1: Hello World"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldloc.0
+  IL_0013:  ldstr      "Chap0101.pdf"
+  IL_0018:  ldc.i4.2
+  IL_0019:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_001e:  call       class [iText]com.lowagie.text.pdf.PdfWriter [iText]com.lowagie.text.pdf.PdfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [mscorlib]System.IO.Stream)
+  IL_0023:  pop
+  IL_0024:  ldloc.0
+  IL_0025:  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  IL_002a:  nop
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "Hello World"
+  IL_0031:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0036:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_003b:  pop
+  IL_003c:  ldloc.0
+  IL_003d:  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  IL_0042:  nop
+  IL_0043:  nop
+  IL_0044:  ret
+
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 10 example 1: Simple Graphic"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldloc.0
+  IL_0013:  ldstr      "Chap1001.pdf"
+  IL_0018:  ldc.i4.2
+  IL_0019:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_001e:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_0023:  stloc.1
+  IL_0024:  ldloc.0
+  IL_0025:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_002a:  nop
+  IL_002b:  ldloc.1
+  IL_002c:  callvirt   instance class [iTextdotNET]com.lowagie.text.pdf.PdfContentByte [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getDirectContent()
+  IL_0031:  stloc.2
+  IL_0032:  ldloc.2
+  IL_0033:  ldc.r4     10.
+  IL_0038:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setLineWidth(float32)
+  IL_003d:  nop
+  IL_003e:  ldloc.2
+  IL_003f:  ldc.r4     100.
+  IL_0044:  ldc.r4     700.
+  IL_0049:  ldc.r4     100.
+  IL_004e:  ldc.r4     100.
+  IL_0053:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::rectangle(float32,
+                                                                                                 float32,
+                                                                                                 float32,
+                                                                                                 float32)
+  IL_0058:  nop
+  IL_0059:  ldloc.2
+  IL_005a:  ldc.r4     100.
+  IL_005f:  ldc.r4     700.
+  IL_0064:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::moveTo(float32,
+                                                                                              float32)
+  IL_0069:  nop
+  IL_006a:  ldloc.2
+  IL_006b:  ldc.r4     200.
+  IL_0070:  ldc.r4     800.
+  IL_0075:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                              float32)
+  IL_007a:  nop
+  IL_007b:  ldloc.2
+  IL_007c:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  IL_0081:  nop
+  IL_0082:  ldloc.2
+  IL_0083:  ldc.r4     3.
+  IL_0088:  ldc.r4     3.
+  IL_008d:  ldc.r4     0.0
+  IL_0092:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setLineDash(float32,
+                                                                                                   float32,
+                                                                                                   float32)
+  IL_0097:  nop
+  IL_0098:  ldloc.2
+  IL_0099:  ldc.r4     0.0
+  IL_009e:  ldc.r4     255.
+  IL_00a3:  ldc.r4     0.0
+  IL_00a8:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setRGBColorStrokeF(float32,
+                                                                                                          float32,
+                                                                                                          float32)
+  IL_00ad:  nop
+  IL_00ae:  ldloc.2
+  IL_00af:  ldc.r4     150.
+  IL_00b4:  ldc.r4     500.
+  IL_00b9:  ldc.r4     100.
+  IL_00be:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::circle(float32,
+                                                                                              float32,
+                                                                                              float32)
+  IL_00c3:  nop
+  IL_00c4:  ldloc.2
+  IL_00c5:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  IL_00ca:  nop
+  IL_00cb:  ldloc.2
+  IL_00cc:  ldc.r4     5.
+  IL_00d1:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setLineWidth(float32)
+  IL_00d6:  nop
+  IL_00d7:  ldloc.2
+  IL_00d8:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::resetRGBColorStroke()
+  IL_00dd:  nop
+  IL_00de:  ldloc.2
+  IL_00df:  ldc.r4     150.
+  IL_00e4:  ldc.r4     500.
+  IL_00e9:  ldc.r4     50.
+  IL_00ee:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::circle(float32,
+                                                                                              float32,
+                                                                                              float32)
+  IL_00f3:  nop
+  IL_00f4:  ldloc.2
+  IL_00f5:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::stroke()
+  IL_00fa:  nop
+  IL_00fb:  ldloc.2
+  IL_00fc:  ldc.r4     0.0
+  IL_0101:  ldc.r4     255.
+  IL_0106:  ldc.r4     0.0
+  IL_010b:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setRGBColorFillF(float32,
+                                                                                                        float32,
+                                                                                                        float32)
+  IL_0110:  nop
+  IL_0111:  ldloc.2
+  IL_0112:  ldc.r4     100.
+  IL_0117:  ldc.r4     200.
+  IL_011c:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::moveTo(float32,
+                                                                                              float32)
+  IL_0121:  nop
+  IL_0122:  ldloc.2
+  IL_0123:  ldc.r4     200.
+  IL_0128:  ldc.r4     250.
+  IL_012d:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                              float32)
+  IL_0132:  nop
+  IL_0133:  ldloc.2
+  IL_0134:  ldc.r4     400.
+  IL_0139:  ldc.r4     150.
+  IL_013e:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::lineTo(float32,
+                                                                                              float32)
+  IL_0143:  nop
+  IL_0144:  ldloc.2
+  IL_0145:  ldc.r4     255.
+  IL_014a:  ldc.r4     0.0
+  IL_014f:  ldc.r4     0.0
+  IL_0154:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::setRGBColorFillF(float32,
+                                                                                                        float32,
+                                                                                                        float32)
+  IL_0159:  nop
+  IL_015a:  ldloc.2
+  IL_015b:  callvirt   instance void [iTextdotNET]com.lowagie.text.pdf.PdfContentByte::closePathFillStroke()
+  IL_0160:  nop
+  IL_0161:  ldloc.0
+  IL_0162:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_0167:  nop
+  IL_0168:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+ IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 5 example 10: large tables with repeating "
+  + "headers"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  ldsfld     class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.PageSize::A4
+  IL_0014:  callvirt   instance class [iTextdotNET]com.lowagie.text.Rectangle [iTextdotNET]com.lowagie.text.Rectangle::rotate()
+  IL_0019:  ldc.r4     50.
+  IL_001e:  ldc.r4     50.
+  IL_0023:  ldc.r4     50.
+  IL_0028:  ldc.r4     50.
+  IL_002d:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor(class [iTextdotNET]com.lowagie.text.Rectangle,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32,
+                                                                                   float32)
+  IL_0032:  stloc.0
+  IL_0033:  ldloc.0
+  IL_0034:  ldstr      "Chap0510.pdf"
+  IL_0039:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_003e:  call       class [iTextdotNET]com.lowagie.text.pdf.PdfWriter [iTextdotNET]com.lowagie.text.pdf.PdfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [vjslib_7]java.io.OutputStream)
+  IL_0043:  pop
+  IL_0044:  ldloc.0
+  IL_0045:  ldstr      "Alan Soukup"
+  IL_004a:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::addAuthor(string)
+  IL_004f:  pop
+  IL_0050:  ldloc.0
+  IL_0051:  ldstr      "This is the result of a Test."
+  IL_0056:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::addSubject(string)
+  IL_005b:  pop
+  IL_005c:  ldloc.0
+  IL_005d:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_0062:  ldc.i4.s   10
+  IL_0064:  newobj     instance void [iTextdotNET]com.lowagie.text.Table::.ctor(int32)
+  IL_0069:  stloc.1
+  IL_006a:  ldloc.1
+  IL_006b:  ldc.r4     4.
+  IL_0070:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setPadding(float32)
+  IL_0075:  ldloc.1
+  IL_0076:  ldc.r4     0.0
+  IL_007b:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setSpacing(float32)
+  IL_0080:  ldc.i4.s   10
+  IL_0082:  stloc.s    V_6
+  IL_0084:  ldloc.s    V_6
+  IL_0086:  ldc.i4.0
+  IL_0087:  blt.s      IL_008b
+  IL_0089:  br.s       IL_0091
+  IL_008b:  newobj     instance void [vjslib]java.lang.NegativeArraySizeException::.ctor()
+  IL_0090:  throw
+  IL_0091:  ldloc.s    V_6
+  IL_0093:  newarr     [mscorlib]System.Int32
+  IL_0098:  dup
+  IL_0099:  ldc.i4.0
+  IL_009a:  ldc.i4.s   10
+  IL_009c:  stelem.i4
+  IL_009d:  dup
+  IL_009e:  ldc.i4.1
+  IL_009f:  ldc.i4.s   24
+  IL_00a1:  stelem.i4
+  IL_00a2:  dup
+  IL_00a3:  ldc.i4.2
+  IL_00a4:  ldc.i4.s   12
+  IL_00a6:  stelem.i4
+  IL_00a7:  dup
+  IL_00a8:  ldc.i4.3
+  IL_00a9:  ldc.i4.s   12
+  IL_00ab:  stelem.i4
+  IL_00ac:  dup
+  IL_00ad:  ldc.i4.4
+  IL_00ae:  ldc.i4.s   7
+  IL_00b0:  stelem.i4
+  IL_00b1:  dup
+  IL_00b2:  ldc.i4.5
+  IL_00b3:  ldc.i4.s   7
+  IL_00b5:  stelem.i4
+  IL_00b6:  dup
+  IL_00b7:  ldc.i4.s   6
+  IL_00b9:  ldc.i4.s   7
+  IL_00bb:  stelem.i4
+  IL_00bc:  dup
+  IL_00bd:  ldc.i4.s   7
+  IL_00bf:  ldc.i4.s   7
+  IL_00c1:  stelem.i4
+  IL_00c2:  dup
+  IL_00c3:  ldc.i4.s   8
+  IL_00c5:  ldc.i4.s   7
+  IL_00c7:  stelem.i4
+  IL_00c8:  dup
+  IL_00c9:  ldc.i4.s   9
+  IL_00cb:  ldc.i4.s   7
+  IL_00cd:  stelem.i4
+  IL_00ce:  stloc.2
+  IL_00cf:  ldloc.1
+  IL_00d0:  ldloc.2
+  IL_00d1:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setWidths(int32[])
+  IL_00d6:  ldloc.1
+  IL_00d7:  ldc.r4     100.
+  IL_00dc:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setWidth(float32)
+  IL_00e1:  ldstr      "Administration -System Users Report"
+  IL_00e6:  ldstr      "Helvetica"
+  IL_00eb:  ldc.r4     24.
+  IL_00f0:  ldc.i4.1
+  IL_00f1:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  IL_00f6:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string,
+                                                                                 class [iTextdotNET]com.lowagie.text.Font)
+  IL_00fb:  newobj     instance void [iTextdotNET]com.lowagie.text.Cell::.ctor(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0100:  stloc.3
+  IL_0101:  ldloc.3
+  IL_0102:  ldc.i4.1
+  IL_0103:  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setHorizontalAlignment(int32)
+  IL_0108:  ldloc.3
+  IL_0109:  ldc.r4     30.
+  IL_010e:  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setLeading(float32)
+  IL_0113:  ldloc.3
+  IL_0114:  ldc.i4.s   10
+  IL_0116:  callvirt   instance void [iTextdotNET]com.lowagie.text.Cell::setColspan(int32)
+  IL_011b:  ldloc.3
+  IL_011c:  ldc.i4.0
+  IL_011d:  callvirt   instance void [iTextdotNET]com.lowagie.text.Rectangle::setBorder(int32)
+  IL_0122:  ldloc.3
+  IL_0123:  ldc.i4     0xc0
+  IL_0128:  ldc.i4     0xc0
+  IL_012d:  ldc.i4     0xc0
+  IL_0132:  newobj     instance void [vjslib]java.awt.Color::.ctor(int32,
+                                                                   int32,
+                                                                   int32)
+  IL_0137:  callvirt   instance void [iTextdotNET]com.lowagie.text.Rectangle::setBackgroundColor(class [vjslib_7]java.awt.Color)
+  IL_013c:  ldloc.1
+  IL_013d:  ldloc.3
+  IL_013e:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(class [iTextdotNET]com.lowagie.text.Cell)
+  IL_0143:  ldloc.1
+  IL_0144:  ldc.r4     2.
+  IL_0149:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setDefaultCellBorderWidth(float32)
+  IL_014e:  ldloc.1
+  IL_014f:  ldc.i4.1
+  IL_0150:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setDefaultHorizontalAlignment(int32)
+  IL_0155:  ldloc.1
+  IL_0156:  ldc.i4.2
+  IL_0157:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setDefaultRowspan(int32)
+  IL_015c:  ldloc.1
+  IL_015d:  ldstr      "User Id"
+  IL_0162:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_0167:  ldloc.1
+  IL_0168:  ldstr      "Name"
+  IL_016d:  ldstr      "Helvetica"
+  IL_0172:  ldc.r4     14.
+  IL_0177:  ldc.i4.1
+  IL_0178:  call       class [iTextdotNET]com.lowagie.text.Font [iTextdotNET]com.lowagie.text.FontFactory::getFont(string,
+                                                                                                                   float32,
+                                                                                                                   int32)
+  IL_017d:  newobj     instance void [iTextdotNET]com.lowagie.text.Phrase::.ctor(string,
+                                                                                 class [iTextdotNET]com.lowagie.text.Font)
+  IL_0182:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(class [iTextdotNET]com.lowagie.text.Phrase)
+  IL_0187:  ldloc.1
+  IL_0188:  ldstr      "Company"
+  IL_018d:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_0192:  ldloc.1
+  IL_0193:  ldstr      "Department"
+  IL_0198:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_019d:  ldloc.1
+  IL_019e:  ldc.i4.1
+  IL_019f:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setDefaultRowspan(int32)
+  IL_01a4:  ldloc.1
+  IL_01a5:  ldc.i4.s   6
+  IL_01a7:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setDefaultColspan(int32)
+  IL_01ac:  ldloc.1
+  IL_01ad:  ldstr      "Permissions"
+  IL_01b2:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_01b7:  ldloc.1
+  IL_01b8:  ldc.i4.1
+  IL_01b9:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setDefaultColspan(int32)
+  IL_01be:  ldloc.1
+  IL_01bf:  ldstr      "Admin"
+  IL_01c4:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_01c9:  ldloc.1
+  IL_01ca:  ldstr      "Data"
+  IL_01cf:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_01d4:  ldloc.1
+  IL_01d5:  ldstr      "Expl"
+  IL_01da:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_01df:  ldloc.1
+  IL_01e0:  ldstr      "Prod"
+  IL_01e5:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_01ea:  ldloc.1
+  IL_01eb:  ldstr      "Proj"
+  IL_01f0:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_01f5:  ldloc.1
+  IL_01f6:  ldstr      "Online"
+  IL_01fb:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_0200:  ldloc.1
+  IL_0201:  callvirt   instance int32 [iTextdotNET]com.lowagie.text.Table::endHeaders()
+  IL_0206:  pop
+  IL_0207:  ldloc.1
+  IL_0208:  ldc.r4     1.
+  IL_020d:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setDefaultCellBorderWidth(float32)
+  IL_0212:  ldloc.1
+  IL_0213:  ldc.i4.1
+  IL_0214:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setDefaultRowspan(int32)
+  IL_0219:  ldc.i4.1
+  IL_021a:  stloc.s    i
+  IL_021c:  br         IL_02b9
+  IL_0221:  ldloc.1
+  IL_0222:  ldc.i4.0
+  IL_0223:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setDefaultHorizontalAlignment(int32)
+  IL_0228:  ldloc.1
+  IL_0229:  ldstr      "myUserId"
+  IL_022e:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_0233:  ldloc.1
+  IL_0234:  ldstr      "Somebody with a very, very, very, very, very, very"
+  + ", very, very, very, very, very, very, very, very, very, very, very, ver"
+  + "y, very, very, very, very, very, very, very, very, very long long name"
+  IL_0239:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_023e:  ldloc.1
+  IL_023f:  ldstr      "No Name Company"
+  IL_0244:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_0249:  ldloc.1
+  IL_024a:  newobj     instance void [vjslib]java.lang.StringBuffer::.ctor()
+  IL_024f:  ldstr      "D"
+  IL_0254:  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(string)
+  IL_0259:  ldloc.s    i
+  IL_025b:  callvirt   instance class [vjslib]java.lang.StringBuffer [vjslib]java.lang.StringBuffer::append(int32)
+  IL_0260:  callvirt   instance string [vjslib]java.lang.StringBuffer::ToString()
+  IL_0265:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_026a:  ldloc.1
+  IL_026b:  ldc.i4.1
+  IL_026c:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::setDefaultHorizontalAlignment(int32)
+  IL_0271:  ldloc.1
+  IL_0272:  ldstr      "No"
+  IL_0277:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_027c:  ldloc.1
+  IL_027d:  ldstr      "Yes"
+  IL_0282:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_0287:  ldloc.1
+  IL_0288:  ldstr      "No"
+  IL_028d:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_0292:  ldloc.1
+  IL_0293:  ldstr      "Yes"
+  IL_0298:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_029d:  ldloc.1
+  IL_029e:  ldstr      "No"
+  IL_02a3:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_02a8:  ldloc.1
+  IL_02a9:  ldstr      "Yes"
+  IL_02ae:  callvirt   instance void [iTextdotNET]com.lowagie.text.Table::addCell(string)
+  IL_02b3:  ldloc.s    i
+  IL_02b5:  ldc.i4.1
+  IL_02b6:  add
+  IL_02b7:  stloc.s    i
+  IL_02b9:  ldloc.s    i
+  IL_02bb:  ldc.i4.s   30
+  IL_02bd:  blt        IL_0221
+  IL_02c2:  ldloc.0
+  IL_02c3:  ldloc.1
+  IL_02c4:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_02c9:  pop
+  IL_02ca:  leave.s    IL_02f0
+  IL_02cc:  call       class [vjslib]java.lang.Throwable [vjslib]java.lang.Exception::'<exceptFilter>'(object)
+  IL_02d1:  stloc.s    V_7
+  IL_02d3:  ldloc.s    V_7
+  IL_02d5:  brfalse.s  IL_02da
+  IL_02d7:  ldc.i4.1
+  IL_02d8:  br.s       IL_02db
+  IL_02da:  ldc.i4.0
+  IL_02db:  endfilter
+  IL_02dd:  pop
+  IL_02de:  ldloc.s    V_7
+  IL_02e0:  castclass  [vjslib]java.lang.Exception
+  IL_02e5:  stloc.s    e
+  IL_02e7:  ldloc.s    e
+  IL_02e9:  callvirt   instance void [vjslib]java.lang.Throwable::printStackTrace()
+  IL_02ee:  leave.s    IL_02f0
+  IL_02f0:  ldloc.0
+  .try IL_0033 to IL_02cc filter IL_02cc handler IL_02dd to IL_02f0
+  IL_02f1:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_02f6:  br.s       IL_02f8
+  IL_02f8:  ret
+
+]]></source>
+</source_elements></project>

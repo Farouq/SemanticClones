@@ -1,0 +1,21 @@
+<clones>
+<systeminfo processor="nicad3" system="testcase" granularity="functions" threshold="10%" minlines="6" maxlines="1000"/>
+<cloneinfo npcs="105" npairs="3"/>
+<runinfo ncompares="136" cputime="40000"/>
+
+<clone nlines="17" similarity="94">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/f9/ceb09d52/Chap0208.cs.ifdefed" startline="19" endline="36" pcid="92"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/5c/b20dc795/Chap0208.cs.ifdefed" startline="12" endline="29" pcid="71"></source>
+</clone>
+
+<clone nlines="15" similarity="100">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/7e/9c81c2f6/Chap0106.cs.ifdefed" startline="19" endline="34" pcid="89"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/ce/4c3a1998/Chap0106.cs.ifdefed" startline="13" endline="28" pcid="74"></source>
+</clone>
+
+<clone nlines="8" similarity="100">
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/VB/34/f01d39bd/Chap0101.cs.ifdefed" startline="18" endline="26" pcid="91"></source>
+<source file="/home/farouq/Desktop/NiCad-3.4/testcase/CS/8a/fe1dab6a/Chap0101.cs.ifdefed" startline="12" endline="20" pcid="78"></source>
+</clone>
+
+</clones>

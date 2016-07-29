@@ -1,0 +1,40 @@
+<project>
+<name></name>
+<description></description>
+<prog_language></prog_language>
+<source_elements>
+
+<source file="source file path" startline="fragment start line" endline="fragment endline"><![CDATA[
+function code
+]]></source>
+
+<source file="/home/saeed/code/org/eevolution/process/EnableNativeSequence.java" startline="55" endline="90"><![CDATA[
+protected String doIt () {
+    boolean SYSTEM_NATIVE_SEQUENCE = MSysConfig.getBooleanValue ("SYSTEM_NATIVE_SEQUENCE", false);
+    if (SYSTEM_NATIVE_SEQUENCE) {
+        throw new AdempiereException ("Native Sequence is Actived");
+    }
+    setSystemNativeSequence (true);
+    boolean ok = false;
+    try {
+        createSequence ("AD_Sequence", null);
+        createSequence ("AD_Issue", null);
+        createSequence ("AD_ChangeLog", null);
+        final String whereClause = "TableName NOT IN ('AD_Sequence', 'AD_Issue', 'AD_ChangeLog')";
+        List < MTable > tables = new Query (getCtx (), X_AD_Table.Table_Name, whereClause, get_TrxName ()).setOrderBy ("TableName").list ();
+        for (MTable table : tables) {
+            createSequence (table, get_TrxName ());
+        }
+        ok = true;
+    } finally {
+        if (! ok) {
+            setSystemNativeSequence (false);
+        }
+    }
+    return "@OK@";
+}
+]]></source>
+
+
+</source_elements>
+</project>

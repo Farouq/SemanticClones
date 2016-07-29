@@ -1,0 +1,360 @@
+<project><name></name><description></description><prog_language></prog_language><source_elements>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.vb" startline="11" endline="20"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 8 example 3: Lists and RTF"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iText]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldstr      "Chap0803.rtf"
+  IL_0017:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+  IL_001c:  stloc.1
+  IL_001d:  ldloc.0
+  IL_001e:  ldloc.1
+  IL_001f:  call       class [iText]com.lowagie.text.rtf.RtfWriter [iText]com.lowagie.text.rtf.RtfWriter::getInstance(class [iText]com.lowagie.text.Document,
+                                                                                                                      class [vjslib]java.io.OutputStream)
+  IL_0024:  pop
+  IL_0025:  ldloc.0
+  IL_0026:  callvirt   instance void [iText]com.lowagie.text.Document::open()
+  IL_002b:  nop
+  IL_002c:  ldloc.0
+  IL_002d:  ldstr      "Hello World"
+  IL_0032:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0037:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_003c:  pop
+  IL_003d:  ldloc.0
+  IL_003e:  ldstr      "some books I really like:"
+  IL_0043:  newobj     instance void [iText]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0048:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_004d:  pop
+  IL_004e:  ldc.i4.1
+  IL_004f:  ldc.r4     15.
+  IL_0054:  newobj     instance void [iText]com.lowagie.text.List::.ctor(bool,
+                                                                         float32)
+  IL_0059:  stloc.2
+  IL_005a:  ldstr      "When Harlie was one"
+  IL_005f:  ldc.i4.2
+  IL_0060:  ldc.r4     12.
+  IL_0065:  newobj     instance void [iText]com.lowagie.text.Font::.ctor(int32,
+                                                                         float32)
+  IL_006a:  newobj     instance void [iText]com.lowagie.text.ListItem::.ctor(string,
+                                                                             class [iText]com.lowagie.text.Font)
+  IL_006f:  stloc.3
+  IL_0070:  ldloc.3
+  IL_0071:  ldstr      " by David Gerrold"
+  IL_0076:  ldc.i4.2
+  IL_0077:  ldc.r4     11.
+  IL_007c:  ldc.i4.2
+  IL_007d:  newobj     instance void [iText]com.lowagie.text.Font::.ctor(int32,
+                                                                         float32,
+                                                                         int32)
+  IL_0082:  newobj     instance void [iText]com.lowagie.text.Chunk::.ctor(string,
+                                                                          class [iText]com.lowagie.text.Font)
+  IL_0087:  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  IL_008c:  pop
+  IL_008d:  ldloc.2
+  IL_008e:  ldloc.3
+  IL_008f:  callvirt   instance bool [iText]com.lowagie.text.List::'add'(object)
+  IL_0094:  pop
+  IL_0095:  ldstr      "The World according to Garp"
+  IL_009a:  ldc.i4.2
+  IL_009b:  ldc.r4     12.
+  IL_00a0:  newobj     instance void [iText]com.lowagie.text.Font::.ctor(int32,
+                                                                         float32)
+  IL_00a5:  newobj     instance void [iText]com.lowagie.text.ListItem::.ctor(string,
+                                                                             class [iText]com.lowagie.text.Font)
+  IL_00aa:  stloc.3
+  IL_00ab:  ldloc.3
+  IL_00ac:  ldstr      " by John Irving"
+  IL_00b1:  ldc.i4.2
+  IL_00b2:  ldc.r4     11.
+  IL_00b7:  ldc.i4.2
+  IL_00b8:  newobj     instance void [iText]com.lowagie.text.Font::.ctor(int32,
+                                                                         float32,
+                                                                         int32)
+  IL_00bd:  newobj     instance void [iText]com.lowagie.text.Chunk::.ctor(string,
+                                                                          class [iText]com.lowagie.text.Font)
+  IL_00c2:  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  IL_00c7:  pop
+  IL_00c8:  ldloc.2
+  IL_00c9:  ldloc.3
+  IL_00ca:  callvirt   instance bool [iText]com.lowagie.text.List::'add'(object)
+  IL_00cf:  pop
+  IL_00d0:  ldstr      "Decamerone"
+  IL_00d5:  ldc.i4.2
+  IL_00d6:  ldc.r4     12.
+  IL_00db:  newobj     instance void [iText]com.lowagie.text.Font::.ctor(int32,
+                                                                         float32)
+  IL_00e0:  newobj     instance void [iText]com.lowagie.text.ListItem::.ctor(string,
+                                                                             class [iText]com.lowagie.text.Font)
+  IL_00e5:  stloc.3
+  IL_00e6:  ldloc.3
+  IL_00e7:  ldstr      " by Giovanni Boccaccio"
+  IL_00ec:  ldc.i4.2
+  IL_00ed:  ldc.r4     11.
+  IL_00f2:  ldc.i4.2
+  IL_00f3:  newobj     instance void [iText]com.lowagie.text.Font::.ctor(int32,
+                                                                         float32,
+                                                                         int32)
+  IL_00f8:  newobj     instance void [iText]com.lowagie.text.Chunk::.ctor(string,
+                                                                          class [iText]com.lowagie.text.Font)
+  IL_00fd:  callvirt   instance bool [iText]com.lowagie.text.Paragraph::'add'(object)
+  IL_0102:  pop
+  IL_0103:  ldloc.2
+  IL_0104:  ldloc.3
+  IL_0105:  callvirt   instance bool [iText]com.lowagie.text.List::'add'(object)
+  IL_010a:  pop
+  IL_010b:  ldloc.0
+  IL_010c:  ldloc.2
+  IL_010d:  callvirt   instance bool [iText]com.lowagie.text.Document::'add'(class [iText]com.lowagie.text.Element)
+  IL_0112:  pop
+  IL_0113:  ldloc.0
+  IL_0114:  callvirt   instance void [iText]com.lowagie.text.Document::close()
+  IL_0119:  nop
+  IL_011a:  nop
+  IL_011b:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.cs" startline="20" endline="50"><![CDATA[
+IL_0000:  nop
+  IL_0001:  ldstr      "Chapter 8 example 3: Lists and RTF"
+  IL_0006:  call       void [mscorlib]System.Console::WriteLine(string)
+  IL_000b:  nop
+  IL_000c:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0011:  stloc.0
+  IL_0012:  ldloc.0
+  IL_0013:  ldstr      "Chap0803.rtf"
+  IL_0018:  ldc.i4.2
+  IL_0019:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode)
+  IL_001e:  call       class [iTextdotNET]com.lowagie.text.rtf.RtfWriter [iTextdotNET]com.lowagie.text.rtf.RtfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                  class [mscorlib_6]System.IO.Stream)
+  IL_0023:  pop
+  IL_0024:  ldloc.0
+  IL_0025:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+  IL_002a:  nop
+  IL_002b:  ldloc.0
+  IL_002c:  ldstr      "some books I really like:"
+  IL_0031:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+  IL_0036:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_003b:  pop
+  IL_003c:  ldc.i4.1
+  IL_003d:  ldc.r4     15.
+  IL_0042:  newobj     instance void [iTextdotNET]com.lowagie.text.List::.ctor(bool,
+                                                                               float32)
+  IL_0047:  stloc.2
+  IL_0048:  ldstr      "When Harlie was one"
+  IL_004d:  ldc.i4.2
+  IL_004e:  ldc.r4     12.
+  IL_0053:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                               float32)
+  IL_0058:  newobj     instance void [iTextdotNET]com.lowagie.text.ListItem::.ctor(string,
+                                                                                   class [iTextdotNET]com.lowagie.text.Font)
+  IL_005d:  stloc.1
+  IL_005e:  ldloc.1
+  IL_005f:  ldstr      " by David Gerrold"
+  IL_0064:  ldc.i4.2
+  IL_0065:  ldc.r4     11.
+  IL_006a:  ldc.i4.2
+  IL_006b:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                               float32,
+                                                                               int32)
+  IL_0070:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                class [iTextdotNET]com.lowagie.text.Font)
+  IL_0075:  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  IL_007a:  pop
+  IL_007b:  ldloc.2
+  IL_007c:  ldloc.1
+  IL_007d:  callvirt   instance bool [iTextdotNET]com.lowagie.text.List::'add'(object)
+  IL_0082:  pop
+  IL_0083:  ldstr      "The World according to Garp"
+  IL_0088:  ldc.i4.2
+  IL_0089:  ldc.r4     12.
+  IL_008e:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                               float32)
+  IL_0093:  newobj     instance void [iTextdotNET]com.lowagie.text.ListItem::.ctor(string,
+                                                                                   class [iTextdotNET]com.lowagie.text.Font)
+  IL_0098:  stloc.1
+  IL_0099:  ldloc.1
+  IL_009a:  ldstr      " by John Irving"
+  IL_009f:  ldc.i4.2
+  IL_00a0:  ldc.r4     11.
+  IL_00a5:  ldc.i4.2
+  IL_00a6:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                               float32,
+                                                                               int32)
+  IL_00ab:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                class [iTextdotNET]com.lowagie.text.Font)
+  IL_00b0:  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  IL_00b5:  pop
+  IL_00b6:  ldloc.2
+  IL_00b7:  ldloc.1
+  IL_00b8:  callvirt   instance bool [iTextdotNET]com.lowagie.text.List::'add'(object)
+  IL_00bd:  pop
+  IL_00be:  ldstr      "Decamerone"
+  IL_00c3:  ldc.i4.2
+  IL_00c4:  ldc.r4     12.
+  IL_00c9:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                               float32)
+  IL_00ce:  newobj     instance void [iTextdotNET]com.lowagie.text.ListItem::.ctor(string,
+                                                                                   class [iTextdotNET]com.lowagie.text.Font)
+  IL_00d3:  stloc.1
+  IL_00d4:  ldloc.1
+  IL_00d5:  ldstr      " by Giovanni Boccaccio"
+  IL_00da:  ldc.i4.2
+  IL_00db:  ldc.r4     11.
+  IL_00e0:  ldc.i4.2
+  IL_00e1:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                               float32,
+                                                                               int32)
+  IL_00e6:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                class [iTextdotNET]com.lowagie.text.Font)
+  IL_00eb:  callvirt   instance bool [Gnu.Classpath.Core]jp.ujihara.java.util.AbstractCollection::'add'(object)
+  IL_00f0:  pop
+  IL_00f1:  ldloc.2
+  IL_00f2:  ldloc.1
+  IL_00f3:  callvirt   instance bool [iTextdotNET]com.lowagie.text.List::'add'(object)
+  IL_00f8:  pop
+  IL_00f9:  ldloc.0
+  IL_00fa:  ldloc.2
+  IL_00fb:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+  IL_0100:  pop
+  IL_0101:  ldloc.0
+  IL_0102:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_0107:  nop
+  IL_0108:  ret
+
+]]></source>
+<source file="C:\Users\faa634\Documents\Visual Studio 2010\Projects\ConsoleApplication1\ConsoleApplication1\Program.js" startline="15" endline="24"><![CDATA[
+IL_0000:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+  IL_0005:  ldstr      "Chapter 8 example 3: Lists and RTF"
+  IL_000a:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+  IL_000f:  newobj     instance void [iTextdotNET]com.lowagie.text.Document::.ctor()
+  IL_0014:  stloc.0
+  .try
+  {
+    IL_0015:  ldloc.0
+    IL_0016:  ldstr      "Chap0803.rtf"
+    IL_001b:  newobj     instance void [vjslib]java.io.FileOutputStream::.ctor(string)
+    IL_0020:  call       class [iTextdotNET]com.lowagie.text.rtf.RtfWriter [iTextdotNET]com.lowagie.text.rtf.RtfWriter::getInstance(class [iTextdotNET]com.lowagie.text.Document,
+                                                                                                                                    class [vjslib_7]java.io.OutputStream)
+    IL_0025:  pop
+    IL_0026:  ldloc.0
+    IL_0027:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::open()
+    IL_002c:  ldloc.0
+    IL_002d:  ldstr      "some books I really like:"
+    IL_0032:  newobj     instance void [iTextdotNET]com.lowagie.text.Paragraph::.ctor(string)
+    IL_0037:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_003c:  pop
+    IL_003d:  ldc.i4.1
+    IL_003e:  ldc.r4     15.
+    IL_0043:  newobj     instance void [iTextdotNET]com.lowagie.text.List::.ctor(bool,
+                                                                                 float32)
+    IL_0048:  stloc.2
+    IL_0049:  ldstr      "When Harlie was one"
+    IL_004e:  ldc.i4.2
+    IL_004f:  ldc.r4     12.
+    IL_0054:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                                 float32)
+    IL_0059:  newobj     instance void [iTextdotNET]com.lowagie.text.ListItem::.ctor(string,
+                                                                                     class [iTextdotNET]com.lowagie.text.Font)
+    IL_005e:  stloc.1
+    IL_005f:  ldloc.1
+    IL_0060:  ldstr      " by David Gerrold"
+    IL_0065:  ldc.i4.2
+    IL_0066:  ldc.r4     11.
+    IL_006b:  ldc.i4.2
+    IL_006c:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                                 float32,
+                                                                                 int32)
+    IL_0071:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                  class [iTextdotNET]com.lowagie.text.Font)
+    IL_0076:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+    IL_007b:  pop
+    IL_007c:  ldloc.2
+    IL_007d:  ldloc.1
+    IL_007e:  callvirt   instance bool [iTextdotNET]com.lowagie.text.List::'add'(object)
+    IL_0083:  pop
+    IL_0084:  ldstr      "The World according to Garp"
+    IL_0089:  ldc.i4.2
+    IL_008a:  ldc.r4     12.
+    IL_008f:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                                 float32)
+    IL_0094:  newobj     instance void [iTextdotNET]com.lowagie.text.ListItem::.ctor(string,
+                                                                                     class [iTextdotNET]com.lowagie.text.Font)
+    IL_0099:  stloc.1
+    IL_009a:  ldloc.1
+    IL_009b:  ldstr      " by John Irving"
+    IL_00a0:  ldc.i4.2
+    IL_00a1:  ldc.r4     11.
+    IL_00a6:  ldc.i4.2
+    IL_00a7:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                                 float32,
+                                                                                 int32)
+    IL_00ac:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                  class [iTextdotNET]com.lowagie.text.Font)
+    IL_00b1:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+    IL_00b6:  pop
+    IL_00b7:  ldloc.2
+    IL_00b8:  ldloc.1
+    IL_00b9:  callvirt   instance bool [iTextdotNET]com.lowagie.text.List::'add'(object)
+    IL_00be:  pop
+    IL_00bf:  ldstr      "Decamerone"
+    IL_00c4:  ldc.i4.2
+    IL_00c5:  ldc.r4     12.
+    IL_00ca:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                                 float32)
+    IL_00cf:  newobj     instance void [iTextdotNET]com.lowagie.text.ListItem::.ctor(string,
+                                                                                     class [iTextdotNET]com.lowagie.text.Font)
+    IL_00d4:  stloc.1
+    IL_00d5:  ldloc.1
+    IL_00d6:  ldstr      " by Giovanni Boccaccio"
+    IL_00db:  ldc.i4.2
+    IL_00dc:  ldc.r4     11.
+    IL_00e1:  ldc.i4.2
+    IL_00e2:  newobj     instance void [iTextdotNET]com.lowagie.text.Font::.ctor(int32,
+                                                                                 float32,
+                                                                                 int32)
+    IL_00e7:  newobj     instance void [iTextdotNET]com.lowagie.text.Chunk::.ctor(string,
+                                                                                  class [iTextdotNET]com.lowagie.text.Font)
+    IL_00ec:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Paragraph::'add'(object)
+    IL_00f1:  pop
+    IL_00f2:  ldloc.2
+    IL_00f3:  ldloc.1
+    IL_00f4:  callvirt   instance bool [iTextdotNET]com.lowagie.text.List::'add'(object)
+    IL_00f9:  pop
+    IL_00fa:  ldloc.0
+    IL_00fb:  ldloc.2
+    IL_00fc:  callvirt   instance bool [iTextdotNET]com.lowagie.text.Document::'add'(class [iTextdotNET]com.lowagie.text.Element)
+    IL_0101:  pop
+    IL_0102:  leave.s    IL_0132
+  }  // end .try
+  catch [iTextdotNET]com.lowagie.text.DocumentException 
+  {
+    IL_0104:  dup
+    IL_0105:  stloc.s    V_5
+    IL_0107:  stloc.3
+    IL_0108:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_010d:  ldloc.3
+    IL_010e:  callvirt   instance string [iTextdotNET]com.lowagie.text.DocumentException::getMessage()
+    IL_0113:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_0118:  leave.s    IL_0132
+  }  // end handler
+  catch [vjslib]java.io.IOException 
+  {
+    IL_011a:  dup
+    IL_011b:  stloc.s    V_6
+    IL_011d:  stloc.s    ioe
+    IL_011f:  ldsfld     class [vjslib]java.io.PrintStream [vjslib]java.lang.System::'out'
+    IL_0124:  ldloc.s    ioe
+    IL_0126:  callvirt   instance string [vjslib]java.lang.Throwable::getMessage()
+    IL_012b:  callvirt   instance void [vjslib]java.io.PrintStream::println(string)
+    IL_0130:  leave.s    IL_0132
+  }  // end handler
+  IL_0132:  ldloc.0
+  IL_0133:  callvirt   instance void [iTextdotNET]com.lowagie.text.Document::close()
+  IL_0138:  br.s       IL_013a
+  IL_013a:  ret
+
+]]></source>
+</source_elements></project>

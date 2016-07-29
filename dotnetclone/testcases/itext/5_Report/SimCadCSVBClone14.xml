@@ -1,0 +1,41 @@
+<clones  >
+<clone_pair groupid="511" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1201.cs" startline="146" endline="162">
+<![CDATA[
+ 
+ 	// we override the onOpenDocument method
+ 	public override void onOpenDocument(PdfWriter writer, Document document) 
+ 	{
+ 		try 
+ 		{
+ 			bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+ 			cb = writer.getDirectContent();
+ 			template = cb.createTemplate(50, 50);
+ 		}
+ 		catch(DocumentException de) 
+ 		{
+ 		}
+ 		catch(IOException ioe) 
+ 		{
+ 		}
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="32" endline="43">
+<![CDATA[
+ 
+     Private Shared Sub ExecuteExample(ByVal Typ As Type, ByVal Name As String, ByVal Arguments As Object())
+         Try
+             Call Typ.InvokeMember(Name, BindingFlags.InvokeMethod, Nothing, Nothing, Arguments)
+         Catch ee As Exception
+             If StopOnError Then
+                 Throw ee
+             Else
+                 Console.WriteLine(ee.Message)
+             End If
+ 		end try
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>

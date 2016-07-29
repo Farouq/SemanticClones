@@ -1,0 +1,1851 @@
+<clones  >
+<clone_pair groupid="56" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 1
+ 
+         ' step 1
+         Dim document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileStream("Chap0101.pdf", FileMode.Create))
+ 
+         ' step 3
+         document.open()
+ 
+         ' step 4
+         document.add(New Paragraph("Hello World"))
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0101.cs" startline="24" endline="43">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 1 example 1
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0101.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+ 
+ 		// step 4
+ 		document.add(new Paragraph("Hello World"));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="57" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0101.vb" startline="25" endline="45">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 1
+ 
+         ' step 1
+         Dim document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileStream("Chap0101.pdf", FileMode.Create))
+ 
+         ' step 3
+         document.open()
+ 
+         ' step 4
+         document.add(New Paragraph("Hello World"))
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0801.cs" startline="25" endline="45">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 8 example 1
+ 
+ 		// step 1
+ 		Document document = new Document();
+ 
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 
+ 		RtfWriter.getInstance(document, new FileStream("Chap0801.rtf", FileMode.Create));
+         
+ 		// step 3
+ 		document.open();
+         
+ 		// step 4
+ 		document.add(new Paragraph("Hello World"));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="65" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 4
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         PdfWriter.getInstance(Document, New FileOutputStream("Chap0204.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         Document.add(New Phrase(16, vbCrLf & vbCrLf & vbCrLf))
+         Document.add(New Phrase(-16, "Hello, this is a very long phrase to show you the somewhat odd effect of a negative leading. You can write from bottom to top. This is not fully supported. It's something between a feature and a bug."))
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0204.cs" startline="24" endline="44">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 2 example 4
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0204.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+ 		document.add(new Phrase(16, "\n\n\n"));
+ 		document.add(new Phrase(-16, "Hello, this is a very long phrase to show you the somewhat odd effect of a negative leading. You can write from bottom to top. This is not fully supported. It's something between a feature and a bug."));
+         
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="66" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0204.vb" startline="57" endline="77">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 2 example 4
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         PdfWriter.getInstance(Document, New FileOutputStream("Chap0204.pdf"))
+ 
+         ' step 3
+         Document.open()
+ 
+         ' step 4
+         Document.add(New Phrase(16, vbCrLf & vbCrLf & vbCrLf))
+         Document.add(New Phrase(-16, "Hello, this is a very long phrase to show you the somewhat odd effect of a negative leading. You can write from bottom to top. This is not fully supported. It's something between a feature and a bug."))
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap1109.cs" startline="24" endline="44">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 11 example 9
+     
+ 		// step 1
+ 		Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap1109.pdf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		// we add some content
+ 		document.add(new Paragraph("Outline action example"));
+ 		// we add the outline
+ 		PdfContentByte cb = writer.getDirectContent();
+ 		new PdfOutline(cb.getRootOutline(), new PdfAction(@"http
+ 		new PdfOutline(cb.getRootOutline(), new PdfAction(@"http
+ 		new PdfOutline(cb.getRootOutline(), new PdfAction(@"Chap1102b.pdf", 3), "Go to page 3 of Chap1102b.pdf");
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="79" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\MainModule.cs" startline="112" endline="121">
+<![CDATA[
+ 	
+ 	private static void copyFiles(string[] filenames, String destDir) 
+ 	{
+ 		foreach (string filename in filenames)
+ 		{
+ 			System.IO.File.Copy(filename, 
+ 				Path.Combine(destDir, 
+ 				Path.GetFileName(filename)), true);
+ 		}
+ 		foreach (string filename in filenames)
+ 		{
+ 			System.IO.File.Copy(filename, 
+ 				Path.Combine(destDir, 
+ 				Path.GetFileName(filename)), true);
+ 		}
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="82" endline="92">
+<![CDATA[
+ 
+     Public Const InputFilesDirectory As String = "Inputs"
+     Private Shared exeExts As ArrayList
+ 
+     Private Shared Sub deleteNonExecutables(ByVal dir As String)
+         For Each f As String In Directory.GetFiles(dir)
+             If Not exeExts.Contains(Path.GetExtension(f)) Then
+                 File.Delete(f)
+             End If
+         Next
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="180" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Signature.cs" startline="9" endline="20">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Add signature place.");
+ 
+ 		Document doc = new Document();
+ 		PdfWriter writer = PdfWriter.getInstance(doc, new FileStream("signature.pdf", FileMode.Create));
+ 
+ 		PdfAcroForm acroForm = writer.getAcroForm();
+ 		doc.open();
+ 		doc.add(new Paragraph("Hello World"));
+ 		acroForm.addSignature("mysig", 73, 705, 149, 759);
+ 		doc.close();
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0803.vb" startline="45" endline="69">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 3
+ 
+         Dim document As New Document()
+         Dim FileOutputStream As FileOutputStream
+         FileOutputStream = New FileOutputStream("Chap0803.rtf")
+         Call RtfWriter.getInstance(document, FileOutputStream)
+         document.open()
+         document.add(New Paragraph("Hello World"))
+         document.add(New Paragraph("some books I really like
+         Dim listItem As ListItem
+         Dim list As List = New List(True, 15)
+         listItem = New ListItem("When Harlie was one", New Font(Font.TIMES_ROMAN, 12))
+         listItem.add(New Chunk(" by David Gerrold", New Font(Font.TIMES_ROMAN, 11, Font.ITALIC)))
+         list.add(listItem)
+         listItem = New ListItem("The World according to Garp", New Font(Font.TIMES_ROMAN, 12))
+         listItem.add(New Chunk(" by John Irving", New Font(Font.TIMES_ROMAN, 11, Font.ITALIC)))
+         list.add(listItem)
+         listItem = New ListItem("Decamerone", New Font(Font.TIMES_ROMAN, 12))
+         listItem.add(New Chunk(" by Giovanni Boccaccio", New Font(Font.TIMES_ROMAN, 11, Font.ITALIC)))
+         list.add(listItem)
+         document.add(list)
+         ' step 5
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="197" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0109.vb" startline="59" endline="68">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 9
+ 
+         Dim Document As New Document(PageSize.A4, 50, 50, 50, 50)
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0109.pdf"))
+         Writer.setEncryption(PdfWriter.STRENGTH40BITS, Nothing, Nothing, PdfWriter.AllowCopy)
+         Document.open()
+         Document.add(New Paragraph("This document is Top Secret!"))
+         Document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0109.cs" startline="24" endline="33">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 1 example 9
+     
+ 		Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap0109.pdf", FileMode.Create));
+ 		writer.setEncryption(PdfWriter.STRENGTH40BITS, null, null, PdfWriter.AllowCopy);
+ 		document.open();
+ 		document.add(new Paragraph("This document is Top Secret!"));
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="223" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0104.vb" startline="59" endline="85">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 4
+ 
+         ' step 1
+         Dim document As New Document(PageSize.A5, 36, 72, 108, 180)
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileOutputStream("Chap0104.pdf"))
+ 
+         ' step 3
+         document.open()
+ 
+         ' step 4
+         Dim paragraph As New Paragraph()
+         paragraph.setAlignment(Element.ALIGN_JUSTIFIED)
+         Dim i As Integer
+         For i = 0 To 20
+             paragraph.add("Hello World, Hello Sun, Hello Moon, Hello Stars, Hello Sea, Hello Land, Hello People. ")
+         Next
+         document.add(paragraph)
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0104.cs" startline="24" endline="50">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 1 example 4
+         
+ 		// step 1
+ 		Document document = new Document(PageSize.A5, 36, 72, 108, 180);
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+             
+ 		PdfWriter.getInstance(document, new FileStream("Chap0104.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		document.open();
+             
+ 		// step 4
+ 		Paragraph paragraph = new Paragraph();
+ 		paragraph.setAlignment(ElementConst.ALIGN_JUSTIFIED);
+ 		for (int i = 0; i < 20; i++) 
+ 		{
+ 			paragraph.add("Hello World, Hello Sun, Hello Moon, Hello Stars, Hello Sea, Hello Land, Hello People. ");
+ 		}
+ 		for (int i = 0; i < 20; i++) 
+ 		{
+ 			paragraph.add("Hello World, Hello Sun, Hello Moon, Hello Stars, Hello Sea, Hello Land, Hello People. ");
+ 		}
+ 		document.add(paragraph);
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="227" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0106.vb" startline="23" endline="51">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 6
+ 
+         ' step 1
+         Dim document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+ 
+         PdfWriter.getInstance(document, New FileStream("Chap0106.pdf", FileMode.Create))
+         HtmlWriter.getInstance(document, Console.OpenStandardOutput())
+ 
+         ' step 3
+ 
+         document.addTitle("Hello World example")
+         document.addSubject("This example explains step 3 in Chapter 1")
+         document.addKeywords("Metadata, iText, step 3, tutorial")
+         document.addCreator("My program using iText")
+         document.addAuthor("Bruno Lowagie")
+         document.addHeader("Expires", "0")
+         document.open()
+ 
+         ' step 4
+         document.add(New Paragraph("Hello World"))
+ 
+         ' step 5
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0106.cs" startline="25" endline="51">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 1 example 6
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0106.pdf", FileMode.Create));
+ 		HtmlWriter.getInstance(document, Console.OpenStandardOutput());
+          
+ 		// step 3
+ 		document.addTitle("Hello World example");
+ 		document.addSubject("This example explains step 3 in Chapter 1");
+ 		document.addKeywords("Metadata, iText, step 3, tutorial");
+ 		document.addCreator("My program using iText");
+ 		document.addAuthor("Bruno Lowagie");
+ 		document.addHeader("Expires", "0");
+ 		document.open();
+             
+ 		// step 4
+ 		document.add(new Paragraph("Hello World"));
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="261" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 4
+ 
+         Dim document As New Document()
+         Try
+             Dim FileOutputStream As FileOutputStream
+             FileOutputStream = New FileOutputStream("Chap0804.rtf")
+             RtfWriter.getInstance(document, FileOutputStream)
+             document.open()
+             Dim table As Table = New Table(3)
+             table.setBorderWidth(1)
+             table.setPadding(5)
+             table.setSpacing(5)
+             Dim cell As Cell = New Cell("header")
+             cell.setHeader(True)
+             cell.setColspan(3)
+             table.addCell(cell)
+             cell = New Cell("example cell with colspan 1 and rowspan 2")
+             cell.setRowspan(2)
+             table.addCell(cell)
+             table.addCell("1.1")
+             table.addCell("2.1")
+             table.addCell("1.2")
+             table.addCell("2.2")
+             table.addCell("cell test1")
+             cell = New Cell("big cell")
+             cell.setRowspan(2)
+             cell.setColspan(2)
+             table.addCell(cell)
+             table.addCell("cell test2")
+             document.add(table)
+         Catch ee As Exception
+             Console.WriteLine(ee.ToString())
+         End Try
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0804.cs" startline="25" endline="63">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 8 example 4
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		RtfWriter.getInstance(document, new FileStream("Chap0804.rtf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Table table = new Table(3);
+ 		table.setBorderWidth(1);
+ 		table.setBorderColor(GDI.Color.Blue);
+ 		table.setPadding(5);
+ 		table.setSpacing(5);
+ 		Cell cell = new Cell("header");
+ 		cell.setHeader(true);
+ 		cell.setColspan(3);
+ 		table.addCell(cell);
+ 		cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 		cell.setRowspan(2);
+ 		cell.setBorderColor(GDI.Color.Red);
+ 		table.addCell(cell);
+ 		table.addCell("1.1");
+ 		table.addCell("2.1");
+ 		table.addCell("1.2");
+ 		table.addCell("2.2");
+ 		table.addCell("cell test1");
+ 		cell = new Cell("big cell");
+ 		cell.setRowspan(2);
+ 		cell.setColspan(2);
+ 		cell.setBackgroundColor(GDI.Color.LightGray);
+ 		table.addCell(cell);
+ 		table.addCell("cell test2");
+ 		document.add(table);
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="262" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 4
+ 
+         Dim document As New Document()
+         Try
+             Dim FileOutputStream As FileOutputStream
+             FileOutputStream = New FileOutputStream("Chap0804.rtf")
+             RtfWriter.getInstance(document, FileOutputStream)
+             document.open()
+             Dim table As Table = New Table(3)
+             table.setBorderWidth(1)
+             table.setPadding(5)
+             table.setSpacing(5)
+             Dim cell As Cell = New Cell("header")
+             cell.setHeader(True)
+             cell.setColspan(3)
+             table.addCell(cell)
+             cell = New Cell("example cell with colspan 1 and rowspan 2")
+             cell.setRowspan(2)
+             table.addCell(cell)
+             table.addCell("1.1")
+             table.addCell("2.1")
+             table.addCell("1.2")
+             table.addCell("2.2")
+             table.addCell("cell test1")
+             cell = New Cell("big cell")
+             cell.setRowspan(2)
+             cell.setColspan(2)
+             table.addCell(cell)
+             table.addCell("cell test2")
+             document.add(table)
+         Catch ee As Exception
+             Console.WriteLine(ee.ToString())
+         End Try
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0505.cs" startline="25" endline="63">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 5 example 5
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0505.pdf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Table table = new Table(3);
+ 		table.setBorderWidth(1);
+ 		table.setBorderColor(GDI.Color.Blue);
+ 		table.setPadding(5);
+ 		table.setSpacing(5);
+ 		Cell cell = new Cell("header");
+ 		cell.setHeader(true);
+ 		cell.setColspan(3);
+ 		table.addCell(cell);
+ 		cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 		cell.setRowspan(2);
+ 		cell.setBorderColor(GDI.Color.Red);
+ 		table.addCell(cell);
+ 		table.addCell("1.1");
+ 		table.addCell("2.1");
+ 		table.addCell("1.2");
+ 		table.addCell("2.2");
+ 		table.addCell("cell test1");
+ 		cell = new Cell("big cell");
+ 		cell.setRowspan(2);
+ 		cell.setColspan(2);
+ 		cell.setBackgroundColor(GDI.Color.LightGray);
+ 		table.addCell(cell);
+ 		table.addCell("cell test2");
+ 		document.add(table);
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="263" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 4
+ 
+         Dim document As New Document()
+         Try
+             Dim FileOutputStream As FileOutputStream
+             FileOutputStream = New FileOutputStream("Chap0804.rtf")
+             RtfWriter.getInstance(document, FileOutputStream)
+             document.open()
+             Dim table As Table = New Table(3)
+             table.setBorderWidth(1)
+             table.setPadding(5)
+             table.setSpacing(5)
+             Dim cell As Cell = New Cell("header")
+             cell.setHeader(True)
+             cell.setColspan(3)
+             table.addCell(cell)
+             cell = New Cell("example cell with colspan 1 and rowspan 2")
+             cell.setRowspan(2)
+             table.addCell(cell)
+             table.addCell("1.1")
+             table.addCell("2.1")
+             table.addCell("1.2")
+             table.addCell("2.2")
+             table.addCell("cell test1")
+             cell = New Cell("big cell")
+             cell.setRowspan(2)
+             cell.setColspan(2)
+             table.addCell(cell)
+             table.addCell("cell test2")
+             document.add(table)
+         Catch ee As Exception
+             Console.WriteLine(ee.ToString())
+         End Try
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0506.cs" startline="24" endline="64">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 5 example 6
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0506.pdf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Table table = new Table(3);
+ 		table.setBorderWidth(1);
+ 		table.setBorderColor(GDI.Color.Blue);
+ 		table.setPadding(3);
+ 		table.setSpacing(1);
+ 		Cell cell = new Cell("header");
+ 		cell.setHeader(true);
+ 		cell.setColspan(3);
+ 		table.addCell(cell);
+ 		cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 		cell.setRowspan(2);
+ 		cell.setBorderColor(GDI.Color.Red);
+ 		table.addCell(cell);
+ 		table.addCell("1.1");
+ 		table.addCell("2.1");
+ 		table.addCell("1.2");
+ 		table.addCell("2.2");
+ 		table.addCell("cell test1");
+ 		cell = new Cell("big cell");
+ 		cell.setRowspan(2);
+ 		cell.setColspan(2);
+ 		cell.setHorizontalAlignment(ElementConst.ALIGN_CENTER);
+ 		cell.setVerticalAlignment(ElementConst.ALIGN_MIDDLE);
+ 		cell.setBackgroundColor(GDI.Color.LightGray);
+ 		table.addCell(cell);
+ 		table.addCell("cell test2");
+ 		document.add(table);
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="264" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 4
+ 
+         Dim document As New Document()
+         Try
+             Dim FileOutputStream As FileOutputStream
+             FileOutputStream = New FileOutputStream("Chap0804.rtf")
+             RtfWriter.getInstance(document, FileOutputStream)
+             document.open()
+             Dim table As Table = New Table(3)
+             table.setBorderWidth(1)
+             table.setPadding(5)
+             table.setSpacing(5)
+             Dim cell As Cell = New Cell("header")
+             cell.setHeader(True)
+             cell.setColspan(3)
+             table.addCell(cell)
+             cell = New Cell("example cell with colspan 1 and rowspan 2")
+             cell.setRowspan(2)
+             table.addCell(cell)
+             table.addCell("1.1")
+             table.addCell("2.1")
+             table.addCell("1.2")
+             table.addCell("2.2")
+             table.addCell("cell test1")
+             cell = New Cell("big cell")
+             cell.setRowspan(2)
+             cell.setColspan(2)
+             table.addCell(cell)
+             table.addCell("cell test2")
+             document.add(table)
+         Catch ee As Exception
+             Console.WriteLine(ee.ToString())
+         End Try
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0511.cs" startline="26" endline="69">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 5 example 11
+ 		// step 1
+ 		Document document = new Document();Document.compress=false;
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0511.pdf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Table table = new Table(3);
+ 		table.setTableFitsPage(true);
+ 		table.setBorderWidth(1);
+ 		table.setBorderColor(GDI.Color.Blue);
+ 		table.setPadding(5);
+ 		table.setSpacing(5);
+ 		Cell cell = new Cell("header");
+ 		cell.setHeader(true);
+ 		cell.setColspan(3);
+ 		table.addCell(cell);
+ 		cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 		cell.setRowspan(2);
+ 		cell.setBorderColor(GDI.Color.Red);
+ 		table.addCell(cell);
+ 		table.addCell("1.1");
+ 		table.addCell("2.1");
+ 		table.addCell("1.2");
+ 		table.addCell("2.2");
+ 		table.addCell("cell test1");
+ 		cell = new Cell("big cell");
+ 		cell.setRowspan(2);
+ 		cell.setColspan(2);
+ 		cell.setBackgroundColor(GDI.Color.LightGray);
+ 		table.addCell(cell);
+ 		table.addCell("cell test2");
+ 		document.add(new Paragraph("repeating the same table 10 times
+ 		for (int i = 0; i < 10; i++) 
+ 		{
+ 			document.add(table);
+ 		}
+ 		for (int i = 0; i < 10; i++) 
+ 		{
+ 			document.add(table);
+ 		}
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="265" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 4
+ 
+         Dim document As New Document()
+         Try
+             Dim FileOutputStream As FileOutputStream
+             FileOutputStream = New FileOutputStream("Chap0804.rtf")
+             RtfWriter.getInstance(document, FileOutputStream)
+             document.open()
+             Dim table As Table = New Table(3)
+             table.setBorderWidth(1)
+             table.setPadding(5)
+             table.setSpacing(5)
+             Dim cell As Cell = New Cell("header")
+             cell.setHeader(True)
+             cell.setColspan(3)
+             table.addCell(cell)
+             cell = New Cell("example cell with colspan 1 and rowspan 2")
+             cell.setRowspan(2)
+             table.addCell(cell)
+             table.addCell("1.1")
+             table.addCell("2.1")
+             table.addCell("1.2")
+             table.addCell("2.2")
+             table.addCell("cell test1")
+             cell = New Cell("big cell")
+             cell.setRowspan(2)
+             cell.setColspan(2)
+             table.addCell(cell)
+             table.addCell("cell test2")
+             document.add(table)
+         Catch ee As Exception
+             Console.WriteLine(ee.ToString())
+         End Try
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0507.cs" startline="25" endline="68">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 5 example 7
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0507.pdf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Table table = new Table(3);
+ 		table.setBorderWidth(1);
+ 		table.setBorderColor(GDI.Color.Blue);
+ 		table.setBorder(Rectangle.TOP | Rectangle.BOTTOM);
+ 		table.setPadding(5);
+ 		table.setSpacing(5);
+ 		Cell cell = new Cell("header");
+ 		cell.setHeader(true);
+ 		cell.setBorderWidth(3);
+ 		cell.setBorder(Rectangle.TOP | Rectangle.BOTTOM);
+ 		cell.setColspan(3);
+ 		table.addCell(cell);
+ 		cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 		cell.setRowspan(2);
+ 		cell.setBorderColor(GDI.Color.Red);
+ 		cell.setBorder(Rectangle.LEFT | Rectangle.BOTTOM);
+ 		table.addCell(cell);
+ 		table.addCell("1.1");
+ 		table.addCell("2.1");
+ 		table.addCell("1.2");
+ 		table.addCell("2.2");
+ 		table.addCell("cell test1");
+ 		cell = new Cell("big cell");
+ 		cell.setRowspan(2);
+ 		cell.setColspan(2);
+ 		cell.setBorder(Rectangle.NO_BORDER);
+ 		cell.setGrayFill(0.9f);
+ 		table.addCell(cell);
+ 		table.addCell("cell test2");
+ 		document.add(table);
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="266" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 4
+ 
+         Dim document As New Document()
+         Try
+             Dim FileOutputStream As FileOutputStream
+             FileOutputStream = New FileOutputStream("Chap0804.rtf")
+             RtfWriter.getInstance(document, FileOutputStream)
+             document.open()
+             Dim table As Table = New Table(3)
+             table.setBorderWidth(1)
+             table.setPadding(5)
+             table.setSpacing(5)
+             Dim cell As Cell = New Cell("header")
+             cell.setHeader(True)
+             cell.setColspan(3)
+             table.addCell(cell)
+             cell = New Cell("example cell with colspan 1 and rowspan 2")
+             cell.setRowspan(2)
+             table.addCell(cell)
+             table.addCell("1.1")
+             table.addCell("2.1")
+             table.addCell("1.2")
+             table.addCell("2.2")
+             table.addCell("cell test1")
+             cell = New Cell("big cell")
+             cell.setRowspan(2)
+             cell.setColspan(2)
+             table.addCell(cell)
+             table.addCell("cell test2")
+             document.add(table)
+         Catch ee As Exception
+             Console.WriteLine(ee.ToString())
+         End Try
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0508.cs" startline="25" endline="67">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 5 example 8
+ 		// step 1
+ 		Document document = new Document();
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter.getInstance(document, new FileStream("Chap0508.pdf", FileMode.Create));
+ 		// step 3
+ 		document.open();
+ 		// step 4
+ 		Table table = new Table(3);
+ 		table.setBorderWidth(1);
+ 		table.setBorderColor(GDI.Color.Blue);
+ 		table.setPadding(5);
+ 		table.setSpacing(5);
+ 		Cell cell = new Cell("header");
+ 		cell.setHeader(true);
+ 		cell.setColspan(3);
+ 		table.addCell(cell);
+ 		cell = new Cell("example cell with colspan 1 and rowspan 2");
+ 		cell.setRowspan(2);
+ 		cell.setBorderColor(GDI.Color.Red);
+ 		table.addCell(cell);
+ 		table.addCell("1.1");
+ 		table.addCell("2.1");
+ 		table.addCell("1.2");
+ 		table.addCell("2.2");
+ 		table.addCell("cell test1");
+ 		cell = new Cell("big cell");
+ 		cell.setRowspan(2);
+ 		cell.setColspan(2);
+ 		cell.setBackgroundColor(GDI.Color.LightGray);
+ 		table.addCell(cell);
+ 		table.addCell("cell test2");
+ 		document.add(new Paragraph("repeating the same table 10 times
+ 		for (int i = 0; i < 10; i++) 
+ 		{
+ 			document.add(table);
+ 		}
+ 		for (int i = 0; i < 10; i++) 
+ 		{
+ 			document.add(table);
+ 		}
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="267" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0804.vb" startline="45" endline="80">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 8 example 4
+ 
+         Dim document As New Document()
+         Try
+             Dim FileOutputStream As FileOutputStream
+             FileOutputStream = New FileOutputStream("Chap0804.rtf")
+             RtfWriter.getInstance(document, FileOutputStream)
+             document.open()
+             Dim table As Table = New Table(3)
+             table.setBorderWidth(1)
+             table.setPadding(5)
+             table.setSpacing(5)
+             Dim cell As Cell = New Cell("header")
+             cell.setHeader(True)
+             cell.setColspan(3)
+             table.addCell(cell)
+             cell = New Cell("example cell with colspan 1 and rowspan 2")
+             cell.setRowspan(2)
+             table.addCell(cell)
+             table.addCell("1.1")
+             table.addCell("2.1")
+             table.addCell("1.2")
+             table.addCell("2.2")
+             table.addCell("cell test1")
+             cell = New Cell("big cell")
+             cell.setRowspan(2)
+             cell.setColspan(2)
+             table.addCell(cell)
+             table.addCell("cell test2")
+             document.add(table)
+         Catch ee As Exception
+             Console.WriteLine(ee.ToString())
+         End Try
+         document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0513.cs" startline="72" endline="120">
+<![CDATA[
+     
+ 	private static Table getTable() 
+ 	{
+ 		Table datatable = new Table(10);
+         
+ 		datatable.setPadding(4);
+ 		datatable.setSpacing(0);
+ 		//datatable.setBorder(Rectangle.NO_BORDER);
+ 		int[] headerwidths = {10, 24, 12, 12, 7, 7, 7, 7, 7, 7};
+ 		datatable.setWidths(headerwidths);
+ 		datatable.setWidth(100);
+         
+ 		// the first cell spans 10 columns
+ 		Cell cell = new Cell(new Phrase("Administration -System Users Report", FontFactory.getFont(FontFactory.HELVETICA, 24, Font.BOLD)));
+ 		cell.setHorizontalAlignment(ElementConst.ALIGN_CENTER);
+ 		cell.setLeading(30);
+ 		cell.setColspan(10);
+ 		cell.setBorder(Rectangle.NO_BORDER);
+ 		cell.setBackgroundColor(GDI.Color.LightGray);
+ 		datatable.addCell(cell);
+         
+ 		// These cells span 2 rows
+ 		datatable.setDefaultCellBorderWidth(2);
+ 		datatable.setDefaultHorizontalAlignment(1);
+ 		datatable.setDefaultRowspan(2);
+ 		datatable.addCell("User Id");
+ 		datatable.addCell(new Phrase("Name", FontFactory.getFont(FontFactory.HELVETICA, 14, Font.BOLD)));
+ 		datatable.addCell("Company");
+ 		datatable.addCell("Department");
+         
+ 		// This cell spans the remaining 6 columns in 1 row
+ 		datatable.setDefaultRowspan(1);
+ 		datatable.setDefaultColspan(6);
+ 		datatable.addCell("Permissions");
+         
+ 		// These cells span 1 row and 1 column
+ 		datatable.setDefaultColspan(1);
+ 		datatable.addCell("Admin");
+ 		datatable.addCell("Data");
+ 		datatable.addCell("Expl");
+ 		datatable.addCell("Prod");
+ 		datatable.addCell("Proj");
+ 		datatable.addCell("Online");
+         
+ 		datatable.setDefaultCellBorderWidth(1);
+ 		datatable.setDefaultRowspan(1);
+         
+ 		return datatable;
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="276" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\MainModule.cs" startline="40" endline="83">
+<![CDATA[
+ 
+ 	private static bool StopOnError = false;
+ 
+ 	[STAThread]
+ 	public static int Main(string[] args)
+ 	{
+ 		string ClassName = null;
+ 
+ 	{	
+ 		string[] aargs = new String[args.Length+1];
+ 		for (int i = 0; i < args.Length; i++)
+ 			aargs[i] = args[i];
+ 		for (int i = 0; i < args.Length; i++)
+ 			aargs[i] = args[i];
+ 		aargs[args.Length] = String.Empty;
+ 		args = aargs;
+ 	}
+ 		for (int i = 0; i < args.Length; i++)
+ 		{
+ 			string opt = args[i];
+ 			if (opt == String.Empty) continue;
+ 
+ 			if (opt[0] == '/') 
+ 			{
+ 				string OPT = opt.ToUpper();
+ 				if (OPT == "/STOP-ON-ERROR") 
+ 					StopOnError = true;
+ 				else
+ 					throw new ArgumentException("ArgumentException", opt);
+ 			}
+ 			else 
+ 			{
+ 				ClassName = opt;
+ 			}
+ 		}
+ 		for (int i = 0; i < args.Length; i++)
+ 		{
+ 			string opt = args[i];
+ 			if (opt == String.Empty) continue;
+ 
+ 			if (opt[0] == '/') 
+ 			{
+ 				string OPT = opt.ToUpper();
+ 				if (OPT == "/STOP-ON-ERROR") 
+ 					StopOnError = true;
+ 				else
+ 					throw new ArgumentException("ArgumentException", opt);
+ 			}
+ 			else 
+ 			{
+ 				ClassName = opt;
+ 			}
+ 		}
+ 		if (ClassName == null) 
+ 			ClassName = "All";
+ 
+ 		if (ClassName == "All")
+ 			ExecuteAllExamples();
+ 		else
+ 		{
+ 			ExecuteExample(ClassName);
+ 		}
+ 		return 0;
+ 	}
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\MainModule.vb" startline="44" endline="81">
+<![CDATA[
+ 
+     Private Shared StopOnError As Boolean = False
+ 
+     Public Shared Sub Main(ByVal args As String())
+         Dim ClassName As String = Nothing
+         Dim aargs(args.Length) As String
+ 
+         Dim i As Integer
+ 
+         For i = 0 To args.Length - 1
+             aargs(i) = args(i)
+         Next
+         aargs(args.Length) = String.Empty
+         args = aargs
+ 
+         For i = 0 To args.Length - 1
+             Dim opt As String = args(i)
+             If opt = String.Empty Then GoTo 100
+             If Left$(opt, 1) = "/" Then
+                 Dim uopt As String = opt.ToUpper()
+                 If uopt = "/STOP-ON-ERROR" Then
+                     StopOnError = True
+                 Else
+                     Throw New ArgumentException("ArgumentException", opt)
+                 End If
+             Else
+                 ClassName = opt
+             End If
+ 100
+         Next
+         If ClassName = Nothing Then ClassName = "All"
+ 
+         If ClassName = "All" Then
+             Call ExecuteAllExamples()
+         Else
+             Call ExecuteExample(ClassName)
+         End If
+     End Sub
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="282" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0111.vb" startline="59" endline="163">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 11
+ 
+         ' step 1
+         Dim Document As New Document()
+ 
+         ' step 2
+         ' we create a writer that listens to the document
+         ' and directs a PDF-stream to a file
+         Dim writerA As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0111a.pdf"))
+         Dim writerB As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0111b.pdf"))
+ 
+         ' step 3
+ 
+         ' we add a Watermark that will show up on PAGE 1
+ 
+         writerB.pause()
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 200, 420)
+             Document.add(Watermark)
+         Catch e As Exception
+             Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+         End Try
+ 
+         writerB.resume()
+ 
+         ' we add a Header that will show up on PAGE 1
+         Dim Header As New HeaderFooter(New Phrase("This is a header"), False)
+         Document.setHeader(Header)
+ 
+         ' we open the document
+         Document.open()
+ 
+         ' we rotate the page, starting from PAGE 2
+         Document.setPageSize(PageSize.A4.rotate())
+ 
+         ' we need to change the position of the Watermark
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 320, 200)
+             Document.add(Watermark)
+         Catch e As Exception
+             Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+         End Try
+ 
+         ' we add a Footer that will show up on PAGE 2
+         Dim footer As New HeaderFooter(New Phrase("This is page
+         Document.setFooter(footer)
+ 
+         ' step 4
+ 
+         ' PAGE 1
+ 
+         Document.add(New Paragraph("Hello World"))
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 2
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Earth"))
+ 
+         ' we remove the header starting from PAGE 3
+ 
+         writerA.pause()
+         Document.resetHeader()
+ 
+         writerA.resume()
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 3
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Sun"))
+ 
+         writerA.pause()
+         Document.add(New Paragraph("Remark
+ 
+         writerA.resume()
+ 
+         ' we reset the page numbering
+ 
+         writerB.pause()
+         Document.resetPageCount()
+ 
+         writerB.resume()
+ 
+         ' we trigger a page break
+         Document.newPage()
+ 
+         ' PAGE 4
+ 
+         ' we add some more content
+         Document.add(New Paragraph("Hello Moon"))
+ 
+         writerB.pause()
+         Document.add(New Paragraph("Remark
+ 
+         writerB.resume()
+ 
+         ' step 5
+         Document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0111.cs" startline="24" endline="119">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 1 example 11
+         
+ 		// step 1
+ 		Document document = new Document();
+         
+ 		// step 2
+ 		// we create a writer that listens to the document
+ 		// and directs a PDF-stream to a file
+ 		PdfWriter writerA = PdfWriter.getInstance(document, new FileStream("Chap0111a.pdf", FileMode.Create));
+ 		PdfWriter writerB = PdfWriter.getInstance(document, new FileStream("Chap0111b.pdf", FileMode.Create));
+             
+ 		// step 3
+ 		// we add a Watermark that will show up on PAGE 1
+ 		writerB.pause();
+ 		try 
+ 		{
+ 			Watermark watermark = new Watermark(Image.getInstance("watermark.jpg"), 200, 420);
+ 			document.add(watermark);
+ 		}
+ 		catch(Exception e) 
+ 		{
+ 			Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?");
+ 		}
+ 		writerB.resume();
+             
+ 		// we add a Header that will show up on PAGE 1
+ 		HeaderFooter header = new HeaderFooter(new Phrase("This is a header"), false);
+ 		document.setHeader(header);
+             
+ 		// we open the document
+ 		document.open();
+             
+ 		// we rotate the page, starting from PAGE 2
+ 		document.setPageSize(PageSize.A4.rotate());
+             
+ 		// we need to change the position of the Watermark
+ 		try 
+ 		{
+ 			Watermark watermark = new Watermark(Image.getInstance("watermark.jpg"), 320, 200);
+ 			document.add(watermark);
+ 		}
+ 		catch(Exception e) 
+ 		{
+ 			Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?");
+ 		}
+             
+ 		// we add a Footer that will show up on PAGE 2
+ 		HeaderFooter footer = new HeaderFooter(new Phrase("This is page
+ 		document.setFooter(footer);
+             
+ 		// step 4
+             
+ 		// PAGE 1
+ 		document.add(new Paragraph("Hello World"));
+             
+ 		// we trigger a page break
+ 		document.newPage();
+             
+ 		// PAGE 2
+ 		// we add some more content
+ 		document.add(new Paragraph("Hello Earth"));
+             
+ 		// we remove the header starting from PAGE 3
+ 		writerA.pause();
+ 		document.resetHeader();
+ 		writerA.resume();
+             
+ 		// we trigger a page break
+ 		document.newPage();
+             
+ 		// PAGE 3
+ 		// we add some more content
+ 		document.add(new Paragraph("Hello Sun"));
+ 		writerA.pause();
+ 		document.add(new Paragraph("Remark
+ 		writerA.resume();
+             
+ 		// we reset the page numbering
+ 		writerB.pause();
+ 		document.resetPageCount();
+ 		writerB.resume();
+             
+ 		// we trigger a page break
+ 		document.newPage();
+             
+ 		// PAGE 4
+ 		// we add some more content
+ 		document.add(new Paragraph("Hello Moon"));
+ 		writerB.pause();
+ 		document.add(new Paragraph("Remark
+ 		writerB.resume();
+ 
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="286" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0112.vb" startline="59" endline="128">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 12
+ 
+         ' we create a reader for a certain document
+         Dim Reader As New PdfReader("Chap0703.pdf")
+         ' we retrieve the total number of pages
+         Dim n As Integer = Reader.getNumberOfPages()
+         ' we retrieve the size of the first page
+         Dim psize As Rectangle = Reader.getPageSize(1)
+         Dim width As Single = psize.width()
+         Dim height As Single = psize.height()
+ 
+         ' step 1
+         Dim Document As New Document(psize, 50, 50, 50, 50)
+         ' step 2
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0112.pdf"))
+         ' step 3
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 200, 320)
+             Document.add(Watermark)
+         Catch e As Exception
+             Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+         End Try
+         Document.open()
+         ' step 4
+         Dim cb As PdfContentByte = Writer.getDirectContent()
+         Dim i As Integer = 0
+         Dim p As Integer = 0
+         Console.WriteLine("There are " & n & " pages in the document.")
+         While (i < n)
+             Document.newPage()
+             p = p + 1
+             i = i + 1
+             Dim page1 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+             cb.addTemplate(page1, 0.5F, 0, 0, 0.5F, 0, height / 2)
+             Console.WriteLine("processed page " & i)
+             If (i < n) Then
+                 i = i + 1
+                 Dim page2 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page2, 0.5F, 0, 0, 0.5F, width / 2, height / 2)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page3 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page3, 0.5F, 0, 0, 0.5F, 0, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page4 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page4, 0.5F, 0, 0, 0.5F, width / 2, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             cb.setRGBColorStroke(255, 0, 0)
+             cb.moveTo(0, height / 2)
+             cb.lineTo(width, height / 2)
+             cb.stroke()
+             cb.moveTo(width / 2, height)
+             cb.lineTo(width / 2, 0)
+             cb.stroke()
+             Dim bf As BaseFont = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED)
+             cb.beginText()
+             cb.setFontAndSize(bf, 14)
+             cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "page " & p & " of " & ((n / 4) + CInt(IIf(n Mod 4 > 0, 1, 0))), width / 2, 40, 0)
+             cb.endText()
+         End While
+         While (i < n)
+             Document.newPage()
+             p = p + 1
+             i = i + 1
+             Dim page1 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+             cb.addTemplate(page1, 0.5F, 0, 0, 0.5F, 0, height / 2)
+             Console.WriteLine("processed page " & i)
+             If (i < n) Then
+                 i = i + 1
+                 Dim page2 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page2, 0.5F, 0, 0, 0.5F, width / 2, height / 2)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page3 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page3, 0.5F, 0, 0, 0.5F, 0, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page4 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page4, 0.5F, 0, 0, 0.5F, width / 2, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             cb.setRGBColorStroke(255, 0, 0)
+             cb.moveTo(0, height / 2)
+             cb.lineTo(width, height / 2)
+             cb.stroke()
+             cb.moveTo(width / 2, height)
+             cb.lineTo(width / 2, 0)
+             cb.stroke()
+             Dim bf As BaseFont = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED)
+             cb.beginText()
+             cb.setFontAndSize(bf, 14)
+             cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "page " & p & " of " & ((n / 4) + CInt(IIf(n Mod 4 > 0, 1, 0))), width / 2, 40, 0)
+             cb.endText()
+         End While
+         ' step 5
+         Document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Chap0112.cs" startline="24" endline="100">
+<![CDATA[
+ 	{
+ 		Console.WriteLine("Chapter 1 example 12
+     
+ 		// we create a reader for a certain document
+ 		PdfReader reader = new PdfReader("Chap0703.pdf");
+ 		// we retrieve the total number of pages
+ 		int n = reader.getNumberOfPages();
+ 		// we retrieve the size of the first page
+ 		Rectangle psize = reader.getPageSize(1);
+ 		float width = psize.width();
+ 		float height = psize.height();
+     
+ 		// step 1
+ 		Document document = new Document(psize, 50, 50, 50, 50);
+ 		// step 2
+ 		PdfWriter writer = PdfWriter.getInstance(document, new FileStream("Chap0112.pdf", FileMode.Create));
+ 		// step 3
+ 		try 
+ 		{
+ 			Watermark watermark = new Watermark(Image.getInstance("watermark.jpg"), 200, 320);
+ 			document.add(watermark);
+ 		}
+ 		catch(Exception e) 
+ 		{
+ 			Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?");
+ 		}
+ 		document.open();
+ 		// step 4
+ 		PdfContentByte cb = writer.getDirectContent();
+ 		int i = 0;
+ 		int p = 0;
+ 		Console.WriteLine("There are " + n + " pages in the document.");
+ 		while (i < n) 
+ 		{
+ 			document.newPage();
+ 			p++;
+ 			i++;
+ 			PdfImportedPage page1 = writer.getImportedPage(reader, i);
+ 			cb.addTemplate(page1, .5f, 0, 0, .5f, 0, height / 2);
+ 			Console.WriteLine("processed page " + i);
+ 			if (i < n) 
+ 			{
+ 				i++;
+ 				PdfImportedPage page2 = writer.getImportedPage(reader, i);
+ 				cb.addTemplate(page2, .5f, 0, 0, .5f, width / 2, height / 2);
+ 				Console.WriteLine("processed page " + i);
+ 			}
+ 			if (i < n) 
+ 			{
+ 				i++;
+ 				PdfImportedPage page3 = writer.getImportedPage(reader, i);
+ 				cb.addTemplate(page3, .5f, 0, 0, .5f, 0, 0);
+ 				Console.WriteLine("processed page " + i);
+ 			}
+ 			if (i < n) 
+ 			{
+ 				i++;
+ 				PdfImportedPage page4 = writer.getImportedPage(reader, i);
+ 				cb.addTemplate(page4, .5f, 0, 0, .5f, width / 2, 0);
+ 				Console.WriteLine("processed page " + i);
+ 			}
+ 			cb.setRGBColorStroke(255, 0, 0);
+ 			cb.moveTo(0, height / 2);
+ 			cb.lineTo(width, height / 2);
+ 			cb.stroke();
+ 			cb.moveTo(width / 2, height);
+ 			cb.lineTo(width / 2, 0);
+ 			cb.stroke();
+ 			BaseFont bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+ 			cb.beginText();
+ 			cb.setFontAndSize(bf, 14);
+ 			cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "page " + p + " of " + ((n / 4) + (n % 4 > 0? 1 
+ 			cb.endText();
+ 		}
+ 		while (i < n) 
+ 		{
+ 			document.newPage();
+ 			p++;
+ 			i++;
+ 			PdfImportedPage page1 = writer.getImportedPage(reader, i);
+ 			cb.addTemplate(page1, .5f, 0, 0, .5f, 0, height / 2);
+ 			Console.WriteLine("processed page " + i);
+ 			if (i < n) 
+ 			{
+ 				i++;
+ 				PdfImportedPage page2 = writer.getImportedPage(reader, i);
+ 				cb.addTemplate(page2, .5f, 0, 0, .5f, width / 2, height / 2);
+ 				Console.WriteLine("processed page " + i);
+ 			}
+ 			if (i < n) 
+ 			{
+ 				i++;
+ 				PdfImportedPage page3 = writer.getImportedPage(reader, i);
+ 				cb.addTemplate(page3, .5f, 0, 0, .5f, 0, 0);
+ 				Console.WriteLine("processed page " + i);
+ 			}
+ 			if (i < n) 
+ 			{
+ 				i++;
+ 				PdfImportedPage page4 = writer.getImportedPage(reader, i);
+ 				cb.addTemplate(page4, .5f, 0, 0, .5f, width / 2, 0);
+ 				Console.WriteLine("processed page " + i);
+ 			}
+ 			cb.setRGBColorStroke(255, 0, 0);
+ 			cb.moveTo(0, height / 2);
+ 			cb.lineTo(width, height / 2);
+ 			cb.stroke();
+ 			cb.moveTo(width / 2, height);
+ 			cb.lineTo(width / 2, 0);
+ 			cb.stroke();
+ 			BaseFont bf = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+ 			cb.beginText();
+ 			cb.setFontAndSize(bf, 14);
+ 			cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "page " + p + " of " + ((n / 4) + (n % 4 > 0? 1 
+ 			cb.endText();
+ 		}
+ 		// step 5
+ 		document.close();
+ 	}
+]]>
+</clone_fragment>
+</clone_pair>
+<clone_pair groupid="287" nfragments="2" Csharpe_files="1" vb_files="1" Jsharpe_files="0" CPP_files="0" Fsharpe_files="0">
+<clone_fragment file="C:\Users\faa634\Desktop\CMPT890\CS VB JS examples\Examples\VB.NET\examples\Chap0112.vb" startline="59" endline="128">
+<![CDATA[
+     Public Shared Sub Main(ByVal args As String())
+         Console.WriteLine("Chapter 1 example 12
+ 
+         ' we create a reader for a certain document
+         Dim Reader As New PdfReader("Chap0703.pdf")
+         ' we retrieve the total number of pages
+         Dim n As Integer = Reader.getNumberOfPages()
+         ' we retrieve the size of the first page
+         Dim psize As Rectangle = Reader.getPageSize(1)
+         Dim width As Single = psize.width()
+         Dim height As Single = psize.height()
+ 
+         ' step 1
+         Dim Document As New Document(psize, 50, 50, 50, 50)
+         ' step 2
+         Dim Writer As PdfWriter = PdfWriter.getInstance(Document, New FileOutputStream("Chap0112.pdf"))
+         ' step 3
+         Try
+             Dim Watermark As New Watermark(Image.getInstance("watermark.jpg"), 200, 320)
+             Document.add(Watermark)
+         Catch e As Exception
+             Console.WriteLine("Are you sure you have the file 'watermark.jpg' in the right path?")
+         End Try
+         Document.open()
+         ' step 4
+         Dim cb As PdfContentByte = Writer.getDirectContent()
+         Dim i As Integer = 0
+         Dim p As Integer = 0
+         Console.WriteLine("There are " & n & " pages in the document.")
+         While (i < n)
+             Document.newPage()
+             p = p + 1
+             i = i + 1
+             Dim page1 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+             cb.addTemplate(page1, 0.5F, 0, 0, 0.5F, 0, height / 2)
+             Console.WriteLine("processed page " & i)
+             If (i < n) Then
+                 i = i + 1
+                 Dim page2 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page2, 0.5F, 0, 0, 0.5F, width / 2, height / 2)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page3 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page3, 0.5F, 0, 0, 0.5F, 0, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page4 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page4, 0.5F, 0, 0, 0.5F, width / 2, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             cb.setRGBColorStroke(255, 0, 0)
+             cb.moveTo(0, height / 2)
+             cb.lineTo(width, height / 2)
+             cb.stroke()
+             cb.moveTo(width / 2, height)
+             cb.lineTo(width / 2, 0)
+             cb.stroke()
+             Dim bf As BaseFont = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED)
+             cb.beginText()
+             cb.setFontAndSize(bf, 14)
+             cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "page " & p & " of " & ((n / 4) + CInt(IIf(n Mod 4 > 0, 1, 0))), width / 2, 40, 0)
+             cb.endText()
+         End While
+         While (i < n)
+             Document.newPage()
+             p = p + 1
+             i = i + 1
+             Dim page1 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+             cb.addTemplate(page1, 0.5F, 0, 0, 0.5F, 0, height / 2)
+             Console.WriteLine("processed page " & i)
+             If (i < n) Then
+                 i = i + 1
+                 Dim page2 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page2, 0.5F, 0, 0, 0.5F, width / 2, height / 2)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page3 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page3, 0.5F, 0, 0, 0.5F, 0, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             If (i < n) Then
+                 i = i + 1
+                 Dim page4 As PdfImportedPage = Writer.getImportedPage(Reader, i)
+                 cb.addTemplate(page4, 0.5F, 0, 0, 0.5F, width / 2, 0)
+                 Console.WriteLine("processed page " & i)
+             End If
+             cb.setRGBColorStroke(255, 0, 0)
+             cb.moveTo(0, height / 2)
+             cb.lineTo(width, height / 2)
+             cb.stroke()
+             cb.moveTo(width / 2, height)
+             cb.lineTo(width / 2, 0)
+             cb.stroke()
+             Dim bf As BaseFont = BaseFont.createFont(BaseFont.HELVETICA, BaseFont.CP1252, BaseFont.NOT_EMBEDDED)
+             cb.beginText()
+             cb.setFontAndSize(bf, 14)
+             cb.showTextAligned(PdfContentByte.ALIGN_CENTER, "page " & p & " of " & ((n / 4) + CInt(IIf(n Mod 4 > 0, 1, 0))), width / 2, 40, 0)
+             cb.endText()
+         End While
+         ' step 5
+         Document.close()
+     End Sub
+]]>
+</clone_fragment>
+<clone_fragment file="C:\Users\faa634\Desktop\CS VB JS examples\Examples\CSharp\examples\Transparency.cs" startline="32" endline="116">
+<![CDATA[
+     
+     public static void Main(String[] args) 
+ 	{
+ 		Console.WriteLine("Transparent image.");
+ 
+         Document document = new Document(PageSize.A4, 50, 50, 50, 50);
+         PdfWriter writer = PdfWriter.getInstance(document, new FileStream("transparency.pdf", FileMode.Create));
+         document.open();
+         BaseFont bf = BaseFont.createFont("Helvetica", "Cp1252", false);
+         PdfContentByte cb = writer.getDirectContent();
+         float gap = (document.getPageSize().width() - 400) / 3;
+         pictureBackdrop(gap, 500, cb);
+         pictureCircles(gap, 500, cb);
+         PdfGState gs1 = new PdfGState();
+         gs1.setFillOpacity(0.5f);
+ 
+         cb.saveState();
+         pictureBackdrop(200 + 2 * gap, 500, cb);
+         cb.setGState(gs1);
+         pictureCircles(200 + 2 * gap, 500, cb);
+         cb.restoreState();
+ 
+         PdfTemplate tp = cb.createTemplate(200, 200);
+         cb.saveState();
+         pictureCircles(0, 0, tp);
+         PdfTransparencyGroup group = new PdfTransparencyGroup();
+         tp.setGroup(group);
+         pictureBackdrop(gap, 500 - 200 - gap, cb);
+         cb.setGState(gs1);
+         cb.addTemplate(tp, gap, 500 - 200 - gap);
+         cb.restoreState();
+ 
+         tp = cb.createTemplate(200, 200);
+         cb.saveState();
+         PdfGState gs2 = new PdfGState();
+         gs2.setFillOpacity(0.5f);
+         gs2.setBlendMode(PdfGState.BM_SOFTLIGHT);
+         tp.setGState(gs2);
+         pictureCircles(0, 0, tp);
+         tp.setGroup(group);
+         pictureBackdrop(200 + 2 * gap, 500 - 200 - gap, cb);
+         cb.addTemplate(tp, 200 + 2 * gap, 500 - 200 - gap);
+         cb.restoreState();
+ 
+         cb.resetRGBColorFill();
+         ColumnText ct = new ColumnText(cb);
+         Phrase ph = new Phrase("Ungrouped objects\nObject opacity = 1.0");
+         ct.setSimpleColumn(ph, gap, 0, gap + 200, 500, 18, ElementConst.ALIGN_CENTER);
+         ct.go();
+         
+         ph = new Phrase("Ungrouped objects\nObject opacity = 0.5");
+         ct.setSimpleColumn(ph, 200 + 2 * gap, 0, 200 + 2 * gap + 200, 500, 18, ElementConst.ALIGN_CENTER);
+         ct.go();
+         
+         ph = new Phrase("Transparency group\nObject opacity = 1.0\nGroup opacity = 0.5\nBlend mode = Normal");
+         ct.setSimpleColumn(ph, gap, 0, gap + 200, 500 - 200 - gap, 18, ElementConst.ALIGN_CENTER);
+         ct.go();
+         
+         ph = new Phrase("Transparency group\nObject opacity = 0.5\nGroup opacity = 1.0\nBlend mode = SoftLight");
+         ct.setSimpleColumn(ph, 200 + 2 * gap, 0, 200 + 2 * gap + 200, 500 - 200 - gap, 18, ElementConst.ALIGN_CENTER);
+         ct.go();
+         
+         document.newPage();
+         String text = "text ";
+         text += text;
+         text += text;
+         text += text;
+         text += text;
+         text += text;
+         text += text;
+         text += text;
+         text += text;
+         document.add(new Paragraph(text));
+         Image img = Image.getInstance("vonnegut.gif");
+         img.setAbsolutePosition(100, 600);
+         SByte[] gradient = new SByte[256];
+         for (int k = 0; k < 256; ++k)
+             gradient[k] = (SByte)k;
+         for (int k = 0; k < 256; ++k)
+             gradient[k] = (SByte)k;
+         Image smask = Image.getInstance(256, 1, 1, 8, gradient);
+         smask.makeMask();
+         img.setImageMask(smask);
+         cb.addImage(img);
+         
+         document.close();
+     }
+]]>
+</clone_fragment>
+</clone_pair>
+</clones>
