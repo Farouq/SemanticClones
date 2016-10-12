@@ -27,8 +27,13 @@ public class Starter_FactExtraction_Step2 {
 	 */
 	public static void main(String[] args) throws Exception {
 
+		// load configuration from file
 		Configuration config=Configuration.loadFromFile();
-		//StarterPublisher.start(config);
+		
+		// first step: create output folders
+		Starter_Preparation_Step1.main(null);
+		
+		StarterPublisher.start(config);
 		
 		
 /*		
@@ -59,7 +64,7 @@ public class Starter_FactExtraction_Step2 {
 		}
 		
 		*/
-		
+/*		
 
 				switch (config.comparisonMethod)
 		{
@@ -92,7 +97,7 @@ public class Starter_FactExtraction_Step2 {
 
 		System.out.println(" wrong comparison method entry");
 		}
-
+*/
 		/*	
 
 
@@ -106,7 +111,7 @@ public class Starter_FactExtraction_Step2 {
 		filters.Filter4.filter8(config.disassebledAddress+"\\vb_f1_4.xml");
 		filters.Filter3.filter3(config.disassebledAddress+"\\vb_f1_4.xml");
 
-
+j
 		filters.Filter1.filter1(config.disassebledAddress+"\\cs.xml");
 		filters.Filter4.filter4(config.disassebledAddress+"\\cs_f1.xml");
 

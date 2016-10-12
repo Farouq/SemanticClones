@@ -14,17 +14,19 @@ public class Starter_Preparation_Step1 {
 	
 		Configuration config=Configuration.loadFromFile();
 
+		mkdir(config.projectClone);
 		mkdir(config.sourceCodeAddress);
 		mkdir(config.byteCodeAddress);
 		mkdir(config.disassebledAddress);
-		mkdir(config.disassebledAddress_lineNo);
+	//	mkdir(config.disassebledAddress_lineNo);
 		mkdir(config.ontologyAddress);
-		mkdir(config.sparqlAddress);
+	//	mkdir(config.sparqlAddress);
 		mkdir(config.reportAddress);	
+		System.out.println("Output Dicrectory: " + config.projectClone+ " created");
+
 		
-		
-		System.out.println("Now copy SourceCode files into: " +config.sourceCodeAddress); 
-		System.out.println("Now copy Bytecode files into: " +config.byteCodeAddress); 
+	//	System.out.println("Now copy SourceCode files into: " +config.sourceCodeAddress); 
+	//	System.out.println("Now copy Bytecode files into: " +config.byteCodeAddress); 
 		//System.out.println(config.comparisonMethod);
 		
 	}
@@ -37,8 +39,7 @@ public class Starter_Preparation_Step1 {
 		 String strManyDirectories=address;
 		  boolean success =  (new File(strManyDirectories)).mkdirs();
 		  if (success) {
-		  System.out.println("Directories: " 
-		   + strManyDirectories + " created");
+	//	  System.out.println("Directories: " + strManyDirectories + " created");
 		  }
 		
 	}

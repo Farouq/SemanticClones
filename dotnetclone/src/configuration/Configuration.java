@@ -16,6 +16,8 @@ public class Configuration {
 	public String ontologyAddress="";
 	public String sparqlAddress="";
 	public String reportAddress="";
+	public String projectAddress="";
+	public String projectClone="";
 
 	public String detectionMethod="";
 	public String ReportingMethod="";
@@ -46,16 +48,17 @@ public class Configuration {
 		config.threshold=Float.parseFloat(items.get(1));
 		config.min_threshold=Float.parseFloat(items.get(2));
 		config.comparisonMethod=Integer.parseInt(items.get(3));
-		String projectAddress=items.get(4);
+		config.projectAddress=items.get(4);
 
-		config.sourceCodeAddress=projectAddress+"/0_SourceCode";
-		config.byteCodeAddress=projectAddress+"/1_ByteCodes";
-		config.disassebledAddress=projectAddress+"/2_Disassembled";
-		config.disassebledAddress_lineNo=projectAddress+"/2_Disassembled_LineNo";
-		config.ontologyAddress=projectAddress+"/3_Ontology";
-		config.sparqlAddress=projectAddress+"/4_Sparql";
-		config.reportAddress=projectAddress+"/5_Report";
-
+		config.projectClone=config.projectAddress+"_Clone";
+		config.sourceCodeAddress=config.projectClone+"/1-SourceCode";
+		config.byteCodeAddress=config.projectClone+"/2-ByteCodes";
+		config.disassebledAddress=config.projectClone+"/3-Disassembled";
+	//	config.disassebledAddress_lineNo=projectAddress+"/2_Disassembled_LineNo";
+		config.ontologyAddress=config.projectClone+"/4-Ontology";
+	//	config.sparqlAddress=projectAddress+"/4_Sparql";
+		config.reportAddress=config.projectClone+"/5_Report";
+	//	System.out.println(config.projectAddress);
 		return(config);
 	}
 

@@ -7,6 +7,13 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+import org.apache.commons.io.FileUtils;
+
+
+
 
 import configuration.Configuration;
 import nicad.LevenshteinForOneFile;
@@ -31,48 +38,88 @@ public class StarterPublisher {
 
 	public static void start(Configuration config) throws Exception
 	{
-		//		System.out.println("ver alpha 66");
+		//copyExeFiles(config.projectAddress);
+		
+		// find exe files in target project
+		//System.out.println("step1: find exe files");
+		ArrayList<String> files=step1_findExeFiles(config);
+		
+		// move exe and pdb files 
+		moveExe(config,files);
+		
+		//Consider only moved files. No dublicated files. 
+		files = movedFiles(config);
+		System.out.println("Number of exe files found and used are: "+ files.size());
 
-		System.out.println("step1: find exe files");
-		ArrayList<String> files=	step1_findExeFiles(config);
 
 		//System.out.println(files.size()+"hellocs");
-		System.out.println("step2: extract disassimbled clode frome exe files ");
+		//System.out.println("step2: extract disassimbled clode frome exe files ");
 		ArrayList<ArrayList<String>> disassembledCodeList= step2_disAssemble(config,files);
 
 		
-		System.out.println("step3");
+		//System.out.println("step3");
 		step3_writeDisassembleContentToFiles(config,files,disassembledCodeList,false);
 
 		//export the unfiltered binary code and source code to xml files
-		System.out.println("step4");
+		//System.out.println("step4");
 		step4_exportToXML(config,files,disassembledCodeList);
 		 
 		// export all filtered binary code to one xml file. and all source code to one file
-		System.out.println("step5");
+		//System.out.println("step5");
 		step5_Filter_ExportAllToXML(config,files,disassembledCodeList);
 
-		System.out.println("methods extracted to xml files");
+		System.out.println("Used source code and byte code are moved to output directory");
+		System.out.println("Methods are extracted into xml files");
 
 		//		System.out.println("ver plusma");
 		//		System.out.println("ver plusma DONE");
+
 	}
 
 
 	private static ArrayList<String> step1_findExeFiles(Configuration config)
 	{
 		Crawler crwl=new Crawler("exe");
-		ArrayList<String> files=crwl.findExeFiles(config.byteCodeAddress);
+		ArrayList<String> files=crwl.findExeFiles(config.projectAddress);
 		return(files);
 	}
 
+	private static void moveExe(Configuration config, ArrayList<String> files)throws Exception{
+		File destination= new File(config.byteCodeAddress);
+		
+		for( String file:files){
+			File exeFile=new File(file);
+			String pdbFileName = file.replace("exe","pdb");
+			File pdbFile= new File(pdbFileName);
+			FileUtils.copyFileToDirectory(exeFile,destination);
+			FileUtils.copyFileToDirectory(pdbFile,destination);
+			
+		}
+		
+	}
+	private static ArrayList<String> movedFiles (Configuration config) throws Exception
+	{
+		ArrayList<String> listOfExeFiles= new ArrayList<String>();
+		
+		File byteAddesss= new File(config.byteCodeAddress);
+		for(File exeFile : byteAddesss.listFiles()){
+			String fileName =exeFile.getName();
+			if(fileName.endsWith("exe")){
+				listOfExeFiles.add(exeFile.getPath() );
+			}
+		}
+		
+		return listOfExeFiles;
+	}
+	
+	
 	private static ArrayList<ArrayList<String>> step2_disAssemble(Configuration config,ArrayList<String> files ) throws Exception
 	{
-		int ii=0;
+		//int ii=0;
 		ArrayList<ArrayList<String>> disassebledCodeList=new ArrayList<ArrayList<String>>();
 		for(String file : files)
 		{
-			System.out.println("r"+ii++);
+			//System.out.println("r"+ii++);
 			if(file.contains(" "))
 			{
 				throw(new Exception("error in disassembler s7fh6fh6fh645"));
@@ -112,7 +159,7 @@ public class StarterPublisher {
 
 		for(int i=0;i<files.size();i++)
 		{
-			System.out.println("w"+i);
+			//System.out.println("w"+i);
 			String outputFileAddress=config.disassebledAddress+"/"+"XXXXXXXXXXXXXXXXXXXXX";
 			File f=new File(files.get(i));
 			if(!bLineNo)
@@ -268,19 +315,25 @@ public class StarterPublisher {
 	private static void step5_Filter_ExportAllToXML(Configuration config,ArrayList<String> files,ArrayList<ArrayList<String>> disassembledCodeList) throws Exception
 	{
 		String lin;
+		
 		String currentSourceFileAddress="NULL";
 		ArrayList<String> out_lines_binary=new ArrayList<String>();
 		ArrayList<String> out_lines_source=new ArrayList<String>();
+		ArrayList<String> methodCalls =new ArrayList<String>();
 		//// this array list contain the extracted methods source code to create NiCad xml file all comments marked with ////
 		ArrayList<String> sourceForNicad=new ArrayList<String>();
 		ArrayList<String> binaryForNicad=new ArrayList<String>();
 		ArrayList<ArrayList<String>> binaryCode=new ArrayList<ArrayList<String>>();
 		
 
+		Set <String> sourceCodeFileSet = new HashSet<String>();
 
 		out_lines_binary.add("<project><name></name><description></description><prog_language></prog_language><source_elements>");
 		out_lines_source.add("<project><name></name><description></description><prog_language></prog_language><source_elements>");
+		methodCalls.add("<project><name></name><description></description><prog_language></prog_language><source_elements>");
 
+		
+		//System.out.println(files.get(0));
 
 		for(int i=0;i< files.size();i++)	
 		{			
@@ -288,6 +341,7 @@ public class StarterPublisher {
 			ArrayList<String> in_lines=disassembledCodeList.get(i);
 			ArrayList<String> methodBlockBuffer_binary=new ArrayList<String>();
 			ArrayList<String> methodBlockBuffer_source=new ArrayList<String>();
+			ArrayList<String> methodCallsBuffer = new ArrayList<String>();
 
 			boolean bInsideMethodBlock=false;
 			int methoBlockStartLine=Integer.MAX_VALUE;
@@ -394,6 +448,16 @@ public class StarterPublisher {
 						int w= lin.indexOf(":")+1;
 						lin = lin.substring(w);
 					}
+					
+					// this block creates called methos set in the method
+					if (lin.trim().startsWith("call"))
+					{
+						String calledFunction;
+						int w= lin.indexOf("::")+2;
+						calledFunction=lin.substring(w,lin.indexOf("("));
+						methodCallsBuffer.add(calledFunction);
+					//	System.out.println(calledFunction);					
+					}
 
 					// second Filter
 					if (lin.trim().startsWith("br.s")||
@@ -473,7 +537,7 @@ public class StarterPublisher {
 				if(bInsideMethodBlock && in_lines.get(j).trim().startsWith("} // end of method") )
 				{
 					
-					// this loop is to remove comments and empty lines from method block. so it has a real size
+					// this loop is to remove comments and empty lines from method block source code. so it has a real size
 					ArrayList<String> temp= new ArrayList<String>();
 					for(String llll : methodBlockBuffer_source)
 					{						
@@ -487,13 +551,27 @@ public class StarterPublisher {
 					
 					
 					
+					/*boolean b=(methodBlockBuffer_binary.size()>5);
+					System.out.print(b+"   ");
+					b=methoBlockStartLine !=Integer.MAX_VALUE;
+					System.out.print(b+"  ");
+					b=!currentSourceFileAddress.endsWith(".xaml");
+					System.out.print(b+"  ");
+					b=methodBlockBuffer_source.size()>5;
+					System.out.println(b+"  ");
+					*/
+					
 					// if statement is to filter out small fragments && methods with no source code
-					if (methodBlockBuffer_binary.size()>5 && methoBlockStartLine !=Integer.MAX_VALUE && !currentSourceFileAddress.endsWith(".xaml") &&methodBlockBuffer_source.size()>5)
+					if (methodBlockBuffer_binary.size()>5 && methoBlockStartLine !=Integer.MAX_VALUE && !currentSourceFileAddress.endsWith(".xaml") && methodBlockBuffer_source.size()>4)
 
 					{
 						out_lines_binary.add("<source file=\""+currentSourceFileAddress+"\" startline=\""+methoBlockStartLine+"\" endline=\""+methoBlockEndLine+"\"><![CDATA[");
 						binaryForNicad.add("<source file=\""+currentSourceFileAddress+"\" startline=\""+methoBlockStartLine+"\" endline=\""+methoBlockEndLine+"\">");
+						methodCalls.add("<source file=\""+currentSourceFileAddress+"\" startline=\""+methoBlockStartLine+"\" endline=\""+methoBlockEndLine+"\"><![CDATA[");
 
+						//
+						sourceCodeFileSet.add(currentSourceFileAddress);
+						
 						for(String llll : methodBlockBuffer_binary)
 						{
 							out_lines_binary.add(llll);
@@ -503,13 +581,14 @@ public class StarterPublisher {
 						out_lines_binary.add("]]></source>");
 						binaryForNicad.add("</source>");
 
+						
 						out_lines_source.add("<source file=\""+currentSourceFileAddress+"\" startline=\""+methoBlockStartLine+"\" endline=\""+methoBlockEndLine+"\"><![CDATA[");
 
+					//	System.out.println(currentSourceFileAddress);
 						//// Added to creat XML for Nicad
 						sourceForNicad.add("<source file=\""+currentSourceFileAddress+"\" startline=\""+methoBlockStartLine+"\" endline=\""+methoBlockEndLine+"\">");
 					//	System.out.println(currentSourceFileAddress);
-						// copy the source files that used in binary only to a new directory to use them for NiCad
-						copyFile(currentSourceFileAddress);
+						
 						
 						for(String llll : methodBlockBuffer_source)
 						{
@@ -546,6 +625,15 @@ public class StarterPublisher {
 
 						//// Added to creat XML for Nicad
 						sourceForNicad.add("</source>");
+						
+						for(String s : methodCallsBuffer)
+						{
+							methodCalls.add(s);
+						//	System.out.println(s);
+
+						}
+
+						methodCalls.add("]]></source>");
 
 					}
 
@@ -554,6 +642,7 @@ public class StarterPublisher {
 					binaryCode.add(methodBlockBuffer_binary);
 					methodBlockBuffer_binary.clear();
 					methodBlockBuffer_source.clear();
+					methodCallsBuffer.clear();
 					bInsideMethodBlock=false;
 					methoBlockStartLine=Integer.MAX_VALUE;
 					methoBlockEndLine=Integer.MAX_VALUE;
@@ -565,72 +654,40 @@ public class StarterPublisher {
 
 		out_lines_binary.add("</source_elements></project>");
 		out_lines_source.add("</source_elements></project>");
+		methodCalls.add("</source_elements></project>");
 
 		writeToXMLFile(config,"allFiles.xml",00,"binary",out_lines_binary);
 		writeToXMLFile(config,"allFiles.xml",00,"source",out_lines_source);
+		writeToXMLFile(config,"method",00,"calls",methodCalls);
 		//// create xml file for NiCad
 		writeToXMLFile(config,"NiCad.xml",00,"source",sourceForNicad);
 		writeToXMLFile(config,"NiCad.xml",00,"binary",binaryForNicad);
 		
 		
-		
+		copyUsedSourceFiles(config,sourceCodeFileSet);
 
 
 	}
 
-	private static void copyFile(String filename) throws Exception
-	{
+	private static void copyUsedSourceFiles(Configuration config,Set <String>sourceCodeFileSet)throws Exception{
+		boolean make;
 		
-		FileReader fr = new FileReader(filename);
-		
-		String outFileName=filename.replace("mono","monoo");
-		
-		// this commented to create folders structure
-/*		int i= filename.lastIndexOf("\\");
-		outFileName=outFileName.substring(0,i+2);
-		System.out.println(filename);
-		System.out.println(outFileName);
-		
-		File outFile=new File(outFileName);
-		outFile.mkdirs();
-		*/
-		
-		String outputFileAddress=outFileName;
-
-
-		BufferedWriter bufferedWriter = null;
-		bufferedWriter = new BufferedWriter(new FileWriter(outputFileAddress));
-		
-		
-		BufferedReader br = new BufferedReader(fr);
-
-		String s;
-		
-		while ((s = br.readLine()) != null) {
-			bufferedWriter.write(s);
-			bufferedWriter.newLine();
-			
+		for(String filePath:sourceCodeFileSet ){
+			File sourceFile= new File(filePath);
+			filePath=filePath.replace(config.projectAddress,config.sourceCodeAddress);
+			File file = new File(filePath);
+			File parentDir= file.getParentFile();
+			make= parentDir.mkdirs();
+			FileUtils.copyFileToDirectory(sourceFile,parentDir);
 		}
-		fr.close();
 		
-		bufferedWriter.flush();
-		bufferedWriter.close();
+
 		
 	}
+
 	
-	
-	private static void readFile(ArrayList<String> items) throws Exception {
-		FileReader fr = new FileReader("config.txt");
-		BufferedReader br = new BufferedReader(fr);
-
-		String s;
-		while ((s = br.readLine()) != null) {
-			items.add(s);
-		}
-		fr.close();
 
 
-	}
 	
 	private static void writeToXMLFile(Configuration config,String filename,int fileID,String format,ArrayList<String> lines) throws Exception
 	{
