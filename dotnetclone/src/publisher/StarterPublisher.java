@@ -47,7 +47,7 @@ public class StarterPublisher {
 		// move exe and pdb files 
 		moveExe(config,files);
 		
-		//Consider only moved files. No dublicated files. 
+		//Consider only moved files. No dublicated files.  findMovedExeFiles is a better name for this method
 		files = movedFiles(config);
 		System.out.println("Number of exe files found and used are: "+ files.size());
 
@@ -68,8 +68,8 @@ public class StarterPublisher {
 		//System.out.println("step5");
 		step5_Filter_ExportAllToXML(config,files,disassembledCodeList);
 
-		System.out.println("Used source code and byte code are moved to output directory");
-		System.out.println("Methods are extracted into xml files");
+		//System.out.println("Used source code and byte code are moved to output directory");
+		//System.out.println("Methods are extracted into xml files");
 
 		//		System.out.println("ver plusma");
 		//		System.out.println("ver plusma DONE");
@@ -86,7 +86,6 @@ public class StarterPublisher {
 
 	private static void moveExe(Configuration config, ArrayList<String> files)throws Exception{
 		File destination= new File(config.byteCodeAddress);
-		
 		for( String file:files){
 			File exeFile=new File(file);
 			String pdbFileName = file.replace("exe","pdb");
@@ -95,8 +94,8 @@ public class StarterPublisher {
 			FileUtils.copyFileToDirectory(pdbFile,destination);
 			
 		}
-		
 	}
+	
 	private static ArrayList<String> movedFiles (Configuration config) throws Exception
 	{
 		ArrayList<String> listOfExeFiles= new ArrayList<String>();
@@ -119,6 +118,7 @@ public class StarterPublisher {
 		ArrayList<ArrayList<String>> disassebledCodeList=new ArrayList<ArrayList<String>>();
 		for(String file : files)
 		{
+			
 			//System.out.println("r"+ii++);
 			if(file.contains(" "))
 			{
@@ -315,6 +315,7 @@ public class StarterPublisher {
 	private static void step5_Filter_ExportAllToXML(Configuration config,ArrayList<String> files,ArrayList<ArrayList<String>> disassembledCodeList) throws Exception
 	{
 		String lin;
+		int methodCounter=0;
 		
 		String currentSourceFileAddress="NULL";
 		ArrayList<String> out_lines_binary=new ArrayList<String>();
@@ -526,7 +527,9 @@ public class StarterPublisher {
 
 
 
-					methodBlockBuffer_binary.add(lin);
+					if(!lin.equals("call")) methodBlockBuffer_binary.add(lin);
+				//	methodBlockBuffer_binary.add(lin);
+					
 				}
 
 
@@ -565,6 +568,7 @@ public class StarterPublisher {
 					if (methodBlockBuffer_binary.size()>5 && methoBlockStartLine !=Integer.MAX_VALUE && !currentSourceFileAddress.endsWith(".xaml") && methodBlockBuffer_source.size()>4)
 
 					{
+						methodCounter++;
 						out_lines_binary.add("<source file=\""+currentSourceFileAddress+"\" startline=\""+methoBlockStartLine+"\" endline=\""+methoBlockEndLine+"\"><![CDATA[");
 						binaryForNicad.add("<source file=\""+currentSourceFileAddress+"\" startline=\""+methoBlockStartLine+"\" endline=\""+methoBlockEndLine+"\">");
 						methodCalls.add("<source file=\""+currentSourceFileAddress+"\" startline=\""+methoBlockStartLine+"\" endline=\""+methoBlockEndLine+"\"><![CDATA[");
@@ -663,25 +667,54 @@ public class StarterPublisher {
 		writeToXMLFile(config,"NiCad.xml",00,"source",sourceForNicad);
 		writeToXMLFile(config,"NiCad.xml",00,"binary",binaryForNicad);
 		
+		config.xmlByteCode= config.disassebledAddress+"/allFiles.xml_0_binary"+".xml";
+		config.xmlSourceCode= config.disassebledAddress+"/allFiles.xml_0_source"+".xml";
+		config.xmlCalledMethods= config.disassebledAddress+"/method_0_calls"+".xml";
+		
 		
 		copyUsedSourceFiles(config,sourceCodeFileSet);
+		System.out.println("Number of methods extracted : "+ methodCounter);
+
+		
 
 
 	}
 
 	private static void copyUsedSourceFiles(Configuration config,Set <String>sourceCodeFileSet)throws Exception{
 		boolean make;
+		File projectAddress = new File(config.projectAddress);
+		String projectName = projectAddress.getName();
+		
+		
+		//System.out.println("copying source code files");
 		
 		for(String filePath:sourceCodeFileSet ){
+			
 			File sourceFile= new File(filePath);
-			filePath=filePath.replace(config.projectAddress,config.sourceCodeAddress);
-			File file = new File(filePath);
+			
+			String targetFilePath=filePath.replace(config.projectAddress,config.sourceCodeAddress.concat("\\".concat(projectName)));
+			
+			// if statement check if the source code (visual studio source code ) moved or copied after compilation.
+			// cause exe files save the original path of compiled files. I need to determine the pathe of files to copy
+			
+			if(!filePath.equals(targetFilePath))
+			{
+			File file = new File(targetFilePath);
 			File parentDir= file.getParentFile();
 			make= parentDir.mkdirs();
 			FileUtils.copyFileToDirectory(sourceFile,parentDir);
+			}
+			else{
+				int projectNamePosition= filePath.indexOf(projectName);
+				String newTargetPath= config.sourceCodeAddress+ filePath.substring(projectNamePosition-1);
+				File file = new File(newTargetPath);
+				File parentDir= file.getParentFile();
+				make= parentDir.mkdirs();
+				FileUtils.copyFileToDirectory(sourceFile,parentDir);
+			}
 		}
 		
-
+		System.out.println("Number of source files used: "+ sourceCodeFileSet.size());
 		
 	}
 

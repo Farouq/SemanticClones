@@ -44,7 +44,10 @@ public class LevenshteinForOneFile {
 	/**
 	 * @param args
 	 * Read two xml files and measure similarity between their nodes
+	 * 
+	 * 
 	 */
+	
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
 
@@ -534,8 +537,6 @@ public class LevenshteinForOneFile {
 
 					cscode.add(temp);
 
-
-
 					/*
 					items++;
 
@@ -543,27 +544,14 @@ public class LevenshteinForOneFile {
 					System.out.println(i+"================================ "+file);
 					System.out.println(" start line = "+startline );
 					System.out.println(csl.toString());
-
-
 					 */
 					//System.out.println("node size "+loc);
-
-
 
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-
-
-
-
-
-
-
-
 
 		File fileNamevb = new File(vb);
 

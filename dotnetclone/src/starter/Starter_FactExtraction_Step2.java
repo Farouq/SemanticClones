@@ -15,6 +15,9 @@ import lcs.LcsForTowFiles;
 import levenshtien.Levenshtein;
 
 
+import semantic.*;
+
+
 
 public class Starter_FactExtraction_Step2 {
 
@@ -33,8 +36,26 @@ public class Starter_FactExtraction_Step2 {
 		// first step: create output folders
 		Starter_Preparation_Step1.main(null);
 		
+		// extract bytecode into xml files
+		// move used source code and exe files
 		StarterPublisher.start(config);
 		
+		
+		// clone detection using Lev distance on byte code
+		
+		InstructionLev.levenstien(config, config.xmlByteCode);
+		
+		// detection using Jaccard on byte code
+		InstructionJacc.jaccmethodInstructions(config);
+		
+		// clone detection using LCS on called methods
+		
+		CalledMethodsMatching. lcsCalledMethods(config);
+		
+		CalledMethodsMatching. jaccCalledMethods(config);
+		
+		System.out.println("Reports Generated look for files in folder : 5_Report");
+
 		
 /*		
 		Configuration config=Configuration.loadFromFile2();

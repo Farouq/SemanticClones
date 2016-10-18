@@ -18,6 +18,10 @@ public class Configuration {
 	public String reportAddress="";
 	public String projectAddress="";
 	public String projectClone="";
+	
+	public String xmlByteCode="";
+	public String xmlSourceCode="";
+	public String xmlCalledMethods="";
 
 	public String detectionMethod="";
 	public String ReportingMethod="";
@@ -25,9 +29,18 @@ public class Configuration {
 
 
 
-	// default was !!!
+	// default was !!! Levenshtien on byte code //instructions
 	public float threshold=0.5f;
+	
+	public float  jaccByteThreshold=0.9f;
 
+	// threshold for method calls
+	//1- LCS threshold
+	public float callsLCSthreshold=0.75f;
+	//2- Jaccard threshold
+	public float callsJaccthreshold=0.75f;
+	
+	
 	//default !!!
 	public float min_threshold=5.0f;
 

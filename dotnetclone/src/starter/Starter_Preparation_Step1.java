@@ -22,7 +22,7 @@ public class Starter_Preparation_Step1 {
 		mkdir(config.ontologyAddress);
 	//	mkdir(config.sparqlAddress);
 		mkdir(config.reportAddress);	
-		System.out.println("Output Dicrectory: " + config.projectClone+ " created");
+		System.out.println("Output Dicrectory created look in: " + config.projectClone);
 
 		
 	//	System.out.println("Now copy SourceCode files into: " +config.sourceCodeAddress); 
