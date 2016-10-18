@@ -1,5 +1,8 @@
 "C:\Program Files\Microsoft Visual Studio 8\SDK\v2.0\Bin"
-0.75
+0.7
+0.85
+0.7
+0.7
 5.0
 3
 C:\Users\faa634\Desktop\ASXGUI

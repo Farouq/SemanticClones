@@ -54,7 +54,9 @@ public class Starter_FactExtraction_Step2 {
 		
 		CalledMethodsMatching. jaccCalledMethods(config);
 		
-		System.out.println("Reports Generated look for files in folder : 5_Report");
+		Merge.mergeReports(config);
+		
+	//	System.out.println("Reports Generated look for files in folder : 5_Report");
 
 		
 /*		

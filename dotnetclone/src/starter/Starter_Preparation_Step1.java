@@ -32,7 +32,17 @@ public class Starter_Preparation_Step1 {
 	}
 	
 	
-	
+	private static void makeOutputFolders(Configuration config){
+		mkdir(config.projectClone);
+		mkdir(config.sourceCodeAddress);
+		mkdir(config.byteCodeAddress);
+		mkdir(config.disassebledAddress);
+	//	mkdir(config.disassebledAddress_lineNo);
+		mkdir(config.ontologyAddress);
+	//	mkdir(config.sparqlAddress);
+		mkdir(config.reportAddress);	
+		System.out.println("Output Dicrectory created look in: " + config.projectClone);
+	}
 	
 	private static void mkdir(String address)
 	{

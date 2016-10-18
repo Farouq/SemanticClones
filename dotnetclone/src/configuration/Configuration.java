@@ -28,15 +28,17 @@ public class Configuration {
 	public String Filterusage="";
 
 
+	public double threshold=0.75;
 
 	// default was !!! Levenshtien on byte code //instructions
-	public float threshold=0.5f;
+	public double instructionLevThreshold=0.7;
+	public double instructionJaccThreshold=0.9;
+	public double callsLCSThreshold=0.7;
+	public double callsJaccardThreshold=0.7;
 	
-	public float  jaccByteThreshold=0.9f;
 
 	// threshold for method calls
 	//1- LCS threshold
-	public float callsLCSthreshold=0.75f;
 	//2- Jaccard threshold
 	public float callsJaccthreshold=0.75f;
 	
@@ -58,10 +60,15 @@ public class Configuration {
 		ArrayList<String> items=new ArrayList<String>();
 		readFile(items);
 		config.disassembeler_EXE_path=items.get(0);
-		config.threshold=Float.parseFloat(items.get(1));
-		config.min_threshold=Float.parseFloat(items.get(2));
-		config.comparisonMethod=Integer.parseInt(items.get(3));
-		config.projectAddress=items.get(4);
+		config.instructionLevThreshold= Double.parseDouble(items.get(1));
+		config.instructionJaccThreshold= Double.parseDouble(items.get(2));
+		config.callsLCSThreshold= Double.parseDouble(items.get(3));
+		config.callsJaccardThreshold= Double.parseDouble(items.get(4));
+
+		
+		config.min_threshold=Float.parseFloat(items.get(5));
+		config.comparisonMethod=Integer.parseInt(items.get(6));
+		config.projectAddress=items.get(7);
 
 		config.projectClone=config.projectAddress+"_Clone";
 		config.sourceCodeAddress=config.projectClone+"/1-SourceCode";
