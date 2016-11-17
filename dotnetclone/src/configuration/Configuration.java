@@ -82,6 +82,32 @@ public class Configuration {
 		return(config);
 	}
 
+	public static Configuration initialize( String address) throws Exception
+	{
+		Configuration config=new Configuration();
+
+		config.disassembeler_EXE_path="C:\\Program Files\\Microsoft Visual Studio 8\\SDK\\v2.0\\Bin";
+		config.instructionLevThreshold= 0.7;
+		config.instructionJaccThreshold= 0.85;
+		config.callsLCSThreshold= 0.7;
+		config.callsJaccardThreshold= 0.7;
+
+		
+		config.min_threshold=0.5f;
+		config.comparisonMethod=3;
+		config.projectAddress=address;
+
+		config.projectClone=config.projectAddress+"_Clone";
+		config.sourceCodeAddress=config.projectClone+"/1-SourceCode";
+		config.byteCodeAddress=config.projectClone+"/2-ByteCodes";
+		config.disassebledAddress=config.projectClone+"/3-Disassembled";
+	//	config.disassebledAddress_lineNo=projectAddress+"/2_Disassembled_LineNo";
+		config.ontologyAddress=config.projectClone+"/4-Ontology";
+	//	config.sparqlAddress=projectAddress+"/4_Sparql";
+		config.reportAddress=config.projectClone+"/5_Report";
+	//	System.out.println(config.projectAddress);
+		return(config);
+	}
 /*	public static Configuration loadFromFile2() throws Exception
 	{
 		Configuration config=new Configuration();

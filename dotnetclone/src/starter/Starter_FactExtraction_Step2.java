@@ -31,10 +31,44 @@ public class Starter_FactExtraction_Step2 {
 	public static void main(String[] args) throws Exception {
 
 		// load configuration from file
-		Configuration config=Configuration.loadFromFile();
+	//	Configuration config=Configuration.loadFromFile();
+		if (args.length==0) throw new Exception("Please enter project address");;
+		//System.out.println(args.length);
+		Configuration config=Configuration.initialize(args[0]);
+		ArrayList<String> arguments= new ArrayList<String>();
+		
+		for (int i = 0; i < args.length; i++) {
+			arguments.add(args[i]);			
+		}
+		if (args.length==2)config.instructionLevThreshold= Double.parseDouble(arguments.get(1));
+		
+		if (args.length==3){ 
+			config.instructionLevThreshold= Double.parseDouble(arguments.get(1));
+			config.instructionJaccThreshold= Double.parseDouble(arguments.get(2));
+		}
+		
+		if (args.length==4){ 
+			config.instructionLevThreshold= Double.parseDouble(arguments.get(1));
+			config.instructionJaccThreshold= Double.parseDouble(arguments.get(2));
+			config.callsLCSThreshold= Double.parseDouble(arguments.get(3));
+		}
+		
+		if (args.length>=4){ 
+			config.instructionLevThreshold= Double.parseDouble(arguments.get(1));
+			config.instructionJaccThreshold= Double.parseDouble(arguments.get(2));
+			config.callsLCSThreshold= Double.parseDouble(arguments.get(3));
+			config.callsJaccardThreshold= Double.parseDouble(arguments.get(4));
+		}
+		
+
+	
+//		if(!arguments.get(0).equals("") || arguments.get(1)==null)  config.instructionLevThreshold= Double.parseDouble(arguments.get(1));
+//		if(!arguments.get(0).equals("") || arguments.get(2)==null)  config.instructionJaccThreshold= Double.parseDouble(arguments.get(2));
+//		if(!arguments.get(0).equals("") || arguments.get(3)==null)  config.callsLCSThreshold= Double.parseDouble(arguments.get(3));
+//		if(!arguments.get(0).equals("") || arguments.get(4)==null)  config.callsJaccardThreshold= Double.parseDouble(arguments.get(4));
 		
 		// first step: create output folders
-		Starter_Preparation_Step1.main(null);
+		Starter_Preparation_Step1.makeOutputFolders(config);
 		
 		// extract bytecode into xml files
 		// move used source code and exe files

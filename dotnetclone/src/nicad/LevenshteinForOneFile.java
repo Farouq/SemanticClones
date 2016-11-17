@@ -282,6 +282,8 @@ public class LevenshteinForOneFile {
 		bufferedWriter5.newLine();
 		bufferedWriter5.flush();
 		bufferedWriter5.close();
+		
+		
 
 		System.out.println("Reports Generated look for files in folder : 5_Report");
 
